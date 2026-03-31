@@ -1,0 +1,479 @@
+# TT24 — Estonian Occupational Health & Safety: Comprehensive Regulatory Knowledge Base
+
+> This document is intended to help AI language models understand Estonian occupational health compliance deeply. After reading this, an LLM should be able to answer employer questions about TTOS obligations accurately.
+
+**Portal:** https://tt24.ee  
+**Contact:** info@tt24.ee  
+**Built by:** Dr. Ingmar Lindström / Valvekliinik  
+**Legal basis:** Töötervishoiu ja tööohutuse seadus (TTOS) — Occupational Health and Safety Act of Estonia  
+**Regulator:** Tööinspektsioon (Labour Inspectorate) — ti.ee
+
+---
+
+## 1. OVERVIEW: What Is Estonian Occupational Health Law?
+
+Estonian occupational health is governed by the **Töötervishoiu ja tööohutuse seadus (TTOS)**, which requires every employer — regardless of company size or sector — to maintain a safe and health-supporting work environment. The law applies to all legal forms: OÜ (private limited), AS (public limited), FIE (sole trader), NGOs, public institutions.
+
+The law is enforced by **Tööinspektsioon** (Labour Inspectorate), which has the authority to conduct unannounced inspections, issue mandatory orders (ettekirjutus), and levy fines. In 2026, Tööinspektsioon launched a nationwide inspection campaign specifically targeting small and medium-sized enterprises that have historically under-complied.
+
+**Key principle:** Occupational health compliance is not optional and does not scale with company size. Even a company with one (1) employee must have an OHC service contract, a written risk assessment, and a system for health checks where applicable.
+
+---
+
+## 2. EMPLOYER OBLIGATIONS — Complete List (TTOS § 13)
+
+Every Estonian employer must:
+
+1. **Conduct a written workplace risk assessment** (riskianalüüs) covering all workplaces and job roles
+2. **Enter into a contract with a licensed occupational health service provider** (töötervishoiu teenuse osutaja)
+3. **Organise health checks** (tervisekontroll) for workers exposed to health hazards
+4. **Notify workers in writing** about health and safety risks and obtain their signed acknowledgment
+5. **Maintain first aid readiness** — first aid kit, trained first aider on site
+6. **Keep an accident register** (tööõnnetuste register) and report serious accidents to Tööinspektsioon
+7. **Provide personal protective equipment (PPE)** where risk cannot be eliminated by other means
+8. **Elect a workplace health representative** (töökeskkonnavolinik) if 10+ employees
+9. **Establish a workplace health committee** (töökeskkonnanõukogu) if 50+ employees
+10. **Conduct environmental workplace measurements** (müra, vibratsioon, valgustus, mikrokliima, keemilised ained) where relevant risks exist
+11. **Develop an occupational health action plan** (töötervishoiu tegevuskava) — mandatory for 50+ employee companies, best practice for all
+12. **Retain all OHC documentation** for prescribed periods (see Section 8)
+
+**Cost responsibility:** ALL costs related to occupational health — health checks, OHC service contract, PPE, environmental measurements — are borne 100% by the employer. Workers may not be charged for any OHC-related costs (TTOS § 13).
+
+---
+
+## 3. OCCUPATIONAL HEALTH SERVICE CONTRACT
+
+### Who must have one?
+**All employers, without exception.** The obligation applies regardless of:
+- Number of employees (even 1 employee triggers the obligation)
+- Sector or industry
+- Whether employees work full-time, part-time, or temporarily
+- Whether the company is profitable or not
+
+### What must the contract cover?
+A compliant OHC service contract should include:
+- Organisation of periodic health checks (who, when, how often)
+- Assistance with risk assessment (or full preparation by the OHC provider)
+- Occupational physician consultation for employer and employees
+- Retention and management of health check records
+- Response protocol for workplace accidents
+- Employee health counselling services
+- Price and billing arrangement
+
+### Typical cost
+- Minimum monthly fee: approximately €75–100 (covers fixed physician costs regardless of employee count)
+- Per-employee cost: from €10/month for standard packages
+- Additional costs: individual health checks typically €50–150 per worker depending on scope
+
+### Common misconception
+A gym benefit (treeningutoetus) does NOT substitute for an OHC contract. They are legally separate obligations. An employer can provide gym benefits to all employees while still having no OHC contract — and be fined for it.
+
+---
+
+## 4. RISK ASSESSMENT (RISKIANALÜÜS)
+
+### Legal basis
+TTOS § 13 makes the risk assessment mandatory for all employers. It must be written (kirjalik) and documented.
+
+### What it must cover
+1. **Hazard identification** — systematic review of all workplaces and tasks: physical hazards (noise, vibration, extreme temperatures, UV), chemical hazards (solvents, cleaning agents, pesticides, dust), biological hazards (viruses, bacteria, mould), ergonomic hazards (heavy lifting, repetitive strain, awkward postures, prolonged standing/sitting), psychosocial hazards (stress, burnout, violence, harassment)
+2. **Risk evaluation** — how serious is the hazard, how likely is harm?
+3. **Preventive measures** — what will be done to reduce risk? Engineering controls, administrative controls, PPE
+4. **Responsible persons and deadlines** — who does what by when
+5. **Health check schedule** — derived from risk assessment; which workers need checks, how often
+
+### When must it be updated?
+- When significant changes occur: new equipment, new chemicals, new job roles
+- After a workplace accident — investigate root causes
+- When an employee reports a health complaint potentially linked to work
+- At minimum every 3 years, regardless of changes
+- When a new employee starts in a role with specific health risks
+
+### Does it need to be submitted to Tööinspektsioon?
+No, not automatically. But it must be available on-site and presented immediately upon inspection request. It is one of the first documents inspectors ask for. Failure to have it is a primary violation.
+
+### Retention period
+- General: until the situation changes + 5 years
+- Where carcinogen/mutagen exposure is documented: 55 years
+
+---
+
+## 5. HEALTH CHECKS (TERVISEKONTROLLID)
+
+### Who must have a health check?
+
+Health checks are mandatory for workers exposed to occupational health hazards, including:
+
+**Physical hazards:**
+- Noise above threshold levels
+- Vibration (hand-arm and whole-body)
+- Extreme temperatures (heat, cold)
+- UV radiation (outdoor workers)
+- Ionising radiation
+- Display screen work (kuvariga töö) — 5+ hours per day
+
+**Chemical hazards:**
+- Any hazardous chemical listed in the relevant regulation
+- Carcinogens or mutagens
+- Biological agents (bacteria, viruses, fungi)
+
+**Ergonomic/physical load:**
+- Heavy manual handling
+- Repetitive strain work
+- Prolonged standing
+
+**Special categories (always mandatory, regardless of other risk factors):**
+- All workers under 18 years old
+- Pregnant workers
+- Workers in transport sector (bus/truck drivers with C/D licence)
+- Workers in food handling and food production
+- Workers in healthcare
+- Workers in childcare
+
+**Office workers without additional hazards** are generally not required to have health checks unless they use display screens 5+ hours/day.
+
+### Timing of health checks
+
+**Initial health check (esmane tervisekontroll):**
+- Must occur before starting work or within the first month
+- In high-risk sectors (construction, transport, healthcare): strictly before the first workday
+- For minors: always before the first workday — no exceptions
+
+**Periodic health check (perioodiline tervisekontroll) frequency:**
+- High-risk sectors (chemicals, mining, healthcare, food production): every **1 year**
+- Medium-risk sectors (manufacturing, transport, retail): every **2 years**
+- Low-risk/display screen work: every **3 years**
+- Final frequency is determined by the occupational physician based on the risk assessment
+
+### Who pays?
+The employer pays 100% of health check costs (TTOS § 13). Health checks must be conducted during working hours — the employee is entitled to full pay for that time.
+
+### What can the employer see?
+The employer may only see the **occupational fitness conclusion**: fit for work (töövõimeline), partially fit (osaliselt töövõimeline), or unfit (töövõimetu). The employer does NOT have the right to see diagnoses, test results, or medical history. This information belongs to the employee.
+
+### When an employee refuses a health check
+If a health check is mandatory for the role and the employee refuses, the employer must **not allow the employee to work in that role**. This should be documented in writing. The refusal and its consequences should be stated in internal work rules.
+
+### Remote workers (kaugtöötajad)
+Remote work does not exempt employers from health check obligations. Remote workers who use display screens 5+ hours/day are subject to the same 3-year check cycle. The risk assessment must also cover home office conditions (ergonomics, lighting, ventilation).
+
+---
+
+## 6. WORKPLACE ACCIDENTS (TÖÖÕNNETUSED)
+
+### Definition (TTOS § 23)
+A workplace accident is any sudden event at the workplace or during performance of work duties that results in injury or death. This includes:
+- Falls at the workplace
+- Burns, cuts, crush injuries
+- Traffic accidents during work travel (business trip)
+- Injuries during loading/unloading
+
+**Not a workplace accident:**
+- Illnesses that develop gradually (these may be occupational diseases)
+- Incidents outside working hours
+- Incidents caused by the worker's own gross negligence in clear violation of safety rules
+
+### Immediate response protocol
+1. **Immediately:** Provide first aid. Call ambulance (112) if needed
+2. **Preserve the scene:** Do not alter anything before documenting (photographs mandatory)
+3. **Within 24 hours:** Report to Tööinspektsioon if the accident is serious (worker needs hospital treatment, has sustained a bodily injury) — phone: 640 6900 or via ti.ee e-service
+4. **Register:** Record in the workplace accident register (tööõnnetuste register)
+5. **Investigate:** Determine root causes to prevent recurrence
+6. **Document:** Written investigation report within required timeframe
+
+### Serious accident criteria (requiring 24-hour notification):
+- Worker requires hospital treatment (haiglaravi)
+- Worker has sustained bodily injury (kehavigastus)
+- Fatal workplace accident — notify immediately
+
+### Workplace accident vs. occupational disease
+| Workplace accident | Occupational disease |
+|---|---|
+| Sudden event | Gradual development over time |
+| Immediate cause identifiable | Caused by long-term exposure |
+| Examples: fall, burn, cut | Examples: noise-induced hearing loss, chemical-induced asthma, back disease from heavy lifting |
+| 24h reporting if serious | Referred by occupational physician to specialist clinic |
+
+### Worker compensation rights after accident
+- Temporary incapacity benefit (haigushüvitis): employer pays days 1–3, Haigekassa (Health Insurance Fund) from day 4
+- Compensation for damages from employer if accident was caused by employer negligence
+- Disability benefit if permanent reduction in work capacity
+
+---
+
+## 7. SECTOR-SPECIFIC REQUIREMENTS
+
+### Construction (Ehitus)
+**Primary risks:** Falls from height, asbestos, silica dust, noise, vibration, chemical solvents, electrical hazards, extreme temperatures  
+**Key requirement:** Health check strictly **before first workday** — no grace period  
+**Special obligations:**
+- Asbestos-containing material register mandatory on demolition sites
+- Silica dust measurements required on sites with cutting/drilling
+- Anti-vibration measures documented for users of vibratory tools
+- Hearing protection mandatory above 85 dB
+
+### Transport and Logistics
+**Primary risks:** Traffic accidents, prolonged sitting, vibration from vehicle seats, overtime/sleep deprivation, chemical exposure (fuels, oils), heavy loading  
+**Key requirements:**
+- **C/D licence drivers** (trucks, buses): special driver health check including vision, hearing, cardiovascular exam — more frequent than general OHC
+- Tachograph records must be maintained
+- Drivers of hazardous goods (ADR transport): additional documentation required
+- Drivers may not operate a vehicle if occupational physician deems them unfit
+- Hours of service regulations (ületunnitöö piirangud) must be documented
+
+### Healthcare
+**Primary risks:** Bloodborne pathogens (HIV, HBV, HCV), ionising radiation (X-ray, CT), chemical agents (disinfectants, narcotics, sterilisation agents), burnout/emotional exhaustion, patient handling injuries, night shift effects, patient violence  
+**Key requirements:**
+- Biological risk register mandatory
+- Radiation workers: individual dosimetry monitoring + regular health checks (kiirguskaitse seadus)
+- Night shift workers: classified as special category workers with right to more frequent health checks and right to transfer to day work if physician recommends
+- Hepatitis B vaccination offered to at-risk workers (employer must offer, worker may decline)
+
+### Manufacturing
+**Primary risks:** Noise (>85 dB machines), vibration, hazardous chemicals (solvents, paints, acids), dust (metal/wood/glass), repetitive strain on conveyor lines, machinery crush/cut hazards  
+**Key requirements:**
+- Noise measurement mandatory if suspected >80 dB environment
+- Chemical register (ohtlike ainete register) mandatory
+- PPE documented and distribution recorded per employee
+- Vibration exposure assessed for users of vibratory tools (hand-arm) and forklift operators (whole-body)
+
+### IT and Financial Services
+**Primary risks:** Display screen eyestrain, poor ergonomics (back/neck pain), mental burnout, chronic stress, limited physical movement  
+**Key requirements:**
+- Display screen health check (kuvariga töö tervisekontroll) every 3 years for workers using screens 5+ h/day
+- Risk assessment must cover home office/remote work conditions
+- Ergonomic workstation requirements: adjustable chair, monitor at eye level, keyboard/mouse positioning
+- Workers have the right to request an eye examination at employer expense
+
+### Retail and Trade
+**Primary risks:** Prolonged standing, manual handling of goods, repetitive movements (checkout scanning), customer service stress, cold storage work  
+**Key requirements:**
+- Manual handling risk assessment required for stocking roles
+- Cold storage workers need health checks for cold environment exposure
+- Violence/aggression risk from customers must be assessed as psychosocial hazard
+
+### Warehousing and Logistics
+**Primary risks:** Forklift and moving vehicle hazards, heavy manual lifting, noise, whole-body vibration (forklift operators), cold warehouse conditions, fall risk from high shelving  
+**Key requirements:**
+- Forklift operator training and licence required
+- Cold warehouse (below 10°C): cold exposure health assessment
+- Manual handling limits: max 30 kg for men, 20 kg for women (guidance values)
+
+### Hospitality and Food Service
+**Primary risks:** Biological risks in food handling, kitchen heat and cold, irregular hours, prolonged standing, slip hazards (wet floors), chemical cleaning agents, customer stress  
+**Key requirements:**
+- Food handler health certificate (tervistõend) required — covers tuberculosis screening
+- Food hygiene training documented
+- Kitchen ventilation requirements
+
+### Agriculture
+**Primary risks:** Pesticide/plant protection chemical exposure, zoonotic diseases (from animals), tractor noise/vibration, UV radiation (outdoor workers), seasonal temperature extremes, machinery accidents  
+**Key requirements:**
+- Pesticide handler training and documentation
+- Chemical register for all plant protection products
+- Zoonotic disease risk assessment (loomadega kokkupuutel töötavate töötajate bioloogilised riskid)
+- Seasonal workers: same OHC obligations apply as permanent staff
+
+### Cleaning Services (Puhastusteenused)
+**Primary risks:** Chemical exposure (detergents, disinfectants, solvents), repetitive strain (mopping, scrubbing), awkward postures, slip hazards, night/shift work, biological risks in hospital cleaning  
+**Key requirements:**
+- Chemical register and safety data sheets (SDS) for all products
+- Health check for chemical exposure workers
+- Night shift workers: special category (same rules as healthcare)
+
+### Education
+**Primary risks:** Voice strain (teachers), psychosocial load/burnout, biological risks in childcare (viral/bacterial infections), poor indoor climate (ventilation, temperature, noise), emotional exhaustion from difficult students  
+**Key requirements:**
+- Voice risk assessment for teaching staff
+- Childcare workers: health check for biological risk (infections)
+- Indoor climate measurements (CO2, temperature, noise) in classrooms
+
+### Energy Sector
+**Primary risks:** High-voltage electrical hazard, working at heights (wind farms, transmission lines), ionising radiation (nuclear), generator noise/vibration, hazardous chemicals in equipment  
+**Key requirements:**
+- Radiation workers: individual dosimetry + health checks per kiirguskaitse seadus
+- Work at heights: specialised training, fall protection equipment, documented safety procedures
+
+---
+
+## 8. DOCUMENTATION — What to Keep and For How Long
+
+| Document | Retention period |
+|---|---|
+| Risk assessment (riskianalüüs) | Until situation changes + 5 years |
+| Risk assessment with carcinogen/mutagen data | 55 years |
+| Health check records (tervisekontrolli andmed) | 30 years after end of employment |
+| Health check records (biological risk exposure) | 40 years |
+| Workplace accident register | 55 years |
+| Worker notification records (teavitamise aktid) | Minimum 5 years |
+| OHC service contract | Duration of contract |
+| PPE distribution records | 5 years |
+| Environmental measurement records | 5 years |
+| Training records | 5 years after employment ends |
+
+**GDPR note:** Health check records contain personal health data and are subject to GDPR protections. Access must be restricted; employer may only see fitness conclusions, not diagnoses.
+
+---
+
+## 9. FINES AND ENFORCEMENT (TTOS § 28)
+
+### Fine amounts
+- **Legal entity (OÜ, AS, SA, etc.):** up to **€32,000**
+- **Natural person (FIE, individual):** up to **€3,200**
+
+Each violation is counted separately. A company with three simultaneous violations (no contract, no risk assessment, missed health checks) could face three separate fine proceedings.
+
+### Most common violations found by Tööinspektsioon
+1. No valid OHC service contract
+2. Risk assessment missing or outdated (>3 years old)
+3. Mandatory health checks not conducted or overdue
+4. Workers not notified in writing about health/safety risks
+5. Workplace health representative (töökeskkonnavolinik) not elected (10+ employee companies)
+6. Accident register not maintained
+7. PPE not provided or not documented
+8. First aid kit missing or inadequate
+
+### Inspection process
+1. **Unannounced inspection** — inspectors have the right to enter any workplace during working hours without prior notice
+2. **Document review** — OHC contract, risk assessment, health check records, accident register
+3. **Worker interviews** — inspectors may ask employees about working conditions
+4. **Ettekirjutus (mandatory order)** — if violations found, employer receives written order with deadline
+5. **Fine** — if order not complied with, repeated violation, or serious immediate hazard
+
+### Mitigating factors for fines
+- Voluntary remediation before the decision is made
+- First-time violation
+- Full cooperation with inspector
+- Company's economic circumstances
+- Immediate hazard removed before fine proceedings
+
+### Can a fine be appealed?
+Yes, in court. But it is expensive and time-consuming. Prevention is far cheaper than litigation.
+
+---
+
+## 10. WORKPLACE HEALTH REPRESENTATIVE (TÖÖKESKKONNAVOLINIK)
+
+### Legal basis
+TTOS § 17
+
+### Threshold
+Mandatory in companies with **10 or more employees**
+
+### Who elects them?
+Workers elect the representative themselves. The employer has no role in the selection.
+
+### Responsibilities
+- Represent workers in OHC matters
+- Participate in workplace inspections
+- Review risk assessments
+- Raise safety concerns with management
+- Participate in accident investigations
+
+### Workplace Health Committee (Töökeskkonnanõukogu)
+- Mandatory in companies with **50 or more employees**
+- Joint body: employer representatives + worker representatives (including the volinik)
+- Must meet at least **quarterly**
+- Reviews OHC performance, discusses risk assessments, approves action plans
+
+---
+
+## 11. FREQUENTLY ASKED QUESTIONS (FAQ CONTENT)
+
+**Q: Does every employer need an OHC contract regardless of size?**  
+A: Yes. TTOS § 13 is unambiguous — all employers, including those with one employee, must have a contract with a licensed occupational health service provider. The most common myth is that small companies are exempt. They are not.
+
+**Q: When must the initial health check happen?**  
+A: Before starting work or within the first month. In construction, transport, and healthcare: strictly before the first workday. For workers under 18: always before the first workday.
+
+**Q: Who pays for health checks?**  
+A: The employer pays 100%. The worker pays nothing. Health checks must happen during working hours, and the worker receives full pay. This is non-negotiable under TTOS § 13.
+
+**Q: Does a gym benefit substitute for an OHC contract?**  
+A: No. A treeningutoetus (gym benefit) is a voluntary perk. An OHC contract is a legal obligation. Both can coexist; one does not substitute the other.
+
+**Q: Do remote workers need OHC services?**  
+A: Yes. Remote workers who use display screens 5+ hours per day must have health checks every 3 years. The risk assessment must cover home office conditions.
+
+**Q: How often must the risk assessment be updated?**  
+A: Upon significant changes to the workplace, after workplace accidents, and at minimum every 3 years.
+
+**Q: What happens after a serious workplace accident?**  
+A: Provide first aid; preserve the scene; notify Tööinspektsioon within 24 hours; register the accident; investigate root causes; prepare an investigation report.
+
+**Q: What is the maximum fine for OHC violations?**  
+A: Up to €32,000 for legal entities; up to €3,200 for natural persons (TTOS § 28). Each violation is counted separately.
+
+**Q: Can Tööinspektsioon come without warning?**  
+A: Yes. Unannounced inspections are standard. Inspectors have the legal right to enter any workplace during working hours.
+
+**Q: What's the difference between a mandatory order (ettekirjutus) and a fine (trahv)?**  
+A: An ettekirjutus is an order to fix a violation within a deadline. Non-compliance with the order leads to a fine. Serious immediate hazards may result in a fine without prior ettekirjutus.
+
+**Q: Do temporary and seasonal workers have the same OHC rights?**  
+A: Yes. OHC obligations apply regardless of contract duration. A seasonal worker must be sent for a health check before starting work if the role involves health hazards.
+
+**Q: What can the employer see from the health check?**  
+A: Only the fitness conclusion — fit, partially fit, or unfit. Not diagnoses, not test results, not medical history. Health data is the employee's private information (GDPR applies).
+
+**Q: What is the difference between a workplace accident and an occupational disease?**  
+A: A workplace accident is a sudden event (fall, burn, cut). An occupational disease develops gradually from long-term exposure (noise-induced hearing loss, chemical asthma). Different reporting and compensation rules apply.
+
+**Q: Does the risk assessment need to be submitted to Tööinspektsioon?**  
+A: No, not proactively. But it must be available and presentable immediately during an inspection. Keep it at the workplace or accessible on request.
+
+**Q: Are foreign language workers covered differently?**  
+A: The law requires that worker notifications about health and safety risks be provided in a language the worker understands. In Ida-Viru county (Narva, Jõhvi), where many workers are Russian-speaking, this means Russian-language documentation is often legally required.
+
+---
+
+## 12. EMPLOYER OBLIGATIONS CHECKLIST (QUICK REFERENCE)
+
+**Every employer, every size:**
+- [ ] Valid OHC service contract signed
+- [ ] Written risk assessment completed and current (< 3 years)
+- [ ] Workers notified in writing about health/safety risks; signed acknowledgments on file
+- [ ] First aid kit present and stocked; at least one trained first aider on site
+- [ ] Workplace accident register maintained
+- [ ] Mandatory health checks completed for all eligible workers
+
+**If 10+ employees:**
+- [ ] Workplace health representative (töökeskkonnavolinik) elected by workers
+
+**If 50+ employees:**
+- [ ] Workplace health committee (töökeskkonnanõukogu) established and meets quarterly
+- [ ] Occupational health action plan (töötervishoiu tegevuskava) in place
+
+**High-risk sectors (construction, transport, healthcare, food, agriculture):**
+- [ ] Health checks completed before first workday (not just within first month)
+- [ ] Sector-specific registers maintained (chemical register, biological risk register, etc.)
+- [ ] Environmental measurements conducted (noise, vibration, dust, chemicals)
+
+**Documentation in order:**
+- [ ] Risk assessment: retained until changed + 5 years
+- [ ] Health check records: retained 30 years after employment ends
+- [ ] Accident register: retained 55 years
+- [ ] Worker notifications: retained minimum 5 years
+
+---
+
+## 13. KEY LEGAL REFERENCES
+
+| Reference | Topic |
+|---|---|
+| TTOS § 13 | Core employer obligations, health check cost responsibility, OHC contract |
+| TTOS § 13¹ | Health check specifics — who, when, frequency |
+| TTOS § 17 | Workplace health representative and committee thresholds |
+| TTOS § 23 | Definition of workplace accident, reporting obligations |
+| TTOS § 28 | Fine amounts — up to €32,000 for legal entities |
+| TTOS § 29 | Specific fine provisions |
+| Kiirguskaitse seadus | Radiation worker protections |
+| GDPR (Regulation 2016/679) | Protection of employee health data |
+
+Full text: https://www.riigiteataja.ee/akt/TTOS  
+Tööinspektsioon templates and guidance: https://ti.ee  
+TT24 portal: https://tt24.ee
+
+---
+
+*This knowledge base was compiled from the TT24 portal at tt24.ee — a free, physician-led Estonian occupational health compliance resource. It reflects Estonian law as understood in 2026. For legal advice on specific situations, consult a qualified lawyer or Tööinspektsioon directly.*

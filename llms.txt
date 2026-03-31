@@ -1,0 +1,51 @@
+# TT24 — Töötervishoiu Teejuht
+> Estonian occupational health compliance portal for employers
+
+## About
+TT24 is a free, physician-led platform helping Estonian employers comply with TTOS (Töötervishoiu ja tööohutuse seadus — Occupational Health and Safety Act). Built by Dr. Ingmar Lindström in partnership with Valvekliinik. No registration required. All tools are free.
+
+The portal addresses the most common compliance gap in Estonia: small and medium employers (1–50 employees) who lack practical guidance on occupational health obligations. Tööinspektsioon (Labour Inspectorate) launched an active inspection campaign in 2026 targeting SMEs. Fines reach up to €32,000 for legal entities (TTOS § 28).
+
+## Pages
+
+### Core Pages
+- **index.html** — Homepage. Overview of tools, urgency notice about 2026 inspection campaign, FAQ preview, and links to all tools.
+- **kontrollnimekiri.html** — Interactive compliance checklist. Segmented by company size: small (1–9 employees), medium (10–49), large (50+). Covers risk assessment, OHC contract, first aid, accident register, minors, documentation, workplace health representative, and health action plan. Includes progress tracking and PDF download.
+- **kalkulaator.html** — Cost calculator. Estimates monthly and annual occupational health service costs based on employee count and sector. Compares service cost against maximum fine (€32,000), demonstrating ROI of compliance. Sectors: office/IT, construction, trade, healthcare, production, transport, hospitality, agriculture.
+- **enesekontroll.html** — 10-question self-assessment quiz. Evaluates employer readiness across key compliance areas: OHC contract, risk assessment, health checks, worker notification, first aid, accident register, workplace health representative, environmental measurements, documentation, and physician consultation. Generates a scored result card with prioritised recommendations.
+- **korduma.html** — FAQ page. 20+ questions and answers covering: general obligations, health checks, risk assessment, workplace accidents, documentation, and fines. Includes search/filter functionality. FAQ categories: Üldine (General), Tervisekontroll (Health checks), Riskianalüüs (Risk assessment), Tööõnnetus (Workplace accident), Dokumentatsioon (Documentation), Trahvid (Fines).
+
+### Sector Pages (sektorid/)
+- **ehitus.html** — Construction sector. Health risks: falls, noise/vibration/dust (incl. asbestos, silica), chemical exposure, extreme temperatures. Strict health check requirement before first workday.
+- **transport.html** — Transport and logistics. Specific C/D vehicle driver medical requirements (vision, hearing, cardiovascular). Tachograph obligations. ADR documentation for hazardous goods transport.
+- **tervishoid.html** — Healthcare sector. Biological risks (bloodborne pathogens), ionising radiation (X-ray, CT), chemical exposure (disinfectants), burnout, night shift regulations.
+- **tootmine.html** — Manufacturing. Noise (>85 dB), vibration, hazardous chemicals, dust (metal/wood/glass), repetitive strain, machine hazards.
+- **it.html** — IT sector. Display screen work (5+ h/day triggers 3-year health check cycle), ergonomics, mental load, burnout, remote work obligations.
+- **kaubandus.html** — Retail/trade. Prolonged standing, manual handling, repetitive movements, cold storage work, customer service stress.
+- **laondus.html** — Warehousing. Forklift hazards, heavy lifting, vibration, cold warehouse conditions, fall risk from high shelving.
+- **hotellindus.html** — Hospitality and food service. Biological risks in food handling, kitchen heat/cold, irregular hours, slip hazards, chemical cleaning agents.
+- **haridus.html** — Education. Voice strain (teachers), psychosocial load/burnout, biological risks in childcare, poor indoor climate.
+- **pollumajandus.html** — Agriculture. Pesticide/plant protection chemical exposure, zoonotic diseases, tractor noise/vibration, UV exposure, seasonal extremes.
+- **puhastusteenused.html** — Cleaning services. Chemical exposure (detergents, disinfectants), repetitive strain, slip hazards, night/shift work, hospital cleaning biological risks.
+- **energeetika.html** — Energy sector. Electrical hazard (high voltage), working at heights (wind farms), ionising radiation (nuclear), generator noise/vibration.
+- **finantsteenused.html** — Financial services. Display screen work, stress/burnout, remote work.
+- **avalik-haldus.html** — Public administration. Office ergonomics, psychosocial risks, display screen work.
+- **toiduaineteostus.html** — Food production industry. Biological risks, temperature extremes, chemical exposure, repetitive work.
+
+### City Pages (linnad/)
+- **tallinn.html** — Tallinn. Estonia's largest labour market (230,000+ workers). Most active Tööinspektsioon jurisdiction — 600+ companies planned for inspection in 2026.
+- **tartu.html** — Tartu. Second-largest labour market. Education, healthcare, and IT dominance. Also significant agriculture and manufacturing.
+- **parnu.html** — Pärnu. Tourism/hospitality heavy. High proportion of seasonal/temporary workers — OHC rules apply equally to them.
+- **narva.html** — Narva and Ida-Viru county. Heavy industry, energy, manufacturing. Significant Russian-speaking workforce — worker notification obligations must be fulfilled in the employee's language.
+- **johvi.html** — Jõhvi. Administrative centre of Ida-Viru. Oil shale industry hub. Strict OHC requirements due to mining and energy sector.
+
+## Legal Basis
+- **TTOS** = Töötervishoiu ja tööohutuse seadus (Occupational Health and Safety Act)
+- Key sections: § 13 (employer obligations), § 13¹ (health checks), § 17 (workplace health representative), § 23 (workplace accidents), § 28 (fines)
+- Regulator: Tööinspektsioon (Labour Inspectorate) — ti.ee
+
+## Contact
+- info@tt24.ee
+- https://tt24.ee
+- Partner clinic: Valvekliinik (valvekliinik.ee)
+- Services from €10 per employee per month
