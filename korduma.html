@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Korduma kippuvad küsimused töötervishoiu kohta — TT24</title>
   <meta name="description" content="Üle 20 selge vastuse töötervishoiu kohta. Tervisekontroll, riskianalüüs, tööõnnetused, lepingud ja trahvid — kõik lihtsas eesti keeles selgitatud.">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Tag Manager -->
@@ -15,9 +16,10 @@
   })(window,document,'script','dataLayer','GTM-5459MHF3');</script>
   <!-- End Google Tag Manager -->
 
-
-  <!-- Canonical -->
+  <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://tt24.ee/korduma.html" />
+  <link rel="alternate" hreflang="et" href="https://tt24.ee/korduma.html" />
+  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/korduma.html" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -100,179 +102,418 @@
         "name": "Kas treeningutoetus asendab töötervishoiu lepingut?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ei. Need on täiesti erinevad asjad. Treeningutoetus on vabatahtlik töötajasoodustus, mida tööandja võib maksta. Töötervishoiu leping on seaduslik kohustus, mis peab olema sõlmitud sõltumata sellest, kas makstate treeningutoetust või mitte."
+          "text": "Ei. Need on täiesti erinevad asjad. Treeningutoetus on vabatahtlik töötajasoodustus, mida tööandja võib maksta. Töötervishoiu leping on seaduslik kohustus, mis peab olema sõlmitud sõltumata sellest, kas maksate treeningutoetust või mitte."
         }
       }
     ]
   }
   </script>
+
+  <style>
+    /* ── FAQ page–specific overrides ── */
+    .hero--light {
+      background: linear-gradient(135deg, #f0f7f4 0%, #e8f5f0 100%);
+      color: var(--dark, #1a2e25);
+    }
+    .hero--light .hero-inner {
+      max-width: 780px;
+    }
+    .hero--light h1 {
+      color: var(--dark, #1a2e25);
+    }
+    .hero--light .hero-sub {
+      color: var(--text-muted, #4a6358);
+    }
+    .hero--light .hero-badge {
+      background: rgba(0,0,0,0.06);
+      color: var(--dark, #1a2e25);
+    }
+
+    /* ── Search bar ── */
+    .faq-search-wrap {
+      margin-bottom: 20px;
+    }
+    .faq-search-wrap input {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 1rem;
+      border: 2px solid #d0e4dc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color .2s;
+      box-sizing: border-box;
+      background: #fff;
+    }
+    .faq-search-wrap input:focus {
+      border-color: var(--teal, #2d7a5a);
+    }
+    .faq-no-results {
+      display: none;
+      padding: 18px;
+      background: #fff8e8;
+      border: 1px solid #f0d890;
+      border-radius: 8px;
+      color: #7a5a00;
+      margin-bottom: 24px;
+      font-size: .95rem;
+    }
+
+    /* ── Category anchor pills ── */
+    .faq-cat-nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .faq-cat-nav a {
+      padding: 8px 16px;
+      background: var(--teal, #2d7a5a);
+      color: #fff;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 600;
+      transition: opacity .15s;
+    }
+    .faq-cat-nav a:hover { opacity: .82; }
+
+    /* ── FAQ group ── */
+    .faq-group {
+      margin-bottom: 40px;
+    }
+    .faq-group-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal, #2d7a5a);
+      border-bottom: 2px solid var(--teal, #2d7a5a);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* ── FAQ item (details/summary) ── */
+    details.faq-item {
+      border: 1px solid #d8ebe3;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow .2s;
+    }
+    details.faq-item[open] {
+      box-shadow: 0 2px 12px rgba(45,122,90,.12);
+    }
+    details.faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: .98rem;
+      color: var(--dark, #1a2e25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      color: var(--teal, #2d7a5a);
+      transition: transform .25s;
+    }
+    details.faq-item[open] summary::after {
+      content: '−';
+    }
+    details.faq-item summary:hover {
+      background: #f5faf7;
+    }
+    .faq-item-body {
+      padding: 4px 20px 20px;
+      font-size: .95rem;
+      line-height: 1.7;
+      color: var(--text, #2d3b35);
+      border-top: 1px solid #e8f2ec;
+    }
+    .faq-item-body p { margin: 10px 0 0; }
+    .faq-item-body p:first-child { margin-top: 0; }
+    .faq-item-body a {
+      color: var(--teal, #2d7a5a);
+      text-decoration: underline;
+    }
+    .mida-teha {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #f0faf5;
+      border-left: 3px solid var(--teal, #2d7a5a);
+      border-radius: 0 6px 6px 0;
+      font-size: .9rem;
+    }
+
+    /* ── Disclaimer ── */
+    .faq-disclaimer {
+      margin-top: 40px;
+      padding: 18px 22px;
+      background: #f7f9f8;
+      border: 1px solid #dbe8e1;
+      border-radius: 8px;
+      font-size: .88rem;
+      color: #4a5e54;
+      line-height: 1.65;
+    }
+    .faq-disclaimer a { color: var(--teal, #2d7a5a); }
+
+    /* ── CTA banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, #1a3828 0%, #0f2218 100%);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .cta-banner-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-banner p {
+      color: rgba(242,245,245,.82);
+      font-size: 1.05rem;
+      margin: 0 0 8px;
+    }
+    .cta-banner .price { color: #c5a55a; font-weight: 700; }
+    .btn-gold {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 32px;
+      background: #c5a55a;
+      color: #1a2e1a;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity .15s;
+    }
+    .btn-gold:hover { opacity: .88; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      font-size: .85rem;
+      color: var(--text-muted, #4a6358);
+      margin-bottom: 14px;
+    }
+    .breadcrumb a { color: var(--teal, #2d7a5a); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-main">TT24</span>
-      <span class="logo-sub">Töötervishoiu teejuht Eestis</span>
+<!-- ═══════════════════════════════
+     NAVIGATION
+═══════════════════════════════ -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
+      <span class="nav-logo-text">TT24</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine">☰</button>
-    <nav id="mainNav">
-      <a href="index.html">Avaleht</a>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html">Kalkulaator</a>
-      <a href="korduma.html" class="active">KKK</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="mailto:info@tt24.ee" class="nav-cta">Küsi pakkumist</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
+      <a href="kontrollnimekiri.html" class="nav-link">Kontrollnimekiri</a>
+      <a href="kalkulaator.html" class="nav-link">Kalkulaator</a>
+      <a href="enesekontroll.html" class="nav-link">Enesehinnang</a>
+      <a href="korduma.html" class="nav-link active" aria-current="page">KKK</a>
     </nav>
+
+    <a href="enesekontroll.html" class="nav-cta-btn">Kontrollige valmisolekut</a>
   </div>
 </header>
 
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Avaleht</a> › KKK</div>
-    <h1>❓ Korduma kippuvad küsimused</h1>
-    <p>Üle 20 küsimuse selgete vastustega — lihtsas eesti keeles, ilma juriidilise kõnepruugita.</p>
-  </div>
-</div>
+<main id="main-content">
 
-<main>
-  <section class="section">
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="hero hero--light" aria-labelledby="faq-hero-heading">
+    <div class="hero-inner">
+      <div class="breadcrumb"><a href="index.html">Avaleht</a> › KKK</div>
+      <p class="hero-badge">Üle 20 küsimuse · Selged vastused · Ilma juriidilise kõnepruugita</p>
+      <h1 id="faq-hero-heading">Korduma kippuvad küsimused<br><em>töötervishoiu kohta</em></h1>
+      <p class="hero-sub">Tervisekontroll, riskianalüüs, tööõnnetused, dokumentatsioon ja trahvid —<br>kõik lihtsas eesti keeles, ühe koha peal.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FAQ CONTENT
+  ═══════════════════════════════ -->
+  <section class="section" aria-label="Korduma kippuvad küsimused">
     <div class="container" style="max-width: 860px;">
 
-      <!-- CATEGORY NAV -->
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;">
-        <a href="#tervisekontroll" style="padding: 8px 16px; background: var(--teal); color: white; border-radius: 20px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">🩺 Tervisekontroll</a>
-        <a href="#riskianaluus" style="padding: 8px 16px; background: var(--teal); color: white; border-radius: 20px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">📊 Riskianalüüs</a>
-        <a href="#tooonnetus" style="padding: 8px 16px; background: var(--teal); color: white; border-radius: 20px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">🚨 Tööõnnetus</a>
-        <a href="#lepingud" style="padding: 8px 16px; background: var(--teal); color: white; border-radius: 20px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">📄 Lepingud</a>
-        <a href="#trahvid" style="padding: 8px 16px; background: var(--teal); color: white; border-radius: 20px; text-decoration: none; font-size: 0.82rem; font-weight: 600;">⚖️ Trahvid</a>
+      <!-- SEARCH BAR -->
+      <div class="faq-search-wrap">
+        <input type="text" id="faqSearch" placeholder="Otsi küsimust… nt. riskianalüüs, trahv, kaugtöö" autocomplete="off" aria-label="Otsi KKK-st">
+      </div>
+      <div class="faq-no-results" id="faqNoResults" role="status" aria-live="polite">
+        Otsing ei andnud tulemusi. Proovige teist otsingusõna.
+      </div>
+
+      <!-- CATEGORY ANCHOR PILLS -->
+      <nav class="faq-cat-nav" aria-label="KKK kategooriad">
+        <a href="#uldine">📋 Üldine</a>
+        <a href="#tervisekontroll">🩺 Tervisekontroll</a>
+        <a href="#riskianaluus">📊 Riskianalüüs</a>
+        <a href="#tooonnetus">🚨 Tööõnnetus</a>
+        <a href="#dokumentatsioon">📄 Dokumentatsioon</a>
+        <a href="#trahvid">⚖️ Trahvid</a>
+      </nav>
+
+      <!-- ═══════════════════════════════
+           ÜLDINE
+      ═══════════════════════════════ -->
+      <div class="faq-group" id="uldine">
+        <div class="faq-group-title">📋 Üldine</div>
+
+        <details class="faq-item">
+          <summary>Kas ma pean sõlmima lepingu töötervishoiu teenuse osutajaga, kui mul on ainult üks töötaja?</summary>
+          <div class="faq-item-body">
+            <p><strong>Jah, alati.</strong> <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a> kohustab kõiki tööandjaid sõlmima lepingu töötervishoiu teenuse osutajaga, sõltumata töötajate arvust. Isegi ühe töötajaga ettevõte peab sellise lepingu omama.</p>
+            <p>See on üks levinuim väärarusaam — paljud väikeettevõtted arvavad, et leping pole vajalik, kuid seadus on selge. Lepingu puudumine on trahvitav kuni <strong>€32 000</strong>.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Kui lepingut pole — sõlmige see esimesel võimalusel. TT24 kaudu pakub <a href="mailto:info@tt24.ee">Valvekliinik</a> lepinguid alates €10 töötaja kohta kuus.</div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Mis vahe on töökeskkonnavolinikul ja töökeskkonnanõukogul?</summary>
+          <div class="faq-item-body">
+            <p><strong>Töökeskkonnavolinik</strong> on töötajate esindaja, kelle valivad töötajad ise. Kohustuslik <strong>10+ töötajaga</strong> ettevõtetes (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 17</a>).</p>
+            <p><strong>Töökeskkonnanõukogu</strong> on ühiskomisjon, kuhu kuuluvad nii tööandja kui töötajate esindajad. Kohustuslik <strong>50+ töötajaga</strong> ettevõtetes. Nõukogu koguneb vähemalt kord kvartalis.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Kontrollige oma hetkeolukorda — kas Teie ettevõttes on nõutud esindajad valitud? Valimata jätmine on rikkumine.</div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kas treeningutoetus asendab töötervishoiu lepingut?</summary>
+          <div class="faq-item-body">
+            <p><strong>Ei, mitte kunagi.</strong> Need on täiesti erinevad asjad.</p>
+            <p>• <strong>Treeningutoetus</strong> — vabatahtlik töötajasoodustus, tulumaksuvaba kuni €100 kuus. Töötaja saab ise valida, kuhu seda kasutada.<br>
+            • <strong>Töötervishoiu leping</strong> — seaduslik kohustus (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a>), mida treeningutoetus ei asenda. Isegi kui kõik töötajad käivad spordiklubis, peab tööandjal olema töötervishoiuleping.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Veenduge, et maksate treeningutoetust JA omate töötervishoiulepingut — need ei asenda teineteist.</div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kas kaugtöötajad (kodukontori töötajad) vajavad töötervishoiu teenust?</summary>
+          <div class="faq-item-body">
+            <p>Jah. Kaugtöö ei vabasta tööandjat töötervishoiu kohustustest (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a>). Kui kodukontori töötaja kasutab arvutit 5+ tundi päevas, kehtib <strong>kuvariga töö tervisekontrolli</strong> nõue iga 3 aasta tagant.</p>
+            <p>Lisaks peab riskianalüüs katma ka kodukontori töötingimusi — istuv töö, monitori kõrgus, valgustus, istumisaeg.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Lisage riskianalüüsi peatükk kaugtöö kohta. Saatke kaugtöötajad tervisekontrolli sama regulaarselt kui kontoris töötajad.</div>
+          </div>
+        </details>
       </div>
 
       <!-- ═══════════════════════════════
            TERVISEKONTROLL
       ═══════════════════════════════ -->
-      <div class="accordion-group" id="tervisekontroll">
-        <div class="accordion-category">🩺 Tervisekontroll</div>
+      <div class="faq-group" id="tervisekontroll">
+        <div class="faq-group-title">🩺 Tervisekontroll</div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas ma pean tegema tervisekontrolli kõigile töötajatele?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku <strong>tervistkahjustavate teguritega</strong>: müra, vibratsioon, keemilised ained, bioloogilised ained, kõrge füüsiline koormus, kuvariga töö jms.</p>
+        <details class="faq-item">
+          <summary>Kas ma pean tegema tervisekontrolli kõigile töötajatele?</summary>
+          <div class="faq-item-body">
+            <p>Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku <strong>tervistkahjustavate teguritega</strong>: müra, vibratsioon, keemilised ained, bioloogilised ained, kõrge füüsiline koormus, kuvariga töö jms (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13¹</a>).</p>
             <p>Alati on kohustuslik: <strong>alla 18-aastased töötajad</strong>, <strong>rasedad</strong>, töötajad <strong>transpordi, toitlustuse ja tervishoiu</strong> valdkonnas.</p>
             <p>Puhtalt kontoris töötavatele inimestele, kes ei puutu kokku füüsiliste riskidega, on kontroll vajalik vaid kuvariga töö puhul (5+ tundi päevas) iga 3 aasta tagant.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Kasutage meie <a href="kalkulaator.html">kalkulaatorit</a>, et teada saada, milline kontroll kehtib just Teie töötajatele.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Millal peab olema esmane tervisekontroll?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Millal peab olema esmane tervisekontroll?</summary>
+          <div class="faq-item-body">
             <p>Esmane tervisekontroll peab toimuma <strong>enne tööle asumist</strong> või hiljemalt esimese kuu jooksul. Mõnedes valdkondades (ehitus, transport, tervishoid) on nõue rangemalt enne esimest tööpäeva.</p>
             <p>Alaealiste puhul: alati enne esimest tööpäeva, erandeid ei ole.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Saatke uus töötaja töötervishoiuarsti juurde enne tööle asumist. Hoidke tervisekontrolli tulemused arhiivis — Tööinspektsioon küsib neid.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kui tihti peab perioodilist tervisekontrolli tegema?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Sagedus sõltub riskitegurist:</p>
-            <p>• <strong>Kõrge riskiga valdkonnad</strong> (ehitus, keemia, kaevandus, tervishoid, toitlustus): iga <strong>1 aasta</strong> tagant<br>
+        <details class="faq-item">
+          <summary>Kui tihti peab perioodilist tervisekontrolli tegema?</summary>
+          <div class="faq-item-body">
+            <p>Sageduse määrab töötervishoiuarst riskianalüüsi põhjal. Üldised juhised sõltuvalt riskitasemest:</p>
+            <p>• <strong>Kõrge riskiga valdkonnad</strong> (keemia, kaevandus, tervishoid, toitlustus): iga <strong>1 aasta</strong> tagant<br>
             • <strong>Keskmise riskiga</strong> (tootmine, transport, teenindus): iga <strong>2 aasta</strong> tagant<br>
             • <strong>Madala riskiga</strong> (kontor, kuvariga töö): iga <strong>3 aasta</strong> tagant</p>
-            <p>Täpse ajakava määrab töötervishoiuarst riskianalüüsi põhjal.</p>
+            <p><strong>Ehitus:</strong> Seaduslik miinimum on iga <strong>3 aasta</strong> tagant (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13¹</a>), kuid kõrge riskiga ehitustöödel (müra, vibratsioon, tolm, kõrgus) määrab töötervishoiuarst sagedamini — tavaliselt iga 1–2 aasta tagant.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Küsige oma töötervishoiuteenuse osutajalt kirjalikku tervisekontrolli ajakava oma töötajatele.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas kaugtöötajad (kodukontori töötajad) vajavad tervisekontrolli?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Jah. Kaugtöö ei vabasta tööandjat töötervishoiu kohustustest. Kui kodukontori töötaja kasutab arvutit 5+ tundi päevas, kehtib <strong>kuvariga töö tervisekontrolli</strong> nõue iga 3 aasta tagant.</p>
-            <p>Lisaks peab riskianalüüs katma ka kodukontori töötingimusi — istuv töö, monitori kõrgus, valgustus, istumisaeg.</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Lisage riskianalüüsi peatükk kaugtöö kohta. Saatke kaugtöötajad tervisekontrolli sama regulaarselt kui kontoris töötajad.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kes katab tervisekontrolli kulud — tööandja või töötaja?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p><strong>Tööandja</strong> katab kõik tervisekontrolli kulud (TTOS § 13). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada — see on tööandja kohustus ja kulu.</p>
+        <details class="faq-item">
+          <summary>Kes katab tervisekontrolli kulud — tööandja või töötaja?</summary>
+          <div class="faq-item-body">
+            <p><strong>Tööandja</strong> katab kõik tervisekontrolli kulud (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a>). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada — see on tööandja kohustus ja kulu.</p>
             <p>Samuti peab tööandja tasuma töötajale tervisekontrolli ajal toimumata jäänud töötasu — kontroll toimub tööajal.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Arvestage tervisekontrolli kulud eelarvesse. Korraldage kontroll tööajal.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mida teha, kui töötaja keeldub tervisekontrollist?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Kui tervisekontroll on kohustuslik ja töötaja keeldub, <strong>ei tohi tööandja lubada töötajal tööle asuda</strong> (sellel ametikohal). See kehtib eriti kõrge riskiga ametikohtadel (ehitus, transport, tervishoid).</p>
+        <details class="faq-item">
+          <summary>Mida teha, kui töötaja keeldub tervisekontrollist?</summary>
+          <div class="faq-item-body">
+            <p>Kui tervisekontroll on kohustuslik ja töötaja keeldub, <strong>ei tohi tööandja lubada töötajal tööle asuda</strong> sellel ametikohal. See kehtib eriti kõrge riskiga ametikohtadel (ehitus, transport, tervishoid).</p>
             <p>Tööandja peaks dokumenteerima keeldumise ja hoiatama töötajat kirjalikult tagajärgedest.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Kirjutage töösisekorraeeskirja, et tervisekontrolli läbimine on tööle asumise tingimus nendes ametites, kus see on kohustuslik.</div>
           </div>
-        </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kas töötajal on õigus näha oma tervisekontrolli tulemusi?</summary>
+          <div class="faq-item-body">
+            <p>Jah. Töötajal on täielik õigus oma tervisekontrolli tulemustele ja tervisekaardile. Tööandja saab näha ainult seda, kas töötaja on <strong>töövõimeline, osaliselt töövõimeline või töövõimetu</strong> — mitte konkreetseid diagnoose.</p>
+            <p>Töötervishoiuarst jagab tulemused: töötajaga otse (diagnoosid, soovitused) ja tööandjale (töötervislik hinnang, soovitused töökorralduse muutmiseks).</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Ärge nõudke töötajalt haiguslugusid ega diagnoose. Teil on õigus teada vaid töötervisliku hinnangu tulemust.</div>
+          </div>
+        </details>
       </div>
 
       <!-- ═══════════════════════════════
            RISKIANALÜÜS
       ═══════════════════════════════ -->
-      <div class="accordion-group" id="riskianaluus">
-        <div class="accordion-category">📊 Riskianalüüs</div>
+      <div class="faq-group" id="riskianaluus">
+        <div class="faq-group-title">📊 Riskianalüüs</div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mis on riskianalüüs ja miks see kohustuslik on?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Riskianalüüs (inglise keeles risk assessment) on <strong>kohustuslik kirjalik hindamine</strong>, kus vaadatakse üle kõik töökohad ja tööülesanded ning tuvastatakse tervise- ja ohutusriskid.</p>
+        <details class="faq-item">
+          <summary>Mis on riskianalüüs ja miks see kohustuslik on?</summary>
+          <div class="faq-item-body">
+            <p>Riskianalüüs on <strong>kohustuslik kirjalik hindamine</strong>, kus vaadatakse üle kõik töökohad ja tööülesanded ning tuvastatakse tervise- ja ohutusriskid (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a>).</p>
             <p>Riskianalüüs vastab küsimustele: <em>Mis võib meie töötajate tervist kahjustada? Kui tõenäoline see on? Mida teeme kahjude ennetamiseks?</em></p>
-            <p>TTOS § 13 kohustab kõiki tööandjaid riskianalüüsi tegema, sõltumata ettevõtte suurusest. See on ka tervisekontrolli ajakava aluseks — ilma riskianalüüsita ei tea te, keda ja millal saata.</p>
+            <p>See on ka tervisekontrolli ajakava aluseks — ilma riskianalüüsita ei tea te, keda ja millal saata.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Kui riskianalüüs puudub — tehke see <em>täna</em>. Väikeettevõttes saab seda teha ka ise, kuid soovitame kasutada töötervishoiuspetsialisti abi.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kuidas riskianalüüsi teha? Kas see on keeruline?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Kuidas riskianalüüsi teha? Kas see on keeruline?</summary>
+          <div class="faq-item-body">
             <p>Riskianalüüs ei pea olema mahukas akadeemiline töö. Väikeettevõtte jaoks piisab <strong>selgest kirjalikust dokumendist</strong>, mis katab:</p>
-            <p>1. <strong>Ohutegurite tuvastamine:</strong> Käige töökohad läbi ja mõelge, mis võib töötajale halba teha (kange keemia, raske kauba tõstmine, liuklev põrand, mürarikkad masinad jms)<br>
+            <p>1. <strong>Ohutegurite tuvastamine:</strong> Käige töökohad läbi ja mõelge, mis võib töötajale halba teha<br>
             2. <strong>Riski hindamine:</strong> Kui tõsine on oht ja kui tõenäoline on õnnetus?<br>
-            3. <strong>Ennetusmeetmed:</strong> Mida teete riskide vähendamiseks? (kaitsevahendid, koolitused, töökorralduse muutused)<br>
+            3. <strong>Ennetusmeetmed:</strong> Mida teete riskide vähendamiseks?<br>
             4. <strong>Vastutajad ja tähtajad:</strong> Kes mida teeb ja millal?</p>
             <p>Tööinspektsioon pakub tasuta malli aadressil <a href="https://ti.ee" target="_blank" rel="noopener">ti.ee</a>.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Laadige Tööinspektsiooni kodulehelt alla riskianalüüsi mall ja täitke see koos oma töötervishoiuteenuse osutajaga.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kui tihti peab riskianalüüsi uuendama?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Kui tihti peab riskianalüüsi uuendama?</summary>
+          <div class="faq-item-body">
             <p>Riskianalüüs tuleb uuendada, kui:</p>
             <p>• Toimub <strong>oluline muutus</strong> töökohal (uus seade, uus kemikaal, uued tööülesanded)<br>
             • <strong>Uus töötaja</strong> asub ametikohale, kus on uued riskitegurid<br>
@@ -281,76 +522,61 @@
             • Vähemalt <strong>iga 3 aasta tagant</strong>, sõltumata muutustest</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Pange kalenderisse meeldetuletus riskianalüüsi iga-aastaseks ülevaatuseks.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas riskianalüüs tuleb tööinspektsioonile esitada?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Kas riskianalüüs tuleb tööinspektsioonile esitada?</summary>
+          <div class="faq-item-body">
             <p>Ei, riskianalüüsi ei pea automaatselt esitama. Kuid see peab olema <strong>töökohal olemas ja Tööinspektsioonile näitamiseks valmis</strong>. Järelevalve käigus on see üks esimesi dokumente, mida kontrollitakse.</p>
-            <p>Riskianalüüs tuleb säilitada vähemalt 55 aastat (kui see sisaldab andmeid töötajate kokkupuute kohta kantserogeenide või mutageenidega), muidu vähemalt seni, kuni olukord on muutunud.</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Hoidke riskianalüüsi kättesaadavas kohas. Arvestage, et Tööinspektsioon võib seda küsida mis tahes hetkel.</div>
+            <p>Riskianalüüs tuleb säilitada vähemalt 55 aastat, kui see sisaldab andmeid töötajate kokkupuute kohta kantserogeenide või mutageenidega; muidu vähemalt seni, kuni olukord on muutunud.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Hoidke riskianalüüsi kättesaadavas kohas. Tööinspektsioon võib seda küsida mis tahes hetkel.</div>
           </div>
-        </div>
+        </details>
       </div>
 
       <!-- ═══════════════════════════════
            TÖÖÕNNETUS
       ═══════════════════════════════ -->
-      <div class="accordion-group" id="tooonnetus">
-        <div class="accordion-category">🚨 Tööõnnetus</div>
+      <div class="faq-group" id="tooonnetus">
+        <div class="faq-group-title">🚨 Tööõnnetus</div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mis on tööõnnetus? Kõik vigastused ei ole tööõnnetused?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Tööõnnetus on <strong>äkki toimunud sündmus töökohal või tööülesannete täitmisel</strong>, mille tagajärjeks on töötaja tervisekahjustus või surm (TTOS § 23).</p>
+        <details class="faq-item">
+          <summary>Mis on tööõnnetus? Kõik vigastused ei ole tööõnnetused?</summary>
+          <div class="faq-item-body">
+            <p>Tööõnnetus on <strong>äkki toimunud sündmus töökohal või tööülesannete täitmisel</strong>, mille tagajärjeks on töötaja tervisekahjustus või surm (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 23</a>).</p>
             <p>Tööõnnetus on näiteks: kukkumine laos, põletus köögis, autoõnnetus töölähetusel, käe vigastus masinal.</p>
-            <p><strong>Ei ole tööõnnetus:</strong> Haigus, mis tekib aja jooksul (see võib olla kutsehaigus); väljaspool tööaega toimunud sündmused; töötaja enda süüline käitumine, mis rikub selgelt tööohutusnõudeid (kuid ka siin on piir hägune).</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Kui kahtlete, kas tegemist on tööõnnetusega — registreerige see igaks juhuks. Registreeritud ja uuritud, kuid mitte tööõnnetuseks osutunud sündmus ei too karistust.</div>
+            <p><strong>Ei ole tööõnnetus:</strong> Haigus, mis tekib aja jooksul (see võib olla kutsehaigus); väljaspool tööaega toimunud sündmused; töötaja enda süüline käitumine, mis rikub selgelt tööohutusnõudeid.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Kui kahtlete, kas tegemist on tööõnnetusega — registreerige see igaks juhuks. Registreeritud, kuid mitte tööõnnetuseks osutunud sündmus ei too karistust.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mida pean tegema kohe pärast tööõnnetust? (24 tunni reegel)
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Mida pean tegema kohe pärast tööõnnetust? (24 tunni reegel)</summary>
+          <div class="faq-item-body">
             <p><strong>Esimesed sammud tööõnnetuse korral:</strong></p>
             <p><strong>1. Kohe:</strong> Andke esmaabi. Vajadusel kutsuge kiirabi (112).<br>
             <strong>2. Säilitage sündmuskoht:</strong> Ärge muutke midagi, kuni olukord on dokumenteeritud (fotod!).<br>
-            <strong>3. 24 tunni jooksul:</strong> Teatage Tööinspektsioonile, kui tegemist on tõsise tööõnnetusega (töötaja vajab haiglaravi, sai kehavigastuse).<br>
+            <strong>3. 24 tunni jooksul:</strong> Teatage <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsioonile</a>, kui tegemist on tõsise tööõnnetusega (töötaja vajab haiglaravi, sai kehavigastuse).<br>
             <strong>4. Registreerige:</strong> Lisage kanne tööõnnetuste registrisse.<br>
             <strong>5. Uurige:</strong> Selgitage välja põhjused, et vältida kordumist.</p>
-            <p><strong>Tõsise tööõnnetuse teatamine:</strong> Tööinspektsiooni infotelefon <a href="tel:6406900">640 6900</a> või <a href="https://ti.ee" target="_blank" rel="noopener">ti.ee</a> e-teenuse kaudu.</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Salvesta Tööinspektsiooni number telefoni. Õpetage kõigile töötajatele, kuidas tööõnnetusest teatada.</div>
+            <p>Tõsise tööõnnetuse teatamine: Tööinspektsiooni infotelefon <a href="tel:6406900">640 6900</a> või <a href="https://ti.ee" target="_blank" rel="noopener">ti.ee</a> e-teenuse kaudu.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Salvestage Tööinspektsiooni telefoninumber. Õpetage kõigile töötajatele, kuidas tööõnnetusest teatada.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mis vahe on tööõnnetusel ja kutsehaigusel?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Mis vahe on tööõnnetusel ja kutsehaigusel?</summary>
+          <div class="faq-item-body">
             <p><strong>Tööõnnetus</strong> on äkki toimunud sündmus (kukkumine, põletus, lõikehaav).<br>
             <strong>Kutsehaigus</strong> on haigus, mis tekib pikaajalise kokkupuute tagajärjel tervistkahjustava teguriga (kurtus mürast, astma kemikaalidest, seljavalu tõstmisest).</p>
             <p>Kutsehaiguse kahtluse korral suunab töötervishoiuarst töötaja kutsehaiguste kliinikusse uuringule. Tööandja peab uurimisega kaasa lüüma ja andma infot töötaja kokkupuute kohta kahjulike teguritega.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Kui töötaja kaebab püsivat tervisehäiret, mis võib olla töökeskkonnaga seotud — suunake ta töötervishoiuarsti juurde.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas töötajal on õigus saada hüvitist tööõnnetuse korral?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Kas töötajal on õigus saada hüvitist tööõnnetuse korral?</summary>
+          <div class="faq-item-body">
             <p>Jah. Tööõnnetuse korral on töötajal õigus saada:</p>
             <p>• <strong>Ajutise töövõimetuse hüvitis</strong> (haigushüvitis) — Haigekassalt alates 4. päevast, tööandja katab 1.–3. päeva<br>
             • <strong>Kahju hüvitamine</strong> tööandjalt — kui õnnetus toimus tööandja hooletuse tõttu<br>
@@ -358,33 +584,18 @@
             <p>Tööandjal on mõistlik sõlmida tööõnnetuste kindlustusleping — see kaitseb nii töötajaid kui tööandjat.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Uurige tööõnnetuste kindlustuse võimalusi oma kindlustusseltsi kaudu.</div>
           </div>
-        </div>
+        </details>
       </div>
 
       <!-- ═══════════════════════════════
-           LEPINGUD
+           DOKUMENTATSIOON
       ═══════════════════════════════ -->
-      <div class="accordion-group" id="lepingud">
-        <div class="accordion-category">📄 Lepingud ja dokumendid</div>
+      <div class="faq-group" id="dokumentatsioon">
+        <div class="faq-group-title">📄 Dokumentatsioon ja lepingud</div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas ma pean sõlmima lepingu töötervishoiu teenuse osutajaga, kui mul on ainult üks töötaja?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p><strong>Jah, alati.</strong> TTOS § 13 kohustab kõiki tööandjaid sõlmima lepingu töötervishoiu teenuse osutajaga, sõltumata töötajate arvust. Isegi ühe töötajaga ettevõte peab sellise lepingu omama.</p>
-            <p>See on üks levinuim väärarusaam — paljud väikeettevõtted arvavad, et leping pole vajalik, kuid seadus on selge.</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Kui lepingut pole — sõlmige see esimesel võimalusel. <a href="mailto:info@tt24.ee">TT24</a> pakub lepinguid alates €10 töötaja kohta kuus.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mis peab töötervishoiu teenuse lepingus olema kirjas?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Mis peab töötervishoiu teenuse lepingus olema kirjas?</summary>
+          <div class="faq-item-body">
             <p>Hea töötervishoiu teenuseleping peaks sisaldama:</p>
             <p>• <strong>Tervisekontrolli korraldamine</strong> — kes, millal, mis sagedusega<br>
             • <strong>Riskianalüüs</strong> — abi analüüsi tegemisel või koostamine täies mahus<br>
@@ -394,29 +605,13 @@
             • <strong>Hind ja arvelduskord</strong></p>
             <div class="mida-teha"><strong>Mida teha:</strong> Enne lepingu sõlmimist küsige, kas leping hõlmab kõiki ülalnimetatud punkte. Odavaim leping ei pruugi tagada kõiki kohustusi.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas treeningutoetus asendab töötervishoiu lepingut?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p><strong>Ei, mitte kunagi.</strong> Need on täiesti erinevad asjad.</p>
-            <p>• <strong>Treeningutoetus</strong> — vabatahtlik töötajasoodustus, tulumaksuvaba kuni €100 kuus. Töötaja saab ise valida, kuhu seda kasutada.<br>
-            • <strong>Töötervishoiu leping</strong> — seaduslik kohustus, mida treeningutoetus ei asenda. Isegi kui kõik töötajad käivad spordiklubis, peab tööandjal olema töötervishoiuleping.</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Veenduge, et maksate treeningutoetust JA omate töötervishoiulepingut — need ei asenda teineteist.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Millised dokumendid peab tööandja säilitama ja kui kaua?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Kohustuslikud dokumendid ja säilitustähtajad:</p>
-            <p>• <strong>Riskianalüüs:</strong> Säilitada kuni olukord muutub + 5 aastat (kantserogeenidega kokkupuutel 55 aastat)<br>
+        <details class="faq-item">
+          <summary>Millised dokumendid peab tööandja säilitama ja kui kaua?</summary>
+          <div class="faq-item-body">
+            <p>Kohustuslikud dokumendid ja säilitustähtajad (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS</a> ning arhiiviseaduse alusel):</p>
+            <p>• <strong>Riskianalüüs:</strong> Kuni olukord muutub + 5 aastat (kantserogeenidega kokkupuutel 55 aastat)<br>
             • <strong>Tervisekontrolli andmed:</strong> 30 aastat pärast töösuhte lõppu (bioloogiliste riskide puhul 40 aastat)<br>
             • <strong>Tööõnnetuste register:</strong> 55 aastat<br>
             • <strong>Töötajate teavitamise aktid:</strong> Vähemalt 5 aastat<br>
@@ -424,48 +619,30 @@
             <p>Pange tähele: tervisekontrolli andmed on isikuandmed ja nende kaitseks kehtib GDPR.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Looge dokumentatsiooni säilitamise süsteem. Soovitame kasutada töötervishoiuteenuse osutajat, kes haldab dokumentatsiooni Teie eest.</div>
           </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas töötajal on õigus näha oma tervisekontrolli tulemusi?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Jah. Töötajal on täielik õigus oma tervisekontrolli tulemustele ja tervisekaardile. Tööandja saab näha ainult seda, kas töötaja on <strong>töövõimeline, osaliselt töövõimeline või töövõimetu</strong> — mitte konkreetseid diagnoose.</p>
-            <p>Töötervishoiuarst jagab tulemused: töötajaga otse (diagnoosid, soovitused) ja tööandjale (töötervislik hinnang, soovitused töökorralduse muutmiseks).</p>
-            <div class="mida-teha"><strong>Mida teha:</strong> Ärge nõudke töötajalt haiguslugusid ega diagnoose. Teil on õigus teada vaid töötervisliku hinnangu tulemust.</div>
-          </div>
-        </div>
+        </details>
       </div>
 
       <!-- ═══════════════════════════════
            TRAHVID
       ═══════════════════════════════ -->
-      <div class="accordion-group" id="trahvid">
-        <div class="accordion-category">⚖️ Trahvid ja järelevalve</div>
+      <div class="faq-group" id="trahvid">
+        <div class="faq-group-title">⚖️ Trahvid ja järelevalve</div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kui suured on trahvid töötervishoiu rikkumiste eest?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
-            <p>Töötervishoiu nõuete rikkumise eest on karistuseks väärteomenetlus:</p>
+        <details class="faq-item">
+          <summary>Kui suured on trahvid töötervishoiu rikkumiste eest?</summary>
+          <div class="faq-item-body">
+            <p>Töötervishoiu nõuete rikkumise eest on karistuseks väärteomenetlus (<a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 28</a>):</p>
             <p>• <strong>Juriidilisele isikule (OÜ, AS):</strong> kuni <strong>€32 000</strong><br>
             • <strong>Füüsilisele isikule (FIE, töötaja):</strong> kuni <strong>€3 200</strong></p>
             <p>Praktikas ei trahvita sageli kohe maksimummääraga. Tavaliselt algab see ettekirjutusega, seejärel tähtaeg rikkumise kõrvaldamiseks. Korduval rikkumisel — trahv.</p>
             <p>Kuid 2026. aasta Tööinspektsiooni suurkampaania kontekstis on nad teatanud rangemast lähenemisest — eriti ettevõtetele, kus on mitu samaaegset rikkumist.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Ärge oodake ettekirjutust. Kasutage meie <a href="kontrollnimekiri.html">kontrollnimekirja</a> ennetusmeetmena.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mida Tööinspektsioon järelevalve käigus kontrollib?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Mida Tööinspektsioon järelevalve käigus kontrollib?</summary>
+          <div class="faq-item-body">
             <p>Tööinspektsioon kontrollib tavaliselt järgmist:</p>
             <p>1. <strong>Töötervishoiu teenuseleping</strong> — kehtiv leping olemas?<br>
             2. <strong>Riskianalüüs</strong> — olemas, ajakohane, dokumenteeritud?<br>
@@ -477,26 +654,20 @@
             8. <strong>Esmaabivahendid</strong> — komplekteeritud ja kättesaadavad?</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Tehke enda ettevõttes siseaudit nende 8 punkti osas enne, kui Tööinspektsioon seda teeb.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas Tööinspektsioon tuleb ette teatamata?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Kas Tööinspektsioon tuleb ette teatamata?</summary>
+          <div class="faq-item-body">
             <p>Tavaliselt <strong>jah, ette teatamata</strong> (v.a plaanilised järelevalvekampaaniad). Erand on planeeritud järelevalve, kus teavitatakse ette — see on soodsam olukord.</p>
             <p>Tööinspektsiooni inspektoril on õigus siseneda mis tahes töökohtadele tööajal ilma eelneva teatamiseta, kontrollida dokumente ja küsitleda töötajaid.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Olge alati valmis. Hoidke kõik dokumendid korraldatult ja kättesaadavalt. Ärge oodake järelevalvet, et asjad korda seada.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kas rikkumise korral on võimalik karistust vähendada?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Kas rikkumise korral on võimalik karistust vähendada?</summary>
+          <div class="faq-item-body">
             <p>Jah, teatud tingimustel:</p>
             <p>• <strong>Vabatahtlik kõrvaldamine:</strong> Kui rikkumise kõrvaldate enne otsuse tegemist, arvestatakse seda kergendava asjaoluna<br>
             • <strong>Koostöö inspektoriga:</strong> Avatus ja koostöövalmidus mõjub positiivselt<br>
@@ -505,70 +676,135 @@
             <p>Trahviotsuse võib vaidlustada kohtus, kuid see on kulukas ja aeganõudev protsess.</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Parim viis trahvi vältida on rikkumisi mitte teha. Kasutage meie tööriistu ennetusmeetmena.</div>
           </div>
-        </div>
+        </details>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false">
-            Mis vahe on ettekirjutuse ja trahvi vahel?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-panel">
+        <details class="faq-item">
+          <summary>Mis vahe on ettekirjutuse ja trahvi vahel?</summary>
+          <div class="faq-item-body">
             <p><strong>Ettekirjutus</strong> on Tööinspektsiooni korraldus rikkumise kõrvaldamiseks. Antakse koos tähtajaga. Ettekirjutuse täitmine on kohustuslik — täitmata jätmine toob trahvi.</p>
-            <p><strong>Trahv</strong> on rahaline karistus, mida rakendatakse siis, kui ettekirjutust ei täideta, rikkumine on korduvad, või rikkumine on eriti tõsine (oht töötajate elule).</p>
+            <p><strong>Trahv</strong> on rahaline karistus, mida rakendatakse siis, kui ettekirjutust ei täideta, rikkumine on korduv, või rikkumine on eriti tõsine (oht töötajate elule).</p>
             <div class="mida-teha"><strong>Mida teha:</strong> Kui saate ettekirjutuse — võtke seda tõsiselt. Kõrvaldage rikkumine tähtajaks ja teatage Tööinspektsioonile kõrvaldamisest.</div>
           </div>
-        </div>
+        </details>
       </div>
 
-      <div class="disclaimer">
-        <strong>Märkus:</strong> Need vastused on üldise informatsioonilise iseloomuga. Konkreetse juhtumi korral pöörduge Tööinspektsiooni (<a href="https://ti.ee" target="_blank" rel="noopener">ti.ee</a>) või juriidilise nõustaja poole. Seadused võivad muutuda — kontrollige alati ajakohast redaktsiooni aadressilt <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">riigiteataja.ee</a>.
+      <div class="faq-disclaimer">
+        <strong>Märkus:</strong> Need vastused on üldise informatsioonilise iseloomuga. Konkreetse juhtumi korral pöörduge <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsiooni</a> või juriidilise nõustaja poole. Seadused võivad muutuda — kontrollige alati ajakohast redaktsiooni aadressilt <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">riigiteataja.ee (TTOS)</a>.
       </div>
+
     </div>
   </section>
+
+  <!-- ═══════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════ -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <p>Vajate professionaalset abi töötervishoiu korraldamisega? Valvekliinik pakub täisteenust — <span class="price">alates €10 töötaja kohta kuus.</span></p>
+      <p style="font-size: .82rem; color: rgba(242,245,245,.5); margin-top: 8px;">Vastame 2 tööpäeva jooksul. Ei kohusta millekski.</p>
+      <a href="mailto:info@tt24.ee" class="btn-gold">Küsige pakkumist</a>
+    </div>
+  </div>
+
 </main>
 
-<section class="cta-banner">
-  <div class="cta-banner-inner">
-    <p>Vajate abi töötervishoiu korraldamisega? Meie partnerid aitavad Teid — <span class="price">alates €10 töötaja kohta kuus.</span></p>
-    <a href="mailto:info@tt24.ee" class="btn-gold">Küsige pakkumist</a>
-  </div>
-</section>
-
-<footer>
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-links">
-      <a href="index.html">Avaleht</a>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html">Kalkulaator</a>
-      <a href="korduma.html">KKK</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsioon</a>
+
+    <div class="footer-grid">
+
+      <!-- Col 1: Logo + description -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
+        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid ja KKK — kõik, mida vajate TTOS-i täitmiseks.</p>
+      </div>
+
+      <!-- Col 2: Tools links -->
+      <div class="footer-col footer-col-links">
+        <h3 class="footer-col-title">Tööriistad</h3>
+        <nav aria-label="Tööriistad">
+          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
+          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
+          <a href="enesekontroll.html" class="footer-link">Enesehinnang</a>
+          <a href="korduma.html" class="footer-link">KKK</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer-col footer-col-contact">
+        <h3 class="footer-col-title">Kontakt</h3>
+        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
+        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+      </div>
+
     </div>
-    <p>© 2026 TT24 — Töötervishoiu teejuht Eestis | <a href="mailto:info@tt24.ee">info@tt24.ee</a></p>
-    <p style="margin-top: 6px;">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+
+    <div class="footer-bottom">
+      <span class="footer-partner">Koostöös <strong>Valvekliinikuga</strong></span>
+      <span class="footer-copy">© 2026 TT24 — Töötervishoiu teejuht Eestis</span>
+    </div>
+
   </div>
 </footer>
 
 <script>
-document.getElementById('navToggle').addEventListener('click', function() {
-  document.getElementById('mainNav').classList.toggle('open');
-});
-
-// Accordion
-document.querySelectorAll('.accordion-trigger').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const expanded = this.getAttribute('aria-expanded') === 'true';
-    // Close all in same group
-    this.closest('.accordion-group').querySelectorAll('.accordion-trigger').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      b.nextElementSibling.classList.remove('open');
+  // ─── Mobile nav toggle ───────────────────────────────────
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function() {
+      var isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-    if (!expanded) {
-      this.setAttribute('aria-expanded', 'true');
-      this.nextElementSibling.classList.add('open');
-    }
-  });
-});
+  }
+
+  // ─── FAQ search / filter ─────────────────────────────────
+  var faqSearch  = document.getElementById('faqSearch');
+  var noResults  = document.getElementById('faqNoResults');
+
+  if (faqSearch) {
+    faqSearch.addEventListener('input', function () {
+      var query = this.value.toLowerCase().trim();
+      var items  = document.querySelectorAll('details.faq-item');
+      var groups = document.querySelectorAll('.faq-group');
+      var total  = 0;
+
+      if (!query) {
+        items.forEach(function (el) {
+          el.style.display = '';
+          el.removeAttribute('open');
+        });
+        groups.forEach(function (g) { g.style.display = ''; });
+        noResults.style.display = 'none';
+        return;
+      }
+
+      items.forEach(function (item) {
+        var match = item.textContent.toLowerCase().includes(query);
+        item.style.display = match ? '' : 'none';
+        if (match) {
+          total++;
+          item.setAttribute('open', '');   // auto-expand matches
+        } else {
+          item.removeAttribute('open');
+        }
+      });
+
+      // Hide groups with no visible items
+      groups.forEach(function (g) {
+        var anyVisible = Array.prototype.some.call(
+          g.querySelectorAll('details.faq-item'),
+          function (i) { return i.style.display !== 'none'; }
+        );
+        g.style.display = anyVisible ? '' : 'none';
+      });
+
+      noResults.style.display = total === 0 ? 'block' : 'none';
+    });
+  }
 </script>
 </body>
 </html>

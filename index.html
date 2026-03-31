@@ -17,13 +17,13 @@
   <!-- End Google Tag Manager -->
 
   <!-- Canonical + hreflang -->
-  <link rel="canonical" href="https://tt24.ee/index.html" />
-  <link rel="alternate" hreflang="et" href="https://tt24.ee/index.html" />
-  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/index.html" />
+  <link rel="canonical" href="https://tt24.ee/" />
+  <link rel="alternate" hreflang="et" href="https://tt24.ee/" />
+  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tt24.ee/index.html" />
+  <meta property="og:url" content="https://tt24.ee/" />
   <meta property="og:title" content="TT24 — Töötervishoiu teejuht Eestis" />
   <meta property="og:description" content="Tasuta, praktiline töötervishoiu juhis eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid, KKK — kõik, mida peate seaduse täitmiseks teadma, ühes kohas." />
   <meta property="og:image" content="https://tt24.ee/og-image.png" />
@@ -41,7 +41,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "TT24",
-    "url": "https://tt24.ee/index.html",
+    "url": "https://tt24.ee/",
     "description": "Tasuta töötervishoiu abivahendid Eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid ja KKK Eesti töötervishoiu seaduse täitmiseks.",
     "parentOrganization": {
       "@type": "MedicalOrganization",
@@ -63,7 +63,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "TT24",
-    "url": "https://tt24.ee/index.html",
+    "url": "https://tt24.ee/",
     "description": "Tasuta töötervishoiu abivahendid Eesti tööandjatele.",
     "potentialAction": {
       "@type": "SearchAction",
@@ -72,7 +72,6 @@
     }
   }
   </script>
-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -80,306 +79,203 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-main">TT24</span>
-      <span class="logo-sub">Töötervishoiu teejuht Eestis</span>
+<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
+
+<!-- ═══════════════════════════════
+     NAVIGATION
+═══════════════════════════════ -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
+      <span class="nav-logo-text">TT24</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine">☰</button>
-    <nav id="mainNav">
-      <a href="index.html" class="active">Avaleht</a>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html">Kalkulaator</a>
-      <a href="korduma.html">KKK</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="mailto:info@tt24.ee" class="nav-cta">Küsi pakkumist</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
+      <a href="kontrollnimekiri.html" class="nav-link">Kontrollnimekiri</a>
+      <a href="kalkulaator.html" class="nav-link">Kalkulaator</a>
+      <a href="enesekontroll.html" class="nav-link">Enesehinnang</a>
+      <a href="korduma.html" class="nav-link">KKK</a>
     </nav>
+
+    <a href="enesekontroll.html" class="nav-cta-btn">Kontrollige valmisolekut</a>
   </div>
 </header>
 
-<main>
-  <!-- HERO -->
-  <section class="hero">
+<main id="main-content">
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="hero-inner">
-      <span class="hero-badge">Tasuta ressurss tööandjatele</span>
-      <h1>Tööandja töötervishoiu teejuht —<br><em>kõik, mida peate teadma, ühes kohas</em></h1>
-      <p>Eesti tööandja kohustused töötervishoius on mitmekülgsed ja sageli segased. See portaal seletab kõik selgelt lahti — ilma juriidilise kõnepruugita.</p>
-      <a href="kontrollnimekiri.html" class="hero-cta">Alustage kontrollnimekirjast →</a>
+      <p class="hero-badge">Tasuta · Ei nõua registreerimist · Eesti tööandjatele</p>
+      <h1 id="hero-heading">Kas Teie ettevõte on valmis<br><em>Tööinspektsiooni kontrolliks?</em></h1>
+      <p class="hero-sub">Tasuta tööriistad töötervishoiu nõuete täitmiseks.<br>Ilma juristita, ilma segaduseta.</p>
+      <div class="hero-ctas">
+        <a href="enesekontroll.html" class="btn btn-primary hero-cta-primary">Alustage enesehinnangut →</a>
+        <a href="kontrollnimekiri.html" class="btn btn-outline hero-cta-secondary">Vaadake kontrollnimekirja</a>
+      </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section style="background:#fff; padding: 36px 24px;">
+  <!-- ═══════════════════════════════
+       THREE TOOL CARDS
+  ═══════════════════════════════ -->
+  <section class="tools-section section" aria-labelledby="tools-heading">
     <div class="container">
-      <div class="stats-row">
-        <div class="stat-box">
-          <span class="stat-num">1 700</span>
-          <span class="stat-label">Eesti ettevõtet on 2026. aasta Tööinspektsiooni järelevalvenimekirjas <small>[KINNITAMATA]</small></span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">60%</span>
-          <span class="stat-label">Väikeettevõtetest ei ole kohustuslikku riskianalüüsi teinud <small>[KINNITAMATA]</small></span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">€32 000</span>
-          <span class="stat-label">Maksimumtrahv töötervishoiu rikkumiste eest</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">€10</span>
-          <span class="stat-label">Töötaja kohta kuus — täisteenuse hind</span>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2 id="tools-heading" class="section-title">Tööriistad tööandjale</h2>
+      <p class="section-sub">Kõik tööriistad on tasuta ja ei nõua registreerimist.</p>
 
-  <!-- ALERT -->
-  <section style="padding: 28px 24px 0;">
-    <div class="container">
-      <div class="alert alert-warning">
-        <strong>⚠️ Kas Teie ettevõte on 2026. aasta järelevalvenimekirjas?</strong> Tööinspektsioon teostab 2026. aastal suurt järelevalvekampaaniat väike- ja keskmise suurusega ettevõtete seas. Kasutage meie <a href="kontrollnimekiri.html">kontrollnimekirja</a>, et veenduda valmisolekus.
-      </div>
-    </div>
-  </section>
+      <div class="tool-cards">
 
-  <!-- DEADLINE BANNER -->
-  <section class="deadline-banner" aria-label="Tööinspektsiooni 2026 kontrollid">
-    <div class="deadline-banner-inner">
-      <div class="deadline-icon" aria-hidden="true">🚨</div>
-      <div class="deadline-content">
-        <h2>Tööinspektsioon 2026 kontrollid — kas Teie ettevõte on nimekirjas?</h2>
-        <p>Tööinspektsioon viib 2026. aastal läbi suure järelevalvekampaania väike- ja keskmise suurusega ettevõtete seas. Iga teine kontrollitud ettevõte saab ettekirjutuse. Olge valmis:</p>
-        <ul class="deadline-list">
-          <li>⚠️ <strong>Riskianalüüs</strong> — peab olema kirjalik ja ajakohane</li>
-          <li>⚠️ <strong>Töötervishoiuteenuse leping</strong> — kohustuslik kõigile tööandjatele</li>
-          <li>⚠️ <strong>Töötajate teavitamine</strong> — allkirjastatud aktid peavad olemas olema</li>
-          <li>⚠️ <strong>Tervisekontrollid</strong> — vajadusel 3 aasta jooksul tehtud</li>
-        </ul>
-      </div>
-      <div class="deadline-actions">
-        <a href="enesekontroll.html" class="btn btn-gold">Kontrollige valmisolekut →</a>
-        <a href="kontrollnimekiri.html" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.4);">Ava kontrollnimekiri</a>
-        <span class="deadline-urgency">Tasuta, 2 minutit, ei nõua registreerimist</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOOLS -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Tööriistad tööandjale</h2>
-      <p class="section-sub">Valige, millest alustada. Kõik tööriistad on tasuta ja ei nõua registreerimist.</p>
-
-      <div class="cards cards-2">
-        <a href="kontrollnimekiri.html" class="card">
-          <span class="card-icon">✅</span>
-          <h3>Kontrollnimekiri</h3>
-          <p>Kõik kohustused ühes kohas, ettevõtte suuruse järgi jaotatud. Märkige ristiga, mis on tehtud — progress salvestub automaatselt.</p>
-          <span class="card-cta">Ava kontrollnimekiri</span>
+        <a href="kontrollnimekiri.html" class="tool-card" aria-label="Kontrollnimekiri — Interaktiivne nimekiri kõigist nõuetest">
+          <span class="tool-card-icon" aria-hidden="true">✓</span>
+          <h3 class="tool-card-title">Kontrollnimekiri</h3>
+          <p class="tool-card-desc">Interaktiivne nimekiri kõigist nõuetest</p>
+          <span class="tool-card-link">Avage nimekiri →</span>
         </a>
 
-        <a href="kalkulaator.html" class="card">
-          <span class="card-icon">🧮</span>
-          <h3>Tervisekontrolli kalkulaator</h3>
-          <p>Kolm küsimust — täpne vastus. Mis tervisekontrolli Teie töötajad vajavad ja millal see tuleb teha?</p>
-          <span class="card-cta">Kasuta kalkulaatorit</span>
+        <a href="kalkulaator.html" class="tool-card" aria-label="Kulukalkulaator — Arvutage töötervishoiu teenuse maksumus">
+          <span class="tool-card-icon" aria-hidden="true">€</span>
+          <h3 class="tool-card-title">Kulukalkulaator</h3>
+          <p class="tool-card-desc">Arvutage töötervishoiu teenuse maksumus</p>
+          <span class="tool-card-link">Arvutage kulud →</span>
         </a>
 
-        <a href="korduma.html" class="card">
-          <span class="card-icon">❓</span>
-          <h3>Korduma kippuvad küsimused</h3>
-          <p>Üle 20 kõige sagedamini küsitud küsimuse selgete vastustega. Tervisekontroll, riskianalüüs, tööõnnetus, lepingud, trahvid.</p>
-          <span class="card-cta">Vaata küsimusi</span>
+        <a href="enesekontroll.html" class="tool-card" aria-label="Enesehinnang — 10 küsimust Teie valmisoleku hindamiseks">
+          <span class="tool-card-icon" aria-hidden="true">📊</span>
+          <h3 class="tool-card-title">Enesehinnang</h3>
+          <p class="tool-card-desc">10 küsimust Teie valmisoleku hindamiseks</p>
+          <span class="tool-card-link">Alustage testi →</span>
         </a>
 
-        <a href="enesekontroll.html" class="card">
-          <span class="card-icon">🚦</span>
-          <h3>Enesekontrolli test</h3>
-          <p>10 küsimust — teate 2 minutiga, kas Teie ettevõte on vastavuses. Tulemus koos konkreetsete soovitustega.</p>
-          <span class="card-cta">Alusta testi</span>
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- WHO IS THIS FOR -->
-  <section style="background: #fff; padding: 56px 24px;">
+  <!-- ═══════════════════════════════
+       URGENCY SECTION
+  ═══════════════════════════════ -->
+  <section class="urgency-section" aria-labelledby="urgency-heading">
     <div class="container">
-      <h2 class="section-title">Kellele see portaal on mõeldud?</h2>
-      <p class="section-sub">Töötervishoiu seadus kehtib kõigile tööandjatele — isegi ühe töötajaga ettevõttele.</p>
-
-      <div class="cards cards-3">
-        <div class="card">
-          <span class="card-icon">🏢</span>
-          <h3>Väikeettevõtja (1–9 töötajat)</h3>
-          <p>Teil ei ole eraldi personaliosakonda, kuid kohustused on samad. See portaal aitab Teil kiirelt aru saada, mida peate tegema — ilma mahukat seadust lugema.</p>
+      <div class="urgency-inner">
+        <div class="urgency-content">
+          <h2 id="urgency-heading" class="urgency-title">2026. aasta kontrollid on alanud</h2>
+          <p class="urgency-text">
+            Tööinspektsioon teostab 2026. aastal järelevalvekampaaniat väike- ja keskmise suurusega ettevõtete seas.
+            Kõige sagedamini tuvastatud rikkumised: riskianalüüs puudub, töötervishoiuteenuse leping sõlmimata, töötajad teavitamata.
+            Trahvid ulatuvad kuni <strong>€32 000</strong> juriidilisele isikule (TTOS § 13).
+          </p>
         </div>
-
-        <div class="card">
-          <span class="card-icon">👔</span>
-          <h3>Ettevõtte juht või personalijuht (10–49 töötajat)</h3>
-          <p>Kohustused on mahukas. Dokumentatsioon, tervisekontrollid, mõõtmised, volinikud. Kontrollnimekiri ja kalkulaator hoiavad Teil pildi peal.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-icon">🏭</span>
-          <h3>Suurem ettevõte (50+ töötajat)</h3>
-          <p>Töötervishoiunõukogu, tegevuskavad, regulaarsed mõõtmised. Kasutage kontrollnimekirja auditeerimiseks ja puudujääkide leidmiseks.</p>
-        </div>
+        <a href="enesekontroll.html" class="btn btn-primary urgency-cta">Kontrollige valmisolekut →</a>
       </div>
     </div>
   </section>
 
-  <!-- TRUST SIGNALS -->
-  <section class="trust-section" aria-label="Miks usaldada TT24">
-    <div class="trust-inner">
-      <div class="trust-header">
-        <h2>Miks usaldada TT24?</h2>
-        <p>Tõenduspõhine töötervishoiu teave, koostöös Eesti juhtiva töötervishoiu spetsialistidega.</p>
-      </div>
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <span class="trust-badge-icon">🏥</span>
-          <div class="trust-badge-text">
-            <strong>Koostöös Valvekliinikuga</strong>
-            <span>Valvekliinik on Eesti üks suurimaid tervishoiuteenuse osutajaid, 150+ töötajaga.</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-badge-icon">📅</span>
-          <div class="trust-badge-text">
-            <strong>30+ aastat kogemust</strong>
-            <span>Meie partnerid on töötervishoiu valdkonnas tegutsenud üle 30 aasta.</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-badge-icon">🏢</span>
-          <div class="trust-badge-text">
-            <strong>500+ ettevõtet teenindatud</strong>
-            <span>Oleme aidanud sadu Eesti ettevõtteid töötervishoiu kohustusi täita.</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-badge-icon">⚖️</span>
-          <div class="trust-badge-text">
-            <strong>Ajakohane seadusteave</strong>
-            <span>Kõik info põhineb kehtival TTOS-il ja Tööinspektsiooni juhenddokumentidel.</span>
-          </div>
-        </div>
-      </div>
-      <div class="trust-partner">
-        <div class="trust-partner-logo">🤝 Koostöös Valvekliinikuga</div>
-        <p>TT24 portaal on loodud <strong>Valvekliinik</strong> koostöös — Eesti ühe suurima ja pikima tegutsemisajalooga töötervishoiu teenusepakkujaga. Kui otsite professionaalset abi, oleme siin.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT IS TTH -->
-  <section class="section">
+  <!-- ═══════════════════════════════
+       FAQ PREVIEW
+  ═══════════════════════════════ -->
+  <section class="faq-preview section" aria-labelledby="faq-heading">
     <div class="container">
-      <div style="max-width: 720px;">
-        <h2 class="section-title">Mis on töötervishoiu kohustus?</h2>
-        <p style="margin-bottom: 16px; color: var(--text-muted); line-height: 1.7;">
-          <strong style="color: var(--text);">Töötervishoiu ja tööohutuse seadus (TTOS)</strong> kohustab kõiki Eesti tööandjaid tagama töötajatele ohutu ja tervisliku töökeskkonna. See ei ole vabatahtlik — rikkumiste eest ootavad trahvid kuni <strong>€32 000</strong>.
-        </p>
-        <p style="margin-bottom: 16px; color: var(--text-muted); line-height: 1.7;">
-          Kohustused hõlmavad muuhulgas: riskianalüüsi tegemist, töötervishoiu teenuse osutajaga lepingu sõlmimist, tervisekontrolli korraldamist, töötajate teavitamist ning tööõnnetuste registreerimist.
-        </p>
-        <p style="color: var(--text-muted); line-height: 1.7;">
-          <strong style="color: var(--text);">Hea uudis:</strong> kõiki neid kohustusi on võimalik täita — kui teate, mida täpselt teha. Selleks see portaal ongi.
-        </p>
+      <h2 id="faq-heading" class="section-title">Korduma kippuvad küsimused</h2>
+      <p class="section-sub">Kiired vastused kõige sagedamini küsitud töötervishoiu küsimustele.</p>
 
-        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="kontrollnimekiri.html" class="btn btn-primary">Vaata kontrollnimekirja</a>
-          <a href="korduma.html" class="btn btn-outline">Loe KKK-d</a>
-        </div>
+      <div class="faq-preview-list">
+
+        <details class="faq-preview-item">
+          <summary class="faq-preview-q">Kas ma pean tegema tervisekontrolli kõigile töötajatele?</summary>
+          <div class="faq-preview-a">
+            <p>Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku tervistkahjustavate teguritega: müra, vibratsioon, keemilised ained, kõrge füüsiline koormus, kuvariga töö jms. Alla 18-aastased töötajad, rasedad ning toitlustuse ja tervishoiu valdkonna töötajad on alati kohustuslikud.</p>
+          </div>
+        </details>
+
+        <details class="faq-preview-item">
+          <summary class="faq-preview-q">Millal peab olema esmane tervisekontroll?</summary>
+          <div class="faq-preview-a">
+            <p>Esmane tervisekontroll peab toimuma enne tööle asumist või hiljemalt esimese kuu jooksul. Ehituse, transpordi ja tervishoiu valdkonnas on nõue rangemalt enne esimest tööpäeva. Alaealiste puhul: alati enne esimest tööpäeva, erandeid ei ole.</p>
+          </div>
+        </details>
+
+        <details class="faq-preview-item">
+          <summary class="faq-preview-q">Kes katab tervisekontrolli kulud — tööandja või töötaja?</summary>
+          <div class="faq-preview-a">
+            <p>Tööandja katab kõik tervisekontrolli kulud (TTOS § 13). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada — see on tööandja kohustus ja kulu. Kontroll peab toimuma tööajal.</p>
+          </div>
+        </details>
+
       </div>
 
-      <div class="disclaimer">
-        <strong>Märkus:</strong> See portaal annab üldist teavet Eesti töötervishoiu kohustuste kohta. See ei asenda juriidilist nõustamist ega töötervishoiu teenust. Täpse õigusliku hinnangu saamiseks pöörduge vastava spetsialisti poole.
+      <div class="faq-preview-more">
+        <a href="korduma.html" class="btn btn-outline">Vaata kõiki küsimusi →</a>
       </div>
     </div>
   </section>
+
 </main>
 
-<!-- EMAIL SIGNUP -->
-<section class="email-signup" aria-label="Teavitused töötervishoiu muudatuste kohta">
-  <div class="email-signup-inner">
-    <h2>📧 Saage teavitusi töötervishoiu muudatuste kohta</h2>
-    <p>Tööinspektsiooni uued juhendid, seadusemuudatused, kontrollnimekirja uuendused — kõik Teie postkasti. Mitte rämpspost, ainult oluline.</p>
-    <form
-      action="https://formsubmit.co/info@tt24.ee"
-      method="POST"
-      class="email-form"
-      onsubmit="return handleEmailSubmit(event)"
-      id="emailSignupForm"
-    >
-      <input type="hidden" name="_subject" value="TT24 uudiskiri — uus tellija">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="box">
-      <input
-        type="email"
-        name="email"
-        placeholder="Teie e-posti aadress"
-        required
-        autocomplete="email"
-        aria-label="E-posti aadress"
-      >
-      <button type="submit">Telli teavitused</button>
-    </form>
-    <p class="email-privacy">Teie andmeid ei jagata kolmandate osapooltega. Loobuge igal ajal ühe klõpsuga.</p>
-    <div id="emailSuccessMsg" style="display:none; color:#C5A55A; font-weight:700; margin-top:12px;">✅ Aitäh! Olete edukalt tellinud töötervishoiu uudised.</div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-banner-inner">
-    <p>Vajate abi töötervishoiu korraldamisega? Meie partnerid aitavad Teid — <span class="price">alates €10 töötaja kohta kuus.</span></p>
-    <a href="mailto:info@tt24.ee" class="btn-gold">Küsige pakkumist</a>
-  </div>
-</section>
-
-<footer>
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-links">
-      <a href="index.html">Avaleht</a>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html">Kalkulaator</a>
-      <a href="korduma.html">KKK</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsioon</a>
-      <a href="https://tooelu.ee" target="_blank" rel="noopener">Tööelu.ee</a>
+
+    <div class="footer-grid">
+
+      <!-- Col 1: Logo + description -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
+        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid ja KKK — kõik, mida vajate TTOS-i täitmiseks.</p>
+      </div>
+
+      <!-- Col 2: Tools links -->
+      <div class="footer-col footer-col-links">
+        <h3 class="footer-col-title">Tööriistad</h3>
+        <nav aria-label="Tööriistad">
+          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
+          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
+          <a href="enesekontroll.html" class="footer-link">Enesehinnang</a>
+          <a href="korduma.html" class="footer-link">KKK</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer-col footer-col-contact">
+        <h3 class="footer-col-title">Kontakt</h3>
+        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
+        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+      </div>
+
     </div>
-    <p>© 2026 TT24 — Töötervishoiu teejuht Eestis | <a href="mailto:info@tt24.ee">info@tt24.ee</a></p>
-    <p style="margin-top: 6px;">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+
+    <div class="footer-bottom">
+      <span class="footer-partner">Koostöös <strong>Valvekliinikuga</strong></span>
+      <span class="footer-copy">© 2026 TT24 — Töötervishoiu teejuht Eestis</span>
+    </div>
+
   </div>
 </footer>
 
 <script>
   // Mobile nav toggle
-  document.getElementById('navToggle').addEventListener('click', function() {
-    document.getElementById('mainNav').classList.toggle('open');
-  });
-
-  // Email signup — graceful UX
-  function handleEmailSubmit(e) {
-    const form = document.getElementById('emailSignupForm');
-    const msg = document.getElementById('emailSuccessMsg');
-    // Let formsubmit.co handle actual submission but show inline success
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(r => {
-      msg.style.display = 'block';
-      form.style.display = 'none';
-    }).catch(() => {
-      // Fallback: let native submit go through
-      return true;
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function() {
+      var isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-    e.preventDefault();
-    return false;
+  }
+
+  // Scroll shadow on sticky nav
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function () {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
   }
 </script>
 </body>

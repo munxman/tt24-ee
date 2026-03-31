@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tervisekontrolli kalkulaator tööandjatele — TT24</title>
-  <meta name="description" content="Kasutage tasuta kalkulaatorit: sisestage töötajate arv, valdkond ja vasake, kas on alaealisi — saate täpse vastuse, milline tervisekontroll on kohustuslik ja millal.">
+  <title>Töötervishoiu kulukalkulaator — TT24</title>
+  <meta name="description" content="Arvutage töötervishoiu teenuse maksumus sekunditega. Sisestage töötajate arv — näete kohest kulude jaotust kuus ja aastas ning trahviriski võrdlust. Tasuta kalkulaator Eesti tööandjatele.">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Tag Manager -->
@@ -15,33 +16,35 @@
   })(window,document,'script','dataLayer','GTM-5459MHF3');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- Canonical -->
+  <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://tt24.ee/kalkulaator.html" />
+  <link rel="alternate" hreflang="et" href="https://tt24.ee/kalkulaator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/kalkulaator.html" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tt24.ee/kalkulaator.html" />
-  <meta property="og:title" content="Tervisekontrolli kalkulaator tööandjatele — TT24" />
-  <meta property="og:description" content="Kolm küsimust — täpne vastus. Mis tervisekontrolli Teie töötajad vajavad ja millal see tuleb teha? Tasuta tööriist Eesti tööandjatele." />
+  <meta property="og:title" content="Töötervishoiu kulukalkulaator — TT24" />
+  <meta property="og:description" content="Arvutage töötervishoiu teenuse maksumus sekunditega. Kohene kulude jaotus kuus ja aastas. Tasuta, ilma registreerimiseta." />
   <meta property="og:image" content="https://tt24.ee/og-image.png" />
   <meta property="og:locale" content="et_EE" />
   <meta property="og:site_name" content="TT24" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tervisekontrolli kalkulaator — TT24" />
-  <meta name="twitter:description" content="Mis tervisekontrolli Teie töötajad vajavad? 3 küsimust, kohene vastus. Tasuta." />
+  <meta name="twitter:title" content="Töötervishoiu kulukalkulaator — TT24" />
+  <meta name="twitter:description" content="Kui palju maksab töötervishoiuteenus Teie ettevõttele? Kohene vastus. Tasuta." />
 
-  <!-- Schema.org – SoftwareApplication (web tool) + FAQPage -->
+  <!-- Schema.org – SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Tervisekontrolli kalkulaator",
+    "name": "Töötervishoiu kulukalkulaator",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://tt24.ee/kalkulaator.html",
-    "description": "Tasuta veebitööriist Eesti tööandjatele: sisestage valdkond ja töötajate profiil — saate koheselt täpse vastuse, milline tervisekontroll on kohustuslik ja millal.",
+    "description": "Tasuta veebitööriist Eesti tööandjatele: sisestage töötajate arv ja valdkond — saate koheselt töötervishoiuteenuse kulude jaotuse kuus ja aastas ning trahviriski võrdluse.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -54,439 +57,1194 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kui palju maksab töötervishoiuteenus töötaja kohta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Töötervishoiuteenuse hind sõltub ettevõtte suurusest ja valdkonnast. Tavapärane vahemik on 8–15 eurot töötaja kohta kuus. Väikeettevõtetel kehtib enamasti miinimumpakett alates 75–100 eurot kuus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kui suur on trahv töötervishoiu nõuete rikkumise eest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TTOS § 13 alusel võib juriidilisele isikule määrata trahvi kuni 32 000 eurot. Trahvid on kumulatiivsed — iga rikkumine on eraldi."
+        }
+      }
+    ]
+  }
+  </script>
 
+  <style>
+    /* ── Calculator page–specific styles ── */
+
+    /* Slider custom styling */
+    .calc-slider-wrap {
+      position: relative;
+    }
+
+    input[type="range"].kalk-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(
+        to right,
+        var(--color-primary) 0%,
+        var(--color-primary) var(--slider-pct, 4%),
+        var(--color-border) var(--slider-pct, 4%),
+        var(--color-border) 100%
+      );
+      outline: none;
+      cursor: pointer;
+      margin: var(--space-4) 0 var(--space-2);
+    }
+
+    input[type="range"].kalk-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-md);
+      cursor: grab;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    input[type="range"].kalk-slider::-webkit-slider-thumb:active {
+      cursor: grabbing;
+      transform: scale(1.2);
+    }
+
+    input[type="range"].kalk-slider::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-md);
+      cursor: grab;
+    }
+
+    .slider-tick-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+
+    /* Number input with unit label */
+    .number-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+
+    .number-input-wrap .form-input {
+      width: 110px;
+      text-align: center;
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .number-input-wrap .form-input:focus {
+      box-shadow: 0 0 0 3px var(--color-primary-light);
+    }
+
+    /* Sector radio pills */
+    .sector-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-2);
+    }
+
+    .sector-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: var(--space-2) var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: var(--font-medium);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: var(--color-surface);
+      user-select: none;
+    }
+
+    .sector-pill:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+    }
+
+    .sector-pill.active {
+      border-color: var(--color-primary);
+      color: var(--color-primary-dark);
+      background: var(--color-primary-light);
+      font-weight: var(--font-semibold);
+    }
+
+    .sector-pill input[type="radio"] {
+      display: none;
+    }
+
+    /* Result metric tiles */
+    .result-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .metric-tile {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      text-align: center;
+    }
+
+    .metric-tile--primary {
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, #F0F9FF 100%);
+      border-color: var(--color-primary);
+    }
+
+    .metric-tile__label {
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--space-2);
+    }
+
+    .metric-tile__value {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text);
+      line-height: 1.1;
+    }
+
+    .metric-tile--primary .metric-tile__value {
+      color: var(--color-primary-dark);
+    }
+
+    .metric-tile__sub {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+
+    /* Fine comparison */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    @media (max-width: 560px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      .result-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .comparison-card {
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .comparison-card--service {
+      background: linear-gradient(135deg, var(--color-primary-light), #E0F7FF);
+      border: 2px solid var(--color-primary);
+    }
+
+    .comparison-card--fine {
+      background: linear-gradient(135deg, var(--color-danger-light), #FFF5F5);
+      border: 2px solid var(--color-danger);
+    }
+
+    .comparison-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: 2px var(--space-2);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: var(--font-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-3);
+    }
+
+    .comparison-card--service .comparison-card__badge {
+      background: var(--color-primary);
+      color: #fff;
+    }
+
+    .comparison-card--fine .comparison-card__badge {
+      background: var(--color-danger);
+      color: #fff;
+    }
+
+    .comparison-card__amount {
+      font-size: var(--text-3xl);
+      font-weight: var(--font-extrabold);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .comparison-card--service .comparison-card__amount {
+      color: var(--color-primary-dark);
+    }
+
+    .comparison-card--fine .comparison-card__amount {
+      color: var(--color-danger);
+    }
+
+    .comparison-card__note {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .comparison-card__list {
+      margin-top: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .comparison-card__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      color: var(--color-text);
+    }
+
+    .comparison-card__list li::before {
+      content: '✓';
+      font-size: var(--text-xs);
+      font-weight: var(--font-bold);
+      color: var(--color-success);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .comparison-card--fine .comparison-card__list li::before {
+      content: '✗';
+      color: var(--color-danger);
+    }
+
+    /* Ratio bar */
+    .ratio-bar-wrap {
+      margin: var(--space-6) 0;
+    }
+
+    .ratio-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-2);
+    }
+
+    .ratio-bar {
+      height: 10px;
+      border-radius: var(--radius-full);
+      background: var(--color-danger-light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ratio-bar__fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+      border-radius: var(--radius-full);
+      transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 4px;
+    }
+
+    /* What's included cards */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .include-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+
+    .include-item__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-md);
+    }
+
+    .include-item__text strong {
+      display: block;
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .include-item__text span {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* Calculator layout */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sticky result on desktop */
+    @media (min-width: 769px) {
+      .calc-result-panel {
+        position: sticky;
+        top: calc(var(--nav-height) + var(--space-4));
+      }
+    }
+
+    /* Urgency banner override for this page */
+    .urgency-inline {
+      background: linear-gradient(135deg, #FEF3C7, #FFFBEB);
+      border: 1px solid var(--color-warning);
+      border-left: 4px solid var(--color-warning);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-6);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-sm);
+      color: #92400E;
+    }
+
+    /* Animate result card on update */
+    @keyframes resultPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(14,165,233,0.3); }
+      70%  { box-shadow: 0 0 0 8px rgba(14,165,233,0); }
+      100% { box-shadow: 0 0 0 0 rgba(14,165,233,0); }
+    }
+
+    .result-updated {
+      animation: resultPulse 0.5s ease;
+    }
+
+    /* Section bg variation */
+    .section--alt {
+      background: #F0F9FF;
+    }
+
+    .section--dark {
+      background: var(--color-footer-bg);
+      color: #fff;
+    }
+
+    .section--dark h2,
+    .section--dark h3,
+    .section--dark p {
+      color: #fff;
+    }
+
+    .section--dark p {
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 50%, #38BDF8 100%);
+      padding: var(--space-16) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+
+    .cta-section .container { position: relative; z-index: 1; }
+
+    .cta-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: var(--font-bold);
+      color: #fff;
+      margin-bottom: var(--space-4);
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-8);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section .btn-primary {
+      background: #fff;
+      color: var(--color-primary-dark);
+      border-color: #fff;
+      font-size: var(--text-base);
+      min-height: 52px;
+      padding: 0 var(--space-8);
+    }
+
+    .cta-section .btn-primary:hover {
+      background: #F1F5F9;
+      border-color: #F1F5F9;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-note {
+      font-size: var(--text-xs);
+      color: rgba(255,255,255,0.6);
+      margin-top: var(--space-4);
+    }
+  </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-main">TT24</span>
-      <span class="logo-sub">Töötervishoiu teejuht Eestis</span>
+<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
+
+<!-- ═══════════════════════════════
+     NAVIGATION
+═══════════════════════════════ -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
+      <span class="nav-logo-text">TT24</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine">☰</button>
-    <nav id="mainNav">
-      <a href="index.html">Avaleht</a>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html" class="active">Kalkulaator</a>
-      <a href="korduma.html">KKK</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="mailto:info@tt24.ee" class="nav-cta">Küsi pakkumist</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
+      <a href="kontrollnimekiri.html" class="nav-link">Kontrollnimekiri</a>
+      <a href="kalkulaator.html" class="nav-link active" aria-current="page">Kalkulaator</a>
+      <a href="enesekontroll.html" class="nav-link">Enesehinnang</a>
+      <a href="korduma.html" class="nav-link">KKK</a>
     </nav>
+
+    <a href="enesekontroll.html" class="nav-cta-btn">Kontrollige valmisolekut</a>
   </div>
 </header>
 
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Avaleht</a> › Kalkulaator</div>
-    <h1>🧮 Tervisekontrolli kalkulaator</h1>
-    <p>Vastake kolmele küsimusele — saate täpse ülevaate, milline tervisekontroll on Teie töötajatele kohustuslik ja millal see peab toimuma.</p>
-  </div>
-</div>
+<main id="main-content">
 
-<main>
-  <section class="section">
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; max-width: 1000px;">
+      <span class="hero__eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
+        Tasuta · Kohene tulemus · Ei nõua registreerimist
+      </span>
+      <h1 class="hero__title" id="hero-heading">Kui palju maksab töötervishoiuteenus<br>Teie ettevõttele?</h1>
+      <p class="hero__subtitle">Sisestage töötajate arv — näete kohest kulude jaotust kuus ja aastas. Pluss: trahviriski võrdlus, kui jätta nõuded täitmata.</p>
+      <div class="hero__actions">
+        <a href="#kalkulaator" class="btn btn-primary btn-lg">Arvutan kohe →</a>
+        <a href="korduma.html" class="btn btn-secondary btn-lg">KKK töötervishoiust</a>
+      </div>
+    </div>
+  </section>
 
-        <!-- FORM -->
+  <!-- ═══════════════════════════════
+       CALCULATOR SECTION
+  ═══════════════════════════════ -->
+  <section class="section" id="kalkulaator" aria-labelledby="calc-heading">
+    <div class="container">
+
+      <div class="section-header" style="margin-bottom: var(--space-8);">
+        <span class="badge badge--primary">Kulukalkulaator</span>
+        <h2 id="calc-heading">Arvutage oma töötervishoiu kulud</h2>
+        <p>Tulemused uuenevad reaalajas, kohe kui Te liuguri liigutate.</p>
+      </div>
+
+      <div class="calc-layout" style="max-width: 1000px; margin: 0 auto;">
+
+        <!-- ── LEFT: INPUTS ─────────────────────────── -->
         <div>
-          <div class="calc-form">
-            <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 24px;">Sisestage oma ettevõtte andmed</h2>
+          <div class="card card--elevated" style="cursor: default;">
 
-            <!-- Q1: employees -->
-            <div class="calc-group">
-              <label for="q_employees">1. Mitu töötajat Teil on?</label>
-              <input type="number" id="q_employees" min="1" max="9999" placeholder="Näiteks: 12" inputmode="numeric">
-              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Sisestage praegu töötavate töötajate arv (sh osalise ajaga).</p>
+            <!-- Employee count -->
+            <div class="form-group" style="margin-bottom: var(--space-6);">
+              <label class="form-label" for="empNumber" style="font-size: var(--text-base);">
+                Töötajate arv
+              </label>
+              <p class="form-hint" style="margin-bottom: var(--space-3);">Liigutage liugurit või sisestage täpne number</p>
+
+              <div class="number-input-wrap">
+                <input
+                  type="number"
+                  id="empNumber"
+                  class="form-input"
+                  min="1"
+                  max="9999"
+                  value="10"
+                  inputmode="numeric"
+                  aria-label="Töötajate täpne arv"
+                >
+                <span class="text-muted text-sm">töötajat</span>
+              </div>
+
+              <div class="calc-slider-wrap" style="margin-top: var(--space-4);">
+                <input
+                  type="range"
+                  id="empSlider"
+                  class="kalk-slider"
+                  min="1"
+                  max="200"
+                  value="10"
+                  aria-label="Töötajate arv liugur"
+                >
+                <div class="slider-tick-labels">
+                  <span>1</span>
+                  <span>50</span>
+                  <span>100</span>
+                  <span>150</span>
+                  <span>200+</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Q2: sector -->
-            <div class="calc-group">
-              <label for="q_sector">2. Mis valdkonnas Teie ettevõte tegutseb?</label>
-              <select id="q_sector">
-                <option value="">-- Valige valdkond --</option>
-                <option value="kontor">Kontor / IT / finants / kaubandus (lauatöö)</option>
-                <option value="kaubandus_klientidega">Teenindus / kaubandus (kontakt klientidega)</option>
-                <option value="tootmine">Tootmine / laondus / kergetööstus</option>
-                <option value="ehitus">Ehitus / renoveerimine / paigaldus</option>
-                <option value="transport">Transport / logistika / sõidukijuhid</option>
-                <option value="tervishoid">Tervishoid / sotsiaaltöö / hoolekanne</option>
-                <option value="haridus">Haridus / lasteasutused / noorsootöö</option>
-                <option value="toidu">Toiduainetööstus / toitlustus / köök</option>
-                <option value="keemia">Keemiline tootmine / laboranalüüs / farmaatsia</option>
-                <option value="kaevandus">Kaevandus / mäetööd / rasketööstus</option>
-                <option value="muu">Muu</option>
-              </select>
-            </div>
+            <hr class="divider">
 
-            <!-- Q3: minors -->
-            <div class="calc-group">
-              <label>3. Kas Teil on alaealisi töötajaid (alla 18-aastased)?</label>
-              <div class="radio-group">
-                <label class="radio-btn" id="rb_yes">
-                  <input type="radio" name="minors" value="yes">
-                  ✅ Jah
+            <!-- Sector selection -->
+            <div class="form-group" style="margin-bottom: var(--space-6);">
+              <label class="form-label" style="font-size: var(--text-base);">Tegevusvaldkond</label>
+              <p class="form-hint" style="margin-bottom: var(--space-3);">Mõjutab tervisekontrollide sagedust ja täpset hinda</p>
+
+              <div class="sector-pills" role="radiogroup" aria-label="Tegevusvaldkond">
+                <label class="sector-pill active">
+                  <input type="radio" name="sector" value="kontor" checked>
+                  🖥️ Kontor / IT
                 </label>
-                <label class="radio-btn" id="rb_no">
-                  <input type="radio" name="minors" value="no">
-                  ❌ Ei
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="kaubandus">
+                  🛍️ Kaubandus / teenindus
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="tootmine">
+                  🏭 Tootmine / ladu
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="ehitus">
+                  🏗️ Ehitus
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="transport">
+                  🚛 Transport
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="tervishoid">
+                  🏥 Tervishoid
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="toidu">
+                  🍽️ Toitlustus
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="muu">
+                  📋 Muu
                 </label>
               </div>
             </div>
 
-            <button class="btn btn-primary" onclick="calculate()" style="width:100%; justify-content:center; padding: 14px;">
-              Arvuta kohustused →
-            </button>
-          </div>
-        </div>
+            <hr class="divider">
 
-        <!-- RESULTS -->
-        <div>
-          <div class="calc-result" id="calcResult">
-            <div class="calc-result-header" id="resultHeader">
-              📋 Teie tervisekontrolli kohustused
+            <!-- Minors toggle -->
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" style="font-size: var(--text-base);">Kas Teil on alaealisi töötajaid?</label>
+              <p class="form-hint" style="margin-bottom: var(--space-3);">Alla 18-aastased nõuavad iga-aastast kontrolli</p>
+              <div class="sector-pills" role="radiogroup" aria-label="Alaealised töötajad">
+                <label class="sector-pill" id="minors_no_label">
+                  <input type="radio" name="minors" value="no" checked>
+                  ✅ Ei
+                </label>
+                <label class="sector-pill" id="minors_yes_label">
+                  <input type="radio" name="minors" value="yes">
+                  👶 Jah, on alaealisi
+                </label>
+              </div>
             </div>
-            <div class="calc-result-body" id="resultBody">
-              <!-- filled by JS -->
+
+          </div><!-- /card -->
+
+          <!-- Urgency note -->
+          <div class="urgency-inline" style="margin-top: var(--space-4);">
+            <span style="font-size: 1.2rem; flex-shrink: 0;">⚠️</span>
+            <div>
+              <strong style="display:block; margin-bottom:4px;">2026. aasta kontrollid on alanud</strong>
+              Tööinspektsioon on alustanud järelevalvekampaaniat VKE-de seas. Trahvid kuni <strong>€32 000</strong> juriidilisele isikule (TTOS § 13).
             </div>
           </div>
 
-          <!-- placeholder before calc -->
-          <div id="calcPlaceholder" style="background: #fff; border: 2px dashed var(--grey-light); border-radius: var(--radius); padding: 40px 24px; text-align: center; color: var(--text-muted);">
-            <div style="font-size: 3rem; margin-bottom: 16px;">🧮</div>
-            <p style="font-size: 0.95rem;">Täitke vasak pool ja vajutage "Arvuta kohustused" — tulemused kuvatakse siin.</p>
-          </div>
-        </div>
-      </div>
+        </div><!-- /left col -->
 
-      <!-- INFO BOX -->
-      <div style="max-width: 1000px; margin-top: 40px;">
-        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 16px;">Mida tähendab "tervisekontroll"?</h3>
-        <div class="cards cards-2" style="max-width: 800px;">
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🩺</span>
-            <h3>Esmane tervisekontroll</h3>
-            <p>Enne tööle asumist või uuele ametikohale siirdumisel. Töötervishoiuarst hindab, kas töötaja tervislik seisund sobib nõutud tööülesannetega.</p>
-          </div>
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🔄</span>
-            <h3>Perioodiline tervisekontroll</h3>
-            <p>Regulaarsed kontrollid töö ajal. Sagedus sõltub riskitegurist — kõrge riskiga valdkondades iga 1–2 aasta tagant, madala riskiga valdkondades iga 3 aasta tagant.</p>
-          </div>
-        </div>
+        <!-- ── RIGHT: RESULTS ───────────────────────── -->
+        <div class="calc-result-panel">
 
-        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--teal); margin: 32px 0 16px;">Millal tervisekontroll on alati kohustuslik?</h3>
-        <div class="cards cards-3" style="max-width: 900px;">
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🏗️</span>
-            <h3>Ehitus ja rasketööstus</h3>
-            <p>Enne tööle asumist ja iga 2 aasta tagant. Välitöö, raskuste kandmine, masinad — kõrge riskitase.</p>
-          </div>
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🚛</span>
-            <h3>Transport ja sõidukijuhid</h3>
-            <p>Enne tööle asumist ja iga 2 aasta tagant. Lõikuste kontrollis ka nägemisteravus ja reaktsioon.</p>
-          </div>
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🏥</span>
-            <h3>Tervishoid ja hooldus</h3>
-            <p>Enne tööle asumist ja iga aasta tagant. Bioloogilised riskid (nakkushaigused) nõuavad sagedast jälgimist.</p>
-          </div>
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🍽️</span>
-            <h3>Toitlustus ja toiduainetööstus</h3>
-            <p>Enne tööle asumist ja iga aasta tagant. Nakkushaiguste leviku risk nõuab regulaarset kontrolli.</p>
-          </div>
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">⚗️</span>
-            <h3>Keemia ja labooritöö</h3>
-            <p>Enne tööle asumist ja iga aasta tagant. Keemiliste ainete mõju jälgimine nõuab regulaarset vereanalüüsi.</p>
-          </div>
-          <div class="card" style="cursor: default;">
-            <span class="card-icon">🖥️</span>
-            <h3>Kuvariga töö (5+ tundi päevas)</h3>
-            <p>Iga 3 aasta tagant. Peamiselt nägemise ja lihaste-skeleti kontroll.</p>
-          </div>
-        </div>
-      </div>
+          <!-- Cost breakdown card -->
+          <div class="card card--elevated" id="resultCard" style="cursor: default; border-top: 4px solid var(--color-primary);">
+            <div class="card__header">
+              <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+                <h3 class="card__title" style="margin:0;">Teie kulude prognoos</h3>
+                <span class="badge badge--primary" id="riskBadge">Madal risk</span>
+              </div>
+              <p class="card__subtitle" id="resultSubtitle">10 töötajat · Kontor / IT</p>
+            </div>
 
-      <div class="disclaimer">
-        <strong>Märkus:</strong> See kalkulaator annab üldise hinnangu. Täpse tervisekontrolli kava koostab töötervishoiuarst, kes arvestab Teie konkreetset töökeskkonda, riskianalüüsi tulemusi ja töötajate terviseseisundit. Tulemus on orienteeriv.
-      </div>
+            <div class="result-metrics">
+              <div class="metric-tile metric-tile--primary">
+                <div class="metric-tile__label">Kuus</div>
+                <div class="metric-tile__value" id="metricMonthly">€120</div>
+                <div class="metric-tile__sub" id="metricPerEmp">€12 / töötaja</div>
+              </div>
+              <div class="metric-tile">
+                <div class="metric-tile__label">Aastas</div>
+                <div class="metric-tile__value" id="metricAnnual">€1 440</div>
+                <div class="metric-tile__sub" id="metricAnnualSub">teenuse kulu kokku</div>
+              </div>
+              <div class="metric-tile">
+                <div class="metric-tile__label">Kontrollide sagedus</div>
+                <div class="metric-tile__value" style="font-size: var(--text-xl);" id="metricFreq">3 a</div>
+                <div class="metric-tile__sub">perioodiline kontroll</div>
+              </div>
+              <div class="metric-tile" style="background: var(--color-danger-light); border-color: var(--color-danger);">
+                <div class="metric-tile__label" style="color:#991B1B;">Trahvirisk</div>
+                <div class="metric-tile__value" style="color:var(--color-danger); font-size: var(--text-xl);" id="metricFine">€32 000</div>
+                <div class="metric-tile__sub">max trahv (TTOS § 13)</div>
+              </div>
+            </div>
+
+            <!-- Ratio bar -->
+            <div class="ratio-bar-wrap">
+              <div class="ratio-bar-labels">
+                <span style="color: var(--color-primary-dark); font-weight: var(--font-semibold);">Teenuse kulu (aastas)</span>
+                <span style="color: var(--color-danger); font-weight: var(--font-semibold);">Trahvimäär (max)</span>
+              </div>
+              <div class="ratio-bar" aria-label="Teenuse kulu vs trahviriski suhe">
+                <div class="ratio-bar__fill" id="ratioFill" style="width: 4%;"></div>
+              </div>
+              <p class="form-hint" id="ratioCaption" style="margin-top: var(--space-2);">
+                Teenuse aastakulu on <strong id="ratioText">22×</strong> väiksem kui maksimaalne trahv
+              </p>
+            </div>
+
+            <!-- What's included summary -->
+            <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-4);">
+              <p class="text-sm font-semibold" style="margin-bottom: var(--space-3);">Hinnas sisaldub:</p>
+              <div id="includesList" style="display: flex; flex-direction: column; gap: var(--space-2);">
+                <!-- filled by JS -->
+              </div>
+            </div>
+
+            <a href="mailto:info@tt24.ee" class="btn btn-primary w-full" style="margin-top: var(--space-6); justify-content: center;" aria-label="Küsi tasuta pakkumist Valvekliinikult">
+              Küsi tasuta pakkumist →
+            </a>
+            <p class="text-sm text-muted text-center" style="margin-top: var(--space-2);">Vastame 2 tööpäeva jooksul · Ei kohusta millekski</p>
+
+          </div><!-- /result card -->
+
+        </div><!-- /right col -->
+
+      </div><!-- /calc-layout -->
+
     </div>
   </section>
+
+  <!-- ═══════════════════════════════
+       FINE VS SERVICE COMPARISON
+  ═══════════════════════════════ -->
+  <section class="section section--alt" aria-labelledby="compare-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="badge badge--danger">Riskianalüüs</span>
+        <h2 id="compare-heading">Teenus vs. trahvirisk</h2>
+        <p>Kumb on kallim — seaduse täitmine või rikkumine?</p>
+      </div>
+
+      <div class="comparison-grid" style="max-width: 800px; margin: 0 auto;">
+
+        <div class="comparison-card comparison-card--service">
+          <div class="comparison-card__badge">✓ Teenusega kaetud</div>
+          <div class="comparison-card__amount" id="compareServiceAnnual">€1 440 / aastas</div>
+          <p class="comparison-card__note">Valvekliinik töötervishoiuteenuse pakett</p>
+          <ul class="comparison-card__list">
+            <li>Töötervishoiuarsti konsultatsioon</li>
+            <li>Kõik perioodilised tervisekontrollid</li>
+            <li>Riskianalüüsi koostamine</li>
+            <li>Töötajate teavitamine ja koolitus</li>
+            <li>Dokumentatsioon ja aruandlus</li>
+            <li>Iga-aastane ülevaatus</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card comparison-card--fine">
+          <div class="comparison-card__badge">✗ Trahviriski korral</div>
+          <div class="comparison-card__amount">kuni €32 000</div>
+          <p class="comparison-card__note">Maksimaalne trahv juriidilisele isikule (TTOS § 13)</p>
+          <ul class="comparison-card__list">
+            <li>Iga rikkumine on eraldi trahv</li>
+            <li>Korduvrikkumised kumuleeruvad</li>
+            <li>Avalik teave äriregistris</li>
+            <li>Tegevuse peatamine võimalik</li>
+            <li>Maine kahjustus ja töötajate usalduse kadu</li>
+            <li>Tsiviilõiguslik vastutus vigastuste puhul</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="alert alert--info" style="max-width: 800px; margin: var(--space-8) auto 0;" role="note">
+        <svg class="alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div class="alert__body">
+          <p class="alert__title">Kalkulaatori tulemus on orienteeriv</p>
+          <p>Täpne hind sõltub Teie ettevõtte spetsiifikast, riskianalüüsi tulemustest ja töötajate konkreetsetest tervisekontrolli vajadustest. Täpse pakkumise saate kirjutades <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       WHAT'S INCLUDED
+  ═══════════════════════════════ -->
+  <section class="section" aria-labelledby="includes-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="badge badge--success">Teenuse sisu</span>
+        <h2 id="includes-heading">Mida töötervishoiuteenus sisaldab?</h2>
+        <p>Täisteenuse pakett katab kõik seadusjärgsed kohustused.</p>
+      </div>
+
+      <div class="includes-grid" style="max-width: 960px; margin: 0 auto;">
+
+        <div class="include-item">
+          <div class="include-item__icon">🩺</div>
+          <div class="include-item__text">
+            <strong>Esmane tervisekontroll</strong>
+            <span>Enne tööle asumist — hindab sobivust ametikohale</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">🔄</div>
+          <div class="include-item__text">
+            <strong>Perioodiline tervisekontroll</strong>
+            <span>Regulaarselt vastavalt riskitasemele — 1–3 aasta tagant</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">📊</div>
+          <div class="include-item__text">
+            <strong>Riskianalüüs</strong>
+            <span>Töökeskkonna riskide kaardistamine ja hindamine</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">📋</div>
+          <div class="include-item__text">
+            <strong>Tervisekontrolli toimikud</strong>
+            <span>Kõik dokumendid korras — Tööinspektsiooni kontrolliks valmis</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">🎓</div>
+          <div class="include-item__text">
+            <strong>Töötajate teavitamine</strong>
+            <span>Infomaterjalid ja koolitusdokumentatsioon</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">📞</div>
+          <div class="include-item__text">
+            <strong>Konsultatsioon tööandjale</strong>
+            <span>Küsimuste ja probleemide lahendamine operatiivselt</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">👁️</div>
+          <div class="include-item__text">
+            <strong>Alaealiste erirežiim</strong>
+            <span>Iga-aastane kohustuslik kontroll alla 18-aastastele</span>
+          </div>
+        </div>
+
+        <div class="include-item">
+          <div class="include-item__icon">⚡</div>
+          <div class="include-item__text">
+            <strong>Kiire reageerimisaeg</strong>
+            <span>Esmane tervisekontroll korraldatav 1 nädala jooksul</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FAQ SNIPPET
+  ═══════════════════════════════ -->
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container" style="max-width: 720px;">
+
+      <div class="section-header">
+        <span class="badge">KKK</span>
+        <h2 id="faq-heading">Korduma kippuvad küsimused</h2>
+      </div>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__trigger" aria-expanded="false" type="button">
+            <span class="faq-item__question">Miks €10–15 töötaja kohta kuus?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__body" role="region">
+            <p class="faq-item__answer">See hind katab töötervishoiuarsti konsultatsiooni, tervisekontrollide korraldamise, dokumentatsiooni ja tööandja nõustamise. Väikeettevõtetel on minimaalne kuumäär ~€75–100, kuna arsti töökulu on fikseeritud sõltumata töötajate arvust.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__trigger" aria-expanded="false" type="button">
+            <span class="faq-item__question">Kas pean tasuma iga töötaja tervisekontrolli eest eraldi?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__body" role="region">
+            <p class="faq-item__answer">Paketihinnaga teenuses sisalduvad perioodilised kontrollid tavaliselt kindla arvu töötajate kohta aastas. Täpse sisu määrab leping. Kõik seadusjärgsed kontrollid on tööandja kohustus ja kulu — töötaja ei maksa midagi (TTOS § 13).</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__trigger" aria-expanded="false" type="button">
+            <span class="faq-item__question">Kas 1–5 töötajaga ettevõte peab ka teenuse ostma?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__body" role="region">
+            <p class="faq-item__answer">Jah. Töötervishoiuteenuse leping on kohustuslik kõigile tööandjatele, sõltumata töötajate arvust (TTOS § 13 lg 1 p 10). Isegi ühe töötajaga ettevõte peab sõlmima lepingu töötervishoiuteenuse osutajaga.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__trigger" aria-expanded="false" type="button">
+            <span class="faq-item__question">Millal tuleb trahv ja kui suur see olla võib?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__body" role="region">
+            <p class="faq-item__answer">Trahvi võib määrata, kui Tööinspektsiooni kontroll tuvastab rikkumise — näiteks puudub töötervishoiuteenuse leping, riskianalüüs pole tehtud või töötajad pole kontrollis käinud. Juriidilisele isikule maksimaalne trahv on €32 000 (TTOS § 29). Iga rikkumine arvestatakse eraldi.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-8);">
+        <a href="korduma.html" class="btn btn-secondary">Vaata kõiki küsimusi →</a>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
-<section class="cta-banner">
-  <div class="cta-banner-inner">
-    <p>Vajate abi töötervishoiu korraldamisega? Meie partnerid aitavad Teid — <span class="price">alates €10 töötaja kohta kuus.</span></p>
-    <a href="mailto:info@tt24.ee" class="btn-gold">Küsige pakkumist</a>
+<!-- ═══════════════════════════════
+     CTA SECTION
+═══════════════════════════════ -->
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Vajate professionaalset töötervishoiuteenust?</h2>
+    <p>Valvekliinik pakub täisteenust alates €10 töötaja kohta kuus. Kiire vastamine, kõik dokumendid korras.</p>
+    <a href="mailto:info@tt24.ee" class="btn btn-primary" aria-label="Küsi tasuta pakkumist Valvekliinikult">
+      Küsi tasuta pakkumist
+    </a>
+    <p class="cta-note">Vastame 2 tööpäeva jooksul · Ei kohusta millekski · Tasuta esmakonsultatsioon</p>
   </div>
 </section>
 
-<footer>
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-links">
-      <a href="index.html">Avaleht</a>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html">Kalkulaator</a>
-      <a href="korduma.html">KKK</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsioon</a>
+
+    <div class="footer-grid">
+
+      <!-- Col 1: Logo + description -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
+        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid ja KKK — kõik, mida vajate TTOS-i täitmiseks.</p>
+      </div>
+
+      <!-- Col 2: Tools links -->
+      <div class="footer-col footer-col-links">
+        <h3 class="footer-col-title">Tööriistad</h3>
+        <nav aria-label="Tööriistad">
+          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
+          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
+          <a href="enesekontroll.html" class="footer-link">Enesehinnang</a>
+          <a href="korduma.html" class="footer-link">KKK</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer-col footer-col-contact">
+        <h3 class="footer-col-title">Kontakt</h3>
+        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
+        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+      </div>
+
     </div>
-    <p>© 2026 TT24 — Töötervishoiu teejuht Eestis | <a href="mailto:info@tt24.ee">info@tt24.ee</a></p>
-    <p style="margin-top: 6px;">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+
+    <div class="footer-bottom">
+      <span class="footer-partner">Koostöös <strong>Valvekliinikuga</strong></span>
+      <span class="footer-copy">© 2026 TT24 — Töötervishoiu teejuht Eestis</span>
+    </div>
+
   </div>
 </footer>
 
+<!-- ═══════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════ -->
 <script>
-document.getElementById('navToggle').addEventListener('click', function() {
-  document.getElementById('mainNav').classList.toggle('open');
-});
-
-// Radio buttons visual
-document.querySelectorAll('input[name="minors"]').forEach(radio => {
-  radio.addEventListener('change', function() {
-    document.querySelectorAll('.radio-btn').forEach(lb => lb.classList.remove('selected'));
-    this.closest('.radio-btn').classList.add('selected');
+// ─── Navigation ──────────────────────────────────────────
+var navToggle = document.getElementById('navToggle');
+var mainNav   = document.getElementById('mainNav');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', function () {
+    var isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-});
-
-// ─── CALCULATOR LOGIC ───────────────────────────────────
-function calculate() {
-  const employees = parseInt(document.getElementById('q_employees').value);
-  const sector = document.getElementById('q_sector').value;
-  const minorsEl = document.querySelector('input[name="minors"]:checked');
-  const minors = minorsEl ? minorsEl.value === 'yes' : false;
-
-  if (!employees || employees < 1) {
-    alert('Palun sisestage töötajate arv.'); return;
-  }
-  if (!sector) {
-    alert('Palun valige tegevusvaldkond.'); return;
-  }
-
-  // Sector-based logic
-  const sectorData = {
-    kontor: {
-      name: 'Kontor / IT / lauatöö',
-      riskLevel: 'madal',
-      mandatory: true,
-      checks: [
-        { icon: '🖥️', title: 'Kuvariga töö tervisekontroll', when: 'Iga 3 aasta tagant', note: 'Kohustuslik, kui töötaja töötab kuvariga 5+ tundi päevas. Sisaldab nägemise ja lihaste-skeleti hindamist.' },
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kõigile uutele töötajatele, eriti kui töö nõuab kuvariga töötamist.' }
-      ],
-      frequency: '3 aastat',
-      urgency: 'Madal risk. Kuid ärge unustage: ka kontoris on kohustused (riskianalüüs, leping, kuvariga töö kontroll).'
-    },
-    kaubandus_klientidega: {
-      name: 'Teenindus / kaubandus',
-      riskLevel: 'keskmine',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kõigile uutele töötajatele.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 3 aasta tagant', note: 'Fokuseeritud lihaste-skeleti seisundile (pikk seismine, korduvliigutused) ning hingamisteedele.' },
-        { icon: '🦠', title: 'Nakkushaiguste kontroll (kui toiduga kokkupuude)', when: 'Iga aasta tagant', note: 'Kohaldub toidukäitlejatele ja toitlustusele.' }
-      ],
-      frequency: '3 aastat (üldine), 1 aasta (toidukäitlemine)',
-      urgency: 'Keskmise riskiga. Kontrollige, kas Teie töötajad puutuvad kokku toiduga — sel juhul sagedamini.'
-    },
-    tootmine: {
-      name: 'Tootmine / laondus',
-      riskLevel: 'kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik enne esimest tööpäeva.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 2 aasta tagant', note: 'Sisaldab mürakontrolli (audiogramm), lihaste-skeleti hindamist ja üldtervisekontrolli.' },
-        { icon: '👂', title: 'Mürakontroll (audiogramm)', when: 'Iga 2 aasta tagant', note: 'Kohustuslik, kui müratase ületab 85 dB(A). Peaksite kontrollima müramõõtmiste tulemusi.' },
-        { icon: '🏋️', title: 'Füüsiline koormus / ergonoomia', when: 'Iga 2 aasta tagant', note: 'Raskuste kandmine, korduvad liigutused — lihaste-skeleti hindamine.' }
-      ],
-      frequency: '2 aastat',
-      urgency: 'Kõrge risk. Tervisekontroll on rangelt kohustuslik. Müramõõtmised on tõenäoliselt vajalikud.'
-    },
-    ehitus: {
-      name: 'Ehitus / renoveerimine',
-      riskLevel: 'kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik enne esimest tööpäeva igale ehitustöötajale.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Ehituses on kõrge riskitase — müra, vibratsioon, tolm, kemikaalid, kõrgus. Iga-aastane kontroll.' },
-        { icon: '😷', title: 'Hingamisteede kontroll / spiromeetria', when: 'Iga aasta tagant', note: 'Ehitustolm (k.a asbest, kvarts) on hingamisteedele ohtlik. Spiromeetria kohustuslik.' },
-        { icon: '👁️', title: 'Nägemisteravuse kontroll', when: 'Iga 2 aasta tagant', note: 'Kõrgustel töötamisel on nägemisteravus ohutuse küsimus.' },
-        { icon: '🦴', title: 'Vibratsioonikontroll', when: 'Iga aasta tagant', note: 'Vibreerivate tööriistade kasutamisel (lööktrellid, muruniidukid) on vibratsiooni tervisemõju jälgimine kohustuslik.' }
-      ],
-      frequency: '1–2 aastat [KINNITAMATA]',
-      urgency: 'Väga kõrge risk. Ehituses on tervisekontrolli nõuded rangeimad. Üldine miinimum on iga 2 aasta järel [KINNITAMATA] — kõrge riskiga tööde puhul (müra, vibratsioon, kõrgus) iga aasta soovituslik.'
-    },
-    transport: {
-      name: 'Transport / logistika',
-      riskLevel: 'kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile juhtidele enne esimest tööpäeva.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 2 aasta tagant', note: 'Üldtervisekontroll liiklusohutuse aspektist.' },
-        { icon: '👁️', title: 'Nägemisteravuse kontroll', when: 'Iga 2 aasta tagant', note: 'Liiklusohutuse seisukohalt kohustuslik kõigile sõidukijuhtidele.' },
-        { icon: '❤️', title: 'Kardiovaskulaarne tervisekontroll', when: 'Iga 2 aasta tagant', note: 'Südame-veresoonkonnahaigused on transporditöötajate professionaalseks riskiks.' },
-        { icon: '😴', title: 'Uneapnoe sõeluuring', when: 'Esmasel kontrollis, vajadusel korratav', note: 'EL direktiiv nõuab kaubaveokijuhtidel uneapnoe riski hindamist.' }
-      ],
-      frequency: '2 aastat',
-      urgency: 'Kõrge risk. Nägemine ja südame-veresoonkond on kriitilised liiklusohutuse tagamiseks.'
-    },
-    tervishoid: {
-      name: 'Tervishoid / sotsiaaltöö',
-      riskLevel: 'kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile enne esimest tööpäeva.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Bioloogilised riskid (nakkushaigused) nõuavad sagedast jälgimist.' },
-        { icon: '💉', title: 'Vaktsineerimisstaatus', when: 'Enne tööle asumist ja vajaduse korral', note: 'Hepatiit B, tuulerõuged, leetrid, gripp — tervishoiutöötajatel on soovituslikud vaktsiinid.' },
-        { icon: '🧠', title: 'Psühholoogiline stress / läbipõlemine', when: 'Iga aasta tagant', note: 'Tervishoiutöötajate läbipõlemise risk on kõrge — hinnatakse tervisekontrolli käigus.' }
-      ],
-      frequency: '1 aasta',
-      urgency: 'Väga kõrge risk. Tervishoiutöötajad on bioloogiliste riskide ees kõige rohkem. Iga-aastane kontroll on seaduslik miinimum.'
-    },
-    haridus: {
-      name: 'Haridus / lasteasutused',
-      riskLevel: 'keskmine',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile enne esimest tööpäeva.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 3 aasta tagant', note: 'Üldtervisekontroll.' },
-        { icon: '🦠', title: 'Nakkushaiguste kontroll', when: 'Enne tööle asumist ja vajaduse korral', note: 'Lasteasutustes on nakkushaiguste levik suurem. Tervishoiutõend lasteasutuse töötajatele.' },
-        { icon: '🗣️', title: 'Häälekasutuse kontroll', when: 'Iga 3 aasta tagant', note: 'Õpetajate professionaalne risk — häälekasutus. Hügieen ja ennetamine.' }
-      ],
-      frequency: '3 aastat',
-      urgency: 'Keskmise risk. Lasteasutuste töötajad peavad esitama terviseõiendi. Nakkushaiguste jälgimine on oluline.'
-    },
-    toidu: {
-      name: 'Toiduainetööstus / toitlustus',
-      riskLevel: 'kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik enne esimest tööpäeva.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Toidukäitlejate sagedane tervisekontroll on nakkushaiguste ennetuseks.' },
-        { icon: '🦠', title: 'Sooleinfektsioonide sõeluuring', when: 'Iga aasta tagant', note: 'Salmonella, shigella, noroviirus — toidukäitlejate kohustuslik kontroll.' },
-        { icon: '🌡️', title: 'Temperatuuri ja mikrokliima kontroll', when: 'Iga aasta tagant', note: 'Köögis on kõrge temperatuur, aurud — terviseriskid.' }
-      ],
-      frequency: '1 aasta',
-      urgency: 'Kõrge risk. Toidukäitlejate tervisekontroll kaitseb nii töötajaid kui kliente nakkuste eest.'
-    },
-    keemia: {
-      name: 'Keemia / labooritöö',
-      riskLevel: 'väga kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile enne esimest kontakti kemikaalidega.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Keemiliste ainete bioloogilised markerid — vere- ja uriinianalüüs.' },
-        { icon: '🫁', title: 'Hingamisteede kontroll / spiromeetria', when: 'Iga aasta tagant', note: 'Keemilised aurud kahjustavad hingamisteid — spiromeetria kohustuslik.' },
-        { icon: '🧪', title: 'Keemiliste ainete bioloogiline monitooring', when: 'Iga aasta tagant, mõnedel juhtudel sagedamini', note: 'Spetsiifiliste kemikaalide puhul (plii, lahustid jms) on nõutud vere- ja uriinianalüüsid.' }
-      ],
-      frequency: '1 aasta (mõned ained sagedamini)',
-      urgency: 'Väga kõrge risk. Keemia valdkonnas on tervisekontrolli nõuded kõige rangemad. Mõõtmised ja bioloogiline monitooring on seaduslik nõue.'
-    },
-    kaevandus: {
-      name: 'Kaevandus / rasketööstus',
-      riskLevel: 'väga kõrge',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Kõige kõrgema riskitasemega valdkond.' },
-        { icon: '😷', title: 'Pneumokonioosi sõeluuring (kopsu röntgen)', when: 'Iga aasta tagant', note: 'Tolmurikkad töökohad — kopsuhaiguste ennetamine on kriitilise tähtsusega.' },
-        { icon: '👂', title: 'Mürakontroll (audiogramm)', when: 'Iga aasta tagant', note: 'Rasketööstuse müratase on sageli kahjustav — audiogramm kohustuslik.' },
-        { icon: '🦴', title: 'Vibratsioonikontroll', when: 'Iga aasta tagant', note: 'Tugeva vibratsiooniga tööriistad ja masinad.' }
-      ],
-      frequency: '1 aasta',
-      urgency: 'Kriitiliselt kõrge risk. Kõige rangemad nõuded koos iga-aastase kohustusliku kontrolliga.'
-    },
-    muu: {
-      name: 'Muu valdkond',
-      riskLevel: 'sõltub tegevusest',
-      mandatory: true,
-      checks: [
-        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile uutele töötajatele, sõltumata valdkonnast.' },
-        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Sõltub riskianalüüsist', note: 'Täpne sagedus selgub riskianalüüsist. Kui tegevus sisaldab füüsilisi, keemilisi või bioloogilisi riske — sagedamini.' }
-      ],
-      frequency: 'Sõltub riskianalüüsist',
-      urgency: 'Täpset sagedust ei saa ilma riskianalüüsita määrata. Pöörduge töötervishoiuarsti poole.'
-    }
-  };
-
-  const data = sectorData[sector];
-  if (!data) { alert('Midagi läks valesti. Proovige uuesti.'); return; }
-
-  // Size-based additional obligations
-  let sizeNotes = [];
-  if (employees >= 10) {
-    sizeNotes.push({ icon: '👷', text: 'Teil on <strong>10+ töötajat</strong> — töökeskkonnavolinik on kohustuslik.' });
-  }
-  if (employees >= 50) {
-    sizeNotes.push({ icon: '🏛️', text: 'Teil on <strong>50+ töötajat</strong> — töökeskkonnanõukogu on kohustuslik.' });
-  }
-  if (minors) {
-    sizeNotes.push({ icon: '👶', text: '<strong>Alaealised töötajad:</strong> Tervisekontroll on kohustuslik enne esimest tööpäeva ja iga aasta tagant kuni 18. eluaastani.' });
-  }
-
-  // Build output
-  let html = '';
-
-  // Summary
-  const riskColors = { 'madal': 'var(--success)', 'keskmine': 'var(--warning)', 'kõrge': 'var(--danger)', 'väga kõrge': 'var(--danger)', 'sõltub tegevusest': 'var(--grey)' };
-  const riskColor = riskColors[data.riskLevel] || 'var(--grey)';
-  html += `<div style="padding: 14px; background: rgba(26,44,46,0.04); border-radius: 6px; margin-bottom: 20px;">
-    <strong>${employees} töötajat · ${data.name}</strong><br>
-    <span style="color:${riskColor}; font-weight: 600;">● Riskitase: ${data.riskLevel}</span><br>
-    <span style="font-size:0.85rem; color: var(--text-muted);">Tervisekontrolli sagedus: <strong>${data.frequency}</strong></span>
-  </div>`;
-
-  // Checks
-  html += `<div style="margin-bottom: 16px; font-size: 0.85rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em;">Nõutud tervisekontrollid</div>`;
-  data.checks.forEach(c => {
-    html += `<div class="result-item">
-      <div class="result-icon">${c.icon}</div>
-      <div class="result-text">
-        <strong>${c.title}</strong>
-        <span>⏰ ${c.when}</span>
-        <span style="margin-top: 4px; font-size: 0.82rem; color: var(--text-muted);">${c.note}</span>
-      </div>
-    </div>`;
-  });
-
-  // Size notes
-  if (sizeNotes.length > 0) {
-    html += `<div style="margin-top: 16px; padding: 12px; background: rgba(197,165,90,0.1); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; font-size: 0.875rem;">
-      <strong style="color: var(--teal);">Lisanõuded Teie ettevõtte suurusele:</strong><br><br>`;
-    sizeNotes.forEach(n => { html += `<div style="margin-bottom: 8px;">${n.icon} ${n.text}</div>`; });
-    html += '</div>';
-  }
-
-  // Universal obligations reminder
-  html += `<div style="margin-top: 16px; padding: 12px; background: rgba(26,44,46,0.05); border-radius: 6px; font-size: 0.875rem; color: var(--text-muted);">
-    <strong style="color: var(--text);">🔔 Kõigile tööandjatele kehtib lisaks:</strong><br>
-    Riskianalüüs + töötervishoiuteenuse leping + töötajate teavitamine — need on kohustuslikud sõltumata valdkonnast ja suurusest.
-  </div>`;
-
-  // Urgency
-  html += `<div style="margin-top: 16px; padding: 12px; background: rgba(192,57,43,0.06); border-left: 3px solid var(--danger); border-radius: 0 6px 6px 0; font-size: 0.875rem;">
-    <strong>Mida see Teie jaoks tähendab:</strong> ${data.urgency}
-  </div>`;
-
-  document.getElementById('resultBody').innerHTML = html;
-  document.getElementById('calcResult').classList.add('visible');
-  document.getElementById('calcPlaceholder').style.display = 'none';
 }
+
+// Scroll shadow on nav
+var siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  window.addEventListener('scroll', function () {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+}
+
+// ─── FAQ Accordion ───────────────────────────────────────
+document.querySelectorAll('.faq-item__trigger').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var item = this.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(function (i) {
+      i.classList.remove('open');
+      i.querySelector('.faq-item__trigger').setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ─── Sector pill toggle ──────────────────────────────────
+document.querySelectorAll('.sector-pill').forEach(function (pill) {
+  pill.addEventListener('click', function () {
+    var group = this.closest('[role="radiogroup"]');
+    if (group) {
+      group.querySelectorAll('.sector-pill').forEach(function (p) { p.classList.remove('active'); });
+    }
+    this.classList.add('active');
+    recalculate();
+  });
+});
+
+// ─── Pricing model ───────────────────────────────────────
+var SECTOR_DATA = {
+  kontor:    { label: 'Kontor / IT',          risk: 'Madal',     riskClass: 'badge--success',  freq: '3 a',  multiplier: 1.0,  includes: ['Perioodiline tervisekontroll (iga 3 a)', 'Kuvariga töö kontroll', 'Riskianalüüs', 'Töötervishoiuarsti konsultatsioon'] },
+  kaubandus: { label: 'Kaubandus / teenindus', risk: 'Keskmine',  riskClass: 'badge--warning',  freq: '2–3 a', multiplier: 1.1, includes: ['Perioodiline tervisekontroll', 'Lihaste-skeleti hindamine', 'Riskianalüüs', 'Teavitamisdokumendid'] },
+  tootmine:  { label: 'Tootmine / ladu',       risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '2 a',  multiplier: 1.25, includes: ['Perioodiline tervisekontroll (iga 2 a)', 'Mürakontroll (audiogramm)', 'Vibratsioonirisk', 'Riskianalüüs + mõõtmised'] },
+  ehitus:    { label: 'Ehitus',                risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '1–3 a', multiplier: 1.3, includes: ['Iga-aastane tervisekontroll', 'Tolmu- ja mürakontroll', 'Spiromeetria', 'Täielik riskianalüüs'] },
+  transport: { label: 'Transport',             risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '2 a',  multiplier: 1.25, includes: ['Perioodiline tervisekontroll (iga 2 a)', 'Nägemis- ja kuulmistest', 'Kardiovaskulaarne hindamine', 'Uneapnoe sõeluuring'] },
+  tervishoid:{ label: 'Tervishoid',            risk: 'Väga kõrge',riskClass: 'badge--danger',   freq: '1 a',  multiplier: 1.4,  includes: ['Iga-aastane tervisekontroll', 'Vaktsineerimisstaatus', 'Nakkushaiguste sõeluuring', 'Psühholoogilise stressi hindamine'] },
+  toidu:     { label: 'Toitlustus',            risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '1 a',  multiplier: 1.35, includes: ['Iga-aastane tervisekontroll', 'Sooleinfektsioonide test', 'Nakkushaiguste kontroll', 'Toiduhügieenikoolitus'] },
+  muu:       { label: 'Muu valdkond',          risk: 'Sõltub',    riskClass: 'badge--primary',  freq: 'Sõltub', multiplier: 1.1, includes: ['Esmane tervisekontroll', 'Riskipõhine perioodiline kontroll', 'Riskianalüüs', 'Töötervishoiuarsti nõustamine'] }
+};
+
+function getBaseRate(empCount) {
+  if (empCount <= 5)   return 15;
+  if (empCount <= 20)  return 12;
+  if (empCount <= 50)  return 10;
+  if (empCount <= 100) return 9;
+  return 8;
+}
+
+function formatEur(val) {
+  if (val >= 1000) {
+    return '€' + Math.round(val).toLocaleString('et-EE');
+  }
+  return '€' + Math.round(val);
+}
+
+function recalculate() {
+  var empCount = parseInt(document.getElementById('empNumber').value, 10) || 1;
+  empCount = Math.max(1, Math.min(empCount, 9999));
+
+  var sectorRadio = document.querySelector('input[name="sector"]:checked');
+  var sectorKey = sectorRadio ? sectorRadio.value : 'kontor';
+  var sector = SECTOR_DATA[sectorKey] || SECTOR_DATA['muu'];
+
+  var minorsRadio = document.querySelector('input[name="minors"]:checked');
+  var hasMinors = minorsRadio ? (minorsRadio.value === 'yes') : false;
+
+  var baseRate = getBaseRate(empCount);
+  var rate = baseRate * sector.multiplier;
+  if (hasMinors) rate *= 1.05; // 5% premium for minors
+
+  var monthly = Math.max(rate * empCount, 75); // minimum €75/month
+  var annual  = monthly * 12;
+  var perEmp  = monthly / empCount;
+
+  // Update subtitle
+  document.getElementById('resultSubtitle').textContent =
+    empCount + ' töötajat · ' + sector.label + (hasMinors ? ' · Alaealisi on' : '');
+
+  // Update metrics
+  document.getElementById('metricMonthly').textContent = formatEur(monthly);
+  document.getElementById('metricAnnual').textContent  = formatEur(annual);
+  document.getElementById('metricPerEmp').textContent  = '~' + formatEur(perEmp) + ' / töötaja';
+  document.getElementById('metricFreq').textContent    = sector.freq;
+
+  // Risk badge
+  var badge = document.getElementById('riskBadge');
+  badge.textContent = sector.risk + ' risk';
+  badge.className = 'badge ' + sector.riskClass;
+
+  // Ratio bar (annual / 32000)
+  var maxFine = 32000;
+  var pct = Math.min((annual / maxFine) * 100, 95);
+  document.getElementById('ratioFill').style.width = Math.max(pct, 1) + '%';
+  var ratio = Math.round(maxFine / annual);
+  document.getElementById('ratioText').textContent = ratio + '×';
+  document.getElementById('ratioCaption').innerHTML =
+    'Teenuse aastakulu on <strong>' + ratio + '× väiksem</strong> kui maksimaalne trahv';
+
+  // Comparison section
+  document.getElementById('compareServiceAnnual').textContent = formatEur(annual) + ' / aastas';
+
+  // Includes list
+  var html = '';
+  sector.includes.forEach(function (item) {
+    html += '<div style="display:flex; align-items:center; gap:8px; font-size:var(--text-sm); color:var(--color-text);">'
+          + '<span style="color:var(--color-success); font-weight:700; flex-shrink:0;">✓</span>'
+          + '<span>' + item + '</span>'
+          + '</div>';
+  });
+  if (hasMinors) {
+    html += '<div style="display:flex; align-items:center; gap:8px; font-size:var(--text-sm); color:var(--color-text);">'
+          + '<span style="color:var(--color-success); font-weight:700; flex-shrink:0;">✓</span>'
+          + '<span><strong>Alaealiste erirežiim</strong> — iga-aastane kontroll</span>'
+          + '</div>';
+  }
+  document.getElementById('includesList').innerHTML = html;
+
+  // Pulse animation on result card
+  var card = document.getElementById('resultCard');
+  card.classList.remove('result-updated');
+  void card.offsetWidth; // reflow
+  card.classList.add('result-updated');
+}
+
+// ─── Slider ↔ Number sync ────────────────────────────────
+var slider   = document.getElementById('empSlider');
+var numInput = document.getElementById('empNumber');
+
+function updateSliderTrack(val) {
+  var pct = ((val - 1) / (200 - 1)) * 100;
+  slider.style.setProperty('--slider-pct', pct + '%');
+}
+
+slider.addEventListener('input', function () {
+  numInput.value = this.value;
+  updateSliderTrack(parseInt(this.value, 10));
+  recalculate();
+});
+
+numInput.addEventListener('input', function () {
+  var v = parseInt(this.value, 10) || 1;
+  slider.value = Math.min(v, 200);
+  updateSliderTrack(Math.min(v, 200));
+  recalculate();
+});
+
+// ─── Initial render ──────────────────────────────────────
+updateSliderTrack(10);
+recalculate();
 </script>
 
-<style>
-@media (max-width: 768px) {
-  .container > div[style*="grid-template-columns"] {
-    display: block !important;
-  }
-  .container > div[style*="grid-template-columns"] > div:first-child {
-    margin-bottom: 24px;
-  }
-}
-</style>
 </body>
 </html>
