@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Töötervishoiu kontrollnimekiri tööandjatele — TT24</title>
+  <meta name="description" content="Interaktiivne töötervishoiu kontrollnimekiri ettevõtte suuruse järgi. Märkige täidetud kohustused — progress salvestub automaatselt. Selged selgitused ja viited seadusele.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5459MHF3');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://tt24.ee/kontrollnimekiri.html" />
+  <link rel="alternate" hreflang="et" href="https://tt24.ee/kontrollnimekiri.html" />
+  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/kontrollnimekiri.html" />
+
+  <!-- jsPDF for compliance report download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tt24.ee/kontrollnimekiri.html" />
+  <meta property="og:title" content="Töötervishoiu kontrollnimekiri tööandjatele — TT24" />
+  <meta property="og:description" content="Interaktiivne töötervishoiu kontrollnimekiri ettevõtte suuruse järgi. Märkige täidetud kohustused — progress salvestub automaatselt. Kõik kohustused ühes kohas." />
+  <meta property="og:image" content="https://tt24.ee/og-image.png" />
+  <meta property="og:locale" content="et_EE" />
+  <meta property="og:site_name" content="TT24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Töötervishoiu kontrollnimekiri tööandjatele — TT24" />
+  <meta name="twitter:description" content="Interaktiivne kontrollnimekiri: kõik töötervishoiu kohustused ühes kohas, ettevõtte suuruse järgi. Tasuta." />
+
+  <!-- Schema.org – HowTo (checklist as guided steps) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Töötervishoiu kohustuste täitmine Eestis",
+    "description": "Samm-sammuline juhend kõigi töötervishoiu kohustuste täitmiseks Eesti tööandjale, sõltumata ettevõtte suurusest.",
+    "url": "https://tt24.ee/kontrollnimekiri.html",
+    "totalTime": "P30D",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "EUR",
+      "value": "10"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Tee riskianalüüs",
+        "text": "Vaadake üle kõik töökohad ja tööülesanded. Tuvastage tervise- ja ohutusriskid. Dokumenteerige kirjalikult. Kohustuslik TTOS § 13 alusel.",
+        "url": "https://tt24.ee/kontrollnimekiri.html#riskianaluus"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Sõlmi leping töötervishoiuteenuse osutajaga",
+        "text": "Iga tööandja peab sõlmima lepingu töötervishoiuteenuse osutajaga, sõltumata töötajate arvust. Trahv kuni €32 000.",
+        "url": "https://tt24.ee/kontrollnimekiri.html#ttteenuse-leping"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Korraldada tervisekontrollid",
+        "text": "Saatke tervistkahjustavate teguritega kokku puutuvad töötajad tervisekontrolli. Kasutage kalkulaatorit täpse ajakava saamiseks.",
+        "url": "https://tt24.ee/kalkulaator.html"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Teavita töötajaid",
+        "text": "Kõik töötajad peavad olema teavitatud riskidest. Hoidke allkirjastatud teavitamise aktid.",
+        "url": "https://tt24.ee/kontrollnimekiri.html#teavitamine"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Koosta esmaabivalmidus",
+        "text": "Töökohal peab olema korralik esmaabikomplekt ja vähemalt üks koolitatud esmaabiandjat.",
+        "url": "https://tt24.ee/kontrollnimekiri.html#esmaabi"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Pea tööõnnetuste registrit",
+        "text": "Registreerige kõik tööõnnetused ja ohtlikud olukorrad. Tõsisest tööõnnetusest teavitage Tööinspektsiooni 24 tunni jooksul.",
+        "url": "https://tt24.ee/kontrollnimekiri.html#tooonnetus"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-main">TT24</span>
+      <span class="logo-sub">Töötervishoiu teejuht Eestis</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Avaleht</a>
+      <a href="kontrollnimekiri.html" class="active">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="korduma.html">KKK</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="mailto:info@tt24.ee" class="nav-cta">Küsi pakkumist</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Avaleht</a> › Kontrollnimekiri</div>
+    <h1>✅ Töötervishoiu kontrollnimekiri</h1>
+    <p>Kõik tööandja kohustused ühes kohas, ettevõtte suuruse järgi. Märkige ristiga täidetud punktid — Teie progress salvestub automaatselt.</p>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <div class="container">
+
+      <div class="alert alert-info">
+        <strong>Kuidas kasutada:</strong> Valige vahekaardilt oma ettevõtte suurus. Lugege läbi iga punkt, täitke kohustus ja märkige see tehtuks. Progress salvestub Teie brauserisse automaatselt.
+      </div>
+
+      <!-- TABS -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab-btn active" data-tab="small" role="tab" aria-selected="true">1–9 töötajat</button>
+        <button class="tab-btn" data-tab="medium" role="tab" aria-selected="false">10–49 töötajat</button>
+        <button class="tab-btn" data-tab="large" role="tab" aria-selected="false">50+ töötajat</button>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           TAB: 1–9 TÖÖTAJAT
+      ══════════════════════════════════════ -->
+      <div class="tab-panel active" id="tab-small" role="tabpanel">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-small" style="width:0%"></div></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+          <p class="progress-label" id="label-small" style="margin:0;">0 / 8 täidetud</p>
+          <button class="btn btn-gold btn-sm" onclick="downloadCompliancePDF('small')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+            📄 Laadi aruanne alla
+          </button>
+        </div>
+
+        <!-- RISKIANALÜÜS -->
+        <div class="checklist-section">
+          <div class="checklist-section-title">📊 Riskianalüüs</div>
+
+          <div class="check-item" id="ci-s1">
+            <div class="check-row">
+              <input type="checkbox" id="s1" data-group="small">
+              <label class="check-label" for="s1">Töökoha riskianalüüs on teostatud ja dokumenteeritud</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Riskianalüüs on süstemaatiline hindamine, kus vaadatakse üle kõik töökohad ja tööülesanded ning tuvastatakse, mis võib töötajate tervist kahjustada — füüsilised, keemilised, bioloogilised ja psühhosotsiaalsed ohud.</p>
+              <p><strong>Kellelt abi küsida:</strong> Riskianalüüsi võib teha tööandja ise (väikeettevõttes) või tellida töötervishoiuteenuse osutajalt.</p>
+              <div class="check-consequence">Riskianalüüsi puudumine on üks Tööinspektsiooni enim leitud rikkumisi. Trahv kuni €3 200 füüsilisele isikule, kuni €32 000 juriidilisele isikule.</div>
+              <div class="check-law">📋 Õiguslik alus: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13 lõige 1</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-s2">
+            <div class="check-row">
+              <input type="checkbox" id="s2" data-group="small">
+              <label class="check-label" for="s2">Riskianalüüs on üle vaadatud pärast iga olulist muutust (uus töötaja, uus seade, uus töövõte)</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Riskianalüüs ei ole ühekordne dokument — see tuleb uuendada iga kord, kui töötingimused muutuvad. Ka uue töötaja töölevõtmine võib nõuda ülevaatust.</p>
+              <div class="check-consequence">Aegunud riskianalüüs loetakse samaväärseks selle puudumisega.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13 lõige 3</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TTTEENUS -->
+        <div class="checklist-section">
+          <div class="checklist-section-title">🏥 Töötervishoiuteenuse leping</div>
+
+          <div class="check-item" id="ci-s3">
+            <div class="check-row">
+              <input type="checkbox" id="s3" data-group="small">
+              <label class="check-label" for="s3">Sõlmitud kehtiv leping töötervishoiu teenuse osutajaga</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Iga tööandja — isegi ühe töötajaga ettevõte — peab olema sõlminud lepingu töötervishoiu teenuse osutajaga (töötervishoiuarsti teenust pakkuv ettevõte). See on seaduslik kohustus.</p>
+              <p><strong>Paljud arvavad ekslikult:</strong> "Mul on ainult paar töötajat, leping pole vajalik." — Vale. Seadus kehtib kõigile tööandjatele.</p>
+              <div class="check-consequence">Lepingu puudumine — trahv kuni €32 000. Tööinspektsioon kontrollib seda esimesena.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13 lõige 1 punkt 2</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-s4">
+            <div class="check-row">
+              <input type="checkbox" id="s4" data-group="small">
+              <label class="check-label" for="s4">Töötajad on teavitatud tervise- ja ohutusriskidest ning nende maandamise meetmetest</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Kõik töötajad peavad teadma, millised ohud nende töökohal esinevad ja kuidas end kaitsta. Teavitamine tuleb dokumenteerida — töötaja allkiri kinnitab, et ta on teabe kätte saanud.</p>
+              <div class="check-consequence">Teavitamata töötajatega töötamine — trahv kuni €1 200.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 14 lõige 1</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ESMAABI -->
+        <div class="checklist-section">
+          <div class="checklist-section-title">🩹 Esmaabi ja ohutus</div>
+
+          <div class="check-item" id="ci-s5">
+            <div class="check-row">
+              <input type="checkbox" id="s5" data-group="small">
+              <label class="check-label" for="s5">Töökohal on esmaabivahendid ja vähemalt üks koolitatud esmaabiandjat</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Iga töökohal peab olema korralik esmaabikomplekt. Vähemalt üks töötaja peab olema läbinud esmaabi kursuse. Esmaabivahendid peavad olema kergesti ligipääsetavad ja kõigile teada.</p>
+              <div class="check-consequence">Puudulikud esmaabivahendid — ettekirjutus, korduvalt rikkunule trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 14</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TÖÖÕNNETUS -->
+        <div class="checklist-section">
+          <div class="checklist-section-title">📝 Tööõnnetuste registreerimine</div>
+
+          <div class="check-item" id="ci-s6">
+            <div class="check-row">
+              <input type="checkbox" id="s6" data-group="small">
+              <label class="check-label" for="s6">Tööõnnetuste ja ohtlike olukordade register on olemas</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Tööandja peab pidama kirjalikku registrit kõigist tööõnnetustest (isegi väiksematest) ja ohtlikest olukordadest. Register aitab ennetada kordumist.</p>
+              <div class="check-consequence">Registri puudumine — ettekirjutus ja trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 24 lõige 1</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-s7">
+            <div class="check-row">
+              <input type="checkbox" id="s7" data-group="small">
+              <label class="check-label" for="s7">Tõsisest tööõnnetusest on teatatud Tööinspektsioonile 24 tunni jooksul</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Tõsise tööõnnetuse (kui töötaja vajab haiglaravi või sai kehavigastuse) korral peab tööandja teatama Tööinspektsioonile <strong>24 tunni jooksul</strong>. Hilinemine on ise rikkumine.</p>
+              <div class="check-consequence">Teavitamata jätmine — trahv kuni €3 200.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 25 lõige 1</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ALAEALISTELE -->
+        <div class="checklist-section">
+          <div class="checklist-section-title">👶 Alaealised töötajad (kui kohaldub)</div>
+
+          <div class="check-item" id="ci-s8">
+            <div class="check-row">
+              <input type="checkbox" id="s8" data-group="small">
+              <label class="check-label" for="s8">Alla 18-aastastele töötajatele on tagatud eritervisekontroll enne tööle asumist</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Iga alla 18-aastane töötaja peab läbima tervisekontrolli enne esimest tööpäeva. See kehtib ka suvepraktikantidele.</p>
+              <div class="check-consequence">Alaealisele tervisekontrolli tagamata jätmine — trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TLS" target="_blank" rel="noopener">Töölepinguseadus § 7</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info" style="margin-top: 24px;">
+          <strong>Mida see Teie jaoks tähendab:</strong> Väikeettevõttena on Teil suhteliselt kompaktne kohustuste loetelu, kuid kõik punktid on seaduslikult kohustuslikud. Alustage lepingust töötervishoiuteenuse osutajaga — ilma selleta ei saa te ka riskianalüüsi professionaalselt teha.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           TAB: 10–49 TÖÖTAJAT
+      ══════════════════════════════════════ -->
+      <div class="tab-panel" id="tab-medium" role="tabpanel">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-medium" style="width:0%"></div></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+          <p class="progress-label" id="label-medium" style="margin:0;">0 / 11 täidetud</p>
+          <button class="btn btn-gold btn-sm" onclick="downloadCompliancePDF('medium')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+            📄 Laadi aruanne alla
+          </button>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>NB:</strong> Kõik 1–9 töötajaga ettevõtete kohustused kehtivad ka Teile. Siin on lisaks tulnud kohustused.
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">📊 Riskianalüüs ja mõõtmised</div>
+
+          <div class="check-item" id="ci-m1">
+            <div class="check-row">
+              <input type="checkbox" id="m1" data-group="medium">
+              <label class="check-label" for="m1">Riskianalüüs on teostatud ja dokumenteeritud</label>
+            </div>
+            <div class="check-details">
+              <p>Samas nagu väikeettevõtetel, kuid suurema ettevõttena on soovitatav tellida riskianalüüs professionaalilt.</p>
+              <div class="check-consequence">Puudumine — trahv kuni €32 000.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m2">
+            <div class="check-row">
+              <input type="checkbox" id="m2" data-group="medium">
+              <label class="check-label" for="m2">Töökeskkonna mõõtmised on teostatud (müra, valgus, mikrokliima, keemilised ained jne)</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Kui riskianalüüs tuvastab võimalikke füüsikalisi ohte (kõrge müra, halb valgus, kuumus, keemilised ained), tuleb neid mõõtmistega kinnitada. Mõõtmisi teeb akrediteeritud labor.</p>
+              <p><strong>Paljudes kontorites</strong> piisab visuaalsest hinnangust. Tootmises, ehituses ja transpordis on mõõtmised tavaliselt kohustuslikud.</p>
+              <div class="check-consequence">Mõõtmiste puudumine seal, kus need on nõutud — trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13 lõige 7</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m3">
+            <div class="check-row">
+              <input type="checkbox" id="m3" data-group="medium">
+              <label class="check-label" for="m3">Kõrge riskiga töötajad on läbinud tervisekontrolli</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Töötajad, kes puutuvad kokku tervistkahjustavate teguritega (müra, vibratsioon, keemilised ained, kuvariga töö jms) peavad regulaarselt tervisekontrollist läbi käima. Ajakava sõltub riskitegurist.</p>
+              <div class="check-consequence">Tervisekontrolli tagamata jätmine — trahv kuni €32 000.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13 lõige 1 punkt 3</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">👷 Töökeskkonnavolinik</div>
+
+          <div class="check-item" id="ci-m4">
+            <div class="check-row">
+              <input type="checkbox" id="m4" data-group="medium">
+              <label class="check-label" for="m4">Töötajad on valinud töökeskkonnavoliniku</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Töökeskkonnavolinik on töötajate esindaja, kelle ülesanne on jälgida, et tööandja täidaks töötervishoiu kohustusi. Volinik ei ole tööandja poolne — teda valivad töötajad ise.</p>
+              <p><strong>Oluline:</strong> Tööandja peab tegema valimise korraldamise võimalikuks ja tagama volinikule koolituse.</p>
+              <div class="check-consequence">Voliniku puudumine — trahv kuni €1 200.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 17</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m5">
+            <div class="check-row">
+              <input type="checkbox" id="m5" data-group="medium">
+              <label class="check-label" for="m5">Töökeskkonnavolinikule on tagatud töötervishoiu ja -ohutuse alane koolitus (tavaliselt vähemalt 4 tundi)</label>
+            </div>
+            <div class="check-details">
+              <p>Volinik peab saama koolituse töötervishoiu ja -ohutuse alal. Koolituse kulud katab tööandja.</p>
+              <div class="check-consequence">Koolitamata volinik — ettekirjutus.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 17 lõige 5</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">🏥 Töötervishoiuteenuse leping ja tervisekontroll</div>
+
+          <div class="check-item" id="ci-m6">
+            <div class="check-row">
+              <input type="checkbox" id="m6" data-group="medium">
+              <label class="check-label" for="m6">Kehtiv leping töötervishoiuteenuse osutajaga on sõlmitud</label>
+            </div>
+            <div class="check-details">
+              <p>Kohustus on sama mis väikeettevõttel, kuid suurema töötajaskonnaga on leping veelgi kriitilisem — tervisekontrolli maht on suurem.</p>
+              <div class="check-consequence">Lepingu puudumine — trahv kuni €32 000.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m7">
+            <div class="check-row">
+              <input type="checkbox" id="m7" data-group="medium">
+              <label class="check-label" for="m7">Töötajate tervisekontrolli tulemustel põhinevad isikukaitsevahendite ja töökoha kohanduste otsused</label>
+            </div>
+            <div class="check-details">
+              <p>Töötervishoiuarsti soovitused (nt. ergonoomilised töövahendid, kuulmiskaitsmed) tuleb dokumenteerida ja ellu viia.</p>
+              <div class="check-consequence">Soovituste eiramist käsitletakse tööandja hooletusena.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13 lõige 9</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">📝 Dokumentatsioon</div>
+
+          <div class="check-item" id="ci-m8">
+            <div class="check-row">
+              <input type="checkbox" id="m8" data-group="medium">
+              <label class="check-label" for="m8">Töötajate teavitamise aktid on allkirjastatud ja arhiveeritud</label>
+            </div>
+            <div class="check-details">
+              <p>Iga kord, kui töötajaid teavitatakse tervise- ja ohutusriskidest, tuleb sellest koostada akt töötajate allkirjadega.</p>
+              <div class="check-consequence">Tõendus puudub — ei saa Tööinspektsioonile tõestada, et teavitamine toimus.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 14</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m9">
+            <div class="check-row">
+              <input type="checkbox" id="m9" data-group="medium">
+              <label class="check-label" for="m9">Tööõnnetuste register on peetud ja kättesaadav</label>
+            </div>
+            <div class="check-details">
+              <p>Kõik tööõnnetused, isegi väiksemad vigastused, peavad olema registreeritud. Registri vormi leiate Tööinspektsiooni veebilehelt.</p>
+              <div class="check-consequence">Puuduv register — trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 24</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m10">
+            <div class="check-row">
+              <input type="checkbox" id="m10" data-group="medium">
+              <label class="check-label" for="m10">Esmaabivahendid on olemas, täidetud ja kättesaadavad kõigile töötajatele</label>
+            </div>
+            <div class="check-details">
+              <p>Suuremas ettevõttes peab esmaabivahendeid olema rohkem ja need peavad asuma mitmes kohas. Esmaabi andjaid peaks olema proportsionaalselt töötajate arvule.</p>
+              <div class="check-consequence">Puudulikud vahendid — ettekirjutus.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 14</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-m11">
+            <div class="check-row">
+              <input type="checkbox" id="m11" data-group="medium">
+              <label class="check-label" for="m11">Rasedatele ja alaealistele on tagatud eritingimused</label>
+            </div>
+            <div class="check-details">
+              <p>Rasedatele ei tohi anda töid, mis ohustavad nende või loote tervist. Alaealised ei tohi töötada ohtlikes tingimustes. Mõlemale peab tegema tervisekontrolli.</p>
+              <div class="check-consequence">Erikaitse eiramine — trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TLS" target="_blank" rel="noopener">Töölepinguseadus §§ 7, 43</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info" style="margin-top: 24px;">
+          <strong>Mida see Teie jaoks tähendab:</strong> Peamine lisanduv kohustus on töökeskkonnavolinik — see peab olema töötajate poolt valitud. Samuti muutuvad suuremaks dokumentatsiooni- ja mõõtmisnõuded. Soovitav on kasutada töötervishoiuteenuse osutajat, kes haldab kogu dokumentatsiooni Teie eest.
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           TAB: 50+ TÖÖTAJAT
+      ══════════════════════════════════════ -->
+      <div class="tab-panel" id="tab-large" role="tabpanel">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-large" style="width:0%"></div></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+          <p class="progress-label" id="label-large" style="margin:0;">0 / 8 täidetud</p>
+          <button class="btn btn-gold btn-sm" onclick="downloadCompliancePDF('large')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+            📄 Laadi aruanne alla
+          </button>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>NB:</strong> Kõik 10–49 töötajaga ettevõtete kohustused kehtivad ka Teile. Siin on suurema ettevõtte lisanõuded.
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">🏛️ Töökeskkonnanõukogu</div>
+
+          <div class="check-item" id="ci-l1">
+            <div class="check-row">
+              <input type="checkbox" id="l1" data-group="large">
+              <label class="check-label" for="l1">Töökeskkonnanõukogu on moodustatud (50+ töötajaga ettevõttes kohustuslik)</label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Töökeskkonnanõukogu on ühiskomisjon, kuhu kuuluvad nii tööandja esindajad kui töötajate esindajad (töökeskkonnavolinikud). Nõukogu koguneb vähemalt kord kvartalis.</p>
+              <p><strong>Erinev volinikust:</strong> Volinik (10+ töötajat) on töötajate esindaja. Nõukogu (50+ töötajat) on ühine kogu, kus mõlemad pooled osalevad.</p>
+              <div class="check-consequence">Nõukogu puudumine — trahv kuni €3 200.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 18</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-l2">
+            <div class="check-row">
+              <input type="checkbox" id="l2" data-group="large">
+              <label class="check-label" for="l2">Nõukogu koosolekud toimuvad vähemalt kord kvartalis ja protokollid on arhiveeritud</label>
+            </div>
+            <div class="check-details">
+              <p>Iga koosoleku kohta tuleb koostada protokoll, milles kajastuvad arutatad teemad ja tehtud otsused.</p>
+              <div class="check-consequence">Koosolekute pidamata jätmine — ettekirjutus.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 18 lõige 3</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">📋 Töötervishoiu tegevuskava</div>
+
+          <div class="check-item" id="ci-l3">
+            <div class="check-row">
+              <input type="checkbox" id="l3" data-group="large">
+              <label class="check-label" for="l3">Kirjalik töötervishoiu ja -ohutuse tegevuskava on koostatud <small>[KINNITAMATA — täpne seaduslik kohustus, tungivalt soovitatav TTOS § 16 alusel]</small></label>
+            </div>
+            <div class="check-details">
+              <p><strong>Mida see tähendab:</strong> Suurematel ettevõtetel peab olema kirjalik plaan, mis kirjeldab, kuidas ettevõte kavatseb tuvastatud riske maandada, milliseid meetmeid võetakse ja kes vastutab millegi eest.</p>
+              <div class="check-consequence">Tegevuskava puudumine — riskide juhtimise nõrkus, võib kaasa tuua ettekirjutuse.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 16</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-l4">
+            <div class="check-row">
+              <input type="checkbox" id="l4" data-group="large">
+              <label class="check-label" for="l4">Tegevuskava uuendatakse vähemalt kord aastas</label>
+            </div>
+            <div class="check-details">
+              <p>Tegevuskava ei ole staatiline dokument — see peab kajastama ettevõtte hetkeolukorda ja käimasolevaid meetmeid.</p>
+              <div class="check-consequence">Aegunud tegevuskava loetakse puuduvaks.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 16</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">👩‍⚕️ Töötervishoiu spetsialist</div>
+
+          <div class="check-item" id="ci-l5">
+            <div class="check-row">
+              <input type="checkbox" id="l5" data-group="large">
+              <label class="check-label" for="l5">Töötervishoiuarsti regulaarsed külastused ja konsultatsioonid on korraldatud (vähemalt kord aastas)</label>
+            </div>
+            <div class="check-details">
+              <p>Suuremas ettevõttes peaks töötervishoiuarst regulaarselt töökohal käima, et hinnata töötingimusi kohapeal.</p>
+              <div class="check-consequence">Regulaarsete visiitide puudumine — lepingutingimuste rikkumine.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <div class="checklist-section-title">📊 Laiendatud aruandlus</div>
+
+          <div class="check-item" id="ci-l6">
+            <div class="check-row">
+              <input type="checkbox" id="l6" data-group="large">
+              <label class="check-label" for="l6">Aastaaruanne töötervishoiu olukorra kohta on koostatud</label>
+            </div>
+            <div class="check-details">
+              <p>Suuremad ettevõtted peavad koostama iga-aastase kokkuvõtte töötervishoiu olukorrast, mõõtmiste tulemustest, tervisekontrollidest ja võetud meetmetest.</p>
+              <div class="check-consequence">Aruande puudumine — ettekirjutus.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 13</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-l7">
+            <div class="check-row">
+              <input type="checkbox" id="l7" data-group="large">
+              <label class="check-label" for="l7">Kõik töötajate tervisekontrolli andmed on arhiveeritud ja kaitstud (GDPR nõuded täidetud)</label>
+            </div>
+            <div class="check-details">
+              <p>Tervisekontrolli andmed on eriliigilised isikuandmed. Nende säilitamine, ligipääs ja kustutamine peavad vastama GDPR ja Isikuandmete kaitse seaduse nõuetele.</p>
+              <div class="check-consequence">Isikuandmete kaitse rikkumine — trahv Andmekaitse Inspektsioonilt kuni miljoneid eurosid.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/13077729" target="_blank" rel="noopener">Isikuandmete kaitse seadus</a></div>
+            </div>
+          </div>
+
+          <div class="check-item" id="ci-l8">
+            <div class="check-row">
+              <input type="checkbox" id="l8" data-group="large">
+              <label class="check-label" for="l8">Kutsehaiguse kahtluse korral on teavitamine ja uurimine läbi viidud</label>
+            </div>
+            <div class="check-details">
+              <p>Kui töötervishoiuarst kahtlustab kutsehaigust, algab kohustuslik uurimisprotsess. Tööandja on kohustatud kaasa lööma ja andma infot tervisekahjustava teguri kohta.</p>
+              <div class="check-consequence">Koostöö keeldumine — trahv.</div>
+              <div class="check-law">📋 <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">TTOS § 27</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info" style="margin-top: 24px;">
+          <strong>Mida see Teie jaoks tähendab:</strong> 50+ töötajaga ettevõte vajab sisuliselt täisväärtuslikku töötervishoiu haldussüsteemi. Paljud selles kategoorias olevad ettevõtted kasutavad välise TTH teenuse osutaja täisteenust, et tagada dokumentatsiooni ja protsesside nõuetekohasus.
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Märkus:</strong> See kontrollnimekiri annab üldise ülevaate põhikohustustest. See ei asenda õigusnõustamist ega töötervishoiuspetsialisti hinnangut. Täpse vastavuse tagamiseks pöörduge vastava spetsialisti poole.
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <p>Vajate abi töötervishoiu korraldamisega? Meie partnerid aitavad Teid — <span class="price">alates €10 töötaja kohta kuus.</span></p>
+    <a href="mailto:info@tt24.ee" class="btn-gold">Küsige pakkumist</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Avaleht</a>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="korduma.html">KKK</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsioon</a>
+    </div>
+    <p>© 2026 TT24 — Töötervishoiu teejuht Eestis | <a href="mailto:info@tt24.ee">info@tt24.ee</a></p>
+    <p style="margin-top: 6px;">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function() {
+  document.getElementById('mainNav').classList.toggle('open');
+});
+
+// ─── TABS ───────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const tab = this.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    this.setAttribute('aria-selected','true');
+    document.getElementById('tab-' + tab).classList.add('active');
+  });
+});
+
+// ─── CHECKLIST PERSISTENCE ──────────────────────────────
+const GROUPS = {
+  small:  { count: 8,  ids: ['s1','s2','s3','s4','s5','s6','s7','s8'] },
+  medium: { count: 11, ids: ['m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11'] },
+  large:  { count: 8,  ids: ['l1','l2','l3','l4','l5','l6','l7','l8'] }
+};
+
+function updateProgress(group) {
+  const g = GROUPS[group];
+  const done = g.ids.filter(id => {
+    const el = document.getElementById(id);
+    return el && el.checked;
+  }).length;
+  const pct = Math.round((done / g.count) * 100);
+  const fill = document.getElementById('progress-' + group);
+  const label = document.getElementById('label-' + group);
+  if (fill) fill.style.width = pct + '%';
+  if (label) label.textContent = done + ' / ' + g.count + ' täidetud';
+}
+
+function loadState() {
+  Object.keys(GROUPS).forEach(group => {
+    GROUPS[group].ids.forEach(id => {
+      const saved = localStorage.getItem('tth_check_' + id);
+      const el = document.getElementById(id);
+      const item = document.getElementById('ci-' + id);
+      if (el && saved === 'true') {
+        el.checked = true;
+        if (item) item.classList.add('done');
+      }
+    });
+    updateProgress(group);
+  });
+}
+
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    localStorage.setItem('tth_check_' + this.id, this.checked);
+    const group = this.dataset.group;
+    const item = document.getElementById('ci-' + this.id);
+    if (item) item.classList.toggle('done', this.checked);
+    updateProgress(group);
+  });
+});
+
+loadState();
+
+// ─── PDF COMPLIANCE REPORT ───────────────────────────────
+const CHECKLIST_DATA = {
+  small: {
+    label: '1–9 töötajat',
+    items: [
+      { id: 's1', text: 'Töökoha riskianalüüs on teostatud ja dokumenteeritud', law: 'TTOS § 13 lg 1' },
+      { id: 's2', text: 'Riskianalüüs üle vaadatud pärast iga olulist muutust', law: 'TTOS § 13 lg 3' },
+      { id: 's3', text: 'Kehtiv leping töötervishoiu teenuse osutajaga', law: 'TTOS § 13 lg 1 p 2' },
+      { id: 's4', text: 'Töötajad teavitatud tervise- ja ohutusriskidest (allkirjad)', law: 'TTOS § 14 lg 1' },
+      { id: 's5', text: 'Esmaabivahendid olemas ja koolitatud esmaabiandjat', law: 'TTOS § 14' },
+      { id: 's6', text: 'Tööõnnetuste ja ohtlike olukordade register on olemas', law: 'TTOS § 24 lg 1' },
+      { id: 's7', text: 'Tõsisest tööõnnetusest teatatud TI-le 24 tunni jooksul', law: 'TTOS § 25 lg 1' },
+      { id: 's8', text: 'Alla 18-aastastele tagatud eritervisekontroll enne tööle asumist', law: 'TLS § 7' }
+    ]
+  },
+  medium: {
+    label: '10–49 töötajat',
+    items: [
+      { id: 'm1', text: 'Riskianalüüs teostatud ja dokumenteeritud', law: 'TTOS § 13' },
+      { id: 'm2', text: 'Töökeskkonna mõõtmised teostatud (müra, valgus jne)', law: 'TTOS § 13 lg 7' },
+      { id: 'm3', text: 'Kõrge riskiga töötajad läbinud tervisekontrolli', law: 'TTOS § 13 lg 1 p 3' },
+      { id: 'm4', text: 'Töötajad on valinud töökeskkonnavoliniku', law: 'TTOS § 17' },
+      { id: 'm5', text: 'Töökeskkonnavolinikule tagatud koolitus', law: 'TTOS § 17 lg 5' },
+      { id: 'm6', text: 'Kehtiv leping töötervishoiuteenuse osutajaga', law: 'TTOS § 13' },
+      { id: 'm7', text: 'Tervisekontrolli tulemustel põhinevad otsused ellu viidud', law: 'TTOS § 13 lg 9' },
+      { id: 'm8', text: 'Töötajate teavitamise aktid allkirjastatud ja arhiveeritud', law: 'TTOS § 14' },
+      { id: 'm9', text: 'Tööõnnetuste register peetud ja kättesaadav', law: 'TTOS § 24' },
+      { id: 'm10', text: 'Esmaabivahendid olemas, täidetud, kättesaadavad', law: 'TTOS § 14' },
+      { id: 'm11', text: 'Rasedatele ja alaealistele tagatud eritingimused', law: 'TLS §§ 7, 43' }
+    ]
+  },
+  large: {
+    label: '50+ töötajat',
+    items: [
+      { id: 'l1', text: 'Töökeskkonnanõukogu on moodustatud', law: 'TTOS § 18' },
+      { id: 'l2', text: 'Nõukogu koosolekud vähemalt kord kvartalis, protokollid arhiveeritud', law: 'TTOS § 18 lg 3' },
+      { id: 'l3', text: 'Kirjalik töötervishoiu ja -ohutuse tegevuskava koostatud', law: 'TTOS § 16' },
+      { id: 'l4', text: 'Tegevuskava uuendatakse vähemalt kord aastas', law: 'TTOS § 16' },
+      { id: 'l5', text: 'Töötervishoiuarsti regulaarsed külastused korraldatud', law: 'TTOS § 13' },
+      { id: 'l6', text: 'Aastaaruanne töötervishoiu olukorra kohta koostatud', law: 'TTOS § 13' },
+      { id: 'l7', text: 'Tervisekontrolli andmed arhiveeritud ja GDPR-nõuetele vastavad', law: 'Isikuandmete kaitse seadus' },
+      { id: 'l8', text: 'Kutsehaiguse kahtluse korral teavitamine ja uurimine läbi viidud', law: 'TTOS § 27' }
+    ]
+  }
+};
+
+function downloadCompliancePDF(group) {
+  if (typeof window.jspdf === 'undefined' && typeof jsPDF === 'undefined') {
+    alert('PDF-i genereerimine pole saadaval. Kasutage brauseri printimisvõimalust (Ctrl+P).');
+    return;
+  }
+
+  const { jsPDF } = window.jspdf || window;
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+  const data = CHECKLIST_DATA[group];
+  const items = data.items;
+  const done = items.filter(i => {
+    const el = document.getElementById(i.id);
+    return el && el.checked;
+  });
+  const missing = items.filter(i => {
+    const el = document.getElementById(i.id);
+    return !el || !el.checked;
+  });
+
+  const total = items.length;
+  const doneCount = done.length;
+  const pct = Math.round((doneCount / total) * 100);
+  const dateStr = new Date().toLocaleDateString('et-EE', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  // Determine status color
+  let statusColor, statusLabel;
+  if (pct >= 88)      { statusColor = [39,174,96];   statusLabel = 'HEAS SEISUS'; }
+  else if (pct >= 55) { statusColor = [230,126,34];  statusLabel = 'TÄHELEPANU VAJALIK'; }
+  else                { statusColor = [192,57,43];   statusLabel = 'KRIITILISED PUUDUSED'; }
+
+  const teal = [26,44,46];
+  const grey = [90,113,115];
+  const lightGrey = [228,233,233];
+
+  // ── HEADER BAR ──
+  doc.setFillColor(...teal);
+  doc.rect(0, 0, 210, 30, 'F');
+
+  doc.setTextColor(255,255,255);
+  doc.setFontSize(17);
+  doc.setFont('helvetica','bold');
+  doc.text('Tootervishoiu vastavusaruanne', 14, 12);
+  doc.setFontSize(10);
+  doc.setFont('helvetica','normal');
+  doc.text('TT24 — tt24.ee  |  Valvekliinik', 14, 21);
+  doc.text(dateStr, 196, 21, { align: 'right' });
+
+  // ── STATUS BLOCK ──
+  doc.setFillColor(...statusColor);
+  doc.rect(0, 30, 210, 22, 'F');
+  doc.setTextColor(255,255,255);
+  doc.setFontSize(13);
+  doc.setFont('helvetica','bold');
+  doc.text(`${statusLabel}  —  ${doneCount}/${total} kohustust täidetud (${pct}%)`, 14, 44);
+
+  // ── SUBTITLE ──
+  doc.setTextColor(...teal);
+  doc.setFontSize(12);
+  doc.setFont('helvetica','bold');
+  doc.text(`Ettevõtte suurus: ${data.label}`, 14, 62);
+
+  // ── SUMMARY ROW ──
+  doc.setFontSize(9);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(...grey);
+  doc.text(`Täidetud: ${doneCount}   Puudu: ${missing.length}   Kokku kontrollpunkti: ${total}`, 14, 70);
+  doc.setDrawColor(...lightGrey);
+  doc.line(14, 74, 196, 74);
+
+  let y = 82;
+
+  // ── DONE ITEMS ──
+  if (done.length > 0) {
+    doc.setFontSize(10);
+    doc.setFont('helvetica','bold');
+    doc.setTextColor(...grey);
+    doc.text('TÄIDETUD KOHUSTUSED', 14, y);
+    y += 8;
+
+    done.forEach(item => {
+      if (y > 265) { doc.addPage(); y = 20; }
+      doc.setFillColor(39,174,96);
+      doc.circle(17, y - 1.5, 2, 'F');
+      doc.setTextColor(26,44,46);
+      doc.setFont('helvetica','normal');
+      doc.setFontSize(9.5);
+      const lines = doc.splitTextToSize(item.text, 158);
+      doc.text(lines, 22, y);
+      doc.setTextColor(...grey);
+      doc.setFontSize(7.5);
+      doc.text(item.law, 196, y, { align: 'right' });
+      y += lines.length * 5 + 3;
+    });
+    y += 4;
+    doc.setDrawColor(...lightGrey);
+    doc.line(14, y, 196, y);
+    y += 8;
+  }
+
+  // ── MISSING ITEMS ──
+  if (missing.length > 0) {
+    doc.setFontSize(10);
+    doc.setFont('helvetica','bold');
+    doc.setTextColor(...grey);
+    doc.text('PUUDUVAD / TÄITMATA KOHUSTUSED', 14, y);
+    y += 8;
+
+    missing.forEach(item => {
+      if (y > 265) { doc.addPage(); y = 20; }
+      doc.setFillColor(192,57,43);
+      doc.circle(17, y - 1.5, 2, 'F');
+      doc.setTextColor(26,44,46);
+      doc.setFont('helvetica','bold');
+      doc.setFontSize(9.5);
+      const lines = doc.splitTextToSize(item.text, 158);
+      doc.text(lines, 22, y);
+      doc.setTextColor(...grey);
+      doc.setFontSize(7.5);
+      doc.setFont('helvetica','normal');
+      doc.text(item.law, 196, y, { align: 'right' });
+      y += lines.length * 5 + 3;
+    });
+    y += 4;
+  }
+
+  // ── RECOMMENDATION BOX ──
+  if (missing.length > 0 && y < 240) {
+    y += 4;
+    doc.setDrawColor(...lightGrey);
+    doc.line(14, y, 196, y);
+    y += 8;
+    doc.setFillColor(255, 249, 236);
+    doc.rect(14, y, 182, 24, 'F');
+    doc.setDrawColor(230,126,34);
+    doc.rect(14, y, 4, 24, 'F');
+    doc.setTextColor(26,44,46);
+    doc.setFont('helvetica','bold');
+    doc.setFontSize(9);
+    doc.text('Jareldused:', 22, y + 8);
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(8.5);
+    const rec = `Teil on ${missing.length} täitmata kohustust. Alustage lepingust töötervishoiu teenuse osutajaga ja riskianalüüsiga. Lisainfo: tt24.ee/kontrollnimekiri.html`;
+    const recLines = doc.splitTextToSize(rec, 165);
+    doc.text(recLines, 22, y + 14);
+    y += 30;
+  }
+
+  // ── FOOTER ──
+  const footerY = 282;
+  doc.setFillColor(245,248,248);
+  doc.rect(0, footerY - 6, 210, 15, 'F');
+  doc.setTextColor(...grey);
+  doc.setFontSize(7.5);
+  doc.setFont('helvetica','normal');
+  doc.text('See aruanne on isehinnangu vahend ja ei asenda ametlikku auditit ega Tooeinspektsiooni jarelevalvet.', 14, footerY);
+  doc.setTextColor(...teal);
+  doc.setFont('helvetica','bold');
+  doc.text('tt24.ee', 196, footerY, { align: 'right' });
+
+  const filename = `TTH-vastavusaruanne-${data.label.replace(/\s+/g,'-')}-${new Date().toISOString().slice(0,10)}.pdf`;
+  doc.save(filename);
+}
+</script>
+</body>
+</html>

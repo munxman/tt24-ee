@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT24 — Täname usalduse eest | Järelkaart</title>
+  <style>
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #e8ecf0;
+    }
+
+    /* ─── Screen: Centre the A5 card ─── */
+    @media screen {
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 20px;
+      }
+      .card {
+        width: 210mm;   /* A5 landscape width */
+        height: 148mm;  /* A5 landscape height */
+        box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+        border-radius: 3px;
+      }
+    }
+
+    /* ─── Print: Exact A5 landscape ─── */
+    @page {
+      size: A5 landscape;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        display: block;
+      }
+      .card {
+        width: 210mm;
+        height: 148mm;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      .card:last-child { page-break-after: auto; }
+      .no-print { display: none !important; }
+    }
+
+    /* ─── Card Base ─── */
+    .card {
+      background: #fff;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ─── LEFT PANEL (brand accent + QR) ─── */
+    .card-left {
+      width: 52mm;
+      background: #1a4b6e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8mm 6mm 7mm 6mm;
+      position: relative;
+    }
+
+    /* Decorative dots */
+    .card-left::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 6mm 6mm;
+    }
+
+    .left-brand {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .left-brand-name {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 26pt;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .left-brand-name span {
+      color: #7ec8f0;
+    }
+
+    .left-brand-tagline {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 7pt;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .left-qr {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3mm;
+    }
+
+    .left-qr img {
+      width: 26mm;
+      height: 26mm;
+      display: block;
+      background: white;
+      padding: 2px;
+      border-radius: 2px;
+    }
+
+    .left-qr-label {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .left-contact {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .left-contact-line {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* ─── RIGHT PANEL (main content) ─── */
+    .card-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 8mm 8mm 6mm 9mm;
+      position: relative;
+    }
+
+    /* Subtle top accent line */
+    .card-right::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7ec8f0, #1a4b6e, transparent);
+    }
+
+    /* ─── Right Header ─── */
+    .right-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4mm;
+    }
+
+    .right-greeting {
+      font-family: 'Georgia', serif;
+      font-size: 9pt;
+      color: #888;
+      font-style: italic;
+    }
+
+    .right-date {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 7.5pt;
+      color: #bbb;
+    }
+
+    /* ─── Headline ─── */
+    .card-headline {
+      font-family: 'Georgia', serif;
+      font-size: 13.5pt;
+      font-weight: 700;
+      color: #1a4b6e;
+      line-height: 1.3;
+      margin-bottom: 3mm;
+    }
+
+    /* ─── Body ─── */
+    .card-body {
+      font-size: 9pt;
+      color: #3a3a3a;
+      line-height: 1.65;
+      margin-bottom: 3mm;
+      flex-shrink: 0;
+    }
+
+    /* ─── Next Steps ─── */
+    .next-steps {
+      background: #f4f8fb;
+      border-left: 3px solid #2e7db5;
+      border-radius: 0 2px 2px 0;
+      padding: 3mm 4mm;
+      margin-bottom: 3mm;
+    }
+
+    .next-steps-title {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      color: #1a4b6e;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2mm;
+    }
+
+    .next-steps-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .next-steps-list li {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 8pt;
+      color: #2a4a6a;
+      line-height: 1.5;
+      padding-left: 4mm;
+      position: relative;
+    }
+
+    .next-steps-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #2e7db5;
+      font-weight: 700;
+    }
+
+    /* ─── Handwritten note area ─── */
+    .note-area {
+      flex: 1;
+      border: 1px dashed #ccd8e8;
+      border-radius: 2px;
+      padding: 3mm 4mm;
+      margin-bottom: 3mm;
+      background: #fdfefe;
+      position: relative;
+      min-height: 14mm;
+    }
+
+    .note-area-label {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 6.5pt;
+      color: #bbb;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      position: absolute;
+      top: 2mm;
+      left: 3mm;
+    }
+
+    /* ─── Footer strip ─── */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2mm;
+      border-top: 1px solid #e8ecf0;
+    }
+
+    .footer-contact {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 7pt;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    .footer-contact strong {
+      color: #1a4b6e;
+      font-size: 7.5pt;
+    }
+
+    .footer-url {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #2e7db5;
+      letter-spacing: -0.2px;
+    }
+
+    /* ─── Print Button (screen only) ─── */
+    .print-btn {
+      padding: 10px 30px;
+      background: #1a4b6e;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      font-size: 10pt;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .print-btn:hover { background: #2e7db5; }
+
+    .screen-note {
+      font-family: 'Arial', sans-serif;
+      font-size: 8pt;
+      color: #999;
+      text-align: center;
+      max-width: 210mm;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-only controls -->
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Prindi kaart (A5 rõhtpaigutus)</button>
+  <p class="screen-note no-print">Prindi paberile A5 (148 × 210 mm), rõhtpaigutus. Kaart on kahepoolseks printimiseks sobivas suuruses.</p>
+
+  <!-- ══ THANK-YOU CARD ══ -->
+  <div class="card">
+
+    <!-- LEFT: Brand + QR -->
+    <div class="card-left">
+
+      <div class="left-brand">
+        <div class="left-brand-name">TT<span>24</span></div>
+        <div class="left-brand-tagline">Töötervishoiu<br>teejuht</div>
+      </div>
+
+      <div class="left-qr">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tt24.ee&color=ffffff&bgcolor=1a4b6e&qzone=1&format=png"
+          alt="QR: tt24.ee"
+        >
+        <div class="left-qr-label">Ressursid ja juhendid<br><strong style="color:#7ec8f0">tt24.ee</strong></div>
+      </div>
+
+      <div class="left-contact">
+        <div class="left-contact-line">
+          Valvekliinik OÜ<br>
+          Sepapaja 12/1, Tallinn<br>
+          +372 52 99939
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Main content -->
+    <div class="card-right">
+
+      <div class="right-header">
+        <div class="right-greeting">Valvekliinik TTH meeskonnalt</div>
+        <div class="right-date" id="cardDate"></div>
+      </div>
+
+      <div class="card-headline">
+        Täname, et usaldate oma<br>meeskonna tervist meile!
+      </div>
+
+      <div class="card-body">
+        On rõõm, et tegite esimese sammu töötervishoiu korrastamisel. 
+        Oleme siin, et teha kogu protsess Teie jaoks lihtsaks ja murevabaks — 
+        nii tänasest kui ka edaspidi.
+      </div>
+
+      <!-- Next steps -->
+      <div class="next-steps">
+        <div class="next-steps-title">Kokku lepitud järgmised sammud</div>
+        <ul class="next-steps-list">
+          <li>Riskianalüüs viiakse läbi hiljemalt <strong>[kuupäev]</strong></li>
+          <li>Tervisekontrollide ajakava saadetakse e-postile</li>
+          <li>Teie kontaktisik: <strong>[nimi]</strong> · tootervishoid@valvekliinik.ee</li>
+        </ul>
+      </div>
+
+      <!-- Handwritten note area -->
+      <div class="note-area">
+        <div class="note-area-label">Isiklik märkus</div>
+      </div>
+
+      <!-- Footer -->
+      <div class="card-footer">
+        <div class="footer-contact">
+          <strong>Valvekliinik OÜ</strong> · tootervishoid@valvekliinik.ee · +372 52 99939<br>
+          Sepapaja 12/1, 11415 Tallinn
+        </div>
+        <div class="footer-url">tt24.ee</div>
+      </div>
+
+    </div>
+
+  </div><!-- /.card -->
+
+  <script>
+    const d = new Date();
+    const months = ['jaan','veebr','märts','apr','mai','juuni',
+                    'juuli','aug','sept','okt','nov','dets'];
+    document.getElementById('cardDate').textContent =
+      d.getDate() + '. ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  </script>
+
+</body>
+</html>

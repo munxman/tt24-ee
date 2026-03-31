@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tervisekontrolli kalkulaator tööandjatele — TT24</title>
+  <meta name="description" content="Kasutage tasuta kalkulaatorit: sisestage töötajate arv, valdkond ja vasake, kas on alaealisi — saate täpse vastuse, milline tervisekontroll on kohustuslik ja millal.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5459MHF3');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tt24.ee/kalkulaator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tt24.ee/kalkulaator.html" />
+  <meta property="og:title" content="Tervisekontrolli kalkulaator tööandjatele — TT24" />
+  <meta property="og:description" content="Kolm küsimust — täpne vastus. Mis tervisekontrolli Teie töötajad vajavad ja millal see tuleb teha? Tasuta tööriist Eesti tööandjatele." />
+  <meta property="og:image" content="https://tt24.ee/og-image.png" />
+  <meta property="og:locale" content="et_EE" />
+  <meta property="og:site_name" content="TT24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tervisekontrolli kalkulaator — TT24" />
+  <meta name="twitter:description" content="Mis tervisekontrolli Teie töötajad vajavad? 3 küsimust, kohene vastus. Tasuta." />
+
+  <!-- Schema.org – SoftwareApplication (web tool) + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tervisekontrolli kalkulaator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://tt24.ee/kalkulaator.html",
+    "description": "Tasuta veebitööriist Eesti tööandjatele: sisestage valdkond ja töötajate profiil — saate koheselt täpse vastuse, milline tervisekontroll on kohustuslik ja millal.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "TT24 / Valvekliinik",
+      "url": "https://valvekliinik.ee"
+    }
+  }
+  </script>
+
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-main">TT24</span>
+      <span class="logo-sub">Töötervishoiu teejuht Eestis</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Avaleht</a>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html" class="active">Kalkulaator</a>
+      <a href="korduma.html">KKK</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="mailto:info@tt24.ee" class="nav-cta">Küsi pakkumist</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Avaleht</a> › Kalkulaator</div>
+    <h1>🧮 Tervisekontrolli kalkulaator</h1>
+    <p>Vastake kolmele küsimusele — saate täpse ülevaate, milline tervisekontroll on Teie töötajatele kohustuslik ja millal see peab toimuma.</p>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; max-width: 1000px;">
+
+        <!-- FORM -->
+        <div>
+          <div class="calc-form">
+            <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 24px;">Sisestage oma ettevõtte andmed</h2>
+
+            <!-- Q1: employees -->
+            <div class="calc-group">
+              <label for="q_employees">1. Mitu töötajat Teil on?</label>
+              <input type="number" id="q_employees" min="1" max="9999" placeholder="Näiteks: 12" inputmode="numeric">
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Sisestage praegu töötavate töötajate arv (sh osalise ajaga).</p>
+            </div>
+
+            <!-- Q2: sector -->
+            <div class="calc-group">
+              <label for="q_sector">2. Mis valdkonnas Teie ettevõte tegutseb?</label>
+              <select id="q_sector">
+                <option value="">-- Valige valdkond --</option>
+                <option value="kontor">Kontor / IT / finants / kaubandus (lauatöö)</option>
+                <option value="kaubandus_klientidega">Teenindus / kaubandus (kontakt klientidega)</option>
+                <option value="tootmine">Tootmine / laondus / kergetööstus</option>
+                <option value="ehitus">Ehitus / renoveerimine / paigaldus</option>
+                <option value="transport">Transport / logistika / sõidukijuhid</option>
+                <option value="tervishoid">Tervishoid / sotsiaaltöö / hoolekanne</option>
+                <option value="haridus">Haridus / lasteasutused / noorsootöö</option>
+                <option value="toidu">Toiduainetööstus / toitlustus / köök</option>
+                <option value="keemia">Keemiline tootmine / laboranalüüs / farmaatsia</option>
+                <option value="kaevandus">Kaevandus / mäetööd / rasketööstus</option>
+                <option value="muu">Muu</option>
+              </select>
+            </div>
+
+            <!-- Q3: minors -->
+            <div class="calc-group">
+              <label>3. Kas Teil on alaealisi töötajaid (alla 18-aastased)?</label>
+              <div class="radio-group">
+                <label class="radio-btn" id="rb_yes">
+                  <input type="radio" name="minors" value="yes">
+                  ✅ Jah
+                </label>
+                <label class="radio-btn" id="rb_no">
+                  <input type="radio" name="minors" value="no">
+                  ❌ Ei
+                </label>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="calculate()" style="width:100%; justify-content:center; padding: 14px;">
+              Arvuta kohustused →
+            </button>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="calc-result" id="calcResult">
+            <div class="calc-result-header" id="resultHeader">
+              📋 Teie tervisekontrolli kohustused
+            </div>
+            <div class="calc-result-body" id="resultBody">
+              <!-- filled by JS -->
+            </div>
+          </div>
+
+          <!-- placeholder before calc -->
+          <div id="calcPlaceholder" style="background: #fff; border: 2px dashed var(--grey-light); border-radius: var(--radius); padding: 40px 24px; text-align: center; color: var(--text-muted);">
+            <div style="font-size: 3rem; margin-bottom: 16px;">🧮</div>
+            <p style="font-size: 0.95rem;">Täitke vasak pool ja vajutage "Arvuta kohustused" — tulemused kuvatakse siin.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO BOX -->
+      <div style="max-width: 1000px; margin-top: 40px;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 16px;">Mida tähendab "tervisekontroll"?</h3>
+        <div class="cards cards-2" style="max-width: 800px;">
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🩺</span>
+            <h3>Esmane tervisekontroll</h3>
+            <p>Enne tööle asumist või uuele ametikohale siirdumisel. Töötervishoiuarst hindab, kas töötaja tervislik seisund sobib nõutud tööülesannetega.</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🔄</span>
+            <h3>Perioodiline tervisekontroll</h3>
+            <p>Regulaarsed kontrollid töö ajal. Sagedus sõltub riskitegurist — kõrge riskiga valdkondades iga 1–2 aasta tagant, madala riskiga valdkondades iga 3 aasta tagant.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--teal); margin: 32px 0 16px;">Millal tervisekontroll on alati kohustuslik?</h3>
+        <div class="cards cards-3" style="max-width: 900px;">
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🏗️</span>
+            <h3>Ehitus ja rasketööstus</h3>
+            <p>Enne tööle asumist ja iga 2 aasta tagant. Välitöö, raskuste kandmine, masinad — kõrge riskitase.</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🚛</span>
+            <h3>Transport ja sõidukijuhid</h3>
+            <p>Enne tööle asumist ja iga 2 aasta tagant. Lõikuste kontrollis ka nägemisteravus ja reaktsioon.</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🏥</span>
+            <h3>Tervishoid ja hooldus</h3>
+            <p>Enne tööle asumist ja iga aasta tagant. Bioloogilised riskid (nakkushaigused) nõuavad sagedast jälgimist.</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🍽️</span>
+            <h3>Toitlustus ja toiduainetööstus</h3>
+            <p>Enne tööle asumist ja iga aasta tagant. Nakkushaiguste leviku risk nõuab regulaarset kontrolli.</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">⚗️</span>
+            <h3>Keemia ja labooritöö</h3>
+            <p>Enne tööle asumist ja iga aasta tagant. Keemiliste ainete mõju jälgimine nõuab regulaarset vereanalüüsi.</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <span class="card-icon">🖥️</span>
+            <h3>Kuvariga töö (5+ tundi päevas)</h3>
+            <p>Iga 3 aasta tagant. Peamiselt nägemise ja lihaste-skeleti kontroll.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Märkus:</strong> See kalkulaator annab üldise hinnangu. Täpse tervisekontrolli kava koostab töötervishoiuarst, kes arvestab Teie konkreetset töökeskkonda, riskianalüüsi tulemusi ja töötajate terviseseisundit. Tulemus on orienteeriv.
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <p>Vajate abi töötervishoiu korraldamisega? Meie partnerid aitavad Teid — <span class="price">alates €10 töötaja kohta kuus.</span></p>
+    <a href="mailto:info@tt24.ee" class="btn-gold">Küsige pakkumist</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Avaleht</a>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="korduma.html">KKK</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsioon</a>
+    </div>
+    <p>© 2026 TT24 — Töötervishoiu teejuht Eestis | <a href="mailto:info@tt24.ee">info@tt24.ee</a></p>
+    <p style="margin-top: 6px;">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function() {
+  document.getElementById('mainNav').classList.toggle('open');
+});
+
+// Radio buttons visual
+document.querySelectorAll('input[name="minors"]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    document.querySelectorAll('.radio-btn').forEach(lb => lb.classList.remove('selected'));
+    this.closest('.radio-btn').classList.add('selected');
+  });
+});
+
+// ─── CALCULATOR LOGIC ───────────────────────────────────
+function calculate() {
+  const employees = parseInt(document.getElementById('q_employees').value);
+  const sector = document.getElementById('q_sector').value;
+  const minorsEl = document.querySelector('input[name="minors"]:checked');
+  const minors = minorsEl ? minorsEl.value === 'yes' : false;
+
+  if (!employees || employees < 1) {
+    alert('Palun sisestage töötajate arv.'); return;
+  }
+  if (!sector) {
+    alert('Palun valige tegevusvaldkond.'); return;
+  }
+
+  // Sector-based logic
+  const sectorData = {
+    kontor: {
+      name: 'Kontor / IT / lauatöö',
+      riskLevel: 'madal',
+      mandatory: true,
+      checks: [
+        { icon: '🖥️', title: 'Kuvariga töö tervisekontroll', when: 'Iga 3 aasta tagant', note: 'Kohustuslik, kui töötaja töötab kuvariga 5+ tundi päevas. Sisaldab nägemise ja lihaste-skeleti hindamist.' },
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kõigile uutele töötajatele, eriti kui töö nõuab kuvariga töötamist.' }
+      ],
+      frequency: '3 aastat',
+      urgency: 'Madal risk. Kuid ärge unustage: ka kontoris on kohustused (riskianalüüs, leping, kuvariga töö kontroll).'
+    },
+    kaubandus_klientidega: {
+      name: 'Teenindus / kaubandus',
+      riskLevel: 'keskmine',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kõigile uutele töötajatele.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 3 aasta tagant', note: 'Fokuseeritud lihaste-skeleti seisundile (pikk seismine, korduvliigutused) ning hingamisteedele.' },
+        { icon: '🦠', title: 'Nakkushaiguste kontroll (kui toiduga kokkupuude)', when: 'Iga aasta tagant', note: 'Kohaldub toidukäitlejatele ja toitlustusele.' }
+      ],
+      frequency: '3 aastat (üldine), 1 aasta (toidukäitlemine)',
+      urgency: 'Keskmise riskiga. Kontrollige, kas Teie töötajad puutuvad kokku toiduga — sel juhul sagedamini.'
+    },
+    tootmine: {
+      name: 'Tootmine / laondus',
+      riskLevel: 'kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik enne esimest tööpäeva.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 2 aasta tagant', note: 'Sisaldab mürakontrolli (audiogramm), lihaste-skeleti hindamist ja üldtervisekontrolli.' },
+        { icon: '👂', title: 'Mürakontroll (audiogramm)', when: 'Iga 2 aasta tagant', note: 'Kohustuslik, kui müratase ületab 85 dB(A). Peaksite kontrollima müramõõtmiste tulemusi.' },
+        { icon: '🏋️', title: 'Füüsiline koormus / ergonoomia', when: 'Iga 2 aasta tagant', note: 'Raskuste kandmine, korduvad liigutused — lihaste-skeleti hindamine.' }
+      ],
+      frequency: '2 aastat',
+      urgency: 'Kõrge risk. Tervisekontroll on rangelt kohustuslik. Müramõõtmised on tõenäoliselt vajalikud.'
+    },
+    ehitus: {
+      name: 'Ehitus / renoveerimine',
+      riskLevel: 'kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik enne esimest tööpäeva igale ehitustöötajale.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Ehituses on kõrge riskitase — müra, vibratsioon, tolm, kemikaalid, kõrgus. Iga-aastane kontroll.' },
+        { icon: '😷', title: 'Hingamisteede kontroll / spiromeetria', when: 'Iga aasta tagant', note: 'Ehitustolm (k.a asbest, kvarts) on hingamisteedele ohtlik. Spiromeetria kohustuslik.' },
+        { icon: '👁️', title: 'Nägemisteravuse kontroll', when: 'Iga 2 aasta tagant', note: 'Kõrgustel töötamisel on nägemisteravus ohutuse küsimus.' },
+        { icon: '🦴', title: 'Vibratsioonikontroll', when: 'Iga aasta tagant', note: 'Vibreerivate tööriistade kasutamisel (lööktrellid, muruniidukid) on vibratsiooni tervisemõju jälgimine kohustuslik.' }
+      ],
+      frequency: '1–2 aastat [KINNITAMATA]',
+      urgency: 'Väga kõrge risk. Ehituses on tervisekontrolli nõuded rangeimad. Üldine miinimum on iga 2 aasta järel [KINNITAMATA] — kõrge riskiga tööde puhul (müra, vibratsioon, kõrgus) iga aasta soovituslik.'
+    },
+    transport: {
+      name: 'Transport / logistika',
+      riskLevel: 'kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile juhtidele enne esimest tööpäeva.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 2 aasta tagant', note: 'Üldtervisekontroll liiklusohutuse aspektist.' },
+        { icon: '👁️', title: 'Nägemisteravuse kontroll', when: 'Iga 2 aasta tagant', note: 'Liiklusohutuse seisukohalt kohustuslik kõigile sõidukijuhtidele.' },
+        { icon: '❤️', title: 'Kardiovaskulaarne tervisekontroll', when: 'Iga 2 aasta tagant', note: 'Südame-veresoonkonnahaigused on transporditöötajate professionaalseks riskiks.' },
+        { icon: '😴', title: 'Uneapnoe sõeluuring', when: 'Esmasel kontrollis, vajadusel korratav', note: 'EL direktiiv nõuab kaubaveokijuhtidel uneapnoe riski hindamist.' }
+      ],
+      frequency: '2 aastat',
+      urgency: 'Kõrge risk. Nägemine ja südame-veresoonkond on kriitilised liiklusohutuse tagamiseks.'
+    },
+    tervishoid: {
+      name: 'Tervishoid / sotsiaaltöö',
+      riskLevel: 'kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile enne esimest tööpäeva.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Bioloogilised riskid (nakkushaigused) nõuavad sagedast jälgimist.' },
+        { icon: '💉', title: 'Vaktsineerimisstaatus', when: 'Enne tööle asumist ja vajaduse korral', note: 'Hepatiit B, tuulerõuged, leetrid, gripp — tervishoiutöötajatel on soovituslikud vaktsiinid.' },
+        { icon: '🧠', title: 'Psühholoogiline stress / läbipõlemine', when: 'Iga aasta tagant', note: 'Tervishoiutöötajate läbipõlemise risk on kõrge — hinnatakse tervisekontrolli käigus.' }
+      ],
+      frequency: '1 aasta',
+      urgency: 'Väga kõrge risk. Tervishoiutöötajad on bioloogiliste riskide ees kõige rohkem. Iga-aastane kontroll on seaduslik miinimum.'
+    },
+    haridus: {
+      name: 'Haridus / lasteasutused',
+      riskLevel: 'keskmine',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile enne esimest tööpäeva.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga 3 aasta tagant', note: 'Üldtervisekontroll.' },
+        { icon: '🦠', title: 'Nakkushaiguste kontroll', when: 'Enne tööle asumist ja vajaduse korral', note: 'Lasteasutustes on nakkushaiguste levik suurem. Tervishoiutõend lasteasutuse töötajatele.' },
+        { icon: '🗣️', title: 'Häälekasutuse kontroll', when: 'Iga 3 aasta tagant', note: 'Õpetajate professionaalne risk — häälekasutus. Hügieen ja ennetamine.' }
+      ],
+      frequency: '3 aastat',
+      urgency: 'Keskmise risk. Lasteasutuste töötajad peavad esitama terviseõiendi. Nakkushaiguste jälgimine on oluline.'
+    },
+    toidu: {
+      name: 'Toiduainetööstus / toitlustus',
+      riskLevel: 'kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik enne esimest tööpäeva.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Toidukäitlejate sagedane tervisekontroll on nakkushaiguste ennetuseks.' },
+        { icon: '🦠', title: 'Sooleinfektsioonide sõeluuring', when: 'Iga aasta tagant', note: 'Salmonella, shigella, noroviirus — toidukäitlejate kohustuslik kontroll.' },
+        { icon: '🌡️', title: 'Temperatuuri ja mikrokliima kontroll', when: 'Iga aasta tagant', note: 'Köögis on kõrge temperatuur, aurud — terviseriskid.' }
+      ],
+      frequency: '1 aasta',
+      urgency: 'Kõrge risk. Toidukäitlejate tervisekontroll kaitseb nii töötajaid kui kliente nakkuste eest.'
+    },
+    keemia: {
+      name: 'Keemia / labooritöö',
+      riskLevel: 'väga kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile enne esimest kontakti kemikaalidega.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Keemiliste ainete bioloogilised markerid — vere- ja uriinianalüüs.' },
+        { icon: '🫁', title: 'Hingamisteede kontroll / spiromeetria', when: 'Iga aasta tagant', note: 'Keemilised aurud kahjustavad hingamisteid — spiromeetria kohustuslik.' },
+        { icon: '🧪', title: 'Keemiliste ainete bioloogiline monitooring', when: 'Iga aasta tagant, mõnedel juhtudel sagedamini', note: 'Spetsiifiliste kemikaalide puhul (plii, lahustid jms) on nõutud vere- ja uriinianalüüsid.' }
+      ],
+      frequency: '1 aasta (mõned ained sagedamini)',
+      urgency: 'Väga kõrge risk. Keemia valdkonnas on tervisekontrolli nõuded kõige rangemad. Mõõtmised ja bioloogiline monitooring on seaduslik nõue.'
+    },
+    kaevandus: {
+      name: 'Kaevandus / rasketööstus',
+      riskLevel: 'väga kõrge',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Iga aasta tagant', note: 'Kõige kõrgema riskitasemega valdkond.' },
+        { icon: '😷', title: 'Pneumokonioosi sõeluuring (kopsu röntgen)', when: 'Iga aasta tagant', note: 'Tolmurikkad töökohad — kopsuhaiguste ennetamine on kriitilise tähtsusega.' },
+        { icon: '👂', title: 'Mürakontroll (audiogramm)', when: 'Iga aasta tagant', note: 'Rasketööstuse müratase on sageli kahjustav — audiogramm kohustuslik.' },
+        { icon: '🦴', title: 'Vibratsioonikontroll', when: 'Iga aasta tagant', note: 'Tugeva vibratsiooniga tööriistad ja masinad.' }
+      ],
+      frequency: '1 aasta',
+      urgency: 'Kriitiliselt kõrge risk. Kõige rangemad nõuded koos iga-aastase kohustusliku kontrolliga.'
+    },
+    muu: {
+      name: 'Muu valdkond',
+      riskLevel: 'sõltub tegevusest',
+      mandatory: true,
+      checks: [
+        { icon: '🩺', title: 'Esmane tervisekontroll', when: 'Enne tööle asumist', note: 'Kohustuslik kõigile uutele töötajatele, sõltumata valdkonnast.' },
+        { icon: '🔄', title: 'Perioodiline tervisekontroll', when: 'Sõltub riskianalüüsist', note: 'Täpne sagedus selgub riskianalüüsist. Kui tegevus sisaldab füüsilisi, keemilisi või bioloogilisi riske — sagedamini.' }
+      ],
+      frequency: 'Sõltub riskianalüüsist',
+      urgency: 'Täpset sagedust ei saa ilma riskianalüüsita määrata. Pöörduge töötervishoiuarsti poole.'
+    }
+  };
+
+  const data = sectorData[sector];
+  if (!data) { alert('Midagi läks valesti. Proovige uuesti.'); return; }
+
+  // Size-based additional obligations
+  let sizeNotes = [];
+  if (employees >= 10) {
+    sizeNotes.push({ icon: '👷', text: 'Teil on <strong>10+ töötajat</strong> — töökeskkonnavolinik on kohustuslik.' });
+  }
+  if (employees >= 50) {
+    sizeNotes.push({ icon: '🏛️', text: 'Teil on <strong>50+ töötajat</strong> — töökeskkonnanõukogu on kohustuslik.' });
+  }
+  if (minors) {
+    sizeNotes.push({ icon: '👶', text: '<strong>Alaealised töötajad:</strong> Tervisekontroll on kohustuslik enne esimest tööpäeva ja iga aasta tagant kuni 18. eluaastani.' });
+  }
+
+  // Build output
+  let html = '';
+
+  // Summary
+  const riskColors = { 'madal': 'var(--success)', 'keskmine': 'var(--warning)', 'kõrge': 'var(--danger)', 'väga kõrge': 'var(--danger)', 'sõltub tegevusest': 'var(--grey)' };
+  const riskColor = riskColors[data.riskLevel] || 'var(--grey)';
+  html += `<div style="padding: 14px; background: rgba(26,44,46,0.04); border-radius: 6px; margin-bottom: 20px;">
+    <strong>${employees} töötajat · ${data.name}</strong><br>
+    <span style="color:${riskColor}; font-weight: 600;">● Riskitase: ${data.riskLevel}</span><br>
+    <span style="font-size:0.85rem; color: var(--text-muted);">Tervisekontrolli sagedus: <strong>${data.frequency}</strong></span>
+  </div>`;
+
+  // Checks
+  html += `<div style="margin-bottom: 16px; font-size: 0.85rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em;">Nõutud tervisekontrollid</div>`;
+  data.checks.forEach(c => {
+    html += `<div class="result-item">
+      <div class="result-icon">${c.icon}</div>
+      <div class="result-text">
+        <strong>${c.title}</strong>
+        <span>⏰ ${c.when}</span>
+        <span style="margin-top: 4px; font-size: 0.82rem; color: var(--text-muted);">${c.note}</span>
+      </div>
+    </div>`;
+  });
+
+  // Size notes
+  if (sizeNotes.length > 0) {
+    html += `<div style="margin-top: 16px; padding: 12px; background: rgba(197,165,90,0.1); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; font-size: 0.875rem;">
+      <strong style="color: var(--teal);">Lisanõuded Teie ettevõtte suurusele:</strong><br><br>`;
+    sizeNotes.forEach(n => { html += `<div style="margin-bottom: 8px;">${n.icon} ${n.text}</div>`; });
+    html += '</div>';
+  }
+
+  // Universal obligations reminder
+  html += `<div style="margin-top: 16px; padding: 12px; background: rgba(26,44,46,0.05); border-radius: 6px; font-size: 0.875rem; color: var(--text-muted);">
+    <strong style="color: var(--text);">🔔 Kõigile tööandjatele kehtib lisaks:</strong><br>
+    Riskianalüüs + töötervishoiuteenuse leping + töötajate teavitamine — need on kohustuslikud sõltumata valdkonnast ja suurusest.
+  </div>`;
+
+  // Urgency
+  html += `<div style="margin-top: 16px; padding: 12px; background: rgba(192,57,43,0.06); border-left: 3px solid var(--danger); border-radius: 0 6px 6px 0; font-size: 0.875rem;">
+    <strong>Mida see Teie jaoks tähendab:</strong> ${data.urgency}
+  </div>`;
+
+  document.getElementById('resultBody').innerHTML = html;
+  document.getElementById('calcResult').classList.add('visible');
+  document.getElementById('calcPlaceholder').style.display = 'none';
+}
+</script>
+
+<style>
+@media (max-width: 768px) {
+  .container > div[style*="grid-template-columns"] {
+    display: block !important;
+  }
+  .container > div[style*="grid-template-columns"] > div:first-child {
+    margin-bottom: 24px;
+  }
+}
+</style>
+</body>
+</html>
