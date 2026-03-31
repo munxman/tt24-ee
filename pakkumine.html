@@ -181,7 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div class="form-group">
-              <label for="tootajate_arv" class="form-label">Töötajate arv</label>
+              <label for="tootajate_arv" class="form-label">Töötajate arv <span class="tooltip-trigger" tabindex="0" role="button" aria-label="Miks me seda küsime?" onclick="this.querySelector('.tooltip-text').classList.toggle('show')">?<span class="tooltip-text">See aitab meil Teile sobivama pakkumise koostada</span></span></label>
               <input
                 type="number"
                 id="tootajate_arv"
@@ -193,7 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div class="form-group">
-              <label for="tegevusvaldkond" class="form-label">Tegevusvaldkond</label>
+              <label for="tegevusvaldkond" class="form-label">Tegevusvaldkond <span class="tooltip-trigger" tabindex="0" role="button" aria-label="Miks me seda küsime?" onclick="this.querySelector('.tooltip-text').classList.toggle('show')">?<span class="tooltip-text">Eri valdkondadel on erinevad töötervishoiu nõuded</span></span></label>
               <select
                 id="tegevusvaldkond"
                 name="tegevusvaldkond"
@@ -223,8 +223,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
 
+          <p style="text-align:center;color:#64748b;font-size:0.8rem;margin-bottom:0.75rem">🛡 Teie andmeid kasutatakse ainult pakkumise koostamiseks</p>
+
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-            Saatke päring
+            Saadan päringu
           </button>
 
           <p style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted); text-align: center;">
@@ -267,6 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-col footer-col-contact">
         <h3 class="footer-col-title">Kontakt</h3>
         <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
+        <a href="tel:+3725299939" class="footer-link">+372 52 99939</a>
         <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
       </div>
 
@@ -313,6 +316,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
   })();
+</script>
+<style>
+.tooltip-trigger{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:0.7rem;font-weight:700;cursor:pointer;position:relative;margin-left:4px;vertical-align:middle}
+.tooltip-text{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:6px 10px;border-radius:6px;font-size:0.75rem;font-weight:400;white-space:nowrap;z-index:10;pointer-events:none}
+.tooltip-text.show{display:block}
+.form-input.valid{border-color:#22c55e}
+.form-input.invalid{border-color:#ef4444}
+.field-error{color:#ef4444;font-size:0.75rem;margin-top:4px;display:none}
+.field-error.show{display:block}
+</style>
+<script>
+(function(){
+  var form=document.querySelector('form[action*="formsubmit"]');
+  if(!form)return;
+  function validate(el){
+    var val=el.value.trim();
+    var errEl=el.parentElement.querySelector('.field-error');
+    if(!errEl){errEl=document.createElement('p');errEl.className='field-error';el.parentElement.appendChild(errEl);}
+    if(el.id==='epost'){
+      if(!val){setErr(el,errEl,'Palun sisestage e-posti aadress');return false;}
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){setErr(el,errEl,'Palun sisestage korrektne e-post');return false;}
+      setOk(el,errEl);return true;
+    }
+    if(el.id==='telefon'){
+      if(!val){setErr(el,errEl,'Palun sisestage telefoninumber');return false;}
+      if(val.replace(/[\s\-\+\(\)]/g,'').length<7){setErr(el,errEl,'Palun sisestage korrektne telefoninumber');return false;}
+      setOk(el,errEl);return true;
+    }
+    if(el.id==='nimi'){
+      if(!val){setErr(el,errEl,'Palun sisestage oma nimi');return false;}
+      setOk(el,errEl);return true;
+    }
+    return true;
+  }
+  function setErr(el,errEl,msg){el.classList.remove('valid');el.classList.add('invalid');errEl.textContent=msg;errEl.classList.add('show');}
+  function setOk(el,errEl){el.classList.remove('invalid');el.classList.add('valid');errEl.classList.remove('show');}
+  ['nimi','epost','telefon'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.addEventListener('blur',function(){validate(el);});
+  });
+  form.addEventListener('submit',function(e){
+    var ok=true;
+    ['nimi','epost','telefon'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el&&!validate(el))ok=false;
+    });
+    if(!ok)e.preventDefault();
+  });
+})();
 </script>
 </body>
 </html>
