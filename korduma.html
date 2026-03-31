@@ -145,7 +145,7 @@
       background: #fff;
     }
     .faq-search-wrap input:focus {
-      border-color: var(--teal, #2d7a5a);
+      border-color: var(--color-primary, #2d7a5a);
     }
     .faq-no-results {
       display: none;
@@ -310,6 +310,8 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
 
 <!-- ═══════════════════════════════
      NAVIGATION
@@ -759,6 +761,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var isOpen = mainNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+  }
+
+  // Scroll shadow on sticky nav
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function () {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
   }
 
   // ─── FAQ search / filter ─────────────────────────────────
