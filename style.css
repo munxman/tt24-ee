@@ -1878,6 +1878,7 @@ tbody td {
   letter-spacing: 0.05em;
 }
 .footer-link {
+  display: block;
   font-size: var(--text-sm);
   color: var(--color-footer-text);
   text-decoration: none;
