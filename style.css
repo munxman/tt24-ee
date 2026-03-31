@@ -1984,9 +1984,20 @@ tbody td {
   align-items: center;
   gap: var(--space-3);
 }
-@media (min-width: 480px) {
-  .hero-ctas { flex-direction: row; justify-content: center; }
+.hero-ctas--stacked {
+  flex-direction: column;
+  max-width: 320px;
+  margin-inline: auto;
 }
+@media (min-width: 480px) {
+  .hero-ctas:not(.hero-ctas--stacked) { flex-direction: row; justify-content: center; }
+}
+.footer-partner-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-partner-link:hover { color: var(--color-primary); }
 
 /* ============================================================
    28. Section Title Utilities
