@@ -1961,7 +1961,9 @@ tbody td {
   font-size: clamp(var(--text-base), 2.5vw, var(--text-lg));
   color: rgba(255,255,255,0.85);
   max-width: 600px;
+  margin-inline: auto;
   margin-bottom: var(--space-8);
+  text-align: center;
   line-height: 1.7;
 }
 .hero--light .hero-sub { color: var(--color-text-muted); }
