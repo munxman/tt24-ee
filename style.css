@@ -1877,6 +1877,12 @@ tbody td {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+.footer-col-links nav,
+.footer-col-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
 .footer-link {
   display: block;
   font-size: var(--text-sm);
