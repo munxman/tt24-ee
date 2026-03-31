@@ -600,7 +600,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Tasuta · Kohene tulemus · Ei nõua registreerimist
       </span>
       <h1 class="hero__title" id="hero-heading">Kui palju maksab töötervishoiuteenus<br>Teie ettevõttele?</h1>
-      <p class="hero__subtitle">Sisestage töötajate arv — näete kohest kulude jaotust kuus ja aastas. Pluss: trahviriski võrdlus, kui jätta nõuded täitmata.</p>
+      <p class="hero__subtitle">Valige töötajate arvu vahemik — näete kohest kulude jaotust kuus ja aastas. Pluss: trahviriski võrdlus, kui jätta nõuded täitmata.</p>
       <div class="hero__actions">
         <a href="#kalkulaator" class="btn btn-primary btn-lg">Arvutan kohe →</a>
         <a href="korduma.html" class="btn btn-secondary btn-lg">KKK töötervishoiust</a>
@@ -617,7 +617,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="section-header" style="margin-bottom: var(--space-8);">
         <span class="badge badge--primary">Kulukalkulaator</span>
         <h2 id="calc-heading">Arvutage oma töötervishoiu kulud</h2>
-        <p>Tulemused uuenevad reaalajas, kohe kui Te liuguri liigutate.</p>
+        <p>Tulemused uuenevad kohe, kui Te vahemiku valite.</p>
       </div>
 
       <div class="calc-layout" style="max-width: 1000px; margin: 0 auto;">
@@ -631,40 +631,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <label class="form-label" for="empNumber" style="font-size: var(--text-base);">
                 Töötajate arv
               </label>
-              <p class="form-hint" style="margin-bottom: var(--space-3);">Liigutage liugurit või sisestage täpne number</p>
+              <p class="form-hint" style="margin-bottom: var(--space-3);">Valige töötajate arvu vahemik</p>
 
               <div class="number-input-wrap">
-                <input
-                  type="number"
-                  id="empNumber"
-                  class="form-input"
-                  min="1"
-                  max="9999"
-                  value="10"
-                  inputmode="numeric"
-                  aria-label="Töötajate täpne arv"
-                >
-                <span class="text-muted text-sm">töötajat</span>
+                <select id="empNumber" name="tootajad" class="form-input" required>
+                  <option value="" disabled>Valige vahemik</option>
+                  <option value="5">1–10 töötajat</option>
+                  <option value="18" selected>11–25 töötajat</option>
+                  <option value="38">26–50 töötajat</option>
+                  <option value="75">51–100 töötajat</option>
+                  <option value="150">Üle 100 töötaja</option>
+                </select>
               </div>
 
-              <div class="calc-slider-wrap" style="margin-top: var(--space-4);">
-                <input
-                  type="range"
-                  id="empSlider"
-                  class="kalk-slider"
-                  min="1"
-                  max="200"
-                  value="10"
-                  aria-label="Töötajate arv liugur"
-                >
-                <div class="slider-tick-labels">
-                  <span>1</span>
-                  <span>50</span>
-                  <span>100</span>
-                  <span>150</span>
-                  <span>200+</span>
-                </div>
-              </div>
+              <!-- Slider removed: bracket dropdown replaces exact input -->
             </div>
 
             <hr class="divider">
@@ -1222,30 +1202,13 @@ function recalculate() {
   card.classList.add('result-updated');
 }
 
-// ─── Slider ↔ Number sync ────────────────────────────────
-var slider   = document.getElementById('empSlider');
-var numInput = document.getElementById('empNumber');
-
-function updateSliderTrack(val) {
-  var pct = ((val - 1) / (200 - 1)) * 100;
-  slider.style.setProperty('--slider-pct', pct + '%');
-}
-
-slider.addEventListener('input', function () {
-  numInput.value = this.value;
-  updateSliderTrack(parseInt(this.value, 10));
-  recalculate();
-});
-
-numInput.addEventListener('input', function () {
-  var v = parseInt(this.value, 10) || 1;
-  slider.value = Math.min(v, 200);
-  updateSliderTrack(Math.min(v, 200));
+// ─── Select change handler ───────────────────────────────
+var empSelect = document.getElementById('empNumber');
+empSelect.addEventListener('change', function () {
   recalculate();
 });
 
 // ─── Initial render ──────────────────────────────────────
-updateSliderTrack(10);
 recalculate();
 </script>
 
