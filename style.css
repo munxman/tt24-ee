@@ -595,24 +595,18 @@ p {
   position: relative;
 }
 
-/* Compact hero for subpages */
+/* Compact hero for subpages — unified light style */
 .hero--compact {
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
+  padding: 1.5rem 0;
+  background: linear-gradient(135deg, #f0f7f4 0%, #e8f5f0 100%);
+  color: #1a2e25;
+  text-align: center;
 }
-@media (min-width: 768px) {
-  .hero--compact {
-    padding-top: var(--space-12);
-    padding-bottom: var(--space-12);
-  }
-}
+.hero--compact h1,
 .hero--compact .hero__title {
-  font-size: clamp(1.5rem, 4vw, var(--text-3xl));
-  margin-bottom: var(--space-2);
-}
-.hero--compact .hero__subtitle {
-  font-size: var(--text-base);
-  margin-bottom: var(--space-4);
+  font-size: 1.5rem;
+  margin: 0;
+  color: #1a2e25;
 }
 
 .hero .container {
