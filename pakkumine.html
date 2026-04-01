@@ -8,12 +8,19 @@
   <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5459MHF3');</script>
+  <!-- Google Tag Manager (consent-gated) -->
+  <script>
+  function tt24LoadGTM() {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5459MHF3');
+  }
+  if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
+    tt24LoadGTM();
+  }
+  </script>
   <!-- End Google Tag Manager -->
 
   <!-- Canonical + hreflang -->
@@ -75,10 +82,7 @@
   </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) - blocked pending consent -->
 
 <a href="#main-content" class="skip-link">Hüppa põhisisule</a>
 
@@ -409,5 +413,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   btn.addEventListener("click",function(e){e.stopPropagation();dd.classList.toggle("open");btn.setAttribute("aria-expanded",dd.classList.contains("open"))});
   document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}})}
   </script>
+  <!-- Cookie Consent Banner -->
+  <div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0F172A;color:#CBD5E1;padding:14px 20px;z-index:9999;font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #1E293B;">
+    <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. Lisainfo: <a href="privaatsus.html" style="color:#38BDF8;text-decoration:underline;">Privaatsuspoliitika</a></p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="tt24-consent-decline" style="background:transparent;border:1px solid #475569;color:#CBD5E1;padding:7px 16px;cursor:pointer;font-size:13px;border-radius:4px;">Keeldun</button>
+      <button id="tt24-consent-accept" style="background:#0EA5E9;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;border-radius:4px;font-weight:600;">N&#245;ustun</button>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var consent = localStorage.getItem('tt24_cookie_consent');
+    if (!consent) {
+      var banner = document.getElementById('tt24-cookie-banner');
+      if (banner) banner.style.display = 'flex';
+      document.getElementById('tt24-consent-accept').addEventListener('click', function() {
+        localStorage.setItem('tt24_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+        if (typeof tt24LoadGTM === 'function') tt24LoadGTM();
+      });
+      document.getElementById('tt24-consent-decline').addEventListener('click', function() {
+        localStorage.setItem('tt24_cookie_consent', 'declined');
+        banner.style.display = 'none';
+      });
+    }
+  })();
+  </script>
+  <!-- End Cookie Consent Banner -->
+
   </body>
 </html>
