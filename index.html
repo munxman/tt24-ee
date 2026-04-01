@@ -192,6 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="tool-card-title">Kontrollnimekiri</h3>
           <p class="tool-card-desc">Interaktiivne nimekiri kõigist nõuetest</p>
           <span class="tool-card-link">Avage nimekiri →</span>
+          <span class="info-tooltip" onclick="event.preventDefault(); this.classList.toggle('active');" aria-label="Lisainfo">?<span class="info-tooltip__text">Kõik töötervishoiu nõuded ühes nimekirjas. Märkige linnukesega, mis on tehtud — näete kohe, mis on veel puudu. Sobib nii alustajale kui ülevaatuseks.</span></span>
         </a>
 
         <a href="kalkulaator.html" class="tool-card" aria-label="Kulukalkulaator — Arvutage töötervishoiu teenuse maksumus">
@@ -199,6 +200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="tool-card-title">Kulukalkulaator</h3>
           <p class="tool-card-desc">Arvutage töötervishoiu teenuse maksumus</p>
           <span class="tool-card-link">Arvutage kulud →</span>
+          <span class="info-tooltip" onclick="event.preventDefault(); this.classList.toggle('active');" aria-label="Lisainfo">?<span class="info-tooltip__text">Sisestage töötajate arv ja saate orienteeruva hinnangu töötervishoiu teenuse maksumusele. Võrdleb ka teenuse kulu võimaliku trahviga.</span></span>
         </a>
 
         <a href="enesekontroll.html" class="tool-card" aria-label="Enesehinnang — 10 küsimust Teie valmisoleku hindamiseks">
@@ -206,6 +208,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="tool-card-title">Enesehinnang</h3>
           <p class="tool-card-desc">10 küsimust Teie valmisoleku hindamiseks</p>
           <span class="tool-card-link">Alustage testi →</span>
+          <span class="info-tooltip" onclick="event.preventDefault(); this.classList.toggle('active');" aria-label="Lisainfo">?<span class="info-tooltip__text">10 lihtsat küsimust, mis hindavad Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks. Tulemus näitab rohelise, kollase ja punase värviga, kus olete tugev ja kus on puudujääke.</span></span>
         </a>
 
       </div>
@@ -326,6 +329,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }
+
+  // Close tooltips when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.info-tooltip')) {
+      document.querySelectorAll('.info-tooltip.active').forEach(function(t) {
+        t.classList.remove('active');
+      });
+    }
+  });
 
   // Scroll shadow on sticky nav
   var siteHeader = document.querySelector('.site-header');
