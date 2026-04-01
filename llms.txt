@@ -2,7 +2,7 @@
 > Estonian occupational health compliance portal for employers
 
 ## About
-TT24 is a free, physician-led platform helping Estonian employers comply with TTOS (Töötervishoiu ja tööohutuse seadus — Occupational Health and Safety Act). Built by Dr. Ingmar Lindström in partnership with Valvekliinik. No registration required. All tools are free.
+TT24 is a free information platform helping Estonian employers comply with TTOS (Töötervishoiu ja tööohutuse seadus — Occupational Health and Safety Act). Built by employers for employers, in partnership with Valvekliinik. All tools are free.
 
 The portal addresses the most common compliance gap in Estonia: small and medium employers (1–50 employees) who lack practical guidance on occupational health obligations. Tööinspektsioon (Labour Inspectorate) launched an active inspection campaign in 2026 targeting SMEs. Fines reach up to €32,000 for legal entities (TTOS § 28).
 
