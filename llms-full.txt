@@ -315,7 +315,51 @@ A workplace accident is any sudden event at the workplace or during performance 
 
 ---
 
-## 9. FINES AND ENFORCEMENT (TTOS § 28)
+## 9. DOCUMENT LIBRARY AND COMPLIANCE TOOLS (dokumendid.html, ajakava.html, vormid/)
+
+### Document Library — dokumendid.html
+TT24 provides a free library of 10 fillable HTML document templates, all based on TTOS requirements. Templates are browser-fillable and print-optimized (A4 CSS). Employers fill fields directly in their browser and print or save as PDF — no software required, no registration, no cost.
+
+**Available templates:**
+1. **Riskianalüüsi vorm** (Risk Assessment Form) — TTOS § 13. Structured hazard checklist covering physical, chemical, biological, ergonomic, and psychosocial risks. Includes probability × consequence risk matrix, mitigation measures with responsible person and deadline fields. Covers all TTOS-required elements for a compliant written risk assessment.
+2. **Teavitamise akt** (Employee Notification Act) — TTOS § 13³. Documents that the employee was informed of all workplace risks identified in the risk assessment. Dual signature fields (employer + employee). Required for every worker; must be retained for minimum 5 years.
+3. **Tervisekontrolli korraldamise kontrollnimekiri** (Health Check Checklist) — TTOS § 13¹. Step-by-step checklist guiding employer through the entire health check process: from signing an OHC contract, to issuing a referral letter, to archiving results. Includes timing requirements (before first workday in high-risk sectors; within 4 months for standard roles).
+4. **Olukorra 3-aastane analüüs** (3-Year Situation Analysis) — TTOS § 13, mandatory since 01.01.2023. Covers workplace hazard changes, health check result summary, workplace accidents in the period, proposed measures. Required questionnaire format compliant with Tööinspektsioon expectations.
+5. **Tööõnnetuse uurimise akt** (Workplace Accident Investigation Report) — TTOS § 24. Victim data, accident time and location, description of circumstances, witness statements, root cause analysis (immediate cause + contributing factors), corrective and preventive measures, responsible persons. Required document for all workplace accidents.
+6. **Esmaabi korraldus** (First Aid Organization Document) — TTOS § 13². Lists trained first aiders with certification validity dates, first aid supply locations and inventory, and quarterly inspection schedule. Must be current and available on-site.
+7. **Töökeskkonnavoliniku koosoleku protokoll** (Workplace Health Representative Meeting Minutes) — TTOS §§ 17–18. Required for companies with 10+ employees. Documents attendees, agenda items, decisions, and date/time of next meeting. Required whenever the volinik meets with employer.
+8. **Ohtlike kemikaalide register** (Hazardous Chemicals Register) — Required for all workplaces using hazardous substances. Fields: chemical name, CAS number, hazard classification, quantity, storage location, safety data sheet (SDS) reference and date. Mandated by TTOS and chemical safety regulations.
+9. **Tööandja juhend töötajale** (Employer Safety Instructions) — TTOS § 13³. Role-specific safety instructions covering: hazards relevant to the role, required PPE, prohibited activities, emergency procedures. Must be provided to every worker before starting work; signed acknowledgment required.
+10. **Suunamiskiri tervisekontrollile** (Health Check Referral Letter) — TTOS § 13¹. Used to refer a worker to the occupational health service provider. Includes: risk factor checklist (noise, vibration, chemicals, biological agents, display screen work, etc.), exposure details, previous health check date. Required before every health check.
+
+### Compliance Timeline Tool — ajakava.html
+Interactive deadline calculator that generates a personalised TTOS compliance timeline for any employer.
+
+**Inputs:**
+- Company founding date (or when first employee started)
+- First employee start date
+- Total employee count
+- Night workers present (yes/no)
+- Sector (from predefined list)
+
+**Outputs (color-coded timeline):**
+- OHC service contract: immediate obligation (day 1)
+- Written risk assessment: must be completed within 1 month of first employee
+- Worker notification (teavitamine): before or on first workday
+- First health check: within 4 months of first employee's start; immediately for night workers, construction, transport, healthcare
+- Periodic health check cycle: 1, 2, or 3 years depending on sector and risk level
+- 3-year situation analysis: rolling 3-year cycle from first analysis date
+- Risk assessment renewal: at minimum every 3 years + after accidents/changes
+- Workplace health representative election: when 10th employee joins
+- Health committee establishment: when 50th employee joins
+
+**Export feature:** ICS calendar file with all deadline reminders. Compatible with Google Calendar, Apple Calendar, Outlook.
+
+**Target users:** Newly established companies (immediately post-founding), companies onboarding first employees, companies that have never had OHC services and need to understand what they owe and by when.
+
+---
+
+## 10. FINES AND ENFORCEMENT (TTOS § 28)
 
 ### Fine amounts
 - **Legal entity (OÜ, AS, SA, etc.):** up to **€32,000**
@@ -352,7 +396,7 @@ Yes, in court. But it is expensive and time-consuming. Prevention is far cheaper
 
 ---
 
-## 10. WORKPLACE HEALTH REPRESENTATIVE (TÖÖKESKKONNAVOLINIK)
+## 11. WORKPLACE HEALTH REPRESENTATIVE (TÖÖKESKKONNAVOLINIK)
 
 ### Legal basis
 TTOS § 17
@@ -378,7 +422,7 @@ Workers elect the representative themselves. The employer has no role in the sel
 
 ---
 
-## 11. FREQUENTLY ASKED QUESTIONS (FAQ CONTENT)
+## 12. FREQUENTLY ASKED QUESTIONS (FAQ CONTENT)
 
 **Q: Does every employer need an OHC contract regardless of size?**  
 A: Yes. TTOS § 13 is unambiguous — all employers, including those with one employee, must have a contract with a licensed occupational health service provider. The most common myth is that small companies are exempt. They are not.
@@ -427,7 +471,7 @@ A: The law requires that worker notifications about health and safety risks be p
 
 ---
 
-## 12. EMPLOYER OBLIGATIONS CHECKLIST (QUICK REFERENCE)
+## 13. EMPLOYER OBLIGATIONS CHECKLIST (QUICK REFERENCE)
 
 **Every employer, every size:**
 - [ ] Valid OHC service contract signed
@@ -457,7 +501,7 @@ A: The law requires that worker notifications about health and safety risks be p
 
 ---
 
-## 13. KEY LEGAL REFERENCES
+## 14. KEY LEGAL REFERENCES
 
 | Reference | Topic |
 |---|---|

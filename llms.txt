@@ -39,6 +39,23 @@ The portal addresses the most common compliance gap in Estonia: small and medium
 - **narva.html** — Narva and Ida-Viru county. Heavy industry, energy, manufacturing. Significant Russian-speaking workforce — worker notification obligations must be fulfilled in the employee's language.
 - **johvi.html** — Jõhvi. Administrative centre of Ida-Viru. Oil shale industry hub. Strict OHC requirements due to mining and energy sector.
 
+### Tools Pages
+- **dokumendid.html** — Document library. 10 fillable compliance document templates: risk assessment form, employee notification act, health check checklist, 3-year situation analysis, accident investigation report, first aid plan, workplace representative meeting minutes, hazardous chemicals register, employer safety instructions, health check referral letter. All templates are browser-fillable and print-optimized. Based on TTOS requirements.
+- **ajakava.html** — Compliance timeline tool. Interactive deadline calculator. Employer inputs: company founding date, first employee start date, employee count, night workers (yes/no), sector. Outputs color-coded timeline of all TTOS deadlines: risk assessment, OHC contract, first health check (4 months, or immediately for night/high-risk workers), periodic checks, 3-year situation analysis, risk assessment renewal. Includes ICS calendar export with reminders.
+
+### Document Templates (vormid/)
+All templates are fillable HTML forms with print-optimized CSS. Employers fill fields in browser, then print or save as PDF. Each references specific TTOS paragraphs.
+- **vormid/riskianaluus.html** — Risk assessment form (TTOS § 13). Hazard checklist, probability x consequence matrix, mitigation measures, responsible persons.
+- **vormid/teavitamine.html** — Employee notification act (TTOS § 13³). Confirms employee was informed of workplace risks. Dual signature fields.
+- **vormid/tervisekontroll-checklist.html** — Health check organization checklist (TTOS § 13¹). Step-by-step from OHC contract to result archiving.
+- **vormid/olukorra-analuus.html** — 3-year situation analysis questionnaire (TTOS § 13, mandatory since 01.01.2023). Covers hazards, health check summary, accidents, proposals.
+- **vormid/tooonnetus.html** — Workplace accident investigation report (TTOS § 24). Victim data, accident description, witness statements, root cause analysis, prevention measures.
+- **vormid/esmaabi.html** — First aid organization document (TTOS § 13²). First aiders list with certification dates, supply locations, quarterly inspection schedule.
+- **vormid/volinik.html** — Workplace health representative meeting minutes (TTOS §§ 17-18). Required for companies with 10+ employees. Attendees, agenda, decisions, next meeting.
+- **vormid/kemikaalid.html** — Hazardous chemicals register. Chemical name, CAS number, classification, quantity, location, safety data sheet reference.
+- **vormid/tooandja-juhend.html** — Employer safety instructions per role (TTOS § 13³). Role-specific hazards, PPE requirements, prohibited activities, emergency procedures.
+- **vormid/suunamiskiri.html** — Health check referral letter (TTOS § 13¹). Risk factor checklist for OHC physician, exposure details, previous check date.
+
 ## Legal Basis
 - **TTOS** = Töötervishoiu ja tööohutuse seadus (Occupational Health and Safety Act)
 - Key sections: § 13 (employer obligations), § 13¹ (health checks), § 17 (workplace health representative), § 23 (workplace accidents), § 28 (fines)
