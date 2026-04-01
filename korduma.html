@@ -377,6 +377,7 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      justify-content: center;
       margin-bottom: 36px;
     }
     .faq-cat-nav a {
@@ -390,6 +391,12 @@
       transition: opacity .15s;
     }
     .faq-cat-nav a:hover { opacity: .82; }
+    @media (max-width: 640px) {
+      .faq-cat-nav a {
+        padding: 6px 12px;
+        font-size: .75rem;
+      }
+    }
 
     /* ── FAQ group ── */
     .faq-group {
