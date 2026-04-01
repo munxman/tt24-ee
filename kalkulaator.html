@@ -627,9 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="section" id="kalkulaator" aria-labelledby="calc-heading">
     <div class="hero-inner">
 
-      <div class="section-header" style="margin-bottom: var(--space-8);">
-        <h2 id="calc-heading">Valige töötajate arv</h2>
-        <p>Tulemused uuenevad kohe.</p>
+      <div class="section-header" style="margin-bottom: var(--space-8); display: none;">
       </div>
 
       <div class="calc-layout" style="max-width: 1000px; margin: 0 auto;">
@@ -638,18 +636,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <div class="card card--elevated" style="cursor: default;">
 
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); line-height: 1.6;">Valige oma ettevõtte töötajate arv ja tegevusvaldkond — paremal pool näete kohe orienteeruvat teenuse maksumust kuus ja aastas.</p>
+
             <!-- Employee count -->
             <div class="form-group" style="margin-bottom: var(--space-6);">
               <label class="form-label" for="empNumber" style="font-size: var(--text-base);">
-                Töötajate arv
+                Mitu töötajat on Teie ettevõttes?
               </label>
-              <p class="form-hint" style="margin-bottom: var(--space-3);">Valige töötajate arvu vahemik</p>
+              <p class="form-hint" style="margin-bottom: var(--space-3);"></p>
 
               <div class="number-input-wrap">
                 <select id="empNumber" name="tootajad" class="form-input" required>
-                  <option value="" disabled>Valige vahemik</option>
+                  <option value="" disabled selected>Valige vahemik</option>
                   <option value="5">1–10 töötajat</option>
-                  <option value="18" selected>11–25 töötajat</option>
+                  <option value="18">11–25 töötajat</option>
                   <option value="38">26–50 töötajat</option>
                   <option value="75">51–100 töötajat</option>
                   <option value="150">Üle 100 töötaja</option>
@@ -849,13 +849,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
 
-      <p style="max-width: 800px; margin: var(--space-4) auto 0; font-size: 0.75rem; color: var(--color-text-muted, #64748b);">* Hinnad on orienteerivad ja põhinevad turuandmetel. Täpse pakkumise saamiseks võtke ühendust teenusepakkujaga.</p>
-
       <div class="alert alert--info" style="max-width: 800px; margin: var(--space-8) auto 0;" role="note">
         <svg class="alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         <div class="alert__body">
-          <p class="alert__title">Kalkulaatori tulemus on orienteeriv</p>
-          <p>Täpne hind sõltub Teie ettevõtte spetsiifikast, riskianalüüsi tulemustest ja töötajate konkreetsetest tervisekontrolli vajadustest. Täpse pakkumise saate kirjutades <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+          <p class="alert__title">Tulemus on orienteeruv</p>
+          <p>Täpne hind sõltub Teie ettevõtte spetsiifikast, riskianalüüsi tulemustest ja töötajate tervisekontrolli vajadustest.<br><a href="pakkumine.html" style="color: var(--color-primary); font-weight: 600;">Küsige personaalset pakkumist →</a> või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
         </div>
       </div>
 
