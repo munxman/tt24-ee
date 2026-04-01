@@ -1224,31 +1224,31 @@ const QUIZ_URL = 'https://tt24.ee/enesekontroll.html';
 const questions = [
   { id: 1,  text: 'Töötervishoiu teenuseleping',
     failMsg: 'Leping töötervishoiu teenuse osutajaga puudub. See on kõige põhilisem kohustus — lahendage see esimesel võimalusel.',
-    failSeverity: 'red',    resource: 'kontrollnimekiri.html' },
+    failSeverity: 'red',    resource: 'korduma.html#faq-teenuseleping' },
   { id: 2,  text: 'Riskianalüüs',
     failMsg: 'Kirjalik riskianalüüs puudub või on aegunud. Tööinspektsioon kontrollib seda esimesena.',
-    failSeverity: 'red',    resource: 'kontrollnimekiri.html' },
+    failSeverity: 'red',    resource: 'korduma.html#riskianaluus' },
   { id: 3,  text: 'Töötajate tervisekontrollid',
-    failMsg: 'Kohustuslikud tervisekontrollid on tegemata. Kasutage meie kalkulaatorit, et selgitada välja, milliseid kontrolle vajate.',
-    failSeverity: 'red',    resource: 'kalkulaator.html' },
+    failMsg: 'Kohustuslikud tervisekontrollid on tegemata. Lugege, millised kontrollid kehtivad just Teie töötajatele.',
+    failSeverity: 'red',    resource: 'korduma.html#tervisekontroll' },
   { id: 4,  text: 'Töötajate teavitamine (allkirjad)',
     failMsg: 'Töötajate teavitamise aktid puuduvad. Koostage aktid ja koguge allkirjad — see on lihtne, kuid oluline samm.',
-    failSeverity: 'yellow', resource: 'kontrollnimekiri.html' },
+    failSeverity: 'yellow', resource: 'korduma.html#dokumentatsioon' },
   { id: 5,  text: 'Esmaabi',
     failMsg: 'Esmaabikomplekt või koolitatud esmaabiandjat puudub. Täiendage komplekti ja suunake töötaja esmaabi kursusele.',
-    failSeverity: 'yellow', resource: 'kontrollnimekiri.html' },
+    failSeverity: 'yellow', resource: 'korduma.html#trahvid', resourceLabel: 'Loe lähemalt →' },
   { id: 6,  text: 'Tööõnnetuste register',
     failMsg: 'Tööõnnetuste register puudub. Looge see kohe — vormi leiate Tööinspektsiooni kodulehelt.',
-    failSeverity: 'yellow', resource: 'korduma.html' },
+    failSeverity: 'yellow', resource: 'korduma.html#tooonnetus' },
   { id: 7,  text: 'Töökeskkonnavolinik (10+ töötajat)',
     failMsg: '10+ töötajaga ettevõttes on töökeskkonnavolinik kohustuslik. Korraldage töötajate hulgas valimine.',
-    failSeverity: 'yellow', resource: 'kontrollnimekiri.html' },
+    failSeverity: 'yellow', resource: 'korduma.html#faq-volinik' },
   { id: 8,  text: 'Töökeskkonna mõõtmised',
     failMsg: 'Vajalikud töökeskkonna mõõtmised on tegemata. Tellige mõõtmised akrediteeritud laborist.',
-    failSeverity: 'yellow', resource: 'kontrollnimekiri.html' },
+    failSeverity: 'yellow', resource: 'korduma.html#riskianaluus', resourceLabel: 'Loe lähemalt →' },
   { id: 9,  text: 'Dokumentatsioon korras',
     failMsg: 'Dokumentatsioon ei ole järelevalveks valmis. Koondage kõik dokumendid ühte kausta ja veenduge, et need on ajakohased.',
-    failSeverity: 'yellow', resource: 'kontrollnimekiri.html' },
+    failSeverity: 'yellow', resource: 'korduma.html#dokumentatsioon' },
   { id: 10, text: 'Regulaarne konsultatsioon arstiga',
     failMsg: 'Regulaarne koostöö töötervishoiuarstiga puudub. Proaktiivne konsultatsioon aitab ennetada probleeme.',
     failSeverity: 'green',  resource: null }
@@ -1468,7 +1468,7 @@ function showResult() {
            + '<div class="rec-body">'
            + '<p class="rec-title">' + q.text + '</p>'
            + '<p class="rec-desc">' + q.failMsg + '</p>'
-           + (q.resource ? '<a href="' + q.resource + '" class="rec-link">Vaata lisainfot →</a>' : '')
+           + (q.resource ? '<a href="' + q.resource + '" class="rec-link">' + (q.resourceLabel || 'Vaata lisainfot →') + '</a>' : '')
            + '</div></div>';
     }).join('');
   }
