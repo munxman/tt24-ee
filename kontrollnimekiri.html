@@ -226,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hero hero--compact" aria-labelledby="page-hero-heading" style="padding: 1.5rem 0;">
     <div class="hero-inner">
       <h1 id="page-hero-heading" style="font-size: 1.5rem; margin: 0;">Kontrollnimekiri</h1>
-      <div class="disclaimer" style="margin: 0.75rem 0 0;">See kontrollnimekiri annab üldise ülevaate töötervishoiuga seotud põhikohustustest. See ei asenda õigusnõustamist ega töötervishoiuspetsialisti hinnangut. Täpse vastavuse tagamiseks pöörduge vastava spetsialisti poole.</div>
+      <div class="disclaimer" style="margin: 0.75rem 0 0;">Alloleva abil saate üldise ülevaate töötervishoiuga seotud põhikohustustest. See ei asenda õigusnõustamist ega töötervishoiuspetsialisti hinnangut.<br>Täpse vastavuse tagamiseks pöörduge vastava spetsialisti poole.</div>
     </div>
   </section>
 
@@ -237,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
 
       <div class="alert alert-info">
-        <strong>Kuidas kasutada:</strong> Valige vahekaardilt oma ettevõtte suurus. Lugege läbi iga punkt, täitke kohustus ja märkige see tehtuks. Progress salvestub Teie brauserisse automaatselt.
+        <strong>Kuidas kasutada:</strong> Valige vahekaardilt oma ettevõtte suurus. Lugege läbi iga punkt ja märkige tehtuks need kohustused, mis on juba täidetud.<br>Progress salvestub Teie brauserisse automaatselt.
       </div>
 
       <!-- TABS -->
@@ -384,6 +384,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="alert alert-info" style="margin-top: 24px;">
           <strong>Mida see Teie jaoks tähendab:</strong> Väikeettevõttena on Teil suhteliselt kompaktne kohustuste loetelu, kuid kõik punktid on seaduslikult kohustuslikud. Alustage lepingust töötervishoiuteenuse osutajaga - ilma selleta ei saa te ka riskianalüüsi professionaalselt teha.
+        </div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('small')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+            📄 Laadi aruanne alla
+          </button>
         </div>
       </div>
 
@@ -556,6 +561,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="alert alert-info" style="margin-top: 24px;">
           <strong>Mida see Teie jaoks tähendab:</strong> Peamine lisanduv kohustus on töökeskkonnavolinik - see peab olema töötajate poolt valitud. Samuti muutuvad suuremaks dokumentatsiooni- ja mõõtmisnõuded. Soovitav on kasutada töötervishoiuteenuse osutajat, kes haldab kogu dokumentatsiooni Teie eest.
         </div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('medium')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+            📄 Laadi aruanne alla
+          </button>
+        </div>
       </div>
 
       <!-- ══════════════════════════════════════
@@ -689,6 +699,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="alert alert-info" style="margin-top: 24px;">
           <strong>Mida see Teie jaoks tähendab:</strong> 50+ töötajaga ettevõte vajab sisuliselt täisväärtuslikku töötervishoiu haldussüsteemi. Paljud selles kategoorias olevad ettevõtted kasutavad välise töötervishoiu teenuse osutaja täisteenust, et tagada dokumentatsiooni ja protsesside nõuetekohasus.
+        </div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('large')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+            📄 Laadi aruanne alla
+          </button>
         </div>
       </div>
 
@@ -920,10 +935,10 @@ function downloadCompliancePDF(group) {
   doc.setTextColor(255,255,255);
   doc.setFontSize(17);
   doc.setFont('helvetica','bold');
-  doc.text('Tootervishoiu vastavusaruanne', 14, 12);
+  doc.text('Töötervishoiu vastavusaruanne', 14, 12);
   doc.setFontSize(10);
   doc.setFont('helvetica','normal');
-  doc.text('TT24 - tt24.ee  |  Valvekliinik', 14, 21);
+  doc.text('tt24.ee', 14, 21);
   doc.text(dateStr, 196, 21, { align: 'right' });
 
   // ── STATUS BLOCK ──
@@ -1005,25 +1020,66 @@ function downloadCompliancePDF(group) {
   }
 
   // ── RECOMMENDATION BOX ──
-  if (missing.length > 0 && y < 240) {
+  if (missing.length > 0) {
+    if (y > 240) { doc.addPage(); y = 20; }
     y += 4;
     doc.setDrawColor(...lightGrey);
     doc.line(14, y, 196, y);
     y += 8;
-    doc.setFillColor(255, 249, 236);
-    doc.rect(14, y, 182, 24, 'F');
-    doc.setDrawColor(230,126,34);
-    doc.rect(14, y, 4, 24, 'F');
+
     doc.setTextColor(26,44,46);
     doc.setFont('helvetica','bold');
-    doc.setFontSize(9);
-    doc.text('Jareldused:', 22, y + 8);
+    doc.setFontSize(10);
+    doc.text('Järeldused ja soovitused:', 14, y);
+    y += 8;
+
     doc.setFont('helvetica','normal');
+    doc.setFontSize(9);
+    const introText = 'Teil on ' + missing.length + ' täitmata kohustust. Allpool on konkreetsed sammud nende lahendamiseks.';
+    const introLines = doc.splitTextToSize(introText, 182);
+    doc.text(introLines, 14, y);
+    y += introLines.length * 5 + 5;
+
+    missing.forEach(function(item) {
+      if (y > 265) { doc.addPage(); y = 20; }
+      const txt = item.text.toLowerCase();
+      let guidance = '';
+      if (txt.includes('riskianalüüs') || txt.includes('riskianaluus')) {
+        guidance = 'Riskianalüüs on aluseks kõigile teistele töötervishoiu kohustustele. Alustage töökeskkonna ohutegurite kaardistamisest. Juhend: tt24.ee/vormid/riskianaluus.html';
+      } else if (txt.includes('tervisekontroll') || txt.includes('töötervishoiu teenuse osutaja') || txt.includes('töötervishoiuteenuse osutaja') || txt.includes('leping')) {
+        guidance = 'Töötervishoiu teenuse osutaja leping on seadusest tulenev kohustus. Teenuse maksumus sõltub töötajate arvust ja sektorist. Kalkulaator: tt24.ee/kalkulaator.html';
+      } else if (txt.includes('esmaabi')) {
+        guidance = 'Esmaabi korraldamine on kohustuslik kõigile tööandjatele. Vajalik on koolitatud esmabiandja ja varustus. Dokument: tt24.ee/vormid/esmaabi.html';
+      } else if (txt.includes('teavitam') || txt.includes('teavitatud')) {
+        guidance = 'Töötaja teavitamine töökoha ohtudest peab olema dokumenteeritud allkirjaga. Dokument: tt24.ee/vormid/teavitamine.html';
+      } else if (txt.includes('õnnetus') || txt.includes('registreerim')) {
+        guidance = 'Tööõnnetuste registreerimine on kohustuslik. Iga juhtum tuleb uurida ja dokumenteerida. Dokument: tt24.ee/vormid/tooonnetus.html';
+      } else {
+        guidance = 'Lisainfo selle kohustuse kohta: tt24.ee/korduma.html';
+      }
+      doc.setFillColor(230,126,34);
+      doc.circle(17, y - 1.5, 1.5, 'F');
+      doc.setFont('helvetica','bold');
+      doc.setFontSize(8.5);
+      doc.setTextColor(26,44,46);
+      const itemLines = doc.splitTextToSize(item.text, 158);
+      doc.text(itemLines, 22, y);
+      y += itemLines.length * 4.5 + 1;
+      if (y > 265) { doc.addPage(); y = 20; }
+      doc.setFont('helvetica','normal');
+      doc.setFontSize(8);
+      doc.setTextColor(90,113,115);
+      const guidanceLines = doc.splitTextToSize(guidance, 158);
+      doc.text(guidanceLines, 22, y);
+      y += guidanceLines.length * 4.5 + 5;
+    });
+
+    if (y > 265) { doc.addPage(); y = 20; }
+    doc.setFont('helvetica','italic');
     doc.setFontSize(8.5);
-    const rec = `Teil on ${missing.length} täitmata kohustust. Alustage lepingust töötervishoiu teenuse osutajaga ja riskianalüüsiga. Lisainfo: tt24.ee/kontrollnimekiri.html`;
-    const recLines = doc.splitTextToSize(rec, 165);
-    doc.text(recLines, 22, y + 14);
-    y += 30;
+    doc.setTextColor(26,44,46);
+    doc.text('Küsimuste korral võtke ühendust: info@tt24.ee või +372 5 911 0909', 14, y);
+    y += 8;
   }
 
   // ── FOOTER ──
@@ -1033,10 +1089,10 @@ function downloadCompliancePDF(group) {
   doc.setTextColor(...grey);
   doc.setFontSize(7.5);
   doc.setFont('helvetica','normal');
-  doc.text('See aruanne on eneseanalüüsu vahend ja ei asenda ametlikku auditit ega Tooinspektsiooni jarelevalvet.', 14, footerY);
+  doc.text('See aruanne on eneseanalüüsi vahend ja ei asenda ametlikku auditit ega Tööinspektsiooni järelevalvet.', 14, footerY);
   doc.setTextColor(...teal);
   doc.setFont('helvetica','bold');
-  doc.text('tt24.ee', 196, footerY, { align: 'right' });
+  doc.text('valvekliinik.ee', 196, footerY, { align: 'right' });
 
   const filename = `TTH-vastavusaruanne-${data.label.replace(/\s+/g,'-')}-${new Date().toISOString().slice(0,10)}.pdf`;
   doc.save(filename);
