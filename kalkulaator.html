@@ -822,7 +822,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="comparison-card comparison-card--service">
           <div class="comparison-card__badge">✓ Teenusega kaetud</div>
           <div class="comparison-card__amount" id="compareServiceAnnual">€1 440 / aastas</div>
-          <p class="comparison-card__note">Töötervishoiuteenuse pakett*</p>
+          <p class="comparison-card__note">Teie valiku põhjal (<span id="compareEmpCount">18</span> töötajat)*</p>
           <ul class="comparison-card__list">
             <li>Töötervishoiuarsti konsultatsioon</li>
             <li>Kõik perioodilised tervisekontrollid</li>
@@ -1213,6 +1213,7 @@ function recalculate() {
 
   // Comparison section
   document.getElementById('compareServiceAnnual').textContent = formatEur(annual) + ' / aastas';
+  document.getElementById('compareEmpCount').textContent = empCount;
 
   // Includes list
   var html = '';
