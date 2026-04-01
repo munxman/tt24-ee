@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooõnnetuse uurimise akt - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 42%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 58%;
+    }
+
+    .signature-block {
+      margin-top: 24px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 12px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .instructions {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"], textarea, select {
+      border: none;
+      border-bottom: 1px solid #999;
+      background: transparent;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 2px 4px;
+      width: 100%;
+    }
+    textarea { border: 1px solid #999; resize: vertical; }
+    input[type="checkbox"] { width: 16px; height: 16px; margin-right: 6px; }
+
+    @media print {
+      .form-actions { display: none; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+      input[type="text"], input[type="date"], input[type="number"], textarea {
+        border: none;
+        border-bottom: 1px dotted #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-actions" style="margin-bottom: 20px;">
+    <button onclick="window.print()" style="padding: 8px 20px; cursor: pointer;">&#128424; Prindi / Salvesta PDF</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee - Tootervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Tooõnnetuse uurimise akt</h1>
+  <p class="subtitle">TTOS § 24 alusel &nbsp;|&nbsp; Tooõnnetuse uurimine on tooandja kohustus</p>
+
+  <!-- 1. ETTEVOTTE ANDMED -->
+  <h2>1. Ettevõtte andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Ettevõtte nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Registrikood:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Aadress:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Osakond / tookoht:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 2. KANNATANU ANDMED -->
+  <h2>2. Kannatanu andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Isikukood:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Ametikoht:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Toostaaž ettevõttes:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Toostaaž antud ametikohal:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 3. ONNETUSE KIRJELDUS -->
+  <h2>3. Onnetuse kirjeldus</h2>
+  <table>
+    <tr>
+      <td class="field-label">Onnetuse kuupäev:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Kellaaeg:</td>
+      <td class="field-value"><input type="text" placeholder="nt 14:35"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Koht (hoone, korrus, ruum):</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tegevus onnetuse hetkel:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Mis juhtus (sündmuste kirjeldus):</td>
+      <td class="field-value"><textarea rows="4"></textarea></td>
+    </tr>
+  </table>
+
+  <!-- 4. VIGASTUSE KIRJELDUS -->
+  <h2>4. Vigastuse kirjeldus</h2>
+  <table>
+    <tr>
+      <td class="field-label">Vigastuse laad ja asukoht kehal:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Vigastuse raskusaste:</td>
+      <td class="field-value"><input type="text" placeholder="nt kerge / moodukas / raske"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Arstiabi osutati:</td>
+      <td class="field-value"><input type="text" placeholder="nt kohal / EMO / haigla"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Esmaabiandja nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 5. TUNNISTAJAD -->
+  <h2>5. Tunnistajad</h2>
+  <p class="instructions">Märkige kõik onnetust pealt näinud isikud.</p>
+  <table>
+    <tr>
+      <th style="width:50%;">Nimi</th>
+      <th>Kontakt (telefon / e-post)</th>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 6. POHJUSTE ANALUUS -->
+  <h2>6. Pohjuste analuus</h2>
+  <p class="instructions">Kirjeldage nii vahetuid pohjuseid (mis otseselt onnetuse põhjustas) kui ka taustapohjuseid (korralduslikud, tehnilised, inimlikud tegurid).</p>
+  <table>
+    <tr>
+      <td class="field-label">Vahetu pohjus:</td>
+      <td class="field-value"><textarea rows="3"></textarea></td>
+    </tr>
+    <tr>
+      <td class="field-label">Taustapohjused:</td>
+      <td class="field-value"><textarea rows="3"></textarea></td>
+    </tr>
+    <tr>
+      <td class="field-label">Rikkumised (reeglid, juhendid, seadmed):</td>
+      <td class="field-value"><textarea rows="2"></textarea></td>
+    </tr>
+  </table>
+
+  <!-- 7. ENNETUSMEETMED -->
+  <h2>7. Ennetusmeetmed</h2>
+  <p class="instructions">Kirjeldage meetmed, mis vältivad samasuguse onnetuse kordumist.</p>
+  <table>
+    <tr>
+      <th style="width:40%;">Meede</th>
+      <th style="width:20%;">Tahtaeg</th>
+      <th>Vastutav isik</th>
+    </tr>
+    <tr>
+      <td><textarea rows="2"></textarea></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><textarea rows="2"></textarea></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><textarea rows="2"></textarea></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 8. UURIMISKOMISJON -->
+  <h2>8. Uurimiskomisjoni liikmed</h2>
+  <table>
+    <tr>
+      <th style="width:40%;">Nimi</th>
+      <th style="width:35%;">Ametikoht</th>
+      <th>Roll komisjonis</th>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text" placeholder="esimees"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text" placeholder="liige"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text" placeholder="liige"></td>
+    </tr>
+  </table>
+
+  <!-- 9. ALLKIRJAD -->
+  <h2>9. Allkirjad</h2>
+
+  <table>
+    <tr>
+      <td class="field-label">Akti koostamise kuupäev:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+  </table>
+
+  <div class="signature-block">
+    <div class="sig-row">
+      <div class="sig-col">
+        <div class="sig-label">Komisjoni esimehe allkiri:</div>
+        <input type="text" placeholder="Nimi ja allkiri">
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Tooandja / juhataja allkiri:</div>
+        <input type="text" placeholder="Nimi ja allkiri">
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Kannatanu allkiri (kui võimalik):</div>
+        <input type="text" placeholder="Nimi ja allkiri">
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Tootervishoiu ja tooohutuse seadus)
+  </div>
+
+</body>
+</html>

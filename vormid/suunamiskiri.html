@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tervisekontrolli suunamiskiri - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 42%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 58%;
+    }
+
+    .ohutegurid-table td.checkbox-col {
+      width: 24px;
+      text-align: center;
+    }
+
+    .signature-block {
+      margin-top: 24px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 12px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .instructions {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"], textarea, select {
+      border: none;
+      border-bottom: 1px solid #999;
+      background: transparent;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 2px 4px;
+      width: 100%;
+    }
+    textarea { border: 1px solid #999; resize: vertical; }
+    input[type="checkbox"] { width: 16px; height: 16px; margin-right: 6px; }
+
+    @media print {
+      .form-actions { display: none; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+      input[type="text"], input[type="date"], input[type="number"], textarea {
+        border: none;
+        border-bottom: 1px dotted #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-actions" style="margin-bottom: 20px;">
+    <button onclick="window.print()" style="padding: 8px 20px; cursor: pointer;">&#128424; Prindi / Salvesta PDF</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee - Tootervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Tervisekontrolli suunamiskiri</h1>
+  <p class="subtitle">TTOS § 13¹ alusel &nbsp;|&nbsp; Tooandja suunab tootaja tookeskkonnast tulenevate terviseriskide hindamiseks</p>
+
+  <!-- 1. TOOANDJA ANDMED -->
+  <h2>1. Tooandja andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Ettevõtte nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Registrikood:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Aadress:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Kontaktisiku nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Telefon:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">E-post:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tookeskkonnateenuse osutaja:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 2. TOOTAJA ANDMED -->
+  <h2>2. Tootaja andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Tootaja nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Isikukood:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Ametikoht:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Osakond / tookoht:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Toostaaž selles ametis:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tootamise iseloom (koormus, graafik):</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 3. TOOKESKKONNA OHUTEGURID -->
+  <h2>3. Tookeskkonna ohutegurid</h2>
+  <p class="instructions">Märkige linnuke ohutegurite juurde, millega see tootaja kokku puutub. Koik märgitud ohutegurid peavad olema kaetud riskianalüüsiga.</p>
+
+  <table class="ohutegurid-table">
+    <tr>
+      <th class="checkbox-col">Esineb</th>
+      <th style="width:30%;">Ohutegur</th>
+      <th>Kokkupuute kirjeldus (sagedus, kestus, intensiivsus)</th>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Müra</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Vibratsioon</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Kemikaalid (lahusti, tolm, gaasid)</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Bioloogilised ohutegurid</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Kuvaritoo</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Raskuste teisaldamine</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Sundasend</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Öötoo / vahetustoo</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Psühhosotsiaalsed ohutegurid</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><input type="checkbox"></td>
+      <td>Muu: <input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 4. KOKKUPUUTE KESTUS JA ISELOOM -->
+  <h2>4. Kokkupuute kestus ja iseloom</h2>
+  <p class="instructions">Kirjeldage tootaja kokkupuudet ohuteguritega üksikasjalikumalt, sh igapäevase kokkupuute kestust ja iseloomu.</p>
+  <textarea rows="4"></textarea>
+
+  <!-- 5. EELMINE TERVISEKONTROLL JA LISADOKUMENDID -->
+  <h2>5. Eelmine tervisekontroll ja lisadokumendid</h2>
+  <table>
+    <tr>
+      <td class="field-label">Eelmise tervisekontrolli kuupäev:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Eelmise kontrolli läbiviija (arst / kliinik):</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Riskianalüüs on lisatud:</td>
+      <td class="field-value">
+        <label><input type="checkbox"> Jah, riskianalüüs on lisatud</label>
+      </td>
+    </tr>
+    <tr>
+      <td class="field-label">Tootajal on teadaolevad kroonilised haigused:</td>
+      <td class="field-value">
+        <label><input type="checkbox"> Jah (kirjeldage allpool)</label>
+        <label style="margin-left:16px;"><input type="checkbox"> Ei</label>
+      </td>
+    </tr>
+    <tr>
+      <td class="field-label">Täpsustus haiguste kohta:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Suunamise pohjus:</td>
+      <td class="field-value">
+        <label><input type="checkbox"> Esmane (uus tootaja)</label>
+        <label style="margin-left:16px;"><input type="checkbox"> Korduv (perioodnimekiri)</label>
+        <label style="margin-left:16px;"><input type="checkbox"> Erakorraline</label>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 6. TOOANDJA ALLKIRI JA KUUPAEV -->
+  <h2>6. Tooandja allkiri</h2>
+
+  <table>
+    <tr>
+      <td class="field-label">Allkirjastaja nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Ametikoht:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Suunamise kuupäev:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+  </table>
+
+  <div class="signature-block">
+    <div class="sig-row">
+      <div class="sig-col">
+        <div class="sig-label">Tooandja / kontaktisiku allkiri:</div>
+        <input type="text" placeholder="Nimi ja allkiri">
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Ettevõtte pitser (kui on):</div>
+        <div style="border: 1px dashed #999; height: 40px; margin-top: 4px;">&nbsp;</div>
+        <div class="sig-name">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Tootervishoiu ja tooohutuse seadus)
+  </div>
+
+</body>
+</html>

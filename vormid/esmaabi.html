@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esmaabi korraldamise dokument - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 42%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 58%;
+    }
+
+    .checkbox-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      margin-bottom: 10px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .signature-block {
+      margin-top: 24px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 12px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .instructions {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"], textarea, select {
+      border: none;
+      border-bottom: 1px solid #999;
+      background: transparent;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 2px 4px;
+      width: 100%;
+    }
+    textarea { border: 1px solid #999; resize: vertical; }
+    input[type="checkbox"] { width: 16px; height: 16px; margin-right: 6px; }
+
+    @media print {
+      .form-actions { display: none; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+      input[type="text"], input[type="date"], input[type="number"], textarea {
+        border: none;
+        border-bottom: 1px dotted #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-actions" style="margin-bottom: 20px;">
+    <button onclick="window.print()" style="padding: 8px 20px; cursor: pointer;">&#128424; Prindi / Salvesta PDF</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee - Tootervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Esmaabi korraldamise dokument</h1>
+  <p class="subtitle">TTOS § 13² alusel &nbsp;|&nbsp; Tooandja on kohustatud tagama esmaabi korraldamise</p>
+
+  <!-- 1. ETTEVOTTE ANDMED -->
+  <h2>1. Ettevõtte andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Ettevõtte nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Registrikood:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Aadress:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tootajate arv:</td>
+      <td class="field-value"><input type="number" min="0"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Dokumendi koostamise kuupäev:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+  </table>
+
+  <!-- 2. ESMAABIANDJAD -->
+  <h2>2. Esmaabiandjate nimekiri</h2>
+  <p class="instructions">Loetlege kõik töötajad, kellel on kehtiv esmaabi koolitus.</p>
+  <table>
+    <tr>
+      <th style="width:35%;">Nimi</th>
+      <th style="width:22%;">Koolituse kuupäev</th>
+      <th style="width:22%;">Sertifikaat kehtib kuni</th>
+      <th>Kontakt</th>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 3. ESMAABIVAHENDITE ASUKOHT -->
+  <h2>3. Esmaabivahendite asukoht</h2>
+  <table>
+    <tr>
+      <th style="width:10%;">Nr</th>
+      <th style="width:30%;">Hoone</th>
+      <th style="width:25%;">Korrus</th>
+      <th>Ruum / kirjeldus</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 4. ESMAABIVAHENDITE NIMEKIRI -->
+  <h2>4. Esmaabivahendite nimekiri</h2>
+  <p class="instructions">Märkige linnuke vahendite juurde, mis on ettevõttes olemas ja korras.</p>
+  <table>
+    <tr>
+      <th style="width:8%;">Olemas</th>
+      <th style="width:35%;">Vahend</th>
+      <th style="width:20%;">Kogus</th>
+      <th>Märkused</th>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Sidemed ja marlipadjad</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Plaastrid (erinevad suurused)</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Kaarsid</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Latekskindad (ühekordsed)</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Silmaloputusvahend</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Termotekk / päästetekk</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Defibrillaator (AED)</td>
+      <td><input type="text"></td>
+      <td><input type="text" placeholder="asukoht"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td>Muu: <input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 5. KONTROLLIMISE AJAKAVA -->
+  <h2>5. Kontrollimise ajakava</h2>
+  <p class="instructions">Esmaabivahendeid tuleb kontrollida vastavalt alla märgitud ajakavale (soovitus: kord kvartalis).</p>
+  <table>
+    <tr>
+      <th style="width:25%;">Kvartal / Kuupäev</th>
+      <th style="width:30%;">Kontrollija nimi</th>
+      <th style="width:20%;">Kontrollitud</th>
+      <th>Märkused</th>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="I kvartal"></td>
+      <td><input type="text"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="II kvartal"></td>
+      <td><input type="text"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="III kvartal"></td>
+      <td><input type="text"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="IV kvartal"></td>
+      <td><input type="text"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+      <td><input type="text"></td>
+    </tr>
+  </table>
+
+  <!-- 6. VASTUTAV ISIK JA ALLKIRJAD -->
+  <h2>6. Vastutav isik ja allkirjad</h2>
+  <table>
+    <tr>
+      <td class="field-label">Vastutava isiku nimi:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Ametikoht:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Telefon:</td>
+      <td class="field-value"><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Dokumendi kinnitamise kuupäev:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+    <tr>
+      <td class="field-label">Järgmine ülevaatus:</td>
+      <td class="field-value"><input type="date"></td>
+    </tr>
+  </table>
+
+  <div class="signature-block">
+    <div class="sig-row">
+      <div class="sig-col">
+        <div class="sig-label">Vastutava isiku allkiri:</div>
+        <input type="text" placeholder="Nimi ja allkiri">
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Tooandja / juhataja allkiri:</div>
+        <input type="text" placeholder="Nimi ja allkiri">
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Tootervishoiu ja tooohutuse seadus)
+  </div>
+
+</body>
+</html>
