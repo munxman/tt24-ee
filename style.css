@@ -541,6 +541,26 @@ p {
   }
 }
 
+/* Compact hero for subpages */
+.hero--compact {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+@media (min-width: 768px) {
+  .hero--compact {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+}
+.hero--compact .hero__title {
+  font-size: clamp(1.5rem, 4vw, var(--text-3xl));
+  margin-bottom: var(--space-2);
+}
+.hero--compact .hero__subtitle {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-4);
+}
+
 .hero .container {
   position: relative;
   z-index: 1;
