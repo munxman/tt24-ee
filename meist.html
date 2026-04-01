@@ -73,12 +73,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 
     <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
-      <a href="kontrollnimekiri.html" class="nav-link">Kontrollnimekiri</a>
-      <a href="kalkulaator.html" class="nav-link">Kalkulaator</a>
-      <a href="enesekontroll.html" class="nav-link">Enesehinnang</a>
+      <div class="nav-dropdown" id="toolsDropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Tööriistad</button>
+        <div class="nav-dropdown-menu">
+          <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+          <a href="kalkulaator.html">Kalkulaator</a>
+          <a href="enesekontroll.html">Enesehinnang</a>
+          <a href="ajakava.html">Ajakava</a>
+          <a href="dokumendid.html">Dokumendid</a>
+        </div>
+      </div>
       <a href="korduma.html" class="nav-link">KKK</a>
-      <a href="ajakava.html" class="nav-link">Ajakava</a>
-      <a href="meist.html" class="nav-link active" aria-current="page">Meist</a>
+      <a href="meist.html" class="nav-link nav-link--secondary active">Meist</a>
     </nav>
 
     <a href="enesekontroll.html" class="nav-cta-btn">Kontrollin valmisolekut</a>
@@ -207,5 +213,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){var m={};document.addEventListener('click',function(e){var k=e.target.tagName+'#'+e.target.id+'.'+e.target.className;var n=Date.now();if(!m[k])m[k]={c:0,t:0};if(n-m[k].t<1500){m[k].c++;if(m[k].c>=3)console.warn('Rage click:',k,e.target)}else{m[k].c=1}m[k].t=n});
 })();
 </script>
-</body>
+<script>
+  var dd=document.getElementById("toolsDropdown");
+  if(dd){var btn=dd.querySelector(".nav-dropdown-toggle");
+  btn.addEventListener("click",function(e){e.stopPropagation();dd.classList.toggle("open");btn.setAttribute("aria-expanded",dd.classList.contains("open"))});
+  document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}})}
+  </script>
+  </body>
 </html>
