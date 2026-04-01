@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Töötervishoiu olukorra analüüsi küsimustik - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 15pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    h3 {
+      font-size: 10.5pt;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 40%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 60%;
+    }
+
+    .field-line {
+      display: block;
+      border-bottom: 1px solid #555;
+      min-height: 18px;
+      margin-top: 2px;
+    }
+
+    .q-row td {
+      font-size: 10.5pt;
+    }
+
+    .q-label {
+      font-family: Arial, sans-serif;
+      font-size: 9.5pt;
+      color: #222;
+      padding: 5px 7px 2px 7px;
+      font-weight: bold;
+    }
+
+    .q-answer {
+      min-height: 28px;
+      border: 1px solid #000;
+      padding: 4px 7px;
+      margin: 0 0 8px 0;
+      font-size: 10pt;
+    }
+
+    .q-block {
+      margin-bottom: 10px;
+    }
+
+    .radio-row {
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      display: flex;
+      gap: 20px;
+      padding: 4px 0;
+    }
+
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .radio-box {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1.5px solid #000;
+      flex-shrink: 0;
+    }
+
+    .checkbox-box {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid #000;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .answer-line {
+      border-bottom: 1px solid #555;
+      min-height: 20px;
+      width: 100%;
+      margin-top: 3px;
+    }
+
+    .answer-area {
+      border: 1px solid #888;
+      min-height: 38px;
+      width: 100%;
+      padding: 3px 5px;
+      margin-top: 3px;
+      font-size: 10pt;
+    }
+
+    .section-note {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 16px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #000;
+      height: 24px;
+      margin-bottom: 3px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .legal-note {
+      border: 1px solid #888;
+      padding: 8px 12px;
+      margin: 10px 0 16px 0;
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .no-print {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      border-radius: 4px;
+    }
+
+    .no-print button {
+      background: #1a2c2e;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 10pt;
+      margin-top: 8px;
+      border-radius: 3px;
+    }
+
+    .ohutegur-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <strong>Töötervishoiu olukorra analüüsi küsimustik - TT24.ee</strong><br>
+    Kohustuslik 3-aastane analüüs (alates jaanuarist 2023, TTOS muudatus). Täitke hoolikalt - alusdokument Teie töötervishoiuarstile.
+    <br>
+    <button onclick="window.print()">Prindi / Salvesta PDF-ina</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee - Töötervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Töötervishoiu olukorra analüüsi küsimustik</h1>
+  <p class="subtitle">Kohustuslik 3-aastane analüüs alates 01.01.2023 &nbsp;|&nbsp; TTOS § 13 alusel</p>
+
+  <div class="legal-note">
+    <strong>Milleks see dokument on vajalik?</strong> Alates 2023. aastast on tööandjal kohustus koostada vähemalt iga kolme aasta järel kokkuvõte töötervishoiu olukorrast. See esitatakse töötervishoiuarstile, kes kasutab seda terviseuuringute planeerimisel. Vorm koostati tt24.ee poolt praktiliselt kasutamiseks.
+  </div>
+
+  <!-- ULDANDMED -->
+  <h2>1. Üldandmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Ettevõtte nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Registrikood:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Aadress:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tegevusala (EMTAK):</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Töötajate koguarv:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">sh tervistkahjustavate teguritega töötajaid:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Analüüsi koostamise kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Analüüsiperiood (aastad):</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Koostaja nimi ja ametikoht:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Töötervishoiuteenuse osutaja:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <!-- TOÖKESKKONNA OHUTEGURID -->
+  <h2>2. Töökeskkonna ohutegurid</h2>
+  <p class="section-note">Märkige kõik esinevad ohutegurid ja kirjeldage nende olukorda analüüsiperioodil.</p>
+
+  <h3>2.1. Esinevad ohutegurid (märkige kõik kohalduvad)</h3>
+  <table>
+    <tr>
+      <th style="width:24px; text-align:center;">Esineb</th>
+      <th>Ohutegur</th>
+      <th>Mõjutatud töötajate arv</th>
+      <th>Kas mõõdetud?</th>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Müra</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;">
+        <span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Vibratsioon</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Kemikaalid / ohtlikud ained</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Kuvaritöö (4+ tundi paeval)</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Raskuste teisaldamine</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Sundasend</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Bioloogilised ohutegurid</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Psühhosotsiaalsed ohud (stress, koormus)</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Öötöö / vahetustega töö</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Muud (täpsustage):</td>
+      <td></td>
+      <td style="font-family:Arial,sans-serif; font-size:9pt;"><span class="radio-box"></span> Jah &nbsp; <span class="radio-box"></span> Ei</td>
+    </tr>
+  </table>
+
+  <h3>2.2. Olulisemad muutused töökeskkonnas analüüsiperioodil</h3>
+  <div class="q-block">
+    <div class="q-label">Kirjeldage, millised muutused töökeskkonnas on toimunud (uued seadmed, uued töövõtted, personalimuutused, kolimised jne):</div>
+    <div class="answer-area" style="min-height:50px;"></div>
+  </div>
+
+  <!-- TERVISEKONTROLLIDE KOKKUVOTE -->
+  <h2>3. Tervisekontrollide kokkuvõte</h2>
+
+  <table>
+    <tr>
+      <th>Näitaja</th>
+      <th style="width:80px;">Arv / Vastus</th>
+      <th>Märkused</th>
+    </tr>
+    <tr>
+      <td>Tervisekontrolli läbinud töötajaid analüüsiperioodil</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sellest: sobiv töötamise jätkamiseks</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sellest: sobiv tingimustega (arsti soovitused töökoha kohta)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Töökohalt eemaldatud (ei sobi tervislikel põhjustel)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tervisekontrollist keeldunud töötajaid</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kutsehaiguse kahtluseid diagnoositud</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kinnitatud kutsehaigused</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <div class="q-block">
+    <div class="q-label">Milliseid arsti soovitusi on tööandjale antud töökoha kohanduste kohta?</div>
+    <div class="answer-area" style="min-height:40px;"></div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-label">Milliseid soovitusi on ellu viidud? Milliseid mitte, ja miks?</div>
+    <div class="answer-area" style="min-height:40px;"></div>
+  </div>
+
+  <!-- TOOÕNNETUSED -->
+  <h2>4. Tööõnnetused ja ohtlikud olukorrad</h2>
+
+  <table>
+    <tr>
+      <th>Näitaja</th>
+      <th style="width:70px;">Arv</th>
+      <th>Iseloomustus / märkused</th>
+    </tr>
+    <tr>
+      <td>Registreeritud tööõnnetused kokku</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>sh rasked tööõnnetused (haiglaravi)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tööinspektsioonile teatatud tööõnnetused</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ohtlikud olukorrad (near-miss juhtumid)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tööga seotud haigestumised (töövõimetus)</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <div class="q-block">
+    <div class="q-label">Kirjeldage korduvaid mustreid tööõnnetuste põhjustes ning võetud ennetusmeetmed:</div>
+    <div class="answer-area" style="min-height:42px;"></div>
+  </div>
+
+  <!-- ETTEPANEKUD -->
+  <h2>5. Ettepanekud järgmiseks perioodiks</h2>
+  <p class="section-note">Lähtudes eelnevast analüüsist, märkige planeeritud tegevused töökeskkonna parandamiseks.</p>
+
+  <table>
+    <tr>
+      <th>Ettepaneku sisu</th>
+      <th style="width:90px;">Vastutav isik</th>
+      <th style="width:80px;">Tähtaeg</th>
+      <th style="width:60px;">Prioriteet</th>
+    </tr>
+    <tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+    <tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+    <tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+    <tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+    <tr><td style="height:26px;"></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <div class="q-block">
+    <div class="q-label">Üldised kommentaarid töötervishoiu olukorra kohta:</div>
+    <div class="answer-area" style="min-height:40px;"></div>
+  </div>
+
+  <!-- ALLKIRJAD -->
+  <h2>6. Kinnitamine</h2>
+
+  <table>
+    <tr>
+      <td class="field-label">Koostaja nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Koostamise kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Dokument esitatakse:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <div class="sig-row">
+    <div class="sig-col">
+      <div class="sig-label">Koostaja allkiri:</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi ja kuupäev)</div>
+    </div>
+    <div class="sig-col">
+      <div class="sig-label">Tööandja / juhatuse allkiri:</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi, ametikoht ja kuupäev)</div>
+    </div>
+    <div class="sig-col">
+      <div class="sig-label">Töökeskkonnavoliniku allkiri (kui on):</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi ja kuupäev)</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Töötervishoiu ja tööohutuse seadus) &nbsp;|&nbsp; Koostatakse vähemalt iga 3 aasta järel
+  </div>
+
+</body>
+</html>
