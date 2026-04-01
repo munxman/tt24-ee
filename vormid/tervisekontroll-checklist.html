@@ -87,27 +87,12 @@
       width: 60%;
     }
 
-    .field-line {
-      display: block;
-      border-bottom: 1px solid #555;
-      min-height: 18px;
-      margin-top: 2px;
-    }
-
     .instructions {
       font-size: 9pt;
       color: #444;
       font-family: Arial, sans-serif;
       margin-bottom: 10px;
       font-style: italic;
-    }
-
-    .checkbox-box {
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      border: 1.5px solid #000;
-      vertical-align: middle;
     }
 
     .check-col {
@@ -119,10 +104,6 @@
       width: 110px;
       font-size: 9pt;
       font-family: Arial, sans-serif;
-    }
-
-    .note-col {
-      width: 160px;
     }
 
     .section-header td {
@@ -150,12 +131,6 @@
       margin-bottom: 2px;
     }
 
-    .sig-line {
-      border-bottom: 1px solid #000;
-      height: 24px;
-      margin-bottom: 3px;
-    }
-
     .sig-name {
       font-size: 8pt;
       color: #444;
@@ -181,78 +156,90 @@
       color: #333;
     }
 
-    .no-print {
-      background: #f0f0f0;
-      border: 1px solid #ccc;
-      padding: 10px 14px;
-      margin-bottom: 20px;
+    .subtitle-fields {
+      display: inline-flex;
+      gap: 20px;
       font-family: Arial, sans-serif;
-      font-size: 10pt;
-      border-radius: 4px;
+      font-size: 9pt;
+      color: #444;
     }
 
-    .no-print button {
-      background: #1a2c2e;
-      color: #fff;
-      border: none;
-      padding: 8px 18px;
-      cursor: pointer;
-      font-size: 10pt;
-      margin-top: 8px;
-      border-radius: 3px;
+    .subtitle-fields label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
+    /* Fillable form fields */
+    input[type="text"], input[type="date"], input[type="number"], textarea, select {
+      border: none;
+      border-bottom: 1px solid #999;
+      background: transparent;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 2px 4px;
+      width: 100%;
+    }
+    textarea { border: 1px solid #999; resize: vertical; }
+    input[type="checkbox"] { width: 16px; height: 16px; margin-right: 6px; }
 
     @media print {
-      .no-print { display: none !important; }
+      .form-actions { display: none; }
       body { padding: 15mm 15mm 12mm 15mm; }
       @page { margin: 10mm; size: A4; }
+      input[type="text"], input[type="date"], input[type="number"], textarea {
+        border: none;
+        border-bottom: 1px dotted #ccc;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="no-print">
-    <strong>Tervisekontrolli korraldamise kontrollnimekiri - TT24.ee</strong><br>
-    Kasutage seda vormi tervisekontrollide korraldamise jälgimiseks. Printige ja täitke käsitsi.
-    <br>
-    <button onclick="window.print()">Prindi / Salvesta PDF-ina</button>
+  <div class="form-actions" style="margin-bottom: 20px;">
+    <button onclick="window.print()" style="padding: 8px 20px; cursor: pointer;">&#128424; Prindi / Salvesta PDF</button>
     &nbsp;
     <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
   </div>
 
-  <div class="watermark">TT24.ee - Töötervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+  <div class="watermark">TT24.ee - Tootervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
 
   <h1>Tervisekontrolli korraldamise kontrollnimekiri</h1>
-  <p class="subtitle">TTOS § 13¹ alusel &nbsp;|&nbsp; Aasta: ____________&nbsp;&nbsp; Periood: ____________</p>
+  <p class="subtitle">
+    TTOS § 13¹ alusel &nbsp;|&nbsp;
+    Aasta: <input type="number" style="width:70px; display:inline-block;" min="2020" max="2099">
+    &nbsp;&nbsp;
+    Periood: <input type="text" style="width:120px; display:inline-block;" placeholder="nt jaanuar-juuni">
+  </p>
 
   <!-- ETTEVOTTE ANDMED -->
   <h2>1. Ettevõtte andmed</h2>
   <table>
     <tr>
       <td class="field-label">Ettevõtte nimi:</td>
-      <td class="field-value"><span class="field-line"></span></td>
+      <td class="field-value"><input type="text"></td>
     </tr>
     <tr>
-      <td class="field-label">Töötervishoiuteenuse osutaja:</td>
-      <td class="field-value"><span class="field-line"></span></td>
+      <td class="field-label">Tootervishoiuteenuse osutaja:</td>
+      <td class="field-value"><input type="text"></td>
     </tr>
     <tr>
       <td class="field-label">Lepingu number / kuupäev:</td>
-      <td class="field-value"><span class="field-line"></span></td>
+      <td class="field-value"><input type="text"></td>
     </tr>
     <tr>
-      <td class="field-label">Vastutav kontaktisik tööandja poolelt:</td>
-      <td class="field-value"><span class="field-line"></span></td>
+      <td class="field-label">Vastutav kontaktisik tooandja poolelt:</td>
+      <td class="field-value"><input type="text"></td>
     </tr>
     <tr>
       <td class="field-label">Kontakti telefon / e-post:</td>
-      <td class="field-value"><span class="field-line"></span></td>
+      <td class="field-value"><input type="text"></td>
     </tr>
   </table>
 
   <!-- EELTINGIMUSED -->
   <h2>2. Eeltingimused - enne tervisekontrolli korraldamist</h2>
-  <p class="instructions">Kontrollige, et kõik järgmised tingimused on täidetud enne töötajate tervisekontrolli saatmist.</p>
+  <p class="instructions">Kontrollige, et koik järgmised tingimused on täidetud enne tootajate tervisekontrolli saatmist.</p>
 
   <table>
     <tr>
@@ -261,50 +248,50 @@
       <th class="status-col">Kuupäev / Märkus</th>
     </tr>
     <tr class="section-header">
-      <td colspan="3">Leping ja riskianalüüs</td>
+      <td colspan="3">Leping ja riskianaluus</td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Leping töötervishoiuteenuse osutajaga on kehtiv ja allkirjastatud</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Leping tootervishoiuteenuse osutajaga on kehtiv ja allkirjastatud</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Riskianalüüs on ajakohane (koostatud/uuendatud viimase 12 kuu jooksul)</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Riskianaluus on ajakohane (koostatud/uuendatud viimase 12 kuu jooksul)</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Riskianalüüs on edastatud töötervishoiuarstile enne tervisekontrolle</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Riskianaluus on edastatud tootervishoiuarstile enne tervisekontrolle</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Töötervishoiuarst on kinnitanud riskianalüüsi kättesaamise</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Tootervishoiuarst on kinnitanud riskianaluusi kättesaamise</td>
+      <td><input type="text"></td>
     </tr>
     <tr class="section-header">
-      <td colspan="3">Töötajate nimekiri</td>
+      <td colspan="3">Tootajate nimekiri</td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Koostatud töötajate nimekiri, kes peavad tervisekontrollist läbi käima</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Koostatud tootajate nimekiri, kes peavad tervisekontrollist läbi käima</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Nimekirjas on märgitud iga töötaja ohutegurid (riskianalüüsi põhjal)</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Nimekirjas on märgitud iga tootaja ohutegurid (riskianaluusi põhjal)</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Nimekiri on edastatud töötervishoiuarstile</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Nimekiri on edastatud tootervishoiuarstile</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Alaealised töötajad on nimekirjas eraldi märgitud (neil iga-aastane kontroll)</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Alaealised tootajad on nimekirjas eraldi märgitud (neil iga-aastane kontroll)</td>
+      <td><input type="text"></td>
     </tr>
   </table>
 
@@ -317,34 +304,34 @@
       <th class="status-col">Kuupäev / Märkus</th>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td class="check-col"><input type="checkbox"></td>
       <td>Tervisekontrolli ajakava on koostatud (kes, millal, kuhu)</td>
-      <td></td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Töötajatele on teatatud tervisekontrolli kuupäevadest piisavalt ette</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Tootajatele on teatatud tervisekontrolli kuupäevadest piisavalt ette</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Töötajatele on selgitatud, et tervisekontroll on tööajal ja tööandja kulul</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Tootajatele on selgitatud, et tervisekontroll on tooajal ja tooandja kulul</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Kõik planeeritud töötajad on tervisekontrolli läbinud</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Koik planeeritud tootajad on tervisekontrolli läbinud</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Tervisekontrollist keeldunud töötajad on dokumenteeritud (põhjus)</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Tervisekontrollist keeldunud tootajad on dokumenteeritud (põhjus)</td>
+      <td><input type="text"></td>
     </tr>
   </table>
 
-  <!-- TULEMUSTE SAAILITAMINE -->
-  <h2>4. Tervisekontrolli otsuste sailitamine ja jargmised kuupäevad</h2>
+  <!-- TULEMUSTE SAILITAMINE -->
+  <h2>4. Tervisekontrolli otsuste sailitamine ja järgmised kuupäevad</h2>
   <table>
     <tr>
       <th class="check-col">Tehtud</th>
@@ -352,34 +339,34 @@
       <th class="status-col">Kuupäev / Märkus</th>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Töötervishoiuarsti otsused on saadud ja arhiveeritud (GDPR-kohaselt)</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Tootervishoiuarsti otsused on saadud ja arhiveeritud (GDPR-kohaselt)</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td class="check-col"><input type="checkbox"></td>
       <td>Otsuste hoidmiseks on tagatud juurdepääsupiirang (ainult volitatud isikud)</td>
-      <td></td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Tööandja on saanud arsti soovitused töökoha kohanduste kohta</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Tooandja on saanud arsti soovitused tookoha kohanduste kohta</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td class="check-col"><input type="checkbox"></td>
       <td>Arsti soovitused on edastatud otsesele juhile</td>
-      <td></td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td class="check-col"><input type="checkbox"></td>
       <td>Järgmise tervisekontrolli kuupäevad on fikseeritud ja kalendrisse märgitud</td>
-      <td></td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td class="check-col"><span class="checkbox-box"></span></td>
-      <td>Vastutav isik on meeldetuletus(t)e saatmise endale planeerinud</td>
-      <td></td>
+      <td class="check-col"><input type="checkbox"></td>
+      <td>Vastutav isik on meeldetuletuse saatmise endale planeerinud</td>
+      <td><input type="text"></td>
     </tr>
   </table>
 
@@ -388,24 +375,66 @@
   <p class="instructions">Märkige planeeritud järgmised tervisekontrollid.</p>
   <table>
     <tr>
-      <th>Töötaja nimi</th>
+      <th>Tootaja nimi</th>
       <th>Ohutegur</th>
       <th style="width:90px;">Viimane kontroll</th>
       <th style="width:90px;">Järgmine kontroll</th>
       <th style="width:60px;">Tehtud</th>
     </tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="date"></td>
+      <td><input type="date"></td>
+      <td style="text-align:center;"><input type="checkbox"></td>
+    </tr>
   </table>
 
   <div class="info-box">
     <strong>Meeldetuletus - tervisekontrolli sagedus ohutegurite kaupa:</strong><br>
-    Kuvaritöö: vähemalt iga 3 aasta järel. Müra/vibratsioon: iga 2 aasta järel. Kemikaalid: 1-3 aasta järel (sõltuvalt ohust). Alaealised: iga aasta. Tähpsema ajakava saate oma töötervishoiuarstilt.
+    Kuvaritoo: vähemalt iga 3 aasta järel. Müra/vibratsioon: iga 2 aasta järel. Kemikaalid: 1-3 aasta järel (sõltuvalt ohust). Alaealised: iga aasta. Täpsema ajakava saate oma tootervishoiuarstilt.
   </div>
 
   <!-- ALLKIRJAD -->
@@ -414,18 +443,18 @@
   <div class="sig-row">
     <div class="sig-col">
       <div class="sig-label">Vastutava isiku allkiri:</div>
-      <div class="sig-line"></div>
+      <input type="text" placeholder="Nimi ja allkiri">
       <div class="sig-name">(nimi, ametikoht ja kuupäev)</div>
     </div>
     <div class="sig-col">
-      <div class="sig-label">Tööandja / juhataja allkiri:</div>
-      <div class="sig-line"></div>
+      <div class="sig-label">Tooandja / juhataja allkiri:</div>
+      <input type="text" placeholder="Nimi ja allkiri">
       <div class="sig-name">(nimi ja kuupäev)</div>
     </div>
   </div>
 
   <div class="footer-note">
-    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Töötervishoiu ja tööohutuse seadus)
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Tootervishoiu ja tooohutuse seadus)
   </div>
 
 </body>
