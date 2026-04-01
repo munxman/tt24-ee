@@ -70,6 +70,40 @@
   }
   </script>
 
+  <!-- Schema.org – FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mis on töötervishoiu enesehinnang?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kas enesehinnang asendab Tööinspektsiooni auditit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ei. See on isehinnangu vahend. See ei asenda ametlikku auditit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kas minu andmeid salvestatakse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ei. Kogu arvutus toimub Teie brauseris. Midagi ei salvestata serverisse."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Tag Manager -->
@@ -1086,6 +1120,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div><!-- /.quiz-container -->
     </div><!-- /.container -->
+  </section>
+
+  <!-- ═══════════════════════════════
+       FAQ SECTION
+  ═══════════════════════════════ -->
+  <section class="faq-preview section" aria-labelledby="enesekontroll-faq-heading">
+    <div class="container">
+      <div style="max-width:720px;margin:0 auto;">
+        <h2 id="enesekontroll-faq-heading" class="section-title" style="font-size:var(--text-xl);">Korduma kippuvad küsimused</h2>
+
+        <details class="faq-preview-item">
+          <summary class="faq-preview-q">Mis on töötervishoiu enesehinnang?</summary>
+          <div class="faq-preview-a">
+            <p>See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks.</p>
+          </div>
+        </details>
+
+        <details class="faq-preview-item">
+          <summary class="faq-preview-q">Kas enesehinnang asendab Tööinspektsiooni auditit?</summary>
+          <div class="faq-preview-a">
+            <p>Ei. See on isehinnangu vahend. See ei asenda ametlikku auditit.</p>
+          </div>
+        </details>
+
+        <details class="faq-preview-item">
+          <summary class="faq-preview-q">Kas minu andmeid salvestatakse?</summary>
+          <div class="faq-preview-a">
+            <p>Ei. Kogu arvutus toimub Teie brauseris. Midagi ei salvestata serverisse.</p>
+          </div>
+        </details>
+      </div>
+    </div>
   </section>
 </main>
 
