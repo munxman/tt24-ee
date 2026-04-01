@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tervisekontrolli korraldamise kontrollnimekiri - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 15pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 40%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 60%;
+    }
+
+    .field-line {
+      display: block;
+      border-bottom: 1px solid #555;
+      min-height: 18px;
+      margin-top: 2px;
+    }
+
+    .instructions {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .checkbox-box {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #000;
+      vertical-align: middle;
+    }
+
+    .check-col {
+      width: 30px;
+      text-align: center;
+    }
+
+    .status-col {
+      width: 110px;
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+    }
+
+    .note-col {
+      width: 160px;
+    }
+
+    .section-header td {
+      background: #d8d8d8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      padding: 4px 7px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 16px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #000;
+      height: 24px;
+      margin-bottom: 3px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .info-box {
+      border: 1px solid #888;
+      padding: 8px 12px;
+      margin: 14px 0;
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .no-print {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      border-radius: 4px;
+    }
+
+    .no-print button {
+      background: #1a2c2e;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 10pt;
+      margin-top: 8px;
+      border-radius: 3px;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <strong>Tervisekontrolli korraldamise kontrollnimekiri - TT24.ee</strong><br>
+    Kasutage seda vormi tervisekontrollide korraldamise jälgimiseks. Printige ja täitke käsitsi.
+    <br>
+    <button onclick="window.print()">Prindi / Salvesta PDF-ina</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee - Töötervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Tervisekontrolli korraldamise kontrollnimekiri</h1>
+  <p class="subtitle">TTOS § 13¹ alusel &nbsp;|&nbsp; Aasta: ____________&nbsp;&nbsp; Periood: ____________</p>
+
+  <!-- ETTEVOTTE ANDMED -->
+  <h2>1. Ettevõtte andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Ettevõtte nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Töötervishoiuteenuse osutaja:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Lepingu number / kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Vastutav kontaktisik tööandja poolelt:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Kontakti telefon / e-post:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <!-- EELTINGIMUSED -->
+  <h2>2. Eeltingimused - enne tervisekontrolli korraldamist</h2>
+  <p class="instructions">Kontrollige, et kõik järgmised tingimused on täidetud enne töötajate tervisekontrolli saatmist.</p>
+
+  <table>
+    <tr>
+      <th class="check-col">Tehtud</th>
+      <th>Kontrollpunkt</th>
+      <th class="status-col">Kuupäev / Märkus</th>
+    </tr>
+    <tr class="section-header">
+      <td colspan="3">Leping ja riskianalüüs</td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Leping töötervishoiuteenuse osutajaga on kehtiv ja allkirjastatud</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Riskianalüüs on ajakohane (koostatud/uuendatud viimase 12 kuu jooksul)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Riskianalüüs on edastatud töötervishoiuarstile enne tervisekontrolle</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Töötervishoiuarst on kinnitanud riskianalüüsi kättesaamise</td>
+      <td></td>
+    </tr>
+    <tr class="section-header">
+      <td colspan="3">Töötajate nimekiri</td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Koostatud töötajate nimekiri, kes peavad tervisekontrollist läbi käima</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Nimekirjas on märgitud iga töötaja ohutegurid (riskianalüüsi põhjal)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Nimekiri on edastatud töötervishoiuarstile</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Alaealised töötajad on nimekirjas eraldi märgitud (neil iga-aastane kontroll)</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- KONTROLLIDE KORRALDAMINE -->
+  <h2>3. Tervisekontrollide korraldamine</h2>
+  <table>
+    <tr>
+      <th class="check-col">Tehtud</th>
+      <th>Kontrollpunkt</th>
+      <th class="status-col">Kuupäev / Märkus</th>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Tervisekontrolli ajakava on koostatud (kes, millal, kuhu)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Töötajatele on teatatud tervisekontrolli kuupäevadest piisavalt ette</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Töötajatele on selgitatud, et tervisekontroll on tööajal ja tööandja kulul</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Kõik planeeritud töötajad on tervisekontrolli läbinud</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Tervisekontrollist keeldunud töötajad on dokumenteeritud (põhjus)</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- TULEMUSTE SAAILITAMINE -->
+  <h2>4. Tervisekontrolli otsuste sailitamine ja jargmised kuupäevad</h2>
+  <table>
+    <tr>
+      <th class="check-col">Tehtud</th>
+      <th>Kontrollpunkt</th>
+      <th class="status-col">Kuupäev / Märkus</th>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Töötervishoiuarsti otsused on saadud ja arhiveeritud (GDPR-kohaselt)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Otsuste hoidmiseks on tagatud juurdepääsupiirang (ainult volitatud isikud)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Tööandja on saanud arsti soovitused töökoha kohanduste kohta</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Arsti soovitused on edastatud otsesele juhile</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Järgmise tervisekontrolli kuupäevad on fikseeritud ja kalendrisse märgitud</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Vastutav isik on meeldetuletus(t)e saatmise endale planeerinud</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- JÄRGMISTE KONTROLLIDE AJAKAVA -->
+  <h2>5. Järgmiste tervisekontrollide ajakava</h2>
+  <p class="instructions">Märkige planeeritud järgmised tervisekontrollid.</p>
+  <table>
+    <tr>
+      <th>Töötaja nimi</th>
+      <th>Ohutegur</th>
+      <th style="width:90px;">Viimane kontroll</th>
+      <th style="width:90px;">Järgmine kontroll</th>
+      <th style="width:60px;">Tehtud</th>
+    </tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <div class="info-box">
+    <strong>Meeldetuletus - tervisekontrolli sagedus ohutegurite kaupa:</strong><br>
+    Kuvaritöö: vähemalt iga 3 aasta järel. Müra/vibratsioon: iga 2 aasta järel. Kemikaalid: 1-3 aasta järel (sõltuvalt ohust). Alaealised: iga aasta. Tähpsema ajakava saate oma töötervishoiuarstilt.
+  </div>
+
+  <!-- ALLKIRJAD -->
+  <h2>6. Kinnitamine</h2>
+
+  <div class="sig-row">
+    <div class="sig-col">
+      <div class="sig-label">Vastutava isiku allkiri:</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi, ametikoht ja kuupäev)</div>
+    </div>
+    <div class="sig-col">
+      <div class="sig-label">Tööandja / juhataja allkiri:</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi ja kuupäev)</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Töötervishoiu ja tööohutuse seadus)
+  </div>
+
+</body>
+</html>

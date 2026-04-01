@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riskianalüüsi vorm - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 42%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 58%;
+    }
+
+    .field-line {
+      display: block;
+      border-bottom: 1px solid #555;
+      min-height: 18px;
+      margin-top: 2px;
+    }
+
+    .ohutegurid-table td.checkbox-col {
+      width: 24px;
+      text-align: center;
+    }
+
+    .checkbox-box {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid #000;
+      vertical-align: middle;
+    }
+
+    .risk-table td {
+      text-align: center;
+    }
+
+    .risk-table td.left {
+      text-align: left;
+    }
+
+    .risk-scale {
+      font-size: 9pt;
+      color: #333;
+      margin-bottom: 8px;
+      font-family: Arial, sans-serif;
+    }
+
+    .meetmed-row td {
+      min-height: 30px;
+    }
+
+    .signature-block {
+      margin-top: 24px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 12px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #000;
+      height: 24px;
+      margin-bottom: 3px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .instructions {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .no-print {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      border-radius: 4px;
+    }
+
+    .no-print button {
+      background: #1a2c2e;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 10pt;
+      margin-top: 8px;
+      border-radius: 3px;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <strong>Riskianalüüsi vorm - TT24.ee</strong><br>
+    Printimiseks vajutage allolevat nuppu või kasutage brauseri printimisvõimalust (Ctrl+P / Cmd+P).
+    <br>
+    <button onclick="window.print()">Prindi / Salvesta PDF-ina</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee &mdash; Töötervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Riskianalüüsi vorm</h1>
+  <p class="subtitle">TTOS § 13 lõige 1 alusel &nbsp;|&nbsp; Kohustuslik kõigile tööandjatele</p>
+
+  <!-- ETTEVOTTE ANDMED -->
+  <h2>1. Ettevõtte andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Ettevõtte nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Registrikood:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Aadress:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tööala / osakond:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Töötajate arv analüüsitaval tööalal:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Analüüsi teostaja nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Analüüsi teostaja ametikoht:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Koostamise kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Järgmise ülevaatuse kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <!-- OHUTEGURID -->
+  <h2>2. Töökeskkonna ohutegurid</h2>
+  <p class="instructions">Märkige linnuke, kui ohutegur esineb Teie töökohal. Kirjeldage lühidalt olukorda.</p>
+
+  <table class="ohutegurid-table">
+    <tr>
+      <th class="checkbox-col">Esineb</th>
+      <th style="width:28%;">Ohutegur</th>
+      <th>Kirjeldus / märkused</th>
+      <th style="width:18%;">Praegune meede</th>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Müra</strong></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Vibratsioon</strong></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Kemikaalid</strong> (lahusti, tolm, gaasid)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Kuvaritöö</strong> (4+ tundi paeval)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Raskuste teisaldamine</strong></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Sundasend</strong> (pidev istumine / seismine)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Bioloogilised ohutegurid</strong> (bakterid, viirused)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td><strong>Psühhosotsiaalsed ohud</strong> (stress, ajasurvex, konfliktid)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="checkbox-col"><span class="checkbox-box"></span></td>
+      <td>Muud (täpsustage):</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- RISKIDE HINDAMINE -->
+  <h2>3. Riskide hindamine</h2>
+  <p class="risk-scale">Hinnake iga esineva ohuteguri riski: <strong>Tõenäosus</strong> (1 - vähetõenaöline, 2 - võimalik, 3 - tõenaöline) × <strong>Tagajärg</strong> (1 - kerge vigastus, 2 - ajutine töövõimetus, 3 - püsiv tervisekahjustus). Riskitase = tõenäosus x tagajärg.</p>
+  <p class="risk-scale"><strong>Riskitase:</strong> 1-2 = lubatav | 3-4 = mõõdukas, võtta meetmed | 6-9 = kõrge risk, kohesed meetmed vajalikud.</p>
+
+  <table class="risk-table">
+    <tr>
+      <th class="left" style="width:30%;">Ohutegur</th>
+      <th style="width:16%;">Tõenäosus (1-3)</th>
+      <th style="width:16%;">Tagajärg (1-3)</th>
+      <th style="width:16%;">Riskitase (T×T)</th>
+      <th class="left">Prioriteet</th>
+    </tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <!-- MEETMED -->
+  <h2>4. Riskide maandamise meetmed</h2>
+
+  <table>
+    <tr>
+      <th style="width:28%;">Ohutegur</th>
+      <th>Kavandatav meede</th>
+      <th style="width:18%;">Tähtaeg</th>
+      <th style="width:18%;">Vastutav isik</th>
+      <th style="width:12%;">Tehtud</th>
+    </tr>
+    <tr class="meetmed-row"><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="meetmed-row"><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="meetmed-row"><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="meetmed-row"><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="meetmed-row"><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <!-- VASTUTAV ISIK JA KUUPAEV -->
+  <h2>5. Kinnitamine</h2>
+
+  <table>
+    <tr>
+      <td class="field-label">Vastutav isik (nimi):</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Ametikoht:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Koostamise kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Järgmise ülevaatuse kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <div class="signature-block">
+    <div class="sig-row">
+      <div class="sig-col">
+        <div class="sig-label">Vastutava isiku allkiri:</div>
+        <div class="sig-line"></div>
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Tööandja / juhataja allkiri:</div>
+        <div class="sig-line"></div>
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Töökeskkonnavoliniku allkiri (kui on):</div>
+        <div class="sig-line"></div>
+        <div class="sig-name">(nimi ja kuupäev)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Töötervishoiu ja tööohutuse seadus) &nbsp;|&nbsp; Vorm on soovituslik, mitte seadusega ettekirjutatud
+  </div>
+
+</body>
+</html>

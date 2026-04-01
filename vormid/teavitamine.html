@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Töötaja teavitamise akt - TT24.ee</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      padding: 20mm 20mm 15mm 20mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    .watermark {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      border-bottom: 1px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    td, th {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      vertical-align: top;
+      font-size: 10.5pt;
+    }
+
+    th {
+      background: #e8e8e8;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-label {
+      font-weight: bold;
+      width: 40%;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+    }
+
+    .field-value {
+      width: 60%;
+    }
+
+    .field-line {
+      display: block;
+      border-bottom: 1px solid #555;
+      min-height: 18px;
+      margin-top: 2px;
+    }
+
+    .instructions {
+      font-size: 9pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .ohutegurid-list {
+      margin: 8px 0 14px 0;
+    }
+
+    .ohutegurid-list td.check-col {
+      width: 28px;
+      text-align: center;
+    }
+
+    .checkbox-box {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid #000;
+      vertical-align: middle;
+    }
+
+    .legal-box {
+      border: 1px solid #888;
+      padding: 8px 12px;
+      margin: 14px 0;
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #fafafa;
+    }
+
+    .legal-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 9.5pt;
+    }
+
+    /* Individual signature rows */
+    .allkirjad-table td {
+      height: 38px;
+      vertical-align: bottom;
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+    }
+
+    .allkirjad-table th {
+      font-size: 9pt;
+    }
+
+    .sig-footer-row {
+      margin-top: 28px;
+    }
+
+    .sig-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 16px;
+    }
+
+    .sig-col {
+      flex: 1;
+    }
+
+    .sig-label {
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #000;
+      height: 24px;
+      margin-bottom: 3px;
+    }
+
+    .sig-name {
+      font-size: 8pt;
+      color: #444;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 5px;
+      font-size: 8pt;
+      color: #555;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .no-print {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      border-radius: 4px;
+    }
+
+    .no-print button {
+      background: #1a2c2e;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 10pt;
+      margin-top: 8px;
+      border-radius: 3px;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { padding: 15mm 15mm 12mm 15mm; }
+      @page { margin: 10mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <strong>Töötaja teavitamise akt - TT24.ee</strong><br>
+    Printimiseks vajutage allolevat nuppu. Töötaja allkirjastab pärast teavitamist.
+    <br>
+    <button onclick="window.print()">Prindi / Salvesta PDF-ina</button>
+    &nbsp;
+    <a href="../dokumendid.html" style="font-size:9pt; color:#555;">Tagasi dokumentide lehele</a>
+  </div>
+
+  <div class="watermark">TT24.ee - Töötervishoiu Teejuht &nbsp;|&nbsp; tt24.ee</div>
+
+  <h1>Töötaja teavitamise akt</h1>
+  <p class="subtitle">TTOS § 13³ lõige 1 alusel &nbsp;|&nbsp; Töötaja kinnitus riskidest teavitamise kohta</p>
+
+  <!-- TOOANDJA ANDMED -->
+  <h2>1. Tööandja andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Tööandja (ettevõtte) nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Registrikood:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Töökoha aadress:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Teavitamise kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <!-- TOOTAJA ANDMED -->
+  <h2>2. Töötaja andmed</h2>
+  <table>
+    <tr>
+      <td class="field-label">Töötaja nimi:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Isikukood:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Ametikoht:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tööle asumise kuupäev:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+    <tr>
+      <td class="field-label">Tööala / osakond:</td>
+      <td class="field-value"><span class="field-line"></span></td>
+    </tr>
+  </table>
+
+  <!-- MILLEST TEAVITATI -->
+  <h2>3. Ohutegurid, millest töötajat teavitati</h2>
+  <p class="instructions">Märkige kõik ohutegurid, millest töötajale anti teave. Lisage vajadusel täpsustusi.</p>
+
+  <table class="ohutegurid-list">
+    <tr>
+      <th class="check-col">Esineb</th>
+      <th>Ohutegur</th>
+      <th>Maandamise meetmed, millest teavitati</th>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Müra</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Vibratsioon</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Kemikaalid</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Kuvaritöö</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Raskuste teisaldamine</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Sundasend</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Bioloogilised ohud</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Psühhosotsiaalsed ohud</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="check-col"><span class="checkbox-box"></span></td>
+      <td>Muud:</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- MUUD TEAVITUSED -->
+  <h2>4. Muu teavitamine</h2>
+  <p class="instructions">Märkige, millist muud teavet töötajale edastati.</p>
+
+  <table>
+    <tr>
+      <td style="width:28px; text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Teavitati isikukaitsevahendite kasutamisest</td>
+    </tr>
+    <tr>
+      <td style="width:28px; text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Teavitati esmaabivõimalustest ja -vahenditest töökohal</td>
+    </tr>
+    <tr>
+      <td style="width:28px; text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Teavitati tervisekontrolli korraldusest ja ajakavast</td>
+    </tr>
+    <tr>
+      <td style="width:28px; text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Teavitati tööõnnetuse korral tegutsemisest</td>
+    </tr>
+    <tr>
+      <td style="width:28px; text-align:center;"><span class="checkbox-box"></span></td>
+      <td>Teavitati töötaja õigustest ja kohustusest ohu korral teavitada</td>
+    </tr>
+  </table>
+
+  <!-- LISAINFO -->
+  <h2>5. Lisateave ja märkused</h2>
+  <table>
+    <tr>
+      <td style="height: 52px; vertical-align: top; font-size: 9pt; color: #888; font-family: Arial, sans-serif;">
+        (Täpsustused, lisamaterjalid, mis töötajale anti jne)
+      </td>
+    </tr>
+  </table>
+
+  <div class="legal-box">
+    <strong>Töötaja kinnitus:</strong>
+    Kinnitan allkirjaga, et olen saanud täieliku teabe oma töökoha tervise- ja ohutusriskide ning nende maandamise meetmete kohta. Olen teadlik oma kohustusest järgida kehtestatud ohutusreegleid ning teavitada tööandjat kõigist ohtlikest olukordadest.
+  </div>
+
+  <!-- ALLKIRJAD -->
+  <h2>6. Allkirjad</h2>
+
+  <div class="sig-row">
+    <div class="sig-col">
+      <div class="sig-label">Töötaja allkiri:</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi trükitähtedega ja kuupäev)</div>
+    </div>
+    <div class="sig-col">
+      <div class="sig-label">Teavitaja allkiri (tööandja esindaja):</div>
+      <div class="sig-line"></div>
+      <div class="sig-name">(nimi, ametikoht ja kuupäev)</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Allikas: tt24.ee &nbsp;|&nbsp; Põhineb TTOS-il (Töötervishoiu ja tööohutuse seadus) &nbsp;|&nbsp; Säilitage vähemalt 10 aastat
+  </div>
+
+</body>
+</html>

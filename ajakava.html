@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Töötervishoiu ajakava - TT24</title>
+  <meta name="description" content="Sisestage ettevõtte asutamise kuupäev ja töötajate arv - saate isikliku töötervishoiu tähtaegade ajakava koos kalendrisse laadimise võimalusega. Tasuta tööriist Eesti tööandjatele.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5459MHF3');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://tt24.ee/ajakava.html" />
+  <link rel="alternate" hreflang="et" href="https://tt24.ee/ajakava.html" />
+  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/ajakava.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tt24.ee/ajakava.html" />
+  <meta property="og:title" content="Töötervishoiu ajakava - TT24" />
+  <meta property="og:description" content="Personaalne töötervishoiu tähtaegade ajakava Teie ettevõttele. Sisestage andmed, saate koheselt kõik seadusjärgsed tähtajad. Laadige kalendrisse." />
+  <meta property="og:image" content="https://tt24.ee/og-image.png" />
+  <meta property="og:locale" content="et_EE" />
+  <meta property="og:site_name" content="TT24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Töötervishoiu ajakava - TT24" />
+  <meta name="twitter:description" content="Millal peavad Teie ettevõtte töötervishoiu kohustused täidetud olema? Personaalne ajakava sekunditega." />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Avaleht",
+        "item": "https://tt24.ee/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Töötervishoiu ajakava",
+        "item": "https://tt24.ee/ajakava.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Töötervishoiu ajakava",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://tt24.ee/ajakava.html",
+    "description": "Tasuta veebitööriist Eesti tööandjatele: sisestage ettevõtte asutamise kuupäev ja töötajate arv - saate personaalse töötervishoiu tähtaegade ajakava koos ICS-kalendri ekspordiga.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "TT24 / Valvekliinik",
+      "url": "https://valvekliinik.ee"
+    }
+  }
+  </script>
+
+  <style>
+    /* ── Timeline page-specific styles ── */
+
+    .timeline-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .timeline-result-panel {
+        position: sticky;
+        top: calc(var(--nav-height) + var(--space-4));
+      }
+    }
+
+    /* Sector radio pills (copied from kalkulaator) */
+    .sector-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-2);
+    }
+
+    .sector-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: var(--space-2) var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: var(--font-medium);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: var(--color-surface);
+      user-select: none;
+    }
+
+    .sector-pill:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+    }
+
+    .sector-pill.active {
+      border-color: var(--color-primary);
+      color: var(--color-primary-dark);
+      background: var(--color-primary-light);
+      font-weight: var(--font-semibold);
+    }
+
+    .sector-pill input[type="radio"] {
+      display: none;
+    }
+
+    /* Timeline list */
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: var(--color-border);
+      z-index: 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--color-border);
+      background: var(--color-surface);
+      z-index: 2;
+    }
+
+    .timeline-dot--past {
+      background: var(--color-danger-light);
+      box-shadow: 0 0 0 2px var(--color-danger);
+    }
+
+    .timeline-dot--soon {
+      background: #FEF3C7;
+      box-shadow: 0 0 0 2px var(--color-warning);
+    }
+
+    .timeline-dot--future {
+      background: #F0FDF4;
+      box-shadow: 0 0 0 2px var(--color-success);
+    }
+
+    .timeline-dot--immediate {
+      background: var(--color-primary-light);
+      box-shadow: 0 0 0 2px var(--color-primary);
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .timeline-item:last-child .timeline-content {
+      border-bottom: none;
+    }
+
+    .timeline-title {
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .timeline-date {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-bottom: 4px;
+    }
+
+    .timeline-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: var(--font-semibold);
+    }
+
+    .timeline-status--past {
+      background: var(--color-danger-light);
+      color: var(--color-danger);
+    }
+
+    .timeline-status--soon {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .timeline-status--future {
+      background: #F0FDF4;
+      color: #166534;
+    }
+
+    .timeline-status--immediate {
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .timeline-ref {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+
+    /* Empty state */
+    .timeline-empty {
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+      color: var(--color-text-muted);
+    }
+
+    .timeline-empty__icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-4);
+    }
+
+    /* ICS export button */
+    .ics-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      width: 100%;
+      padding: var(--space-3) var(--space-6);
+      background: #1D4ED8;
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      margin-top: var(--space-4);
+      text-decoration: none;
+    }
+
+    .ics-btn:hover {
+      background: #1E40AF;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .ics-btn:disabled {
+      background: var(--color-border);
+      color: var(--color-text-muted);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Legend */
+    .timeline-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .legend-dot--past   { background: var(--color-danger); }
+    .legend-dot--soon   { background: var(--color-warning); }
+    .legend-dot--future { background: var(--color-success); }
+
+    /* Animate result on update */
+    @keyframes timelinePulse {
+      0%   { box-shadow: 0 0 0 0 rgba(14,165,233,0.3); }
+      70%  { box-shadow: 0 0 0 8px rgba(14,165,233,0); }
+      100% { box-shadow: 0 0 0 0 rgba(14,165,233,0); }
+    }
+
+    .result-updated {
+      animation: timelinePulse 0.5s ease;
+    }
+
+    /* Form date input */
+    .form-input[type="date"] {
+      font-size: var(--text-sm);
+    }
+
+    /* Radio group for jah/ei */
+    .radio-group {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-2);
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      cursor: pointer;
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      padding: var(--space-2) var(--space-4);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .radio-label:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .radio-label input[type="radio"] {
+      accent-color: var(--color-primary);
+      width: 16px;
+      height: 16px;
+    }
+
+    .radio-label.active {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-weight: var(--font-semibold);
+    }
+
+    /* Section bg */
+    .section--alt {
+      background: #F0F9FF;
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5459MHF3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
+
+<!-- ===============================
+     NAVIGATION
+=============================== -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
+      <span class="nav-logo-text">TT24</span><span class="nav-logo-tagline">Töötervishoiu Teejuht</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
+      <a href="kontrollnimekiri.html" class="nav-link">Kontrollnimekiri</a>
+      <a href="kalkulaator.html" class="nav-link">Kalkulaator</a>
+      <a href="enesekontroll.html" class="nav-link">Enesehinnang</a>
+      <a href="korduma.html" class="nav-link">KKK</a>
+      <a href="ajakava.html" class="nav-link active" aria-current="page">Ajakava</a>
+      <a href="meist.html" class="nav-link">Meist</a>
+    </nav>
+
+    <a href="enesekontroll.html" class="nav-cta-btn">Kontrollin valmisolekut</a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ===============================
+       HERO
+  =============================== -->
+  <section class="hero hero--compact" aria-labelledby="hero-heading" style="padding: 1.5rem 0;">
+    <div class="hero-inner">
+      <h1 id="hero-heading" style="font-size: 1.5rem; margin: 0 0 0.5rem;">Töötervishoiu ajakava</h1>
+      <p style="margin: 0; opacity: 0.85; font-size: var(--text-base);">Millal peavad Teie ettevõtte kohustused täidetud olema?</p>
+    </div>
+  </section>
+
+  <!-- ===============================
+       MAIN TOOL SECTION
+  =============================== -->
+  <section class="section" id="ajakava" aria-labelledby="tool-heading">
+    <div class="hero-inner">
+
+      <div class="timeline-layout">
+
+        <!-- LEFT: INPUT FORM -->
+        <div>
+          <div class="card card--elevated" style="cursor: default;">
+
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); line-height: 1.6;">
+              Sisestage oma ettevõtte andmed - paremal kuvatakse isiklik töötervishoiu tähtaegade ajakava koos staatusega.
+            </p>
+
+            <!-- Ettevõtte asutamise kuupäev -->
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label" for="companyFounded">
+                Ettevõtte asutamise kuupäev
+              </label>
+              <input
+                type="date"
+                id="companyFounded"
+                class="form-input"
+                max=""
+                aria-describedby="companyFounded-hint"
+              />
+              <p class="form-hint" id="companyFounded-hint">Äriregistri kande kuupäev</p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Esimese töötaja tööle asumise kuupäev -->
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label" for="firstEmployee">
+                Esimese töötaja tööle asumise kuupäev
+              </label>
+              <input
+                type="date"
+                id="firstEmployee"
+                class="form-input"
+                max=""
+                aria-describedby="firstEmployee-hint"
+              />
+              <p class="form-hint" id="firstEmployee-hint">Kui kuupäev on tulevikus, arvutatakse tulevaste tähtaegade alusel</p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Töötajate arv -->
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label" for="empCount">
+                Töötajate arv
+              </label>
+              <input
+                type="number"
+                id="empCount"
+                class="form-input"
+                min="1"
+                max="9999"
+                value="5"
+                style="width: 130px;"
+                aria-describedby="empCount-hint"
+              />
+              <p class="form-hint" id="empCount-hint">Kõik töölepingulised töötajad</p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Kas on öötöötajaid? -->
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label">Kas on öötöötajaid?</label>
+              <p class="form-hint" style="margin-bottom: var(--space-2);">Ohtöötajate tervisekontroll on kohustuslik enne tööle asumist (TTOS § 13¹)</p>
+              <div class="radio-group" role="radiogroup" aria-label="Öötöötajad">
+                <label class="radio-label" id="nightwork-no-label">
+                  <input type="radio" name="nightwork" value="no" checked /> Ei
+                </label>
+                <label class="radio-label" id="nightwork-yes-label">
+                  <input type="radio" name="nightwork" value="yes" /> Jah
+                </label>
+              </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Tegevusvaldkond -->
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Tegevusvaldkond</label>
+              <p class="form-hint" style="margin-bottom: var(--space-2);">Mõjutab tervisekontrollide sagedust ja riskianalüüsi sisu</p>
+              <div class="sector-pills" role="radiogroup" aria-label="Tegevusvaldkond">
+                <label class="sector-pill active">
+                  <input type="radio" name="sector" value="kontor" checked />
+                  🖥️ Kontor / IT
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="kaubandus" />
+                  🛍️ Kaubandus
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="tootmine" />
+                  🏭 Tootmine
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="ehitus" />
+                  🏗️ Ehitus
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="transport" />
+                  🚛 Transport
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="tervishoid" />
+                  🏥 Tervishoid
+                </label>
+                <label class="sector-pill">
+                  <input type="radio" name="sector" value="muu" />
+                  📋 Muu
+                </label>
+              </div>
+            </div>
+
+          </div><!-- /card -->
+
+          <div class="alert alert--info" style="margin-top: var(--space-4);" role="note">
+            <svg class="alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div class="alert__body">
+              <p class="alert__title">Allikas: TTOS §-d 13, 13¹, 13⁴</p>
+              <p>Töötervishoiu ja tööohutuse seadus (TTOS). Tähtajad on informatiivsed - täpne nõustamine kuulub töötervishoiuarsti ülesannete hulka.</p>
+            </div>
+          </div>
+
+        </div><!-- /left col -->
+
+        <!-- RIGHT: TIMELINE OUTPUT -->
+        <div class="timeline-result-panel">
+          <div class="card card--elevated" id="timelineCard" style="cursor: default; border-top: 4px solid var(--color-primary);">
+
+            <div class="card__header">
+              <h2 class="card__title" style="margin: 0 0 var(--space-1);">Teie töötervishoiu ajakava</h2>
+              <p class="card__subtitle" id="timelineSubtitle">Sisestage andmed, et näha tähtaegu</p>
+            </div>
+
+            <!-- Legend -->
+            <div class="timeline-legend">
+              <div class="legend-item">
+                <div class="legend-dot legend-dot--past"></div>
+                <span>Tähtaeg möödunud</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot legend-dot--soon"></div>
+                <span>Tulemas 30 paeva jooksul</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot legend-dot--future"></div>
+                <span>Tulevikus</span>
+              </div>
+            </div>
+
+            <!-- Timeline -->
+            <div id="timelineList">
+              <div class="timeline-empty">
+                <div class="timeline-empty__icon">📅</div>
+                <p>Sisestage töötaja tööle asumise kuupäev, et näha personaalset ajakava.</p>
+              </div>
+            </div>
+
+            <!-- ICS export -->
+            <button
+              id="icsBtn"
+              class="ics-btn"
+              disabled
+              aria-label="Laadin kõik tähtajad kalendrisse ICS-formaadis"
+            >
+              📅 Laadin kalendrisse
+            </button>
+            <p style="font-size: var(--text-xs); color: var(--color-text-muted); text-align: center; margin-top: var(--space-2);">
+              Sobib Google Calendar, Outlook, Apple Calendar
+            </p>
+
+          </div><!-- /timeline card -->
+
+          <div style="margin-top: var(--space-4);">
+            <a href="pakkumine.html" class="btn btn-primary w-full" style="justify-content: center;" aria-label="Küsin pakkumist">
+              Vajate abi tähtaegade täitmisel? Küsin pakkumist →
+            </a>
+          </div>
+
+        </div><!-- /right col -->
+
+      </div><!-- /timeline-layout -->
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===============================
+     CTA SECTION
+=============================== -->
+<section style="background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 50%, #38BDF8 100%); padding: var(--space-16) 0; text-align: center; position: relative; overflow: hidden;" aria-labelledby="cta-heading">
+  <div class="hero-inner" style="position: relative; z-index: 1;">
+    <h2 id="cta-heading" style="font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: var(--font-bold); color: #fff; margin-bottom: var(--space-4);">Vajate professionaalset töötervishoiuteenust?</h2>
+    <p style="color: rgba(255,255,255,0.85); font-size: var(--text-lg); margin-bottom: var(--space-8); max-width: 560px; margin-left: auto; margin-right: auto;">Meie partner Valvekliinik aitab kõik tähtajad täita ja dokumendid korda saada. Kiire vastamine.</p>
+    <a href="pakkumine.html" class="btn btn-primary" style="background: #fff; color: #0284C7; border-color: #fff; font-size: var(--text-base); min-height: 52px; padding: 0 var(--space-8);" aria-label="Küsin pakkumist">
+      Küsin pakkumist
+    </a>
+    <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.6); margin-top: var(--space-4);">Vastame 24 tunni jooksul - ei kohusta millekski</p>
+  </div>
+</section>
+
+<!-- ===============================
+     FOOTER
+=============================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <!-- Col 1: Logo + description -->
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
+        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele.<br>Kontrollnimekirjad, kalkulaatorid ja KKK - kõik, mida vajate töötervishoiu ja tööohutuse seaduse täitmiseks.</p>
+      </div>
+
+      <!-- Col 2: Tools links -->
+      <div class="footer-col footer-col-links">
+        <h3 class="footer-col-title">Tööriistad</h3>
+        <nav aria-label="Tööriistad">
+          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
+          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
+          <a href="enesekontroll.html" class="footer-link">Enesehinnang</a>
+          <a href="korduma.html" class="footer-link">KKK</a>
+          <a href="ajakava.html" class="footer-link">Ajakava</a>
+          <a href="meist.html" class="footer-link">Meist</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer-col footer-col-contact">
+        <h3 class="footer-col-title">Kontakt</h3>
+        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
+        <a href="tel:+37259110909" class="footer-link">+372 5 911 0909</a>
+        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-partner">Koostöös <a href="https://valvekliinik.ee" target="_blank" rel="noopener" class="footer-partner-link"><strong>Valvekliinikuga</strong></a></span>
+      <span class="footer-copy">© 2026 TT24 - Töötervishoiu Teejuht</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===============================
+     JAVASCRIPT
+=============================== -->
+<script>
+// ─── Navigation toggle ───────────────────────────────────
+var navToggle = document.getElementById('navToggle');
+var mainNav   = document.getElementById('mainNav');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', function () {
+    var isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+}
+
+var siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  window.addEventListener('scroll', function () {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+}
+
+// ─── Sector pill toggle ──────────────────────────────────
+document.querySelectorAll('.sector-pill').forEach(function (pill) {
+  pill.addEventListener('click', function () {
+    var group = this.closest('[role="radiogroup"]');
+    if (group) {
+      group.querySelectorAll('.sector-pill').forEach(function (p) { p.classList.remove('active'); });
+    }
+    this.classList.add('active');
+    renderTimeline();
+  });
+});
+
+// ─── Radio label styling ──────────────────────────────────
+document.querySelectorAll('.radio-label input[type="radio"]').forEach(function (radio) {
+  radio.addEventListener('change', function () {
+    var group = this.closest('[role="radiogroup"]');
+    if (group) {
+      group.querySelectorAll('.radio-label').forEach(function (l) { l.classList.remove('active'); });
+    }
+    this.closest('.radio-label').classList.add('active');
+    renderTimeline();
+  });
+});
+
+// Set initial active state for radio labels
+document.querySelectorAll('.radio-label input[type="radio"]:checked').forEach(function (radio) {
+  radio.closest('.radio-label').classList.add('active');
+});
+
+// ─── Input event listeners ───────────────────────────────
+document.getElementById('companyFounded').addEventListener('change', renderTimeline);
+document.getElementById('firstEmployee').addEventListener('change', renderTimeline);
+document.getElementById('empCount').addEventListener('input', renderTimeline);
+
+// ─── Date helpers ────────────────────────────────────────
+function parseDate(str) {
+  if (!str) return null;
+  var parts = str.split('-');
+  if (parts.length !== 3) return null;
+  return new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+}
+
+function formatDate(d) {
+  if (!d) return '';
+  var day = d.getDate();
+  var month = d.getMonth() + 1;
+  var year = d.getFullYear();
+  return (day < 10 ? '0' + day : day) + '.' + (month < 10 ? '0' + month : month) + '.' + year;
+}
+
+function addMonths(d, months) {
+  var result = new Date(d);
+  result.setMonth(result.getMonth() + months);
+  return result;
+}
+
+function addYears(d, years) {
+  var result = new Date(d);
+  result.setFullYear(result.getFullYear() + years);
+  return result;
+}
+
+function daysDiff(a, b) {
+  return Math.round((b - a) / (1000 * 60 * 60 * 24));
+}
+
+// ─── Status helpers ──────────────────────────────────────
+function getStatus(deadline) {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var d = new Date(deadline);
+  d.setHours(0, 0, 0, 0);
+  var diff = daysDiff(now, d);
+  if (diff < 0) return 'past';
+  if (diff <= 30) return 'soon';
+  return 'future';
+}
+
+function statusLabel(status, deadline) {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var d = new Date(deadline);
+  d.setHours(0, 0, 0, 0);
+  var diff = daysDiff(now, d);
+
+  if (status === 'past') {
+    var overdue = Math.abs(diff);
+    return overdue === 0 ? 'Tahtaeg tana' : 'Tahtaeg moodunud ' + overdue + ' p tagasi';
+  }
+  if (status === 'soon') {
+    if (diff === 0) return 'Tahtaeg tana';
+    return 'Tulemas ' + diff + ' paeva parast';
+  }
+  return 'Tulevikus';
+}
+
+function statusIcon(status) {
+  if (status === 'past') return '⚠️';
+  if (status === 'soon') return '🕐';
+  return '✅';
+}
+
+// ─── Sector data ─────────────────────────────────────────
+var SECTOR_HEALTH_FREQ = {
+  kontor:    36, // months between health checks
+  kaubandus: 30,
+  tootmine:  24,
+  ehitus:    24,
+  transport: 24,
+  tervishoid:12,
+  muu:       36
+};
+
+// ─── Build timeline items ────────────────────────────────
+function buildItems(firstEmployeeDate, nightwork, sectorKey) {
+  var items = [];
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+
+  var freq = SECTOR_HEALTH_FREQ[sectorKey] || 36;
+  var isHighRisk = (sectorKey === 'tootmine' || sectorKey === 'ehitus' || sectorKey === 'transport' || sectorKey === 'tervishoid');
+  var needsImmediateHealthCheck = nightwork || isHighRisk;
+
+  // 1. Riskianalüüs - immediately (use employee start date)
+  items.push({
+    id: 'riskianalyys',
+    icon: '📊',
+    title: 'Riskianalüüs',
+    description: 'Tookeskkonna riskide kaardistamine ja hindamine',
+    deadline: firstEmployeeDate,
+    ref: 'TTOS § 13 lg 1 p 1',
+    note: 'Koostada enne toota ja uuendada tingimuste muutumisel'
+  });
+
+  // 2. Töötervishoiuteenuse leping - immediately
+  items.push({
+    id: 'tth-leping',
+    icon: '📋',
+    title: 'Tootervishoiduteenuse leping',
+    description: 'Leping tootervishoiduteenuse osutajaga',
+    deadline: firstEmployeeDate,
+    ref: 'TTOS § 13 lg 1 p 10',
+    note: 'Kohustuslik kõigile tooandajatele olenemata tootajate arvust'
+  });
+
+  // 3. Töötajate teavitamine - immediately
+  items.push({
+    id: 'teavitamine',
+    icon: '📢',
+    title: 'Tootajate teavitamine',
+    description: 'Teavitage tootajaid tokeskkonna riskidest ja tervisekahjustuste valtimise abinõudest',
+    deadline: firstEmployeeDate,
+    ref: 'TTOS § 13 lg 1 p 3',
+    note: 'Enne tooalustamist ja iga kord tingimuste muutumisel'
+  });
+
+  // 4. Esimene tervisekontroll
+  var healthCheckDeadline;
+  if (needsImmediateHealthCheck) {
+    healthCheckDeadline = firstEmployeeDate;
+    items.push({
+      id: 'esimene-tervisekontroll',
+      icon: '🩺',
+      title: 'Esimene tervisekontroll',
+      description: 'Ootootajatele ja korgema riskiga toodele - enne tooalustamist',
+      deadline: healthCheckDeadline,
+      ref: 'TTOS § 13¹ lg 1',
+      note: nightwork ? 'Ootoo kohustab kontrolli enne tooalustamist' : 'Korgem riskitase kohustab kontrolli enne tooalustamist'
+    });
+  } else {
+    healthCheckDeadline = addMonths(firstEmployeeDate, 4);
+    items.push({
+      id: 'esimene-tervisekontroll',
+      icon: '🩺',
+      title: 'Esimene tervisekontroll',
+      description: 'Tootaja esmane tervisekontroll tootervishoiduarsti juures',
+      deadline: healthCheckDeadline,
+      ref: 'TTOS § 13¹ lg 1',
+      note: '4 kuu jooksul tooalustamisest'
+    });
+  }
+
+  // 5. Perioodiline tervisekontroll - first occurrence after initial check
+  var periodicDeadline = addMonths(healthCheckDeadline, freq);
+  items.push({
+    id: 'perioodiline-kontroll-1',
+    icon: '🔄',
+    title: 'Perioodiline tervisekontroll (1. kord)',
+    description: 'Regulaarne tervisekontroll vastavalt riskitasemele',
+    deadline: periodicDeadline,
+    ref: 'TTOS § 13¹ lg 2',
+    note: 'Iga ' + (freq === 12 ? '12 kuu' : freq === 24 ? '2 aasta' : freq === 30 ? '2,5 aasta' : '3 aasta') + ' tagant'
+  });
+
+  // 6. Perioodiline tervisekontroll - second occurrence
+  var periodic2Deadline = addMonths(periodicDeadline, freq);
+  items.push({
+    id: 'perioodiline-kontroll-2',
+    icon: '🔄',
+    title: 'Perioodiline tervisekontroll (2. kord)',
+    description: 'Regulaarne tervisekontroll vastavalt riskitasemele',
+    deadline: periodic2Deadline,
+    ref: 'TTOS § 13¹ lg 2',
+    note: 'Iga ' + (freq === 12 ? '12 kuu' : freq === 24 ? '2 aasta' : freq === 30 ? '2,5 aasta' : '3 aasta') + ' tagant'
+  });
+
+  // 7. Ettevõtte töötervishoiu olukorra analüüs - every 3 years from Jan 2023
+  // Start from firstEmployeeDate or Jan 2023, whichever is later, then +3y
+  var analyysBase = new Date(Math.max(firstEmployeeDate.getTime(), new Date(2023, 0, 1).getTime()));
+  var analyysDeadline = addYears(analyysBase, 3);
+  items.push({
+    id: 'olukorra-analuus',
+    icon: '🏢',
+    title: 'Ettevotte tootervishoiduolukorra analuus',
+    description: 'Kohustuslik alates jaanuar 2023. Ettevotte tootervishoiduolukorra igaaastane ulevaatus.',
+    deadline: analyysDeadline,
+    ref: 'TTOS § 13⁴',
+    note: 'Iga 3 aasta tagant, kohustuslik alates 2023. aastast'
+  });
+
+  // 8. Riskianalüüsi uuendamine - every 3 years
+  var riskUpdateDeadline = addYears(firstEmployeeDate, 3);
+  items.push({
+    id: 'riskianalyys-uuendamine',
+    icon: '🔁',
+    title: 'Riskianaluusi uuendamine',
+    description: 'Riskianaluus tuleb ule vaadata ja vajadusel uuendada',
+    deadline: riskUpdateDeadline,
+    ref: 'TTOS § 13 lg 1 p 1',
+    note: 'Iga 3 aasta tagant voi tingimuste muutumisel'
+  });
+
+  // Sort by deadline
+  items.sort(function (a, b) { return a.deadline - b.deadline; });
+
+  return items;
+}
+
+// ─── Render timeline ─────────────────────────────────────
+var currentItems = [];
+
+function renderTimeline() {
+  var firstEmployeeStr = document.getElementById('firstEmployee').value;
+  var companyFoundedStr = document.getElementById('companyFounded').value;
+  var empCount = parseInt(document.getElementById('empCount').value, 10) || 1;
+  var nightworkRadio = document.querySelector('input[name="nightwork"]:checked');
+  var nightwork = nightworkRadio ? (nightworkRadio.value === 'yes') : false;
+  var sectorRadio = document.querySelector('input[name="sector"]:checked');
+  var sectorKey = sectorRadio ? sectorRadio.value : 'kontor';
+
+  var listEl = document.getElementById('timelineList');
+  var subtitleEl = document.getElementById('timelineSubtitle');
+  var icsBtn = document.getElementById('icsBtn');
+
+  if (!firstEmployeeStr) {
+    listEl.innerHTML = '<div class="timeline-empty"><div class="timeline-empty__icon">📅</div><p>Sisestage töötaja tööle asumise kuupäev, et näha personaalset ajakava.</p></div>';
+    icsBtn.disabled = true;
+    currentItems = [];
+    return;
+  }
+
+  var firstEmployeeDate = parseDate(firstEmployeeStr);
+  if (!firstEmployeeDate) {
+    listEl.innerHTML = '<div class="timeline-empty"><div class="timeline-empty__icon">⚠️</div><p>Vigane kuupäev. Palun kontrollige sisestatud andmeid.</p></div>';
+    icsBtn.disabled = true;
+    currentItems = [];
+    return;
+  }
+
+  var items = buildItems(firstEmployeeDate, nightwork, sectorKey);
+  currentItems = items;
+
+  // Update subtitle
+  var sectorNames = {
+    kontor: 'Kontor / IT', kaubandus: 'Kaubandus', tootmine: 'Tootmine',
+    ehitus: 'Ehitus', transport: 'Transport', tervishoid: 'Tervishoid', muu: 'Muu'
+  };
+  subtitleEl.textContent = empCount + ' töötajat - ' + (sectorNames[sectorKey] || 'Muu') + (nightwork ? ' - Ootoo' : '') + ' - Alates ' + formatDate(firstEmployeeDate);
+
+  // Render items
+  var html = '<div class="timeline-list">';
+  items.forEach(function (item) {
+    var status = getStatus(item.deadline);
+    var dotClass = 'timeline-dot--future';
+    var statusClass = 'timeline-status--future';
+    if (status === 'past') { dotClass = 'timeline-dot--past'; statusClass = 'timeline-status--past'; }
+    else if (status === 'soon') { dotClass = 'timeline-dot--soon'; statusClass = 'timeline-status--soon'; }
+
+    // Check if deadline is same as firstEmployee (immediate)
+    var isImmediate = (item.deadline.getTime() === firstEmployeeDate.getTime()) && status !== 'past';
+    if (isImmediate && status === 'future') { dotClass = 'timeline-dot--immediate'; statusClass = 'timeline-status--immediate'; }
+
+    html += '<div class="timeline-item">';
+    html += '<div class="timeline-dot ' + dotClass + '">' + item.icon + '</div>';
+    html += '<div class="timeline-content">';
+    html += '<div class="timeline-title">' + item.title + '</div>';
+    html += '<div class="timeline-date">Tahtaeg: ' + formatDate(item.deadline) + '</div>';
+    html += '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">';
+    html += '<span class="timeline-status ' + statusClass + '">' + statusIcon(status) + ' ' + statusLabel(status, item.deadline) + '</span>';
+    html += '</div>';
+    html += '<div class="timeline-ref">' + item.ref + ' - ' + item.note + '</div>';
+    html += '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  listEl.innerHTML = html;
+  icsBtn.disabled = false;
+
+  // Pulse animation
+  var card = document.getElementById('timelineCard');
+  card.classList.remove('result-updated');
+  void card.offsetWidth;
+  card.classList.add('result-updated');
+}
+
+// ─── ICS calendar export ─────────────────────────────────
+function padZero(n) { return n < 10 ? '0' + n : '' + n; }
+
+function toICSDate(d) {
+  return d.getFullYear() + '' +
+    padZero(d.getMonth() + 1) + '' +
+    padZero(d.getDate());
+}
+
+function makeUID(id, date) {
+  return id + '-' + toICSDate(date) + '@tt24.ee';
+}
+
+function escapeICS(str) {
+  return str.replace(/[\\;,]/g, function(c) { return '\\' + c; }).replace(/\n/g, '\\n');
+}
+
+function generateICS(items) {
+  var lines = [];
+  lines.push('BEGIN:VCALENDAR');
+  lines.push('VERSION:2.0');
+  lines.push('PRODID:-//TT24//Tootervishoiu Ajakava//ET');
+  lines.push('CALSCALE:GREGORIAN');
+  lines.push('METHOD:PUBLISH');
+  lines.push('X-WR-CALNAME:Tootervishoiu ajakava');
+  lines.push('X-WR-TIMEZONE:Europe/Tallinn');
+
+  var now = new Date();
+  var dtstamp = now.getFullYear() + '' +
+    padZero(now.getMonth() + 1) + '' +
+    padZero(now.getDate()) + 'T' +
+    padZero(now.getHours()) + '' +
+    padZero(now.getMinutes()) + '' +
+    padZero(now.getSeconds()) + 'Z';
+
+  items.forEach(function (item) {
+    // 2-week reminder
+    var reminderDate = new Date(item.deadline);
+    reminderDate.setDate(reminderDate.getDate() - 14);
+
+    lines.push('BEGIN:VEVENT');
+    lines.push('UID:' + makeUID(item.id, item.deadline));
+    lines.push('DTSTAMP:' + dtstamp);
+    lines.push('DTSTART;VALUE=DATE:' + toICSDate(item.deadline));
+    lines.push('DTEND;VALUE=DATE:' + toICSDate(item.deadline));
+    lines.push('SUMMARY:' + escapeICS('TTH: ' + item.title));
+    lines.push('DESCRIPTION:' + escapeICS(item.description + '\\n\\nViide: ' + item.ref + '\\n' + item.note + '\\n\\nAllikas: TT24.ee - Tootervishoiu Teejuht'));
+    lines.push('CATEGORIES:Tootervishoiu');
+    lines.push('URL:https://tt24.ee/ajakava.html');
+    lines.push('BEGIN:VALARM');
+    lines.push('TRIGGER:-P14D');
+    lines.push('ACTION:DISPLAY');
+    lines.push('DESCRIPTION:' + escapeICS('Meeldetuletus: ' + item.title + ' - 14 paeva parast tahtaeg'));
+    lines.push('END:VALARM');
+    lines.push('END:VEVENT');
+  });
+
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
+}
+
+document.getElementById('icsBtn').addEventListener('click', function () {
+  if (!currentItems || currentItems.length === 0) return;
+
+  var icsContent = generateICS(currentItems);
+  var blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'tootervishoiu-ajakava.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+// ─── Set sensible default dates ──────────────────────────
+(function () {
+  var today = new Date();
+  var todayStr = today.getFullYear() + '-' +
+    padZero(today.getMonth() + 1) + '-' +
+    padZero(today.getDate());
+
+  var companyInput = document.getElementById('companyFounded');
+  var firstEmpInput = document.getElementById('firstEmployee');
+
+  // Set max to today for company founded
+  companyInput.max = todayStr;
+
+  // Pre-fill company founded with today minus 1 year as a hint
+  var oneYearAgo = new Date(today);
+  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+  companyInput.value = oneYearAgo.getFullYear() + '-' +
+    padZero(oneYearAgo.getMonth() + 1) + '-' +
+    padZero(oneYearAgo.getDate());
+
+  // Pre-fill first employee with today as default
+  firstEmpInput.value = todayStr;
+
+  renderTimeline();
+})();
+</script>
+</body>
+</html>
