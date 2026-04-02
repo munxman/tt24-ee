@@ -93,3 +93,9 @@ Töötervishoiu ja tööohutuse seadus 2026 - muudatused ja olulisemad nõuded. 
 
 ## artiklid/tootaja-keeldub-tervisekontrollist.html
 Töötaja keeldub tervisekontrollist - mida tööandja peab tegema. Samm-sammult juhend dokumenteerimiseks ja õiguslikeks sammudeks.
+
+## artiklid/7-levinumat-viga.html
+7 levinumat viga töötervishoiu korraldamisel. Iga vea TTOS viide, tagajärjed ja lahendus.
+
+## artiklid/tooonnetus-vastutus.html
+Tööõnnetuse vastutus ilma tervisekontrollita. Tsiviil-, haldus- ja kriminaalvastutus tööandjale.
