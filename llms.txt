@@ -81,3 +81,9 @@ Mis juhtub kui tööandja ei korralda töötervishoiu kontrolli. Tööinspektsio
 
 ## artiklid/teenusepakkuja-valimine.html
 Kuidas valida töötervishoiu teenusepakkujat. 8 kriteeriumi, küsimused enne lepingu sõlmimist, punased lipud.
+
+## artiklid/riskianaluus-juhend.html
+Töötervishoiu riskianalüüs - mis see on, kuidas teha, mida dokumenteerida. Samm-sammult juhend tööandjatele.
+
+## artiklid/vaikeettevote-kohustused.html  
+Töötervishoiu kohustused väikeettevõttele 1-9 töötajaga. Kõik kohustused kehtivad ka ühe töötajaga.
