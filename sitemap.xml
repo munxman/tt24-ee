@@ -269,4 +269,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+    <url>
+        <loc>https://tt24.ee/artiklid/tootervishoid-kontroll-puudub.html</loc>
+        <lastmod>2026-04-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tt24.ee/artiklid/teenusepakkuja-valimine.html</loc>
+        <lastmod>2026-04-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

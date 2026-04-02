@@ -75,3 +75,9 @@ Guide for newly founded Estonian companies on occupational health obligations fr
 ## TTH Service Pricing
 > /artiklid/tootervishoid-hind.html
 Cost breakdown of occupational health services in Estonia for 2025-2026.
+
+## artiklid/tootervishoid-kontroll-puudub.html
+Mis juhtub kui tööandja ei korralda töötervishoiu kontrolli. Tööinspektsiooni menetlus, trahvid, vastutus tööõnnetuse korral.
+
+## artiklid/teenusepakkuja-valimine.html
+Kuidas valida töötervishoiu teenusepakkujat. 8 kriteeriumi, küsimused enne lepingu sõlmimist, punased lipud.
