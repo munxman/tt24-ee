@@ -73,7 +73,7 @@
     "url": "https://tt24.ee/pakkumine.html",
     "description": "Küsige töötervishoiu teenuse pakkumist Valvekliinikult.",
     "parentOrganization": {
-      "@type": "MedicalOrganization",
+      "@type": "Organization",
       "name": "Valvekliinik",
       "url": "https://valvekliinik.ee",
       "email": "info@tt24.ee"
@@ -257,7 +257,12 @@
             </div>
           </div>
 
-          <p style="text-align:center;color:#64748b;font-size:0.8rem;margin-bottom:0.75rem">🛡 Teie andmeid kasutatakse ainult pakkumise koostamiseks</p>
+          <div style="margin-bottom:0.75rem;text-align:center;">
+            <label style="font-size:0.85rem;color:#475569;cursor:pointer;display:inline-flex;align-items:flex-start;gap:0.5rem;text-align:left;max-width:400px;">
+              <input type="checkbox" required style="margin-top:3px;min-width:18px;min-height:18px;">
+              <span>Nõustun oma andmete töötlemisega vastavalt <a href="privaatsus.html" target="_blank" style="color:var(--color-primary);">privaatsuspoliitikale</a>.</span>
+            </label>
+          </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
             Saadan päringu

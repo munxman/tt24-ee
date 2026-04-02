@@ -176,7 +176,7 @@
       {
         "@type": "HowToStep",
         "position": 6,
-        "name": "Laadige vastavusaruanne alla",
+        "name": "Laadige enesekontrolli kokkuvõte alla",
         "text": "Pärast kontrollnimekirja läbimist klõpsake nupul 'Laadi aruanne alla', et saada PDF-vormingus ülevaade täidetud ja puuduvate kohustustega.",
         "url": "https://tt24.ee/kontrollnimekiri.html"
       }
@@ -258,7 +258,7 @@
         <div class="progress-bar"><div class="progress-bar-fill" id="progress-small" style="width:0%"></div></div>
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
           <p class="progress-label" id="label-small" style="margin:0;">0 / 8 täidetud</p>
-          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('small')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('small')" aria-label="Laadi enesekontrolli kokkuvõte alla PDF-ina">
             📄 Laadi aruanne alla
           </button>
         </div>
@@ -390,7 +390,7 @@
           <strong>Mida see Teie jaoks tähendab:</strong> Väikeettevõttena on Teil suhteliselt kompaktne kohustuste loetelu, kuid kõik punktid on seaduslikult kohustuslikud. Alustage lepingust töötervishoiuteenuse osutajaga - ilma selleta ei saa te ka riskianalüüsi professionaalselt teha.
         </div>
         <div style="display:flex; justify-content:flex-end; margin-top:16px;">
-          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('small')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('small')" aria-label="Laadi enesekontrolli kokkuvõte alla PDF-ina">
             📄 Laadi aruanne alla
           </button>
         </div>
@@ -403,7 +403,7 @@
         <div class="progress-bar"><div class="progress-bar-fill" id="progress-medium" style="width:0%"></div></div>
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
           <p class="progress-label" id="label-medium" style="margin:0;">0 / 11 täidetud</p>
-          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('medium')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('medium')" aria-label="Laadi enesekontrolli kokkuvõte alla PDF-ina">
             📄 Laadi aruanne alla
           </button>
         </div>
@@ -566,7 +566,7 @@
           <strong>Mida see Teie jaoks tähendab:</strong> Peamine lisanduv kohustus on töökeskkonnavolinik - see peab olema töötajate poolt valitud. Samuti muutuvad suuremaks dokumentatsiooni- ja mõõtmisnõuded. Soovitav on kasutada töötervishoiuteenuse osutajat, kes haldab kogu dokumentatsiooni Teie eest.
         </div>
         <div style="display:flex; justify-content:flex-end; margin-top:16px;">
-          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('medium')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('medium')" aria-label="Laadi enesekontrolli kokkuvõte alla PDF-ina">
             📄 Laadi aruanne alla
           </button>
         </div>
@@ -579,7 +579,7 @@
         <div class="progress-bar"><div class="progress-bar-fill" id="progress-large" style="width:0%"></div></div>
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
           <p class="progress-label" id="label-large" style="margin:0;">0 / 8 täidetud</p>
-          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('large')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('large')" aria-label="Laadi enesekontrolli kokkuvõte alla PDF-ina">
             📄 Laadi aruanne alla
           </button>
         </div>
@@ -705,7 +705,7 @@
           <strong>Mida see Teie jaoks tähendab:</strong> 50+ töötajaga ettevõte vajab sisuliselt täisväärtuslikku töötervishoiu haldussüsteemi. Paljud selles kategoorias olevad ettevõtted kasutavad välise töötervishoiu teenuse osutaja täisteenust, et tagada dokumentatsiooni ja protsesside nõuetekohasus.
         </div>
         <div style="display:flex; justify-content:flex-end; margin-top:16px;">
-          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('large')" aria-label="Laadi vastavusaruanne alla PDF-ina">
+          <button class="btn btn-primary btn-sm" onclick="downloadCompliancePDF('large')" aria-label="Laadi enesekontrolli kokkuvõte alla PDF-ina">
             📄 Laadi aruanne alla
           </button>
         </div>
@@ -939,7 +939,7 @@ function downloadCompliancePDF(group) {
   doc.setTextColor(255,255,255);
   doc.setFontSize(17);
   doc.setFont('helvetica','bold');
-  doc.text('Töötervishoiu vastavusaruanne', 14, 12);
+  doc.text('Töötervishoiu enesekontrolli kokkuvõte', 14, 12);
   doc.setFontSize(10);
   doc.setFont('helvetica','normal');
   doc.text('tt24.ee', 14, 21);
@@ -1098,7 +1098,7 @@ function downloadCompliancePDF(group) {
   doc.setFont('helvetica','bold');
   doc.text('valvekliinik.ee', 196, footerY, { align: 'right' });
 
-  const filename = `TTH-vastavusaruanne-${data.label.replace(/\s+/g,'-')}-${new Date().toISOString().slice(0,10)}.pdf`;
+  const filename = `TTH-kokkuvote-${data.label.replace(/\s+/g,'-')}-${new Date().toISOString().slice(0,10)}.pdf`;
   doc.save(filename);
 }
 </script>
