@@ -90,3 +90,6 @@ Töötervishoiu kohustused väikeettevõttele 1-9 töötajaga. Kõik kohustused 
 
 ## artiklid/ttos-2026-muudatused.html
 Töötervishoiu ja tööohutuse seadus 2026 - muudatused ja olulisemad nõuded. Ülevaade kehtivast seadusandlusest ja planeeritud muudatustest.
+
+## artiklid/tootaja-keeldub-tervisekontrollist.html
+Töötaja keeldub tervisekontrollist - mida tööandja peab tegema. Samm-sammult juhend dokumenteerimiseks ja õiguslikeks sammudeks.
