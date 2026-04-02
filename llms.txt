@@ -99,3 +99,9 @@ Töötaja keeldub tervisekontrollist - mida tööandja peab tegema. Samm-sammult
 
 ## artiklid/tooonnetus-vastutus.html
 Tööõnnetuse vastutus ilma tervisekontrollita. Tsiviil-, haldus- ja kriminaalvastutus tööandjale.
+
+## artiklid/teenusepakkujate-vordlus.html
+Töötervishoiu teenusepakkujate võrdlus Eestis 2026. Kuus kriteeriumi, küsimused lepingu kohta, pakkujate ülevaade.
+
+## artiklid/kaugtoo-tootervishoid.html
+Kaugtöö ja töötervishoiu kohustused. Riskianalüüs kodukontoris, ergonoomika, psühhosotsiaalsed riskid.
