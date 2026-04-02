@@ -66,3 +66,12 @@ All templates are fillable HTML forms with print-optimized CSS. Employers fill f
 - https://tt24.ee
 - Partner clinic: Valvekliinik (valvekliinik.ee)
 - Services from €10 per employee per month
+
+# Articles (Artiklid)
+## New Company Obligations
+> /artiklid/uus-ettevote-tootervishoid.html
+Guide for newly founded Estonian companies on occupational health obligations from day one.
+
+## TTH Service Pricing
+> /artiklid/tootervishoid-hind.html
+Cost breakdown of occupational health services in Estonia for 2025-2026.
