@@ -111,3 +111,9 @@ Kas töötervishoiu kulud on tulumaksuvabad? MTA reeglid, erisoodustuse piir, k�
 
 ## artiklid/tootervishoid-dokumentatsioon.html
 Töötervishoiu dokumentatsioon — mida Tööinspektsioon kontrollimisel nõuab. Kohustuslike dokumentide nimekiri, säilitustähtajad ja vorminõuded.
+
+## artiklid/vaikeettevote-tth-juhend.html
+Töötervishoiu korraldamine väikeettevõttes: samm-sammuline juhend algajale. 7 sammu riskianalüüsist kuni töötajate teavitamiseni. Kõik TTOS kohustused selgelt ja praktiliselt.
+
+## artiklid/tootervishoid-roi.html
+Kuidas hea töötervishoiu korraldamine vähendab haiguspäevade arvu ja suurendab tootlikkust. ROI arvutus, EU-OSHA andmed, presenteism, personali voolavus ja trahvirisk — reaalsed numbrid Eesti tööandjatele.
