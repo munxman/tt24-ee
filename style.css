@@ -1805,6 +1805,31 @@ tbody td {
 @media (min-width: 640px)  { .nav-inner { padding: 0 var(--space-6); } }
 @media (min-width: 1024px) { .nav-inner { padding: 0 var(--space-8); } }
 
+/* Nav brand wrapper (logo + subtle Meist link) */
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 0;
+}
+.nav-brand-meist {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  text-decoration: none;
+  line-height: 1;
+  margin-top: -2px;
+  padding-left: 2px;
+  letter-spacing: 0.01em;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+.nav-brand-meist:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -1870,6 +1895,13 @@ tbody td {
 }
 .nav-dropdown-toggle:hover { color: var(--color-primary); background-color: var(--color-bg); }
 .nav-dropdown-toggle::after { content: ' ▾'; font-size: 0.7em; }
+/* Prominent Toriistad toggle */
+.nav-dropdown-toggle--prominent {
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  font-size: calc(var(--text-sm) * 1.05);
+}
+.nav-dropdown-toggle--prominent:hover { color: var(--color-primary-dark); }
 .nav-dropdown-menu {
   display: none; position: absolute; top: 100%; left: 0; background: #fff;
   border-radius: var(--radius-md); box-shadow: 0 4px 12px rgba(0,0,0,.12);
