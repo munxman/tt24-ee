@@ -9,6 +9,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Articles index: priority 0.9 -->
+  <url>
+    <loc>https://tt24.ee/artiklid/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- New company page: priority 1.0 (high-intent audience) -->
   <url>
     <loc>https://tt24.ee/uus-ettevote.html</loc>
@@ -355,6 +363,12 @@
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/tootervishoid-roi.html</loc>
+        <lastmod>2026-04-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tt24.ee/artiklid/kas-vaja-lepingut.html</loc>
         <lastmod>2026-04-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
