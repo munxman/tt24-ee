@@ -105,3 +105,9 @@ Töötervishoiu teenusepakkujate võrdlus Eestis 2026. Kuus kriteeriumi, küsimu
 
 ## artiklid/kaugtoo-tootervishoid.html
 Kaugtöö ja töötervishoiu kohustused. Riskianalüüs kodukontoris, ergonoomika, psühhosotsiaalsed riskid.
+
+## artiklid/tootervishoid-maksud.html
+Kas töötervishoiu kulud on tulumaksuvabad? MTA reeglid, erisoodustuse piir, käibemaks ja raamatupidamine tööandjatele.
+
+## artiklid/tootervishoid-dokumentatsioon.html
+Töötervishoiu dokumentatsioon — mida Tööinspektsioon kontrollimisel nõuab. Kohustuslike dokumentide nimekiri, säilitustähtajad ja vorminõuded.
