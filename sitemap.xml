@@ -387,4 +387,16 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://tt24.ee/artiklid/tth-pakkuja-vahetus.html</loc>
+        <lastmod>2026-04-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tt24.ee/artiklid/ehitussektor-tootervishoid.html</loc>
+        <lastmod>2026-04-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
