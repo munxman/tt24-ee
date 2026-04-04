@@ -1,67 +1,82 @@
-# TT24.ee — Töötervishoiu portaal Eesti tööandjatele
-# Occupational health portal for Estonian employers
-# https://tt24.ee
-# Updated: 2026-04-04
+# TT24.ee - Töötervishoiu teabeportaal
 
-## Artiklid (Articles)
-> https://tt24.ee/artiklid/7-levinumat-viga.html: 7 levinumat viga töötervishoiu korraldamisel | TT24
-> https://tt24.ee/artiklid/ehitussektor-tootervishoid.html: Töötervishoiu korraldamine ehitussektoris — täielik juhend tööandjale | TT24
-> https://tt24.ee/artiklid/kas-vaja-lepingut.html: Kas mul on vaja töötervishoiu lepingut - kiire kontroll | TT24
-> https://tt24.ee/artiklid/kaugtoo-tootervishoid.html: Kaugtöö ja töötervishoiu kohustused - mida tööandja peab teadma | TT24
-> https://tt24.ee/artiklid/lepingu-ulesuitlemine.html: Kuidas öelda üles töötervishoiu leping? Samm-sammult juhend tööandjale | TT24
-> https://tt24.ee/artiklid/riskianaluus-juhend.html: Töötervishoiu riskianalüüs - mis see on ja kuidas seda teha | TT24
-> https://tt24.ee/artiklid/teenusepakkuja-valimine.html: Töötervishoiu teenusepakkuja valimine - mida vaadata enne lepingu sõlmimist | TT24
-> https://tt24.ee/artiklid/teenusepakkujate-vordlus.html: Töötervishoiu teenusepakkujate võrdlus Eestis 2026 | TT24
-> https://tt24.ee/artiklid/tooinspektor-kontroll.html: Kuidas valmistuda Tööinspektsiooni kontrollkäiguks | TT24
-> https://tt24.ee/artiklid/tooonnetus-vastutus.html: Tööõnnetus juhtus - mida see tähendab tööandjale ilma tervisekontrollita | TT24
-> https://tt24.ee/artiklid/tootaja-keeldub-tervisekontrollist.html: Töötaja keeldub tervisekontrollist - mida tööandja peab tegema? | TT24
-> https://tt24.ee/artiklid/tootervishoid-dokumentatsioon.html: Töötervishoiu dokumentatsioon — mida Tööinspektsioon kontrollimisel nõuab | TT24
-> https://tt24.ee/artiklid/tootervishoid-hind.html: Töötervishoiu teenuse hind 2025-2026 - kui palju see maksab? | TT24
-> https://tt24.ee/artiklid/tootervishoid-kontroll-puudub.html: Mis juhtub, kui tööandja ei korralda töötervishoiu kontrolli? | TT24
-> https://tt24.ee/artiklid/tootervishoid-maksud.html: Kas töötervishoiu kulud on tulumaksuvabad? MTA reeglid raamatupidajatele | TT24
-> https://tt24.ee/artiklid/tootervishoid-roi.html: Töötervishoiu ROI: kuidas hea korraldamine vähendab haiguspäevi ja suurendab tootlikkust | TT24
-> https://tt24.ee/artiklid/tth-pakkuja-vahetus.html: Töötervishoiu teenuse pakkuja vahetus — mida peab tööandja teadma | TT24
-> https://tt24.ee/artiklid/ttos-2026-muudatused.html: Töötervishoiu ja tööohutuse seadus 2026 - muudatused ja olulisemad nõuded | TT24
-> https://tt24.ee/artiklid/uus-ettevote-tootervishoid.html: Uus ettevõte ja töötervishoiu kohustused - mida teha esimesest päevast? | TT24
-> https://tt24.ee/artiklid/vaikeettevote-kohustused.html: Töötervishoiu kohustused väikeettevõttele - 1 kuni 9 töötajat | TT24
-> https://tt24.ee/artiklid/vaikeettevote-tth-juhend.html: Töötervishoiu korraldamine väikeettevõttes: samm-sammuline juhend algajale | TT24
+> Tasuta töötervishoiu juhendid ja tööriistad Eesti tööandjatele
 
-## Tööriistad (Tools)
-> https://tt24.ee/kontrollnimekiri.html: Töötervishoiu kontrollnimekiri tööandjatele - TT24
-> https://tt24.ee/kalkulaator.html: Töötervishoiu kulukalkulaator - TT24
-> https://tt24.ee/enesekontroll.html: Töötervishoiu enesekontrolli test tööandjatele - TT24
-> https://tt24.ee/ajakava.html: Töötervishoiu ajakava - TT24
-> https://tt24.ee/dokumendid.html: Dokumendid ja vormid - töötervishoiu dokumendid tööandjale - TT24
+## Artiklid
 
-## Hinnad (Pricing)
-> https://tt24.ee/hinnad.html: Töötervishoiu teenuse hinnad 2026 — läbipaistev hinnakiri | TT24
+- [Kõik artiklid](https://tt24.ee/artiklid/index.html): Kõik TT24 töötervishoiu artiklid ühes kohas — juhendid, seadusandlus, kulud, teenusepakkujad ja parimad praktikad.
+- [7 levinumat viga töötervishoiu korraldamisel](https://tt24.ee/artiklid/7-levinumat-viga.html): 7 viga, mis põhjustavad kõige sagedamini Tööinspektsiooni ettekirjutusi ja trahve — mida seadus nõuab ja kuidas parandada.
+- [Töötervishoiu korraldamine ehitussektoris](https://tt24.ee/artiklid/ehitussektor-tootervishoid.html): Ehitussektor on Tööinspektsiooni nr 1 kontrollsihtmärk 2026 — kohustuslikud tervisekontrollid, riskitegurid, alltöövõtjate korraldus ja trahvid.
+- [Kas mul on vaja töötervishoiu lepingut?](https://tt24.ee/artiklid/kas-vaja-lepingut.html): Kiire otsustuspuu, mis ütleb 2 minutiga, kas Teie ettevõte vajab töötervishoiu lepingut (TTOS § 12 lg 1).
+- [Kaugtöö ja töötervishoiu kohustused](https://tt24.ee/artiklid/kaugtoo-tootervishoid.html): Kaugtöö ei vabasta tööandjat töötervishoiu kohustustest — riskianalüüs, ergonoomika, psühhosotsiaalsed riskid ja dokumenteerimine.
+- [Kuidas öelda üles töötervishoiu leping?](https://tt24.ee/artiklid/lepingu-ulesuitlemine.html): Samm-sammult juhend: etteteatamistähtaeg, kirjalik teade, terviseandmete üleandmine ja uue teenusepakkuja leidmine.
+- [Töötervishoiu riskianalüüs — mis see on ja kuidas seda teha](https://tt24.ee/artiklid/riskianaluus-juhend.html): Samm-sammuline juhend riskianalüüsi koostamiseks, dokumenteerimiseks ja uuendamiseks (TTOS § 13 lg 1).
+- [Töötervishoiu teenusepakkuja valimine](https://tt24.ee/artiklid/teenusepakkuja-valimine.html): 8 kriteeriumi, küsimused enne lepingu sõlmimist, punased lipud ning raamlepingu vs ühekordse teenuse erinevus.
+- [Töötervishoiu teenusepakkujate võrdlus Eestis 2026](https://tt24.ee/artiklid/teenusepakkujate-vordlus.html): Hinna, kättesaadavuse, digitaalsete lahenduste ja lepingutingimuste võrdlus — praktiline juhend tööandjatele.
+- [Kuidas valmistuda Tööinspektsiooni kontrollkäiguks](https://tt24.ee/artiklid/tooinspektor-kontroll.html): 10-sammuline kontrollnimekiri enne inspektsiooni — mida inspektorid vaatavad: riskianalüüs, TTH leping, tervisekontrollid.
+- [Tööõnnetus juhtus — mida see tähendab tööandjale ilma tervisekontrollita](https://tt24.ee/artiklid/tooonnetus-vastutus.html): Tsiviilnõuded, halduskaristus TTOS § 28 alusel ja võimalik kriminaalvastutus tööõnnetuse korral.
+- [Töötaja keeldub tervisekontrollist — mida tööandja peab tegema?](https://tt24.ee/artiklid/tootaja-keeldub-tervisekontrollist.html): Keeldumise dokumenteerimine ja distsiplinaarmeetmed — samm-sammuline juhend TTOS § 14 alusel.
+- [Töötervishoiu dokumentatsioon — mida Tööinspektsioon nõuab](https://tt24.ee/artiklid/tootervishoid-dokumentatsioon.html): Kohustuslike dokumentide täielik nimekiri, säilitustähtajad, vorminõuded ja mida inspektorid kontrollimisel vaatavad.
+- [Töötervishoiu teenuse hind 2025–2026](https://tt24.ee/artiklid/tootervishoid-hind.html): Kulukalkulaator, hinnaskaala ettevõtte suuruse järgi, peidetud kulud ja teenuse maksustamine — reaalsed numbrid.
+- [Mis juhtub, kui tööandja ei korralda töötervishoiu kontrolli?](https://tt24.ee/artiklid/tootervishoid-kontroll-puudub.html): Ettekirjutusest trahvini (kuni €32 000) — samm-sammuline lahendus rikkumise parandamiseks.
+- [Kas töötervishoiu kulud on tulumaksuvabad?](https://tt24.ee/artiklid/tootervishoid-maksud.html): MTA reeglid raamatupidajatele: mis on maksuvaba, mis on erisoodustus, kuidas raamatupidada.
+- [Töötervishoiu ROI: haiguspäevad vs tootlikkus](https://tt24.ee/artiklid/tootervishoid-roi.html): EU-OSHA andmed, ROI arvutus ja reaalsed numbrid Eesti tööandjatele 2025–2026.
+- [Töötervishoiu teenuse pakkuja vahetus](https://tt24.ee/artiklid/tth-pakkuja-vahetus.html): Seaduslikud nõuded (TTOS § 23), etteteatamistähtaeg, levinumad vead ja praktiline üleminekunimekiri tööandjatele.
+- [Töötervishoiu ja tööohutuse seadus 2026 — muudatused](https://tt24.ee/artiklid/ttos-2026-muudatused.html): TTOS 2026 muudatused ja tööandja kohustused viidatuna TTOS paragrahvidele — trahv kuni €32 000.
+- [Uus ettevõte ja töötervishoiu kohustused](https://tt24.ee/artiklid/uus-ettevote-tootervishoid.html): Riskianalüüs on kohustuslik kohe, tervisekontroll 4 kuu jooksul — samm-sammuline juhend uuele tööandjale.
+- [Töötervishoiu kohustused väikeettevõttele (1–9 töötajat)](https://tt24.ee/artiklid/vaikeettevote-kohustused.html): Ka ühe töötajaga ettevõttel on kõik töötervishoiu kohustused — minimaalsed nõuded ja kulud väikeettevõttele.
+- [Töötervishoiu korraldamine väikeettevõttes](https://tt24.ee/artiklid/vaikeettevote-tth-juhend.html): Samm-sammult juhend algajale: riskianalüüs, leping, tervisekontrollid, esmaabiandja ja dokumentatsioon (TTOS 2025–2026).
 
-## Linnad (Cities)
-> https://tt24.ee/linnad/johvi.html: Töötervishoiu nõuded Jõhvis - tööandja kohustused 2026
-> https://tt24.ee/linnad/narva.html: Töötervishoiu nõuded Narvas - tööandja kohustused 2026
-> https://tt24.ee/linnad/parnu.html: Töötervishoiu nõuded Pärnus - kohalikud teenuspakkujad 2026
-> https://tt24.ee/linnad/tallinn.html: Töötervishoiu nõuded Tallinnas - kohalikud teenuspakkujad 2026
-> https://tt24.ee/linnad/tartu.html: Töötervishoiu nõuded Tartus - kohalikud teenuspakkujad 2026
+## Tööriistad
 
-## Sektorid (Sectors)
-> https://tt24.ee/sektorid/avalik-haldus.html: Töötervishoiu nõuded avalikus halduses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/ehitus.html: Töötervishoiu nõuded ehituses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/energeetika.html: Töötervishoiu nõuded energeetikas - tööandja kohustused 2026
-> https://tt24.ee/sektorid/finantsteenused.html: Töötervishoiu nõuded finantsteenustes - tööandja kohustused 2026
-> https://tt24.ee/sektorid/haridus.html: Töötervishoiu nõuded haridussektoris - õpetaja kohustused 2026
-> https://tt24.ee/sektorid/hotellindus.html: Töötervishoiu nõuded hotellinduses ja toitlustuses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/it.html: Töötervishoiu nõuded IT-sektoris - tööandja kohustused 2026
-> https://tt24.ee/sektorid/kaubandus.html: Töötervishoiu nõuded kaubanduses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/laondus.html: Töötervishoiu nõuded laonduses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/pollumajandus.html: Töötervishoiu nõuded põllumajanduses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/puhastusteenused.html: Töötervishoiu nõuded puhastusteenuste sektoris - tööandja kohustused 2026
-> https://tt24.ee/sektorid/tervishoid.html: Töötervishoiu nõuded tervishoius - meditsiinitöötaja kohustused 2026
-> https://tt24.ee/sektorid/toiduaineteostus.html: Töötervishoiu nõuded toiduainetööstuses - tööandja kohustused 2026
-> https://tt24.ee/sektorid/tootmine.html: Töötervishoiu nõuded tootmisettevõttes - tööandja kohustused 2026
-> https://tt24.ee/sektorid/transport.html: Töötervishoiu nõuded transpordis - juhi tervisekontroll 2026
+- [Töötervishoiu kulukalkulaator](https://tt24.ee/kalkulaator.html): Arvutage töötervishoiu teenuse maksumus sekunditega — kulude jaotus kuus ja aastas ning trahviriski võrdlus.
+- [Töötervishoiu kontrollnimekiri](https://tt24.ee/kontrollnimekiri.html): Interaktiivne kontrollnimekiri ettevõtte suuruse järgi — märkige täidetud kohustused, progress salvestub automaatselt.
+- [Töötervishoiu enesekontrolli test](https://tt24.ee/enesekontroll.html): 10 küsimust, 2 minutit — testige, kas Teie ettevõte vastab töötervishoiu nõuetele, saate kohese tulemuse.
+- [Töötervishoiu ajakava](https://tt24.ee/ajakava.html): Sisestage ettevõtte asutamise kuupäev ja töötajate arv — saate isikliku tähtaegade ajakava koos kalendrisse laadimisega.
+- [Dokumendid ja vormid](https://tt24.ee/dokumendid.html): Tasuta allalaaditavad töötervishoiu dokumendid tööandjatele — riskianalüüsi vorm, teavitamise akt, kontrollnimekirjad.
+- [Riskianalüüsi vorm](https://tt24.ee/vormid/riskianaluus.html): Täidetav töökoha riskianalüüsi dokument vastavalt TTOS § 13 nõuetele.
+- [Töötaja teavitamise akt](https://tt24.ee/vormid/teavitamine.html): Dokument töötaja teavitamiseks töötervishoiu nõuetest ja riskidest.
+- [Tervisekontrolli suunamiskiri](https://tt24.ee/vormid/suunamiskiri.html): Ametlik suunamiskiri töötaja saatmiseks töötervishoiuarsti juurde.
+- [Tervisekontrolli korraldamise kontrollnimekiri](https://tt24.ee/vormid/tervisekontroll-checklist.html): Samm-sammuline kontrollnimekiri tervisekontrolli korraldamiseks tööandjale.
+- [Tööõnnetuse uurimise akt](https://tt24.ee/vormid/tooonnetus.html): Kohustuslik dokument tööõnnetuse uurimiseks ja registreerimiseks.
+- [Esmaabi korraldamise dokument](https://tt24.ee/vormid/esmaabi.html): Ettevõtte esmaabi korralduse dokumenteerimise vorm.
+- [Ohtlike kemikaalide register](https://tt24.ee/vormid/kemikaalid.html): Register töökohal kasutatavate ohtlike kemikaalide registreerimiseks.
+- [Töötervishoiu olukorra analüüsi küsimustik](https://tt24.ee/vormid/olukorra-analuus.html): Küsimustik ettevõtte töötervishoiu olukorra kaardistamiseks.
+- [Tööandja juhend töötajale](https://tt24.ee/vormid/tooandja-juhend.html): Juhend töötajale töötervishoiu nõuete ja kohustuste kohta.
+- [Töökeskkonna voliniku koosoleku protokoll](https://tt24.ee/vormid/volinik.html): Töökeskkonna voliniku koosoleku protokollivorm.
 
-## Muud (Other)
-> https://tt24.ee/meist.html: Meist - TT24 Töötervishoiu Teejuht
-> https://tt24.ee/korduma.html: Korduma kippuvad küsimused töötervishoiu kohta - TT24
-> https://tt24.ee/pakkumine.html: Küsige pakkumist - TT24 Töötervishoiu Teejuht
-> https://tt24.ee/privaatsus.html: Privaatsuspoliitika - TT24 Töötervishoiu Teejuht
+## Linna lehed
+
+- [Töötervishoiu nõuded Tallinnas](https://tt24.ee/linnad/tallinn.html): Tallinna piirkonna töötervishoiu nõuded, lähimad teenuspakkujad ja Tööinspektsiooni piirkondlik statistika.
+- [Töötervishoiu nõuded Tartus](https://tt24.ee/linnad/tartu.html): Tartu piirkonna töötervishoiu nõuded, lähimad teenuspakkujad ja Tööinspektsiooni statistika Tartu maakonnas.
+- [Töötervishoiu nõuded Pärnus](https://tt24.ee/linnad/parnu.html): Pärnu piirkonna nõuded, hotellinduse ja teenindussektori erisused ning lähimad teenuspakkujad.
+- [Töötervishoiu nõuded Narvas](https://tt24.ee/linnad/narva.html): Narva ja Ida-Viru piirkonna nõuded, tootmissektori erisused ja venekeelne juhend töötervishoiu kohta.
+- [Töötervishoiu nõuded Jõhvis](https://tt24.ee/linnad/johvi.html): Jõhvi ja Ida-Viru piirkonna nõuded kaevanduses, tootmises ja energeetikas — kohalikud teenuspakkujad.
+
+## Sektori lehed
+
+- [Töötervishoiu nõuded ehituses](https://tt24.ee/sektorid/ehitus.html): Kohustuslikud tervisekontrollid, riskianalüüs ja Tööinspektsiooni nõuded ehitusettevõtetele.
+- [Töötervishoiu nõuded IT-sektoris](https://tt24.ee/sektorid/it.html): Kuvariga töö eeskirjad, ergonoomika, vaimne tervis ja kohustuslikud tervisekontrollid IT-ettevõtetele.
+- [Töötervishoiu nõuded tootmisettevõttes](https://tt24.ee/sektorid/tootmine.html): Masinaohutus, kemikaalid, müra, vibratsioon ja kohustuslikud tervisekontrollid tootmises 2026.
+- [Töötervishoiu nõuded transpordis](https://tt24.ee/sektorid/transport.html): Bussijuhi ja veoautojuhi tervisekontroll, töösõiduki juhiloa nõuded ja ületunnitöö piirangud.
+- [Töötervishoiu nõuded kaubanduses](https://tt24.ee/sektorid/kaubandus.html): Kassapidajate tervisekontroll, raskuste tõstmine, tööaeg ja kohustuslikud dokumendid kauplustes.
+- [Töötervishoiu nõuded tervishoius](https://tt24.ee/sektorid/tervishoid.html): Nakkushaiguste ennetamine, kiirguskaitse, psühhosotsiaalsed riskid ja kohustuslikud tervisekontrollid meditsiinitöötajatele.
+- [Töötervishoiu nõuded haridussektoris](https://tt24.ee/sektorid/haridus.html): Õpetajate psühhosotsiaalne tervis, häälekaitse, nakkusriskid ja tööandja kohustused koolides ning lasteaedades.
+- [Töötervishoiu nõuded hotellinduses ja toitlustuses](https://tt24.ee/sektorid/hotellindus.html): Toidukäitlejate tervisekontroll, öötöö, klienditeeninduse stress ja nõuetekohased dokumendid.
+- [Töötervishoiu nõuded laonduses](https://tt24.ee/sektorid/laondus.html): Tõstuki juhtimine, raskuste tõstmine, müra, vibratsioon ja kohustuslikud tervisekontrollid laonduses.
+- [Töötervishoiu nõuded puhastusteenuste sektoris](https://tt24.ee/sektorid/puhastusteenused.html): Kemikaalikäitlus, lihas-skeleti riskid, öötöö ja kohustuslikud dokumendid koristusteenuste ettevõtetele.
+- [Töötervishoiu nõuded toiduainetööstuses](https://tt24.ee/sektorid/toiduaineteostus.html): Kohustuslikud tervisekontrollid, hügieenipassid, keemiline ja bioloogiline ohutus toiduainetootmises.
+- [Töötervishoiu nõuded energeetikas](https://tt24.ee/sektorid/energeetika.html): Elektrioht, kõrgustes töö, kiirgus ja kohustuslikud tervisekontrollid energeetika- ja elektriseadmete sektoris.
+- [Töötervishoiu nõuded finantsteenustes](https://tt24.ee/sektorid/finantsteenused.html): Kuvaritöö, psühhosotsiaalne tervis ja kohustuslikud dokumendid pankades, kindlustusseltsides ja finantsfirmades.
+- [Töötervishoiu nõuded põllumajanduses](https://tt24.ee/sektorid/pollumajandus.html): Pestitsiidid, masinaohutus, hooajatöötajad ja kohustuslikud tervisekontrollid põllumajandustöös.
+- [Töötervishoiu nõuded avalikus halduses](https://tt24.ee/sektorid/avalik-haldus.html): Büroötöö, avaliku teenistuse erireeglid ja kohustuslikud dokumendid riigiasutustele ja kohalikele omavalitsustele.
+
+## Muud lehed
+
+- [Avaleht](https://tt24.ee/index.html): Tasuta, praktiline töötervishoiu juhis Eesti tööandjatele — kontrollnimekirjad, kalkulaatorid, KKK.
+- [Töötervishoiu hinnad 2026](https://tt24.ee/hinnad.html): Valvekliinik TTH läbipaistev hinnakiri: üksikeksam alates €65, aastapaketi hinnad €15–€100 töötaja/kuus.
+- [Korduma kippuvad küsimused](https://tt24.ee/korduma.html): Üle 30 selge vastuse töötervishoiu kohta — tervisekontroll, riskianalüüs, tööõnnetused, lepingud ja trahvid.
+- [Uus ettevõte — töötervishoiu kohustused](https://tt24.ee/uus-ettevote.html): Mida peab tegema esimese 30 päeva jooksul, millal sõlmida leping ja kuidas vältida trahve.
+- [Meist](https://tt24.ee/meist.html): TT24 on tasuta töötervishoiu portaal Eesti tööandjatele — kes me oleme ja kuidas saame aidata.
+- [Küsige pakkumist](https://tt24.ee/pakkumine.html): Küsige töötervishoiu teenuse pakkumist — täitke vorm ja võtame ühendust 24 tunni jooksul.
+- [Privaatsuspoliitika](https://tt24.ee/privaatsus.html): TT24 privaatsuspoliitika — isikuandmete kogumine ja töötlemine vastavalt GDPR-ile.
