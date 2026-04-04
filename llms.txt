@@ -1,119 +1,67 @@
-# TT24 — Töötervishoiu Teejuht
-> Estonian occupational health compliance portal for employers
+# TT24.ee — Töötervishoiu portaal Eesti tööandjatele
+# Occupational health portal for Estonian employers
+# https://tt24.ee
+# Updated: 2026-04-04
 
-## About
-TT24 is a free information platform helping Estonian employers comply with TTOS (Töötervishoiu ja tööohutuse seadus — Occupational Health and Safety Act). Built by employers for employers, in partnership with Valvekliinik. All tools are free.
+## Artiklid (Articles)
+> https://tt24.ee/artiklid/7-levinumat-viga.html: 7 levinumat viga töötervishoiu korraldamisel | TT24
+> https://tt24.ee/artiklid/ehitussektor-tootervishoid.html: Töötervishoiu korraldamine ehitussektoris — täielik juhend tööandjale | TT24
+> https://tt24.ee/artiklid/kas-vaja-lepingut.html: Kas mul on vaja töötervishoiu lepingut - kiire kontroll | TT24
+> https://tt24.ee/artiklid/kaugtoo-tootervishoid.html: Kaugtöö ja töötervishoiu kohustused - mida tööandja peab teadma | TT24
+> https://tt24.ee/artiklid/lepingu-ulesuitlemine.html: Kuidas öelda üles töötervishoiu leping? Samm-sammult juhend tööandjale | TT24
+> https://tt24.ee/artiklid/riskianaluus-juhend.html: Töötervishoiu riskianalüüs - mis see on ja kuidas seda teha | TT24
+> https://tt24.ee/artiklid/teenusepakkuja-valimine.html: Töötervishoiu teenusepakkuja valimine - mida vaadata enne lepingu sõlmimist | TT24
+> https://tt24.ee/artiklid/teenusepakkujate-vordlus.html: Töötervishoiu teenusepakkujate võrdlus Eestis 2026 | TT24
+> https://tt24.ee/artiklid/tooinspektor-kontroll.html: Kuidas valmistuda Tööinspektsiooni kontrollkäiguks | TT24
+> https://tt24.ee/artiklid/tooonnetus-vastutus.html: Tööõnnetus juhtus - mida see tähendab tööandjale ilma tervisekontrollita | TT24
+> https://tt24.ee/artiklid/tootaja-keeldub-tervisekontrollist.html: Töötaja keeldub tervisekontrollist - mida tööandja peab tegema? | TT24
+> https://tt24.ee/artiklid/tootervishoid-dokumentatsioon.html: Töötervishoiu dokumentatsioon — mida Tööinspektsioon kontrollimisel nõuab | TT24
+> https://tt24.ee/artiklid/tootervishoid-hind.html: Töötervishoiu teenuse hind 2025-2026 - kui palju see maksab? | TT24
+> https://tt24.ee/artiklid/tootervishoid-kontroll-puudub.html: Mis juhtub, kui tööandja ei korralda töötervishoiu kontrolli? | TT24
+> https://tt24.ee/artiklid/tootervishoid-maksud.html: Kas töötervishoiu kulud on tulumaksuvabad? MTA reeglid raamatupidajatele | TT24
+> https://tt24.ee/artiklid/tootervishoid-roi.html: Töötervishoiu ROI: kuidas hea korraldamine vähendab haiguspäevi ja suurendab tootlikkust | TT24
+> https://tt24.ee/artiklid/tth-pakkuja-vahetus.html: Töötervishoiu teenuse pakkuja vahetus — mida peab tööandja teadma | TT24
+> https://tt24.ee/artiklid/ttos-2026-muudatused.html: Töötervishoiu ja tööohutuse seadus 2026 - muudatused ja olulisemad nõuded | TT24
+> https://tt24.ee/artiklid/uus-ettevote-tootervishoid.html: Uus ettevõte ja töötervishoiu kohustused - mida teha esimesest päevast? | TT24
+> https://tt24.ee/artiklid/vaikeettevote-kohustused.html: Töötervishoiu kohustused väikeettevõttele - 1 kuni 9 töötajat | TT24
+> https://tt24.ee/artiklid/vaikeettevote-tth-juhend.html: Töötervishoiu korraldamine väikeettevõttes: samm-sammuline juhend algajale | TT24
 
-The portal addresses the most common compliance gap in Estonia: small and medium employers (1–50 employees) who lack practical guidance on occupational health obligations. Tööinspektsioon (Labour Inspectorate) launched an active inspection campaign in 2026 targeting SMEs. Fines reach up to €32,000 for legal entities (TTOS § 28).
+## Tööriistad (Tools)
+> https://tt24.ee/kontrollnimekiri.html: Töötervishoiu kontrollnimekiri tööandjatele - TT24
+> https://tt24.ee/kalkulaator.html: Töötervishoiu kulukalkulaator - TT24
+> https://tt24.ee/enesekontroll.html: Töötervishoiu enesekontrolli test tööandjatele - TT24
+> https://tt24.ee/ajakava.html: Töötervishoiu ajakava - TT24
+> https://tt24.ee/dokumendid.html: Dokumendid ja vormid - töötervishoiu dokumendid tööandjale - TT24
 
-## Pages
+## Hinnad (Pricing)
+> https://tt24.ee/hinnad.html: Töötervishoiu teenuse hinnad 2026 — läbipaistev hinnakiri | TT24
 
-### Core Pages
-- **index.html** — Homepage. Overview of tools, urgency notice about 2026 inspection campaign, FAQ preview, and links to all tools.
-- **kontrollnimekiri.html** — Interactive compliance checklist. Segmented by company size: small (1–9 employees), medium (10–49), large (50+). Covers risk assessment, OHC contract, first aid, accident register, minors, documentation, workplace health representative, and health action plan. Includes progress tracking and PDF download.
-- **kalkulaator.html** — Cost calculator. Estimates monthly and annual occupational health service costs based on employee count and sector. Compares service cost against maximum fine (€32,000), demonstrating ROI of compliance. Sectors: office/IT, construction, trade, healthcare, production, transport, hospitality, agriculture.
-- **enesekontroll.html** — 10-question self-assessment quiz. Evaluates employer readiness across key compliance areas: OHC contract, risk assessment, health checks, worker notification, first aid, accident register, workplace health representative, environmental measurements, documentation, and physician consultation. Generates a scored result card with prioritised recommendations.
-- **korduma.html** — FAQ page. 20+ questions and answers covering: general obligations, health checks, risk assessment, workplace accidents, documentation, and fines. Includes search/filter functionality. FAQ categories: Üldine (General), Tervisekontroll (Health checks), Riskianalüüs (Risk assessment), Tööõnnetus (Workplace accident), Dokumentatsioon (Documentation), Trahvid (Fines).
+## Linnad (Cities)
+> https://tt24.ee/linnad/johvi.html: Töötervishoiu nõuded Jõhvis - tööandja kohustused 2026
+> https://tt24.ee/linnad/narva.html: Töötervishoiu nõuded Narvas - tööandja kohustused 2026
+> https://tt24.ee/linnad/parnu.html: Töötervishoiu nõuded Pärnus - kohalikud teenuspakkujad 2026
+> https://tt24.ee/linnad/tallinn.html: Töötervishoiu nõuded Tallinnas - kohalikud teenuspakkujad 2026
+> https://tt24.ee/linnad/tartu.html: Töötervishoiu nõuded Tartus - kohalikud teenuspakkujad 2026
 
-### Sector Pages (sektorid/)
-- **ehitus.html** — Construction sector. Health risks: falls, noise/vibration/dust (incl. asbestos, silica), chemical exposure, extreme temperatures. Strict health check requirement before first workday.
-- **transport.html** — Transport and logistics. Specific C/D vehicle driver medical requirements (vision, hearing, cardiovascular). Tachograph obligations. ADR documentation for hazardous goods transport.
-- **tervishoid.html** — Healthcare sector. Biological risks (bloodborne pathogens), ionising radiation (X-ray, CT), chemical exposure (disinfectants), burnout, night shift regulations.
-- **tootmine.html** — Manufacturing. Noise (>85 dB), vibration, hazardous chemicals, dust (metal/wood/glass), repetitive strain, machine hazards.
-- **it.html** — IT sector. Display screen work (5+ h/day triggers 3-year health check cycle), ergonomics, mental load, burnout, remote work obligations.
-- **kaubandus.html** — Retail/trade. Prolonged standing, manual handling, repetitive movements, cold storage work, customer service stress.
-- **laondus.html** — Warehousing. Forklift hazards, heavy lifting, vibration, cold warehouse conditions, fall risk from high shelving.
-- **hotellindus.html** — Hospitality and food service. Biological risks in food handling, kitchen heat/cold, irregular hours, slip hazards, chemical cleaning agents.
-- **haridus.html** — Education. Voice strain (teachers), psychosocial load/burnout, biological risks in childcare, poor indoor climate.
-- **pollumajandus.html** — Agriculture. Pesticide/plant protection chemical exposure, zoonotic diseases, tractor noise/vibration, UV exposure, seasonal extremes.
-- **puhastusteenused.html** — Cleaning services. Chemical exposure (detergents, disinfectants), repetitive strain, slip hazards, night/shift work, hospital cleaning biological risks.
-- **energeetika.html** — Energy sector. Electrical hazard (high voltage), working at heights (wind farms), ionising radiation (nuclear), generator noise/vibration.
-- **finantsteenused.html** — Financial services. Display screen work, stress/burnout, remote work.
-- **avalik-haldus.html** — Public administration. Office ergonomics, psychosocial risks, display screen work.
-- **toiduaineteostus.html** — Food production industry. Biological risks, temperature extremes, chemical exposure, repetitive work.
+## Sektorid (Sectors)
+> https://tt24.ee/sektorid/avalik-haldus.html: Töötervishoiu nõuded avalikus halduses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/ehitus.html: Töötervishoiu nõuded ehituses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/energeetika.html: Töötervishoiu nõuded energeetikas - tööandja kohustused 2026
+> https://tt24.ee/sektorid/finantsteenused.html: Töötervishoiu nõuded finantsteenustes - tööandja kohustused 2026
+> https://tt24.ee/sektorid/haridus.html: Töötervishoiu nõuded haridussektoris - õpetaja kohustused 2026
+> https://tt24.ee/sektorid/hotellindus.html: Töötervishoiu nõuded hotellinduses ja toitlustuses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/it.html: Töötervishoiu nõuded IT-sektoris - tööandja kohustused 2026
+> https://tt24.ee/sektorid/kaubandus.html: Töötervishoiu nõuded kaubanduses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/laondus.html: Töötervishoiu nõuded laonduses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/pollumajandus.html: Töötervishoiu nõuded põllumajanduses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/puhastusteenused.html: Töötervishoiu nõuded puhastusteenuste sektoris - tööandja kohustused 2026
+> https://tt24.ee/sektorid/tervishoid.html: Töötervishoiu nõuded tervishoius - meditsiinitöötaja kohustused 2026
+> https://tt24.ee/sektorid/toiduaineteostus.html: Töötervishoiu nõuded toiduainetööstuses - tööandja kohustused 2026
+> https://tt24.ee/sektorid/tootmine.html: Töötervishoiu nõuded tootmisettevõttes - tööandja kohustused 2026
+> https://tt24.ee/sektorid/transport.html: Töötervishoiu nõuded transpordis - juhi tervisekontroll 2026
 
-### City Pages (linnad/)
-- **tallinn.html** — Tallinn. Estonia's largest labour market (230,000+ workers). Most active Tööinspektsioon jurisdiction — 600+ companies planned for inspection in 2026.
-- **tartu.html** — Tartu. Second-largest labour market. Education, healthcare, and IT dominance. Also significant agriculture and manufacturing.
-- **parnu.html** — Pärnu. Tourism/hospitality heavy. High proportion of seasonal/temporary workers — OHC rules apply equally to them.
-- **narva.html** — Narva and Ida-Viru county. Heavy industry, energy, manufacturing. Significant Russian-speaking workforce — worker notification obligations must be fulfilled in the employee's language.
-- **johvi.html** — Jõhvi. Administrative centre of Ida-Viru. Oil shale industry hub. Strict OHC requirements due to mining and energy sector.
-
-### Tools Pages
-- **dokumendid.html** — Document library. 10 fillable compliance document templates: risk assessment form, employee notification act, health check checklist, 3-year situation analysis, accident investigation report, first aid plan, workplace representative meeting minutes, hazardous chemicals register, employer safety instructions, health check referral letter. All templates are browser-fillable and print-optimized. Based on TTOS requirements.
-- **ajakava.html** — Compliance timeline tool. Interactive deadline calculator. Employer inputs: company founding date, first employee start date, employee count, night workers (yes/no), sector. Outputs color-coded timeline of all TTOS deadlines: risk assessment, OHC contract, first health check (4 months, or immediately for night/high-risk workers), periodic checks, 3-year situation analysis, risk assessment renewal. Includes ICS calendar export with reminders.
-
-### Document Templates (vormid/)
-All templates are fillable HTML forms with print-optimized CSS. Employers fill fields in browser, then print or save as PDF. Each references specific TTOS paragraphs.
-- **vormid/riskianaluus.html** — Risk assessment form (TTOS § 13). Hazard checklist, probability x consequence matrix, mitigation measures, responsible persons.
-- **vormid/teavitamine.html** — Employee notification act (TTOS § 13³). Confirms employee was informed of workplace risks. Dual signature fields.
-- **vormid/tervisekontroll-checklist.html** — Health check organization checklist (TTOS § 13¹). Step-by-step from OHC contract to result archiving.
-- **vormid/olukorra-analuus.html** — 3-year situation analysis questionnaire (TTOS § 13, mandatory since 01.01.2023). Covers hazards, health check summary, accidents, proposals.
-- **vormid/tooonnetus.html** — Workplace accident investigation report (TTOS § 24). Victim data, accident description, witness statements, root cause analysis, prevention measures.
-- **vormid/esmaabi.html** — First aid organization document (TTOS § 13²). First aiders list with certification dates, supply locations, quarterly inspection schedule.
-- **vormid/volinik.html** — Workplace health representative meeting minutes (TTOS §§ 17-18). Required for companies with 10+ employees. Attendees, agenda, decisions, next meeting.
-- **vormid/kemikaalid.html** — Hazardous chemicals register. Chemical name, CAS number, classification, quantity, location, safety data sheet reference.
-- **vormid/tooandja-juhend.html** — Employer safety instructions per role (TTOS § 13³). Role-specific hazards, PPE requirements, prohibited activities, emergency procedures.
-- **vormid/suunamiskiri.html** — Health check referral letter (TTOS § 13¹). Risk factor checklist for OHC physician, exposure details, previous check date.
-
-## Legal Basis
-- **TTOS** = Töötervishoiu ja tööohutuse seadus (Occupational Health and Safety Act)
-- Key sections: § 13 (employer obligations), § 13¹ (health checks), § 17 (workplace health representative), § 23 (workplace accidents), § 28 (fines)
-- Regulator: Tööinspektsioon (Labour Inspectorate) — ti.ee
-
-## Contact
-- info@tt24.ee
-- https://tt24.ee
-- Partner clinic: Valvekliinik (valvekliinik.ee)
-- Services from €10 per employee per month
-
-# Articles (Artiklid)
-## New Company Obligations
-> /artiklid/uus-ettevote-tootervishoid.html
-Guide for newly founded Estonian companies on occupational health obligations from day one.
-
-## TTH Service Pricing
-> /artiklid/tootervishoid-hind.html
-Cost breakdown of occupational health services in Estonia for 2025-2026.
-
-## artiklid/tootervishoid-kontroll-puudub.html
-Mis juhtub kui tööandja ei korralda töötervishoiu kontrolli. Tööinspektsiooni menetlus, trahvid, vastutus tööõnnetuse korral.
-
-## artiklid/teenusepakkuja-valimine.html
-Kuidas valida töötervishoiu teenusepakkujat. 8 kriteeriumi, küsimused enne lepingu sõlmimist, punased lipud.
-
-## artiklid/riskianaluus-juhend.html
-Töötervishoiu riskianalüüs - mis see on, kuidas teha, mida dokumenteerida. Samm-sammult juhend tööandjatele.
-
-## artiklid/vaikeettevote-kohustused.html  
-Töötervishoiu kohustused väikeettevõttele 1-9 töötajaga. Kõik kohustused kehtivad ka ühe töötajaga.
-
-## artiklid/ttos-2026-muudatused.html
-Töötervishoiu ja tööohutuse seadus 2026 - muudatused ja olulisemad nõuded. Ülevaade kehtivast seadusandlusest ja planeeritud muudatustest.
-
-## artiklid/tootaja-keeldub-tervisekontrollist.html
-Töötaja keeldub tervisekontrollist - mida tööandja peab tegema. Samm-sammult juhend dokumenteerimiseks ja õiguslikeks sammudeks.
-
-## artiklid/7-levinumat-viga.html
-7 levinumat viga töötervishoiu korraldamisel. Iga vea TTOS viide, tagajärjed ja lahendus.
-
-## artiklid/tooonnetus-vastutus.html
-Tööõnnetuse vastutus ilma tervisekontrollita. Tsiviil-, haldus- ja kriminaalvastutus tööandjale.
-
-## artiklid/teenusepakkujate-vordlus.html
-Töötervishoiu teenusepakkujate võrdlus Eestis 2026. Kuus kriteeriumi, küsimused lepingu kohta, pakkujate ülevaade.
-
-## artiklid/kaugtoo-tootervishoid.html
-Kaugtöö ja töötervishoiu kohustused. Riskianalüüs kodukontoris, ergonoomika, psühhosotsiaalsed riskid.
-
-## artiklid/tootervishoid-maksud.html
-Kas töötervishoiu kulud on tulumaksuvabad? MTA reeglid, erisoodustuse piir, käibemaks ja raamatupidamine tööandjatele.
-
-## artiklid/tootervishoid-dokumentatsioon.html
-Töötervishoiu dokumentatsioon — mida Tööinspektsioon kontrollimisel nõuab. Kohustuslike dokumentide nimekiri, säilitustähtajad ja vorminõuded.
-
-## artiklid/vaikeettevote-tth-juhend.html
-Töötervishoiu korraldamine väikeettevõttes: samm-sammuline juhend algajale. 7 sammu riskianalüüsist kuni töötajate teavitamiseni. Kõik TTOS kohustused selgelt ja praktiliselt.
-
-## artiklid/tootervishoid-roi.html
-Kuidas hea töötervishoiu korraldamine vähendab haiguspäevade arvu ja suurendab tootlikkust. ROI arvutus, EU-OSHA andmed, presenteism, personali voolavus ja trahvirisk — reaalsed numbrid Eesti tööandjatele.
+## Muud (Other)
+> https://tt24.ee/meist.html: Meist - TT24 Töötervishoiu Teejuht
+> https://tt24.ee/korduma.html: Korduma kippuvad küsimused töötervishoiu kohta - TT24
+> https://tt24.ee/pakkumine.html: Küsige pakkumist - TT24 Töötervishoiu Teejuht
+> https://tt24.ee/privaatsus.html: Privaatsuspoliitika - TT24 Töötervishoiu Teejuht
