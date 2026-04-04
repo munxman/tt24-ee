@@ -1124,7 +1124,7 @@ function generateICS(items) {
     lines.push('DTSTAMP:' + dtstamp);
     lines.push('DTSTART;VALUE=DATE:' + toICSDate(item.deadline));
     lines.push('DTEND;VALUE=DATE:' + toICSDate(item.deadline));
-    lines.push('SUMMARY:' + escapeICS('TTH: ' + item.title));
+    lines.push('SUMMARY:' + escapeICS('Töötervishoiu: ' + item.title));
     lines.push('DESCRIPTION:' + escapeICS(item.description + '\\n\\nViide: ' + item.ref + '\\n' + item.note + '\\n\\nAllikas: TT24.ee - Tootervishoiu Teejuht'));
     lines.push('CATEGORIES:Tootervishoiu');
     lines.push('URL:https://tt24.ee/ajakava.html');

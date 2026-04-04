@@ -1133,7 +1133,7 @@ function downloadCompliancePDF(group) {
   doc.setFont('helvetica','bold');
   doc.text('valvekliinik.ee', 196, footerY, { align: 'right' });
 
-  const filename = `TTH-kokkuvote-${data.label.replace(/\s+/g,'-')}-${new Date().toISOString().slice(0,10)}.pdf`;
+  const filename = `Tootervishoiu-kokkuvote-${data.label.replace(/\s+/g,'-')}-${new Date().toISOString().slice(0,10)}.pdf`;
   doc.save(filename);
 }
 </script>

@@ -1737,8 +1737,8 @@ function _generatePDF() {
   doc.text('tt24.ee/enesekontroll.html', 196, 283, { align: 'right' });
 
   var fname = company !== 'Ettevõte'
-    ? 'TTH-enesekontroll-' + company.replace(/\s+/g, '_') + '.pdf'
-    : 'TTH-enesekontroll.pdf';
+    ? 'Tootervishoiu-enesekontroll-' + company.replace(/\s+/g, '_') + '.pdf'
+    : 'Tootervishoiu-enesekontroll.pdf';
   doc.save(fname);
 }
 
