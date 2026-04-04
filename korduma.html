@@ -405,6 +405,38 @@
           "@type": "Answer",
           "text": "Kontrollige TAI registrist, kas pakkujal on kehtiv tegevusluba. Võrrelge teenuste ulatust, digitaalse aruandluse võimalusi ja töökoha külastuste sagedust. Küsige ka seniste klientide tagasisidet."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Kui palju maksab töötervishoiu teenus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Töötervishoiu teenuse hind sõltub ettevõtte suurusest, tegevusvaldkonnast ja riskitasemest. Üksik tervisekontroll: 65-120 € töötaja kohta. Aastapakettide kuumaksed: 15-100 € töötaja kohta kuus. Madala riskiga kontoritööl piisab lihtsamast kontrollist. Kõrge riskiga töökohtadel on vajalikud põhjalikumad uuringud. Küsige vähemalt kahelt-kolmelt teenusepakkujalt pakkumist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kas tervisekontrolli kulud on ettevõttele maksuvabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jah. Tööandja korraldatud ja tasutud töötervishoiu teenused (sh tervisekontroll) on tulumaksuvabad (TuMS § 48 lg 4 p 7). Tervisekontrolli kulud on ettevõtte jaoks täies mahus mahaarvatav kulu. See kehtib nii üksikute tervisekontrollide kui ka aastapakettide kohta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mida peaks teenusepakkuja hinnakiri sisaldama?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hea hinnakiri on läbipaistev ja kirjeldab selgelt, mida iga hinnataseme eest saate. Küsige: kas hind sisaldab tervisekontrolli aruannet ja tagasisidet; kas riskianalüüsi abi on kaetud; mis on lisateenuste hinnad; kas on minimaalne lepingutähtaeg; kas töökoha külastus sisaldub hinnas. Ärge valige ainult odavaimat pakkumist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kui palju maksab töötervishoiu teenuse puudumine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tööinspektsioon saab töötervishoiu rikkumiste eest määrata trahvi kuni 32 000 €. Lisaks toob puuduv korraldus kaasa pikemad haiguspuhkused, suurema tööjõu voolavuse ja tööõnnetuse korral täieliku vastutuse. EU-OSHA andmetel teenib iga töötervishoidu investeeritud 1 € tagasi 2,20 €."
+        }
       }
     ]
   }
@@ -691,6 +723,7 @@
         <a href="#tooonnetus" style="padding:0.4rem 0.85rem;font-size:0.8rem;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.background='#0284C7';this.style.color='#fff';this.style.borderColor='#0284C7'" onmouseout="this.style.background='#f1f5f9';this.style.color='#475569';this.style.borderColor='#e2e8f0'">Tööõnnetus</a>
         <a href="#dokumentatsioon" style="padding:0.4rem 0.85rem;font-size:0.8rem;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.background='#0284C7';this.style.color='#fff';this.style.borderColor='#0284C7'" onmouseout="this.style.background='#f1f5f9';this.style.color='#475569';this.style.borderColor='#e2e8f0'">Dokumentatsioon</a>
         <a href="#trahvid" style="padding:0.4rem 0.85rem;font-size:0.8rem;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.background='#0284C7';this.style.color='#fff';this.style.borderColor='#0284C7'" onmouseout="this.style.background='#f1f5f9';this.style.color='#475569';this.style.borderColor='#e2e8f0'">Trahvid</a>
+        <a href="#hinnad" style="padding:0.4rem 0.85rem;font-size:0.8rem;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.background='#0284C7';this.style.color='#fff';this.style.borderColor='#0284C7'" onmouseout="this.style.background='#f1f5f9';this.style.color='#475569';this.style.borderColor='#e2e8f0'">Hinnad</a>
       </nav>
 
       <div class="faq-search-wrap">
@@ -1174,7 +1207,58 @@
         </details>
       </div>
 
-      <div class="faq-disclaimer">
+      <!-- ═══════════════════════════════
+           HINNAD
+      ═══════════════════════════════ -->
+      <div class="faq-group" id="hinnad">
+        <div class="faq-group-title">💶 Hinnad ja kulud</div>
+
+        <details class="faq-item">
+          <summary>Kui palju maksab töötervishoiu teenus?</summary>
+          <div class="faq-item-body">
+            <p>Töötervishoiu teenuse hind sõltub ettevõtte suurusest, tegevusvaldkonnast ja riskitasemest. Eesti turul on tüüpilised hinnavahemikud:</p>
+            <p>- <strong>Üksik tervisekontroll:</strong> 65-120 € töötaja kohta (sõltub eksami ulatusest)<br>
+            - <strong>Aastapakettide kuumaksed:</strong> 15-100 € töötaja kohta kuus (sõltub teenuste mahust)</p>
+            <p>Madala riskiga kontoritööl piisab lihtsamast ja soodsamast kontrollist. Kõrge riskiga töökohtadel (ehitus, tootmine, keemia) on vajalikud põhjalikumad uuringud.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Küsige vähemalt kahelt-kolmelt teenusepakkujalt pakkumist. Võrrelge, mida hind sisaldab - mitte ainult numbrit.</div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kas tervisekontrolli kulud on ettevõttele maksuvabad?</summary>
+          <div class="faq-item-body">
+            <p>Jah. Tööandja korraldatud ja tasutud töötervishoiu teenused (sh tervisekontroll) on tulumaksuvabad (TuMS § 48 lg 4 p 7). Tervisekontrolli kulud on ettevõtte jaoks täies mahus mahaarvatav kulu. See kehtib nii üksikute tervisekontrollide kui ka aastapakettide kohta.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Planeerige tervisekontrolli kulud aastaeelarvesse. Hoidke arved ja lepingud korras - need on vajalikud maksudeklaratsioonis.</div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Mida peaks teenusepakkuja hinnakiri sisaldama?</summary>
+          <div class="faq-item-body">
+            <p>Hea teenusepakkuja hinnakiri on läbipaistev ja kirjeldab selgelt, mida iga hinnataseme eest saate. Küsige alati:</p>
+            <p>- Kas hind sisaldab tervisekontrolli aruannet ja tööandjale tagasisidet?<br>
+            - Kas riskianalüüsi abi on kaetud või tuleb eraldi?<br>
+            - Mis on lisateenuste hinnad (eriarstid, mõõtmised, vaktsineerimised)?<br>
+            - Kas on minimaalne lepingutähtaeg või töötajate arv?<br>
+            - Kas töökoha külastus sisaldub hinnas?</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Ärge valige ainult odavaimat pakkumist. Oluline on, et teenus katab Teie tegelikud kohustused.</div>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kui palju maksab töötervishoiu teenuse puudumine?</summary>
+          <div class="faq-item-body">
+            <p>Tööinspektsioon saab töötervishoiu rikkumiste eest määrata trahvi kuni 32 000 €. Kuid otsesed trahvid on ainult osa pildist. Puuduv töötervishoiu korraldus toob kaasa:</p>
+            <p>- Pikemad haiguspuhkused (keskmine haiguspäev maksab tööandjale 150-200 €)<br>
+            - Suurem tööjõu voolavus (uue töötaja värbamine ja väljaõpe maksab 30-50% aastapalgast)<br>
+            - Tööõnnetuse korral täielik vastutus (ravikulud, hüvitised, kohtuvaidlused)</p>
+            <p>EU-OSHA andmetel teenib iga töötervishoidu investeeritud 1 € tagasi 2,20 €.</p>
+            <div class="mida-teha"><strong>Mida teha:</strong> Kasutage TT24 <a href="kalkulaator.html">kulukalkulaatorit</a> orienteeruva hinnangu saamiseks.</div>
+          </div>
+        </details>
+      </div>
+
+            <div class="faq-disclaimer">
         <strong>Märkus:</strong> Need vastused on üldise informatiivse iseloomuga.<br>Konkreetse juhtumi korral pöörduge <a href="https://ti.ee" target="_blank" rel="noopener">Tööinspektsiooni</a> või juriidilise nõustaja poole.<br>Seadused võivad muutuda - kontrollige alati ajakohast redaktsiooni aadressilt <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">riigiteataja.ee (TTOS)</a>.
       </div>
 

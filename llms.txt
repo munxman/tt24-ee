@@ -74,7 +74,6 @@
 ## Muud lehed
 
 - [Avaleht](https://tt24.ee/index.html): Tasuta, praktiline töötervishoiu juhis Eesti tööandjatele — kontrollnimekirjad, kalkulaatorid, KKK.
-- [Töötervishoiu hinnad 2026](https://tt24.ee/hinnad.html): Valvekliinik TTH läbipaistev hinnakiri: üksikeksam alates €65, aastapaketi hinnad €15–€100 töötaja/kuus.
 - [Korduma kippuvad küsimused](https://tt24.ee/korduma.html): Üle 30 selge vastuse töötervishoiu kohta — tervisekontroll, riskianalüüs, tööõnnetused, lepingud ja trahvid.
 - [Uus ettevõte — töötervishoiu kohustused](https://tt24.ee/uus-ettevote.html): Mida peab tegema esimese 30 päeva jooksul, millal sõlmida leping ja kuidas vältida trahve.
 - [Meist](https://tt24.ee/meist.html): TT24 on tasuta töötervishoiu portaal Eesti tööandjatele — kes me oleme ja kuidas saame aidata.
