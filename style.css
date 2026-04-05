@@ -1919,6 +1919,15 @@ tbody td {
   color: var(--color-text-muted); font-size: 0.8rem; font-weight: var(--font-normal); opacity: 0.7;
 }
 .nav-link--secondary:hover { opacity: 1; color: var(--color-primary); }
+.nav-link--highlight {
+  color: var(--color-primary, #0284c7);
+  font-weight: var(--font-semibold, 600);
+  border: 1.5px solid var(--color-primary, #0284c7);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-link--highlight:hover { background: var(--color-primary, #0284c7); color: white; }
 @media (max-width: 767px) {
   .nav-dropdown-menu { position: static; box-shadow: none; background: transparent; padding: 0 0 0 var(--space-4); }
 }
