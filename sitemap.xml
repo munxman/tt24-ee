@@ -17,6 +17,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Merko / construction partner landing page: priority 0.9 (high-intent B2B) -->
+  <url>
+    <loc>https://tt24.ee/merko.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- New company page: priority 1.0 (high-intent audience) -->
   <url>
     <loc>https://tt24.ee/uus-ettevote.html</loc>
