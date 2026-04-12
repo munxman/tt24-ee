@@ -33,6 +33,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Construction offer landing page: priority 0.8 -->
+  <url>
+    <loc>https://tt24.ee/ehitus-pakkumine.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Tools: priority 0.9 -->
   <url>
     <loc>https://tt24.ee/kontrollnimekiri.html</loc>
