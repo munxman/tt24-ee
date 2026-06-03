@@ -341,14 +341,14 @@
 
         <form
           id="pakkumine-form"
-          action="https://formspree.io/f/valvekliinik-tth@formspree.io"
           method="POST"
           novalidate
           aria-label="TTH pakkumise päring"
         >
-          <!-- Formspree redirect after submit -->
-          <input type="hidden" name="_next" value="https://tt24.ee/pakkumine.html?sent=true" />
-          <input type="hidden" name="_subject" value="Uus TTH pakkumise päring – TT24 portaal" />
+          <!-- AJAX submission to formsubmit.co/info@tt24.ee (handled in script below) -->
+          <input type="hidden" name="_subject" value="Uus TTH pakkumise päring, TT24 portaal" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
 
           <!-- ── Required contact fields ── -->
           <div class="form-group">
@@ -664,6 +664,7 @@
   });
 
   form.addEventListener('submit', function(e){
+    e.preventDefault();
     var ok = true;
     ['nimi','epost','telefon','ettevote'].forEach(function(id){
       var el = document.getElementById(id);
@@ -680,10 +681,45 @@
       if (errEl) errEl.classList.remove('show');
     }
     if (!ok) {
-      e.preventDefault();
       var firstInvalid = form.querySelector('.invalid, .field-error.show');
       if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return false;
     }
+
+    // AJAX submit to formsubmit.co
+    var btn = form.querySelector('button[type="submit"]');
+    var originalBtnText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Saadan...'; }
+
+    fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success === 'true' || d.success === true) {
+        var formCard = document.getElementById('form-card');
+        var successCard = document.getElementById('success-card');
+        if (formCard) formCard.style.display = 'none';
+        if (successCard) {
+          successCard.style.display = 'block';
+          successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({ event: 'lead_form_success', form_type: 'tth_quote_request', source_page: window.location.pathname, value: 0, currency: 'EUR' });
+        }
+      } else {
+        if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }
+        alert('Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
+      }
+    })
+    .catch(function(err){
+      if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }
+      alert('Võrgu viga. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
+    });
+
+    return false;
   });
 })();
 </script>
