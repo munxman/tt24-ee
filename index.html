@@ -22,6 +22,23 @@
   }
   </script>
   <!-- End Google Tag Manager -->
+<!-- TT24 GA4 (G-5NW9JSMQVE) — consent-gated -->
+  <script>
+    function tt24LoadGA4() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('config', 'G-5NW9JSMQVE');
+    }
+    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
+      tt24LoadGA4();
+    }
+  </script>
+  <!-- End TT24 GA4 -->
 
   <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://tt24.ee/" />
@@ -538,7 +555,7 @@
       document.getElementById('tt24-consent-accept').addEventListener('click', function() {
         localStorage.setItem('tt24_cookie_consent', 'accepted');
         banner.style.display = 'none';
-        if (typeof tt24LoadGTM === 'function') tt24LoadGTM();
+        if (typeof tt24LoadGTM === 'function') tt24LoadGTM(); if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
       });
       document.getElementById('tt24-consent-decline').addEventListener('click', function() {
         localStorage.setItem('tt24_cookie_consent', 'declined');

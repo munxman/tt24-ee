@@ -22,6 +22,23 @@
   }
   </script>
   <!-- End Google Tag Manager -->
+<!-- TT24 GA4 (G-5NW9JSMQVE) — consent-gated -->
+  <script>
+    function tt24LoadGA4() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('config', 'G-5NW9JSMQVE');
+    }
+    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
+      tt24LoadGA4();
+    }
+  </script>
+  <!-- End TT24 GA4 -->
 
   <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://tt24.ee/avatud-uks.html" />
@@ -532,7 +549,10 @@
       <p>Jäta lihtsalt oma kontaktandmed – võtame sinuga ühendust sobival ajal.</p>
       
       <div class="avatud-uks-contact-form">
-        <form id="konsultatsiooniForm" action="#" method="POST">
+        <form id="konsultatsiooniForm" action="https://formsubmit.co/info@tt24.ee" method="POST">
+          <input type="hidden" name="_subject" value="TT24 — Tasuta konsultatsiooni broneering (avatud uks)">
+          <input type="hidden" name="_next" value="https://tt24.ee/avatud-uks.html?sent=1">
+          <input type="hidden" name="_captcha" value="false">
           <div class="avatud-uks-form-group">
             <label for="nimi">Nimi *</label>
             <input type="text" id="nimi" name="nimi" required placeholder="Sinu nimi">
