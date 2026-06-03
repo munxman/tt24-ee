@@ -99,7 +99,7 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Ülemiste ärikeskus",
+        "streetAddress": "Ülemiste Tervisemaja 2",
         "addressLocality": "Tallinn",
         "addressCountry": "EE"
       }
@@ -141,12 +141,12 @@
     "description": "Tasuta töötervishoiu abivahendid ja konsultatsioonid Eesti ettevõtetele. Arstijuhtival Valvekliinik Ülemistes.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Ülemiste ärikeskus",
+      "streetAddress": "Ülemiste Tervisemaja 2",
       "addressLocality": "Tallinn",
       "postalCode": "10616",
       "addressCountry": "EE"
     },
-    "telephone": "+372 5299939",
+    "telephone": "+372 5 911 0909",
     "email": "info@tt24.ee",
     "url": "https://tt24.ee/",
     "parentOrganization": {
@@ -209,7 +209,7 @@
 
   <style>
     .avatud-uks-hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
       color: white;
       padding: 80px 20px;
       text-align: center;
@@ -295,7 +295,7 @@
       flex-shrink: 0;
       width: 48px;
       height: 48px;
-      background: #667eea;
+      background: #0EA5E9;
       color: white;
       border-radius: 50%;
       display: flex;
@@ -374,7 +374,7 @@
     }
     
     .avatud-uks-submit-btn {
-      background: #667eea;
+      background: #0EA5E9;
       color: white;
       border: none;
       padding: 14px 32px;
@@ -454,7 +454,7 @@
             <a href="korduma.html">KKK</a>
             <a href="ajakava.html">Ajakava</a>
             <a href="dokumendid.html">Dokumendid</a>
-            <a href="avatud-uks.html" style="font-weight: 600; color: #667eea;">📞 Konsultatsioon</a>
+            <a href="avatud-uks.html" style="font-weight: 600; color: #0EA5E9;">📞 Konsultatsioon</a>
           </div>
         </div>
         <a href="pakkumine.html" class="btn btn--primary">Päring</a>
@@ -528,7 +528,7 @@
       <div class="avatud-uks-benefit-item">
         <div class="avatud-uks-benefit-icon">💬</div>
         <div class="avatud-uks-benefit-text">
-          <h3>Aus vastus, kas Élan / Valvekliinik Sind aitaks</h3>
+          <h3>Aus vastus, kas Valvekliinik Sind aitaks</h3>
           <p>Kui jah — räägime, mida ja kuidas. Kui ei — soovitame, kelle poole pöörduda. Eesmärk on Sinu ettevõtte vastavus, mitte meie leping.</p>
         </div>
       </div>
@@ -619,21 +619,21 @@
           form.style.display = 'none';
           var card = document.querySelector('.avatud-uks-contact-content');
           if (card) {
-            card.innerHTML = '<h2>Aitäh — päring saadetud.</h2><p style="margin-top:12px;">Võtame Sinuga ühendust 1 tööpäeva jooksul, kasutades antud telefoninumbrit või emaili.</p><p style="margin-top:18px;font-size:14px;color:#475569;">Kui sul on vahepeal kiire küsimus, helista: <a href="tel:+3725299939" style="color:#0EA5E9;">+372 52 99939</a>.</p>';
+            card.innerHTML = '<div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.08);"><h2 style="color:#0F172A;">Aitäh — päring saadetud.</h2><p style="margin-top:12px;color:#334155;">Võtame Sinuga ühendust 1 tööpäeva jooksul, kasutades antud telefoninumbrit või emaili.</p><p style="margin-top:18px;font-size:14px;color:#475569;">Kui Sul on vahepeal kiire küsimus, helista Valvekliinikusse: <a href="tel:+37259110909" style="color:#0284C7;font-weight:600;text-decoration:underline;">+372 5 911 0909</a>.</p></div>';
           }
           if (window.dataLayer) {
             window.dataLayer.push({ event: 'lead_form_success', form_type: 'consultation_request', source_page: window.location.pathname, value: 0, currency: 'EUR' });
           }
         } else {
           status.style.color = '#B91C1C';
-          status.textContent = 'Saatmine ebaõnnestus. Palun proovi uuesti või helista +372 52 99939.';
+          status.textContent = 'Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.';
           btn.disabled = false;
           btn.textContent = 'Saada päring';
         }
       })
       .catch(function(err) {
         status.style.color = '#B91C1C';
-        status.textContent = 'Võrgu viga. Palun proovi uuesti või helista +372 52 99939.';
+        status.textContent = 'Võrgu viga. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.';
         btn.disabled = false;
         btn.textContent = 'Saada päring';
       });
@@ -647,18 +647,18 @@
     <div class="avatud-uks-trust-grid">
       <div class="avatud-uks-trust-item">
         <div class="avatud-uks-trust-icon">🩺</div>
-        <div class="avatud-uks-trust-title">Arstijuhtiv kliinik</div>
-        <div class="avatud-uks-trust-text">TT24 on Valvekliiniku projekt – meil on aastatepikkune kogemus töötervishoiu valdkonnas.</div>
+        <div class="avatud-uks-trust-title">Arstide juhitud kliinik</div>
+        <div class="avatud-uks-trust-text">Konsultatsioone annavad Valvekliiniku arstid ja töötervishoiu spetsialistid, kellel on aastatepikkune praktiline kogemus.</div>
       </div>
       <div class="avatud-uks-trust-item">
         <div class="avatud-uks-trust-icon">🏢</div>
-        <div class="avatud-uks-trust-title">Ülemiste asukoht</div>
-        <div class="avatud-uks-trust-text">Kontor asub Ülemiste ärikeskuses Tallinnas – mugav kohtumispaik ka füüsilisteks konsultatsioonideks.</div>
+        <div class="avatud-uks-trust-title">Ülemiste Tervisemaja</div>
+        <div class="avatud-uks-trust-text">Asume Ülemiste Tervisemaja 2 aadressil Tallinnas — mugav kohtumispaik ka füüsilisteks konsultatsioonideks.</div>
       </div>
       <div class="avatud-uks-trust-item">
         <div class="avatud-uks-trust-icon">🎓</div>
-        <div class="avatud-uks-trust-title">Spetsialistid</div>
-        <div class="avatud-uks-trust-text">Konsultatsioone annavad kogenud töötervishoiu spetsialistid ja arstid.</div>
+        <div class="avatud-uks-trust-title">Praktilised teadmised</div>
+        <div class="avatud-uks-trust-text">Anname konkreetseid vastuseid Sinu olukorra kohta — viidetega TTOS paragrahvidele ja Tööinspektsiooni praktikale.</div>
       </div>
     </div>
   </section>
