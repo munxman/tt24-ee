@@ -600,6 +600,70 @@
       color: rgba(255,255,255,0.6);
       margin-top: var(--space-4);
     }
+
+    /* ─── Email gate (soft-gate: alongside quote CTA, not blocking) ─ */
+    .tt24-calc-gate {
+      background: #F8FAFC;
+      border: 1.5px dashed #94A3B8;
+      border-radius: 12px;
+      padding: 20px 18px;
+      margin-top: var(--space-5);
+    }
+    .tt24-calc-gate h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      color: #0F172A;
+      font-weight: 600;
+    }
+    .tt24-calc-gate p {
+      margin: 0 0 12px;
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+    .tt24-calc-gate-form {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tt24-calc-gate-form input[type="email"] {
+      flex: 1 1 180px;
+      padding: 10px 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .tt24-calc-gate-form input[type="email"]:focus {
+      outline: 2px solid var(--color-primary, #0EA5E9);
+      outline-offset: 1px;
+      border-color: var(--color-primary, #0EA5E9);
+    }
+    .tt24-calc-gate-form button {
+      background: #0F172A;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+    .tt24-calc-gate-form button:hover:not(:disabled) { background: #1E293B; }
+    .tt24-calc-gate-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .tt24-calc-gate-privacy {
+      font-size: 11px !important;
+      color: #64748B !important;
+      margin: 8px 0 0 !important;
+      line-height: 1.4;
+    }
+    .tt24-calc-gate-success { display: none; padding: 4px 0; }
+    .tt24-calc-gate-success p { margin: 0; color: #15803D; font-weight: 500; font-size: 0.9rem; }
+    .tt24-calc-gate.is-unlocked { background: #F0FDF4; border-color: #16A34A; border-style: solid; }
+    .tt24-calc-gate.is-unlocked .tt24-calc-gate-form-wrap { display: none; }
+    .tt24-calc-gate.is-unlocked .tt24-calc-gate-success { display: block; }
   </style>
 </head>
 <body>
@@ -827,6 +891,22 @@
               Küsin pakkumist →
             </a>
             <p class="text-sm text-muted text-center" style="margin-top: var(--space-2);">Vastame 24 tunni jooksul<br>Ei kohusta millekski</p>
+
+            <!-- Soft email gate: alongside main CTA, captures lower-intent users -->
+            <div class="tt24-calc-gate" id="calcGate">
+              <div class="tt24-calc-gate-form-wrap">
+                <h4>📩 Või saada detailne arvutus oma e-postile</h4>
+                <p>Saame Teile personaalse PDF-i koos sektoripõhise riskianalüüsi ja kontrollnimekirjaga.</p>
+                <form class="tt24-calc-gate-form" id="calcGateForm" onsubmit="return tt24SubmitCalcGate(event)">
+                  <input type="email" name="email" required placeholder="teie@email.ee" autocomplete="email" aria-label="E-posti aadress">
+                  <button type="submit">Saada</button>
+                </form>
+                <p class="tt24-calc-gate-privacy">Andmeid kasutame ainult Teile arvutuse edastamiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html" style="color:#64748B;text-decoration:underline">Privaatsuspoliitika</a></p>
+              </div>
+              <div class="tt24-calc-gate-success">
+                <p>✓ Aitäh! Saadame detailse arvutuse Teie e-postile lähitundidel.</p>
+              </div>
+            </div>
 
           </div><!-- /result card -->
 
@@ -1311,10 +1391,121 @@ function recalculate() {
 var empSelect = document.getElementById('empNumber');
 empSelect.addEventListener('change', function () {
   recalculate();
+  tt24FireCalcStart();
+});
+
+// ─── Conversion instrumentation ──────────────────────────
+var tt24CalcStartFired = false;
+function tt24FireCalcStart() {
+  if (tt24CalcStartFired) return;
+  tt24CalcStartFired = true;
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'calculator_started',
+      source_page: window.location.pathname
+    });
+  }
+}
+
+// Fire calculator_started on first sector pill click or minor change too
+document.querySelectorAll('.sector-pill, input[name="sector"], input[name="minors"]').forEach(function (el) {
+  el.addEventListener('change', tt24FireCalcStart);
+  el.addEventListener('click', tt24FireCalcStart);
 });
 
 // ─── Initial render ──────────────────────────────────────
 recalculate();
+
+// Fire calculator_result_shown after initial render
+if (window.dataLayer) {
+  window.dataLayer.push({
+    event: 'calculator_result_shown',
+    source_page: window.location.pathname
+  });
+}
+
+// ─── Calculator gate submit ──────────────────────────────
+function tt24CurrentCalcState() {
+  var empCount = parseInt(document.getElementById('empNumber').value, 10) || 1;
+  var sectorRadio = document.querySelector('input[name="sector"]:checked');
+  var sectorKey = sectorRadio ? sectorRadio.value : 'kontor';
+  var sectorLabel = (SECTOR_DATA[sectorKey] || SECTOR_DATA['muu']).label;
+  var minorsRadio = document.querySelector('input[name="minors"]:checked');
+  var hasMinors = minorsRadio ? (minorsRadio.value === 'yes') : false;
+  var monthly = (document.getElementById('metricMonthly').textContent || '').trim();
+  var annual  = (document.getElementById('metricAnnual').textContent || '').trim();
+  var freq    = (document.getElementById('metricFreq').textContent || '').trim();
+  return {
+    empCount: empCount,
+    sectorKey: sectorKey,
+    sectorLabel: sectorLabel,
+    hasMinors: hasMinors,
+    monthly: monthly,
+    annual: annual,
+    freq: freq
+  };
+}
+
+function tt24SubmitCalcGate(e) {
+  e.preventDefault();
+  var form = e.target;
+  var emailInput = form.querySelector('input[name="email"]');
+  var email = (emailInput.value || '').trim();
+  var btn = form.querySelector('button[type="submit"]');
+  if (!email) return false;
+
+  var s = tt24CurrentCalcState();
+
+  btn.disabled = true;
+  btn.textContent = 'Saadan...';
+
+  var fd = new FormData();
+  fd.append('email', email);
+  fd.append('emp_count', String(s.empCount));
+  fd.append('sector', s.sectorLabel + ' (' + s.sectorKey + ')');
+  fd.append('has_minors', s.hasMinors ? 'jah' : 'ei');
+  fd.append('monthly_cost', s.monthly);
+  fd.append('annual_cost', s.annual);
+  fd.append('check_frequency', s.freq);
+  fd.append('source', 'kalkulaator-gate');
+  fd.append('_subject', 'TT24 kalkulaator: ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
+  fd.append('_captcha', 'false');
+
+  fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+    method: 'POST',
+    body: fd,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (d) {
+    if (d && (d.success === 'true' || d.success === true)) {
+      var gate = document.getElementById('calcGate');
+      if (gate) gate.classList.add('is-unlocked');
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'calculator_email_capture',
+          emp_count: s.empCount,
+          sector: s.sectorKey,
+          annual_cost: s.annual,
+          source_page: window.location.pathname,
+          value: 0,
+          currency: 'EUR'
+        });
+      }
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Saada';
+      alert('Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
+    }
+  })
+  .catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Saada';
+    alert('Võrgu viga. Palun proovi uuesti.');
+  });
+
+  return false;
+}
 </script>
 
 <script>

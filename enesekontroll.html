@@ -737,6 +737,77 @@
       .result-score-banner, .result-cats-card, .result-recs-card { box-shadow: none; }
       body { background: #fff; }
     }
+
+    /* ─── Email gate ──────────────────────────────────── */
+    .quiz-result-section.tt24-locked .result-cats-card,
+    .quiz-result-section.tt24-locked .result-recs-card,
+    .quiz-result-section.tt24-locked .result-share-card,
+    .quiz-result-section.tt24-locked .quiz-cta-banner {
+      display: none !important;
+    }
+    .tt24-gate-card {
+      background: #fff;
+      border: 2px solid var(--color-primary, #0EA5E9);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin: 24px 0;
+      box-shadow: 0 4px 12px rgba(14,165,233,0.12);
+    }
+    .tt24-gate-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #0F172A;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+    .tt24-gate-card p {
+      color: #475569;
+      margin: 8px 0 16px;
+      line-height: 1.55;
+    }
+    .tt24-gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tt24-gate-form input[type="email"] {
+      padding: 14px 16px;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .tt24-gate-form input[type="email"]:focus {
+      outline: 2px solid var(--color-primary, #0EA5E9);
+      outline-offset: 1px;
+      border-color: var(--color-primary, #0EA5E9);
+    }
+    .tt24-gate-form button {
+      background: var(--color-primary, #0EA5E9);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .tt24-gate-form button:hover:not(:disabled) { background: #0284C7; }
+    .tt24-gate-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .tt24-gate-privacy {
+      font-size: 13px !important;
+      color: #64748B !important;
+      margin: 4px 0 0 !important;
+    }
+    .tt24-gate-success { display: none; }
+    .tt24-gate-card.is-unlocked .tt24-gate-form-wrap { display: none; }
+    .tt24-gate-card.is-unlocked .tt24-gate-success { display: block; }
+    .tt24-gate-card.is-unlocked {
+      border-color: #16A34A;
+      background: #F0FDF4;
+    }
   </style>
 </head>
 <body>
@@ -1082,6 +1153,23 @@
 
           <!-- PQL Alert (low score) -->
           <div id="pqlAlert"></div>
+
+          <!-- Email gate — unlocks detailed result, category overview, recommendations, share -->
+          <div class="tt24-gate-card is-locked" id="quizGateCard">
+            <div class="tt24-gate-form-wrap">
+              <h3>📩 Saa täielik tulemus oma e-postile</h3>
+              <p>Detailne raport sisaldab: kategooriate ülevaade, prioriteetsed soovitused, konkreetne tegevuskava ja sektoripõhised riskid Teie ettevõttele.</p>
+              <form class="tt24-gate-form" id="quizGateForm" onsubmit="return tt24SubmitQuizGate(event)">
+                <input type="email" name="email" required placeholder="teie@email.ee" autocomplete="email" aria-label="E-posti aadress">
+                <button type="submit">Saa täielik raport →</button>
+                <p class="tt24-gate-privacy">Andmeid kasutame ainult Teile raporti edastamiseks ja vajadusel ühenduse võtmiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html" style="color:#475569;text-decoration:underline">Privaatsuspoliitika</a></p>
+              </form>
+            </div>
+            <div class="tt24-gate-success">
+              <h3>✓ Aitäh, raport edastatud</h3>
+              <p>Saadame täieliku raporti Teie e-postile lähitundidel. Vahepeal vaadake oma tulemus allpool.</p>
+            </div>
+          </div>
 
           <!-- Category overview -->
           <div class="result-cats-card">
@@ -1568,6 +1656,20 @@ function showResult() {
   document.getElementById('companyInputWrap').style.display = 'none';
   var resultEl = document.getElementById('quizResult');
   resultEl.classList.add('visible');
+
+  // Apply email gate: hide detailed sections until email captured
+  resultEl.classList.add('tt24-locked');
+
+  // Fire GA4 conversion event: quiz completed (top of funnel)
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'quiz_completed',
+      quiz_score: score,
+      quiz_level: level,
+      source_page: window.location.pathname
+    });
+  }
+
   resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   for (var i = 1; i <= 10; i++) {
@@ -1595,7 +1697,18 @@ function restartQuiz() {
   });
 
   document.querySelector('[data-q="1"]').classList.add('active');
-  document.getElementById('quizResult').classList.remove('visible');
+  var resultEl = document.getElementById('quizResult');
+  resultEl.classList.remove('visible');
+  resultEl.classList.remove('tt24-locked');
+  var gate = document.getElementById('quizGateCard');
+  if (gate) {
+    gate.classList.remove('is-unlocked');
+    gate.classList.add('is-locked');
+    var emailInput = gate.querySelector('input[name="email"]');
+    if (emailInput) emailInput.value = '';
+    var btn = gate.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = false; btn.textContent = 'Saa täielik raport →'; }
+  }
   document.getElementById('companyInputWrap').style.display = '';
   updateProgress(1);
   initDots();
@@ -1788,6 +1901,77 @@ function flashCopied() {
     btn.classList.remove('copied');
     txt.textContent = 'Kopeeri link';
   }, 2500);
+}
+
+// ─── RESULT GATE: email capture before detailed result reveal ─
+function tt24SubmitQuizGate(e) {
+  e.preventDefault();
+  var form = e.target;
+  var emailInput = form.querySelector('input[name="email"]');
+  var email = (emailInput.value || '').trim();
+  var btn = form.querySelector('button[type="submit"]');
+  var company = (document.getElementById('companyName') ? document.getElementById('companyName').value : '').trim();
+  var score = finalScore;
+  var level = finalLevel;
+
+  if (!email) return false;
+
+  btn.disabled = true;
+  btn.textContent = 'Saadan...';
+
+  var fd = new FormData();
+  fd.append('email', email);
+  fd.append('company', company || '(ei märgitud)');
+  fd.append('quiz_score', score + '/10');
+  fd.append('quiz_level', level);
+  fd.append('source', 'enesekontroll-gate');
+  fd.append('_subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
+  fd.append('_captcha', 'false');
+
+  fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+    method: 'POST',
+    body: fd,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (d) {
+    if (d && (d.success === 'true' || d.success === true)) {
+      var gate = document.getElementById('quizGateCard');
+      if (gate) {
+        gate.classList.remove('is-locked');
+        gate.classList.add('is-unlocked');
+      }
+      var resultEl = document.getElementById('quizResult');
+      if (resultEl) resultEl.classList.remove('tt24-locked');
+
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'quiz_email_capture',
+          quiz_score: score,
+          quiz_level: level,
+          source_page: window.location.pathname,
+          value: 0,
+          currency: 'EUR'
+        });
+      }
+
+      setTimeout(function () {
+        var catsCard = document.querySelector('.result-cats-card');
+        if (catsCard) catsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 250);
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Saa täielik raport →';
+      alert('Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
+    }
+  })
+  .catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Saa täielik raport →';
+    alert('Võrgu viga. Palun proovi uuesti.');
+  });
+
+  return false;
 }
 
 // ─── EMAIL GATE MODAL LOGIC ──────────────────────────────
