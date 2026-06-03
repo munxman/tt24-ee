@@ -453,6 +453,31 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+/* Article-body button text colour overrides.
+   .article-body a { color: var(--color-primary) } wins by specificity over .btn-primary,
+   which made the white button text invisible against the same-blue background.
+   These higher-specificity rules restore the correct button text colours inside articles. */
+.article-body a.btn,
+.article-body a.btn:hover {
+  text-decoration: none;
+}
+.article-body a.btn-primary,
+.article-body a.btn-primary:hover {
+  color: #ffffff;
+}
+.article-body a.btn-secondary {
+  color: var(--color-primary);
+}
+.article-body a.btn-secondary:hover {
+  color: var(--color-primary-dark);
+}
+.article-body a.btn-outline {
+  color: var(--color-primary);
+}
+.article-body a.btn-ghost {
+  color: var(--color-text-muted);
+}
+
 /* Secondary */
 .btn-secondary {
   background-color: transparent;
