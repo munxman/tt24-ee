@@ -169,6 +169,25 @@
       }
     }
   </style>
+
+  <!-- TT24 GA4 (G-5NW9JSMQVE), consent-gated -->
+  <script>
+    function tt24LoadGA4() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('config', 'G-5NW9JSMQVE');
+    }
+    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
+      tt24LoadGA4();
+    }
+  </script>
+  <!-- End TT24 GA4 -->
+
 </head>
 <body>
 
