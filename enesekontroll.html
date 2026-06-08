@@ -1938,6 +1938,7 @@ function tt24SubmitQuizGate(e) {
   fd.append('quiz_level', level);
   fd.append('recommendations', failedRecommendations);
   fd.append('message', recommendationEmail);
+  fd.append('autoresponse', recommendationEmail);
   fd.append('source', 'enesekontroll-gate');
   fd.append('subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
   function unlockGateAndRecord(outcomeLabel) {
@@ -2033,6 +2034,7 @@ function tt24SubmitQuizGate(e) {
         risk_level: riskLevel,
         recommendations: failedRecommendations,
         message: recommendationEmail,
+        autoresponse: recommendationEmail,
         subject: 'Uus eneseanalüüs TT24 portaalist'
       })
     }).catch(function () { /* silent fail - don't block PDF */ });
