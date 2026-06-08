@@ -675,9 +675,9 @@
     var originalBtnText = btn ? btn.textContent : '';
     if (btn) { btn.disabled = true; btn.textContent = 'Saadan...'; }
 
-    fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: new FormData(form),
+      body: (function() { var d = new FormData(form); d.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497'); return d; })(),
       headers: { 'Accept': 'application/json' }
     })
     .then(function(r){ return r.json(); })

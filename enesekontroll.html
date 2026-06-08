@@ -1905,14 +1905,13 @@ function tt24SubmitQuizGate(e) {
   btn.textContent = 'Saadan...';
 
   var fd = new FormData();
+  fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
   fd.append('email', email);
   fd.append('company', company || '(ei märgitud)');
   fd.append('quiz_score', score + '/10');
   fd.append('quiz_level', level);
   fd.append('source', 'enesekontroll-gate');
-  fd.append('_subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
-  fd.append('_captcha', 'false');
-
+  fd.append('subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
   function unlockGateAndRecord(outcomeLabel) {
     var gate = document.getElementById('quizGateCard');
     if (gate) {
@@ -1955,7 +1954,7 @@ function tt24SubmitQuizGate(e) {
     } catch (storageErr) { /* ignore */ }
   }
 
-  fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     body: fd,
     headers: { 'Accept': 'application/json' }
@@ -1989,15 +1988,15 @@ function tt24SubmitQuizGate(e) {
 
   function submitLead(emailValue) {
     var riskLevel = finalLevel || 'unknown';
-    fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
+        access_key: 'eff4879e-ddfb-4d95-b5c8-422f94ea5497',
         email: emailValue,
         score: finalScore,
         risk_level: riskLevel,
-        _subject: 'Uus eneseanalüüs TT24 portaalist',
-        _captcha: false
+        subject: 'Uus eneseanalüüs TT24 portaalist'
       })
     }).catch(function () { /* silent fail - don't block PDF */ });
   }

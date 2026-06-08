@@ -1445,6 +1445,7 @@ function tt24SubmitCalcGate(e) {
   btn.textContent = 'Saadan...';
 
   var fd = new FormData();
+  fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
   fd.append('email', email);
   fd.append('emp_count', String(s.empCount));
   fd.append('sector', s.sectorLabel + ' (' + s.sectorKey + ')');
@@ -1453,9 +1454,7 @@ function tt24SubmitCalcGate(e) {
   fd.append('annual_cost', s.annual);
   fd.append('check_frequency', s.freq);
   fd.append('source', 'kalkulaator-gate');
-  fd.append('_subject', 'TT24 kalkulaator: ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
-  fd.append('_captcha', 'false');
-
+  fd.append('subject', 'TT24 kalkulaator: ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
   function unlockCalcGate(outcomeLabel) {
     var gate = document.getElementById('calcGate');
     if (gate) gate.classList.add('is-unlocked');
@@ -1490,7 +1489,7 @@ function tt24SubmitCalcGate(e) {
     } catch (storageErr) { /* ignore */ }
   }
 
-  fetch('https://formsubmit.co/ajax/info@tt24.ee', {
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     body: fd,
     headers: { 'Accept': 'application/json' }
