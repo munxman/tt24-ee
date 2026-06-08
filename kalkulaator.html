@@ -1456,37 +1456,54 @@ function tt24SubmitCalcGate(e) {
   fd.append('_subject', 'TT24 kalkulaator: ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
   fd.append('_captcha', 'false');
 
+  function unlockCalcGate(outcomeLabel) {
+    var gate = document.getElementById('calcGate');
+    if (gate) gate.classList.add('is-unlocked');
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'calculator_email_capture',
+        emp_count: s.empCount,
+        sector: s.sectorKey,
+        annual_cost: s.annual,
+        outcome: outcomeLabel || 'ok',
+        source_page: window.location.pathname,
+        value: 0,
+        currency: 'EUR'
+      });
+    }
+  }
+
+  function persistFailedCalcLead(reason) {
+    try {
+      var failed = JSON.parse(localStorage.getItem('tt24_failed_leads') || '[]');
+      failed.push({
+        ts: new Date().toISOString(),
+        source: 'kalkulaator-gate',
+        email: email,
+        emp_count: s.empCount,
+        sector: s.sectorKey,
+        annual_cost: s.annual,
+        reason: reason
+      });
+      if (failed.length > 20) failed = failed.slice(-20);
+      localStorage.setItem('tt24_failed_leads', JSON.stringify(failed));
+    } catch (storageErr) { /* ignore */ }
+  }
+
   fetch('https://formsubmit.co/ajax/info@tt24.ee', {
     method: 'POST',
     body: fd,
     headers: { 'Accept': 'application/json' }
   })
-  .then(function (r) { return r.json(); })
-  .then(function (d) {
-    if (d && (d.success === 'true' || d.success === true)) {
-      var gate = document.getElementById('calcGate');
-      if (gate) gate.classList.add('is-unlocked');
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'calculator_email_capture',
-          emp_count: s.empCount,
-          sector: s.sectorKey,
-          annual_cost: s.annual,
-          source_page: window.location.pathname,
-          value: 0,
-          currency: 'EUR'
-        });
-      }
-    } else {
-      btn.disabled = false;
-      btn.textContent = 'Saada';
-      alert('Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
-    }
+  .then(function (r) {
+    var isOk = r.ok && r.status >= 200 && r.status < 300;
+    if (!isOk) persistFailedCalcLead('http_' + r.status);
+    unlockCalcGate(isOk ? 'ok' : 'http_' + r.status);
   })
-  .catch(function () {
-    btn.disabled = false;
-    btn.textContent = 'Saada';
-    alert('Võrgu viga. Palun proovi uuesti.');
+  .catch(function (err) {
+    if (typeof console !== 'undefined' && console.error) console.error('calc gate fetch failed:', err);
+    persistFailedCalcLead('network_error');
+    unlockCalcGate('network_error');
   });
 
   return false;

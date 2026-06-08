@@ -1913,47 +1913,65 @@ function tt24SubmitQuizGate(e) {
   fd.append('_subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
   fd.append('_captcha', 'false');
 
+  function unlockGateAndRecord(outcomeLabel) {
+    var gate = document.getElementById('quizGateCard');
+    if (gate) {
+      gate.classList.remove('is-locked');
+      gate.classList.add('is-unlocked');
+    }
+    var resultEl = document.getElementById('quizResult');
+    if (resultEl) resultEl.classList.remove('tt24-locked');
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'quiz_email_capture',
+        quiz_score: score,
+        quiz_level: level,
+        outcome: outcomeLabel || 'ok',
+        source_page: window.location.pathname,
+        value: 0,
+        currency: 'EUR'
+      });
+    }
+    setTimeout(function () {
+      var catsCard = document.querySelector('.result-cats-card');
+      if (catsCard) catsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 250);
+  }
+
+  function persistFailedLead(reason) {
+    try {
+      var failed = JSON.parse(localStorage.getItem('tt24_failed_leads') || '[]');
+      failed.push({
+        ts: new Date().toISOString(),
+        source: 'enesekontroll-gate',
+        email: email,
+        company: company,
+        quiz_score: score + '/10',
+        quiz_level: level,
+        reason: reason
+      });
+      if (failed.length > 20) failed = failed.slice(-20);
+      localStorage.setItem('tt24_failed_leads', JSON.stringify(failed));
+    } catch (storageErr) { /* ignore */ }
+  }
+
   fetch('https://formsubmit.co/ajax/info@tt24.ee', {
     method: 'POST',
     body: fd,
     headers: { 'Accept': 'application/json' }
   })
-  .then(function (r) { return r.json(); })
-  .then(function (d) {
-    if (d && (d.success === 'true' || d.success === true)) {
-      var gate = document.getElementById('quizGateCard');
-      if (gate) {
-        gate.classList.remove('is-locked');
-        gate.classList.add('is-unlocked');
-      }
-      var resultEl = document.getElementById('quizResult');
-      if (resultEl) resultEl.classList.remove('tt24-locked');
-
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'quiz_email_capture',
-          quiz_score: score,
-          quiz_level: level,
-          source_page: window.location.pathname,
-          value: 0,
-          currency: 'EUR'
-        });
-      }
-
-      setTimeout(function () {
-        var catsCard = document.querySelector('.result-cats-card');
-        if (catsCard) catsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 250);
-    } else {
-      btn.disabled = false;
-      btn.textContent = 'Saa täielik raport →';
-      alert('Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
-    }
+  .then(function (r) {
+    // Treat any 2xx HTTP status as success regardless of body shape.
+    // formsubmit.co sometimes returns non-JSON (CAPTCHA page, activation, empty body)
+    // which would throw on r.json() and punish the user for a delivered submission.
+    var isOk = r.ok && r.status >= 200 && r.status < 300;
+    if (!isOk) persistFailedLead('http_' + r.status);
+    unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
   })
-  .catch(function () {
-    btn.disabled = false;
-    btn.textContent = 'Saa täielik raport →';
-    alert('Võrgu viga. Palun proovi uuesti.');
+  .catch(function (err) {
+    if (typeof console !== 'undefined' && console.error) console.error('quiz gate fetch failed:', err);
+    persistFailedLead('network_error');
+    unlockGateAndRecord('network_error');
   });
 
   return false;
