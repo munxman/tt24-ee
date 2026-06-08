@@ -1663,6 +1663,27 @@ function showResult() {
   }
 }
 
+function tt24GetFailedRecommendations() {
+  return questions.filter(function (q) { return answers[q.id] === false; }).sort(function (a, b) {
+    var o = { red: 0, yellow: 1, green: 2 };
+    return o[a.failSeverity] - o[b.failSeverity];
+  });
+}
+
+function tt24BuildRecommendationEmail(company, score, level) {
+  var failed = tt24GetFailedRecommendations();
+  var comp = company || 'Teie ettevõte';
+  var header = comp + ' töötervishoiu enesekontrolli tulemus: ' + score + '/10 (' + level + ').';
+
+  if (failed.length === 0) {
+    return header + '\n\nKõik 10 punkti on täidetud. Soovitame dokumentatsiooni regulaarselt üle vaadata ja tervisekontrollid õigeaegselt korraldada.\n\nTT24: https://tt24.ee';
+  }
+
+  return header + '\n\nPeamised soovitused puuduste kõrvaldamiseks:\n\n' + failed.map(function (q, idx) {
+    return (idx + 1) + '. ' + q.text + '\n' + q.failMsg + (q.resource ? '\nLisainfo: https://tt24.ee/' + q.resource : '');
+  }).join('\n\n') + '\n\nSee ei ole ametlik audit, vaid enesekontrolli kokkuvõte. TT24: https://tt24.ee';
+}
+
 // ─── RESTART ─────────────────────────────────────────────
 function restartQuiz() {
   answers = {};
@@ -1904,12 +1925,19 @@ function tt24SubmitQuizGate(e) {
   btn.disabled = true;
   btn.textContent = 'Saadan...';
 
+  var recommendationEmail = tt24BuildRecommendationEmail(company, score, level);
+  var failedRecommendations = tt24GetFailedRecommendations().map(function (q, idx) {
+    return (idx + 1) + '. ' + q.text + ': ' + q.failMsg;
+  }).join('\n\n') || 'Puudusi ei tuvastatud.';
+
   var fd = new FormData();
   fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
   fd.append('email', email);
   fd.append('company', company || '(ei märgitud)');
   fd.append('quiz_score', score + '/10');
   fd.append('quiz_level', level);
+  fd.append('recommendations', failedRecommendations);
+  fd.append('message', recommendationEmail);
   fd.append('source', 'enesekontroll-gate');
   fd.append('subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
   function unlockGateAndRecord(outcomeLabel) {
@@ -1961,8 +1989,8 @@ function tt24SubmitQuizGate(e) {
   })
   .then(function (r) {
     // Treat any 2xx HTTP status as success regardless of body shape.
-    // formsubmit.co sometimes returns non-JSON (CAPTCHA page, activation, empty body)
-    // which would throw on r.json() and punish the user for a delivered submission.
+    // The form endpoint can return different JSON shapes; do not punish the user
+    // for a delivered submission if parsing/shape assumptions change.
     var isOk = r.ok && r.status >= 200 && r.status < 300;
     if (!isOk) persistFailedLead('http_' + r.status);
     unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
@@ -1988,14 +2016,23 @@ function tt24SubmitQuizGate(e) {
 
   function submitLead(emailValue) {
     var riskLevel = finalLevel || 'unknown';
+    var company = (document.getElementById('companyName') ? document.getElementById('companyName').value : '').trim();
+    var recommendationEmail = tt24BuildRecommendationEmail(company, finalScore, riskLevel);
+    var failedRecommendations = tt24GetFailedRecommendations().map(function (q, idx) {
+      return (idx + 1) + '. ' + q.text + ': ' + q.failMsg;
+    }).join('\n\n') || 'Puudusi ei tuvastatud.';
+
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         access_key: 'eff4879e-ddfb-4d95-b5c8-422f94ea5497',
         email: emailValue,
+        company: company || '(ei märgitud)',
         score: finalScore,
         risk_level: riskLevel,
+        recommendations: failedRecommendations,
+        message: recommendationEmail,
         subject: 'Uus eneseanalüüs TT24 portaalist'
       })
     }).catch(function () { /* silent fail - don't block PDF */ });
