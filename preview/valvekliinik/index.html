@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valvekliinik — Välismaalased Bundle | Language picker</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); min-height: 100vh; color: #0F172A; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+  .card { max-width: 560px; width: 100%; background: white; border-radius: 20px; padding: 40px 32px; box-shadow: 0 12px 48px rgba(2, 132, 199, 0.12); }
+  .draft { background: #FEF3C7; color: #92400E; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; text-align: center; margin-bottom: 24px; }
+  h1 { font-size: 26px; color: #0F172A; margin-bottom: 8px; font-weight: 800; }
+  .sub { font-size: 16px; color: #475569; margin-bottom: 28px; }
+  .picker { display: flex; flex-direction: column; gap: 14px; }
+  .picker a { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; background: #F8FAFC; border: 2px solid #E2E8F0; border-radius: 12px; text-decoration: none; color: #0F172A; transition: all 0.15s; }
+  .picker a:hover { border-color: #0EA5E9; background: white; transform: translateX(4px); }
+  .picker .lang { font-size: 18px; font-weight: 700; }
+  .picker .desc { font-size: 13px; color: #64748B; margin-top: 2px; display: block; }
+  .picker .arrow { color: #0EA5E9; font-size: 22px; font-weight: 700; }
+  .note { margin-top: 28px; padding: 16px; background: #F8FAFC; border-radius: 10px; font-size: 13px; color: #64748B; line-height: 1.55; }
+  .note strong { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="draft">⚠ DRAFT — proposal for review · ettepanek ülevaatuseks · пропозиція для перегляду</div>
+
+  <h1>Valvekliinik — välismaalased</h1>
+  <p class="sub">Foreign-worker bundle landing page. Three language versions for different audiences.</p>
+
+  <div class="picker">
+    <a href="et.html">
+      <div>
+        <div class="lang">🇪🇪 Eesti</div>
+        <span class="desc">HR / decision-maker — €99 bundle sales page</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="en.html">
+      <div>
+        <div class="lang">🇬🇧 English</div>
+        <span class="desc">Employee welcome — how to use your new family doctor</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="uk.html">
+      <div>
+        <div class="lang">🇺🇦 Українська</div>
+        <span class="desc">Працівник — як користуватися вашим новим сімейним лікарем</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="note">
+    <strong>Note for reviewers:</strong> the Estonian page is the sales / decision-maker page (€99 bundle for the employer to buy). The English and Ukrainian pages are employee onboarding — they explain to the foreign worker themselves how to use their new family doctor and what to expect from the occupational health check.
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT — Valvekliinik | Välismaalt palgatud töötajale perearst ja töötervishoid</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #0EA5E9;
+    --primary-dark: #0284C7;
+    --primary-darker: #075985;
+    --ink: #0F172A;
+    --slate: #475569;
+    --slate-light: #94A3B8;
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --success: #16A34A;
+    --warn-bg: #FEF9C3;
+    --warn-border: #FDE68A;
+    --warn-text: #854D0E;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  .draft-banner {
+    background: #FEF3C7;
+    color: #92400E;
+    border-bottom: 2px solid #FCD34D;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .draft-banner a { color: #92400E; text-decoration: underline; }
+
+  /* Header */
+  header.site {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header.site .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .logo { font-size: 22px; font-weight: 800; color: var(--primary-dark); text-decoration: none; }
+  .logo small { font-weight: 500; font-size: 13px; color: var(--slate); margin-left: 8px; }
+  .header-cta {
+    background: var(--primary);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .header-cta:hover { background: var(--primary-dark); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+    padding: 64px 20px 56px;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .hero .subhead {
+    font-size: 17px;
+    color: var(--slate);
+    margin-bottom: 28px;
+    line-height: 1.55;
+  }
+  .price-card {
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(2, 132, 199, 0.12);
+  }
+  .price-card .label {
+    font-size: 14px;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .price-card .amount {
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 4px;
+  }
+  .price-card .per {
+    font-size: 14px;
+    color: var(--slate);
+    margin-bottom: 24px;
+  }
+  .price-card .includes {
+    text-align: left;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-bottom: 24px;
+  }
+  .price-card .includes li {
+    list-style: none;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .price-card .includes li::before {
+    content: "✓ ";
+    color: var(--success);
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  .cta-primary {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background 0.15s;
+  }
+  .cta-primary:hover { background: var(--primary-dark); }
+  .cta-secondary {
+    display: inline-block;
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin-left: 16px;
+  }
+  .cta-secondary:hover { text-decoration: underline; }
+
+  .trust-strip {
+    max-width: 1100px;
+    margin: 32px auto 0;
+    padding: 0 20px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--slate);
+    font-size: 14px;
+  }
+  .trust-strip .item { display: flex; align-items: center; gap: 8px; }
+  .trust-strip .item::before { content: "✓"; color: var(--success); font-weight: 700; }
+
+  /* Section */
+  section.standard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 20px;
+  }
+  section.alt { background: white; }
+  section.standard h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    color: var(--ink);
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  section.standard p {
+    font-size: 17px;
+    color: var(--slate);
+    margin-bottom: 16px;
+    line-height: 1.65;
+  }
+  section.standard ul { padding-left: 24px; margin: 16px 0; }
+  section.standard ul li { margin-bottom: 8px; color: var(--ink); }
+
+  /* Comparison */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .compare-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    background: white;
+  }
+  .compare-card.middleman {
+    background: #FEF2F2;
+    border-color: #FECACA;
+  }
+  .compare-card.ours {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #F0F9FF 0%, white 100%);
+    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
+  }
+  .compare-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .compare-card .price { font-size: 32px; font-weight: 800; margin: 8px 0 14px; }
+  .compare-card.middleman .price { color: #B91C1C; }
+  .compare-card.ours .price { color: var(--primary-dark); }
+  .compare-card ul { padding: 0; list-style: none; }
+  .compare-card li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--slate);
+  }
+  .compare-card li::before { margin-right: 8px; }
+  .compare-card.middleman li::before { content: "✗"; color: #B91C1C; }
+  .compare-card.ours li::before { content: "✓"; color: var(--success); font-weight: 700; }
+  .compare-card .total {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* Doctor block */
+  .doctor-block {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: start;
+    padding: 32px;
+    background: linear-gradient(135deg, #F0F9FF 0%, white 100%);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+  .doctor-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--slate-light) 0%, var(--slate) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 16px;
+  }
+
+  /* Warning callout */
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-left: 4px solid #CA8A04;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .warn-box strong { color: var(--warn-text); }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  .faq-item h3 {
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .faq-item p {
+    color: var(--slate);
+    font-size: 16px;
+    margin: 0;
+  }
+
+  /* Contact form */
+  .form-section {
+    background: var(--ink);
+    color: white;
+    padding: 56px 20px;
+  }
+  .form-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .form-section h2 { color: white; margin-bottom: 8px; }
+  .form-section .lead {
+    color: var(--slate-light);
+    margin-bottom: 24px;
+  }
+  .form-section input,
+  .form-section textarea,
+  .form-section select {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 6px 0 14px;
+    border: 1px solid #334155;
+    background: #1E293B;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+  }
+  .form-section label {
+    display: block;
+    font-size: 14px;
+    margin-top: 12px;
+    color: var(--slate-light);
+  }
+  .form-section button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  .form-section .note {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--slate-light);
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    background: #0B1320;
+    color: var(--slate-light);
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  footer .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer .legal { color: #475569; font-size: 13px; margin-top: 12px; }
+
+  @media (max-width: 760px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .compare { grid-template-columns: 1fr; }
+    .doctor-block { grid-template-columns: 1fr; }
+    .doctor-photo { width: 100%; height: auto; aspect-ratio: 1; max-width: 280px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-banner">
+  ⚠ <strong>DRAFT — ettepanek</strong>: see leht ei ole veel avaldatud. Sisu kuulub Valvekliinikule. Tagasiside teretulnud.
+</div>
+
+<header class="site">
+  <div class="inner">
+    <a href="#" class="logo">Valvekliinik<small>Arstide juhitud kliinik Ülemistes</small></a>
+    <a href="#contact" class="header-cta">Küsi pakkumist</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Välismaalt palgatud töötajale perearst ja töötervishoid — üks lahendus</h1>
+      <p class="subhead">
+        Te ei pea maksma vahendajale €100 eest ainult perearsti registreerimise. Valvekliinik teeb seda sama hinnaga ja lisab kohe ka töötervishoiu kontrolli ning paberid — TTOS-i kohaselt nõutavad esimese 4 kuu jooksul.
+      </p>
+      <a href="#contact" class="cta-primary">Küsi pakkumist</a>
+      <a href="tel:+37259110909" class="cta-secondary">või helista +372 5 911 0909</a>
+    </div>
+    <div class="price-card">
+      <div class="label">Hind</div>
+      <div class="amount">€99</div>
+      <div class="per">töötaja kohta, üks tasu</div>
+      <ul class="includes">
+        <li>Perearsti registreerimine SL Tervisekeskuses</li>
+        <li>Töötervishoiu kontroll Valvekliinikus</li>
+        <li>TTOS-i nõuetekohased paberid</li>
+        <li>Üks leping, üks teenuseosutaja</li>
+      </ul>
+      <a href="#contact" class="cta-primary">Küsi pakkumist</a>
+    </div>
+  </div>
+  <div class="trust-strip">
+    <div class="item">Arstide juhitud kliinik</div>
+    <div class="item">Vabad kohad SL Tervisekeskuses</div>
+    <div class="item">Tööinspektsiooni nõuetele vastavad paberid</div>
+  </div>
+</section>
+
+<section class="standard">
+  <h2>Olukord, millega palju tööandjaid kohtub</h2>
+  <p>
+    Te võtate tööle välismaalt töötaja. Tema vajab perearsti — Eestis on perearstid enamasti täis ja uusi patsiente ei võta. Tegutsete läbi vahendaja, kes leiab perearsti €100 eest. Pärast seda peate veel eraldi korraldama töötervishoiu kontrolli, mis TTOS-i § 13 lg 1 kohaselt tuleb teha esimese 4 kuu jooksul. Teine teenuseosutaja, teine arve.
+  </p>
+  <p>
+    <strong>Kokku: kaks lepingut, kaks tasu, kaks ajakulu.</strong> Tüüpiline kogusumma €179 töötaja kohta.
+  </p>
+
+  <div class="compare">
+    <div class="compare-card middleman">
+      <h3>Vahendaja kaudu täna</h3>
+      <div class="price">€179</div>
+      <ul>
+        <li>€100 — perearsti vahendaja</li>
+        <li>€79 — TTH eraldi teenuseosutajalt</li>
+        <li>Kaks lepingut, kaks arvet</li>
+        <li>Risk: üks samm jääb õigeaegselt tegemata</li>
+      </ul>
+    </div>
+    <div class="compare-card ours">
+      <h3>Valvekliinik bundle</h3>
+      <div class="price">€99</div>
+      <ul>
+        <li>Perearsti registreerimine SL Tervisekeskuses</li>
+        <li>Töötervishoiu kontroll + paberid</li>
+        <li>Üks leping, üks arve</li>
+        <li>Sama vastutaja kogu protsessile</li>
+      </ul>
+      <div class="total">Sääst töötaja kohta: <strong>€80</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="standard alt">
+  <h2>Mis €99-s sisaldub ja mis mitte</h2>
+  <p><strong>Sees on (€99 kohta):</strong></p>
+  <ul>
+    <li>Perearsti registreerimise korraldus SL Tervisekeskuses</li>
+    <li>Töötervishoiu kontroll Valvekliinikus</li>
+    <li>TTOS-i nõuetele vastavad paberid</li>
+  </ul>
+  <p><strong>Sees ei ole (vajadusel lisateenused):</strong></p>
+  <ul>
+    <li>Iga-aastane töötervishoiu lepingu hooldamine (vajalik üle 4 kuu)</li>
+    <li>Ettevõtte üldine riskianalüüs (eraldi teenus)</li>
+    <li>Eriarstide visiidid, vaktsineerimised, lisauuringud</li>
+  </ul>
+  <p>Kui Teie ettevõttel veel ei ole täielikku töötervishoiu lepingut, saame selle peale välismaalase onboarding-i vormistada.</p>
+</section>
+
+<section class="standard">
+  <h2>Kes seda teeb</h2>
+  <div class="doctor-block">
+    <div class="doctor-photo">
+      [Dr Lindström<br>foto siia]
+    </div>
+    <div>
+      <p>
+        Valvekliinik on arstide juhitud kliinik Ülemiste Tervisemaja 2-s. <strong>Dr Ingmar Lindström</strong>, kliiniku asutaja ja perearst, on 20 aastat töötanud Eestis ja Soomes nii peremeditsiinis kui kliiniku juhtimisel. Meeskonnas on töötervishoiuarstid, perearstid ja õed, kes igapäevaselt tegelevad Eesti tööandjate ja töötajatega.
+      </p>
+      <p>
+        Patsiendinimekiri SL Tervisekeskuses on osa samast meditsiinilisest võrgustikust. <strong>Üks koht, üks vastutaja.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="standard alt">
+  <h2>Miks pole mõtet oodata</h2>
+  <p>
+    TTOS-i § 13 lg 1 sätestab, et töötaja tervisekontroll tuleb korraldada nelja kuu jooksul tööle asumisest. Välismaalt palgatud töötaja puhul tähendab see, et perearsti registreerimine ja töötervishoiu kontroll on <strong>mõlemad esimese poole aasta küsimus</strong>.
+  </p>
+  <p>Tehes need korraga ja ühe teenuseosutaja kaudu:</p>
+  <ul>
+    <li>säästate halduskoormust</li>
+    <li>vähendate riski, et üks samm jääb õigeaegselt tegemata</li>
+    <li>saate Tööinspektsiooni kontrolli korral ühest kohast kõik vajalikud dokumendid</li>
+  </ul>
+  <div class="warn-box">
+    <strong>Tähelepanu:</strong> Tööinspektsiooni trahv töötervishoiu kohustuste täitmata jätmise eest võib ulatuda kuni <strong>€32 000</strong>-ni juriidilisele isikule.
+  </div>
+</section>
+
+<section class="standard">
+  <h2>Korduma kippuvad küsimused</h2>
+
+  <div class="faq-item">
+    <h3>Kas €99 hind kehtib igale välismaalt palgatud töötajale?</h3>
+    <p>Jah, hind kehtib töötaja kohta. Kui Teil on 10 uut välismaalast töötajat, on kogusumma €990. Suuremate mahtude puhul (üle 20 töötaja korraga) palun küsige individuaalset pakkumist.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Kas töötaja peab tulema kohale?</h3>
+    <p>Töötervishoiu kontroll toimub Valvekliinikus Ülemistes. Perearsti registreerimine on korraldatud meie poolt — töötaja peab kohal käima esimesel perearsti vastuvõtul, mille me korraldame töötajale sobival ajal.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Mis keeles toimub vastuvõtt?</h3>
+    <p>Eesti, inglise või vene. Soome keelt valdav arst on samuti olemas. Töötajale sobiva keele küsime ette.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Mis siis, kui Teie töötaja on juba ELi kodanik ja tal on Eesti haigekassa?</h3>
+    <p>Sama protsess. Pakkumine kehtib kõigile välismaal sündinud töötajatele, kes vajavad Eestis perearsti registreerimist.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Kuidas eristub vahendajatest, kes pakuvad €100 eest sama teenust?</h3>
+    <p>Vahendaja leiab Teile perearsti — see on kõik. Meie kaudu saate perearsti registreerimise pluss töötervishoiu kontrolli ja paberid sama hinna eest. Üks teenuseosutaja, üks leping.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Kas saan korraldada ka ettevõtte täieliku töötervishoiu lepingu?</h3>
+    <p>Jah. Pärast välismaalase paberite tegemist saame Teile esitada täieliku töötervishoiu teenuse pakkumise teie ülejäänud meeskonnale.</p>
+  </div>
+</section>
+
+<section class="form-section" id="contact">
+  <div class="form-inner">
+    <h2>Küsi pakkumist</h2>
+    <p class="lead">Vastame 24 tunni jooksul. Kõik küsimused on tervitatud.</p>
+    <form>
+      <label>Ettevõtte nimi *</label>
+      <input type="text" placeholder="OÜ Näide" required>
+
+      <label>Kontaktisik *</label>
+      <input type="text" placeholder="Eesnimi Perekonnanimi" required>
+
+      <label>E-post *</label>
+      <input type="email" placeholder="teie@email.ee" required>
+
+      <label>Telefon</label>
+      <input type="tel" placeholder="+372 ...">
+
+      <label>Välismaalt palgatud töötajate arv *</label>
+      <input type="number" min="1" placeholder="nt 3" required>
+
+      <label>Kuu, mil töötaja(d) tööle asuvad</label>
+      <input type="text" placeholder="juuli 2026">
+
+      <label>Lisamärkused</label>
+      <textarea rows="4" placeholder="Erisoovid, küsimused..."></textarea>
+
+      <button type="submit">Saada päring</button>
+    </form>
+    <p class="note">Vastame 24 tunni jooksul. Kõik küsimused on tervitatud — ka need, mis ei ole otseselt seotud välismaalaste teenusega.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="contact-row">
+    <div>📞 <a href="tel:+37259110909">+372 5 911 0909</a></div>
+    <div>✉ <a href="mailto:info@valvekliinik.ee">info@valvekliinik.ee</a></div>
+    <div>📍 Sepapaja 12/1, Ülemiste Tervisemaja 2, Tallinn</div>
+  </div>
+  <div class="legal">
+    Valvekliinik on osa SL Meedik meditsiinilisest võrgustikust.<br>
+    [Tegevusluba Terviseametis: number sisestada]
+  </div>
+</footer>
+
+</body>
+</html>
