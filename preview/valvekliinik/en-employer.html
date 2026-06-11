@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT — Valvekliinik | Family doctor and occupational health for your foreign employees</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --primary: #0EA5E9; --primary-dark: #0284C7; --primary-darker: #075985; --ink: #0F172A; --slate: #475569; --slate-light: #94A3B8; --bg: #F8FAFC; --card: #FFFFFF; --border: #E2E8F0; --success: #16A34A; --warn-bg: #FEF9C3; --warn-border: #FDE68A; --warn-text: #854D0E; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; line-height: 1.6; color: var(--ink); background: var(--bg); }
+  .draft-banner { background: #FEF3C7; color: #92400E; border-bottom: 2px solid #FCD34D; text-align: center; padding: 10px 20px; font-size: 14px; font-weight: 600; }
+  .lang-bar { background: white; border-bottom: 1px solid var(--border); padding: 10px 20px; text-align: center; font-size: 14px; }
+  .lang-bar a { color: var(--primary-dark); text-decoration: none; margin: 0 8px; padding: 4px 10px; border-radius: 6px; }
+  .lang-bar a.active { background: var(--primary); color: white; font-weight: 700; }
+  header.site { background: #FFFFFF; border-bottom: 1px solid var(--border); padding: 16px 20px; position: sticky; top: 0; z-index: 10; }
+  header.site .inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 22px; font-weight: 800; color: var(--primary-dark); text-decoration: none; }
+  .logo small { font-weight: 500; font-size: 13px; color: var(--slate); margin-left: 8px; }
+  .header-cta { background: var(--primary); color: white; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; }
+  .hero { background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); padding: 64px 20px 56px; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.15; color: var(--ink); margin-bottom: 20px; font-weight: 800; letter-spacing: -0.02em; }
+  .hero .subhead { font-size: 17px; color: var(--slate); margin-bottom: 28px; line-height: 1.55; }
+  .price-card { background: white; border: 2px solid var(--primary); border-radius: 16px; padding: 32px; text-align: center; box-shadow: 0 8px 32px rgba(2, 132, 199, 0.12); }
+  .price-card .label { font-size: 14px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 600; }
+  .price-card .amount { font-size: 72px; font-weight: 900; color: var(--primary-dark); line-height: 1; letter-spacing: -0.04em; margin-bottom: 4px; }
+  .price-card .per { font-size: 14px; color: var(--slate); margin-bottom: 24px; }
+  .price-card .includes { text-align: left; border-top: 1px solid var(--border); padding-top: 20px; margin-bottom: 24px; }
+  .price-card .includes li { list-style: none; padding: 6px 0; font-size: 14px; color: var(--ink); }
+  .price-card .includes li::before { content: "✓ "; color: var(--success); font-weight: 700; margin-right: 6px; }
+  .cta-primary { display: inline-block; background: var(--primary); color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .cta-secondary { display: inline-block; color: var(--primary-dark); text-decoration: none; font-weight: 600; font-size: 15px; margin-left: 16px; }
+  .trust-strip { max-width: 1100px; margin: 32px auto 0; padding: 0 20px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; color: var(--slate); font-size: 14px; }
+  .trust-strip .item { display: flex; align-items: center; gap: 8px; }
+  .trust-strip .item::before { content: "✓"; color: var(--success); font-weight: 700; }
+  section.standard { max-width: 900px; margin: 0 auto; padding: 64px 20px; }
+  section.alt { background: white; }
+  section.standard h2 { font-size: clamp(24px, 3vw, 32px); color: var(--ink); margin-bottom: 20px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.2; }
+  section.standard p { font-size: 17px; color: var(--slate); margin-bottom: 16px; line-height: 1.65; }
+  section.standard ul { padding-left: 24px; margin: 16px 0; }
+  section.standard ul li { margin-bottom: 8px; color: var(--ink); }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+  .compare-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: white; }
+  .compare-card.middleman { background: #FEF2F2; border-color: #FECACA; }
+  .compare-card.ours { border-color: var(--primary); background: linear-gradient(135deg, #F0F9FF 0%, white 100%); box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08); }
+  .compare-card h3 { font-size: 16px; margin-bottom: 12px; color: var(--ink); }
+  .compare-card .price { font-size: 32px; font-weight: 800; margin: 8px 0 14px; }
+  .compare-card.middleman .price { color: #B91C1C; }
+  .compare-card.ours .price { color: var(--primary-dark); }
+  .compare-card ul { padding: 0; list-style: none; }
+  .compare-card li { padding: 6px 0; font-size: 14px; color: var(--slate); }
+  .compare-card li::before { margin-right: 8px; }
+  .compare-card.middleman li::before { content: "✗"; color: #B91C1C; }
+  .compare-card.ours li::before { content: "✓"; color: var(--success); font-weight: 700; }
+  .compare-card .total { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border); font-weight: 700; color: var(--ink); }
+  .doctor-block { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; padding: 32px; background: linear-gradient(135deg, #F0F9FF 0%, white 100%); border-radius: 16px; border: 1px solid var(--border); }
+  .doctor-photo { width: 200px; height: 200px; border-radius: 16px; background: linear-gradient(135deg, var(--slate-light) 0%, var(--slate) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; text-align: center; padding: 16px; }
+  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-left: 4px solid #CA8A04; border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+  .warn-box strong { color: var(--warn-text); }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item h3 { font-size: 17px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+  .faq-item p { color: var(--slate); font-size: 16px; margin: 0; }
+  .form-section { background: var(--ink); color: white; padding: 56px 20px; }
+  .form-inner { max-width: 600px; margin: 0 auto; }
+  .form-section h2 { color: white; margin-bottom: 8px; }
+  .form-section .lead { color: var(--slate-light); margin-bottom: 24px; }
+  .form-section input, .form-section textarea, .form-section select { width: 100%; padding: 12px 14px; margin: 6px 0 14px; border: 1px solid #334155; background: #1E293B; color: white; border-radius: 8px; font-size: 15px; font-family: inherit; }
+  .form-section label { display: block; font-size: 14px; margin-top: 12px; color: var(--slate-light); }
+  .form-section button { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; margin-top: 12px; }
+  .form-section .note { text-align: center; margin-top: 16px; color: var(--slate-light); font-size: 14px; }
+  footer { background: #0B1320; color: var(--slate-light); padding: 32px 20px; text-align: center; font-size: 14px; }
+  footer .contact-row { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer .legal { color: #475569; font-size: 13px; margin-top: 12px; }
+  @media (max-width: 760px) { .hero-inner { grid-template-columns: 1fr; gap: 32px; } .compare { grid-template-columns: 1fr; } .doctor-block { grid-template-columns: 1fr; } .doctor-photo { width: 100%; height: auto; aspect-ratio: 1; max-width: 280px; margin: 0 auto; } }
+</style>
+</head>
+<body>
+
+<div class="draft-banner">⚠ <strong>DRAFT — proposal</strong>: not yet a live page. Content belongs to Valvekliinik. Feedback welcome.</div>
+
+<div class="lang-bar">
+  <a href="index.html">🌐</a>
+  <a href="et.html">Eesti (employer)</a>
+  <a href="en-employer.html" class="active">English (employer)</a>
+  <a href="fi-employer.html">Suomi (työnantaja)</a>
+</div>
+
+<header class="site">
+  <div class="inner">
+    <a href="#" class="logo">Valvekliinik<small>Doctor-led clinic in Tallinn</small></a>
+    <a href="#contact" class="header-cta">Request quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Family doctor and occupational health for your foreign employee — one solution</h1>
+      <p class="subhead">
+        You don't need to pay €100 to a middleman just for family-physician matchmaking. Valvekliinik does that for the same price and includes the occupational health check and paperwork — required under Estonian law (TTOS) within the first 4 months of employment anyway.
+      </p>
+      <a href="#contact" class="cta-primary">Request quote</a>
+      <a href="tel:+37259110909" class="cta-secondary">or call +372 5 911 0909</a>
+    </div>
+    <div class="price-card">
+      <div class="label">Price</div>
+      <div class="amount">€99</div>
+      <div class="per">per employee, one-time</div>
+      <ul class="includes">
+        <li>Family doctor registration at SL Tervisekeskus</li>
+        <li>Occupational health check at Valvekliinik</li>
+        <li>TTOS-compliant documentation</li>
+        <li>One contract, one provider</li>
+      </ul>
+      <a href="#contact" class="cta-primary">Request quote</a>
+    </div>
+  </div>
+  <div class="trust-strip">
+    <div class="item">Doctor-led clinic</div>
+    <div class="item">Open patient slots at SL Tervisekeskus</div>
+    <div class="item">Documentation meets Labour Inspectorate requirements</div>
+  </div>
+</section>
+
+<section class="standard">
+  <h2>The situation many employers face</h2>
+  <p>
+    You hire a worker from abroad. They need a family doctor — but most Estonian family doctors are full and don't accept new patients. So you work through a middleman who finds a doctor for €100. After that, you still need to separately arrange the occupational health check that Estonian law (TTOS § 13 lg 1) requires within the first 4 months. Different provider, separate invoice.
+  </p>
+  <p>
+    <strong>Total: two contracts, two payments, two timelines.</strong> Typical sum €179 per employee.
+  </p>
+
+  <div class="compare">
+    <div class="compare-card middleman">
+      <h3>Middleman route today</h3>
+      <div class="price">€179</div>
+      <ul>
+        <li>€100 — family doctor middleman</li>
+        <li>€79 — separate occupational health</li>
+        <li>Two contracts, two invoices</li>
+        <li>Risk: one step missed on schedule</li>
+      </ul>
+    </div>
+    <div class="compare-card ours">
+      <h3>Valvekliinik bundle</h3>
+      <div class="price">€99</div>
+      <ul>
+        <li>Family doctor registration at SL Tervisekeskus</li>
+        <li>Occupational health check + documentation</li>
+        <li>One contract, one invoice</li>
+        <li>Single accountable provider</li>
+      </ul>
+      <div class="total">Saving per employee: <strong>€80</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="standard alt">
+  <h2>What €99 includes and what it doesn't</h2>
+  <p><strong>Included (for €99):</strong></p>
+  <ul>
+    <li>Family doctor registration arrangement at SL Tervisekeskus</li>
+    <li>Occupational health check at Valvekliinik</li>
+    <li>Documentation compliant with Estonian TTOS law</li>
+  </ul>
+  <p><strong>Not included (available separately if needed):</strong></p>
+  <ul>
+    <li>Annual occupational health contract maintenance (needed beyond first 4 months)</li>
+    <li>Company-wide risk assessment (separate service)</li>
+    <li>Specialist visits, vaccinations, additional tests</li>
+  </ul>
+  <p>If your company doesn't yet have a complete occupational health contract, we can quote one on top of the foreign-worker onboarding.</p>
+</section>
+
+<section class="standard">
+  <h2>Who does this</h2>
+  <div class="doctor-block">
+    <div class="doctor-photo">[Dr Lindström<br>photo here]</div>
+    <div>
+      <p>
+        Valvekliinik is a doctor-led clinic in Ülemiste Tervisemaja 2. <strong>Dr Ingmar Lindström</strong>, the founder and family physician, has 20 years of experience in family medicine and clinic management across Estonia and Finland. The team includes occupational health physicians, family doctors and nurses who work daily with Estonian employers and employees.
+      </p>
+      <p>
+        The patient list at SL Tervisekeskus is part of the same medical network. <strong>One location, one accountable provider.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="standard alt">
+  <h2>Why not wait</h2>
+  <p>
+    Estonian law (TTOS § 13 lg 1) requires an occupational health check within four months of an employee starting work. For a foreign worker, this means family-doctor registration AND occupational health check are <strong>both first-six-months issues</strong>.
+  </p>
+  <p>Doing them together through one provider:</p>
+  <ul>
+    <li>reduces administrative burden</li>
+    <li>lowers the risk of one step being missed on time</li>
+    <li>gives you all required documents from one place if the Labour Inspectorate audits you</li>
+  </ul>
+  <div class="warn-box">
+    <strong>Heads-up:</strong> Labour Inspectorate fines for occupational health non-compliance can reach <strong>€32,000</strong> for legal entities.
+  </div>
+</section>
+
+<section class="standard">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <h3>Does €99 apply per employee?</h3>
+    <p>Yes, the price is per employee. 10 new foreign workers = €990 total. For larger volumes (20+ at once), ask for a custom quote.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does the employee need to come in person?</h3>
+    <p>The occupational health check happens at Valvekliinik in Ülemiste. Family-doctor registration is arranged by us — the employee needs to attend the first family-doctor appointment, which we schedule at a convenient time.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What languages are appointments conducted in?</h3>
+    <p>Estonian, English, Russian. A Finnish-speaking doctor is also available. We ask about preferred language at booking.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What if our employee is an EU citizen and already has Estonian health insurance?</h3>
+    <p>Same process. The offer applies to anyone born abroad needing family-doctor registration in Estonia.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How is this different from middlemen charging €100 for "the same" service?</h3>
+    <p>The middleman finds you a family doctor — that's it. Through us you get family-doctor registration <strong>plus</strong> occupational health check and documentation for the same price. One provider, one contract.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can you also arrange our company's full occupational health contract?</h3>
+    <p>Yes. After we handle your foreign worker's paperwork, we can quote a complete occupational health service for your wider team.</p>
+  </div>
+</section>
+
+<section class="form-section" id="contact">
+  <div class="form-inner">
+    <h2>Request a quote</h2>
+    <p class="lead">We reply within 24 hours. All questions welcome.</p>
+    <form>
+      <label>Company name *</label>
+      <input type="text" placeholder="Example OÜ" required>
+
+      <label>Contact person *</label>
+      <input type="text" placeholder="First Last" required>
+
+      <label>Email *</label>
+      <input type="email" placeholder="you@email.com" required>
+
+      <label>Phone</label>
+      <input type="tel" placeholder="+372 ...">
+
+      <label>Number of foreign workers *</label>
+      <input type="number" min="1" placeholder="e.g. 3" required>
+
+      <label>Month employees start</label>
+      <input type="text" placeholder="July 2026">
+
+      <label>Notes</label>
+      <textarea rows="4" placeholder="Special requests, questions..."></textarea>
+
+      <button type="submit">Send inquiry</button>
+    </form>
+    <p class="note">We reply within 24 hours. All questions welcome — including ones not directly about foreign-worker services.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="contact-row">
+    <div>📞 <a href="tel:+37259110909">+372 5 911 0909</a></div>
+    <div>✉ <a href="mailto:info@valvekliinik.ee">info@valvekliinik.ee</a></div>
+    <div>📍 Sepapaja 12/1, Ülemiste Tervisemaja 2, Tallinn, Estonia</div>
+  </div>
+  <div class="legal">
+    Valvekliinik is part of the SL Meedik medical network.<br>
+    [Health Board license: number to be inserted]
+  </div>
+</footer>
+
+</body>
+</html>
