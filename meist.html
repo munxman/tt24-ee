@@ -405,6 +405,31 @@ html, body {
   font-weight: 600;
 }
 
+/* Collapsible founder background · folded by default */
+.founder-details { border-top: 1px solid var(--rule); margin-top: 20px; }
+.founder-summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 28px 14px 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.founder-summary::-webkit-details-marker { display: none; }
+.founder-summary::after {
+  content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-55%);
+  font-family: var(--mono); font-size: 22px; color: var(--mute); font-weight: 400;
+}
+.founder-details[open] > .founder-summary::after { content: 'x'; color: var(--accent); font-size: 17px; }
+.founder-summary:hover { color: var(--ink); }
+.founder-details-body { padding-top: 2px; }
+.founder-details-body > .founder-education:first-child { margin-top: 14px; }
+
 /* ─── Facts table (hairline rows, monospace labels) ─────── */
 .facts {
   width: 100%;
@@ -635,10 +660,15 @@ html, body {
       <div class="founder-photo"><img src="images/ingmar-lindstrom.jpg" alt="Dr Ingmar Lindström" loading="lazy"></div>
       <div class="founder-bio">
         <p class="founder-name">Dr Ingmar Lindström</p>
-        <p class="founder-role">Asutaja · Perearst · MD</p>
+        <p class="founder-role">Perearst · MD</p>
+
+        <details class="founder-details">
+          <summary class="founder-summary">Haridus, taust ja ettevõtted</summary>
+          <div class="founder-details-body">
 
         <div class="founder-education">
           <p class="edu"><strong>Tartu Ülikool</strong> · Arstiteaduskond, 2001</p>
+          <p class="edu"><strong>Eesti Diplomaatide Kool</strong> · 2002</p>
           <p class="edu"><strong>Tartu Ülikool</strong> · Perearsti residentuur, 2005</p>
           <p class="edu"><strong>EBS</strong> · Tervishoiujuhtide Arenguprogramm</p>
         </div>
@@ -676,6 +706,8 @@ html, body {
         </div>
 
         <p class="founder-note">TT24 loodi siis, kui sai selgeks, et töötervishoiu kohustused on enamiku Eesti väikeettevõtjate jaoks segased ja kättesaadav info kas liiga formaalne või liiga müügile suunatud.</p>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -683,7 +715,11 @@ html, body {
       <div class="founder-photo"><img src="images/eva-maria-sentifoli.jpg" alt="Eva-Maria Sentifoli" loading="lazy"></div>
       <div class="founder-bio">
         <p class="founder-name">Eva-Maria Sentifoli</p>
-        <p class="founder-role">Kaasasutaja · Sentifoli &amp; Lindström</p>
+        <p class="founder-role">Sentifoli &amp; Lindström</p>
+
+        <details class="founder-details">
+          <summary class="founder-summary">Haridus, taust ja rollid</summary>
+          <div class="founder-details-body">
 
         <div class="founder-education">
           <p class="edu"><strong>Tallinna Ülikool</strong> · Sotsiaaltöö, BA</p>
@@ -716,6 +752,8 @@ html, body {
             Vastutab TT24 portaali sisuhalduse ja strateegia eest.
           </p>
         </div>
+          </div>
+        </details>
 
       </div>
     </article>
