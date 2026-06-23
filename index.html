@@ -1,540 +1,798 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TT24 - Töötervishoiu Teejuht</title>
-  <meta name="description" content="Tasuta, praktiline töötervishoiu juhis eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid, KKK - praktilised tööriistad seaduse täitmiseks ühes kohas.">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="style.css">
-<!-- TT24 GA4 (G-5NW9JSMQVE), consent-gated -->
-  <script>
-    function tt24LoadGA4() {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-      gtag('js', new Date());
-      gtag('config', 'G-5NW9JSMQVE');
-    }
-    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
-      tt24LoadGA4();
-    }
-  </script>
-  <!-- End TT24 GA4 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT24 · Töötervishoiu Teejuht. Praktilised vastused tööandjale.</title>
+<meta name="description" content="Sõltumatu Eesti töötervishoiu portaal. Tasuta kontrollnimekirjad, kalkulaatorid, dokumendid ja juhised TTOS-nõuete täitmiseks. Iga vastus viidatud paragrahvile.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
 
-  <!-- Canonical + hreflang -->
-  <link rel="canonical" href="https://tt24.ee/" />
-  <link rel="alternate" hreflang="et" href="https://tt24.ee/" />
-  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tt24.ee/" />
-  <meta property="og:title" content="TT24 - Töötervishoiu Teejuht" />
-  <meta property="og:description" content="Tasuta, praktiline töötervishoiu juhis eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid, KKK - praktilised tööriistad seaduse täitmiseks ühes kohas." />
-  <meta property="og:image" content="https://tt24.ee/og-image.png" />
-  <meta property="og:locale" content="et_EE" />
-  <meta property="og:site_name" content="TT24" />
+<script>
+function tt24LoadGA4() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+  gtag('js', new Date());
+  gtag('config', 'G-5NW9JSMQVE');
+}
+if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4(); }
+</script>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TT24 - Töötervishoiu Teejuht" />
-  <meta name="twitter:description" content="Tasuta kontrollnimekirjad, kalkulaatorid ja KKK töötervishoiu kohta Eesti tööandjatele." />
+<link rel="canonical" href="https://tt24.ee/" />
+<link rel="alternate" hreflang="et" href="https://tt24.ee/" />
+<link rel="alternate" hreflang="x-default" href="https://tt24.ee/" />
 
-  <!-- Schema.org – Organization + WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "TT24",
-    "url": "https://tt24.ee/",
-    "description": "Tasuta töötervishoiu abivahendid Eesti tööandjatele. Kontrollnimekirjad, kalkulaatorid ja KKK Eesti töötervishoiu seaduse täitmiseks.",
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Valvekliinik",
-      "url": "https://valvekliinik.ee",
-      "email": "info@tt24.ee"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "info@tt24.ee",
-      "contactType": "customer support",
-      "areaServed": "EE",
-      "availableLanguage": "Estonian"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "TT24",
-    "url": "https://tt24.ee/",
-    "description": "Tasuta töötervishoiu abivahendid Eesti tööandjatele.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tt24.ee/korduma.html",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tt24.ee/" />
+<meta property="og:title" content="TT24 · Töötervishoiu Teejuht. Praktilised vastused tööandjale." />
+<meta property="og:description" content="Sõltumatu Eesti töötervishoiu portaal. Tasuta kontrollnimekirjad, kalkulaatorid ja dokumendid TTOS-nõuete täitmiseks." />
+<meta property="og:image" content="https://tt24.ee/og-image.png" />
+<meta property="og:locale" content="et_EE" />
+<meta property="og:site_name" content="TT24" />
 
-  <!-- Schema.org – FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Kas ma pean tegema tervisekontrolli kõigile töötajatele?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku tervistkahjustavate teguritega: müra, vibratsioon, keemilised ained, kõrge füüsiline koormus, kuvariga töö jms. Alla 18-aastased töötajad, rasedad ning toitlustuse ja tervishoiu valdkonna töötajad on alati kohustuslikud."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Millal peab olema esmane tervisekontroll?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tööandja korraldab esmase tervisekontrolli nelja kuu jooksul tööle asumisest (TTOS § 13¹ lg 2). Erand: öötöötajad, alaealised ja kõrgendatud ohuga töökeskkonnas töötajad peavad läbima tervisekontrolli enne esimest tööpäeva."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kes katab tervisekontrolli kulud - tööandja või töötaja?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tööandja katab kõik tervisekontrolli kulud (TTOS § 13). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada - see on tööandja kohustus ja kulu. Kontroll peab toimuma tööajal."
-        }
-      }
-    ]
-  }
-  </script>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TT24 · Töötervishoiu Teejuht" />
+<meta name="twitter:description" content="Sõltumatu Eesti töötervishoiu portaal tööandjale." />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Organization",
+  "name":"TT24","alternateName":"TT24 Töötervishoiu Teejuht",
+  "url":"https://tt24.ee/","logo":"https://tt24.ee/logo.png",
+  "description":"Sõltumatu Eesti tööandjatele mõeldud töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.",
+  "parentOrganization":{"@type":"Organization","name":"Sentifoli & Lindström OÜ","url":"https://tt24.ee/"},
+  "founder":{"@type":"Person","name":"Ingmar Lindström","jobTitle":"Perearst, ettevõtja"},
+  "address":{"@type":"PostalAddress","streetAddress":"Sepapaja 12/1, Ülemiste Tervisemaja 2","addressLocality":"Tallinn","postalCode":"10616","addressCountry":"EE"},
+  "contactPoint":{"@type":"ContactPoint","email":"info@tt24.ee","telephone":"+372 5 911 0909","contactType":"customer support","areaServed":"EE","availableLanguage":"Estonian"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebSite",
+  "name":"TT24","url":"https://tt24.ee/",
+  "description":"Sõltumatu Eesti töötervishoiu portaal.",
+  "potentialAction":{"@type":"SearchAction","target":"https://tt24.ee/korduma.html","query-input":"required name=search_term_string"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Kas ma pean tegema tervisekontrolli kõigile töötajatele?","acceptedAnswer":{"@type":"Answer","text":"Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku tervistkahjustavate teguritega: müra, vibratsioon, keemilised ained, kõrge füüsiline koormus, kuvariga töö. Alla 18-aastased töötajad, rasedad ning toitlustuse ja tervishoiu valdkonna töötajad on alati kohustuslikud."}},
+    {"@type":"Question","name":"Millal peab olema esmane tervisekontroll?","acceptedAnswer":{"@type":"Answer","text":"Tööandja korraldab esmase tervisekontrolli nelja kuu jooksul tööle asumisest (TTOS § 13¹ lg 2). Erand: öötöötajad, alaealised ja kõrgendatud ohuga töökeskkonnas töötajad peavad läbima tervisekontrolli enne esimest tööpäeva."}},
+    {"@type":"Question","name":"Kes katab tervisekontrolli kulud?","acceptedAnswer":{"@type":"Answer","text":"Tööandja katab kõik tervisekontrolli kulud (TTOS § 13). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada. Kontroll peab toimuma tööajal."}}
+  ]
+}
+</script>
+
+<style>
+:root {
+  --serif: 'Source Serif 4', 'Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --ink:      #0A0A0A;
+  --ink-soft: #2A2A2A;
+  --mute:     #6B6B6B;
+  --mute-2:   #A8A8A8;
+  --rule:     #E0E0E0;
+  --paper:    #FFFFFF;
+  --paper-2:  #FAFAF8;
+  --accent:   #0066CC;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  font-family: var(--sans); font-size: 17px; line-height: 1.6;
+}
+.skip-link { position:absolute; left:-10000px; top:0; background:var(--ink); color:var(--paper); padding:8px 14px; text-decoration:none; font-size:14px; }
+.skip-link:focus { left:16px; top:16px; z-index:100; }
+
+/* Top bar */
+.topbar { border-bottom:1px solid var(--rule); background:var(--paper); position:sticky; top:0; z-index:50; }
+.topbar-inner { max-width:1200px; margin:0 auto; padding:22px 32px; display:flex; align-items:baseline; justify-content:space-between; gap:32px; }
+.brand { text-decoration:none; color:var(--ink); display:flex; align-items:baseline; gap:12px; }
+.brand-mark { font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-0.01em; }
+.brand-tag { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); }
+.nav { display:flex; gap:32px; align-items:baseline; font-size:15px; }
+.nav a { color:var(--ink-soft); text-decoration:none; font-weight:500; }
+.nav a:hover { color:var(--accent); }
+.nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
+
+/* Hero */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 32px 100px;
+}
+.hero-inner { max-width: 860px; }
+.dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 32px; }
+.dateline span { color:var(--accent); }
+.headline { font-family:var(--serif); font-size:clamp(46px, 6.5vw, 76px); line-height:1.04; letter-spacing:-0.025em; font-weight:500; color:var(--ink); margin:0 0 36px; }
+.standfirst { font-family:var(--serif); font-size:clamp(20px, 2vw, 26px); line-height:1.4; color:var(--ink-soft); font-weight:400; margin:0 0 48px; max-width:680px; }
+.hero-cta-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 16px 32px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--accent); }
+.btn-secondary {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-soft);
+  padding-bottom: 4px;
+}
+.btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Section */
+.section { border-top:1px solid var(--rule); }
+.section-inner { max-width:1100px; margin:0 auto; padding:96px 32px; }
+.section-inner-narrow { max-width:760px; margin:0 auto; padding:96px 32px; }
+.section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
+.section-h { font-family:var(--serif); font-size:clamp(28px, 3vw, 38px); line-height:1.16; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 18px; max-width:680px; }
+.section-sub { font-size:17px; line-height:1.55; color:var(--ink-soft); margin:0 0 36px; max-width:680px; }
+
+/* Tools catalog · three rows + extras */
+.catalog { margin-top: 0; }
+.catalog-row {
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 200px 1fr 160px;
+  gap: 36px;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.catalog-row:hover { background: var(--paper-2); }
+.catalog-row:hover .catalog-h { color: var(--accent); }
+.catalog-row:last-child { border-bottom: 1px solid var(--rule); }
+.catalog-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.catalog-body { padding-right: 24px; }
+.catalog-h {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 8px;
+  transition: color 0.15s;
+}
+.catalog-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.catalog-action {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: right;
+}
+
+/* Process · 3 steps */
+.process { margin-top: 36px; }
+.process-step {
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.process-step:last-child { border-bottom: 1px solid var(--rule); }
+.process-num {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding-top: 4px;
+}
+.process-h {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.process-h a { color: inherit; text-decoration: none; }
+.process-h a:hover { color: var(--accent); }
+.process-body p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+.process-body .next {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* Urgency band */
+.urgency {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+  padding: 56px 32px;
+}
+.urgency-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.urgency-stat {
+  font-family: var(--serif);
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+.urgency-stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin: 0;
+}
+.urgency-body h2 {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.urgency-body p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+.urgency-body .cta {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* FAQ */
+.faq-list { margin-top: 32px; }
+.faq-item { border-top: 1px solid var(--rule); padding: 22px 0; }
+.faq-item:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq-item summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--serif); font-size: 19px; line-height: 1.4;
+  color: var(--ink); font-weight: 500; letter-spacing: -0.005em;
+  position: relative; padding-right: 32px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-55%);
+  font-family: var(--mono); font-size: 22px; color: var(--mute); font-weight: 400;
+}
+.faq-item[open] summary::after { content: 'x'; color: var(--accent); font-size: 17px; }
+.faq-item .answer { margin-top: 14px; font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
+.faq-item .answer strong { color: var(--ink); font-weight: 600; }
+.faq-more { margin-top: 32px; }
+.faq-more a {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+}
+
+/* Articles · hairline catalog rows */
+.articles { margin-top: 36px; }
+.article-row {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 120px 1fr 80px;
+  gap: 32px;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.article-row:last-child { border-bottom: 1px solid var(--rule); }
+.article-row:hover { background: var(--paper-2); }
+.article-row:hover .article-title { color: var(--accent); }
+.article-tag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute);
+}
+.article-title { font-family: var(--serif); font-size: 19px; font-weight: 500; line-height: 1.3; letter-spacing: -0.005em; color: var(--ink); margin: 0 0 6px; transition: color 0.15s; }
+.article-desc { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+.article-arrow { font-family: var(--mono); font-size: 14px; color: var(--mute-2); text-align: right; }
+
+/* Sectors · two-column hairline list */
+.sectors {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.sector-row {
+  padding: 22px 24px 22px 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  transition: background 0.15s;
+}
+.sector-row:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 24px; }
+.sector-row:nth-child(even) { padding-left: 24px; padding-right: 0; }
+.sector-row:hover { background: var(--paper-2); }
+.sector-row:hover .sector-name { color: var(--accent); }
+.sector-num {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--mute-2);
+}
+.sector-name {
+  font-family: var(--serif); font-size: 18px; font-weight: 500; letter-spacing: -0.005em; color: var(--ink); margin: 0 0 4px; transition: color 0.15s;
+}
+.sector-desc { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+
+/* Footer */
+.foot { margin-top: 0; border-top: 1px solid var(--rule); background: var(--paper); }
+.foot-inner { max-width:1200px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:56px; }
+.foot-brand { font-family:var(--serif); font-size:22px; font-weight:600; color:var(--ink); text-decoration:none; margin:0 0 12px; display:block; }
+.foot-desc { font-size:14px; line-height:1.6; color:var(--mute); margin:0; max-width:320px; }
+.foot-col h4 { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 16px; font-weight:600; }
+.foot-col a { display:block; font-size:14px; color:var(--ink-soft); text-decoration:none; padding:4px 0; }
+.foot-col a:hover { color:var(--accent); }
+.foot-bottom { max-width:1200px; margin:0 auto; padding:24px 32px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute); }
+.foot-bottom a { color:var(--mute); text-decoration:none; }
+.foot-bottom a:hover { color:var(--accent); }
+
+@media (max-width:760px) {
+  .topbar-inner { padding:18px 22px; flex-wrap:wrap; }
+  .nav { gap:20px; font-size:14px; }
+  .hero { padding:80px 22px 64px; }
+  .section-inner, .section-inner-narrow { padding:64px 22px; }
+  .catalog-row { grid-template-columns: 80px 1fr; gap: 16px; padding: 28px 0; }
+  .catalog-action { display: none; }
+  .catalog-body { padding-right: 0; }
+  .process-step { grid-template-columns: 60px 1fr; gap: 20px; padding: 28px 0; }
+  .urgency { padding: 48px 22px; }
+  .urgency-inner { grid-template-columns: 1fr; gap: 28px; }
+  .article-row { grid-template-columns: 80px 1fr; gap: 18px; }
+  .article-arrow { display: none; }
+  .sectors { grid-template-columns: 1fr; }
+  .sector-row { padding: 20px 0 !important; border-right: 0 !important; }
+  .foot-inner { grid-template-columns: 1fr; gap: 36px; padding: 48px 22px 32px; }
+  .foot-bottom { padding: 20px 22px; flex-direction: column; gap: 10px; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) - blocked pending consent -->
 
-<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
+<a href="#main" class="skip-link">Hüppa põhisisule</a>
 
-<!-- ═══════════════════════════════
-     NAVIGATION
-═══════════════════════════════ -->
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="nav-brand">
-      <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
-        <span class="nav-logo-text">TT24</span><span class="nav-logo-tagline">Töötervishoiu Teejuht</span>
-      </a>
-      <a href="meist.html" class="nav-brand-meist">Meist</a>
-    </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
-      <div class="nav-dropdown" id="toolsDropdown">
-        <button class="nav-dropdown-toggle nav-dropdown-toggle--prominent" aria-expanded="false" aria-haspopup="true">Tööriistad</button>
-        <div class="nav-dropdown-menu">
-          <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-          <a href="kalkulaator.html">Kalkulaator</a>
-          <a href="enesekontroll.html">Enesekontroll</a>
-          <a href="ajakava.html">Ajakava</a>
-          <a href="dokumendid.html">Dokumendid</a>
-        </div>
-      </div>
-      <a href="artiklid/index.html" class="nav-link">Artiklid</a>
-      <a href="korduma.html" class="nav-link nav-link--secondary">KKK</a>
-      <a href="pakkumine.html" class="nav-link nav-link--highlight">Küsi pakkumist</a>
-      <a href="avatud-uks.html" class="nav-link nav-link--highlight">Tasuta nõustamine</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">TT24</span>
+      <span class="brand-tag">Töötervishoiu Teejuht</span>
+    </a>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="#tooriistad">Tööriistad</a>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="meist.html">Meist</a>
+      <a href="pakkumine.html" class="nav-cta">Küsi pakkumist</a>
     </nav>
-
-    <a href="enesekontroll.html" class="nav-cta-btn">Testi nõuetele vastavust</a>
   </div>
 </header>
 
-<main id="main-content">
+<main id="main">
 
-  <!-- ═══════════════════════════════
-       HERO
-  ═══════════════════════════════ -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero-inner">
-      <h1 id="hero-heading">Töötervishoiu teejuht<br><em>Teie ettevõttele</em></h1>
-      <p class="hero-sub">Tasuta tööriistad ja vastused töötervishoiu küsimustele.</p>
-      <div class="hero-ctas">
-        <a href="enesekontroll.html" class="btn btn-primary hero-cta-primary">Testi nõuetele vastavust →</a>
-      </div>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="dateline">TT24 · <span>Sõltumatu Eesti töötervishoiu portaal</span> · Tasuta</p>
+    <h1 class="headline">Töötervishoiu kohustused.<br>Praktilised vastused tööandjale.</h1>
+    <p class="standfirst">Kontrollnimekirjad, kalkulaatorid ja juhised TTOS-nõuete täitmiseks. Iga väide viidatud paragrahvile. Sõltumatu portaal, tasuta tööriistad.</p>
+    <div class="hero-cta-row">
+      <a href="enesekontroll.html" class="btn-primary">Alusta enesekontrolliga</a>
+      <a href="kalkulaator.html" class="btn-secondary">või arvuta kulu →</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════════
-       HOW IT WORKS (first-time guide)
-  ═══════════════════════════════ -->
-  <section class="section" style="padding-bottom: 0;">
-    <div class="container">
-      <h2 class="section-title" style="font-size: var(--text-lg);">Kuidas TT24 töötab?</h2>
-      <div style="display: flex; gap: var(--space-8); justify-content: center; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
-        <a href="enesekontroll.html" style="text-align: center; flex: 1; min-width: 200px; text-decoration: none; color: inherit; padding: var(--space-4); border-radius: var(--radius-lg, 12px); transition: background 0.2s;" onmouseover="this.style.background='rgba(2,132,199,0.06)'" onmouseout="this.style.background='transparent'">
-          <div style="font-size: 2rem; margin-bottom: var(--space-2);">①</div>
-          <p style="font-size: var(--text-sm);"><strong>Tehke enesekontroll</strong></p>
-          <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1);">Vastake 10 küsimusele (~2 min). Saate selge ülevaate, millised töötervishoiu nõuded on Teie ettevõttes täidetud ja kus on puudujääke.</p>
-          <span style="font-size: var(--text-sm); color: var(--color-primary, #0284C7); font-weight: 600; margin-top: var(--space-2); display: inline-block;">Alustan →</span>
-        </a>
-        <a href="kalkulaator.html" style="text-align: center; flex: 1; min-width: 200px; text-decoration: none; color: inherit; padding: var(--space-4); border-radius: var(--radius-lg, 12px); transition: background 0.2s;" onmouseover="this.style.background='rgba(2,132,199,0.06)'" onmouseout="this.style.background='transparent'">
-          <div style="font-size: 2rem; margin-bottom: var(--space-2);">②</div>
-          <p style="font-size: var(--text-sm);"><strong>Vaadake kulukalkulaatorit</strong></p>
-          <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1);">Sisestage töötajate arv ja saate kohe orienteeruva hinna töötervishoiu teenusele. Võrdleb ka teenuse kulu võimaliku trahviga.</p>
-          <span style="font-size: var(--text-sm); color: var(--color-primary, #0284C7); font-weight: 600; margin-top: var(--space-2); display: inline-block;">Arvutan →</span>
-        </a>
-        <a href="kontrollnimekiri.html" style="text-align: center; flex: 1; min-width: 200px; text-decoration: none; color: inherit; padding: var(--space-4); border-radius: var(--radius-lg, 12px); transition: background 0.2s;" onmouseover="this.style.background='rgba(2,132,199,0.06)'" onmouseout="this.style.background='transparent'">
-          <div style="font-size: 2rem; margin-bottom: var(--space-2);">③</div>
-          <p style="font-size: var(--text-sm);"><strong>Laadige kontrollnimekiri alla</strong></p>
-          <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1);">Samm-sammuline tegevuskava kõigi nõuetega. Märkige linnukesega, mis on tehtud - saate PDF-i alla laadida või jagada kolleegidega.</p>
-          <span style="font-size: var(--text-sm); color: var(--color-primary, #0284C7); font-weight: 600; margin-top: var(--space-2); display: inline-block;">Avan nimekirja →</span>
-        </a>
-      </div>
-    </div>
-  </section>
+<!-- Process / Kuidas alustada -->
+<section class="section" id="kuidas">
+  <div class="section-inner">
+    <p class="section-eyebrow">Kuidas alustada</p>
+    <h2 class="section-h">Kolm sammu vastavuseni</h2>
+    <p class="section-sub">Vastake kümnele küsimusele, arvutage kulu, laadige alla nimekiri. Iga samm ~2 minutit.</p>
 
-  <!-- ═══════════════════════════════
-       THREE TOOL CARDS
-  ═══════════════════════════════ -->
-  <section class="tools-section section" aria-labelledby="tools-heading">
-    <div class="container">
-      <h2 id="tools-heading" class="section-title">Tööriistad tööandjale</h2>
-      <p class="section-sub">Praktilised tööriistad töötervishoiu kohustuste täitmiseks.</p>
-
-      <div class="tool-cards">
-
-        <a href="kontrollnimekiri.html" class="tool-card" aria-label="Kontrollnimekiri - Interaktiivne nimekiri kõigist nõuetest">
-          <span class="tool-card-icon" aria-hidden="true">✓</span>
-          <h3 class="tool-card-title">Kontrollnimekiri</h3>
-          <p class="tool-card-desc">Interaktiivne nimekiri kõigist nõuetest</p>
-          <span class="tool-card-link">Avage nimekiri →</span>
-          <span class="info-tooltip" onclick="event.preventDefault(); this.classList.toggle('active');" aria-label="Lisainfo">?<span class="info-tooltip__text">Töötervishoiu põhikohustused ühes nimekirjas. Märkige linnukesega, mis on tehtud - näete kohe, mis on veel puudu.</span></span>
-        </a>
-
-        <a href="kalkulaator.html" class="tool-card" aria-label="Kulukalkulaator - Arvutage töötervishoiu teenuse maksumus">
-          <span class="tool-card-icon" aria-hidden="true">€</span>
-          <h3 class="tool-card-title">Kulukalkulaator</h3>
-          <p class="tool-card-desc">Arvutage töötervishoiu teenuse maksumus</p>
-          <span class="tool-card-link">Arvutage kulud →</span>
-          <span class="info-tooltip" onclick="event.preventDefault(); this.classList.toggle('active');" aria-label="Lisainfo">?<span class="info-tooltip__text">Sisestage töötajate arv ja saate orienteeruva hinnangu töötervishoiu teenuse maksumusele. Võrdleb ka teenuse kulu võimaliku trahviga.</span></span>
-        </a>
-
-        <a href="enesekontroll.html" class="tool-card" aria-label="Enesekontroll - 10 küsimust Teie valmisoleku hindamiseks">
-          <span class="tool-card-icon" aria-hidden="true">📊</span>
-          <h3 class="tool-card-title">Enesekontroll</h3>
-          <p class="tool-card-desc">10 küsimust Teie valmisoleku hindamiseks</p>
-          <span class="tool-card-link">Alustage testi →</span>
-          <span class="info-tooltip" onclick="event.preventDefault(); this.classList.toggle('active');" aria-label="Lisainfo">?<span class="info-tooltip__text">10 lihtsat küsimust, mis hindavad Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks. Näitame puust ja punaselt, kus olete tugev ja mis vajab tähelepanu.</span></span>
-        </a>
-
-      </div>
-
-      <div style="text-align:center;margin-top:var(--space-6);">
-        <a href="kuidas-see-kaib.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--color-primary);font-size:var(--text-sm);font-weight:600;text-decoration:none;margin-right:var(--space-4);">Kuidas töötervishoiu korraldamine käib? →</a>
-        <a href="tooistad/kalkulaatori-juhend.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--color-primary);font-size:var(--text-sm);font-weight:600;text-decoration:none;">Vaata kõiki tööriistu ja otsustamisjuhendit →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════
-       URGENCY SECTION
-  ═══════════════════════════════ -->
-  <section class="urgency-section" aria-labelledby="urgency-heading">
-    <div class="container">
-      <div class="urgency-inner">
-        <div class="urgency-content">
-          <h2 id="urgency-heading" class="urgency-title">Tööinspektsiooni järelevalvekampaania käib</h2>
-          <p class="urgency-text">
-            Tööinspektsioon on alustanud järelevalvekampaaniat väikese ja keskmise suurusega ettevõtete seas.
-            Kõige sagedamini tuvastatud rikkumised: riskianalüüs puudub, töötervishoiuteenuse leping sõlmimata, töötajad teavitamata.
-            Trahvid kuni <strong>€32 000</strong> juriidilisele isikule (TTOS § 28). Esmakordsel rikkumisel teeb inspektor tavaliselt ettekirjutuse - korduvatel juhtudel järgneb trahv.
-          </p>
+    <div class="process">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-body">
+          <h3 class="process-h"><a href="enesekontroll.html">Enesekontroll</a></h3>
+          <p>Vastake kümnele küsimusele. Saate selge ülevaate, millised töötervishoiu nõuded on Teie ettevõttes täidetud ja kus on puudujääke.</p>
+          <a href="enesekontroll.html" class="next">Alusta →</a>
         </div>
-        <a href="enesekontroll.html" class="btn btn-primary urgency-cta">Testi nõuetele vastavust →</a>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-body">
+          <h3 class="process-h"><a href="kalkulaator.html">Kulukalkulaator</a></h3>
+          <p>Sisestage töötajate arv. Saate kohe orienteeruva hinna töötervishoiu teenusele ja võrdluse võimaliku trahviga.</p>
+          <a href="kalkulaator.html" class="next">Arvuta →</a>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-body">
+          <h3 class="process-h"><a href="kontrollnimekiri.html">Kontrollnimekiri</a></h3>
+          <p>Samm-sammuline tegevuskava kõigi nõuetega. Märkige linnuke, mis on tehtud. Laadige PDF alla või jagage kolleegidega.</p>
+          <a href="kontrollnimekiri.html" class="next">Ava nimekiri →</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════════
-       FAQ PREVIEW
-  ═══════════════════════════════ -->
-  <section class="faq-preview section" aria-labelledby="faq-heading">
-    <div class="container">
-      <h2 id="faq-heading" class="section-title">Korduma kippuvad küsimused</h2>
-      <p class="section-sub">Kiired vastused kõige sagedamini küsitud töötervishoiu küsimustele.</p>
+<!-- Tools catalog -->
+<section class="section" id="tooriistad">
+  <div class="section-inner">
+    <p class="section-eyebrow">Tööriistad</p>
+    <h2 class="section-h">Kuus praktilist tööriista</h2>
+    <p class="section-sub">Igaüks töötab Teie brauseris kohapeal. Andmeid ei jagata kolmandate isikutega.</p>
 
-      <div class="faq-preview-list">
-
-        <details class="faq-preview-item">
-          <summary class="faq-preview-q">Kas ma pean tegema tervisekontrolli kõigile töötajatele?</summary>
-          <div class="faq-preview-a">
-            <p>Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku tervistkahjustavate teguritega: müra, vibratsioon, keemilised ained, kõrge füüsiline koormus, kuvariga töö jms. Alla 18-aastased töötajad, rasedad ning toitlustuse ja tervishoiu valdkonna töötajad on alati kohustuslikud.</p>
-          </div>
-        </details>
-
-        <details class="faq-preview-item">
-          <summary class="faq-preview-q">Millal peab olema esmane tervisekontroll?</summary>
-          <div class="faq-preview-a">
-            <p>Tööandja korraldab esmase tervisekontrolli <strong>nelja kuu jooksul</strong> tööle asumisest (TTOS § 13¹ lg 2). Erand: öötöötajad, alaealised ja kõrgendatud ohuga töökeskkonnas töötajad peavad läbima tervisekontrolli enne esimest tööpäeva.</p>
-          </div>
-        </details>
-
-        <details class="faq-preview-item">
-          <summary class="faq-preview-q">Kes katab tervisekontrolli kulud - tööandja või töötaja?</summary>
-          <div class="faq-preview-a">
-            <p>Tööandja katab kõik tervisekontrolli kulud (TTOS § 13). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada - see on tööandja kohustus ja kulu. Kontroll peab toimuma tööajal.</p>
-          </div>
-        </details>
-
-      </div>
-
-      <div class="faq-preview-more">
-        <a href="korduma.html" class="btn btn-outline">Vaata kõiki küsimusi →</a>
-      </div>
+    <div class="catalog">
+      <a class="catalog-row" href="kontrollnimekiri.html">
+        <span class="catalog-num">01 / Vastavus</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Kontrollnimekiri</h3>
+          <p class="catalog-desc">Töötervishoiu põhikohustused ühes nimekirjas. Märkige, mis on tehtud, näete kohe, mis on puudu.</p>
+        </div>
+        <span class="catalog-action">Ava →</span>
+      </a>
+      <a class="catalog-row" href="kalkulaator.html">
+        <span class="catalog-num">02 / Eelarve</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Kulukalkulaator</h3>
+          <p class="catalog-desc">Töötajate arv sisse, hind välja. Võrdleb teenuse kulu võimaliku trahviga (TTOS § 28).</p>
+        </div>
+        <span class="catalog-action">Ava →</span>
+      </a>
+      <a class="catalog-row" href="enesekontroll.html">
+        <span class="catalog-num">03 / Hindamine</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Enesekontroll</h3>
+          <p class="catalog-desc">Kümme küsimust, kohene tulemus. Näitame, kus olete tugev ja mis vajab tähelepanu.</p>
+        </div>
+        <span class="catalog-action">Ava →</span>
+      </a>
+      <a class="catalog-row" href="ajakava.html">
+        <span class="catalog-num">04 / Ajakava</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Ajakava</h3>
+          <p class="catalog-desc">Millal mis kohustused täitmist vajavad. Tervisekontrollide tähtajad, riskianalüüsi uuendamine, korduvad toimingud.</p>
+        </div>
+        <span class="catalog-action">Ava →</span>
+      </a>
+      <a class="catalog-row" href="dokumendid.html">
+        <span class="catalog-num">05 / Dokumendid</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Dokumendid ja vormid</h3>
+          <p class="catalog-desc">Kümme prindivalmist vormi. Riskianalüüs, teavitamise akt, esmaabi register, tervisekontrolli suunamiskiri.</p>
+        </div>
+        <span class="catalog-action">Ava →</span>
+      </a>
+      <a class="catalog-row" href="tervisetoetus.html">
+        <span class="catalog-num">06 / Maksuvabad hüved</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">400 € tervisetoetus</h3>
+          <p class="catalog-desc">Tulumaksuseaduse § 48 alusel kuni 400 € aastas töötaja kohta maksuvabalt. Kalkulaator näitab Teie kasutamata ruumi.</p>
+        </div>
+        <span class="catalog-action">Ava →</span>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Artiklid / Featured Articles -->
-  <section class="section" id="artiklid" aria-labelledby="artiklid-heading">
-    <div class="container">
-      <h2 id="artiklid-heading" class="section-title">Artiklid tööandjale</h2>
-      <p class="section-sub">Põhjalikud juhendid töötervishoiu korraldamiseks.</p>
-      <div class="tools-grid">
-        <a href="artiklid/uus-ettevote-tootervishoid.html" class="tool-card">
-          <h3>Uus ettevõte ja töötervishoiu kohustused</h3>
-          <p>Samm-sammuline juhend uuele ettevõtjale töötervishoiu korraldamiseks esimestest päevadest.</p>
-        </a>
-        <a href="artiklid/tootervishoid-hind.html" class="tool-card">
-          <h3>Töötervishoiu arsti teenuse hind</h3>
-          <p>Ülevaade teenuse maksumusest, mis mõjutab hinda ja kuidas kulusid planeerida.</p>
-        </a>
-        <a href="artiklid/riskianaluus-juhend.html" class="tool-card">
-          <h3>Riskianalüüsi juhend tööandjale</h3>
-          <p>Kuidas viia läbi töötervishoiu riskianalüüs vastavalt seaduse nõuetele.</p>
-        </a>
-        <a href="artiklid/vaikeettevote-kohustused.html" class="tool-card">
-          <h3>Väikeettevõtte töötervishoiu kohustused</h3>
-          <p>Minimaalsed nõuded ja praktilised sammud väikeettevõtjale.</p>
-        </a>
-        <a href="artiklid/tootervishoid-maksud.html" class="tool-card">
-          <h3>Kas töötervishoiu kulud on tulumaksuvabad?</h3>
-          <p>Maksukohtlemine, erisoodustusmaks ja raamatupidamise praktilised juhised.</p>
-        </a>
-        <a href="artiklid/tootervishoid-dokumentatsioon.html" class="tool-card">
-          <h3>Töötervishoiu dokumentatsioon</h3>
-          <p>Mida Tööinspektsioon kontrollimisel nõuab, täielik dokumentide nimekiri.</p>
-        </a>
-      </div>
+<!-- Urgency -->
+<section class="urgency" aria-labelledby="urgency-heading">
+  <div class="urgency-inner">
+    <div class="urgency-body">
+      <h2 id="urgency-heading">Tööinspektsiooni järelevalvekampaania käib.</h2>
+      <p>Tööinspektsioon on alustanud järelevalvekampaaniat väikese ja keskmise suurusega ettevõtete seas. Kõige sagedamini tuvastatud rikkumised: riskianalüüs puudub, töötervishoiuteenuse leping sõlmimata, töötajad teavitamata.</p>
+      <a href="enesekontroll.html" class="cta">Testi nõuetele vastavust →</a>
     </div>
-  </section>
+    <div>
+      <p class="urgency-stat">€32 000</p>
+      <p class="urgency-stat-label">Maksimaalne trahv juriidilisele isikule · TTOS § 28</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Sektorid / Sector Grid -->
-  <section class="section" id="sektorid" aria-labelledby="sektorid-heading">
-    <div class="container">
-      <h2 id="sektorid-heading" class="section-title">Töötervishoiu nõuded sektori kaupa</h2>
-      <p class="section-sub">Valige oma tegevusvaldkond, sektorispetsiifilised nõuded ja praktilised juhised.</p>
-      <div class="tools-grid">
-        <a href="sektorid/ehitus.html" class="tool-card">
-          <h3>Ehitus</h3>
-          <p>Töötervishoiu nõuded ehitussektoris, riskianalüüs, tervisekontrollid, ohutusnõuded.</p>
-        </a>
-        <a href="sektorid/tervishoid.html" class="tool-card">
-          <h3>Tervishoid</h3>
-          <p>Meditsiinitöötajate töötervishoiu kohustused ja erinõuded tervishoiuasutustele.</p>
-        </a>
-        <a href="sektorid/sotsiaalhoolekanne.html" class="tool-card">
-          <h3>Sotsiaalhoolekanne</h3>
-          <p>Töötervishoiu nõuded sotsiaalhoolekandes, hooldustöötajate kaitse ja kohustused.</p>
-        </a>
-        <a href="sektorid/transport.html" class="tool-card">
-          <h3>Transport</h3>
-          <p>Juhi tervisekontroll ja transpordisektori töötervishoiu erinõuded 2026.</p>
-        </a>
-        <a href="sektorid/kaubandus.html" class="tool-card">
-          <h3>Kaubandus</h3>
-          <p>Kaubandusettevõtte töötervishoiu kohustused ja praktilised sammud.</p>
-        </a>
-        <a href="sektorid/tootmine.html" class="tool-card">
-          <h3>Tootmine</h3>
-          <p>Tootmisettevõtte töötervishoiu nõuded, füüsilise koormuse hindamine ja ohutus.</p>
-        </a>
-        <a href="sektorid/haridus.html" class="tool-card">
-          <h3>Haridus</h3>
-          <p>Õpetajate ja kooliabide töötervishoiu nõuded ning vaimse tervise kaitse.</p>
-        </a>
-        <a href="sektorid/it.html" class="tool-card">
-          <h3>IT-sektor</h3>
-          <p>Kontoritöö ergonoomika, ekraaniga töö nõuded ja IT-sektori eripärad.</p>
-        </a>
-        <a href="sektorid/hotellindus.html" class="tool-card">
-          <h3>Hotellindus ja toitlustus</h3>
-          <p>Töötervishoiu nõuded hotellides, restoranides ja toitlustusettevõtetes.</p>
-        </a>
-        <a href="sektorid/laondus.html" class="tool-card">
-          <h3>Laondus</h3>
-          <p>Laotöötajate tervisekontroll, käsitsi teisaldamine ja laonduse riskianalüüs.</p>
-        </a>
-        <a href="sektorid/puhastusteenused.html" class="tool-card">
-          <h3>Puhastusteenused</h3>
-          <p>Koristusteenuse ettevõtte töötervishoiu kohustused ja kemikaaliohutus.</p>
-        </a>
-        <a href="sektorid/pollumajandus.html" class="tool-card">
-          <h3>Põllumajandus</h3>
-          <p>Põllumajandusettevõtte töötervishoiu nõuded, hooajatöö ja masinaohutus.</p>
-        </a>
-        <a href="sektorid/energeetika.html" class="tool-card">
-          <h3>Energeetika</h3>
-          <p>Energeetikasektori kõrgpinge, kiirgus ja töötervishoiu erinõuded.</p>
-        </a>
-        <a href="sektorid/finantsteenused.html" class="tool-card">
-          <h3>Finantsteenused</h3>
-          <p>Kontoritöö ja vaimse tervise kaitse finantssektori tööandjatele.</p>
-        </a>
-        <a href="sektorid/toiduaineteostus.html" class="tool-card">
-          <h3>Toiduainetööstus</h3>
-          <p>Toiduainetööstuse hügieeninõuded, tervisekontrollid ja riskianalüüs.</p>
-        </a>
-        <a href="sektorid/avalik-haldus.html" class="tool-card">
-          <h3>Avalik haldus</h3>
-          <p>Avaliku sektori asutuste töötervishoiu kohustused ja erinõuded.</p>
-        </a>
-      </div>
+<!-- FAQ preview -->
+<section class="section">
+  <div class="section-inner-narrow">
+    <p class="section-eyebrow">Korduma kippuvad küsimused</p>
+    <h2 class="section-h">Kiired vastused</h2>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Kas ma pean tegema tervisekontrolli kõigile töötajatele?</summary>
+        <div class="answer">Mitte kõigile, kuid paljudele. Tervisekontroll on kohustuslik töötajatele, kes puutuvad tööl kokku tervistkahjustavate teguritega: müra, vibratsioon, keemilised ained, kõrge füüsiline koormus, kuvariga töö. Alla 18-aastased töötajad, rasedad ning toitlustuse ja tervishoiu valdkonna töötajad on alati kohustuslikud.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Millal peab olema esmane tervisekontroll?</summary>
+        <div class="answer">Tööandja korraldab esmase tervisekontrolli <strong>nelja kuu jooksul</strong> tööle asumisest (TTOS § 13¹ lg 2). Erand: öötöötajad, alaealised ja kõrgendatud ohuga töökeskkonnas töötajad peavad läbima tervisekontrolli enne esimest tööpäeva.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Kes katab tervisekontrolli kulud?</summary>
+        <div class="answer">Tööandja katab kõik tervisekontrolli kulud (TTOS § 13). Töötaja ei tohi tervisekontrolli eest tasuda ega seda ise korraldada. Kontroll peab toimuma tööajal.</div>
+      </details>
     </div>
-  </section>
+
+    <div class="faq-more">
+      <a href="korduma.html">Vaata kõiki küsimusi →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Articles -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Artiklid</p>
+    <h2 class="section-h">Põhjalikud juhised</h2>
+    <p class="section-sub">Iga väide viidatud TTOS paragrahvile. Sõltumatu sisu.</p>
+
+    <div class="articles">
+      <a class="article-row" href="artiklid/uus-ettevote-tootervishoid.html">
+        <span class="article-tag">Alustamine</span>
+        <div>
+          <h3 class="article-title">Uus ettevõte ja töötervishoiu kohustused</h3>
+          <p class="article-desc">Samm-sammuline juhend uuele ettevõtjale töötervishoiu korraldamiseks esimestest päevadest.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/tootervishoid-hind.html">
+        <span class="article-tag">Hind</span>
+        <div>
+          <h3 class="article-title">Töötervishoiu teenuse hind</h3>
+          <p class="article-desc">Ülevaade teenuse maksumusest, mis mõjutab hinda ja kuidas kulusid planeerida.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/riskianaluus-juhend.html">
+        <span class="article-tag">Riskianalüüs</span>
+        <div>
+          <h3 class="article-title">Riskianalüüsi juhend tööandjale</h3>
+          <p class="article-desc">Kuidas viia läbi töötervishoiu riskianalüüs vastavalt seaduse nõuetele.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/vaikeettevote-kohustused.html">
+        <span class="article-tag">Väikeettevõte</span>
+        <div>
+          <h3 class="article-title">Väikeettevõtte töötervishoiu kohustused</h3>
+          <p class="article-desc">Minimaalsed nõuded ja praktilised sammud väikeettevõtjale.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/tootervishoid-maksud.html">
+        <span class="article-tag">Maksud</span>
+        <div>
+          <h3 class="article-title">Töötervishoiu kulud ja erisoodustusmaks</h3>
+          <p class="article-desc">Maksukohtlemine, erisoodustusmaks ja raamatupidamise praktilised juhised.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/tootervishoid-dokumentatsioon.html">
+        <span class="article-tag">Dokumendid</span>
+        <div>
+          <h3 class="article-title">Töötervishoiu dokumentatsioon</h3>
+          <p class="article-desc">Mida Tööinspektsioon kontrollimisel nõuab. Täielik dokumentide nimekiri.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="faq-more" style="margin-top:36px;">
+      <a href="artiklid/index.html">Vaata kõiki 30 artiklit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sectors -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Sektorid</p>
+    <h2 class="section-h">Sektorispetsiifilised nõuded</h2>
+    <p class="section-sub">Valige tegevusvaldkond. Konkreetsed nõuded, riskid ja juhised iga sektori jaoks.</p>
+
+    <div class="sectors">
+      <a class="sector-row" href="sektorid/ehitus.html">
+        <span class="sector-num">01</span>
+        <div><h3 class="sector-name">Ehitus</h3><p class="sector-desc">Riskianalüüs, tervisekontrollid, ohutusnõuded.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/tervishoid.html">
+        <span class="sector-num">02</span>
+        <div><h3 class="sector-name">Tervishoid</h3><p class="sector-desc">Meditsiinitöötajate erinõuded.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/sotsiaalhoolekanne.html">
+        <span class="sector-num">03</span>
+        <div><h3 class="sector-name">Sotsiaalhoolekanne</h3><p class="sector-desc">Hooldustöötajate kaitse ja kohustused.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/transport.html">
+        <span class="sector-num">04</span>
+        <div><h3 class="sector-name">Transport</h3><p class="sector-desc">Juhi tervisekontroll, transpordisektori erinõuded.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/kaubandus.html">
+        <span class="sector-num">05</span>
+        <div><h3 class="sector-name">Kaubandus</h3><p class="sector-desc">Kaubandusettevõtte kohustused ja sammud.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/tootmine.html">
+        <span class="sector-num">06</span>
+        <div><h3 class="sector-name">Tootmine</h3><p class="sector-desc">Füüsilise koormuse hindamine ja ohutus.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/haridus.html">
+        <span class="sector-num">07</span>
+        <div><h3 class="sector-name">Haridus</h3><p class="sector-desc">Õpetajate ja koolide vaimse tervise kaitse.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/it.html">
+        <span class="sector-num">08</span>
+        <div><h3 class="sector-name">IT-sektor</h3><p class="sector-desc">Kontoritöö ergonoomika, kuvaritöö.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/hotellindus.html">
+        <span class="sector-num">09</span>
+        <div><h3 class="sector-name">Hotellindus ja toitlustus</h3><p class="sector-desc">HoReCa sektori töötervishoiu nõuded.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/laondus.html">
+        <span class="sector-num">10</span>
+        <div><h3 class="sector-name">Laondus</h3><p class="sector-desc">Käsitsi teisaldamine, laonduse riskianalüüs.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/puhastusteenused.html">
+        <span class="sector-num">11</span>
+        <div><h3 class="sector-name">Puhastusteenused</h3><p class="sector-desc">Koristusteenuse kohustused, kemikaaliohutus.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/pollumajandus.html">
+        <span class="sector-num">12</span>
+        <div><h3 class="sector-name">Põllumajandus</h3><p class="sector-desc">Hooajatöö ja masinaohutus.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/energeetika.html">
+        <span class="sector-num">13</span>
+        <div><h3 class="sector-name">Energeetika</h3><p class="sector-desc">Kõrgpinge, kiirgus, erinõuded.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/finantsteenused.html">
+        <span class="sector-name">14</span>
+        <div><h3 class="sector-name">Finantsteenused</h3><p class="sector-desc">Kontoritöö, vaimse tervise kaitse.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/toiduaineteostus.html">
+        <span class="sector-num">15</span>
+        <div><h3 class="sector-name">Toiduainetööstus</h3><p class="sector-desc">Hügieeninõuded, tervisekontrollid.</p></div>
+      </a>
+      <a class="sector-row" href="sektorid/avalik-haldus.html">
+        <span class="sector-num">16</span>
+        <div><h3 class="sector-name">Avalik haldus</h3><p class="sector-desc">Avaliku sektori asutuste kohustused.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!-- ═══════════════════════════════
-     FOOTER
-═══════════════════════════════ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-      <!-- Col 1: Logo + description -->
-      <div class="footer-col footer-col-brand">
-        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
-        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele.<br>Kontrollnimekirjad, kalkulaatorid ja KKK - praktilised tööriistad töötervishoiu ja tööohutuse seaduse täitmiseks.</p>
-      </div>
-
-      <!-- Col 2: Tools links -->
-      <div class="footer-col footer-col-links">
-        <h3 class="footer-col-title">Tööriistad</h3>
-        <nav aria-label="Tööriistad">
-          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
-          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
-          <a href="enesekontroll.html" class="footer-link">Enesekontroll</a>
-          <a href="korduma.html" class="footer-link">KKK</a>
-          <a href="ajakava.html" class="footer-link">Ajakava</a>
-          <a href="meist.html" class="footer-link">Meist</a>
-          <a href="dokumendid.html" class="footer-link">Dokumendid</a>
-        </nav>
-      </div>
-
-      <!-- Col 3: Articles -->
-      <div class="footer-col footer-col-links">
-        <h3 class="footer-col-title">Artiklid</h3>
-        <nav aria-label="Artiklid">
-          <a href="artiklid/uus-ettevote-tootervishoid.html" class="footer-link">Uue ettevõtte kohustused</a>
-          <a href="artiklid/tootervishoid-hind.html" class="footer-link">Töötervishoiu teenuse hind</a>
-          <a href="uus-ettevote.html" class="footer-link">Alustavale ettevõtjale</a>
-        </nav>
-      </div>
-
-      <!-- Col 4: Contact -->
-      <div class="footer-col footer-col-contact">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
-        <a href="tel:+37259110909" class="footer-link">+372 5 911 0909</a>
-        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
-      </div>
-
+<!-- Footer -->
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Sõltumatu Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
     </div>
-
-    <div class="footer-bottom">
-      <span class="footer-partner">Koostöös <a href="https://valvekliinik.ee" target="_blank" rel="noopener" class="footer-partner-link"><strong>Valvekliinikuga</strong></a></span>
-      <span class="footer-copy">© 2026 TT24 - Töötervishoiu Teejuht</span>
-      <a href="privaatsus.html" style="color: var(--color-text-muted); font-size: var(--text-sm); text-decoration: none; opacity: 0.7;">Privaatsus</a>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="tervisetoetus.html">400 € tervisetoetus</a>
+      <a href="dokumendid.html">Dokumendid</a>
     </div>
-
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="muudatused.html">Muudatused</a>
+      <a href="meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="pakkumine.html">Küsi pakkumist</a>
+      <a href="avatud-uks.html">Küsige meilt</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>
 
+<!-- Cookie banner -->
+<div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A0A0A;color:#D4D4D4;padding:14px 20px;z-index:9999;font-family:var(--sans);font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #2A2A2A;">
+  <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privaatsuspoliitika</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Keeldun</button>
+    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">N&#245;ustun</button>
+  </div>
+</div>
 <script>
-  // Mobile nav toggle
-  var navToggle = document.getElementById('navToggle');
-  var mainNav = document.getElementById('mainNav');
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', function() {
-      var isOpen = mainNav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+(function(){
+  var consent = localStorage.getItem('tt24_cookie_consent');
+  if (!consent) {
+    var banner = document.getElementById('tt24-cookie-banner');
+    if (banner) banner.style.display = 'flex';
+    document.getElementById('tt24-consent-accept').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','accepted');
+      banner.style.display='none';
+      if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
+    });
+    document.getElementById('tt24-consent-decline').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','declined');
+      banner.style.display='none';
     });
   }
-
-  // Close tooltips when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.info-tooltip')) {
-      document.querySelectorAll('.info-tooltip.active').forEach(function(t) {
-        t.classList.remove('active');
-      });
-    }
-  });
-
-  // Scroll shadow on sticky nav
-  var siteHeader = document.querySelector('.site-header');
-  if (siteHeader) {
-    window.addEventListener('scroll', function () {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive: true });
-  }
-</script>
-<script>
-(function(){var m={};document.addEventListener('click',function(e){var k=e.target.tagName+'#'+e.target.id+'.'+e.target.className;var n=Date.now();if(!m[k])m[k]={c:0,t:0};if(n-m[k].t<1500){m[k].c++;if(m[k].c>=3)console.warn('Rage click:',k,e.target)}else{m[k].c=1}m[k].t=n});
 })();
 </script>
-<script>
-  var dd=document.getElementById("toolsDropdown");
-  if(dd){var btn=dd.querySelector(".nav-dropdown-toggle");
-  btn.addEventListener("click",function(e){e.stopPropagation();dd.classList.toggle("open");btn.setAttribute("aria-expanded",dd.classList.contains("open"))});
-  document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}})}
-  </script>
-  <!-- Cookie Consent Banner -->
-  <div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0F172A;color:#CBD5E1;padding:14px 20px;z-index:9999;font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #1E293B;">
-    <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. Lisainfo: <a href="privaatsus.html" style="color:#38BDF8;text-decoration:underline;">Privaatsuspoliitika</a></p>
-    <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button id="tt24-consent-decline" style="background:transparent;border:1px solid #475569;color:#CBD5E1;padding:7px 16px;cursor:pointer;font-size:13px;border-radius:4px;">Keeldun</button>
-      <button id="tt24-consent-accept" style="background:#0EA5E9;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;border-radius:4px;font-weight:600;">N&#245;ustun</button>
-    </div>
-  </div>
-  <script>
-  (function() {
-    var consent = localStorage.getItem('tt24_cookie_consent');
-    if (!consent) {
-      var banner = document.getElementById('tt24-cookie-banner');
-      if (banner) banner.style.display = 'flex';
-      document.getElementById('tt24-consent-accept').addEventListener('click', function() {
-        localStorage.setItem('tt24_cookie_consent', 'accepted');
-        banner.style.display = 'none';
-        if (typeof tt24LoadGTM === 'function') tt24LoadGTM(); if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
-      });
-      document.getElementById('tt24-consent-decline').addEventListener('click', function() {
-        localStorage.setItem('tt24_cookie_consent', 'declined');
-        banner.style.display = 'none';
-      });
-    }
-  })();
-  </script>
-  <!-- End Cookie Consent Banner -->
 
-  </body>
+</body>
 </html>
