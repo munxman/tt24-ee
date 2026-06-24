@@ -292,9 +292,9 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         </div>
 
         <div class="fg">
-          <div class="fg-label">Telefon <span class="req">·</span></div>
+          <div class="fg-label">Telefon</div>
           <div>
-            <input type="tel" id="telefon" name="telefon" class="form-input" placeholder="+372 5xxx xxxx" required autocomplete="tel" aria-required="true">
+            <input type="tel" id="telefon" name="telefon" class="form-input" placeholder="+372 5xxx xxxx (valikuline)" autocomplete="tel">
             <p class="field-error" id="telefon-err" role="alert"></p>
           </div>
         </div>
@@ -474,8 +474,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
       if (!v) { showErr(errId, 'Palun sisestage e-posti aadress'); return false; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { showErr(errId, 'Korrektne e-post: nimi@ettevote.ee'); return false; }
     } else if (inp.id === 'telefon') {
-      if (!v) { showErr(errId, 'Palun sisestage telefoninumber'); return false; }
-      if (v.replace(/[\s\-\+\(\)]/g,'').length < 7) { showErr(errId, 'Liiga lühike telefoninumber'); return false; }
+      if (v && v.replace(/[\s\-\+\(\)]/g,'').length < 7) { showErr(errId, 'Liiga lühike telefoninumber'); return false; }
     } else if (inp.required && !v) {
       showErr(errId, 'See väli on kohustuslik');
       return false;

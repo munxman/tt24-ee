@@ -732,13 +732,13 @@ html, body {
 <!-- Email gate -->
 <section class="form-wrap" id="kasiraamat">
   <div class="form-intro">
-    <p class="section-eyebrow" style="margin-bottom:18px;">Käsiraamat e-postile</p>
-    <h2>400 euro maksuvaba tervisetoetuse käsiraamat 2026</h2>
-    <p>14 lehekülge: täielik nimekiri lubatud kuluartiklitest, näidisdokumendid (kord ja hüvitamise avaldus), Maksuameti tõlgendused, ülevaade töötajate kaupa, näide raamatupidamiskontost. Saadame kahe tööpäeva jooksul.</p>
+    <p class="section-eyebrow" style="margin-bottom:18px;">Kokkuvõte e-postile</p>
+    <h2>Saatke 400 euro reegli kokkuvõte oma e-postile</h2>
+    <p>Saadame kohe Teie e-postile lühikese kokkuvõtte: mida 400 euro piires katta tohib, mida mitte, ja kuidas kulutusi õigesti dokumenteerida.</p>
   </div>
 
   <form id="tervisetoetus-form" onsubmit="return tt24SubmitTervise(event)">
-    <input type="hidden" name="_subject" value="TT24 · tervisetoetuse käsiraamat">
+    <input type="hidden" name="_subject" value="TT24 · tervisetoetuse kokkuvõte">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="source" value="tervisetoetus-gate">
     <input type="hidden" name="_captcha" value="false">
@@ -760,12 +760,12 @@ html, body {
 
     <label class="consent">
       <input type="checkbox" required>
-      <span>Nõustun, et TT24 töötleb minu andmeid käsiraamatu saatmiseks ja TT24 uudiskirjale lisamiseks. Loobumine on alati võimalik. <a href="privaatsus.html">Privaatsuspoliitika</a></span>
+      <span>Nõustun, et TT24 töötleb minu andmeid kokkuvõtte saatmiseks ja TT24 uudiskirjale lisamiseks. Loobumine on alati võimalik. <a href="privaatsus.html">Privaatsuspoliitika</a></span>
     </label>
 
     <div class="submit-row">
-      <button type="submit" class="submit-btn">Saada käsiraamat</button>
-      <span class="submit-meta">Vastus kahe tööpäeva jooksul</span>
+      <button type="submit" class="submit-btn">Saada kokkuvõte</button>
+      <span class="submit-meta">Saadame kohe Teie e-postile</span>
     </div>
 
     <p id="terv-status" style="margin-top:18px; font-size:14px; color:var(--mute);"></p>
@@ -780,24 +780,25 @@ function tt24SubmitTervise(e) {
   var status = document.getElementById('terv-status');
   var data = new FormData(form);
   data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
+  data.append('autoresponse', '400 euro maksuvaba tervisetoetus (Tulumaksuseaduse paragrahv 48). Tooandja voib kulutada kuni 400 eurot aastas tootaja kohta tervist edendavatele tegevustele ilma erisoodustusmaksuta. Limiit kehtib iga tootaja kohta eraldi ja lisaks kohustuslikule tootervishoiu kulule.\n\nMida saab katta: sport ja liikumine; lisatervisekontrollid, taastusravi ja massaaz; vaimne tervis; prillid ja ergonoomilised toovahendid; hambaravi osaliselt; tervisekindlustus.\n\nMida EI saa katta: sularahaulekanded tootajale; alkohol ja tubakas; toidulisandid massmuugis; esteetilised protseduurid ilma meditsiinilise naidustuseta; perekonnaliikmete kulud.\n\nKuidas oigesti teha: kirjalik tervise edendamise kord, originaalarved ettevotte nimele, ulevaade tootajate kaupa, eraldi raamatupidamiskonto.\n\nTapsema arvutuse leiate: https://tt24.ee/tervisetoetus.html\nKusimused: info@tt24.ee\n\nTT24 - Tootervishoiu Teejuht');
   btn.disabled = true; btn.textContent = 'Saadan...'; status.textContent = '';
   fetch('https://api.web3forms.com/submit', { method:'POST', body:data, headers:{'Accept':'application/json'} })
     .then(function(r){return r.json();})
     .then(function(d){
       if (d.success === 'true' || d.success === true) {
         var wrap = document.querySelector('.form-wrap');
-        wrap.innerHTML = '<div style="max-width:680px;margin:0 auto;text-align:left;"><p class="section-eyebrow" style="margin-bottom:18px;">Saadetud</p><h2 style="font-family:var(--serif);font-size:36px;line-height:1.18;letter-spacing:-0.015em;font-weight:500;color:var(--ink);margin:0 0 24px;">Aitäh. Käsiraamatu saadame kahe tööpäeva jooksul.</h2><p style="font-size:18px;line-height:1.65;color:var(--ink-soft);margin:0 0 18px;">Saatsime Teie päringu meie tiimile. Vastame antud e-posti aadressile.</p><p style="font-size:15px;color:var(--mute);line-height:1.6;margin:0;">Küsimused? <a href="mailto:info@tt24.ee" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);">info@tt24.ee</a> · <a href="tel:+37259110909" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);">+372 5 911 0909</a></p></div>';
+        wrap.innerHTML = '<div style="max-width:680px;margin:0 auto;text-align:left;"><p class="section-eyebrow" style="margin-bottom:18px;">Saadetud</p><h2 style="font-family:var(--serif);font-size:36px;line-height:1.18;letter-spacing:-0.015em;font-weight:500;color:var(--ink);margin:0 0 24px;">Aitäh. Saatsime kokkuvõtte Teie e-postile.</h2><p style="font-size:18px;line-height:1.65;color:var(--ink-soft);margin:0 0 18px;">Kontrollige ka rämpsposti kausta. Küsimuste korral vastame antud e-posti aadressile.</p><p style="font-size:15px;color:var(--mute);line-height:1.6;margin:0;">Küsimused? <a href="mailto:info@tt24.ee" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);">info@tt24.ee</a> · <a href="tel:+37259110909" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);">+372 5 911 0909</a></p></div>';
         if (window.gtag) { try { gtag('event','tervisetoetus_email_capture',{ event_category:'lead', page:'tervisetoetus' }); } catch(_) {} }
       } else {
         status.style.color = '#B91C1C';
         status.textContent = 'Saatmine ebaõnnestus. Proovige uuesti või kirjutage info@tt24.ee.';
-        btn.disabled = false; btn.textContent = 'Saada käsiraamat';
+        btn.disabled = false; btn.textContent = 'Saada kokkuvõte';
       }
     })
     .catch(function(){
       status.style.color = '#B91C1C';
       status.textContent = 'Võrgu viga. Proovige uuesti või kirjutage info@tt24.ee.';
-      btn.disabled = false; btn.textContent = 'Saada käsiraamat';
+      btn.disabled = false; btn.textContent = 'Saada kokkuvõte';
     });
   return false;
 }

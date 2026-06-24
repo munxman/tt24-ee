@@ -453,13 +453,10 @@ html, body {
           <p class="kalk-incl-head">Hinnas sisaldub</p>
           <div id="includesList"><!-- filled by JS --></div>
 
-          <a href="pakkumine.html" class="kalk-cta" aria-label="Küsin pakkumist">Küsin pakkumist</a>
-          <p class="kalk-cta-meta">Vastame 24 tunni jooksul. Ei kohusta millekski.</p>
-
-          <!-- Email gate -->
+          <!-- Email gate (primary, low-friction capture) -->
           <div class="tt24-calc-gate" id="calcGate">
             <div class="tt24-calc-gate-form-wrap">
-              <h4>Või saatke detailne arvutus oma e-postile</h4>
+              <h4>Saatke detailne arvutus oma e-postile</h4>
               <p>Saadame personaalse arvutuse koos sektoripõhise riskianalüüsi ja kontrollnimekirjaga.</p>
               <form class="tt24-calc-gate-form" id="calcGateForm" onsubmit="return tt24SubmitCalcGate(event)">
                 <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
@@ -471,6 +468,10 @@ html, body {
               <p>Aitäh. Saadame detailse arvutuse Teie e-postile lähitundidel.</p>
             </div>
           </div>
+
+          <!-- Secondary: ready-to-buy path -->
+          <a href="pakkumine.html" class="kalk-cta" aria-label="Küsin pakkumist">Küsin pakkumist</a>
+          <p class="kalk-cta-meta">Olete valmis? Küsige personaalset pakkumist. Vastame 24 tunni jooksul, ei kohusta millekski.</p>
 
         </div>
       </div>
