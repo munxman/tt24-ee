@@ -1,409 +1,317 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Küsi töötervishoiu teenuse pakkumist 24h jooksul | TT24</title>
-  <meta name="description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine 24 tunni jooksul. Litsentseeritud arstid ja TTOS-nõuetele vastav dokumentatsioon.">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Küsi töötervishoiu teenuse pakkumist 24h jooksul | TT24</title>
+<meta name="description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine 24 tunni jooksul. Litsentseeritud arstid ja TTOS-nõuetele vastav dokumentatsioon.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <!-- TT24 GA4 (G-5NW9JSMQVE), consent-gated -->
-  <script>
-    function tt24LoadGA4() {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-      gtag('js', new Date());
-      gtag('config', 'G-5NW9JSMQVE');
-    }
-    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
-      tt24LoadGA4();
-    }
-  </script>
-  <!-- End TT24 GA4 -->
+<script>
+function tt24LoadGA4() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+  gtag('js', new Date());
+  gtag('config', 'G-5NW9JSMQVE');
+}
+if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4(); }
+</script>
 
-  <!-- Canonical + hreflang -->
-  <link rel="canonical" href="https://tt24.ee/pakkumine.html" />
-  <link rel="alternate" hreflang="et" href="https://tt24.ee/pakkumine.html" />
-  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/pakkumine.html" />
+<link rel="canonical" href="https://tt24.ee/pakkumine.html" />
+<link rel="alternate" hreflang="et" href="https://tt24.ee/pakkumine.html" />
+<link rel="alternate" hreflang="x-default" href="https://tt24.ee/pakkumine.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tt24.ee/pakkumine.html" />
-  <meta property="og:title" content="Küsi töötervishoiu pakkumist 24h jooksul" />
-  <meta property="og:description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine 24 tunni jooksul. Litsentseeritud arstid, nõuetekohane dokumentatsioon." />
-  <meta property="og:image" content="https://tt24.ee/og-pakkumine.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="et_EE" />
-  <meta property="og:site_name" content="TT24" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tt24.ee/pakkumine.html" />
+<meta property="og:title" content="Küsi töötervishoiu pakkumist 24h jooksul" />
+<meta property="og:description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine 24 tunni jooksul. Litsentseeritud arstid, nõuetekohane dokumentatsioon." />
+<meta property="og:image" content="https://tt24.ee/og-pakkumine.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="et_EE" />
+<meta property="og:site_name" content="TT24" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Küsi töötervishoiu pakkumist 24h jooksul" />
-  <meta name="twitter:description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine 24 tunni jooksul." />
-  <meta name="twitter:image" content="https://tt24.ee/og-pakkumine.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Küsi töötervishoiu pakkumist 24h jooksul" />
+<meta name="twitter:description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine 24 tunni jooksul." />
+<meta name="twitter:image" content="https://tt24.ee/og-pakkumine.png" />
 
-  <!-- Schema.org – LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+<!-- Schema.org – Service. TT24 (Sentifoli & Lindström) is the brand/owner; Valvekliinik is the named provider. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Töötervishoiu teenus",
+  "name": "Töötervishoiu teenuse pakkumine Eesti tööandjatele",
+  "description": "Personaalne töötervishoiu teenuse pakkumine 24 tunni jooksul. Teenust osutavad litsentseeritud arstid, dokumentatsioon vastab TTOS nõuetele.",
+  "url": "https://tt24.ee/pakkumine.html",
+  "areaServed": { "@type": "Country", "name": "Estonia" },
+  "brand": {
+    "@type": "Organization",
+    "name": "TT24",
+    "url": "https://tt24.ee",
+    "parentOrganization": { "@type": "Organization", "name": "Sentifoli & Lindström OÜ" }
+  },
+  "provider": {
+    "@type": "MedicalOrganization",
     "name": "Valvekliinik",
-    "alternateName": "TT24 Töötervishoiu Teejuht",
-    "url": "https://tt24.ee/pakkumine.html",
-    "description": "Valvekliinik pakub litsentseeritud arstide poolt osutatavat töötervishoiu teenust Eesti tööandjatele. Personaalne pakkumine 24 tunni jooksul.",
+    "url": "https://valvekliinik.ee",
     "telephone": "+37259110909",
-    "email": "info@tt24.ee",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sepapaja 12/1, Ülemiste Tervisemaja 2",
       "addressLocality": "Tallinn",
       "postalCode": "11415",
       "addressCountry": "EE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 59.4211,
-      "longitude": 24.7987
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Estonia"
-    },
-    "serviceType": "Töötervishoiu teenus",
-    "priceRange": "€€",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Töötervishoiu teenused",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Töötervishoiu leping",
-            "description": "Seadusekohane töötervishoiu teenuse osutamine koos dokumentatsiooniga"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Tervisekontroll töötajatele",
-            "description": "Litsentseeritud töötervishoid-arsti läbi viidud perioodiline tervisekontroll"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Riskianalüüs",
-            "description": "Tööohutuse riskianalüüs vastavalt TTOS nõuetele"
-          }
-        }
-      ]
-    },
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "TT24",
-      "url": "https://tt24.ee"
     }
-  }
-  </script>
-
-  <!-- Schema.org – BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Töötervishoiu teenused",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Avaleht",
-        "item": "https://tt24.ee/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Küsi pakkumist",
-        "item": "https://tt24.ee/pakkumine.html"
-      }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Töötervishoiu leping", "description": "Seadusekohane töötervishoiu teenuse osutamine koos dokumentatsiooniga" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tervisekontroll töötajatele", "description": "Litsentseeritud töötervishoiuarsti läbi viidud perioodiline tervisekontroll" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Riskianalüüs", "description": "Tööohutuse riskianalüüs vastavalt TTOS nõuetele" } }
     ]
   }
-  </script>
+}
+</script>
+<!-- Schema.org – BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Avaleht", "item": "https://tt24.ee/" },
+    { "@type": "ListItem", "position": 2, "name": "Küsi pakkumist", "item": "https://tt24.ee/pakkumine.html" }
+  ]
+}
+</script>
 
-  <style>
-    /* ─── Trust Bar ─── */
-    .trust-bar {
-      display: flex;
-      gap: 0;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: var(--space-8, 2rem) auto 0;
-      max-width: 760px;
-    }
-    .trust-bar__item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.9rem 1.4rem;
-      background: rgba(14, 165, 233, 0.15);
-      border: 1px solid rgba(14, 165, 233, 0.35);
-      flex: 1 1 200px;
-      min-width: 180px;
-    }
-    .trust-bar__item:first-child { border-radius: 10px 0 0 10px; }
-    .trust-bar__item:last-child  { border-radius: 0 10px 10px 0; }
-    @media (max-width: 600px) {
-      .trust-bar__item { border-radius: 8px !important; flex: 1 1 100%; }
-    }
-    .trust-bar__icon { font-size: 1.4rem; flex-shrink: 0; }
-    .trust-bar__text { font-size: 0.95rem; font-weight: 700; color: #FFFFFF; line-height: 1.3; }
-    .trust-bar__sub  { font-size: 0.8rem; color: #CBD5E1; margin-top: 3px; font-weight: 400; line-height: 1.4; }
+<style>
+:root {
+  --serif: 'Source Serif 4', 'Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ink:#0A0A0A; --ink-soft:#2A2A2A; --mute:#6B6B6B; --mute-2:#A8A8A8;
+  --rule:#E0E0E0; --paper:#FFFFFF; --paper-2:#FAFAF8; --accent:#0066CC;
+}
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-family:var(--sans); font-size:17px; line-height:1.6; }
+.skip-link { position:absolute; left:-10000px; top:0; background:var(--ink); color:var(--paper); padding:8px 14px; text-decoration:none; font-size:14px; }
+.skip-link:focus { left:16px; top:16px; z-index:100; }
 
-    /* ─── Hero for pakkumine ─── */
-    .pakkumine-hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0c2d48 100%);
-      padding: 3.5rem 1.5rem 2.5rem;
-      text-align: center;
-      color: white;
-    }
-    .pakkumine-hero h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0 auto 1rem;
-      max-width: 680px;
-      color: white;
-    }
-    .pakkumine-hero h1 em {
-      font-style: normal;
-      color: #38bdf8;
-    }
-    .pakkumine-hero__sub {
-      font-size: 1.05rem;
-      color: #94a3b8;
-      margin: 0 auto;
-      max-width: 520px;
-    }
+.topbar { border-bottom:1px solid var(--rule); background:var(--paper); position:sticky; top:0; z-index:50; }
+.topbar-inner { max-width:1200px; margin:0 auto; padding:22px 32px; display:flex; align-items:baseline; justify-content:space-between; gap:32px; }
+.brand { text-decoration:none; color:var(--ink); display:flex; align-items:baseline; gap:12px; }
+.brand-mark { font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-0.01em; }
+.brand-tag { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); }
+.nav { display:flex; gap:32px; align-items:baseline; font-size:15px; }
+.nav a { color:var(--ink-soft); text-decoration:none; font-weight:500; }
+.nav a:hover, .nav a.active { color:var(--accent); }
+.nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
 
-    /* ─── Form enhancements ─── */
-    .form-section-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--color-text-muted, #64748b);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-bottom: var(--space-4, 1rem);
-      padding-top: var(--space-6, 1.5rem);
-      border-top: 1px solid var(--color-border, #e2e8f0);
-    }
+.intro { max-width:760px; margin:0 auto; padding:80px 32px 56px; }
+.dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
+.dateline span { color:var(--accent); }
+.headline { font-family:var(--serif); font-size:clamp(34px,5vw,52px); line-height:1.08; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 24px; }
+.standfirst { font-family:var(--serif); font-size:clamp(19px,2vw,23px); line-height:1.45; color:var(--ink-soft); font-weight:400; margin:0; max-width:620px; }
 
-    /* ─── Tooltip ─── */
-    .tooltip-trigger{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:0.7rem;font-weight:700;cursor:pointer;position:relative;margin-left:4px;vertical-align:middle}
-    .tooltip-text{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:6px 10px;border-radius:6px;font-size:0.75rem;font-weight:400;white-space:nowrap;z-index:10;pointer-events:none}
-    .tooltip-text.show{display:block}
+/* Trust rows */
+.trust-rows { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:40px; border-top:1px solid var(--rule); }
+.trust-row { padding:22px 0; border-bottom:1px solid var(--rule); padding-right:24px; }
+.trust-row:nth-child(odd) { border-right:1px solid var(--rule); }
+.trust-row:nth-child(even) { padding-left:24px; }
+.trust-row .num { font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); display:block; margin-bottom:8px; }
+.trust-row strong { display:block; font-family:var(--serif); font-size:18px; font-weight:500; color:var(--ink); margin-bottom:4px; }
+.trust-row span.t { font-size:14px; color:var(--ink-soft); line-height:1.5; }
+@media (max-width:600px){ .trust-rows{ grid-template-columns:1fr; } .trust-row:nth-child(odd){ border-right:0; padding-right:0; } .trust-row:nth-child(even){ padding-left:0; } }
 
-    /* ─── Validation ─── */
-    .form-input.valid{border-color:#22c55e}
-    .form-input.invalid{border-color:#ef4444}
-    .field-error{color:#ef4444;font-size:0.75rem;margin-top:4px;display:none}
-    .field-error.show{display:block}
+.section { border-top:1px solid var(--rule); }
+.form-wrap { max-width:680px; margin:0 auto; padding:72px 32px 96px; }
+.form-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 18px; }
+.form-h { font-family:var(--serif); font-size:clamp(26px,3vw,34px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 36px; }
 
-    /* ─── Breadcrumb ─── */
-    .breadcrumb { font-size: 0.8rem; color: #94a3b8; text-align: center; padding: 0.6rem 1rem; }
-    .breadcrumb a { color: #38bdf8; text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-  </style>
+.fg { border-top:1px solid var(--rule); padding:22px 0; display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:start; }
+.fg-label { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--mute); padding-top:12px; }
+.fg-label .req { color:var(--accent); }
+.form-section-label { border-top:1px solid var(--rule); padding-top:28px; margin:0 0 4px; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); }
+.form-section-label .light { text-transform:none; letter-spacing:0; color:var(--mute); font-size:11px; }
+.form-input { width:100%; border:0; border-bottom:1px solid var(--rule); padding:12px 0; font-family:var(--sans); font-size:17px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
+select.form-input { cursor:pointer; }
+.form-input:focus { border-bottom-color:var(--accent); }
+.form-input.invalid { border-bottom-color:var(--ink); }
+.form-input.valid { border-bottom-color:var(--rule); }
+textarea.form-input { resize:vertical; line-height:1.55; }
+.fg-hint { font-size:13px; color:var(--mute); margin:8px 0 0; }
+.field-error { color:var(--ink); font-size:13px; margin:6px 0 0; display:none; }
+.field-error.show { display:block; }
+.field-error::before { content:''; display:inline-block; width:14px; border-top:2px solid var(--accent); vertical-align:middle; margin-right:6px; }
+
+.consent { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 0; margin-top:8px; display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--ink-soft); line-height:1.55; }
+.consent input { margin-top:4px; flex-shrink:0; accent-color:var(--accent); width:18px; height:18px; }
+.consent a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
+
+.submit-btn { background:var(--ink); color:var(--paper); border:0; width:100%; padding:18px 32px; font-family:var(--mono); font-size:13px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; margin-top:28px; }
+.submit-btn:hover:not(:disabled) { background:var(--accent); }
+.submit-btn:disabled { opacity:0.5; cursor:wait; }
+.submit-note { margin-top:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; color:var(--mute); text-align:center; }
+
+/* Success card */
+.success-card { display:none; border:1px solid var(--rule); padding:56px 36px; text-align:left; }
+.success-card .eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin:0 0 18px; }
+.success-card h2 { font-family:var(--serif); font-size:32px; font-weight:500; letter-spacing:-0.015em; color:var(--ink); margin:0 0 18px; }
+.success-card p { font-size:17px; line-height:1.6; color:var(--ink-soft); margin:0 0 16px; }
+.success-card a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
+
+/* Why us */
+.why-grid { margin-top:36px; }
+.why-row { padding:26px 0; border-top:1px solid var(--rule); display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:baseline; }
+.why-row:last-child { border-bottom:1px solid var(--rule); }
+.why-row h3 { font-family:var(--serif); font-size:19px; font-weight:500; color:var(--ink); margin:0; }
+.why-row .num { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); display:block; margin-bottom:6px; font-weight:400; }
+.why-row p { font-size:15px; line-height:1.6; color:var(--ink-soft); margin:0; }
+@media (max-width:600px){ .why-row{ grid-template-columns:1fr; gap:10px; } }
+
+.provider-note { border-top:1px solid var(--rule); padding:28px 0 0; margin-top:36px; font-size:14px; line-height:1.65; color:var(--mute); }
+.provider-note a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
+
+/* Footer */
+.foot { border-top:1px solid var(--rule); background:var(--paper); }
+.foot-inner { max-width:1200px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:56px; }
+.foot-brand { font-family:var(--serif); font-size:22px; font-weight:600; color:var(--ink); text-decoration:none; margin:0 0 12px; display:block; }
+.foot-desc { font-size:14px; line-height:1.6; color:var(--mute); margin:0; max-width:320px; }
+.foot-col h4 { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 16px; font-weight:600; }
+.foot-col a { display:block; font-size:14px; color:var(--ink-soft); text-decoration:none; padding:4px 0; }
+.foot-col a:hover { color:var(--accent); }
+.foot-bottom { max-width:1200px; margin:0 auto; padding:24px 32px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute); }
+.foot-bottom a { color:var(--mute); text-decoration:none; }
+.foot-bottom a:hover { color:var(--accent); }
+
+@media (max-width:768px) {
+  .topbar-inner { padding:18px 22px; flex-wrap:wrap; }
+  .nav { gap:16px; font-size:14px; }
+  .intro { padding:64px 22px 44px; }
+  .form-wrap { padding:56px 22px 72px; }
+  .fg { grid-template-columns:1fr; gap:8px; padding:18px 0; }
+  .fg-label { padding-top:0; }
+  .foot-inner { grid-template-columns:1fr; gap:36px; padding:48px 22px 32px; }
+  .foot-bottom { padding:20px 22px; flex-direction:column; gap:10px; align-items:flex-start; }
+}
+</style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) - blocked pending consent -->
 
 <a href="#main-content" class="skip-link">Hüppa põhisisule</a>
 
-<!-- ═══════════════════════════════
-     NAVIGATION
-═══════════════════════════════ -->
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="nav-brand">
-      <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
-        <span class="nav-logo-text">TT24</span><span class="nav-logo-tagline">Töötervishoiu Teejuht</span>
-      </a>
-      <a href="meist.html" class="nav-brand-meist">Meist</a>
-    </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
-      <div class="nav-dropdown" id="toolsDropdown">
-        <button class="nav-dropdown-toggle nav-dropdown-toggle--prominent" aria-expanded="false" aria-haspopup="true">Tööriistad</button>
-        <div class="nav-dropdown-menu">
-          <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-          <a href="kalkulaator.html">Kalkulaator</a>
-          <a href="enesekontroll.html">Enesekontroll</a>
-          <a href="ajakava.html">Ajakava</a>
-          <a href="dokumendid.html">Dokumendid</a>
-        </div>
-      </div>
-      <a href="artiklid/index.html" class="nav-link">Artiklid</a>
-      <a href="korduma.html" class="nav-link nav-link--secondary">KKK</a>
-      <a href="pakkumine.html" class="nav-link nav-link--highlight" aria-current="page">Küsi pakkumist</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">TT24</span>
+      <span class="brand-tag">Töötervishoiu Teejuht</span>
+    </a>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="index.html">Tööriistad</a>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="meist.html">Meist</a>
+      <a href="pakkumine.html" class="nav-cta" aria-current="page">Küsi pakkumist</a>
     </nav>
-
-    <a href="enesekontroll.html" class="nav-cta-btn">Testi nõuetele vastavust</a>
   </div>
 </header>
 
 <main id="main-content">
 
-  <!-- ═══════════════════════════════
-       HERO, above fold value prop
-  ═══════════════════════════════ -->
-  <section class="pakkumine-hero" aria-labelledby="hero-heading">
-    <nav class="breadcrumb" aria-label="Navigatsioonirada">
-      <a href="index.html">Avaleht</a> › <span>Küsi pakkumist</span>
-    </nav>
-    <h1 id="hero-heading">
-      Saage oma ettevõttele<br>
-      <em>TTH pakkumine 24h jooksul</em>
-    </h1>
-    <p class="pakkumine-hero__sub">
-      Täitke allolev vorm, meie töötervishoiu spetsialist võtab Teiega ühendust järgmise tööpäeva jooksul.
-    </p>
+<section class="intro">
+  <p class="dateline">Pakkumine · <span>Vastus 24 tunni jooksul</span> · Tasuta päring</p>
+  <h1 id="hero-heading" class="headline">Küsige oma ettevõttele töötervishoiu pakkumist.</h1>
+  <p class="standfirst">Täitke vorm. Töötervishoiu spetsialist võtab Teiega ühendust järgmise tööpäeva jooksul ja koostab personaalse pakkumise.</p>
 
-    <!-- ─── 2-point trust builder ─── -->
-    <div class="trust-bar" role="list" aria-label="Meie tugipunktid">
-      <div class="trust-bar__item" role="listitem">
-        <span class="trust-bar__icon" aria-hidden="true">👨‍⚕️</span>
-        <div>
-          <div class="trust-bar__text">Litsentseeritud arstid</div>
-          <div class="trust-bar__sub">Terviseameti litsents, sertifitseeritud spetsialistid</div>
-        </div>
-      </div>
-      <div class="trust-bar__item" role="listitem">
-        <span class="trust-bar__icon" aria-hidden="true">📋</span>
-        <div>
-          <div class="trust-bar__text">TTOS-nõuetele vastav dokumentatsioon</div>
-          <div class="trust-bar__sub">Aktid, tervisekontrolli kaardid ja riskianalüüs vastavalt seadusele</div>
-        </div>
-      </div>
+  <div class="trust-rows">
+    <div class="trust-row">
+      <span class="num">01 / Arstid</span>
+      <strong>Litsentseeritud arstid</strong>
+      <span class="t">Terviseameti litsents, sertifitseeritud spetsialistid.</span>
     </div>
-  </section>
+    <div class="trust-row">
+      <span class="num">02 / Dokumentatsioon</span>
+      <strong>TTOS-nõuetele vastav dokumentatsioon</strong>
+      <span class="t">Aktid, tervisekontrolli kaardid ja riskianalüüs vastavalt seadusele.</span>
+    </div>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════════
-       FORM SECTION
-  ═══════════════════════════════ -->
-  <section class="section" aria-labelledby="form-heading">
-    <div class="container" style="max-width: 660px;">
+<!-- Form -->
+<section class="section">
+  <div class="form-wrap">
 
-      <!-- ── Success message (shown after Formspree redirect) ── -->
-      <div id="success-card" class="card card--elevated" style="display:none; text-align:center; padding: 3rem 2rem;" role="alert" aria-live="polite">
-        <div style="font-size: 3.5rem; margin-bottom: 1rem;" aria-hidden="true">✅</div>
-        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--color-text); margin-bottom: 0.75rem;">Täname päringu eest!</h2>
-        <p style="font-size: 1.05rem; color: var(--color-text-muted); max-width: 420px; margin: 0 auto 1.5rem;">Oleme Teie päringu kätte saanud. Meie töötervishoiu spetsialist võtab Teiega ühendust <strong>24 tunni jooksul</strong>.</p>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);">Küsimuste korral: <a href="mailto:info@tt24.ee" style="color: var(--color-primary);">info@tt24.ee</a> · <a href="tel:+37259110909" style="color: var(--color-primary);">+372 5 911 0909</a></p>
-        <a href="index.html" class="btn btn-outline" style="margin-top: 1.5rem;">← Tagasi avalehele</a>
-      </div>
+    <!-- Success message (shown after submit / ?sent=true) -->
+    <div id="success-card" class="success-card" role="alert" aria-live="polite">
+      <p class="eyebrow">Saadetud</p>
+      <h2>Täname päringu eest.</h2>
+      <p>Oleme Teie päringu kätte saanud. Töötervishoiu spetsialist võtab Teiega ühendust 24 tunni jooksul tööpäevadel.</p>
+      <p>Küsimuste korral: <a href="mailto:info@tt24.ee">info@tt24.ee</a> · <a href="tel:+37259110909">+372 5 911 0909</a></p>
+      <p><a href="index.html">Tagasi avalehele</a></p>
+    </div>
 
-      <!-- ── Contact form ── -->
-      <div id="form-card" class="card card--elevated">
-        <h2 id="form-heading" class="card__title" style="font-size: 1.25rem; margin-bottom: 1.5rem;">Täitke päringuvorm</h2>
+    <!-- Form -->
+    <div id="form-card">
+      <p class="form-eyebrow">Päringuvorm</p>
+      <h2 id="form-heading" class="form-h">Täitke päring</h2>
 
-        <form
-          id="pakkumine-form"
-          method="POST"
-          novalidate
-          aria-label="TTH pakkumise päring"
-        >
-          <!-- AJAX submission to formsubmit.co/info@tt24.ee (handled in script below) -->
-          <input type="hidden" name="_subject" value="Uus TTH pakkumise päring, TT24 portaal" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+      <form id="pakkumine-form" method="POST" novalidate aria-label="Töötervishoiu pakkumise päring">
+        <input type="hidden" name="_subject" value="Uus TTH pakkumise päring, TT24 portaal" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="source" value="pakkumine" />
 
-          <!-- ── Required contact fields ── -->
-          <div class="form-group">
-            <label for="nimi" class="form-label form-label--required">Kontaktisiku nimi</label>
-            <input
-              type="text"
-              id="nimi"
-              name="nimi"
-              class="form-input"
-              placeholder="Eesnimi Perenimi"
-              required
-              autocomplete="name"
-              aria-required="true"
-            >
+        <div class="fg">
+          <div class="fg-label">Kontaktisiku nimi <span class="req">·</span></div>
+          <div>
+            <input type="text" id="nimi" name="nimi" class="form-input" placeholder="Eesnimi Perenimi" required autocomplete="name" aria-required="true">
             <p class="field-error" id="nimi-err" role="alert"></p>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="epost" class="form-label form-label--required">Tööalane e-post</label>
-            <input
-              type="email"
-              id="epost"
-              name="email"
-              class="form-input"
-              placeholder="teie@ettevote.ee"
-              required
-              autocomplete="email"
-              aria-required="true"
-            >
+        <div class="fg">
+          <div class="fg-label">Tööalane e-post <span class="req">·</span></div>
+          <div>
+            <input type="email" id="epost" name="email" class="form-input" placeholder="teie@ettevote.ee" required autocomplete="email" aria-required="true">
             <p class="field-error" id="epost-err" role="alert"></p>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="telefon" class="form-label form-label--required">Telefon</label>
-            <input
-              type="tel"
-              id="telefon"
-              name="telefon"
-              class="form-input"
-              placeholder="+372 5xxx xxxx"
-              required
-              autocomplete="tel"
-              aria-required="true"
-            >
+        <div class="fg">
+          <div class="fg-label">Telefon <span class="req">·</span></div>
+          <div>
+            <input type="tel" id="telefon" name="telefon" class="form-input" placeholder="+372 5xxx xxxx" required autocomplete="tel" aria-required="true">
             <p class="field-error" id="telefon-err" role="alert"></p>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="ettevote" class="form-label form-label--required">Ettevõtte nimi</label>
-            <input
-              type="text"
-              id="ettevote"
-              name="ettevote_nimi"
-              class="form-input"
-              placeholder="OÜ / AS Näidis"
-              required
-              autocomplete="organization"
-              aria-required="true"
-            >
+        <div class="fg">
+          <div class="fg-label">Ettevõtte nimi <span class="req">·</span></div>
+          <div>
+            <input type="text" id="ettevote" name="ettevote_nimi" class="form-input" placeholder="OÜ / AS Näidis" required autocomplete="organization" aria-required="true">
             <p class="field-error" id="ettevote-err" role="alert"></p>
           </div>
+        </div>
 
-          <!-- ── Optional context fields ── -->
-          <p class="form-section-label">Täiendav info <span style="text-transform:none;font-weight:400;letter-spacing:0">(valikuline, aitab täpsemat pakkumist koostada)</span></p>
+        <p class="form-section-label">Täiendav info <span class="light">(valikuline, aitab täpsemat pakkumist koostada)</span></p>
 
-          <div class="form-group">
-            <label for="tootajate_arv" class="form-label">
-              Töötajate arv
-              <span class="tooltip-trigger" tabindex="0" role="button" aria-label="Miks küsime?" onclick="this.querySelector('.tooltip-text').classList.toggle('show')">?<span class="tooltip-text">Töötajate arv määrab tervisekontrolli mahu ja paketi hinna</span></span>
-            </label>
+        <div class="fg">
+          <div class="fg-label">Töötajate arv</div>
+          <div>
             <select id="tootajate_arv" name="tootajate_arv" class="form-input">
               <option value="" selected>Valige vahemik</option>
               <option value="1–10">1 – 10 töötajat</option>
@@ -413,13 +321,13 @@
               <option value="101–250">101 – 250 töötajat</option>
               <option value="251+">251 või enam</option>
             </select>
+            <p class="fg-hint">Töötajate arv määrab tervisekontrolli mahu ja paketi hinna.</p>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="tegevusvaldkond" class="form-label">
-              Tegevusvaldkond
-              <span class="tooltip-trigger" tabindex="0" role="button" aria-label="Miks küsime?" onclick="this.querySelector('.tooltip-text').classList.toggle('show')">?<span class="tooltip-text">Eri valdkondadel on erinevad töötervishoiu nõuded ja riskid</span></span>
-            </label>
+        <div class="fg">
+          <div class="fg-label">Tegevusvaldkond</div>
+          <div>
             <select id="tegevusvaldkond" name="tegevusvaldkond" class="form-input">
               <option value="" selected>Valige valdkond</option>
               <option value="Kontor / IT">Kontor / IT</option>
@@ -435,175 +343,112 @@
               <option value="Puhastusteenused">Puhastusteenused</option>
               <option value="Muu">Muu</option>
             </select>
+            <p class="fg-hint">Eri valdkondadel on erinevad töötervishoiu nõuded ja riskid.</p>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="lisainfo" class="form-label">Lisainfo</label>
-            <textarea
-              id="lisainfo"
-              name="lisainfo"
-              class="form-input"
-              rows="3"
-              placeholder="Näiteks: soovite pakkumist kiiresti, teil on spetsiifilised ohuklassid, jooksev leping lõpeb vms..."
-            ></textarea>
+        <div class="fg">
+          <div class="fg-label">Lisainfo</div>
+          <div>
+            <textarea id="lisainfo" name="lisainfo" class="form-input" rows="3" placeholder="Näiteks: soovite pakkumist kiiresti, Teil on spetsiifilised ohuklassid, jooksev leping lõpeb."></textarea>
           </div>
-
-          <!-- ── GDPR consent ── -->
-          <div style="margin: 1.5rem 0 1rem; padding: 1rem; background: rgba(14,165,233,0.05); border-radius: 8px; border: 1px solid rgba(14,165,233,0.15);">
-            <label style="font-size: 0.875rem; color: var(--color-text, #1e293b); cursor: pointer; display: flex; align-items: flex-start; gap: 0.6rem;">
-              <input
-                type="checkbox"
-                id="gdpr"
-                name="gdpr_consent"
-                value="yes"
-                required
-                aria-required="true"
-                style="margin-top: 3px; min-width: 18px; min-height: 18px; accent-color: #0ea5e9;"
-              >
-              <span>
-                Nõustun oma isikuandmete (nimi, e-post, telefon, ettevõtte nimi) töötlemisega pakkumise koostamise eesmärgil vastavalt
-                <a href="privaatsus.html" target="_blank" rel="noopener" style="color: var(--color-primary, #0284c7);">privaatsuspoliitikale</a>.
-                Andmeid ei edastata kolmandatele isikutele ega kasutata turunduseks ilma nõusolekuta. <strong>*</strong>
-              </span>
-            </label>
-            <p class="field-error" id="gdpr-err" role="alert" style="margin-top:0.4rem;"></p>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.9rem 1.5rem;">
-            Saadan pakkumise päringu →
-          </button>
-
-          <p style="margin-top: 0.6rem; font-size: 0.75rem; color: var(--color-text-muted); text-align: center;">
-            * kohustuslikud väljad · Vastame 24 tunni jooksul tööpäevadel
-          </p>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════
-       WHY US, supporting trust content
-  ═══════════════════════════════ -->
-  <section class="section" style="background: var(--color-surface, #f8fafc); padding: 2.5rem 1.5rem;" aria-label="Pakkumise eelised">
-    <div class="container" style="max-width: 760px; text-align: center;">
-      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
-        <div style="flex: 1 1 180px; padding: 1.2rem; background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">⚡</div>
-          <p style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem;">Kiire vastus</p>
-          <p style="font-size: 0.8rem; color: var(--color-text-muted);">Pakkumine 24h, teenus saab alata nädalaga</p>
         </div>
-        <div style="flex: 1 1 180px; padding: 1.2rem; background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📜</div>
-          <p style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem;">Täisdokumentatsioon</p>
-          <p style="font-size: 0.8rem; color: var(--color-text-muted);">Kõik TTOS-nõutud aktid ja tervisekontrolli kaardid</p>
-        </div>
-        <div style="flex: 1 1 180px; padding: 1.2rem; background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">🔒</div>
-          <p style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem;">Inspektsioonikindel</p>
-          <p style="font-size: 0.8rem; color: var(--color-text-muted);">Tööinspektori kontroll? Oleme valmis</p>
-        </div>
-        <div style="flex: 1 1 180px; padding: 1.2rem; background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">🤝</div>
-          <p style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem;">Üks kontakt</p>
-          <p style="font-size: 0.8rem; color: var(--color-text-muted);">Teile määratud koordinaator algusest lõpuni</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-</main>
+        <label class="consent">
+          <input type="checkbox" id="gdpr" name="gdpr_consent" value="yes" required aria-required="true">
+          <span>Nõustun oma isikuandmete (nimi, e-post, telefon, ettevõtte nimi) töötlemisega pakkumise koostamise eesmärgil vastavalt <a href="privaatsus.html" target="_blank" rel="noopener">privaatsuspoliitikale</a>. Andmeid ei edastata kolmandatele isikutele ega kasutata turunduseks ilma nõusolekuta.</span>
+        </label>
+        <p class="field-error" id="gdpr-err" role="alert"></p>
 
-<!-- ═══════════════════════════════
-     FOOTER
-═══════════════════════════════ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-      <!-- Col 1: Logo + description -->
-      <div class="footer-col footer-col-brand">
-        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
-        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele.<br>Kontrollnimekirjad, kalkulaatorid ja KKK - praktilised tööriistad töötervishoiu ja tööohutuse seaduse täitmiseks.</p>
-      </div>
-
-      <!-- Col 2: Tools links -->
-      <div class="footer-col footer-col-links">
-        <h3 class="footer-col-title">Tööriistad</h3>
-        <nav aria-label="Tööriistad">
-          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
-          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
-          <a href="enesekontroll.html" class="footer-link">Enesekontroll</a>
-          <a href="korduma.html" class="footer-link">KKK</a>
-          <a href="ajakava.html" class="footer-link">Ajakava</a>
-          <a href="meist.html" class="footer-link">Meist</a>
-          <a href="dokumendid.html" class="footer-link">Dokumendid</a>
-        </nav>
-      </div>
-
-      <!-- Col 3: Contact -->
-      <div class="footer-col footer-col-contact">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
-        <a href="tel:+37259110909" class="footer-link">+372 5 911 0909</a>
-        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <span class="footer-partner">Koostöös <a href="https://valvekliinik.ee" target="_blank" rel="noopener" class="footer-partner-link"><strong>Valvekliinikuga</strong></a></span>
-      <span class="footer-copy">© 2026 TT24 - Töötervishoiu Teejuht</span>
-      <a href="privaatsus.html" style="color: var(--color-text-muted); font-size: var(--text-sm); text-decoration: none; opacity: 0.7;">Privaatsus</a>
+        <button type="submit" class="submit-btn">Saadan pakkumise päringu</button>
+        <p class="submit-note">Kohustuslikud väljad on tähistatud. Vastame 24 tunni jooksul tööpäevadel.</p>
+      </form>
     </div>
 
   </div>
+</section>
+
+<!-- Why us -->
+<section class="section">
+  <div class="form-wrap" style="padding-top:64px; padding-bottom:48px;">
+    <p class="form-eyebrow">Mida saate</p>
+    <h2 class="form-h" style="margin-bottom:0;">Pakkumise eelised</h2>
+
+    <div class="why-grid">
+      <div class="why-row">
+        <h3><span class="num">01</span>Kiire vastus</h3>
+        <p>Pakkumine 24 tunni jooksul, teenus saab alata nädalaga.</p>
+      </div>
+      <div class="why-row">
+        <h3><span class="num">02</span>Täisdokumentatsioon</h3>
+        <p>Kõik TTOS-nõutud aktid ja tervisekontrolli kaardid.</p>
+      </div>
+      <div class="why-row">
+        <h3><span class="num">03</span>Inspektsioonikindel</h3>
+        <p>Tööinspektori kontrolliks valmis dokumentatsioon.</p>
+      </div>
+      <div class="why-row">
+        <h3><span class="num">04</span>Üks kontakt</h3>
+        <p>Teile määratud koordinaator algusest lõpuni.</p>
+      </div>
+    </div>
+
+    <p class="provider-note">Teenust osutab TT24 koostööpartner <a href="https://valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a>, litsentseeritud töötervishoiuteenuse osutaja. TT24 portaali omab Sentifoli &amp; Lindström OÜ.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Sõltumatu Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="tervisetoetus.html">400 € tervisetoetus</a>
+      <a href="dokumendid.html">Dokumendid</a>
+    </div>
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="ajakava.html">Ajakava</a>
+      <a href="meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="avatud-uks.html">Küsige meilt</a>
+      <a href="privaatsus.html">Privaatsus</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="privaatsus.html">Privaatsus</a>
+  </div>
 </footer>
 
+<!-- Show success on ?sent=true -->
 <script>
-  // Mobile nav toggle
-  var navToggle = document.getElementById('navToggle');
-  var mainNav = document.getElementById('mainNav');
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', function() {
-      var isOpen = mainNav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('sent') === 'true') {
+    var formCard = document.getElementById('form-card');
+    var successCard = document.getElementById('success-card');
+    if (formCard) formCard.style.display = 'none';
+    if (successCard) { successCard.style.display = 'block'; successCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
   }
-
-  // Scroll shadow on sticky nav
-  var siteHeader = document.querySelector('.site-header');
-  if (siteHeader) {
-    window.addEventListener('scroll', function () {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive: true });
-  }
-
-  // Show success message if ?sent=true
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === 'true') {
-      var formCard = document.getElementById('form-card');
-      var successCard = document.getElementById('success-card');
-      if (formCard) formCard.style.display = 'none';
-      if (successCard) {
-        successCard.style.display = 'block';
-        successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-  })();
+})();
 </script>
 
-<!-- Inline dropdown -->
-<script>
-  var dd=document.getElementById("toolsDropdown");
-  if(dd){var btn=dd.querySelector(".nav-dropdown-toggle");
-  btn.addEventListener("click",function(e){e.stopPropagation();dd.classList.toggle("open");btn.setAttribute("aria-expanded",dd.classList.contains("open"))});
-  document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}})}
-</script>
-
-<!-- Client-side form validation -->
+<!-- Client-side form validation + AJAX submit -->
 <script>
 (function(){
   var form = document.getElementById('pakkumine-form');
@@ -654,15 +499,14 @@
       var el = document.getElementById(id);
       if (el && !validateField(el)) ok = false;
     });
-    // GDPR check
     var gdpr = document.getElementById('gdpr');
     if (gdpr && !gdpr.checked) {
       var errEl = document.getElementById('gdpr-err');
       if (errEl) { errEl.textContent = 'Palun nõustuge andmetöötlusega enne saatmist'; errEl.classList.add('show'); }
       ok = false;
     } else {
-      var errEl = document.getElementById('gdpr-err');
-      if (errEl) errEl.classList.remove('show');
+      var errEl2 = document.getElementById('gdpr-err');
+      if (errEl2) errEl2.classList.remove('show');
     }
     if (!ok) {
       var firstInvalid = form.querySelector('.invalid, .field-error.show');
@@ -670,7 +514,6 @@
       return false;
     }
 
-    // AJAX submit to formsubmit.co
     var btn = form.querySelector('button[type="submit"]');
     var originalBtnText = btn ? btn.textContent : '';
     if (btn) { btn.disabled = true; btn.textContent = 'Saadan...'; }
@@ -686,21 +529,18 @@
         var formCard = document.getElementById('form-card');
         var successCard = document.getElementById('success-card');
         if (formCard) formCard.style.display = 'none';
-        if (successCard) {
-          successCard.style.display = 'block';
-          successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        if (successCard) { successCard.style.display = 'block'; successCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
         if (window.dataLayer) {
           window.dataLayer.push({ event: 'lead_form_success', form_type: 'tth_quote_request', source_page: window.location.pathname, value: 0, currency: 'EUR' });
         }
       } else {
         if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }
-        alert('Saatmine ebaõnnestus. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
+        alert('Saatmine ebaõnnestus. Palun proovige uuesti või helistage meile: +372 5 911 0909.');
       }
     })
     .catch(function(err){
       if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }
-      alert('Võrgu viga. Palun proovi uuesti või helista Valvekliinikusse: +372 5 911 0909.');
+      alert('Võrgu viga. Palun proovige uuesti või helistage meile: +372 5 911 0909.');
     });
 
     return false;
@@ -708,12 +548,12 @@
 })();
 </script>
 
-<!-- Cookie Consent Banner -->
-<div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0F172A;color:#CBD5E1;padding:14px 20px;z-index:9999;font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #1E293B;">
-  <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. Lisainfo: <a href="privaatsus.html" style="color:#38BDF8;text-decoration:underline;">Privaatsuspoliitika</a></p>
+<!-- Cookie banner -->
+<div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A0A0A;color:#D4D4D4;padding:14px 20px;z-index:9999;font-family:var(--sans);font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #2A2A2A;">
+  <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privaatsuspoliitika</a></p>
   <div style="display:flex;gap:10px;flex-shrink:0;">
-    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #475569;color:#CBD5E1;padding:7px 16px;cursor:pointer;font-size:13px;border-radius:4px;">Keeldun</button>
-    <button id="tt24-consent-accept" style="background:#0EA5E9;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;border-radius:4px;font-weight:600;">N&#245;ustun</button>
+    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Keeldun</button>
+    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">N&#245;ustun</button>
   </div>
 </div>
 <script>
@@ -725,7 +565,7 @@
     document.getElementById('tt24-consent-accept').addEventListener('click', function() {
       localStorage.setItem('tt24_cookie_consent', 'accepted');
       banner.style.display = 'none';
-      if (typeof tt24LoadGTM === 'function') tt24LoadGTM(); if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
+      if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
     });
     document.getElementById('tt24-consent-decline').addEventListener('click', function() {
       localStorage.setItem('tt24_cookie_consent', 'declined');
@@ -734,7 +574,6 @@
   }
 })();
 </script>
-<!-- End Cookie Consent Banner -->
 
 </body>
 </html>
