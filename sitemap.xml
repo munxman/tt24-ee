@@ -4,7 +4,7 @@
   <!-- Core pages: priority 1.0 -->
   <url>
     <loc>https://tt24.ee/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -187,31 +187,31 @@
   <!-- City pages: priority 0.7 -->
   <url>
     <loc>https://tt24.ee/linnad/tallinn.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tt24.ee/linnad/tartu.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tt24.ee/linnad/parnu.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tt24.ee/linnad/narva.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tt24.ee/linnad/johvi.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
