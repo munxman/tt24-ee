@@ -1,1348 +1,662 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Töötervishoiu enesekontrolli test tööandjatele - TT24</title>
-  <meta name="description" content="Testige 2 minutiga, kas Teie ettevõte vastab töötervishoiu nõuetele. 10 küsimust, kohene tulemus ja konkreetsed soovitused. Tasuta, ei nõua registreerimist.">
-  <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Töötervishoiu enesekontroll tööandjale · TT24</title>
+<meta name="description" content="Testige kahe minutiga, kas Teie ettevõte vastab töötervishoiu nõuetele. 10 küsimust, kohene tulemus ja konkreetsed soovitused. Tasuta, ei nõua registreerimist.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Töötervishoiu enesekontrolli test - TT24">
-  <meta property="og:description" content="Testige 2 minutiga, kas Teie ettevõte vastab töötervishoiu nõuetele. 10 küsimust, kohene skoor ja konkreetsed soovitused. Tasuta.">
-  <meta property="og:url" content="https://tt24.ee/enesekontroll.html">
-  <meta property="og:image" content="https://tt24.ee/og-enesekontroll.png">
-  <meta property="og:site_name" content="TT24">
-  <meta property="og:locale" content="et_EE">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Töötervishoiu enesekontrolli test - TT24">
-  <meta name="twitter:description" content="Testige 2 minutiga, kas Teie ettevõte vastab töötervishoiu nõuetele.">
-
-  <!-- Canonical + hreflang -->
-  <link rel="canonical" href="https://tt24.ee/enesekontroll.html" />
-
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Avaleht",
-        "item": "https://tt24.ee/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Enesekontroll",
-        "item": "https://tt24.ee/enesekontroll.html"
-      }
-    ]
-  }
-  </script>
-  <link rel="alternate" hreflang="et" href="https://tt24.ee/enesekontroll.html" />
-  <link rel="alternate" hreflang="x-default" href="https://tt24.ee/enesekontroll.html" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Quiz",
-    "name": "Töötervishoiu enesekontrolli test",
-    "description": "10-küsimuseline enesehindamistest tööandjatele, mis hindab ettevõtte vastavust töötervishoiu nõuetele.",
-    "url": "https://tt24.ee/enesekontroll.html",
-    "provider": {
-      "@type": "Organization",
-      "name": "TT24",
-      "url": "https://tt24.ee"
-    },
-    "educationalLevel": "Tööandja",
-    "timeRequired": "PT2M",
-    "inLanguage": "et",
-    "about": {
-      "@type": "Thing",
-      "name": "Töötervishoiu nõuded Eestis"
-    }
-  }
-  </script>
-
-  <!-- Schema.org – FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Mis on töötervishoiu eneseanalüüs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kas eneseanalüüs asendab Tööinspektsiooni auditit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ei. See on eneseanalüüsi vahend. See ei asenda ametlikku auditit."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kas minu andmeid salvestatakse?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ei. Kogu arvutus toimub Teie brauseris. Midagi ei salvestata serverisse."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="style.css">
 <!-- TT24 GA4 (G-5NW9JSMQVE), consent-gated -->
-  <script>
-    function tt24LoadGA4() {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-      gtag('js', new Date());
-      gtag('config', 'G-5NW9JSMQVE');
-    }
-    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
-      tt24LoadGA4();
-    }
-  </script>
-  <!-- End TT24 GA4 -->
+<script>
+function tt24LoadGA4() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+  gtag('js', new Date());
+  gtag('config', 'G-5NW9JSMQVE');
+}
+if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4(); }
+</script>
 
-  <style>
-    /* ─── QUIZ-SPECIFIC STYLES ────────────────────────────────── */
+<link rel="canonical" href="https://tt24.ee/enesekontroll.html" />
+<link rel="alternate" hreflang="et" href="https://tt24.ee/enesekontroll.html" />
+<link rel="alternate" hreflang="x-default" href="https://tt24.ee/enesekontroll.html" />
 
-    /* Hero compact for inner page */
-    .quiz-hero {
-      background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 50%, #38BDF8 100%);
-      padding: var(--space-12) 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .quiz-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-      pointer-events: none;
-    }
-    .quiz-hero .container { position: relative; z-index: 1; }
-    .quiz-hero-breadcrumb {
-      font-size: var(--text-sm);
-      color: rgba(255,255,255,0.7);
-      margin-bottom: var(--space-4);
-    }
-    .quiz-hero-breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
-    .quiz-hero-breadcrumb a:hover { color: #fff; }
-    .quiz-hero h1 {
-      font-size: clamp(1.5rem, 4vw, var(--text-4xl));
-      font-weight: var(--font-bold);
-      color: #fff;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-4);
-    }
-    .quiz-hero p {
-      font-size: var(--text-lg);
-      color: rgba(255,255,255,0.85);
-      max-width: 560px;
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-    .quiz-hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-top: var(--space-6);
-    }
-    .quiz-hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-1) var(--space-3);
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      color: #fff;
-      backdrop-filter: blur(8px);
-    }
+<meta property="og:type" content="website">
+<meta property="og:title" content="Töötervishoiu enesekontroll · TT24">
+<meta property="og:description" content="Testige kahe minutiga, kas Teie ettevõte vastab töötervishoiu nõuetele. 10 küsimust, kohene skoor ja konkreetsed soovitused. Tasuta.">
+<meta property="og:url" content="https://tt24.ee/enesekontroll.html">
+<meta property="og:image" content="https://tt24.ee/og-enesekontroll.png">
+<meta property="og:site_name" content="TT24">
+<meta property="og:locale" content="et_EE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Töötervishoiu enesekontroll · TT24">
+<meta name="twitter:description" content="Testige kahe minutiga, kas Teie ettevõte vastab töötervishoiu nõuetele.">
 
-    /* Quiz container */
-    .quiz-container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: var(--space-8) 0 var(--space-16);
-    }
+<!-- Schema.org – BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Avaleht", "item": "https://tt24.ee/" },
+    { "@type": "ListItem", "position": 2, "name": "Enesekontroll", "item": "https://tt24.ee/enesekontroll.html" }
+  ]
+}
+</script>
+<!-- Schema.org – Quiz -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Töötervishoiu enesekontroll",
+  "description": "10-küsimuseline enesehindamistest tööandjatele, mis hindab ettevõtte vastavust töötervishoiu nõuetele.",
+  "url": "https://tt24.ee/enesekontroll.html",
+  "provider": { "@type": "Organization", "name": "TT24", "url": "https://tt24.ee" },
+  "educationalLevel": "Tööandja",
+  "timeRequired": "PT2M",
+  "inLanguage": "et",
+  "about": { "@type": "Thing", "name": "Töötervishoiu nõuded Eestis" }
+}
+</script>
+<!-- Schema.org – FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Mis on töötervishoiu eneseanalüüs?", "acceptedAnswer": { "@type": "Answer", "text": "See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks." } },
+    { "@type": "Question", "name": "Kas eneseanalüüs asendab Tööinspektsiooni auditit?", "acceptedAnswer": { "@type": "Answer", "text": "Ei. See on eneseanalüüsi vahend. See ei asenda ametlikku auditit." } },
+    { "@type": "Question", "name": "Kas minu andmeid salvestatakse?", "acceptedAnswer": { "@type": "Answer", "text": "Ei. Kogu arvutus toimub Teie brauseris. Midagi ei salvestata serverisse." } }
+  ]
+}
+</script>
 
-    /* Company name input */
-    .quiz-company-wrap {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-6);
-      margin-bottom: var(--space-6);
-      box-shadow: var(--shadow-sm);
-    }
-    .quiz-company-wrap label {
-      display: block;
-      font-size: var(--text-sm);
-      font-weight: var(--font-semibold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-    .quiz-company-wrap .form-hint {
-      margin-top: var(--space-2);
-    }
+<style>
+:root {
+  --serif: 'Source Serif 4', 'Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ink:#0A0A0A; --ink-soft:#2A2A2A; --mute:#6B6B6B; --mute-2:#A8A8A8;
+  --rule:#E0E0E0; --paper:#FFFFFF; --paper-2:#FAFAF8; --accent:#0066CC;
+}
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-family:var(--sans); font-size:17px; line-height:1.6; }
+.skip-link { position:absolute; left:-10000px; top:0; background:var(--ink); color:var(--paper); padding:8px 14px; text-decoration:none; font-size:14px; }
+.skip-link:focus { left:16px; top:16px; z-index:100; }
 
-    /* Progress section */
-    .quiz-progress-wrap {
-      margin-bottom: var(--space-8);
-    }
-    .quiz-progress-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: var(--space-3);
-    }
-    .quiz-progress-label {
-      font-size: var(--text-sm);
-      font-weight: var(--font-semibold);
-      color: var(--color-text);
-    }
-    .quiz-progress-pct {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-    .quiz-progress-cat {
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      font-weight: var(--font-medium);
-      margin-top: var(--space-2);
-    }
+/* Top bar */
+.topbar { border-bottom:1px solid var(--rule); background:var(--paper); position:sticky; top:0; z-index:50; }
+.topbar-inner { max-width:1200px; margin:0 auto; padding:22px 32px; display:flex; align-items:baseline; justify-content:space-between; gap:32px; }
+.brand { text-decoration:none; color:var(--ink); display:flex; align-items:baseline; gap:12px; }
+.brand-mark { font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-0.01em; }
+.brand-tag { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); }
+.nav { display:flex; gap:32px; align-items:baseline; font-size:15px; }
+.nav a { color:var(--ink-soft); text-decoration:none; font-weight:500; }
+.nav a:hover, .nav a.active { color:var(--accent); }
+.nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
 
-    /* Step dots */
-    .quiz-steps-dots {
-      display: flex;
-      gap: 6px;
-      margin-top: var(--space-3);
-    }
-    .quiz-dot {
-      flex: 1;
-      height: 4px;
-      border-radius: var(--radius-full);
-      background-color: var(--color-border);
-      transition: background-color var(--transition-normal);
-    }
-    .quiz-dot.answered { background-color: var(--color-success); }
-    .quiz-dot.current  { background-color: var(--color-primary); }
+/* Intro */
+.intro { max-width:760px; margin:0 auto; padding:80px 32px 48px; }
+.dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
+.dateline span { color:var(--accent); }
+.headline { font-family:var(--serif); font-size:clamp(34px, 5vw, 52px); line-height:1.08; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 24px; }
+.standfirst { font-family:var(--serif); font-size:clamp(19px, 2vw, 23px); line-height:1.45; color:var(--ink-soft); font-weight:400; margin:0; max-width:640px; }
 
-    /* Question card */
-    .quiz-question-card {
-      display: none;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      box-shadow: var(--shadow-md);
-      animation: fadeInUp 250ms ease;
-    }
-    .quiz-question-card.active { display: block; }
+/* Section */
+.section { border-top:1px solid var(--rule); }
+.section-inner { max-width:760px; margin:0 auto; padding:64px 32px; }
+.section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
+.section-h { font-family:var(--serif); font-size:clamp(27px, 3vw, 35px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 24px; }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+.quiz-wrap { max-width:760px; margin:0 auto; padding:48px 32px 80px; }
+.quiz-disclaimer-top { border-left:2px solid var(--rule); padding:14px 20px; font-size:14px; line-height:1.6; color:var(--mute); margin-bottom:40px; }
+.quiz-disclaimer-top strong { color:var(--ink-soft); font-weight:600; }
 
-    .quiz-q-number {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: 2px var(--space-3);
-      background: var(--color-primary-light);
-      color: var(--color-primary-dark);
-      border-radius: var(--radius-full);
-      font-size: var(--text-xs);
-      font-weight: var(--font-semibold);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: var(--space-4);
-    }
-    .quiz-q-category {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      font-weight: var(--font-medium);
-      margin-left: var(--space-2);
-      padding-left: var(--space-2);
-      border-left: 1px solid var(--color-border-dark);
-    }
+/* Company input */
+.quiz-company { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 0; margin-bottom:32px; }
+.quiz-company label { display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); margin-bottom:12px; }
+.quiz-company input { width:100%; max-width:420px; border:0; border-bottom:1px solid var(--rule); padding:10px 0; font-family:var(--sans); font-size:18px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
+.quiz-company input:focus { border-bottom-color:var(--accent); }
+.quiz-company .hint { font-size:12px; color:var(--mute); margin:8px 0 0; }
 
-    .quiz-q-text {
-      font-size: var(--text-xl);
-      font-weight: var(--font-semibold);
-      color: var(--color-text);
-      line-height: 1.4;
-      margin-bottom: var(--space-4);
-    }
+/* Progress */
+.quiz-progress { margin-bottom:36px; }
+.quiz-progress-head { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:12px; }
+.quiz-progress-label { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); }
+.quiz-progress-pct { font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--mute); }
+.progress-track { height:2px; background:var(--rule); overflow:hidden; }
+.progress-track__fill { height:100%; background:var(--accent); transition:width 300ms ease; }
+.quiz-cat { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:10px 0 0; min-height:14px; }
+.quiz-dots { display:flex; gap:5px; margin-top:14px; }
+.quiz-dot { flex:1; height:2px; background:var(--rule); transition:background 0.2s; }
+.quiz-dot.answered { background:var(--ink); }
+.quiz-dot.current { background:var(--accent); }
 
-    .quiz-q-hint {
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: var(--space-4);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.6;
-      margin-bottom: var(--space-6);
-      position: relative;
-      padding-left: var(--space-8);
-    }
-    .quiz-q-hint::before {
-      content: 'ℹ';
-      position: absolute;
-      left: var(--space-4);
-      top: var(--space-4);
-      color: var(--color-primary);
-      font-size: var(--text-base);
-      font-weight: var(--font-bold);
-    }
+/* Question card */
+.quiz-question-card { display:none; }
+.quiz-question-card.active { display:block; animation:fadeUp 220ms ease; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+.quiz-q-number { display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); margin-bottom:18px; }
+.quiz-q-category { color:var(--accent); }
+.quiz-q-text { font-family:var(--serif); font-size:clamp(22px,2.6vw,28px); line-height:1.3; letter-spacing:-0.01em; font-weight:500; color:var(--ink); margin:0 0 18px; }
+.quiz-q-hint { border-left:2px solid var(--rule); padding:12px 18px; font-size:15px; line-height:1.6; color:var(--mute); margin-bottom:28px; }
 
-    /* Answer options */
-    .quiz-options {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-      margin-bottom: var(--space-6);
-    }
+.quiz-options { display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+.quiz-opt { display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--paper); border:1px solid var(--rule); border-radius:2px; cursor:pointer; font-family:var(--sans); font-size:16px; font-weight:500; color:var(--ink-soft); text-align:left; width:100%; transition:border-color 0.15s, color 0.15s; }
+.quiz-opt:hover:not(:disabled) { border-color:var(--mute); color:var(--ink); }
+.quiz-opt.selected-yes, .quiz-opt.selected-no { border-color:var(--ink); color:var(--ink); font-weight:600; }
+.quiz-opt.selected-yes { border-left:3px solid var(--accent); }
+.quiz-opt.selected-no { border-left:3px solid var(--ink); }
+.quiz-opt:disabled { pointer-events:none; opacity:0.55; }
+.quiz-opt-mark { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--mute); flex-shrink:0; width:28px; }
 
-    .quiz-opt {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      padding: var(--space-4) var(--space-6);
-      background: var(--color-surface);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      cursor: pointer;
-      font-size: var(--text-base);
-      font-weight: var(--font-medium);
-      color: var(--color-text);
-      text-align: left;
-      transition: border-color var(--transition-fast), background-color var(--transition-fast),
-                  box-shadow var(--transition-fast), transform var(--transition-fast);
-      width: 100%;
-      font-family: var(--font-sans);
-    }
-    .quiz-opt:hover:not(:disabled) {
-      border-color: var(--color-primary);
-      background-color: var(--color-primary-light);
-      box-shadow: var(--shadow-sm);
-      transform: translateY(-1px);
-    }
-    .quiz-opt:active:not(:disabled) { transform: translateY(0); }
-    .quiz-opt.selected-yes {
-      border-color: var(--color-success);
-      background-color: var(--color-success-light);
-      color: #065F46;
-    }
-    .quiz-opt.selected-no {
-      border-color: var(--color-danger);
-      background-color: var(--color-danger-light);
-      color: #991B1B;
-    }
-    .quiz-opt:disabled { pointer-events: none; opacity: 0.7; }
-    .quiz-opt-icon {
-      font-size: var(--text-xl);
-      flex-shrink: 0;
-      width: 32px;
-      text-align: center;
-    }
+.quiz-nav { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:20px; border-top:1px solid var(--rule); }
+.qbtn { font-family:var(--mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border:0; background:transparent; padding:8px 0; color:var(--mute); }
+.qbtn:hover { color:var(--ink); }
+.qbtn-next { background:var(--ink); color:var(--paper); padding:12px 24px; }
+.qbtn-next:hover { background:var(--accent); color:var(--paper); }
 
-    /* Navigation buttons */
-    .quiz-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-3);
-      padding-top: var(--space-4);
-      border-top: 1px solid var(--color-border);
-    }
-    .quiz-nav-left { flex: 1; }
-    .quiz-nav-right { display: flex; gap: var(--space-3); align-items: center; }
+/* Results */
+.quiz-result-section { display:none; }
+.quiz-result-section.visible { display:block; animation:fadeUp 260ms ease; }
 
-    /* ─── RESULTS PAGE ────────────────────────────────────────── */
-    .quiz-result-section {
-      display: none;
-      animation: fadeInUp 300ms ease;
-    }
-    .quiz-result-section.visible { display: block; }
+.result-score-banner { border:1px solid var(--rule); padding:40px 32px; margin-bottom:8px; text-align:center; }
+.result-company-name { font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); margin:0 0 18px; }
+.result-score-big { font-family:var(--serif); font-size:clamp(56px,12vw,84px); font-weight:500; line-height:1; letter-spacing:-0.03em; color:var(--ink); margin:0 0 8px; }
+.result-score-label { font-family:var(--serif); font-size:22px; font-weight:500; color:var(--ink); margin:0 0 8px; }
+.result-score-sublabel { font-size:14px; color:var(--mute); margin:0 0 24px; }
+.result-pct-bar { max-width:340px; margin:0 auto; }
+.result-pct-bar .progress-track { height:3px; }
+.result-pct-text { font-family:var(--mono); font-size:11px; letter-spacing:0.06em; color:var(--mute); margin:10px 0 0; }
 
-    /* Risk score banner */
-    .result-score-banner {
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      margin-bottom: var(--space-6);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .result-score-banner.level-green {
-      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
-    }
-    .result-score-banner.level-yellow {
-      background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
-    }
-    .result-score-banner.level-red {
-      background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
-    }
-    .result-score-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.06'%3E%3Ccircle cx='20' cy='20' r='10'/%3E%3C/g%3E%3C/svg%3E") repeat;
-    }
-    .result-score-banner .container-inner { position: relative; z-index: 1; }
-    .result-company-name {
-      font-size: var(--text-sm);
-      color: rgba(255,255,255,0.8);
-      font-weight: var(--font-medium);
-      margin-bottom: var(--space-3);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .result-score-big {
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: var(--font-extrabold);
-      color: #fff;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: var(--space-2);
-    }
-    .result-score-label {
-      font-size: var(--text-xl);
-      font-weight: var(--font-bold);
-      color: rgba(255,255,255,0.95);
-      margin-bottom: var(--space-3);
-    }
-    .result-score-sublabel {
-      font-size: var(--text-sm);
-      color: rgba(255,255,255,0.75);
-      margin-bottom: var(--space-6);
-    }
-    .result-pct-bar {
-      max-width: 320px;
-      margin: 0 auto;
-    }
-    .result-pct-bar .progress-bar {
-      height: 12px;
-      background: rgba(255,255,255,0.25);
-    }
-    .result-pct-bar .progress-bar__fill {
-      background: rgba(255,255,255,0.9);
-      animation: none;
-    }
-    .result-pct-bar .progress-bar__fill::after { display: none; }
-    .result-pct-text {
-      font-size: var(--text-sm);
-      color: rgba(255,255,255,0.8);
-      margin-top: var(--space-2);
-    }
+.result-alert { border-left:2px solid var(--accent); padding:18px 22px; font-size:15px; line-height:1.6; color:var(--ink-soft); margin-bottom:24px; }
+.result-alert strong { color:var(--ink); font-weight:600; }
+.result-alert a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
+.result-alert.is-critical { border-left-color:var(--ink); }
 
-    /* Category overview */
-    .result-cats-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
-      margin-bottom: var(--space-6);
-      box-shadow: var(--shadow-sm);
-    }
-    .result-section-title {
-      font-size: var(--text-xs);
-      font-weight: var(--font-semibold);
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: var(--space-4);
-    }
-    .cat-overview-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-2);
-    }
-    @media (min-width: 480px) {
-      .cat-overview-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .cat-row {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      padding: var(--space-3) var(--space-4);
-      border-radius: var(--radius-md);
-      font-size: var(--text-sm);
-    }
-    .cat-row.pass  { background: var(--color-success-light); }
-    .cat-row.warn  { background: var(--color-warning-light); }
-    .cat-row.fail  { background: var(--color-danger-light); }
-    .cat-row-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .cat-row.pass .cat-row-dot  { background: var(--color-success); }
-    .cat-row.warn .cat-row-dot  { background: var(--color-warning); }
-    .cat-row.fail .cat-row-dot  { background: var(--color-danger); }
-    .cat-row-label {
-      flex: 1;
-      font-weight: var(--font-medium);
-      color: var(--color-text);
-    }
-    .cat-row-status {
-      font-size: var(--text-xs);
-      font-weight: var(--font-semibold);
-    }
-    .cat-row.pass .cat-row-status  { color: #065F46; }
-    .cat-row.warn .cat-row-status  { color: #92400E; }
-    .cat-row.fail .cat-row-status  { color: #991B1B; }
+.result-block { margin-top:40px; }
+.result-block-title { font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); margin:0 0 4px; }
 
-    /* Recommendations */
-    .result-recs-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
-      margin-bottom: var(--space-6);
-      box-shadow: var(--shadow-sm);
-    }
-    .rec-item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-4);
-      padding: var(--space-4);
-      border-radius: var(--radius-md);
-      margin-bottom: var(--space-3);
-    }
-    .rec-item:last-child { margin-bottom: 0; }
-    .rec-item.sev-red    { background: var(--color-danger-light); border: 1px solid #FECACA; }
-    .rec-item.sev-yellow { background: var(--color-warning-light); border: 1px solid #FDE68A; }
-    .rec-item.sev-green  { background: var(--color-success-light); border: 1px solid #A7F3D0; }
-    .rec-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 4px;
-    }
-    .rec-dot.red    { background: var(--color-danger); }
-    .rec-dot.yellow { background: var(--color-warning); }
-    .rec-dot.green  { background: var(--color-success); }
-    .rec-body { flex: 1; }
-    .rec-title {
-      font-size: var(--text-sm);
-      font-weight: var(--font-semibold);
-      color: var(--color-text);
-      margin-bottom: var(--space-1);
-    }
-    .rec-desc {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-    .rec-link {
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      font-weight: var(--font-medium);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      margin-top: var(--space-2);
-      text-decoration: none;
-    }
-    .rec-link:hover { color: var(--color-primary-dark); }
+/* Category overview */
+.cat-row { display:flex; align-items:center; gap:16px; padding:14px 0 14px 14px; border-top:1px solid var(--rule); border-left:2px solid transparent; }
+.cat-row:last-child { border-bottom:1px solid var(--rule); }
+.cat-row.fail, .cat-row.warn { border-left-color:var(--accent); }
+.cat-row-label { flex:1; font-size:15px; color:var(--ink-soft); }
+.cat-row.fail .cat-row-label, .cat-row.warn .cat-row-label { color:var(--ink); font-weight:500; }
+.cat-row-status { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--mute); }
+.cat-row.fail .cat-row-status, .cat-row.warn .cat-row-status { color:var(--accent); }
 
-    /* Share section */
-    .result-share-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
-      margin-bottom: var(--space-6);
-      box-shadow: var(--shadow-sm);
-    }
-    .share-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-top: var(--space-4);
-    }
-    .btn-share {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: 0 var(--space-4);
-      height: 44px;
-      border-radius: var(--radius-md);
-      font-size: var(--text-sm);
-      font-weight: var(--font-semibold);
-      cursor: pointer;
-      border: none;
-      font-family: var(--font-sans);
-      text-decoration: none;
-      transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-    }
-    .btn-share:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-share:active { transform: translateY(0); }
-    .btn-share.linkedin  { background: #0A66C2; color: #fff; }
-    .btn-share.email-btn { background: var(--color-primary); color: #fff; }
-    .btn-share.pdf-btn   { background: #1E293B; color: #fff; }
-    .btn-share.copy-btn  { background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border); }
-    .btn-share.copy-btn.copied { background: var(--color-success-light); color: #065F46; border-color: #A7F3D0; }
+/* Recommendations */
+.rec-item { display:block; padding:20px 0 20px 18px; border-top:1px solid var(--rule); border-left:2px solid var(--accent); }
+.rec-item:last-of-type { border-bottom:1px solid var(--rule); }
+.rec-sev { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); margin:0 0 6px; }
+.rec-title { font-family:var(--serif); font-size:18px; font-weight:500; color:var(--ink); margin:0 0 6px; }
+.rec-desc { font-size:15px; color:var(--ink-soft); line-height:1.55; margin:0; }
+.rec-link { display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--accent); margin-top:10px; text-decoration:none; border-bottom:1px solid var(--rule); }
 
-    /* Scorecard element (for PDF) */
-    .scorecard-hidden-el {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      width: 0;
-      height: 0;
-      overflow: hidden;
-    }
+/* QR + disclaimer row */
+.result-qr-row { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-top:24px; margin-top:20px; border-top:1px solid var(--rule); }
+.result-qr-block { display:flex; align-items:center; gap:14px; }
+.result-qr-block img { width:64px; height:64px; border:1px solid var(--rule); }
+.result-qr-text { font-size:12px; color:var(--mute); max-width:140px; line-height:1.4; }
+.result-qr-url { font-family:var(--mono); font-size:11px; color:var(--accent); margin-top:3px; }
+.result-disclaimer { font-size:12px; color:var(--mute); max-width:260px; text-align:right; line-height:1.4; }
 
-    /* CTA banner */
-    .quiz-cta-banner {
-      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      text-align: center;
-      margin-bottom: var(--space-8);
-    }
-    .quiz-cta-banner h3 {
-      color: #fff;
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-3);
-    }
-    .quiz-cta-banner p {
-      color: rgba(255,255,255,0.7);
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-6);
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .quiz-cta-banner .price-badge {
-      display: inline-block;
-      background: rgba(197,165,90,0.2);
-      color: #C5A55A;
-      font-weight: var(--font-bold);
-      padding: 2px var(--space-2);
-      border-radius: var(--radius-sm);
-    }
+/* Share */
+.share-btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.btn-share { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; padding:12px 18px; border:1px solid var(--rule); background:var(--paper); color:var(--ink-soft); cursor:pointer; text-decoration:none; transition:border-color 0.15s, color 0.15s; }
+.btn-share:hover { border-color:var(--ink); color:var(--ink); }
+.btn-share.copied { border-color:var(--accent); color:var(--accent); }
 
-    /* QR footer of scorecard */
-    .result-qr-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-6);
-      flex-wrap: wrap;
-      padding-top: var(--space-6);
-      border-top: 1px solid var(--color-border);
-      margin-top: var(--space-4);
-    }
-    .result-qr-block {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-    .result-qr-block img {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--color-border);
-    }
-    .result-qr-text {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      max-width: 120px;
-      line-height: 1.4;
-    }
-    .result-qr-url {
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      font-weight: var(--font-semibold);
-      margin-top: 2px;
-    }
-    .result-disclaimer {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      max-width: 260px;
-      text-align: right;
-      line-height: 1.4;
-    }
+/* CTA */
+.quiz-cta-banner { border-top:1px solid var(--rule); margin-top:48px; padding-top:40px; }
+.quiz-cta-banner h3 { font-family:var(--serif); font-size:24px; font-weight:500; color:var(--ink); margin:0 0 12px; }
+.quiz-cta-banner p { font-size:16px; line-height:1.6; color:var(--ink-soft); margin:0 0 24px; max-width:520px; }
+.cta-ink { display:inline-block; background:var(--ink); color:var(--paper); text-decoration:none; padding:14px 26px; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; transition:background 0.15s; }
+.cta-ink:hover { background:var(--accent); }
 
-    /* Disclaimer */
-    .quiz-disclaimer {
-      margin-top: var(--space-8);
-      padding: var(--space-4) var(--space-6);
-      border-radius: var(--radius-md);
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.6;
-    }
+.quiz-restart { text-align:center; margin-top:40px; }
 
-    /* ─── EMAIL GATE MODAL ───────────────────────────────── */
-    .modal-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); z-index: 1000;
-      display: flex; align-items: flex-start; justify-content: center;
-    }
+/* Email gate (result) */
+.tt24-gate-card { border:1px solid var(--accent); padding:28px 24px; margin:24px 0; }
+.tt24-gate-card h3 { font-family:var(--serif); font-size:20px; font-weight:500; margin:0 0 8px; color:var(--ink); }
+.tt24-gate-card p { color:var(--ink-soft); margin:8px 0 18px; line-height:1.55; font-size:15px; }
+.tt24-gate-form { display:flex; flex-direction:column; gap:14px; max-width:420px; }
+.tt24-gate-form input[type="email"] { padding:12px 0; border:0; border-bottom:1px solid var(--rule); font-family:var(--sans); font-size:16px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
+.tt24-gate-form input[type="email"]:focus { border-bottom-color:var(--accent); }
+.tt24-gate-form button { background:var(--ink); color:var(--paper); border:0; padding:14px 24px; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; }
+.tt24-gate-form button:hover:not(:disabled) { background:var(--accent); }
+.tt24-gate-form button:disabled { opacity:0.5; cursor:wait; }
+.tt24-gate-privacy { font-size:11px !important; color:var(--mute) !important; margin:6px 0 0 !important; line-height:1.4; }
+.tt24-gate-privacy a { color:var(--mute); }
+.tt24-gate-success { display:none; }
+.tt24-gate-success h3 { margin-top:0; }
+.tt24-gate-card.is-unlocked .tt24-gate-form-wrap { display:none; }
+.tt24-gate-card.is-unlocked .tt24-gate-success { display:block; }
+.quiz-result-section.tt24-locked .result-cats-card,
+.quiz-result-section.tt24-locked .result-recs-card,
+.quiz-result-section.tt24-locked .result-share-card,
+.quiz-result-section.tt24-locked .quiz-cta-banner { display:none !important; }
 
-    /* Print */
-    @media print {
-      .site-header, .quiz-hero, .quiz-company-wrap, .quiz-progress-wrap,
-      .quiz-question-card, .quiz-result-section .result-share-card,
-      .quiz-result-section .quiz-cta-banner, .site-footer,
-      .btn-share, .quiz-disclaimer, #btnRestartQuiz { display: none !important; }
-      .quiz-result-section { display: block !important; }
-      .result-score-banner, .result-cats-card, .result-recs-card { box-shadow: none; }
-      body { background: #fff; }
-    }
+/* FAQ */
+.faq-list { margin-top:24px; }
+.faq-item { border-top:1px solid var(--rule); padding:22px 0; }
+.faq-item:last-of-type { border-bottom:1px solid var(--rule); }
+.faq-item summary { cursor:pointer; list-style:none; font-family:var(--serif); font-size:19px; line-height:1.4; color:var(--ink); font-weight:500; position:relative; padding-right:32px; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after { content:'+'; position:absolute; right:0; top:50%; transform:translateY(-55%); font-family:var(--mono); font-size:22px; color:var(--mute); }
+.faq-item[open] summary::after { content:'x'; color:var(--accent); font-size:17px; }
+.faq-item .answer { margin-top:12px; font-size:16px; line-height:1.65; color:var(--ink-soft); }
 
-    /* ─── Email gate ──────────────────────────────────── */
-    .quiz-result-section.tt24-locked .result-cats-card,
-    .quiz-result-section.tt24-locked .result-recs-card,
-    .quiz-result-section.tt24-locked .result-share-card,
-    .quiz-result-section.tt24-locked .quiz-cta-banner {
-      display: none !important;
-    }
-    .tt24-gate-card {
-      background: #fff;
-      border: 2px solid var(--color-primary, #0EA5E9);
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin: 24px 0;
-      box-shadow: 0 4px 12px rgba(14,165,233,0.12);
-    }
-    .tt24-gate-card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      color: #0F172A;
-      font-size: 1.25rem;
-      line-height: 1.3;
-    }
-    .tt24-gate-card p {
-      color: #475569;
-      margin: 8px 0 16px;
-      line-height: 1.55;
-    }
-    .tt24-gate-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .tt24-gate-form input[type="email"] {
-      padding: 14px 16px;
-      border: 1px solid #CBD5E1;
-      border-radius: 8px;
-      font-size: 16px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .tt24-gate-form input[type="email"]:focus {
-      outline: 2px solid var(--color-primary, #0EA5E9);
-      outline-offset: 1px;
-      border-color: var(--color-primary, #0EA5E9);
-    }
-    .tt24-gate-form button {
-      background: var(--color-primary, #0EA5E9);
-      color: #fff;
-      border: none;
-      padding: 14px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-    .tt24-gate-form button:hover:not(:disabled) { background: #0284C7; }
-    .tt24-gate-form button:disabled { opacity: 0.6; cursor: not-allowed; }
-    .tt24-gate-privacy {
-      font-size: 13px !important;
-      color: #64748B !important;
-      margin: 4px 0 0 !important;
-    }
-    .tt24-gate-success { display: none; }
-    .tt24-gate-card.is-unlocked .tt24-gate-form-wrap { display: none; }
-    .tt24-gate-card.is-unlocked .tt24-gate-success { display: block; }
-    .tt24-gate-card.is-unlocked {
-      border-color: #16A34A;
-      background: #F0FDF4;
-    }
-  </style>
+/* Related */
+.related-grid { margin-top:24px; }
+.related-row { display:grid; grid-template-columns:120px 1fr; gap:28px; align-items:baseline; text-decoration:none; color:inherit; padding:22px 0; border-top:1px solid var(--rule); }
+.related-row:last-child { border-bottom:1px solid var(--rule); }
+.related-row:hover .related-title { color:var(--accent); }
+.related-tag { font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); }
+.related-title { font-family:var(--serif); font-size:18px; font-weight:500; color:var(--ink); margin:0 0 5px; transition:color 0.15s; }
+.related-desc { font-size:14px; line-height:1.5; color:var(--ink-soft); margin:0; }
+
+/* Footer */
+.foot { border-top:1px solid var(--rule); background:var(--paper); }
+.foot-inner { max-width:1200px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:56px; }
+.foot-brand { font-family:var(--serif); font-size:22px; font-weight:600; color:var(--ink); text-decoration:none; margin:0 0 12px; display:block; }
+.foot-desc { font-size:14px; line-height:1.6; color:var(--mute); margin:0; max-width:320px; }
+.foot-col h4 { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 16px; font-weight:600; }
+.foot-col a { display:block; font-size:14px; color:var(--ink-soft); text-decoration:none; padding:4px 0; }
+.foot-col a:hover { color:var(--accent); }
+.foot-bottom { max-width:1200px; margin:0 auto; padding:24px 32px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute); }
+.foot-bottom a { color:var(--mute); text-decoration:none; }
+.foot-bottom a:hover { color:var(--accent); }
+
+/* PDF email modal */
+.modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,10,10,0.55); z-index:1000; display:flex; align-items:flex-start; justify-content:center; }
+.modal-card { background:var(--paper); max-width:440px; margin:18vh 20px 0; padding:36px 32px; border:1px solid var(--rule); }
+.modal-card h3 { font-family:var(--serif); font-size:22px; font-weight:500; margin:0 0 10px; color:var(--ink); }
+.modal-card p { color:var(--ink-soft); font-size:15px; margin:0 0 20px; line-height:1.55; }
+.modal-card input[type="email"] { width:100%; padding:12px 0; border:0; border-bottom:1px solid var(--rule); font-family:var(--sans); font-size:16px; background:transparent; outline:none; margin-bottom:16px; }
+.modal-card input[type="email"]:focus { border-bottom-color:var(--accent); }
+.modal-consent { display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--mute); line-height:1.5; margin-bottom:18px; }
+.modal-consent input { margin-top:3px; accent-color:var(--accent); }
+.modal-consent a { color:var(--accent); }
+.modal-card button { width:100%; background:var(--ink); color:var(--paper); border:0; padding:14px; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; }
+.modal-card button:hover { background:var(--accent); }
+.modal-skip { display:block; text-align:center; margin-top:16px; color:var(--mute); font-size:13px; text-decoration:none; }
+
+@media print {
+  .topbar, .quiz-disclaimer-top, .quiz-company, .quiz-progress, .quiz-question-card,
+  .result-share-card, .quiz-cta-banner, .foot, .btn-share, .quiz-restart, .modal-overlay { display:none !important; }
+  .quiz-result-section { display:block !important; }
+  body { background:#fff; }
+}
+
+@media (max-width:768px) {
+  .topbar-inner { padding:18px 22px; flex-wrap:wrap; }
+  .nav { gap:16px; font-size:14px; }
+  .intro { padding:64px 22px 40px; }
+  .section-inner, .quiz-wrap { padding:48px 22px; }
+  .related-row { grid-template-columns:90px 1fr; gap:18px; }
+  .foot-inner { grid-template-columns:1fr; gap:36px; padding:48px 22px 32px; }
+  .foot-bottom { padding:20px 22px; flex-direction:column; gap:10px; align-items:flex-start; }
+  .result-qr-row { flex-direction:column; align-items:flex-start; }
+  .result-disclaimer { text-align:left; }
+}
+</style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) - blocked pending consent -->
 
 <a href="#main-content" class="skip-link">Hüppa põhisisule</a>
 
-<!-- ═══════════════════════════════
-     NAVIGATION
-═══════════════════════════════ -->
-<header class="site-header" id="siteHeader">
-  <div class="nav-inner">
-    <div class="nav-brand">
-      <a href="index.html" class="nav-logo" aria-label="TT24 avaleht">
-        <span class="nav-logo-text">TT24</span><span class="nav-logo-tagline">Töötervishoiu Teejuht</span>
-      </a>
-      <a href="meist.html" class="nav-brand-meist">Meist</a>
-    </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
-      <div class="nav-dropdown" id="toolsDropdown">
-        <button class="nav-dropdown-toggle nav-dropdown-toggle--prominent" aria-expanded="false" aria-haspopup="true">Tööriistad</button>
-        <div class="nav-dropdown-menu">
-          <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-          <a href="kalkulaator.html">Kalkulaator</a>
-          <a href="enesekontroll.html" class="active">Enesekontroll</a>
-          <a href="ajakava.html">Ajakava</a>
-          <a href="dokumendid.html">Dokumendid</a>
-        </div>
-      </div>
-      <a href="korduma.html" class="nav-link nav-link--secondary">KKK</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">TT24</span>
+      <span class="brand-tag">Töötervishoiu Teejuht</span>
+    </a>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="index.html">Tööriistad</a>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="meist.html">Meist</a>
+      <a href="pakkumine.html" class="nav-cta">Küsi pakkumist</a>
     </nav>
-
-    <a href="enesekontroll.html" class="nav-cta-btn">Testi nõuetele vastavust</a>
   </div>
 </header>
 
-<!-- ═══════════════════════════════
-     HERO
-═══════════════════════════════ -->
-<section class="hero hero--compact" aria-labelledby="quiz-hero-heading" style="padding: 1.5rem 0;">
-  <div class="hero-inner">
-    <h1 id="quiz-hero-heading" style="font-size: 1.5rem; margin: 0;">Analüüsige oma ettevõtte töötervishoiualast olukorda</h1>
+<section class="intro">
+  <p class="dateline">Enesekontroll · <span>Kümme küsimust</span> · Kaks minutit</p>
+  <h1 class="headline">Kas Teie ettevõte vastab töötervishoiu nõuetele?</h1>
+  <p class="standfirst">Kümme küsimust ja kohene tulemus. Näete, millised kohustused on täidetud, kus on lüngad ja millest alustada.</p>
+</section>
+
+<main id="main-content">
+<section class="section">
+  <div class="quiz-wrap">
+
+    <p class="quiz-disclaimer-top"><strong>Märkus.</strong> See test on eneseanalüüsi vahend üldise valmisoleku mõõtmiseks. See ei ole ametlik audit ega asenda Tööinspektsiooni järelevalvet. Täpse vastavuse hindamiseks soovitame pöörduda töötervishoiuspetsialisti poole.</p>
+
+    <!-- Company name -->
+    <div class="quiz-company" id="companyInputWrap">
+      <label for="companyName">Ettevõtte nimi (valikuline)</label>
+      <input type="text" id="companyName" placeholder="nt. Näidis OÜ" maxlength="80" autocomplete="organization">
+      <p class="hint">Sisestatakse tulemuskaardile. Ei salvestata kusagile.</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="quiz-progress" id="quizProgressWrap">
+      <div class="quiz-progress-head">
+        <span class="quiz-progress-label" id="quizLabel">Küsimus 1 / 10</span>
+        <span class="quiz-progress-pct" id="quizPct">0%</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Testi edenemine" id="quizProgressBar">
+        <div class="progress-track__fill" id="quizProgressFill" style="width:0%"></div>
+      </div>
+      <p class="quiz-cat" id="quizCatLabel"></p>
+      <div class="quiz-dots" id="quizDots"></div>
+    </div>
+
+    <!-- Question cards -->
+    <div class="quiz-question-card active" data-q="1">
+      <span class="quiz-q-number">Küsimus 1 / 10 · <span class="quiz-q-category">Töötervishoiu teenus</span></span>
+      <p class="quiz-q-text">Kas Teil on sõlmitud kehtiv leping töötervishoiu teenuse osutajaga?</p>
+      <p class="quiz-q-hint">Töötervishoiu teenuse osutaja on ettevõte, kes pakub töötervishoiuarsti teenust. TTOS § 12 kohaselt on iga tööandja kohustatud korraldama töötervishoiuteenuste osutamist, isegi ühe töötajaga. Praktikas toimub see kirjaliku lepingu kaudu teenuse osutajaga.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="1" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, kehtiv leping on olemas</span></button>
+        <button class="quiz-opt" data-q="1" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole kindel</span></button>
+      </div>
+      <div class="quiz-nav"><div></div><div><button class="qbtn qbtn-next" id="nextBtn1" style="display:none" onclick="goNext(1)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="2">
+      <span class="quiz-q-number">Küsimus 2 / 10 · <span class="quiz-q-category">Riskianalüüs</span></span>
+      <p class="quiz-q-text">Kas Teil on teostatud kirjalik töökoha riskianalüüs viimase 3 aasta jooksul?</p>
+      <p class="quiz-q-hint">Riskianalüüs on kohustuslik kõigile tööandjatele. See peab olema kirjalik, dateeritud ja sisaldama tuvastatud riske ning nende maandamise meetmeid. Suuline analüüs ei kehti.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="2" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, kirjalik analüüs on olemas</span></button>
+        <button class="quiz-opt" data-q="2" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole kirjalik</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(2)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn2" style="display:none" onclick="goNext(2)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="3">
+      <span class="quiz-q-number">Küsimus 3 / 10 · <span class="quiz-q-category">Tervisekontrollid</span></span>
+      <p class="quiz-q-text">Kas kõik töötajad, kelle amet nõuab tervisekontrolli, on selle viimase 3 aasta jooksul läbinud?</p>
+      <p class="quiz-q-hint">Tervisekontroll on kohustuslik töötajatele, kes puutuvad kokku tervistkahjustavate teguritega: müra, keemilised ained, füüsiline koormus, kuvariga töö (5+ t/päev), töö transpordi, toitlustuse või tervishoiu valdkonnas.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="3" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, kõik on kontrolli läbinud</span></button>
+        <button class="quiz-opt" data-q="3" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole kindel</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(3)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn3" style="display:none" onclick="goNext(3)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="4">
+      <span class="quiz-q-number">Küsimus 4 / 10 · <span class="quiz-q-category">Teavitamine</span></span>
+      <p class="quiz-q-text">Kas kõik töötajad on saanud kirjaliku teavituse tervise- ja ohutusriskidest ning allkirjastanud teavitamise akti?</p>
+      <p class="quiz-q-hint">Töötajate teavitamine terviseriskidest ei piisa suuliselt, see peab olema dokumenteeritud. Töötajad peavad allkirjaga kinnitama, et on teabe kätte saanud. Tööinspektsioon küsib neid allkirju.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="4" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, allkirjad olemas</span></button>
+        <button class="quiz-opt" data-q="4" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole allkirjastatud</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(4)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn4" style="display:none" onclick="goNext(4)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="5">
+      <span class="quiz-q-number">Küsimus 5 / 10 · <span class="quiz-q-category">Esmaabi</span></span>
+      <p class="quiz-q-text">Kas töökohal on korralik esmaabikomplekt ja vähemalt üks koolitatud esmaabiandja?</p>
+      <p class="quiz-q-hint">Igal töökohal peab olema täidetud esmaabikomplekt. Vähemalt üks töötaja peab olema läbinud esmaabi kursuse. Mõlema olemasolu tuleb saada tõendada.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="5" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, mõlemad olemas</span></button>
+        <button class="quiz-opt" data-q="5" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole kindel</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(5)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn5" style="display:none" onclick="goNext(5)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="6">
+      <span class="quiz-q-number">Küsimus 6 / 10 · <span class="quiz-q-category">Tööõnnetuste register</span></span>
+      <p class="quiz-q-text">Kas Teil on tööõnnetuste ja ohtlike olukordade register?</p>
+      <p class="quiz-q-hint">Tööandja peab pidama kirjalikku registrit kõigist tööõnnetustest, isegi väiksematest. Register peab sisaldama kuupäeva, töötaja andmeid, õnnetuse kirjeldust ja võetud meetmeid. Vormi leiate Tööinspektsiooni kodulehelt.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="6" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, register on peetud</span></button>
+        <button class="quiz-opt" data-q="6" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole olemas</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(6)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn6" style="display:none" onclick="goNext(6)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="7">
+      <span class="quiz-q-number">Küsimus 7 / 10 · <span class="quiz-q-category">Töökeskkonnavolinik</span></span>
+      <p class="quiz-q-text">Kui Teil on 10 või rohkem töötajat, kas töötajad on valinud töökeskkonnavoliniku?</p>
+      <p class="quiz-q-hint">10+ töötajaga ettevõttes peavad töötajad ise valima töökeskkonnavoliniku. Tööandja korraldab valimise, kuid valivad töötajad. Kui Teil on alla 10 töötaja, valige "Jah / Pole vajalik".</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="7" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah / Pole vajalik (&lt;10 töötajat)</span></button>
+        <button class="quiz-opt" data-q="7" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole tehtud (10+ töötajat)</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(7)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn7" style="display:none" onclick="goNext(7)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="8">
+      <span class="quiz-q-number">Küsimus 8 / 10 · <span class="quiz-q-category">Töökeskkonna mõõtmised</span></span>
+      <p class="quiz-q-text">Kas olete teinud vajalikud töökeskkonna mõõtmised (müra, valgus, mikrokliima, keemilised ained jms)?</p>
+      <p class="quiz-q-hint">Kui riskianalüüs tuvastas füüsikalisi riske (kõrge müratase, halb valgustus, keemilised ained), tuleb neid mõõtmistega kinnitada. Kontoris tavaliselt mõõtmised pole vajalikud. Tootmises, ehituses, transpordis tõenäoliselt küll.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="8" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah / Pole kontoris vajalik</span></button>
+        <button class="quiz-opt" data-q="8" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole tehtud</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(8)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn8" style="display:none" onclick="goNext(8)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="9">
+      <span class="quiz-q-number">Küsimus 9 / 10 · <span class="quiz-q-category">Dokumentatsioon</span></span>
+      <p class="quiz-q-text">Kas kõik töötervishoiu dokumendid on korralikult arhiveeritud ja Tööinspektsioonile näitamiseks valmis?</p>
+      <p class="quiz-q-hint">Tööinspektsioon küsib järelevalve käigus: riskianalüüs, tervisekontrolli tõendid, teavitamise aktid, töötervishoiuteenuse leping, tööõnnetuste register. Kõik peavad olema leitavad ja ajakohased.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="9" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, kõik on korras</span></button>
+        <button class="quiz-opt" data-q="9" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Pole kindel</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(9)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn9" style="display:none" onclick="goNext(9)">Järgmine</button></div></div>
+    </div>
+
+    <div class="quiz-question-card" data-q="10">
+      <span class="quiz-q-number">Küsimus 10 / 10 · <span class="quiz-q-category">Konsultatsioon arstiga</span></span>
+      <p class="quiz-q-text">Kas olete viimase 12 kuu jooksul konsulteerinud töötervishoiuarstiga töökeskkonna ohutuse teemal?</p>
+      <p class="quiz-q-hint">Regulaarne koostöö töötervishoiuarstiga on rohkem kui lihtsalt tervisekontrollide korraldamine. Arst peaks aitama analüüsida töökeskkonda, anda soovitusi ja aidata ennetada terviseprobleeme.</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-q="10" data-val="true"><span class="quiz-opt-mark">Jah</span><span>Jah, oleme konsulteerinud</span></button>
+        <button class="quiz-opt" data-q="10" data-val="false"><span class="quiz-opt-mark">Ei</span><span>Ei / Ainult tervisekontroll</span></button>
+      </div>
+      <div class="quiz-nav"><div><button class="qbtn" onclick="goPrev(10)">Tagasi</button></div><div><button class="qbtn qbtn-next" id="nextBtn10" style="display:none" onclick="showResult()">Vaata tulemust</button></div></div>
+    </div>
+
+    <!-- Results -->
+    <div class="quiz-result-section" id="quizResult">
+
+      <div class="result-score-banner" id="scoreBanner">
+        <p class="result-company-name" id="resultCompanyName"></p>
+        <div class="result-score-big" id="resultScoreBig">-</div>
+        <p class="result-score-label" id="resultScoreLabel">Hea seis</p>
+        <p class="result-score-sublabel" id="resultScoreSub"></p>
+        <div class="result-pct-bar">
+          <div class="progress-track"><div class="progress-track__fill" id="resultPctFill" style="width:0%"></div></div>
+          <p class="result-pct-text" id="resultPctText"></p>
+        </div>
+      </div>
+
+      <div id="pqlAlert"></div>
+
+      <!-- Email gate -->
+      <div class="tt24-gate-card is-locked" id="quizGateCard">
+        <div class="tt24-gate-form-wrap">
+          <h3>Saatke täielik tulemus oma e-postile</h3>
+          <p>Detailne raport sisaldab kategooriate ülevaadet, prioriteetseid soovitusi, konkreetset tegevuskava ja sektoripõhiseid riske Teie ettevõttele.</p>
+          <form class="tt24-gate-form" id="quizGateForm" onsubmit="return tt24SubmitQuizGate(event)">
+            <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
+            <button type="submit">Saada täielik raport</button>
+            <p class="tt24-gate-privacy">Andmeid kasutame ainult Teile raporti edastamiseks ja vajadusel ühenduse võtmiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
+          </form>
+        </div>
+        <div class="tt24-gate-success">
+          <h3>Aitäh, raport edastatud</h3>
+          <p>Saadame täieliku raporti Teie e-postile lähitundidel. Vahepeal vaadake oma tulemus allpool.</p>
+        </div>
+      </div>
+
+      <!-- Category overview -->
+      <div class="result-cats-card result-block">
+        <p class="result-block-title">Kategooriate ülevaade</p>
+        <div id="catGrid"></div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="result-recs-card result-block" id="recsCard">
+        <p class="result-block-title">Prioriteetsed soovitused</p>
+        <div id="recsList"></div>
+        <div id="nextStepsAlert"></div>
+        <div class="result-qr-row">
+          <div class="result-qr-block">
+            <img id="qrImg" src="" alt="QR kood testile">
+            <div>
+              <p class="result-qr-text">Skannige, et teha ise test:</p>
+              <p class="result-qr-url">tt24.ee/enesekontroll</p>
+            </div>
+          </div>
+          <p class="result-disclaimer">See test ei asenda ametlikku auditit ega Tööinspektsiooni järelevalvet.</p>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="result-share-card result-block">
+        <p class="result-block-title">Jaga tulemust</p>
+        <div class="share-btns">
+          <button class="btn-share" onclick="shareLinkedIn()">LinkedIn</button>
+          <button class="btn-share" onclick="shareEmail()">E-post</button>
+          <button class="btn-share" onclick="downloadPDF()">Laadi PDF</button>
+          <button class="btn-share" id="btnCopy" onclick="copyLink()"><span id="btnCopyText">Kopeeri link</span></button>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="quiz-cta-banner">
+        <h3>Vajate professionaalset abi?</h3>
+        <p>TT24 koostööpartner Valvekliinik pakub täielikku töötervishoiu teenust. Küsige personaalset pakkumist, vastame 24 tunni jooksul.</p>
+        <a href="pakkumine.html" class="cta-ink">Küsin pakkumist</a>
+      </div>
+
+      <div class="quiz-restart">
+        <button class="qbtn" id="btnRestartQuiz" onclick="restartQuiz()">Tee test uuesti</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<div class="container" style="max-width: 720px; margin-top: var(--space-4);">
-  <div style="background: var(--color-bg-alt, #f1f5f9); border-radius: var(--radius-lg, 8px); padding: var(--space-4) var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6;">
-    <strong>Märkus:</strong> See test on eneseanalüüsi vahend üldise valmisoleku mõõtmiseks. See ei ole ametlik audit ega asenda Tööinspektsiooni järelevalvet. Täpse vastavuse hindamiseks soovitame pöörduda töötervishoiuspetsialisti poole.
-  </div>
-</div>
-
-<!-- ═══════════════════════════════
-     QUIZ MAIN
-═══════════════════════════════ -->
-<main id="main-content">
-  <section class="section">
-    <div class="container">
-      <div class="quiz-container">
-
-        <!-- COMPANY NAME INPUT -->
-        <div class="quiz-company-wrap" id="companyInputWrap">
-          <label for="companyName">🏢 Ettevõtte nimi <span style="font-weight:400;color:var(--color-text-muted)">(valikuline)</span></label>
-          <input type="text" id="companyName" class="form-input" placeholder="nt. Näidis OÜ" maxlength="80" autocomplete="organization">
-          <p class="form-hint">Sisestatakse tulemuskaardile. Ei salvestata kusagile.</p>
-        </div>
-
-        <!-- PROGRESS BAR -->
-        <div class="quiz-progress-wrap" id="quizProgressWrap">
-          <div class="quiz-progress-header">
-            <span class="quiz-progress-label" id="quizLabel">Küsimus 1 / 10</span>
-            <span class="quiz-progress-pct" id="quizPct">0%</span>
-          </div>
-          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Testi edenemine" id="quizProgressBar">
-            <div class="progress-bar__fill" id="quizProgressFill" style="width:0%"></div>
-          </div>
-          <p class="quiz-progress-cat" id="quizCatLabel"></p>
-          <div class="quiz-steps-dots" id="quizDots"></div>
-        </div>
-
-        <!-- ─── QUESTION CARDS ────────────────────────────── -->
-
-        <div class="quiz-question-card active" data-q="1">
-          <span class="quiz-q-number">Küsimus 1 / 10 <span class="quiz-q-category">Töötervishoiu teenus</span></span>
-          <p class="quiz-q-text">Kas Teil on sõlmitud kehtiv leping töötervishoiu teenuse osutajaga?</p>
-          <div class="quiz-q-hint">Töötervishoiu teenuse osutaja on ettevõte, kes pakub töötervishoiuarsti teenust. TTOS § 12 kohaselt on iga tööandja kohustatud korraldama töötervishoiuteenuste osutamist, isegi ühe töötajaga. Praktikas toimub see kirjaliku lepingu kaudu teenuse osutajaga.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="1" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, kehtiv leping on olemas</span>
-            </button>
-            <button class="quiz-opt" data-q="1" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole kindel</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left"></div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn1" style="display:none" onclick="goNext(1)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="2">
-          <span class="quiz-q-number">Küsimus 2 / 10 <span class="quiz-q-category">Riskianalüüs</span></span>
-          <p class="quiz-q-text">Kas Teil on teostatud kirjalik töökoha riskianalüüs viimase 3 aasta jooksul?</p>
-          <div class="quiz-q-hint">Riskianalüüs on kohustuslik kõigile tööandjatele. See peab olema kirjalik, dateeritud ja sisaldama tuvastatud riske ning nende maandamise meetmeid. Suuline "analüüs" ei kehti.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="2" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, kirjalik analüüs on olemas</span>
-            </button>
-            <button class="quiz-opt" data-q="2" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole kirjalik</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(2)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn2" style="display:none" onclick="goNext(2)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="3">
-          <span class="quiz-q-number">Küsimus 3 / 10 <span class="quiz-q-category">Tervisekontrollid</span></span>
-          <p class="quiz-q-text">Kas kõik töötajad, kelle amet nõuab tervisekontrolli, on selle viimase 3 aasta jooksul läbinud?</p>
-          <div class="quiz-q-hint">Tervisekontroll on kohustuslik töötajatele, kes puutuvad kokku tervistkahjustavate teguritega: müra, keemilised ained, füüsiline koormus, kuvariga töö (5+ t/päev), töö transpordi, toitlustuse või tervishoiu valdkonnas.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="3" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, kõik on kontrolli läbinud</span>
-            </button>
-            <button class="quiz-opt" data-q="3" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole kindel</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(3)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn3" style="display:none" onclick="goNext(3)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="4">
-          <span class="quiz-q-number">Küsimus 4 / 10 <span class="quiz-q-category">Teavitamine</span></span>
-          <p class="quiz-q-text">Kas kõik töötajad on saanud kirjaliku teavituse tervise- ja ohutusriskidest ning allkirjastanud teavitamise akti?</p>
-          <div class="quiz-q-hint">Töötajate teavitamine terviseriskidest ei piisa suuliselt - see peab olema dokumenteeritud. Töötajad peavad allkirjaga kinnitama, et on teabe kätte saanud. Tööinspektsioon küsib neid allkirju.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="4" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, allkirjad olemas</span>
-            </button>
-            <button class="quiz-opt" data-q="4" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole allkirjastatud</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(4)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn4" style="display:none" onclick="goNext(4)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="5">
-          <span class="quiz-q-number">Küsimus 5 / 10 <span class="quiz-q-category">Esmaabi</span></span>
-          <p class="quiz-q-text">Kas töökohal on korralik esmaabikomplekt ja vähemalt üks koolitatud esmaabiandjat?</p>
-          <div class="quiz-q-hint">Iga töökohal peab olema täidetud esmaabikomplekt. Vähemalt üks töötaja peab olema läbinud esmaabi kursuse. Mõlema olemasolu tuleb saada tõendada.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="5" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, mõlemad olemas</span>
-            </button>
-            <button class="quiz-opt" data-q="5" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole kindel</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(5)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn5" style="display:none" onclick="goNext(5)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="6">
-          <span class="quiz-q-number">Küsimus 6 / 10 <span class="quiz-q-category">Tööõnnetuste register</span></span>
-          <p class="quiz-q-text">Kas Teil on tööõnnetuste ja ohtlike olukordade register?</p>
-          <div class="quiz-q-hint">Tööandja peab pidama kirjalikku registrit kõigist tööõnnetustest - isegi väiksematest. Register peab sisaldama: kuupäeva, töötaja andmeid, õnnetuse kirjeldust ja võetud meetmeid. Vormi leiate Tööinspektsiooni kodulehelt.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="6" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, register on peetud</span>
-            </button>
-            <button class="quiz-opt" data-q="6" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole olemas</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(6)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn6" style="display:none" onclick="goNext(6)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="7">
-          <span class="quiz-q-number">Küsimus 7 / 10 <span class="quiz-q-category">Töökeskkonnavolinik</span></span>
-          <p class="quiz-q-text">Kui Teil on 10 või rohkem töötajat - kas töötajad on valinud töökeskkonnavoliniku?</p>
-          <div class="quiz-q-hint">10+ töötajaga ettevõttes peavad töötajad ise valima töökeskkonnavoliniku. Tööandja korraldab valimise, kuid valivad töötajad. Kui teil on alla 10 töötaja, valige "Jah / Pole vajalik".</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="7" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah / Pole vajalik (&lt;10 töötajat)</span>
-            </button>
-            <button class="quiz-opt" data-q="7" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole tehtud (10+ töötajat)</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(7)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn7" style="display:none" onclick="goNext(7)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="8">
-          <span class="quiz-q-number">Küsimus 8 / 10 <span class="quiz-q-category">Töökeskkonna mõõtmised</span></span>
-          <p class="quiz-q-text">Kas olete teinud vajalikud töökeskkonna mõõtmised (müra, valgus, mikrokliima, keemilised ained jms)?</p>
-          <div class="quiz-q-hint">Kui riskianalüüs tuvastas füüsikalisi riske (kõrge müratase, halb valgustus, keemilised ained), tuleb neid mõõtmistega kinnitada. Kontoris tavaliselt mõõtmised pole vajalikud. Tootmises, ehituses, transpordis - tõenäoliselt küll.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="8" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah / Pole kontoris vajalik</span>
-            </button>
-            <button class="quiz-opt" data-q="8" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole tehtud</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(8)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn8" style="display:none" onclick="goNext(8)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="9">
-          <span class="quiz-q-number">Küsimus 9 / 10 <span class="quiz-q-category">Dokumentatsioon</span></span>
-          <p class="quiz-q-text">Kas kõik töötervishoiu dokumendid on korralikult arhiveeritud ja Tööinspektsioonile näitamiseks valmis?</p>
-          <div class="quiz-q-hint">Tööinspektsioon küsib järelevalve käigus: riskianalüüs, tervisekontrolli tõendid, teavitamise aktid, töötervishoiuteenuse leping, tööõnnetuste register. Kõik peavad olema leitavad ja ajakohased.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="9" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, kõik on korras</span>
-            </button>
-            <button class="quiz-opt" data-q="9" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Pole kindel</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(9)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn9" style="display:none" onclick="goNext(9)">Järgmine →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="quiz-question-card" data-q="10">
-          <span class="quiz-q-number">Küsimus 10 / 10 <span class="quiz-q-category">Konsultatsioon arstiga</span></span>
-          <p class="quiz-q-text">Kas olete viimase 12 kuu jooksul konsulteerinud töötervishoiuarstiga töökeskkonna ohutuse teemal?</p>
-          <div class="quiz-q-hint">Regulaarne koostöö töötervishoiuarstiga on rohkem kui lihtsalt tervisekontrollide korraldamine. Arst peaks aitama analüüsida töökeskkonda, anda soovitusi ja aidata ennetada terviseprobleeme.</div>
-          <div class="quiz-options">
-            <button class="quiz-opt" data-q="10" data-val="true">
-              <span class="quiz-opt-icon">✅</span>
-              <span>Jah, oleme konsulteerinud</span>
-            </button>
-            <button class="quiz-opt" data-q="10" data-val="false">
-              <span class="quiz-opt-icon">❌</span>
-              <span>Ei / Ainult tervisekontroll</span>
-            </button>
-          </div>
-          <div class="quiz-nav">
-            <div class="quiz-nav-left">
-              <button class="btn btn-ghost btn-sm" onclick="goPrev(10)">← Tagasi</button>
-            </div>
-            <div class="quiz-nav-right">
-              <button class="btn btn-primary btn-sm" id="nextBtn10" style="display:none" onclick="showResult()">Vaata tulemust →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─── RESULTS ──────────────────────────────────── -->
-        <div class="quiz-result-section" id="quizResult">
-
-          <!-- Score banner -->
-          <div class="result-score-banner level-green" id="scoreBanner">
-            <div class="container-inner">
-              <p class="result-company-name" id="resultCompanyName"></p>
-              <div class="result-score-big" id="resultScoreBig">-</div>
-              <p class="result-score-label" id="resultScoreLabel">Hea seis</p>
-              <p class="result-score-sublabel" id="resultScoreSub"></p>
-              <div class="result-pct-bar">
-                <div class="progress-bar">
-                  <div class="progress-bar__fill" id="resultPctFill" style="width:0%"></div>
-                </div>
-                <p class="result-pct-text" id="resultPctText"></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- PQL Alert (low score) -->
-          <div id="pqlAlert"></div>
-
-          <!-- Email gate — unlocks detailed result, category overview, recommendations, share -->
-          <div class="tt24-gate-card is-locked" id="quizGateCard">
-            <div class="tt24-gate-form-wrap">
-              <h3>📩 Saa täielik tulemus oma e-postile</h3>
-              <p>Detailne raport sisaldab: kategooriate ülevaade, prioriteetsed soovitused, konkreetne tegevuskava ja sektoripõhised riskid Teie ettevõttele.</p>
-              <form class="tt24-gate-form" id="quizGateForm" onsubmit="return tt24SubmitQuizGate(event)">
-                <input type="email" name="email" required placeholder="teie@email.ee" autocomplete="email" aria-label="E-posti aadress">
-                <button type="submit">Saa täielik raport →</button>
-                <p class="tt24-gate-privacy">Andmeid kasutame ainult Teile raporti edastamiseks ja vajadusel ühenduse võtmiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html" style="color:#475569;text-decoration:underline">Privaatsuspoliitika</a></p>
-              </form>
-            </div>
-            <div class="tt24-gate-success">
-              <h3>✓ Aitäh, raport edastatud</h3>
-              <p>Saadame täieliku raporti Teie e-postile lähitundidel. Vahepeal vaadake oma tulemus allpool.</p>
-            </div>
-          </div>
-
-          <!-- Category overview -->
-          <div class="result-cats-card">
-            <p class="result-section-title">📊 Kategooriate ülevaade</p>
-            <div class="cat-overview-grid" id="catGrid"></div>
-          </div>
-
-          <!-- Recommendations -->
-          <div class="result-recs-card" id="recsCard">
-            <p class="result-section-title">🎯 Prioriteetsed soovitused</p>
-            <div id="recsList"></div>
-            <div id="nextStepsAlert"></div>
-            <!-- QR row -->
-            <div class="result-qr-row">
-              <div class="result-qr-block">
-                <img id="qrImg" src="" alt="QR kood testile">
-                <div>
-                  <p class="result-qr-text">Skannige, et teha ise test:</p>
-                  <p class="result-qr-url">tt24.ee/enesekontroll</p>
-                </div>
-              </div>
-              <p class="result-disclaimer">See test ei asenda ametlikku auditit ega Tööinspektsiooni järelevalvet.</p>
-            </div>
-          </div>
-
-          <!-- Share section -->
-          <div class="result-share-card">
-            <p class="result-section-title">📤 Jaga tulemust</p>
-            <div class="share-btns">
-              <button class="btn-share linkedin" onclick="shareLinkedIn()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                Jaga LinkedInis
-              </button>
-              <button class="btn-share email-btn" onclick="shareEmail()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-                Jaga e-postiga
-              </button>
-              <button class="btn-share pdf-btn" onclick="downloadPDF()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                Laadi PDF alla
-              </button>
-              <button class="btn-share copy-btn" id="btnCopy" onclick="copyLink()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                <span id="btnCopyText">Kopeeri link</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="quiz-cta-banner">
-            <h3>Vajate professionaalset abi?</h3>
-            <p>Meie partner Valvekliinik pakub täielikku töötervishoiu teenust alates €10 töötaja kohta kuus. Vastame 24 tunni jooksul.</p>
-            <a href="pakkumine.html" class="btn btn-lg" style="background:#fff;color:#0F172A;border:none;font-weight:700">Küsin pakkumist →</a>
-          </div>
-
-          <!-- Restart -->
-          <div style="text-align:center;margin-top:var(--space-4)">
-            <button class="btn btn-secondary" id="btnRestartQuiz" onclick="restartQuiz()">🔄 Tee test uuesti</button>
-          </div>
-        </div>
-        <!-- /.quiz-result-section -->
-
-      </div><!-- /.quiz-container -->
-    </div><!-- /.container -->
-  </section>
-
-  <!-- ═══════════════════════════════
-       FAQ SECTION
-  ═══════════════════════════════ -->
-  <section class="faq-preview section" aria-labelledby="enesekontroll-faq-heading">
-    <div class="container">
-      <div style="max-width:720px;margin:0 auto;">
-        <h2 id="enesekontroll-faq-heading" class="section-title" style="font-size:var(--text-xl);">Korduma kippuvad küsimused</h2>
-
-        <details class="faq-preview-item">
-          <summary class="faq-preview-q">Mis on töötervishoiu eneseanalüüs?</summary>
-          <div class="faq-preview-a">
-            <p>See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks.</p>
-          </div>
-        </details>
-
-        <details class="faq-preview-item">
-          <summary class="faq-preview-q">Kas eneseanalüüs asendab Tööinspektsiooni auditit?</summary>
-          <div class="faq-preview-a">
-            <p>Ei. See on eneseanalüüsi vahend. See ei asenda ametlikku auditit.</p>
-          </div>
-        </details>
-
-        <details class="faq-preview-item">
-          <summary class="faq-preview-q">Kas minu andmeid salvestatakse?</summary>
-          <div class="faq-preview-a">
-            <p>Ei. Kogu arvutus toimub Teie brauseris. Midagi ei salvestata serverisse.</p>
-          </div>
-        </details>
-      </div>
+<!-- FAQ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Korduma kippuvad küsimused</p>
+    <h2 class="section-h" id="enesekontroll-faq-heading">Üksikasjad</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Mis on töötervishoiu eneseanalüüs?</summary>
+        <div class="answer">See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Kas eneseanalüüs asendab Tööinspektsiooni auditit?</summary>
+        <div class="answer">Ei. See on eneseanalüüsi vahend. See ei asenda ametlikku auditit.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Kas minu andmeid salvestatakse?</summary>
+        <div class="answer">Ei. Kogu arvutus toimub Teie brauseris. Midagi ei salvestata serverisse.</div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Related -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Kasulikud artiklid</p>
+    <h2 class="section-h">Lisalugemist</h2>
+    <div class="related-grid">
+      <a class="related-row" href="artiklid/uus-ettevote-tootervishoid.html">
+        <span class="related-tag">Artikkel</span>
+        <div><h3 class="related-title">Uue ettevõtte kohustused</h3><p class="related-desc">Mida peab tegema esimesest päevast alates.</p></div>
+      </a>
+      <a class="related-row" href="artiklid/tootervishoid-hind.html">
+        <span class="related-tag">Artikkel</span>
+        <div><h3 class="related-title">Töötervishoiu teenuse hind</h3><p class="related-desc">Hinnavahemikud ja kulude võrdlus.</p></div>
+      </a>
+      <a class="related-row" href="artiklid/7-levinumat-viga.html">
+        <span class="related-tag">Artikkel</span>
+        <div><h3 class="related-title">Seitse levinumat viga</h3><p class="related-desc">Sagedased vead töötervishoiu korraldamisel.</p></div>
+      </a>
+      <a class="related-row" href="kontrollnimekiri.html">
+        <span class="related-tag">Tööriist</span>
+        <div><h3 class="related-title">Kontrollnimekiri</h3><p class="related-desc">Süstemaatiline nimekiri kõigi puuduste kõrvaldamiseks.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
 </main>
 
-<!-- Kasulikud artiklid -->
-<section style="max-width:800px;margin:var(--space-8) auto;padding:0 var(--space-4);">
-  <h2 style="font-size:var(--text-lg);margin-bottom:var(--space-3);">Kasulikud artiklid</h2>
-  <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);">
-    <a href="artiklid/uus-ettevote-tootervishoid.html" class="seotud-link" style="flex:1;min-width:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-md);text-decoration:none;color:var(--color-text);">
-      <strong>Uue ettevõtte kohustused</strong><br>
-      <span style="font-size:var(--text-sm);color:var(--color-text-muted);">Mida peab tegema esimesest päevast alates</span>
-    </a>
-    <a href="artiklid/tootervishoid-hind.html" class="seotud-link" style="flex:1;min-width:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-md);text-decoration:none;color:var(--color-text);">
-      <strong>Töötervishoiu teenuse hind</strong><br>
-      <span style="font-size:var(--text-sm);color:var(--color-text-muted);">Hinnavahemikud ja kulude võrdlus</span>
-    </a>
-    <a href="artiklid/7-levinumat-viga.html" class="seotud-link" style="flex:1;min-width:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-md);text-decoration:none;color:var(--color-text);">
-      <strong>7 levinumat viga</strong><br>
-      <span style="font-size:var(--text-sm);color:var(--color-text-muted);">Sagedased vead töötervishoiu korraldamisel</span>
-    </a>
-    <a href="artiklid/vaikeettevote-kohustused.html" class="seotud-link" style="flex:1;min-width:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-md);text-decoration:none;color:var(--color-text);">
-      <strong>Kohustused väikeettevõttele</strong><br>
-      <span style="font-size:var(--text-sm);color:var(--color-text-muted);">Mis kehtib 1-9 töötajaga ettevõttele</span>
-    </a>
-    <a href="sektorid/sotsiaalhoolekanne.html" class="seotud-link" style="flex:1;min-width:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-md);text-decoration:none;color:var(--color-text);">
-      <strong>Sotsiaalhoolekande nõuded</strong><br>
-      <span style="font-size:var(--text-sm);color:var(--color-text-muted);">Bioloogilised riskid, psühhosotsiaalne koormus ja hooldustöö ergonoomika</span>
-    </a>
+<!-- Footer -->
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Sõltumatu Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="tervisetoetus.html">400 € tervisetoetus</a>
+      <a href="dokumendid.html">Dokumendid</a>
+    </div>
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="ajakava.html">Ajakava</a>
+      <a href="meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="pakkumine.html">Küsi pakkumist</a>
+      <a href="avatud-uks.html">Küsige meilt</a>
+    </div>
   </div>
-</section>
-
-<!-- ═══════════════════════════════
-     FOOTER
-═══════════════════════════════ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-      <!-- Col 1: Logo + description -->
-      <div class="footer-col footer-col-brand">
-        <a href="index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
-        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele.<br>Kontrollnimekirjad, kalkulaatorid ja KKK - praktilised tööriistad töötervishoiu ja tööohutuse seaduse täitmiseks.</p>
-      </div>
-
-      <!-- Col 2: Tools links -->
-      <div class="footer-col footer-col-links">
-        <h3 class="footer-col-title">Tööriistad</h3>
-        <nav aria-label="Tööriistad">
-          <a href="kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
-          <a href="kalkulaator.html" class="footer-link">Kulukalkulaator</a>
-          <a href="enesekontroll.html" class="footer-link">Enesekontroll</a>
-          <a href="korduma.html" class="footer-link">KKK</a>
-          <a href="ajakava.html" class="footer-link">Ajakava</a>
-          <a href="meist.html" class="footer-link">Meist</a>
-          <a href="dokumendid.html" class="footer-link">Dokumendid</a>
-        </nav>
-      </div>
-
-      <!-- Col 3: Contact -->
-      <div class="footer-col footer-col-contact">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
-        <a href="tel:+37259110909" class="footer-link">+372 5 911 0909</a>
-        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <span class="footer-partner">Koostöös <a href="https://valvekliinik.ee" target="_blank" rel="noopener" class="footer-partner-link"><strong>Valvekliinikuga</strong></a></span>
-      <span class="footer-copy">© 2026 TT24 - Töötervishoiu Teejuht</span>
-    </div>
-
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════
-     EMAIL GATE MODAL
-═══════════════════════════════ -->
+<!-- PDF email gate modal -->
 <div id="emailGateModal" class="modal-overlay" style="display:none">
-  <div class="card" style="max-width:480px;margin:auto;margin-top:20vh;padding:var(--space-8);text-align:center;">
-    <h3 style="margin-bottom:var(--space-2)">Laadige alla oma ülevaade</h3>
-    <p style="color:var(--color-text-muted);margin-bottom:var(--space-6)">Sisestage oma e-post ja saadame Teile personaalsed soovitused.</p>
+  <div class="modal-card">
+    <h3>Laadige alla oma ülevaade</h3>
+    <p>Sisestage oma e-post ja saadame Teile personaalsed soovitused.</p>
     <form id="emailGateForm">
-      <input type="email" id="gateEmail" placeholder="Teie e-posti aadress" required style="width:100%;padding:12px;border:1px solid var(--color-border);border-radius:var(--radius-md);margin-bottom:var(--space-3);font-size:var(--text-base);">
-      <label style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:var(--space-3);font-size:0.85rem;color:#475569;text-align:left;cursor:pointer;">
-        <input type="checkbox" required style="margin-top:3px;min-width:18px;min-height:18px;">
-        <span>Nõustun andmete töötlemisega vastavalt <a href="privaatsus.html" target="_blank" style="color:var(--color-primary);">privaatsuspoliitikale</a>.</span>
+      <input type="email" id="gateEmail" placeholder="Teie e-posti aadress" required>
+      <label class="modal-consent">
+        <input type="checkbox" required>
+        <span>Nõustun andmete töötlemisega vastavalt <a href="privaatsus.html" target="_blank">privaatsuspoliitikale</a>.</span>
       </label>
-      <button type="submit" class="btn btn-primary" style="width:100%">Laadin alla</button>
+      <button type="submit">Laadin alla</button>
     </form>
-    <a href="#" id="skipGate" style="display:block;margin-top:var(--space-3);color:var(--color-text-muted);font-size:var(--text-sm)">Jätkake ilma e-postita →</a>
+    <a href="#" id="skipGate" class="modal-skip">Jätkan ilma e-postita</a>
   </div>
 </div>
 
@@ -1351,9 +665,9 @@
 
 <script>
 // ─── CONSTANTS ───────────────────────────────────────────
-const QUIZ_URL = 'https://tt24.ee/enesekontroll.html';
+var QUIZ_URL = 'https://tt24.ee/enesekontroll.html';
 
-const questions = [
+var questions = [
   { id: 1,  text: 'Töötervishoiu teenuseleping',
     failMsg: 'Töötervishoiuteenuste osutamine pole korraldatud. TTOS § 12 kohustab kõiki tööandjaid seda tegema, lahendage esimesel võimalusel lepingu sõlmimisega teenuse osutajaga.',
     failSeverity: 'red',    resource: 'korduma.html#faq-teenuseleping' },
@@ -1364,20 +678,20 @@ const questions = [
     failMsg: 'Kohustuslikud tervisekontrollid on tegemata. Lugege, millised kontrollid kehtivad just Teie töötajatele.',
     failSeverity: 'red',    resource: 'korduma.html#tervisekontroll' },
   { id: 4,  text: 'Töötajate teavitamine (allkirjad)',
-    failMsg: 'Töötajate teavitamise aktid puuduvad. Koostage aktid ja koguge allkirjad - see on lihtne, kuid oluline samm.',
+    failMsg: 'Töötajate teavitamise aktid puuduvad. Koostage aktid ja koguge allkirjad, see on lihtne, kuid oluline samm.',
     failSeverity: 'yellow', resource: 'korduma.html#dokumentatsioon' },
   { id: 5,  text: 'Esmaabi',
-    failMsg: 'Esmaabikomplekt või koolitatud esmaabiandjat puudub. Täiendage komplekti ja suunake töötaja esmaabi kursusele.',
-    failSeverity: 'yellow', resource: 'korduma.html#trahvid', resourceLabel: 'Loe lähemalt →' },
+    failMsg: 'Esmaabikomplekt või koolitatud esmaabiandja puudub. Täiendage komplekti ja suunake töötaja esmaabi kursusele.',
+    failSeverity: 'yellow', resource: 'korduma.html#trahvid', resourceLabel: 'Loe lähemalt' },
   { id: 6,  text: 'Tööõnnetuste register',
-    failMsg: 'Tööõnnetuste register puudub. Looge see kohe - vormi leiate Tööinspektsiooni kodulehelt.',
+    failMsg: 'Tööõnnetuste register puudub. Looge see kohe, vormi leiate Tööinspektsiooni kodulehelt.',
     failSeverity: 'yellow', resource: 'korduma.html#tooonnetus' },
   { id: 7,  text: 'Töökeskkonnavolinik (10+ töötajat)',
     failMsg: '10+ töötajaga ettevõttes on töökeskkonnavolinik kohustuslik. Korraldage töötajate hulgas valimine.',
     failSeverity: 'yellow', resource: 'korduma.html#faq-volinik' },
   { id: 8,  text: 'Töökeskkonna mõõtmised',
     failMsg: 'Vajalikud töökeskkonna mõõtmised on tegemata. Tellige mõõtmised akrediteeritud laborist.',
-    failSeverity: 'yellow', resource: 'korduma.html#riskianaluus', resourceLabel: 'Loe lähemalt →' },
+    failSeverity: 'yellow', resource: 'korduma.html#riskianaluus', resourceLabel: 'Loe lähemalt' },
   { id: 9,  text: 'Dokumentatsioon korras',
     failMsg: 'Dokumentatsioon ei ole järelevalveks valmis. Koondage kõik dokumendid ühte kausta ja veenduge, et need on ajakohased.',
     failSeverity: 'yellow', resource: 'korduma.html#dokumentatsioon' },
@@ -1386,33 +700,24 @@ const questions = [
     failSeverity: 'green',  resource: null }
 ];
 
+var SEV_LABEL = { red: 'Kriitiline', yellow: 'Oluline', green: 'Soovituslik' };
+
 // ─── STATE ───────────────────────────────────────────────
-let answers    = {};
-let currentQ   = 1;
-let finalScore = 0;
-let finalLevel = 'green';
+var answers    = {};
+var currentQ   = 1;
+var finalScore = 0;
+var finalLevel = 'green';
 
 // ─── INIT ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
   initDots();
   updateProgress(1);
-
-  // Attach answer listeners
   document.querySelectorAll('.quiz-opt').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var q   = parseInt(btn.dataset.q);
       var val = btn.dataset.val === 'true';
       handleAnswer(q, val);
     });
-  });
-
-  // Nav scroll effect
-  window.addEventListener('scroll', function () {
-    var header = document.getElementById('siteHeader');
-    if (header) {
-      if (window.scrollY > 10) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    }
   });
 });
 
@@ -1431,15 +736,11 @@ function initDots() {
 function updateProgress(qNum) {
   var answered = Object.keys(answers).length;
   var pct = Math.round((answered / 10) * 100);
-
   document.getElementById('quizLabel').textContent = 'Küsimus ' + qNum + ' / 10';
   document.getElementById('quizPct').textContent   = pct + '%';
   document.getElementById('quizProgressFill').style.width = pct + '%';
-
   var bar = document.getElementById('quizProgressBar');
   if (bar) bar.setAttribute('aria-valuenow', pct);
-
-  // Update dots
   for (var i = 1; i <= 10; i++) {
     var dot = document.getElementById('dot' + i);
     if (!dot) continue;
@@ -1447,39 +748,26 @@ function updateProgress(qNum) {
     if (answers[i] !== undefined) dot.classList.add('answered');
     else if (i === qNum)          dot.classList.add('current');
   }
-
-  // Category label
   var cats = ['','Töötervishoiu teenus','Riskianalüüs','Tervisekontrollid','Teavitamine','Esmaabi','Tööõnnetuste register','Töökeskkonnavolinik','Töökeskkonna mõõtmised','Dokumentatsioon','Konsultatsioon arstiga'];
   var catEl = document.getElementById('quizCatLabel');
-  if (catEl) catEl.textContent = cats[qNum] ? '📌 ' + cats[qNum] : '';
+  if (catEl) catEl.textContent = cats[qNum] ? cats[qNum] : '';
 }
 
 // ─── ANSWER HANDLING ─────────────────────────────────────
 function handleAnswer(qNum, value) {
   answers[qNum] = value;
-
-  // Style the selected button
   var card = document.querySelector('[data-q="' + qNum + '"]');
   if (!card) return;
-
   var opts = card.querySelectorAll('.quiz-opt');
   opts.forEach(function (opt, idx) {
     opt.disabled = true;
     if (idx === 0 && value)  opt.classList.add('selected-yes');
     if (idx === 1 && !value) opt.classList.add('selected-no');
   });
-
-  // Show Next button (delayed auto-advance + manual next)
   var nextBtn = document.getElementById('nextBtn' + qNum);
-  if (nextBtn) nextBtn.style.display = 'inline-flex';
-
-  // Auto-advance after short delay
+  if (nextBtn) nextBtn.style.display = 'inline-block';
   setTimeout(function () {
-    if (qNum < 10) {
-      goNext(qNum);
-    } else {
-      showResult();
-    }
+    if (qNum < 10) { goNext(qNum); } else { showResult(); }
   }, 400);
 }
 
@@ -1494,16 +782,12 @@ function goPrev(qNum) {
 }
 
 function showQuestion(num) {
-  document.querySelectorAll('.quiz-question-card').forEach(function (c) {
-    c.classList.remove('active');
-  });
+  document.querySelectorAll('.quiz-question-card').forEach(function (c) { c.classList.remove('active'); });
   var target = document.querySelector('[data-q="' + num + '"]');
   if (target) {
     target.classList.add('active');
     currentQ = num;
     updateProgress(num);
-
-    // Re-apply selected state if already answered
     if (answers[num] !== undefined) {
       var opts = target.querySelectorAll('.quiz-opt');
       opts.forEach(function (opt, idx) {
@@ -1512,51 +796,42 @@ function showQuestion(num) {
         if (idx === 1 && answers[num] === false) opt.classList.add('selected-no');
       });
       var nb = document.getElementById('nextBtn' + num);
-      if (nb) nb.style.display = 'inline-flex';
+      if (nb) nb.style.display = 'inline-block';
     }
-
-    // Smooth scroll to question
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
 // ─── RESULTS ─────────────────────────────────────────────
 function showResult() {
-  // Update progress to 100%
   document.getElementById('quizProgressFill').style.width = '100%';
   document.getElementById('quizPct').textContent = '100%';
-  document.getElementById('quizLabel').textContent = '✓ Valmis!';
+  document.getElementById('quizLabel').textContent = 'Valmis';
 
-  // Hide all question cards
   document.querySelectorAll('.quiz-question-card').forEach(function (c) { c.classList.remove('active'); });
 
-  // Compute score
   var score  = Object.values(answers).filter(function (v) { return v === true; }).length;
   var failed = questions.filter(function (q) { return answers[q.id] === false; });
   finalScore = score;
 
   var company = (document.getElementById('companyName').value || '').trim();
 
-  // Level
-  var level, levelLabel, levelEmoji;
-  if (score >= 9)      { level = 'green';  levelLabel = 'Hea seis';            levelEmoji = '🟢'; }
-  else if (score >= 6) { level = 'yellow'; levelLabel = 'Tähelepanu vajalik';  levelEmoji = '🟡'; }
-  else                 { level = 'red';    levelLabel = 'Kriitilised puudused'; levelEmoji = '🔴'; }
+  var level, levelLabel;
+  if (score >= 9)      { level = 'green';  levelLabel = 'Hea seis'; }
+  else if (score >= 6) { level = 'yellow'; levelLabel = 'Tähelepanu vajalik'; }
+  else                 { level = 'red';    levelLabel = 'Kriitilised puudused'; }
   finalLevel = level;
 
-  // Score banner
   var banner = document.getElementById('scoreBanner');
   banner.className = 'result-score-banner level-' + level;
 
-  // Company name
   var companyNameEl = document.getElementById('resultCompanyName');
   companyNameEl.textContent = company
-    ? company.toUpperCase() + ' - TÖÖTERVISHOIU ENESEKONTROLL'
+    ? company.toUpperCase() + ' · TÖÖTERVISHOIU ENESEKONTROLL'
     : 'TÖÖTERVISHOIU ENESEKONTROLLI TULEMUS';
 
-  // Big score
   document.getElementById('resultScoreBig').textContent = score + ' / 10';
-  document.getElementById('resultScoreLabel').textContent = levelEmoji + ' ' + levelLabel;
+  document.getElementById('resultScoreLabel').textContent = levelLabel;
 
   var pct = Math.round(score * 10);
   document.getElementById('resultScoreSub').textContent = 'Vastavus töötervishoiu nõuetele: ' + pct + '%';
@@ -1571,9 +846,8 @@ function showResult() {
   catGrid.innerHTML = questions.map(function (q) {
     var pass  = answers[q.id] === true;
     var cls   = pass ? 'pass' : (q.failSeverity === 'red' ? 'fail' : 'warn');
-    var st    = pass ? '✓ Korras' : '✗ Puudus';
+    var st    = pass ? 'Korras' : 'Puudus';
     return '<div class="cat-row ' + cls + '">'
-         + '<div class="cat-row-dot"></div>'
          + '<span class="cat-row-label">' + q.text + '</span>'
          + '<span class="cat-row-status">' + st + '</span>'
          + '</div>';
@@ -1582,10 +856,9 @@ function showResult() {
   // Recommendations
   var recsEl = document.getElementById('recsList');
   if (failed.length === 0) {
-    recsEl.innerHTML = '<div class="rec-item sev-green"><div class="rec-dot green"></div>'
-      + '<div class="rec-body"><p class="rec-title">Suurepärane!</p>'
-      + '<p class="rec-desc">Kõik 10 punkti on täidetud. Soovitame dokumentatsiooni regulaarselt üle vaadata ja tervisekontrollid õigeaegselt korraldada.</p>'
-      + '</div></div>';
+    recsEl.innerHTML = '<div class="rec-item"><p class="rec-sev">Suurepärane</p>'
+      + '<p class="rec-title">Kõik kümme punkti on täidetud</p>'
+      + '<p class="rec-desc">Soovitame dokumentatsiooni regulaarselt üle vaadata ja tervisekontrollid õigeaegselt korraldada.</p></div>';
   } else {
     var sorted = failed.slice().sort(function (a, b) {
       var o = { red: 0, yellow: 1, green: 2 };
@@ -1593,15 +866,12 @@ function showResult() {
     });
     var top3 = sorted.slice(0, 3);
     recsEl.innerHTML = top3.map(function (q) {
-      var sev = q.failSeverity === 'red' ? 'sev-red' : (q.failSeverity === 'yellow' ? 'sev-yellow' : 'sev-green');
-      var dotCls = q.failSeverity;
-      return '<div class="rec-item ' + sev + '">'
-           + '<div class="rec-dot ' + dotCls + '"></div>'
-           + '<div class="rec-body">'
+      return '<div class="rec-item">'
+           + '<p class="rec-sev">' + (SEV_LABEL[q.failSeverity] || '') + '</p>'
            + '<p class="rec-title">' + q.text + '</p>'
            + '<p class="rec-desc">' + q.failMsg + '</p>'
-           + (q.resource ? '<a href="' + q.resource + '" class="rec-link">' + (q.resourceLabel || 'Vaata lisainfot →') + '</a>' : '')
-           + '</div></div>';
+           + (q.resource ? '<a href="' + q.resource + '" class="rec-link">' + (q.resourceLabel || 'Vaata lisainfot') + '</a>' : '')
+           + '</div>';
     }).join('');
   }
 
@@ -1610,49 +880,38 @@ function showResult() {
   var redCount = failed.filter(function (q) { return q.failSeverity === 'red'; }).length;
   if (score < 9) {
     var msg = '';
-    if (redCount > 0) msg += 'Alustage koheselt <strong>' + redCount + ' punaselt märgitud punktist</strong> - need on seaduslikult kohustuslikud. ';
-    msg += 'Kasutage meie <a href="kontrollnimekiri.html" style="color:var(--color-primary);font-weight:600">kontrollnimekirja</a> kõigi puuduste süstemaatiliseks kõrvaldamiseks.';
-    var alertClass = level === 'red' ? 'alert--danger' : 'alert--warning';
-    nextStepsEl.innerHTML = '<div class="alert ' + alertClass + '" style="margin-top:var(--space-4);border-radius:var(--radius-md)"><div class="alert__body"><div class="alert__title">Järgmised sammud</div>' + msg + '</div></div>';
+    if (redCount > 0) msg += 'Alustage koheselt <strong>' + redCount + ' kriitilisest punktist</strong>, need on seaduslikult kohustuslikud. ';
+    msg += 'Kasutage meie <a href="kontrollnimekiri.html">kontrollnimekirja</a> kõigi puuduste süstemaatiliseks kõrvaldamiseks.';
+    var critCls = level === 'red' ? ' is-critical' : '';
+    nextStepsEl.innerHTML = '<div class="result-alert' + critCls + '" style="margin-top:24px;"><strong>Järgmised sammud.</strong> ' + msg + '</div>';
   } else {
-    nextStepsEl.innerHTML = '<div class="alert alert--success" style="margin-top:var(--space-4);border-radius:var(--radius-md)"><div class="alert__body"><div class="alert__title">Suurepärane tulemus!</div>Hoidke dokumentatsioon ajakohasena ja korraldage tervisekontrollid õigeaegselt.</div></div>';
+    nextStepsEl.innerHTML = '<div class="result-alert" style="margin-top:24px;"><strong>Suurepärane tulemus.</strong> Hoidke dokumentatsioon ajakohasena ja korraldage tervisekontrollid õigeaegselt.</div>';
   }
 
   // QR code
-  var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=' + encodeURIComponent(QUIZ_URL) + '&bgcolor=ffffff&color=0F172A&margin=4';
+  var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=' + encodeURIComponent(QUIZ_URL) + '&bgcolor=ffffff&color=0A0A0A&margin=4';
   document.getElementById('qrImg').src = qrUrl;
 
   // PQL alert for high-risk respondents (score <= 4)
   var pqlEl = document.getElementById('pqlAlert');
   if (pqlEl) {
     if (score <= 4) {
-      pqlEl.innerHTML = '<div class="alert alert--danger" style="margin-bottom:var(--space-6);border-radius:var(--radius-xl);padding:var(--space-5) var(--space-6);">'
-        + '<div class="alert__body">'
-        + '<div class="alert__title" style="margin-bottom:var(--space-2)">⚠️ Teie tulemus viitab olulistele puudustele</div>'
-        + 'Soovitame <strong>tasuta 15-minutilist vastavusülevaadet</strong> spetsialistiga. '
-        + '<a href="pakkumine.html" style="color:inherit;font-weight:700;text-decoration:underline">Broneeri tasuta ülevaade →</a>'
-        + '</div></div>';
+      pqlEl.innerHTML = '<div class="result-alert is-critical" style="margin-bottom:24px;">'
+        + '<strong>Teie tulemus viitab olulistele puudustele.</strong> '
+        + 'Soovitame tasuta vastavusülevaadet spetsialistiga. '
+        + '<a href="pakkumine.html">Küsige tasuta ülevaade</a>.</div>';
     } else {
       pqlEl.innerHTML = '';
     }
   }
 
-  // Show result, hide company input, update progress dots
   document.getElementById('companyInputWrap').style.display = 'none';
   var resultEl = document.getElementById('quizResult');
   resultEl.classList.add('visible');
-
-  // Apply email gate: hide detailed sections until email captured
   resultEl.classList.add('tt24-locked');
 
-  // Fire GA4 conversion event: quiz completed (top of funnel)
   if (window.dataLayer) {
-    window.dataLayer.push({
-      event: 'quiz_completed',
-      quiz_score: score,
-      quiz_level: level,
-      source_page: window.location.pathname
-    });
+    window.dataLayer.push({ event: 'quiz_completed', quiz_score: score, quiz_level: level, source_page: window.location.pathname });
   }
 
   resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1674,11 +933,9 @@ function tt24BuildRecommendationEmail(company, score, level) {
   var failed = tt24GetFailedRecommendations();
   var comp = company || 'Teie ettevõte';
   var header = comp + ' töötervishoiu enesekontrolli tulemus: ' + score + '/10 (' + level + ').';
-
   if (failed.length === 0) {
     return header + '\n\nKõik 10 punkti on täidetud. Soovitame dokumentatsiooni regulaarselt üle vaadata ja tervisekontrollid õigeaegselt korraldada.\n\nTT24: https://tt24.ee';
   }
-
   return header + '\n\nPeamised soovitused puuduste kõrvaldamiseks:\n\n' + failed.map(function (q, idx) {
     return (idx + 1) + '. ' + q.text + '\n' + q.failMsg + (q.resource ? '\nLisainfo: https://tt24.ee/' + q.resource : '');
   }).join('\n\n') + '\n\nSee ei ole ametlik audit, vaid enesekontrolli kokkuvõte. TT24: https://tt24.ee';
@@ -1690,7 +947,6 @@ function restartQuiz() {
   currentQ = 1;
   finalScore = 0;
   finalLevel = 'green';
-
   document.querySelectorAll('.quiz-question-card').forEach(function (card) {
     card.classList.remove('active');
     card.querySelectorAll('.quiz-opt').forEach(function (opt) {
@@ -1701,7 +957,6 @@ function restartQuiz() {
     var nb = document.getElementById('nextBtn' + qNum);
     if (nb) nb.style.display = 'none';
   });
-
   document.querySelector('[data-q="1"]').classList.add('active');
   var resultEl = document.getElementById('quizResult');
   resultEl.classList.remove('visible');
@@ -1713,7 +968,7 @@ function restartQuiz() {
     var emailInput = gate.querySelector('input[name="email"]');
     if (emailInput) emailInput.value = '';
     var btn = gate.querySelector('button[type="submit"]');
-    if (btn) { btn.disabled = false; btn.textContent = 'Saa täielik raport →'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Saada täielik raport'; }
   }
   document.getElementById('companyInputWrap').style.display = '';
   updateProgress(1);
@@ -1735,18 +990,17 @@ function shareEmail() {
   var company  = (document.getElementById('companyName').value || '').trim();
   var pct      = Math.round(finalScore * 10);
   var compText = company || 'Meie ettevõte';
-  var subject  = encodeURIComponent('Töötervishoiu enesekontrolli tulemus - ' + compText + ': ' + finalScore + '/10');
+  var subject  = encodeURIComponent('Töötervishoiu enesekontrolli tulemus, ' + compText + ': ' + finalScore + '/10');
   var body     = encodeURIComponent(
     'Tere,\n\n' +
     compText + ' tegi töötervishoiu enesekontrolli testi ja sai tulemuseks ' + finalScore + '/10 (' + pct + '% vastavuses).\n\n' +
-    'Kontrolli oma ettevõtet siin (tasuta, 2 minutit):\n' + QUIZ_URL + '\n\n' +
-    '---\nTT24 - töötervishoiu teabeportaal\nhttps://tt24.ee'
+    'Kontrollige oma ettevõtet siin (tasuta, 2 minutit):\n' + QUIZ_URL + '\n\n' +
+    'TT24, töötervishoiu teabeportaal\nhttps://tt24.ee'
   );
   window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
 }
 
 function downloadPDF() {
-  // Show email gate modal first; actual PDF runs after gate
   var modal = document.getElementById('emailGateModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -1759,10 +1013,9 @@ function downloadPDF() {
 
 function _generatePDF() {
   if (typeof window.jspdf === 'undefined' && typeof jsPDF === 'undefined') {
-    alert('PDF-i genereerimine pole saadaval. Kasutage brauseri printimisvõimalust (Ctrl+P → Salvesta PDF-ina).');
+    alert('PDF-i genereerimine pole saadaval. Kasutage brauseri printimisvõimalust (Ctrl+P, Salvesta PDF-ina).');
     return;
   }
-
   var jsPDFLib = (window.jspdf && window.jspdf.jsPDF) || jsPDF;
   var doc = new jsPDFLib({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
@@ -1770,13 +1023,13 @@ function _generatePDF() {
   var pct     = Math.round(finalScore * 10);
   var dateStr = new Date().toLocaleDateString('et-EE', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  var cols = { green: [16, 185, 129], yellow: [245, 158, 11], red: [239, 68, 68] };
-  var col  = cols[finalLevel];
+  var ink = [10, 10, 10];
+  var mute = [107, 107, 107];
+  var accent = [0, 102, 204];
 
   // Header
-  doc.setFillColor(col[0], col[1], col[2]);
+  doc.setFillColor(ink[0], ink[1], ink[2]);
   doc.rect(0, 0, 210, 30, 'F');
-
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(16);
   doc.setFont('helvetica', 'bold');
@@ -1787,42 +1040,38 @@ function _generatePDF() {
   doc.text(dateStr, 196, 22, { align: 'right' });
 
   // Score block
-  doc.setTextColor(col[0], col[1], col[2]);
+  doc.setTextColor(ink[0], ink[1], ink[2]);
   doc.setFontSize(48);
   doc.setFont('helvetica', 'bold');
   doc.text(finalScore + '/10', 14, 55);
-
-  doc.setTextColor(100, 116, 139);
+  doc.setTextColor(mute[0], mute[1], mute[2]);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'normal');
   doc.text(pct + '% vastavuses', 14, 64);
-
-  doc.setTextColor(15, 23, 42);
+  doc.setTextColor(ink[0], ink[1], ink[2]);
   doc.setFontSize(13);
   doc.setFont('helvetica', 'bold');
   doc.text(company, 14, 74);
 
-  // Divider
-  doc.setDrawColor(226, 232, 240);
+  doc.setDrawColor(224, 224, 224);
   doc.line(14, 79, 196, 79);
 
   // Category list
   doc.setFontSize(9);
   doc.setFont('helvetica', 'bold');
-  doc.setTextColor(100, 116, 139);
+  doc.setTextColor(mute[0], mute[1], mute[2]);
   doc.text('KATEGOORIATE ULEVAADE', 14, 88);
 
   var y = 96;
   questions.forEach(function (q) {
-    var pass    = answers[q.id] === true;
-    var dotCol  = pass ? cols.green : (q.failSeverity === 'red' ? cols.red : cols.yellow);
-    doc.setFillColor(dotCol[0], dotCol[1], dotCol[2]);
-    doc.circle(17, y - 1.5, 2, 'F');
-    doc.setTextColor(15, 23, 42);
+    var pass = answers[q.id] === true;
+    doc.setDrawColor(ink[0], ink[1], ink[2]);
+    if (!pass) { doc.setFillColor(accent[0], accent[1], accent[2]); doc.rect(14, y - 3.5, 1.5, 4, 'F'); }
+    doc.setTextColor(ink[0], ink[1], ink[2]);
     doc.setFont('helvetica', pass ? 'normal' : 'bold');
     doc.setFontSize(9);
-    doc.text(q.text, 22, y);
-    doc.setTextColor(dotCol[0], dotCol[1], dotCol[2]);
+    doc.text(q.text, 20, y);
+    doc.setTextColor(pass ? mute[0] : accent[0], pass ? mute[1] : accent[1], pass ? mute[2] : accent[2]);
     doc.setFont('helvetica', 'bold');
     doc.text(pass ? 'Korras' : 'Puudus', 175, y, { align: 'right' });
     y += 8;
@@ -1832,47 +1081,44 @@ function _generatePDF() {
   var failed = questions.filter(function (q) { return answers[q.id] === false; });
   if (failed.length > 0) {
     y += 4;
-    doc.setDrawColor(226, 232, 240);
+    doc.setDrawColor(224, 224, 224);
     doc.line(14, y, 196, y);
     y += 8;
-
     doc.setFontSize(9);
     doc.setFont('helvetica', 'bold');
-    doc.setTextColor(100, 116, 139);
+    doc.setTextColor(mute[0], mute[1], mute[2]);
     doc.text('PRIORITEETSED SOOVITUSED', 14, y);
     y += 8;
-
     var sorted = failed.slice().sort(function (a, b) {
       var o = { red: 0, yellow: 1, green: 2 };
       return o[a.failSeverity] - o[b.failSeverity];
     });
     sorted.slice(0, 3).forEach(function (q) {
-      var dc = q.failSeverity === 'red' ? cols.red : (q.failSeverity === 'yellow' ? cols.yellow : cols.green);
-      doc.setFillColor(dc[0], dc[1], dc[2]);
-      doc.circle(17, y - 1.5, 2.5, 'F');
-      doc.setTextColor(15, 23, 42);
+      doc.setFillColor(accent[0], accent[1], accent[2]);
+      doc.rect(14, y - 3.5, 1.5, 5, 'F');
+      doc.setTextColor(ink[0], ink[1], ink[2]);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(9);
-      doc.text(q.text, 22, y);
+      doc.text(q.text, 20, y);
       y += 6;
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8.5);
-      doc.setTextColor(100, 116, 139);
+      doc.setTextColor(mute[0], mute[1], mute[2]);
       var lines = doc.splitTextToSize(q.failMsg, 165);
-      doc.text(lines, 22, y);
+      doc.text(lines, 20, y);
       y += lines.length * 5 + 4;
       if (y > 260) { doc.addPage(); y = 20; }
     });
   }
 
   // Footer
-  doc.setFillColor(248, 250, 252);
+  doc.setFillColor(250, 250, 248);
   doc.rect(0, 275, 210, 22, 'F');
-  doc.setTextColor(100, 116, 139);
+  doc.setTextColor(mute[0], mute[1], mute[2]);
   doc.setFontSize(7.5);
   doc.setFont('helvetica', 'normal');
   doc.text('See test ei asenda ametlikku auditit ega Tooinspektsiooni jarelevalvet.', 14, 283);
-  doc.setTextColor(col[0], col[1], col[2]);
+  doc.setTextColor(accent[0], accent[1], accent[2]);
   doc.setFont('helvetica', 'bold');
   doc.text('tt24.ee/enesekontroll.html', 196, 283, { align: 'right' });
 
@@ -1888,11 +1134,8 @@ function copyLink() {
     navigator.clipboard.writeText(url).then(flashCopied);
   } else {
     var ta = document.createElement('textarea');
-    ta.value = url;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.focus(); ta.select();
+    ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
     try { document.execCommand('copy'); flashCopied(); } catch (e) { /* noop */ }
     document.body.removeChild(ta);
   }
@@ -1902,11 +1145,8 @@ function flashCopied() {
   var btn = document.getElementById('btnCopy');
   var txt = document.getElementById('btnCopyText');
   btn.classList.add('copied');
-  txt.textContent = 'Link kopeeritud! ✓';
-  setTimeout(function () {
-    btn.classList.remove('copied');
-    txt.textContent = 'Kopeeri link';
-  }, 2500);
+  txt.textContent = 'Link kopeeritud';
+  setTimeout(function () { btn.classList.remove('copied'); txt.textContent = 'Kopeeri link'; }, 2500);
 }
 
 // ─── RESULT GATE: email capture before detailed result reveal ─
@@ -1919,7 +1159,6 @@ function tt24SubmitQuizGate(e) {
   var company = (document.getElementById('companyName') ? document.getElementById('companyName').value : '').trim();
   var score = finalScore;
   var level = finalLevel;
-
   if (!email) return false;
 
   btn.disabled = true;
@@ -1941,23 +1180,17 @@ function tt24SubmitQuizGate(e) {
   fd.append('autoresponse', recommendationEmail);
   fd.append('source', 'enesekontroll-gate');
   fd.append('subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
+
   function unlockGateAndRecord(outcomeLabel) {
     var gate = document.getElementById('quizGateCard');
-    if (gate) {
-      gate.classList.remove('is-locked');
-      gate.classList.add('is-unlocked');
-    }
+    if (gate) { gate.classList.remove('is-locked'); gate.classList.add('is-unlocked'); }
     var resultEl = document.getElementById('quizResult');
     if (resultEl) resultEl.classList.remove('tt24-locked');
     if (window.dataLayer) {
       window.dataLayer.push({
         event: 'quiz_email_capture',
-        quiz_score: score,
-        quiz_level: level,
-        outcome: outcomeLabel || 'ok',
-        source_page: window.location.pathname,
-        value: 0,
-        currency: 'EUR'
+        quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
+        source_page: window.location.pathname, value: 0, currency: 'EUR'
       });
     }
     setTimeout(function () {
@@ -1969,51 +1202,34 @@ function tt24SubmitQuizGate(e) {
   function persistFailedLead(reason) {
     try {
       var failed = JSON.parse(localStorage.getItem('tt24_failed_leads') || '[]');
-      failed.push({
-        ts: new Date().toISOString(),
-        source: 'enesekontroll-gate',
-        email: email,
-        company: company,
-        quiz_score: score + '/10',
-        quiz_level: level,
-        reason: reason
-      });
+      failed.push({ ts: new Date().toISOString(), source: 'enesekontroll-gate', email: email, company: company, quiz_score: score + '/10', quiz_level: level, reason: reason });
       if (failed.length > 20) failed = failed.slice(-20);
       localStorage.setItem('tt24_failed_leads', JSON.stringify(failed));
     } catch (storageErr) { /* ignore */ }
   }
 
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    body: fd,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(function (r) {
-    // Treat any 2xx HTTP status as success regardless of body shape.
-    // The form endpoint can return different JSON shapes; do not punish the user
-    // for a delivered submission if parsing/shape assumptions change.
-    var isOk = r.ok && r.status >= 200 && r.status < 300;
-    if (!isOk) persistFailedLead('http_' + r.status);
-    unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
-  })
-  .catch(function (err) {
-    if (typeof console !== 'undefined' && console.error) console.error('quiz gate fetch failed:', err);
-    persistFailedLead('network_error');
-    unlockGateAndRecord('network_error');
-  });
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+    .then(function (r) {
+      var isOk = r.ok && r.status >= 200 && r.status < 300;
+      if (!isOk) persistFailedLead('http_' + r.status);
+      unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
+    })
+    .catch(function (err) {
+      if (typeof console !== 'undefined' && console.error) console.error('quiz gate fetch failed:', err);
+      persistFailedLead('network_error');
+      unlockGateAndRecord('network_error');
+    });
 
   return false;
 }
 
-// ─── EMAIL GATE MODAL LOGIC ──────────────────────────────
+// ─── PDF EMAIL GATE MODAL ────────────────────────────────
 (function () {
   var modal = document.getElementById('emailGateModal');
   var form  = document.getElementById('emailGateForm');
   var skip  = document.getElementById('skipGate');
 
-  function closeModal() {
-    if (modal) modal.style.display = 'none';
-  }
+  function closeModal() { if (modal) modal.style.display = 'none'; }
 
   function submitLead(emailValue) {
     var riskLevel = finalLevel || 'unknown';
@@ -2022,22 +1238,17 @@ function tt24SubmitQuizGate(e) {
     var failedRecommendations = tt24GetFailedRecommendations().map(function (q, idx) {
       return (idx + 1) + '. ' + q.text + ': ' + q.failMsg;
     }).join('\n\n') || 'Puudusi ei tuvastatud.';
-
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         access_key: 'eff4879e-ddfb-4d95-b5c8-422f94ea5497',
-        email: emailValue,
-        company: company || '(ei märgitud)',
-        score: finalScore,
-        risk_level: riskLevel,
-        recommendations: failedRecommendations,
-        message: recommendationEmail,
-        autoresponse: recommendationEmail,
-        subject: 'Uus eneseanalüüs TT24 portaalist'
+        email: emailValue, company: company || '(ei märgitud)', score: finalScore,
+        risk_level: riskLevel, recommendations: failedRecommendations,
+        message: recommendationEmail, autoresponse: recommendationEmail,
+        source: 'enesekontroll-pdf', subject: 'Uus eneseanalüüs TT24 portaalist'
       })
-    }).catch(function () { /* silent fail - don't block PDF */ });
+    }).catch(function () { /* silent fail, do not block PDF */ });
   }
 
   if (form) {
@@ -2050,80 +1261,41 @@ function tt24SubmitQuizGate(e) {
       _generatePDF();
     });
   }
-
   if (skip) {
-    skip.addEventListener('click', function (e) {
-      e.preventDefault();
-      closeModal();
-      _generatePDF();
-    });
+    skip.addEventListener('click', function (e) { e.preventDefault(); closeModal(); _generatePDF(); });
   }
-
-  // Close on backdrop click (outside the card)
   if (modal) {
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) {
-        closeModal();
-        _generatePDF();
-      }
+    modal.addEventListener('click', function (e) { if (e.target === modal) { closeModal(); _generatePDF(); } });
+  }
+})();
+</script>
+
+<!-- Cookie banner -->
+<div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A0A0A;color:#D4D4D4;padding:14px 20px;z-index:9999;font-family:var(--sans);font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #2A2A2A;">
+  <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privaatsuspoliitika</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Keeldun</button>
+    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">N&#245;ustun</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('tt24_cookie_consent');
+  if (!consent) {
+    var banner = document.getElementById('tt24-cookie-banner');
+    if (banner) banner.style.display = 'flex';
+    document.getElementById('tt24-consent-accept').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','accepted');
+      banner.style.display='none';
+      if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
+    });
+    document.getElementById('tt24-consent-decline').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','declined');
+      banner.style.display='none';
     });
   }
 })();
-
-// ─── MOBILE NAV TOGGLE ───────────────────────────────────
-var navToggle = document.getElementById('navToggle');
-var mainNav   = document.getElementById('mainNav');
-if (navToggle && mainNav) {
-  navToggle.addEventListener('click', function () {
-    var isOpen = mainNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-  // Close on outside click
-  document.addEventListener('click', function (e) {
-    if (!navToggle.contains(e.target) && !mainNav.contains(e.target)) {
-      mainNav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
 </script>
-<script>
-(function(){var m={};document.addEventListener('click',function(e){var k=e.target.tagName+'#'+e.target.id+'.'+e.target.className;var n=Date.now();if(!m[k])m[k]={c:0,t:0};if(n-m[k].t<1500){m[k].c++;if(m[k].c>=3)console.warn('Rage click:',k,e.target)}else{m[k].c=1}m[k].t=n});
-})();
-</script>
-<script>
-  var dd=document.getElementById("toolsDropdown");
-  if(dd){var btn=dd.querySelector(".nav-dropdown-toggle");
-  btn.addEventListener("click",function(e){e.stopPropagation();dd.classList.toggle("open");btn.setAttribute("aria-expanded",dd.classList.contains("open"))});
-  document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}})}
-  </script>
-  <!-- Cookie Consent Banner -->
-  <div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0F172A;color:#CBD5E1;padding:14px 20px;z-index:9999;font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #1E293B;">
-    <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. Lisainfo: <a href="privaatsus.html" style="color:#38BDF8;text-decoration:underline;">Privaatsuspoliitika</a></p>
-    <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button id="tt24-consent-decline" style="background:transparent;border:1px solid #475569;color:#CBD5E1;padding:7px 16px;cursor:pointer;font-size:13px;border-radius:4px;">Keeldun</button>
-      <button id="tt24-consent-accept" style="background:#0EA5E9;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;border-radius:4px;font-weight:600;">N&#245;ustun</button>
-    </div>
-  </div>
-  <script>
-  (function() {
-    var consent = localStorage.getItem('tt24_cookie_consent');
-    if (!consent) {
-      var banner = document.getElementById('tt24-cookie-banner');
-      if (banner) banner.style.display = 'flex';
-      document.getElementById('tt24-consent-accept').addEventListener('click', function() {
-        localStorage.setItem('tt24_cookie_consent', 'accepted');
-        banner.style.display = 'none';
-        if (typeof tt24LoadGTM === 'function') tt24LoadGTM(); if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
-      });
-      document.getElementById('tt24-consent-decline').addEventListener('click', function() {
-        localStorage.setItem('tt24_cookie_consent', 'declined');
-        banner.style.display = 'none';
-      });
-    }
-  })();
-  </script>
-  <!-- End Cookie Consent Banner -->
 
-  </body>
+</body>
 </html>
