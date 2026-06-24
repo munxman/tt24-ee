@@ -496,7 +496,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
       <div class="tt24-gate-card is-locked" id="quizGateCard">
         <div class="tt24-gate-form-wrap">
           <h3>Saatke täielik tulemus oma e-postile</h3>
-          <p>Detailne raport sisaldab kategooriate ülevaadet, prioriteetseid soovitusi, konkreetset tegevuskava ja sektoripõhiseid riske Teie ettevõttele.</p>
+          <p>Raport sisaldab kategooriate ülevaadet ja prioriteetseid soovitusi Teie tulemuse põhjal.</p>
           <form class="tt24-gate-form" id="quizGateForm" onsubmit="return tt24SubmitQuizGate(event)">
             <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
             <button type="submit">Saada täielik raport</button>
@@ -546,7 +546,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
       <!-- CTA -->
       <div class="quiz-cta-banner">
         <h3>Vajate professionaalset abi?</h3>
-        <p>TT24 koostööpartner Valvekliinik pakub täielikku töötervishoiu teenust. Küsige personaalset pakkumist, vastame 24 tunni jooksul.</p>
+        <p>TT24 koostööpartner Valvekliinik pakub täielikku töötervishoiu teenust. Küsige personaalset pakkumist ja võtame Teiega ühendust.</p>
         <a href="pakkumine.html" class="cta-ink">Küsin pakkumist</a>
       </div>
 
@@ -834,7 +834,7 @@ function showResult() {
   document.getElementById('resultScoreLabel').textContent = levelLabel;
 
   var pct = Math.round(score * 10);
-  document.getElementById('resultScoreSub').textContent = 'Vastavus töötervishoiu nõuetele: ' + pct + '%';
+  document.getElementById('resultScoreSub').textContent = 'Enesehinnangu tulemus: ' + score + ' / 10 punkti';
   document.getElementById('resultPctFill').style.width = pct + '%';
 
   var now = new Date();
@@ -979,21 +979,19 @@ function restartQuiz() {
 // ─── SHARE FUNCTIONS ─────────────────────────────────────
 function shareLinkedIn() {
   var company  = (document.getElementById('companyName').value || '').trim();
-  var pct      = Math.round(finalScore * 10);
   var compText = company ? company + ' sai' : 'Meie ettevõte sai';
-  var text     = compText + ' töötervishoiu enesekontrollis ' + finalScore + '/10 (' + pct + '% vastavuses). Kas Teie ettevõte vastab nõuetele? Kontrollige tasuta: ' + QUIZ_URL;
+  var text     = compText + ' töötervishoiu enesekontrollis ' + finalScore + '/10 punkti. Kas Teie ettevõte vastab nõuetele? Kontrollige tasuta: ' + QUIZ_URL;
   var url      = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(QUIZ_URL) + '&summary=' + encodeURIComponent(text);
   window.open(url, '_blank', 'width=600,height=500,noopener,noreferrer');
 }
 
 function shareEmail() {
   var company  = (document.getElementById('companyName').value || '').trim();
-  var pct      = Math.round(finalScore * 10);
   var compText = company || 'Meie ettevõte';
   var subject  = encodeURIComponent('Töötervishoiu enesekontrolli tulemus, ' + compText + ': ' + finalScore + '/10');
   var body     = encodeURIComponent(
     'Tere,\n\n' +
-    compText + ' tegi töötervishoiu enesekontrolli testi ja sai tulemuseks ' + finalScore + '/10 (' + pct + '% vastavuses).\n\n' +
+    compText + ' tegi töötervishoiu enesekontrolli testi ja sai tulemuseks ' + finalScore + '/10 punkti.\n\n' +
     'Kontrollige oma ettevõtet siin (tasuta, 2 minutit):\n' + QUIZ_URL + '\n\n' +
     'TT24, töötervishoiu teabeportaal\nhttps://tt24.ee'
   );
@@ -1047,7 +1045,7 @@ function _generatePDF() {
   doc.setTextColor(mute[0], mute[1], mute[2]);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'normal');
-  doc.text(pct + '% vastavuses', 14, 64);
+  doc.text('Enesehinnangu tulemus: ' + finalScore + '/10 punkti', 14, 64);
   doc.setTextColor(ink[0], ink[1], ink[2]);
   doc.setFontSize(13);
   doc.setFont('helvetica', 'bold');

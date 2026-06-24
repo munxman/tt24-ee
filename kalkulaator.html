@@ -79,7 +79,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
       "name": "Kui palju maksab töötervishoiuteenus töötaja kohta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Töötervishoiuteenuse hind sõltub ettevõtte suurusest ja valdkonnast. Tavapärane vahemik on 8–15 eurot töötaja kohta kuus. Väikeettevõtetel kehtib enamasti miinimumpakett alates 75–100 eurot kuus."
+        "text": "Töötervishoiuteenuse hind sõltub ettevõtte suurusest ja valdkonnast. Väikeettevõtetel kehtib enamasti miinimumpakett, kuna arsti töökulu on fikseeritud sõltumata töötajate arvust. Täpse hinna saamiseks küsige personaalset pakkumist."
       }
     },
     {
@@ -87,7 +87,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
       "name": "Kui suur on trahv töötervishoiu nõuete rikkumise eest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TTOS § 13 alusel võib juriidilisele isikule määrata trahvi kuni 32 000 eurot. Trahvid on kumulatiivsed. Iga rikkumine on eraldi."
+        "text": "Töötervishoiu ja tööohutuse seaduse rikkumise eest võib Tööinspektsioon määrata juriidilisele isikule rahatrahvi. Iga rikkumine arvestatakse eraldi. Täpsed määrad on sätestatud seaduses."
       }
     }
   ]
@@ -400,8 +400,8 @@ html, body {
         </div>
 
         <div class="urgency">
-          <strong>2026. aasta kontrollid on alanud</strong>
-          Tööinspektsioon on alustanud järelevalvekampaaniat väikese ja keskmise suurusega ettevõtete seas. Trahvid kuni 32 000 eurot juriidilisele isikule (TTOS § 13).
+          <strong>Tööinspektsioon teostab järelevalvet</strong>
+          Tööinspektsioon kontrollib töötervishoiu nõuete täitmist ettevõtetes. Rikkumise korral võib seaduse alusel määrata rahatrahvi juriidilisele isikule.
         </div>
       </div>
 
@@ -434,20 +434,13 @@ html, body {
             </div>
             <div class="kalk-metric">
               <p class="kalk-metric__lbl">Trahvirisk</p>
-              <p class="kalk-metric__val" id="metricFine">€32 000</p>
-              <p class="kalk-metric__sub">max trahv (TTOS § 13)</p>
+              <p class="kalk-metric__val" id="metricFine">Rahatrahv</p>
+              <p class="kalk-metric__sub">rikkumise korral seaduse alusel</p>
             </div>
           </div>
 
           <div class="ratio-wrap">
-            <div class="ratio-labels">
-              <span>Teenuse kulu (aastas)</span>
-              <span>Trahvimäär (max)</span>
-            </div>
-            <div class="ratio-bar" aria-label="Teenuse kulu vs trahviriski suhe">
-              <div class="ratio-bar__fill" id="ratioFill" style="width:4%;"></div>
-            </div>
-            <p class="ratio-caption" id="ratioCaption">Teenuse aastakulu on <strong id="ratioText">22×</strong> väiksem kui maksimaalne trahv</p>
+            <p class="ratio-caption" id="ratioCaption">Teenuse aastakulu on enamasti tunduvalt väiksem kui rikkumisega kaasnev rahatrahv ja muu kahju.</p>
           </div>
 
           <p class="kalk-incl-head">Hinnas sisaldub</p>
@@ -456,8 +449,8 @@ html, body {
           <!-- Email gate (primary, low-friction capture) -->
           <div class="tt24-calc-gate" id="calcGate">
             <div class="tt24-calc-gate-form-wrap">
-              <h4>Saatke detailne arvutus oma e-postile</h4>
-              <p>Saadame personaalse arvutuse koos sektoripõhise riskianalüüsi ja kontrollnimekirjaga.</p>
+              <h4>Saatke arvutus oma e-postile</h4>
+              <p>Jätke oma e-posti aadress ja võtame Teiega ühendust.</p>
               <form class="tt24-calc-gate-form" id="calcGateForm" onsubmit="return tt24SubmitCalcGate(event)">
                 <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
                 <button type="submit">Saada</button>
@@ -465,13 +458,13 @@ html, body {
               <p class="tt24-calc-gate-privacy">Andmeid kasutame ainult Teile arvutuse edastamiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
             </div>
             <div class="tt24-calc-gate-success">
-              <p>Aitäh. Saadame detailse arvutuse Teie e-postile lähitundidel.</p>
+              <p>Aitäh. Võtame Teiega esimesel võimalusel ühendust.</p>
             </div>
           </div>
 
           <!-- Secondary: ready-to-buy path -->
           <a href="pakkumine.html" class="kalk-cta" aria-label="Küsin pakkumist">Küsin pakkumist</a>
-          <p class="kalk-cta-meta">Olete valmis? Küsige personaalset pakkumist. Vastame 24 tunni jooksul, ei kohusta millekski.</p>
+          <p class="kalk-cta-meta">Olete valmis? Küsige personaalset pakkumist. Vastame esimesel võimalusel, ei kohusta millekski.</p>
 
         </div>
       </div>
@@ -503,8 +496,8 @@ html, body {
       </div>
       <div class="compare-col">
         <p class="compare-tag">Trahviriski korral</p>
-        <p class="compare-amount">kuni €32 000</p>
-        <p class="compare-note">Maksimaalne trahv juriidilisele isikule (TTOS § 13)</p>
+        <p class="compare-amount">Rahatrahv</p>
+        <p class="compare-note">Tööinspektsioon võib rikkumise korral määrata juriidilisele isikule seaduses sätestatud rahatrahvi</p>
         <ul class="compare-list">
           <li>Iga rikkumine on eraldi trahv</li>
           <li>Korduvrikkumised kumuleeruvad</li>
@@ -592,12 +585,12 @@ html, body {
 
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Miks 10–15 eurot töötaja kohta kuus?</summary>
-        <div class="answer">See hind katab töötervishoiuarsti konsultatsiooni, tervisekontrollide korraldamise, dokumentatsiooni ja tööandja nõustamise. Väikeettevõtetel on minimaalne kuumäär umbes 75–100 eurot, kuna arsti töökulu on fikseeritud sõltumata töötajate arvust.</div>
+        <summary>Millest töötervishoiuteenuse hind koosneb?</summary>
+        <div class="answer">Hind katab töötervishoiuarsti konsultatsiooni, tervisekontrollide korraldamise, dokumentatsiooni ja tööandja nõustamise. Väikeettevõtetel kehtib enamasti minimaalne kuumäär, kuna arsti töökulu on fikseeritud sõltumata töötajate arvust. Täpse hinna saamiseks küsige personaalset pakkumist.</div>
       </details>
       <details class="faq-item">
         <summary>Kas pean tasuma iga töötaja tervisekontrolli eest eraldi?</summary>
-        <div class="answer">Paketihinnaga teenuses sisalduvad perioodilised kontrollid tavaliselt kindla arvu töötajate kohta aastas. Täpse sisu määrab leping. Kõik seadusjärgsed kontrollid on tööandja kohustus ja kulu. Töötaja ei maksa midagi (TTOS § 13).</div>
+        <div class="answer">Paketihinnaga teenuses sisalduvad perioodilised kontrollid tavaliselt kindla arvu töötajate kohta aastas. Täpse sisu määrab leping. Kõik seadusjärgsed kontrollid on tööandja kohustus ja kulu. Töötaja ei maksa nende eest.</div>
       </details>
       <details class="faq-item">
         <summary>Kas 1–5 töötajaga ettevõte peab ka teenuse ostma?</summary>
@@ -605,7 +598,7 @@ html, body {
       </details>
       <details class="faq-item">
         <summary>Millal tuleb trahv ja kui suur see olla võib?</summary>
-        <div class="answer">Trahvi võib määrata, kui Tööinspektsiooni kontroll tuvastab rikkumise, näiteks puudub töötervishoiuteenuse leping, riskianalüüs pole tehtud või töötajad pole kontrollis käinud. Juriidilisele isikule maksimaalne trahv on 32 000 eurot (TTOS § 29). Iga rikkumine arvestatakse eraldi.</div>
+        <div class="answer">Trahvi võib määrata, kui Tööinspektsiooni kontroll tuvastab rikkumise, näiteks puudub töötervishoiuteenuse leping, riskianalüüs pole tehtud või töötajad pole kontrollis käinud. Rikkumise korral võib Tööinspektsioon määrata juriidilisele isikule seaduses sätestatud rahatrahvi. Iga rikkumine arvestatakse eraldi.</div>
       </details>
     </div>
 
@@ -661,7 +654,7 @@ html, body {
   <div class="cta-inner">
     <p class="section-eyebrow">Edasi</p>
     <h2>Vajate professionaalset töötervishoiuteenust?</h2>
-    <p>Küsige personaalset pakkumist. Vastame 24 tunni jooksul, kõik dokumendid korras.</p>
+    <p>Küsige personaalset pakkumist. Vastame esimesel võimalusel, kõik dokumendid korras.</p>
     <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Küsin pakkumist</a>
   </div>
 </section>
@@ -773,15 +766,6 @@ function recalculate() {
   var badge = document.getElementById('riskBadge');
   badge.textContent = sector.risk + ' risk';
   badge.className = 'badge ' + sector.riskClass;
-
-  var maxFine = 32000;
-  var pct = Math.min((annual / maxFine) * 100, 95);
-  document.getElementById('ratioFill').style.width = Math.max(pct, 1) + '%';
-  var ratio = Math.round(maxFine / annual);
-  // Update only the ratio number; the rest of the caption is static.
-  // (Overwriting ratioCaption.innerHTML would delete the #ratioText node and
-  //  break every subsequent recalculate.)
-  document.getElementById('ratioText').textContent = ratio + '×';
 
   document.getElementById('compareServiceAnnual').textContent = formatEur(annual) + ' / aastas';
   var selEl = document.getElementById('empNumber');
