@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "last_reviewed": "2026-06-26",
+    "note": "Single source of truth for muudatused.html. Edit here, then run: python build_muudatused.py. Never hand-edit the generated regions in muudatused.html / index.html.",
+    "watched_sources": [
+      { "name": "Riigi Teataja - TTOS (jälgi akti)", "url": "https://www.riigiteataja.ee/akt/TTOS" },
+      { "name": "Riigi Teataja - TTKS", "url": "https://www.riigiteataja.ee/akt/TTKS" },
+      { "name": "Riigikogu eelnoud", "url": "https://www.riigikogu.ee/tegevus/eelnoud/" },
+      { "name": "Terviseamet uudised", "url": "https://www.terviseamet.ee/et/uudised" },
+      { "name": "Tooinspektsioon / Tooelu", "url": "https://www.tooelu.ee/" },
+      { "name": "Sotsiaalministeerium", "url": "https://www.sm.ee/" }
+    ]
+  },
+  "entries": [
+    {
+      "id": "ttos-deregulatsioon-eelnou",
+      "status": "proposed",
+      "status_label": "Eelnõus · ei kehti veel",
+      "effective_date": null,
+      "published_date": "2026-04-16",
+      "modified_date": "2026-06-26",
+      "impact": null,
+      "audience": "Puudutab: tööandjaid",
+      "meta_source": "Riigikogu, Vabariigi Valitsus",
+      "headline_list": "Tulekul: töötervishoiu nõuete ulatuslik leevendamine (deregulatsiooni eelnõu)",
+      "title": "Tulekul: töötervishoiu nõuete ulatuslik leevendamine (deregulatsiooni eelnõu)",
+      "lead": "Riigikogus on menetluses eelnõu, mis leevendaks mitmeid töötervishoiu kohustusi. Vabariigi Valitsus kiitis selle heaks 16. aprillil 2026. Seisuga juuni 2026 ei ole eelnõu veel vastu võetud ega jõustunud - kuni see juhtub, kehtivad senised nõuded muutmata kujul.",
+      "body": [
+        { "type": "h3", "text": "Mida eelnõu kavandab" },
+        { "type": "ul", "items": [
+          "Esmane tervisekontroll pikeneks neljalt kuult kuuele (kõrgendatud riskiga tööde puhul jääks õigus teha kontroll varem).",
+          "Ühe inimese ettevõte (sama isik on ainuosanik, ainus juhatuse liige ja ainus töötaja) jääks TTOS täismahust välja.",
+          "Alla 10 töötajaga ettevõte ei peaks esitama riskianalüüsi Tööinspektsiooni andmekogusse. Kirjalik riskianalüüs tuleks endiselt koostada - kaoks ainult andmekogusse esitamine.",
+          "Iga-aastase sisekontrolli eraldi kohustus kaoks.",
+          "Töökeskkonnavolinik ja -nõukogu muutuksid vajaduspõhiseks."
+        ] },
+        { "type": "h3", "text": "Mida tööandjal praegu teha" },
+        { "type": "p", "html": "Praegu ei muutu midagi - senised nõuded kehtivad täies mahus. Ärge tühistage olemasolevaid kohustusi eelnõu põhjal. Me uuendame seda sissekannet, kui ja millal seadus vastu võetakse." }
+      ],
+      "related_label": "Põhjalik ülevaade:",
+      "related": [
+        { "href": "artiklid/ttos-2026-muudatused.html", "label": "Töötervishoiu ja tööohutuse seadus 2026 - jõustunud muudatused ja eelnõu" }
+      ],
+      "sources": [
+        { "name": "Riigikogu eelnõude leht", "url": "https://www.riigikogu.ee/tegevus/eelnoud/" },
+        { "name": "Riigi Teataja - TTOS kehtiv tekst", "url": "https://www.riigiteataja.ee/akt/TTOS" }
+      ],
+      "teaser": {
+        "num": "Eelnõus",
+        "title": "Tulekul: töötervishoiu nõuete leevendamine",
+        "desc": "Riigikogus on menetluses deregulatsiooni eelnõu (esmane tervisekontroll 4→6 kuud, väikeettevõtete erandid jm). Seisuga juuni 2026 see ei kehti - senised nõuded jäävad jõusse.",
+        "audience": "Puudutab: tööandjaid"
+      }
+    },
+    {
+      "id": "msys-2026-07-01",
+      "status": "in_force",
+      "effective_date": "2026-07-01",
+      "published_date": "2026-06-08",
+      "modified_date": "2026-06-25",
+      "impact": "medium",
+      "audience": "Puudutab: töötervishoiuteenuse osutajaid",
+      "meta_source": "Riigi Teataja, Terviseamet",
+      "headline_list": "Alates 1. juulist 2026: muudatus töötervishoiuteenuse osutajate registreerimisel",
+      "title": "Muudatus töötervishoiuteenuse osutajate registreerimisel - mida tööandja peab kontrollima",
+      "lead": "Muudatus tuleneb Majandustegevuse seadustiku üldosa seaduse (MSÜS) rakendamisest ning puudutab töötervishoiu ja tööohutuse seadust (TTOS) ja tervishoiuteenuste korraldamise seadust (TTKS). Põhiline praktiline mõju puudutab töötervishoiuteenuse osutajate registreerimist ja sellega seoses ka tööandja kontrollkohustust.",
+      "body": [
+        { "type": "h3", "text": "Mis täpselt muutus" },
+        { "type": "ul", "items": [
+          "<strong>Töötervishoiuhügieeni, ergonoomika ja tööpsühholoogia teenuste osutajad ei pea enam esitama registreerimistaotlust Terviseametile.</strong> Selle asemel esitavad nad majandustegevusteate portaali eesti.ee kaudu. Teade on tasuta, selle saab esitada elektrooniliselt ja see jõustub esitamise hetkest.",
+          "<strong>Erandiks on töötervishoiuarstid ja -õed</strong>, kes peavad endiselt taotlema Terviseametilt tegevusluba."
+        ] },
+        { "type": "h3", "text": "Mida tööandjal tasub teha" },
+        { "type": "ol", "items": [
+          "Soovitame kontrollida, kas Teie senisel teenuseosutajal on nõuetekohane alus tegutsemiseks - majandustegevusteade või tegevusluba (sõltuvalt teenuseliigist). Kontrollida saab <a href='https://www.terviseamet.ee' target='_blank' rel='noopener'>Terviseameti</a> avalikust registrist või küsida otse osutajalt.",
+          "Säilitage tõend kontrollist koos töötervishoiu lepinguga - Tööinspektsioon võib seda küsida."
+        ] },
+        { "type": "h3", "text": "Miks see on oluline" },
+        { "type": "p", "html": "Kui Teie teenuseosutajal puudub vajalik majandustegevusteade või kehtiv tegevusluba, ei pruugi Teie töötervishoiukohustus olla nõuetekohaselt täidetud. Vastutus töötervishoiu korralduse eest jääb tööandjale, mitte teenuseosutajale. Seetõttu tasub osutaja õiguslikku staatust lepingu sõlmimisel ja Tööinspektsiooni kontrolli eel üle kontrollida." }
+      ],
+      "related_label": "Seotud TT24 artiklid:",
+      "related": [
+        { "href": "artiklid/kas-vaja-lepingut.html", "label": "Kas vajan töötervishoiu lepingut" },
+        { "href": "artiklid/teenusepakkuja-valimine.html", "label": "Kuidas valida teenusepakkujat" },
+        { "href": "artiklid/uus-ettevote-tootervishoid.html", "label": "Uus ettevõte ja töötervishoid" }
+      ],
+      "sources": [
+        { "name": "Terviseameti teade muudatuste kohta", "url": "https://www.terviseamet.ee/et/uudised/muudatused-tootervishoiuteenuse-osutajate-registreerimises-ja-tervishoiuteenuse-osutajate" },
+        { "name": "Riigi Teataja - MSÜS täistekst", "url": "https://www.riigiteataja.ee" }
+      ],
+      "teaser": {
+        "num": "Jõustub 1.07.2026",
+        "title": "Töötervishoiuteenuse osutajate registreerimine muutub",
+        "desc": "Alates 1. juulist 2026 esitavad osutajad registreerimistaotluse asemel majandustegevusteate. Tööandjale on mõju väike: kontrollige, et teenuseosutajal on kehtiv registreering või tegevusluba.",
+        "audience": "Puudutab: töötervishoiuteenuse osutajaid"
+      }
+    },
+    {
+      "id": "haiguslehe-tootamine-30-paeva-2026-04-01",
+      "status": "in_force",
+      "effective_date": "2026-04-01",
+      "published_date": "2026-04-01",
+      "modified_date": "2026-06-26",
+      "impact": "low",
+      "audience": "Puudutab: tööandjaid ja töötajaid",
+      "meta_source": "Riigi Teataja (TTOS)",
+      "headline_list": "1. aprill 2026: haiguslehe alusel töötamise lävi langes 60 päevalt 30 päevale",
+      "title": "Haiguslehe alusel töötamise lävi langes 60 päevalt 30 päevale",
+      "lead": null,
+      "body": [
+        { "type": "p", "html": "Töötaja ja tööandja võivad nüüd kokku leppida ajutiselt terviseseisundile sobivas töös juba siis, kui töövabastuse algusest on möödunud rohkem kui 30 kalendripäeva (varem 60) - TTOS § 12-4 lg 1. Kokkulepe peab olema kirjalik ja töö peab vastama töötaja terviseseisundile." }
+      ],
+      "sources": [
+        { "name": "Riigi Teataja - TTOS § 12-4", "url": "https://www.riigiteataja.ee/akt/TTOS" }
+      ]
+    },
+    {
+      "id": "haigushuvitise-vahe-2026-01-01",
+      "status": "in_force",
+      "effective_date": "2026-01-01",
+      "published_date": "2026-01-01",
+      "modified_date": "2026-06-26",
+      "impact": "low",
+      "audience": "Puudutab: tööandjaid",
+      "meta_source": "Riigi Teataja (TTOS)",
+      "headline_list": "1. jaanuar 2026: tööandja võib hüvitada haigushüvitise ja keskmise töötasu vahe",
+      "title": "Tööandja võib hüvitada haigushüvitise ja keskmise töötasu vahe",
+      "lead": null,
+      "body": [
+        { "type": "p", "html": "Tööandja võib töötajale hüvitada keskmise töötasu ja ajutise töövõimetuse hüvitise ülempiiri vahe - TTOS § 12-3 lg 4-1. See on tööandja õigus, mitte kohustus." }
+      ],
+      "sources": [
+        { "name": "Riigi Teataja - TTOS § 12-3", "url": "https://www.riigiteataja.ee/akt/TTOS" }
+      ]
+    },
+    {
+      "id": "haiguslehe-tootamine-2024-05-15",
+      "status": "in_force",
+      "effective_date": "2024-05-15",
+      "published_date": "2024-05-15",
+      "modified_date": "2026-06-26",
+      "impact": "medium",
+      "audience": "Puudutab: tööandjaid ja töötajaid",
+      "meta_source": "Riigi Teataja (TTOS)",
+      "headline_list": "15. mai 2024: haiguslehe alusel töötamine ja reproduktiivtoksiliste ainete säilitustähtajad",
+      "title": "Haiguslehe alusel töötamine ja reproduktiivtoksiliste ainete säilitustähtajad",
+      "lead": null,
+      "body": [
+        { "type": "p", "html": "Seadusesse lisati võimalus töötada haiguslehe alusel: töötaja ja tööandja võivad kirjalikult kokku leppida ajutiselt terviseseisundile vastavas töös - TTOS § 12-3 kuni § 12-5." },
+        { "type": "p", "html": "Samuti lisati kantserogeenide ja mutageenide kõrvale reproduktiivtoksilised ained ning täpsustati andmete säilitustähtajad: kantserogeeni või mutageeniga kokkupuute andmeid säilitatakse 40 aastat, reproduktiivtoksilise aine puhul 5 aastat - TTOS § 13-1 lg 17." }
+      ],
+      "related_label": "Seotud:",
+      "related": [
+        { "href": "artiklid/ttos-2026-muudatused.html", "label": "TTOS 2026 - kõik muudatused ja nõuded" }
+      ],
+      "sources": [
+        { "name": "Riigi Teataja - TTOS § 12-3 ja § 13-1", "url": "https://www.riigiteataja.ee/akt/TTOS" }
+      ]
+    }
+  ]
+}
