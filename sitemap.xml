@@ -35,7 +35,7 @@
   <!-- New company page: priority 1.0 (high-intent audience) -->
   <url>
     <loc>https://tt24.ee/uus-ettevote.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -51,37 +51,37 @@
   <!-- Tools: priority 0.9 -->
   <url>
     <loc>https://tt24.ee/kontrollnimekiri.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tt24.ee/kalkulaator.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tt24.ee/enesekontroll.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tt24.ee/ajakava.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tt24.ee/dokumendid.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tt24.ee/korduma.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -89,91 +89,91 @@
   <!-- Sector pages: priority 0.8 -->
   <url>
     <loc>https://tt24.ee/sektorid/ehitus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/it.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/transport.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/tervishoid.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/tootmine.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/kaubandus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/haridus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/toiduaineteostus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/hotellindus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/laondus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/pollumajandus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/puhastusteenused.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/energeetika.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/finantsteenused.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/sektorid/avalik-haldus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -219,61 +219,61 @@
   <!-- Form/document pages: priority 0.6 -->
   <url>
     <loc>https://tt24.ee/vormid/riskianaluus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/teavitamine.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/tervisekontroll-checklist.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/olukorra-analuus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/tooonnetus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/esmaabi.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/volinik.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/kemikaalid.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/tooandja-juhend.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tt24.ee/vormid/suunamiskiri.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -311,7 +311,7 @@
   </url>
   <url>
     <loc>https://tt24.ee/privaatsus.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -320,79 +320,79 @@
   <!-- Articles -->
   <url>
     <loc>https://tt24.ee/artiklid/uus-ettevote-tootervishoid.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tt24.ee/artiklid/tootervishoid-hind.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
     <url>
         <loc>https://tt24.ee/artiklid/tootervishoid-kontroll-puudub.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/teenusepakkuja-valimine.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/riskianaluus-juhend.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/vaikeettevote-kohustused.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/ttos-2026-muudatused.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/tootaja-keeldub-tervisekontrollist.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/7-levinumat-viga.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/tooonnetus-vastutus.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/teenusepakkujate-vordlus.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/kaugtoo-tootervishoid.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tt24.ee/artiklid/lepingu-ulesuitlemine.html</loc>
-        <lastmod>2026-04-02</lastmod>
+        <lastmod>2026-06-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
