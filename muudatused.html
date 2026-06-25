@@ -198,6 +198,14 @@
       margin: 0;
       font-weight: 400;
     }
+    .muudatused-scale-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      max-width: 680px;
+      margin: 18px 0 0;
+    }
     .muudatused-list {
       max-width: 900px;
       margin: 0 auto;
@@ -237,6 +245,9 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--mute);
+      cursor: help;
+      text-decoration: underline dotted var(--mute-2);
+      text-underline-offset: 4px;
     }
     .impact-badge::before {
       content: "";
@@ -388,7 +399,12 @@
         <a href="index.html">Avaleht</a> › Mis on muutunud
       </nav>
       <h1>Mis on muutunud</h1>
-      <p class="lead">Värsked muudatused Eesti töötervishoiu seadustes, määrustes ja juhistes. Jälgime Riigi Teatajat, Tööinspektsiooni, Terviseametit ja Sotsiaalministeeriumi nii, et Teie ei pea. Iga sissekanne kirjeldab muutust, näitab mõju ulatust ja annab konkreetsed sammud tööandjale.</p>
+      <p class="lead">
+        <span style="display:block;">Värsked muudatused Eesti töötervishoiu seadustes, määrustes ja juhistes.</span>
+        <span style="display:block;margin-top:8px;">Allikad: Riigi Teataja, Tööinspektsioon, Terviseamet ja Sotsiaalministeerium.</span>
+        <span style="display:block;margin-top:8px;">Kirjeldame muudatuse olemust, selle mõju ulatust ning sellest tulenevaid soovitusi tööandjale.</span>
+      </p>
+      <p class="muudatused-scale-note">Mõju ulatus näitab, kui palju muudatus tööandjalt tegevust nõuab.</p>
     </div>
   </section>
 
@@ -418,12 +434,12 @@
       </ul>
 
       <h3>Mida tööandjal praegu teha</h3>
-      <p>Praegu ei muutu midagi - senised nõuded kehtivad täies mahus. Ärge tühistage olemasolevaid kohustusi eelnõu põhjal. Me uuendame seda sissekannet, kui ja kui seadus vastu võetakse.</p>
+      <p>Praegu ei muutu midagi - senised nõuded kehtivad täies mahus. Ärge tühistage olemasolevaid kohustusi eelnõu põhjal. Me uuendame seda sissekannet, kui ja millal seadus vastu võetakse.</p>
 
       <p class="related-links">Põhjalik ülevaade: <a href="artiklid/ttos-2026-muudatused.html">Töötervishoiu ja tööohutuse seadus 2026 - jõustunud muudatused ja eelnõu</a></p>
 
       <p class="muudatused-entry-source">
-        Primaarsed allikad:
+        Allikad:
         <a href="https://www.riigikogu.ee/tegevus/eelnoud/" target="_blank" rel="noopener">Riigikogu eelnõude leht</a> ·
         <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS kehtiv tekst</a>
       </p>
@@ -434,7 +450,7 @@
       <div class="muudatused-entry-meta">
         <time datetime="2026-07-01">Jõustub: 1. juuli 2026</time>
         <span aria-hidden="true">·</span>
-        <span class="impact-badge impact-medium">Keskmine mõju</span>
+        <span class="impact-badge impact-medium" title="Keskmine mõju: tasub oma töötervishoiu korraldus üle vaadata või kohandada.">Keskmine mõju</span>
         <span aria-hidden="true">·</span>
         <span class="audience-tag">Puudutab: töötervishoiuteenuse osutajaid</span>
         <span aria-hidden="true">·</span>
@@ -462,7 +478,7 @@
       <p class="related-links">Seotud TT24 artiklid: <a href="artiklid/kas-vaja-lepingut.html">Kas vajan töötervishoiu lepingut</a> · <a href="artiklid/teenusepakkuja-valimine.html">Kuidas valida teenusepakkujat</a> · <a href="artiklid/uus-ettevote-tootervishoid.html">Uus ettevõte ja töötervishoid</a></p>
 
       <p class="muudatused-entry-source">
-        Primaarsed allikad:
+        Allikad:
         <a href="https://www.terviseamet.ee/et/uudised/muudatused-tootervishoiuteenuse-osutajate-registreerimises-ja-tervishoiuteenuse-osutajate" target="_blank" rel="noopener">Terviseameti teade muudatuste kohta</a> ·
         <a href="https://www.riigiteataja.ee" target="_blank" rel="noopener">Riigi Teataja - MSÜS täistekst</a>
       </p>
@@ -473,7 +489,7 @@
       <div class="muudatused-entry-meta">
         <time datetime="2026-04-01">Jõustus: 1. aprill 2026</time>
         <span aria-hidden="true">·</span>
-        <span class="impact-badge impact-low">Madal mõju</span>
+        <span class="impact-badge impact-low" title="Madal mõju: enamasti ei nõua tööandjalt tegevust või on uus võimalus, mitte kohustus.">Madal mõju</span>
         <span aria-hidden="true">·</span>
         <span class="audience-tag">Puudutab: tööandjaid ja töötajaid</span>
         <span aria-hidden="true">·</span>
@@ -481,7 +497,7 @@
       </div>
       <h2>Haiguslehe alusel töötamise lävi langes 60 päevalt 30 päevale</h2>
       <p>Töötaja ja tööandja võivad nüüd kokku leppida ajutiselt terviseseisundile sobivas töös juba siis, kui töövabastuse algusest on möödunud rohkem kui 30 kalendripäeva (varem 60) - TTOS § 12-4 lg 1. Kokkulepe peab olema kirjalik ja töö peab vastama töötaja terviseseisundile.</p>
-      <p class="muudatused-entry-source">Primaarne allikas: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS § 12-4</a></p>
+      <p class="muudatused-entry-source">Allikas: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS § 12-4</a></p>
     </article>
 
     <!-- ENTRY: haigushüvitise vahe - 2026-01-01 -->
@@ -489,7 +505,7 @@
       <div class="muudatused-entry-meta">
         <time datetime="2026-01-01">Jõustus: 1. jaanuar 2026</time>
         <span aria-hidden="true">·</span>
-        <span class="impact-badge impact-low">Madal mõju</span>
+        <span class="impact-badge impact-low" title="Madal mõju: enamasti ei nõua tööandjalt tegevust või on uus võimalus, mitte kohustus.">Madal mõju</span>
         <span aria-hidden="true">·</span>
         <span class="audience-tag">Puudutab: tööandjaid</span>
         <span aria-hidden="true">·</span>
@@ -497,7 +513,7 @@
       </div>
       <h2>Tööandja võib hüvitada haigushüvitise ja keskmise töötasu vahe</h2>
       <p>Tööandja võib töötajale hüvitada keskmise töötasu ja ajutise töövõimetuse hüvitise ülempiiri vahe - TTOS § 12-3 lg 4-1. See on tööandja õigus, mitte kohustus.</p>
-      <p class="muudatused-entry-source">Primaarne allikas: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS § 12-3</a></p>
+      <p class="muudatused-entry-source">Allikas: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS § 12-3</a></p>
     </article>
 
     <!-- ENTRY: haiguslehe alusel töötamine + reproduktiivtoksilised - 2024-05-15 -->
@@ -505,7 +521,7 @@
       <div class="muudatused-entry-meta">
         <time datetime="2024-05-15">Jõustus: 15. mai 2024</time>
         <span aria-hidden="true">·</span>
-        <span class="impact-badge impact-medium">Keskmine mõju</span>
+        <span class="impact-badge impact-medium" title="Keskmine mõju: tasub oma töötervishoiu korraldus üle vaadata või kohandada.">Keskmine mõju</span>
         <span aria-hidden="true">·</span>
         <span class="audience-tag">Puudutab: tööandjaid ja töötajaid</span>
         <span aria-hidden="true">·</span>
@@ -515,7 +531,7 @@
       <p>Seadusesse lisati võimalus töötada haiguslehe alusel: töötaja ja tööandja võivad kirjalikult kokku leppida ajutiselt terviseseisundile vastavas töös - TTOS § 12-3 kuni § 12-5.</p>
       <p>Samuti lisati kantserogeenide ja mutageenide kõrvale reproduktiivtoksilised ained ning täpsustati andmete säilitustähtajad: kantserogeeni või mutageeniga kokkupuute andmeid säilitatakse 40 aastat, reproduktiivtoksilise aine puhul 5 aastat - TTOS § 13-1 lg 17.</p>
       <p class="related-links">Seotud: <a href="artiklid/ttos-2026-muudatused.html">TTOS 2026 - kõik muudatused ja nõuded</a></p>
-      <p class="muudatused-entry-source">Primaarne allikas: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS § 12-3 ja § 13-1</a></p>
+      <p class="muudatused-entry-source">Allikas: <a href="https://www.riigiteataja.ee/akt/TTOS" target="_blank" rel="noopener">Riigi Teataja - TTOS § 12-3 ja § 13-1</a></p>
     </article>
 
     <!-- TEMPLATE for future entries (commented out):
@@ -523,7 +539,7 @@
       <div class="muudatused-entry-meta">
         <time datetime="YYYY-MM-DD">Jõustus: 1. juuni 2026</time>
         <span aria-hidden="true">·</span>
-        <span class="impact-badge impact-medium">Keskmine mõju</span>
+        <span class="impact-badge impact-medium" title="Keskmine mõju: tasub oma töötervishoiu korraldus üle vaadata või kohandada.">Keskmine mõju</span>
         <span aria-hidden="true">·</span>
         <span>Allikas: ...</span>
       </div>
@@ -534,7 +550,7 @@
       <h3>Mida tööandja peab tegema</h3>
       <ol><li>...</li></ol>
       <p class="related-links">Seotud TT24 artiklid: <a href="...">...</a></p>
-      <p class="muudatused-entry-source">Primaarsed allikad: <a href="..." target="_blank" rel="noopener">...</a></p>
+      <p class="muudatused-entry-source">Allikad: <a href="..." target="_blank" rel="noopener">...</a></p>
     </article>
     -->
 
