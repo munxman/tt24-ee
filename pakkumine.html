@@ -542,7 +542,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         if (formCard) formCard.style.display = 'none';
         if (successCard) { successCard.style.display = 'block'; successCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
         if (window.dataLayer) {
-          window.dataLayer.push({ event: 'lead_form_success', form_type: 'tth_quote_request', source_page: window.location.pathname, value: 0, currency: 'EUR' });
+          if (window.gtag) gtag('event', 'lead_form_success', { form_type: 'tth_quote_request', source_page: window.location.pathname, value: 0, currency: 'EUR' });
         }
       } else {
         if (btn) { btn.disabled = false; btn.textContent = originalBtnText; }

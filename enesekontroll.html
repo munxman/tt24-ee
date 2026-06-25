@@ -936,7 +936,7 @@ function showResult() {
   resultEl.classList.add('tt24-locked');
 
   if (window.dataLayer) {
-    window.dataLayer.push({ event: 'quiz_completed', quiz_score: score, quiz_level: level, source_page: window.location.pathname });
+    if (window.gtag) gtag('event', 'quiz_completed', { quiz_score: score, quiz_level: level, source_page: window.location.pathname });
   }
 
   resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1210,8 +1210,7 @@ function tt24SubmitQuizGate(e) {
     var resultEl = document.getElementById('quizResult');
     if (resultEl) resultEl.classList.remove('tt24-locked');
     if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'quiz_email_capture',
+      if (window.gtag) gtag('event', 'quiz_email_capture', {
         quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
         source_page: window.location.pathname, value: 0, currency: 'EUR'
       });

@@ -820,7 +820,7 @@ function tt24FireCalcStart() {
   if (tt24CalcStartFired) return;
   tt24CalcStartFired = true;
   if (window.dataLayer) {
-    window.dataLayer.push({ event: 'calculator_started', source_page: window.location.pathname });
+    if (window.gtag) gtag('event', 'calculator_started', { source_page: window.location.pathname });
   }
 }
 document.querySelectorAll('.sector-pill, input[name="sector"], input[name="minors"]').forEach(function (el) {
@@ -831,7 +831,7 @@ document.querySelectorAll('.sector-pill, input[name="sector"], input[name="minor
 // ─── Initial render ──────────────────────────────────────
 recalculate();
 if (window.dataLayer) {
-  window.dataLayer.push({ event: 'calculator_result_shown', source_page: window.location.pathname });
+  if (window.gtag) gtag('event', 'calculator_result_shown', { source_page: window.location.pathname });
 }
 
 // ─── Calculator gate submit ──────────────────────────────
@@ -877,8 +877,7 @@ function tt24SubmitCalcGate(e) {
     var gate = document.getElementById('calcGate');
     if (gate) gate.classList.add('is-unlocked');
     if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'calculator_email_capture',
+      if (window.gtag) gtag('event', 'calculator_email_capture', {
         emp_count: s.empCount, sector: s.sectorKey, annual_cost: s.annual,
         outcome: outcomeLabel || 'ok', source_page: window.location.pathname, value: 0, currency: 'EUR'
       });
