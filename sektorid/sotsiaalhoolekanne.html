@@ -21,7 +21,10 @@
   <meta name="twitter:title" content="Töötervishoiu nõuded sotsiaalhoolekandes | Tööandja juhend 2026">
   <meta name="twitter:description" content="Sotsiaalhoolekande töötervishoiu nõuded selgelt: bioloogilised riskid, psühhosotsiaalsed ohud, ergonoomika, kohustuslikud tervisekontrollid ja praktilised nõuanded tööandjale 2026.">
 
-  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../editorial.css">
 
   <!-- Schema: Article -->
   <script type="application/ld+json">
@@ -156,34 +159,21 @@
 
 <a href="#main-content" class="skip-link">Hüppa põhisisule</a>
 
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="nav-brand">
-      <a href="../index.html" class="nav-logo" aria-label="TT24 avaleht">
-        <span class="nav-logo-text">TT24</span><span class="nav-logo-tagline">Töötervishoiu Teejuht</span>
-      </a>
-      <a href="../meist.html" class="nav-brand-meist">Meist</a>
-    </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
-      <div class="nav-dropdown" id="toolsDropdown">
-        <button class="nav-dropdown-toggle nav-dropdown-toggle--prominent" aria-expanded="false" aria-haspopup="true">Tööriistad</button>
-        <div class="nav-dropdown-menu">
-          <a href="../kontrollnimekiri.html">Kontrollnimekiri</a>
-          <a href="../kalkulaator.html">Kalkulaator</a>
-          <a href="../enesekontroll.html">Enesekontroll</a>
-          <a href="../ajakava.html">Ajakava</a>
-          <a href="../dokumendid.html">Dokumendid</a>
-        </div>
-      </div>
-      <a href="../korduma.html" class="nav-link nav-link--secondary">KKK</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">TT24</span>
+      <span class="brand-tag">Töötervishoiu Teejuht</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüü" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="../index.html#tooriistad">Tööriistad</a>
+      <a href="../artiklid/index.html">Artiklid</a>
+      <a href="../muudatused.html">Mis on muutunud</a>
+      <a href="../korduma.html">KKK</a>
+      <a href="../meist.html">Meist</a>
+      <a href="../pakkumine.html" class="nav-cta">Küsi pakkumist</a>
     </nav>
-
-    <a href="../enesekontroll.html" class="nav-cta-btn">Testi nõuetele vastavust</a>
   </div>
 </header>
 
@@ -517,43 +507,38 @@
   </div>
 </section>
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-      <div class="footer-col footer-col-brand">
-        <a href="../index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
-        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele.<br>Kontrollnimekirjad, kalkulaatorid ja KKK - praktilised tööriistad töötervishoiu ja tööohutuse seaduse täitmiseks.</p>
-      </div>
-
-      <div class="footer-col footer-col-links">
-        <h3 class="footer-col-title">Tööriistad</h3>
-        <nav aria-label="Tööriistad">
-          <a href="../kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
-          <a href="../kalkulaator.html" class="footer-link">Kulukalkulaator</a>
-          <a href="../enesekontroll.html" class="footer-link">Enesekontroll</a>
-          <a href="../korduma.html" class="footer-link">KKK</a>
-          <a href="../ajakava.html" class="footer-link">Ajakava</a>
-          <a href="../meist.html" class="footer-link">Meist</a>
-          <a href="../dokumendid.html" class="footer-link">Dokumendid</a>
-        </nav>
-      </div>
-
-      <div class="footer-col footer-col-contact">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
-        <a href="tel:+37259110909" class="footer-link">+372 5 911 0909</a>
-        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
-      </div>
-
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="../index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Sõltumatu Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
     </div>
-
-    <div class="footer-bottom">
-      <span class="footer-partner">Koostöös <a href="https://valvekliinik.ee" target="_blank" rel="noopener" class="footer-partner-link"><strong>Valvekliinikuga</strong></a></span>
-      <span class="footer-copy">© 2026 TT24 - Töötervishoiu Teejuht</span>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="../kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="../kalkulaator.html">Kalkulaator</a>
+      <a href="../enesekontroll.html">Enesekontroll</a>
+      <a href="../tervisetoetus.html">Tervisetoetus</a>
+      <a href="../dokumendid.html">Dokumendid</a>
     </div>
-
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="../artiklid/index.html">Artiklid</a>
+      <a href="../korduma.html">KKK</a>
+      <a href="../muudatused.html">Mis on muutunud</a>
+      <a href="../meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="../pakkumine.html">Küsi pakkumist</a>
+      <a href="../avatud-uks.html">Küsige meilt</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="../privaatsus.html">Privaatsus</a>
   </div>
 </footer>
 
@@ -625,5 +610,6 @@ function toggleFaq(btn) {
   </script>
   <!-- End Cookie Consent Banner -->
 
+<script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
 </body>
 </html>

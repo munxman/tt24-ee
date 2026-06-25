@@ -21,7 +21,10 @@
   <meta name="twitter:title" content="Töötervishoiu nõuded ehituses | Tööandja juhend 2026">
   <meta name="twitter:description" content="Ehitusettevõtte töötervishoiu nõuded selgelt: kohustuslikud tervisekontrollid, riskianalüüs, Tööinspektsiooni nõuded ja praktilised nõuanded.">
 
-  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../editorial.css">
 
   <!-- Schema: Article -->
   <script type="application/ld+json">
@@ -140,42 +143,29 @@
 
 <a href="#main-content" class="skip-link">Hüppa põhisisule</a>
 
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="nav-brand">
-      <a href="../index.html" class="nav-logo" aria-label="TT24 avaleht">
-        <span class="nav-logo-text">TT24</span><span class="nav-logo-tagline">Töötervishoiu Teejuht</span>
-      </a>
-      <a href="../meist.html" class="nav-brand-meist">Meist</a>
-    </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menüü avamine" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="mainNav" class="nav-links" role="navigation" aria-label="Peamenüü">
-      <div class="nav-dropdown" id="toolsDropdown">
-        <button class="nav-dropdown-toggle nav-dropdown-toggle--prominent" aria-expanded="false" aria-haspopup="true">Tööriistad</button>
-        <div class="nav-dropdown-menu">
-          <a href="../kontrollnimekiri.html">Kontrollnimekiri</a>
-          <a href="../kalkulaator.html">Kalkulaator</a>
-          <a href="../enesekontroll.html">Enesekontroll</a>
-          <a href="../ajakava.html">Ajakava</a>
-          <a href="../dokumendid.html">Dokumendid</a>
-        </div>
-      </div>
-      <a href="../korduma.html" class="nav-link nav-link--secondary">KKK</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">TT24</span>
+      <span class="brand-tag">Töötervishoiu Teejuht</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüü" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="../index.html#tooriistad">Tööriistad</a>
+      <a href="../artiklid/index.html">Artiklid</a>
+      <a href="../muudatused.html">Mis on muutunud</a>
+      <a href="../korduma.html">KKK</a>
+      <a href="../meist.html">Meist</a>
+      <a href="../pakkumine.html" class="nav-cta">Küsi pakkumist</a>
     </nav>
-
-    <a href="../enesekontroll.html" class="nav-cta-btn">Testi nõuetele vastavust</a>
   </div>
 </header>
 
 <section class="hero hero--compact" aria-labelledby="page-hero-heading" style="padding: 1.5rem 0;">
     <div class="hero-inner">
-      <p style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.5rem;">Sektorid</p>
+      <p style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.5rem;">Sektorid | Ehitus</p>
       <h1 id="page-hero-heading" style="font-size: 2rem; margin: 0;">Mida peab ehitusettevõtja teadma töötervishoiust?</h1>
-      <p style="margin: 0.5rem 0 0; font-size: 0.95rem;">Ehitus on EL-i kõige suurema surmaga lõppenud tööõnnetuste osakaaluga sektor: 2023. aastal toimus ehituses 24% kõigist EL-i surmaga lõppenud tööõnnetustest (Eurostat).<br>Allolevalt on välja toodud, mida Tööinspektsioon kontrollib ja kuidas ehitusettevõte saab olla täielikult nõuetekohane.</p>
+      <p style="margin: 0.5rem 0 0; font-size: 0.95rem;">Ehitus on EL-i kõige suurema surmaga lõppenud tööõnnetuste osakaaluga sektor: 2023. aastal toimus ehituses 24% kõigist EL-i surmaga lõppenud tööõnnetustest (<a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Accidents_at_work_statistics" target="_blank" rel="noopener">Eurostat</a>).<br>Allolevalt on välja toodud, mida Tööinspektsioon kontrollib ja kuidas ehitusettevõte saab olla täielikult nõuetekohane.</p>
     </div>
   </section>
 
@@ -185,7 +175,7 @@
   <section class="section" style="background:#fff;">
     <div class="container">
       <h2 class="section-title">Peamised terviseriskid ehitussektoris</h2>
-      <p class="section-sub">Need on riskid, millega Teie töötajad kõige sagedamini kokku puutuvad. Kõik need peavad olema kajastatud Teie riskianalüüsis.</p>
+      <p class="section-sub">Allolevalt on loetletud riskid, milledega Teie töötajad kõige sagedamini kokku puutuvad - kõik need peavad olema kajastatud Teie riskianalüüsis.</p>
       <ul class="risk-list">
         <li>Kukkumine kõrgusest - turvavöö ja kaitsevahendite puudumine</li>
 <li>Kokkupuude müra, vibratsiooni ja tolmuga (sh asbest, kvartsitolm)</li>
@@ -422,50 +412,45 @@
 
 <section class="cta-banner">
   <div class="cta-banner-inner">
-    <p>Vajate professionaalset abi töötervishoiu korraldamisega? Meie partner Valvekliinik pakub täisteenust. Küsige personaalset pakkumist.</p>
-    <p style="margin-top: 10px; color: rgba(242,245,245,0.5);">Vastame esimesel võimalusel.</p>
+    <p>Vajate abi töötervishoiu korraldamisega? Küsige pakkumist töötervishoiu teenusele.</p>
+    <p style="margin-top: 10px; color: var(--mute);">Vastame esimesel võimalusel.</p>
     <a href="../pakkumine.html" class="btn-gold">Küsin pakkumist</a>
-    <p style="margin-top: 14px; font-size: 0.85rem; opacity: 0.7;">Suuremale ehitusettevõttele: <a href="../merko.html" style="color: #fff; text-decoration: underline;">vaata partnerlahendust →</a></p>
+    <p style="margin-top: 14px; font-size: 0.85rem; color: var(--mute);">Üks teenuseosutajatest on TT24 loojate kaasasutatud Valvekliinik.</p>
   </div>
 </section>
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-      <div class="footer-col footer-col-brand">
-        <a href="../index.html" class="footer-logo" aria-label="TT24 avaleht">TT24</a>
-        <p class="footer-desc">Tasuta töötervishoiu tööriistad Eesti tööandjatele.<br>Kontrollnimekirjad, kalkulaatorid ja KKK - praktilised tööriistad töötervishoiu ja tööohutuse seaduse täitmiseks.</p>
-      </div>
-
-      <div class="footer-col footer-col-links">
-        <h3 class="footer-col-title">Tööriistad</h3>
-        <nav aria-label="Tööriistad">
-          <a href="../kontrollnimekiri.html" class="footer-link">Kontrollnimekiri</a>
-          <a href="../kalkulaator.html" class="footer-link">Kulukalkulaator</a>
-          <a href="../enesekontroll.html" class="footer-link">Enesekontroll</a>
-          <a href="../korduma.html" class="footer-link">KKK</a>
-          <a href="../ajakava.html" class="footer-link">Ajakava</a>
-          <a href="../meist.html" class="footer-link">Meist</a>
-          <a href="../dokumendid.html" class="footer-link">Dokumendid</a>
-        </nav>
-      </div>
-
-      <div class="footer-col footer-col-contact">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <a href="mailto:info@tt24.ee" class="footer-link footer-email">info@tt24.ee</a>
-        <a href="tel:+37259110909" class="footer-link">+372 5 911 0909</a>
-        <p class="footer-legal-note">See portaal annab üldist teavet. See ei asenda juriidilist nõustamist ega töötervishoiu teenust.</p>
-      </div>
-
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="../index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Sõltumatu Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
     </div>
-
-    <div class="footer-bottom">
-      <span class="footer-partner">Koostöös <a href="https://valvekliinik.ee" target="_blank" rel="noopener" class="footer-partner-link"><strong>Valvekliinikuga</strong></a></span>
-      <span class="footer-copy">© 2026 TT24 - Töötervishoiu Teejuht</span>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="../kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="../kalkulaator.html">Kalkulaator</a>
+      <a href="../enesekontroll.html">Enesekontroll</a>
+      <a href="../tervisetoetus.html">Tervisetoetus</a>
+      <a href="../dokumendid.html">Dokumendid</a>
     </div>
-
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="../artiklid/index.html">Artiklid</a>
+      <a href="../korduma.html">KKK</a>
+      <a href="../muudatused.html">Mis on muutunud</a>
+      <a href="../meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="../pakkumine.html">Küsi pakkumist</a>
+      <a href="../avatud-uks.html">Küsige meilt</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="../privaatsus.html">Privaatsus</a>
   </div>
 </footer>
 
@@ -537,5 +522,6 @@ function toggleFaq(btn) {
   </script>
   <!-- End Cookie Consent Banner -->
 
+<script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
 </body>
 </html>
