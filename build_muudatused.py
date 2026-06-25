@@ -118,7 +118,7 @@ def build_schema(entries):
     doc = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Mis on muutunud - Töötervishoiu reeglite ja juhiste muudatused",
+        "name": "Töötervishoiu reeglite ja juhiste muudatused",
         "description": "Värsked muudatused Eesti töötervishoiu seadustes, määrustes ja juhistes.",
         "url": f"{SITE}/muudatused.html",
         "inLanguage": "et",
