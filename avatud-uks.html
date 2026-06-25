@@ -115,7 +115,7 @@ html, body {
 .intro { max-width:760px; margin:0 auto; padding:120px 32px 80px; }
 .dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 28px; }
 .dateline span { color:var(--accent); }
-.headline { font-family:var(--serif); font-size:clamp(40px, 5.5vw, 60px); line-height:1.08; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 36px; }
+.headline { font-family:var(--serif); font-size:clamp(33px, 4.4vw, 52px); line-height:1.08; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 36px; }
 .standfirst { font-family:var(--serif); font-size:clamp(20px, 2vw, 24px); line-height:1.45; color:var(--ink-soft); font-weight:400; margin:0; max-width:660px; }
 
 .section { border-top:1px solid var(--rule); }
@@ -663,12 +663,12 @@ function tt24SubmitConsult(e) {
 <script>
 /* active-nav: underline the current page's menu item */
 (function(){
-  var p=(location.pathname.split("/").pop()||"index.html");if(!p)p="index.html";
-  var art=location.pathname.indexOf("/artiklid/")>-1;
+  var cur=location.pathname;if(cur.charAt(cur.length-1)==="/")cur+="index.html";
+  var art=/\/artiklid\//.test(cur);
   document.querySelectorAll(".nav a").forEach(function(a){
     if(a.classList.contains("nav-cta"))return;
-    var h=(a.getAttribute("href")||"").split("#")[0],f=h.split("/").pop();
-    if((f&&f===p)||(art&&h.indexOf("artiklid/index.html")>-1)){
+    var ap=a.pathname||"";if(ap.charAt(ap.length-1)==="/")ap+="index.html";
+    if(ap===cur||(art&&/\/artiklid\/index\.html$/.test(ap))){
       a.setAttribute("aria-current","page");
       a.style.textDecoration="underline";a.style.textDecorationColor="var(--accent,#0066CC)";
       a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";

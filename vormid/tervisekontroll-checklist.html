@@ -493,12 +493,12 @@
 <script>
 /* active-nav: underline the current page's menu item */
 (function(){
-  var p=(location.pathname.split("/").pop()||"index.html");if(!p)p="index.html";
-  var art=location.pathname.indexOf("/artiklid/")>-1;
+  var cur=location.pathname;if(cur.charAt(cur.length-1)==="/")cur+="index.html";
+  var art=/\/artiklid\//.test(cur);
   document.querySelectorAll(".nav a").forEach(function(a){
     if(a.classList.contains("nav-cta"))return;
-    var h=(a.getAttribute("href")||"").split("#")[0],f=h.split("/").pop();
-    if((f&&f===p)||(art&&h.indexOf("artiklid/index.html")>-1)){
+    var ap=a.pathname||"";if(ap.charAt(ap.length-1)==="/")ap+="index.html";
+    if(ap===cur||(art&&/\/artiklid\/index\.html$/.test(ap))){
       a.setAttribute("aria-current","page");
       a.style.textDecoration="underline";a.style.textDecorationColor="var(--accent,#0066CC)";
       a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
