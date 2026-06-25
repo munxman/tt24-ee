@@ -38,7 +38,7 @@ SECTORS = {
             ("Noored töötajad (15–18 a)", "Iga-aastane tervisekontroll"),
         ],
         "findings": [
-            "Riskianalüüs on tegemata või aegunud (üle 3 aasta vana)",
+            "Riskianalüüs on tegemata või aegunud (uuendamata pärast olulisi muutusi)",
             "Töötajate tervisekontrollid on hilinenud või puuduvad",
             "Isikukaitsevahendite kasutamine ei ole dokumenteeritud",
             "Ohtlike ainete register puudub või on mittetäielik",
@@ -46,7 +46,7 @@ SECTORS = {
             "Töötajaid ei ole terviseriskidest kirjalikult teavitatud",
         ],
         "checklist": [
-            "Riskianalüüs on koostatud ja alla 3 aasta vana",
+            "Riskianalüüs on koostatud ja ajakohane",
             "Kõigil töötajatel on kehtiv tervisekontrolli tõend",
             "Töötervishoiu teenuse osutajaga on sõlmitud leping",
             "Ohtlike ainete register on olemas ja uuendatud",
@@ -684,7 +684,7 @@ SECTORS = {
             "Riskianalüüsi uuendamine on hilinenud",
         ],
         "checklist": [
-            "Riskianalüüs on tehtud ja alla 3 aasta vana",
+            "Riskianalüüs on tehtud ja ajakohane",
             "Kuvaritöötajate silmauuringud on tehtud",
             "Psühhosotsiaalne riskianalüüs on olemas",
             "Töötervishoiu teenuse osutajaga on sõlmitud leping",
