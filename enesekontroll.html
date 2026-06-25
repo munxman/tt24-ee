@@ -310,6 +310,21 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
   .result-qr-row { flex-direction:column; align-items:flex-start; }
   .result-disclaimer { text-align:left; }
 }
+
+/* Mobile nav (hamburger) */
+.nav-toggle { display:none; background:none; border:0; cursor:pointer; padding:10px; margin:-10px -10px -10px 0; }
+.nav-toggle span { display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; transition:transform .2s, opacity .2s; }
+.topbar.nav-open .nav-toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.topbar.nav-open .nav-toggle span:nth-child(2){ opacity:0; }
+.topbar.nav-open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+@media (max-width:760px){
+  .topbar-inner { flex-wrap:nowrap; align-items:center; }
+  .nav-toggle { display:block; }
+  .nav { display:none; position:absolute; top:100%; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--rule); flex-direction:column; gap:0; padding:6px 0 10px; align-items:stretch; box-shadow:0 10px 24px rgba(0,0,0,0.06); }
+  .topbar.nav-open .nav { display:flex; }
+  .nav a { padding:13px 22px; font-size:16px; }
+  .nav-cta { border-bottom:0 !important; width:max-content; }
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -325,6 +340,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
       <span class="brand-mark">TT24</span>
       <span class="brand-tag">Töötervishoiu Teejuht</span>
     </a>
+    <button class="nav-toggle" aria-label="Menüü" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav" aria-label="Peamenüü">
       <a href="index.html">Tööriistad</a>
       <a href="artiklid/index.html">Artiklid</a>
@@ -1297,5 +1313,6 @@ function tt24SubmitQuizGate(e) {
 })();
 </script>
 
+<script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
 </body>
 </html>
