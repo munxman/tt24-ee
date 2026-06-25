@@ -4,7 +4,7 @@
   <!-- Core pages: priority 1.0 -->
   <url>
     <loc>https://tt24.ee/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Mis on muutunud · change-tracker (freshness-critical): priority 0.8 -->
   <url>
     <loc>https://tt24.ee/muudatused.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
