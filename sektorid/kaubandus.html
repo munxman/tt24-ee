@@ -137,7 +137,7 @@
     <nav class="nav" aria-label="Peamenüü">
       <a href="../index.html#tooriistad">Tööriistad</a>
       <a href="../artiklid/index.html">Artiklid</a>
-      <a href="../muudatused.html"><span style="text-decoration:underline;text-decoration-color:var(--accent,#0066CC);text-decoration-thickness:2px;text-underline-offset:6px;">Muudatused</span></a>
+      <a href="../muudatused.html">Muudatused</a>
       <a href="../korduma.html">KKK</a>
       <a href="../meist.html">Meist</a>
       <a href="../pakkumine.html" class="nav-cta">Küsi pakkumist</a>
@@ -381,7 +381,7 @@
       <h4>Sisu</h4>
       <a href="../artiklid/index.html">Artiklid</a>
       <a href="../korduma.html">KKK</a>
-      <a href="../muudatused.html"><span style="text-decoration:underline;text-decoration-color:var(--accent,#0066CC);text-decoration-thickness:2px;text-underline-offset:6px;">Muudatused</span></a>
+      <a href="../muudatused.html">Muudatused</a>
       <a href="../meist.html">Meist</a>
     </div>
     <div class="foot-col">
@@ -467,5 +467,21 @@ function toggleFaq(btn) {
   <!-- End Cookie Consent Banner -->
 
 <script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
+<script>
+/* active-nav: underline the current page's menu item */
+(function(){
+  var p=(location.pathname.split("/").pop()||"index.html");if(!p)p="index.html";
+  var art=location.pathname.indexOf("/artiklid/")>-1;
+  document.querySelectorAll(".nav a").forEach(function(a){
+    if(a.classList.contains("nav-cta"))return;
+    var h=(a.getAttribute("href")||"").split("#")[0],f=h.split("/").pop();
+    if((f&&f===p)||(art&&h.indexOf("artiklid/index.html")>-1)){
+      a.setAttribute("aria-current","page");
+      a.style.textDecoration="underline";a.style.textDecorationColor="var(--accent,#0066CC)";
+      a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
+    }
+  });
+})();
+</script>
 </body>
 </html>

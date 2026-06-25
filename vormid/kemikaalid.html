@@ -387,5 +387,21 @@
   </div>
 
 <div style="margin-top:20px; padding:12px 16px; background:#fff9e6; border-left:3px solid #e67e22; font-size:0.85rem; color:#555;">See dokument on abimaterjal ja ei asenda juriidilist nõustamist. Veenduge, et dokument vastab Teie ettevõtte konkreetsetele vajadustele. Vajadusel konsulteerige töötervishoiu spetsialistiga.</div>
+<script>
+/* active-nav: underline the current page's menu item */
+(function(){
+  var p=(location.pathname.split("/").pop()||"index.html");if(!p)p="index.html";
+  var art=location.pathname.indexOf("/artiklid/")>-1;
+  document.querySelectorAll(".nav a").forEach(function(a){
+    if(a.classList.contains("nav-cta"))return;
+    var h=(a.getAttribute("href")||"").split("#")[0],f=h.split("/").pop();
+    if((f&&f===p)||(art&&h.indexOf("artiklid/index.html")>-1)){
+      a.setAttribute("aria-current","page");
+      a.style.textDecoration="underline";a.style.textDecorationColor="var(--accent,#0066CC)";
+      a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
+    }
+  });
+})();
+</script>
 </body>
 </html>
