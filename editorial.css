@@ -466,10 +466,15 @@ html, body {
    Forces the editorial type scale/family/colour over divergent per-page inline
    <style> blocks, so headings + body read the same on every page. Scoped to
    content type (not layout). */
-.article-hero h1, .articles-hero h1, .page-hero h1 {
+.article-hero h1, .articles-hero h1, .page-hero h1,
+.hero--compact h1, .landing-hero h1 {
   font-family: var(--serif) !important; font-size: clamp(34px, 5vw, 54px) !important;
   font-weight: 500 !important; letter-spacing: -0.02em !important; line-height: 1.07 !important; color: var(--ink) !important;
 }
+/* Standalone (.hero--compact/.landing-hero) heroes: give the enlarged H1 a real
+   editorial gap before any sub-line. Kept off the .article-hero selector so the
+   article pages' own spacing is untouched. */
+.hero--compact h1, .landing-hero h1 { margin: 0 0 0.4em !important; }
 .article-hero-sub, .articles-hero-sub, .article-hero p {
   font-family: var(--serif) !important; font-size: clamp(18px, 2vw, 21px) !important;
   font-weight: 400 !important; line-height: 1.45 !important; color: var(--ink-soft) !important;
