@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_reviewed": "2026-06-26",
+    "last_reviewed": "2026-06-28",
     "note": "Single source of truth for muudatused.html. Edit here, then run: python build_muudatused.py. Never hand-edit the generated regions in muudatused.html / index.html.",
     "watched_sources": [
       { "name": "Riigi Teataja - TTOS (jälgi akti)", "url": "https://www.riigiteataja.ee/akt/TTOS" },
@@ -12,6 +12,86 @@
     ]
   },
   "entries": [
+    {
+      "id": "ti-sihtkontroll-ikv-2026-07",
+      "status": "enforcement",
+      "status_label": "Järelevalve · juuli 2026",
+      "effective_date": "2026-07-01",
+      "published_date": "2026-06-25",
+      "modified_date": "2026-06-28",
+      "impact": "high",
+      "audience": "Puudutab: ehitust ja ohtlike töökohtadega tööandjaid",
+      "meta_source": "Tööinspektsioon",
+      "headline_list": "Juulis 2026: Tööinspektsiooni isikukaitsevahendite sihtkontroll",
+      "title": "Tööinspektsioon alustab juulis 2026 isikukaitsevahendite sihtkontrolli",
+      "lead": "Tööinspektsioon alustab 2026. aasta juulis üle-eestilist isikukaitsevahendite sihtkontrolli ehitusplatsidel ja muudes ohtlikes töökohtades. Inspektorid tulevad üldjuhul ette teatamata.",
+      "body": [
+        { "type": "h3", "text": "Mida kontrollitakse" },
+        { "type": "ul", "items": [
+          "Kas nõutavad isikukaitsevahendid (kiivrid, kukkumiskaitse, kuulmis- ja hingamiskaitse, kaitsejalatsid, -prillid, -kindad ja -riietus) on olemas ning tööülesandeks sobivad.",
+          "Kas need on töökorras ja kasutusaja piires.",
+          "Kas neid päriselt kasutatakse ning kas töötajaid on juhendatud."
+        ] },
+        { "type": "h3", "text": "Mida tööandjal enne kontrolli teha" },
+        { "type": "ol", "items": [
+          "Vaadake riskianalüüs üle ja veenduge, et see kajastab tegelikke ohutegureid.",
+          "Väljastage töötajatele sobivad isikukaitsevahendid ja kontrollige nende seisukord.",
+          "Tagage juhendamine ja jälgige, et kaitsevahendeid ka päriselt kasutatakse."
+        ] }
+      ],
+      "related_label": "Seotud TT24 sisu:",
+      "related": [
+        { "href": "sektorid/ehitus.html", "label": "Töötervishoid ehitussektoris" },
+        { "href": "artiklid/riskianaluus-juhend.html", "label": "Riskianalüüsi juhend" },
+        { "href": "artiklid/tooinspektor-kontroll.html", "label": "Kuidas valmistuda Tööinspektsiooni kontrolliks" }
+      ],
+      "sources": [
+        { "name": "Tööinspektsioon: Kiiver kapis ei päästa elu - isikukaitsevahendite sihtkontroll", "url": "https://www.ti.ee/uudised/kiiver-kapis-ei-paasta-elu-tooinspektsioon-alustab-isikukaitsevahendite-sihtkontrolli" }
+      ],
+      "teaser": {
+        "num": "Juuli 2026",
+        "title": "Tööinspektsiooni isikukaitsevahendite sihtkontroll",
+        "desc": "Juulis 2026 algab üle-eestiline isikukaitsevahendite sihtkontroll ehitusplatsidel ja ohtlikes töökohtades, üldjuhul ette teatamata. Tööandja: ajakohane riskianalüüs, väljastatud ja töökorras kaitsevahendid, juhendamine.",
+        "audience": "Puudutab: ehitust ja ohtlikke töökohti"
+      }
+    },
+    {
+      "id": "ti-sihtkontroll-korgustes-2026-05",
+      "status": "enforcement",
+      "status_label": "Järelevalve · mai 2026",
+      "effective_date": "2026-05-01",
+      "published_date": "2026-04-21",
+      "modified_date": "2026-06-28",
+      "impact": "high",
+      "audience": "Puudutab: ehitust ja kõrgustes töötamist",
+      "meta_source": "Tööinspektsioon",
+      "headline_list": "Mais 2026: Tööinspektsiooni sihtkontroll „Kõrgustes töötamine“",
+      "title": "Tööinspektsioon alustas sihtkontrolli „Kõrgustes töötamine“",
+      "lead": "Tööinspektsioon alustas 2026. aasta mais ennetava sihtkontrolli, mis keskendub kõrgustes töötamisele ja kukkumisohule. Eesmärk on tõsta tööandjate ja töötajate teadlikkust, mitte ainult tuvastada rikkumisi.",
+      "body": [
+        { "type": "p", "html": "Kukkumisega seotud tööõnnetused lõppevad sageli raske vigastuse või surmaga, eriti ehituses. Sagedased põhjused on puuduv kukkumiskaitse, kaitsevahendite vale kasutus, puudulik juhendamine ning puuduv või eiratud ohutusplaan." },
+        { "type": "h3", "text": "Mida tööandjal teha" },
+        { "type": "ul", "items": [
+          "Koostage või ajakohastage riskianalüüs ja ohutusplaan kõrgustes tehtavatele töödele.",
+          "Paigaldage kaitsepiirded ja kontrollige kukkumiskaitsevahendite seisukord.",
+          "Väljastage sobivad isikukaitsevahendid ja tagage töötajate juhendamine."
+        ] }
+      ],
+      "related_label": "Seotud TT24 sisu:",
+      "related": [
+        { "href": "sektorid/ehitus.html", "label": "Töötervishoid ehitussektoris" },
+        { "href": "artiklid/tooinspektor-kontroll.html", "label": "Kuidas valmistuda Tööinspektsiooni kontrolliks" }
+      ],
+      "sources": [
+        { "name": "Tööinspektsioon: sihtkontroll „Kõrgustes töötamine“", "url": "https://www.ti.ee/uudised/tooinspektsioon-alustab-sihtkontrolli-korgustes-tootamine" }
+      ],
+      "teaser": {
+        "num": "Mai 2026",
+        "title": "Sihtkontroll „Kõrgustes töötamine“",
+        "desc": "Mais 2026 algas ennetav sihtkontroll kõrgustes töötamise ja kukkumisohu kohta. Tööandja: ohutusplaan, kaitsepiirded, kukkumiskaitse, juhendamine.",
+        "audience": "Puudutab: ehitust ja kõrgustes töötamist"
+      }
+    },
     {
       "id": "ttos-deregulatsioon-eelnou",
       "status": "proposed",

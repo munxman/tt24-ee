@@ -52,8 +52,11 @@ def dmy(iso):
 
 
 def render_meta(e, today):
-    if e["status"] == "proposed":
+    if e.get("status_label"):
         lead = f'<span class="status-badge">{e["status_label"]}</span>'
+        imp = e.get("impact")
+        if imp:
+            lead += SEP + f'<span class="impact-badge impact-{imp}" title="{IMPACT_TITLE[imp]}">{IMPACT_LABEL[imp]}</span>'
     else:
         verb = "Jõustub" if e["effective_date"] > today else "Jõustus"
         imp = e["impact"]
