@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otsing - TT24</title>
+  <meta name="description" content="Otsi TT24 saidilt: tooriistad, artiklid, sektorid ja linnad.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="editorial.css">
+<!-- TT24 GA4 (G-5NW9JSMQVE), consent-gated -->
+  <script>
+    function tt24LoadGA4() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('config', 'G-5NW9JSMQVE');
+    }
+    if (localStorage.getItem('tt24_cookie_consent') === 'accepted') {
+      tt24LoadGA4();
+    }
+  </script>
+  <!-- End TT24 GA4 -->
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://tt24.ee/otsing.html" />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Avaleht",
+        "item": "https://tt24.ee/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Korduma kippuvad küsimused",
+        "item": "https://tt24.ee/korduma.html"
+      }
+    ]
+  }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tt24.ee/otsing.html" />
+  <meta property="og:title" content="Otsing - TT24" />
+  <meta property="og:description" content="Üle 20 selge vastuse töötervishoiu kohta: tervisekontroll, riskianalüüs, tööõnnetused, lepingud ja trahvid. Kõik lihtsas eesti keeles." />
+  <meta property="og:image" content="https://tt24.ee/og-image.png" />
+  <meta property="og:locale" content="et_EE" />
+  <meta property="og:site_name" content="TT24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Otsing - TT24" />
+  <meta name="twitter:description" content="Üle 20 küsimuse vastused töötervishoiu kohta. Tervisekontroll, riskianalüüs, trahvid, lepingud - selgelt selgitatud." />
+
+  <style>
+    /* ── FAQ page–specific overrides ── */
+    .hero--light {
+      background: linear-gradient(135deg, #f0f7f4 0%, #e8f5f0 100%);
+      color: var(--dark, #1a2e25);
+    }
+    .hero--light .hero-inner {
+      max-width: 780px;
+    }
+    .hero--light h1 {
+      color: var(--dark, #1a2e25);
+    }
+    .hero--light .hero-sub {
+      color: var(--text-muted, #4a6358);
+    }
+    .hero--light .hero-badge {
+      background: rgba(0,0,0,0.06);
+      color: var(--dark, #1a2e25);
+    }
+
+    /* ── Search bar ── */
+    .faq-search-wrap {
+      margin-bottom: 20px;
+    }
+    .faq-search-wrap input {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 1rem;
+      border: 2px solid #d0e4dc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color .2s;
+      box-sizing: border-box;
+      background: #fff;
+    }
+    .faq-search-wrap input:focus {
+      border-color: var(--color-primary, #0284C7);
+    }
+    .faq-no-results {
+      display: none;
+      padding: 18px;
+      background: #fff8e8;
+      border: 1px solid #f0d890;
+      border-radius: 8px;
+      color: #7a5a00;
+      margin-bottom: 24px;
+      font-size: .95rem;
+    }
+
+    /* ── Category anchor pills ── */
+    .faq-cat-nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .faq-cat-nav a {
+      padding: 8px 16px;
+      background: var(--color-primary, #0284C7);
+      color: #fff;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 600;
+      transition: opacity .15s;
+    }
+    .faq-cat-nav a:hover { opacity: .82; }
+    @media (max-width: 640px) {
+      .faq-cat-nav a {
+        padding: 6px 12px;
+        font-size: .75rem;
+      }
+    }
+
+    /* ── FAQ group ── */
+    .faq-group {
+      margin-bottom: 40px;
+    }
+    .faq-group-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary, #0284C7);
+      border-bottom: 2px solid var(--color-primary, #0284C7);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* ── FAQ item (details/summary) ── */
+    details.faq-item {
+      border: 1px solid #d8ebe3;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow .2s;
+    }
+    details.faq-item[open] {
+      box-shadow: 0 2px 12px rgba(45,122,90,.12);
+    }
+    details.faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: .98rem;
+      color: var(--dark, #1a2e25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      color: var(--color-primary, #0284C7);
+      transition: transform .25s;
+    }
+    details.faq-item[open] summary::after {
+      content: '−';
+    }
+    details.faq-item summary:hover {
+      background: #f5faf7;
+    }
+    .faq-item-body {
+      padding: 4px 20px 20px;
+      font-size: .95rem;
+      line-height: 1.7;
+      color: var(--text, #2d3b35);
+      border-top: 1px solid #e8f2ec;
+    }
+    .faq-item-body p { margin: 10px 0 0; }
+    .faq-item-body p:first-child { margin-top: 0; }
+    .faq-item-body a {
+      color: var(--color-primary, #0284C7);
+      text-decoration: underline;
+    }
+    .mida-teha {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #f0faf5;
+      border-left: 3px solid var(--color-primary, #0284C7);
+      border-radius: 0 6px 6px 0;
+      font-size: .9rem;
+    }
+
+    /* ── Disclaimer ── */
+    .faq-disclaimer {
+      margin-top: 40px;
+      padding: 18px 22px;
+      background: #f7f9f8;
+      border: 1px solid #dbe8e1;
+      border-radius: 8px;
+      font-size: .88rem;
+      color: #4a5e54;
+      line-height: 1.65;
+    }
+    .faq-disclaimer a { color: var(--color-primary, #0284C7); }
+
+    /* ── CTA banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, #1a3828 0%, #0f2218 100%);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .cta-banner-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-banner p {
+      color: rgba(242,245,245,.82);
+      font-size: 1.05rem;
+      margin: 0 0 8px;
+    }
+    .cta-banner .price { color: #c5a55a; font-weight: 700; }
+    .btn-gold {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 32px;
+      background: #c5a55a;
+      color: #1a2e1a;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity .15s;
+    }
+    .btn-gold:hover { opacity: .88; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      font-size: .85rem;
+      color: var(--text-muted, #4a6358);
+      margin-bottom: 14px;
+    }
+    .breadcrumb a { color: var(--color-primary, #0284C7); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+  </style>
+
+  <!-- Schema.org – Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TT24",
+    "url": "https://tt24.ee",
+    "@id": "https://tt24.ee/#organization"
+  }
+  </script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+#q { width:100%; padding:14px 16px; font-size:17px; font-family:var(--sans); border:1px solid var(--rule); background:var(--paper); color:var(--ink); outline:none; margin:10px 0 4px; }
+#q:focus { border-color:var(--accent); }
+#q-status { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--mute); margin:10px 0 18px; min-height:16px; }
+.sr { display:block; padding:18px 0; border-top:1px solid var(--rule); text-decoration:none; color:inherit; }
+.sr:last-child { border-bottom:1px solid var(--rule); }
+.sr:hover .sr-t { color:var(--accent); }
+.sr-c { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--mute); }
+.sr-t { font-family:var(--serif); font-size:20px; font-weight:500; color:var(--ink); margin:3px 0 5px; line-height:1.25; }
+.sr-x { font-size:14px; color:var(--ink-soft); line-height:1.55; margin:0; }
+.sr-x mark { background:rgba(0,102,204,0.16); color:inherit; padding:0 1px; }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) - blocked pending consent -->
+
+<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
+
+<!-- ═══════════════════════════════
+     NAVIGATION
+═══════════════════════════════ -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" />
+      <span class="brand-mark">TT24</span>
+      <span class="brand-tag">Töötervishoiu Teejuht</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüü" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="index.html#tooriistad">Tööriistad</a>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="muudatused.html">Muudatused</a>
+      <a href="korduma.html">KKK</a>
+      <a href="meist.html">Meist</a>
+      <a href="/otsing.html">Otsi</a>
+      <a href="pakkumine.html" class="nav-cta">Küsi pakkumist</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+<section class="section">
+  <div class="section-inner" style="max-width:760px;">
+    <p class="section-eyebrow">Otsing</p>
+    <h1 class="section-h" style="margin:0 0 8px;">Otsi saidilt</h1>
+    <p class="section-sub" style="margin:0 0 6px;">Sisestage markso&otilde;na &mdash; t&ouml;&ouml;riist, artikkel, sektor v&otilde;i linn.</p>
+    <input id="q" type="search" placeholder="Otsi..." autocomplete="off" aria-label="Otsi saidilt" autofocus>
+    <p id="q-status" role="status" aria-live="polite"></p>
+    <div id="results"></div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Sõltumatu Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="kalkulaator.html">Kalkulaator</a>
+      <a href="enesekontroll.html">Enesekontroll</a>
+      <a href="tervisetoetus.html">Tervisetoetus</a>
+      <a href="dokumendid.html">Dokumendid</a>
+    </div>
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="artiklid/index.html">Artiklid</a>
+      <a href="korduma.html">KKK</a>
+      <a href="muudatused.html">Muudatused</a>
+      <a href="meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="pakkumine.html">Küsi pakkumist</a>
+      <a href="avatud-uks.html">Küsige meilt</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="privaatsus.html">Privaatsus</a>
+  </div>
+</footer>
+
+<script>
+  // ─── Mobile nav toggle ───────────────────────────────────
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function() {
+      var isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  // Scroll shadow on sticky nav
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function () {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
+
+  // ─── FAQ search / filter ─────────────────────────────────
+  var faqSearch  = document.getElementById('faqSearch');
+  var noResults  = document.getElementById('faqNoResults');
+
+  if (faqSearch) {
+    faqSearch.addEventListener('input', function () {
+      var query = this.value.toLowerCase().trim();
+      var items  = document.querySelectorAll('details.faq-item');
+      var groups = document.querySelectorAll('.faq-group');
+      var total  = 0;
+
+      if (!query) {
+        items.forEach(function (el) {
+          el.style.display = '';
+          el.removeAttribute('open');
+        });
+        groups.forEach(function (g) { g.style.display = ''; });
+        noResults.style.display = 'none';
+        return;
+      }
+
+      items.forEach(function (item) {
+        var match = item.textContent.toLowerCase().includes(query);
+        item.style.display = match ? '' : 'none';
+        if (match) {
+          total++;
+          item.setAttribute('open', '');   // auto-expand matches
+        } else {
+          item.removeAttribute('open');
+        }
+      });
+
+      // Hide groups with no visible items
+      groups.forEach(function (g) {
+        var anyVisible = Array.prototype.some.call(
+          g.querySelectorAll('details.faq-item'),
+          function (i) { return i.style.display !== 'none'; }
+        );
+        g.style.display = anyVisible ? '' : 'none';
+      });
+
+      noResults.style.display = total === 0 ? 'block' : 'none';
+    });
+  }
+</script>
+<script>
+(function(){var m={};document.addEventListener('click',function(e){var k=e.target.tagName+'#'+e.target.id+'.'+e.target.className;var n=Date.now();if(!m[k])m[k]={c:0,t:0};if(n-m[k].t<1500){m[k].c++;if(m[k].c>=3)console.warn('Rage click:',k,e.target)}else{m[k].c=1}m[k].t=n});
+})();
+</script>
+<script>
+  var dd=document.getElementById("toolsDropdown");
+  if(dd){var btn=dd.querySelector(".nav-dropdown-toggle");
+  btn.addEventListener("click",function(e){e.stopPropagation();dd.classList.toggle("open");btn.setAttribute("aria-expanded",dd.classList.contains("open"))});
+  document.addEventListener("click",function(e){if(!dd.contains(e.target)){dd.classList.remove("open");btn.setAttribute("aria-expanded","false")}})}
+  </script>
+<!-- Cookie banner -->
+<div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A0A0A;color:#D4D4D4;padding:14px 20px;z-index:9999;font-family:var(--sans);font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #2A2A2A;">
+  <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privaatsuspoliitika</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Keeldun</button>
+    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">N&#245;ustun</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('tt24_cookie_consent');
+  if (!consent) {
+    var banner = document.getElementById('tt24-cookie-banner');
+    if (banner) banner.style.display = 'flex';
+    document.getElementById('tt24-consent-accept').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','accepted');
+      banner.style.display='none';
+      if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
+    });
+    document.getElementById('tt24-consent-decline').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','declined');
+      banner.style.display='none';
+    });
+  }
+})();
+</script>
+
+  <script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
+<script>
+/* active-nav: underline the current page's menu item */
+(function(){
+  var cur=location.pathname;if(cur.charAt(cur.length-1)==="/")cur+="index.html";
+  var art=/\/artiklid\//.test(cur);
+  document.querySelectorAll(".nav a").forEach(function(a){
+    if(a.classList.contains("nav-cta"))return;
+    var ap=a.pathname||"";if(ap.charAt(ap.length-1)==="/")ap+="index.html";
+    if(ap===cur||(art&&/\/artiklid\/index\.html$/.test(ap))){
+      a.setAttribute("aria-current","page");
+      a.style.textDecoration="underline";a.style.textDecorationColor="var(--accent,#0066CC)";
+      a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  var idx=null, q=document.getElementById('q'), st=document.getElementById('q-status'), out=document.getElementById('results');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function toks(s){return s.toLowerCase().split(/[^0-9a-zäöüõšž]+/i).filter(function(t){return t.length>=2;});}
+  function score(r,ts){var t=r.t.toLowerCase(),d=(r.d||'').toLowerCase(),h=(r.h||'').toLowerCase(),x=(r.x||'').toLowerCase(),sc=0;ts.forEach(function(k){if(t.indexOf(k)>=0)sc+=10;if(h.indexOf(k)>=0)sc+=4;if(d.indexOf(k)>=0)sc+=3;if(x.indexOf(k)>=0)sc+=1;});return sc;}
+  function exc(r,ts){var src=r.d||r.x||'',lc=src.toLowerCase(),pos=-1;for(var i=0;i<ts.length;i++){var p=lc.indexOf(ts[i]);if(p>=0){pos=p;break;}}var st0=Math.max(0,pos-50);var sn=(st0>0?'… ':'')+src.slice(st0,st0+160)+(src.length>st0+160?' …':'');sn=esc(sn);ts.forEach(function(k){sn=sn.replace(new RegExp('('+k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>');});return sn;}
+  function run(){if(!idx)return;var ts=toks(q.value.trim());if(!ts.length){out.innerHTML='';st.textContent='';return;}var res=idx.map(function(r){return{r:r,s:score(r,ts)};}).filter(function(o){return o.s>0;}).sort(function(a,b){return b.s-a.s;}).slice(0,25);st.textContent=res.length?(res.length+' '+(res.length===1?'tulemus':'tulemust')):'Tulemusi ei leitud';out.innerHTML=res.map(function(o){return '<a class="sr" href="/'+o.r.u+'"><span class="sr-c">'+o.r.c+'</span><div class="sr-t">'+esc(o.r.t)+'</div><p class="sr-x">'+exc(o.r,ts)+'</p></a>';}).join('');}
+  fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){idx=d;var p=new URLSearchParams(location.search).get('q');if(p){q.value=p;run();}});
+  var tm;q.addEventListener('input',function(){clearTimeout(tm);tm=setTimeout(run,120);});
+})();
+</script>
+</body>
+</html>
