@@ -58,7 +58,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
   "@context":"https://schema.org","@type":"WebSite",
   "name":"TT24","url":"https://tt24.ee/",
   "description":"Sõltumatu Eesti töötervishoiu portaal.",
-  "potentialAction":{"@type":"SearchAction","target":"https://tt24.ee/korduma.html","query-input":"required name=search_term_string"}
+  "potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tt24.ee/otsing.html?q={search_term_string}"},"query-input":"required name=search_term_string"}
 }
 </script>
 <script type="application/ld+json">
