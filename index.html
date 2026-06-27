@@ -144,7 +144,13 @@ html, body {
 .btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
 
 /* Section */
-.section { border-top:1px solid var(--rule); }
+.section { border-top:1px solid var(--rule); scroll-margin-top:84px; }
+/* On-this-page jump menu */
+.page-jump-bar { border-top:1px solid var(--rule); }
+.page-jump { max-width:1100px; margin:0 auto; padding:13px 32px; display:flex; flex-wrap:wrap; align-items:center; gap:9px 22px; font-family:var(--mono); font-size:12px; }
+.page-jump-label { color:var(--mute); letter-spacing:0.1em; text-transform:uppercase; }
+.page-jump a { color:var(--ink-soft); text-decoration:none; letter-spacing:0.03em; }
+.page-jump a:hover { color:var(--accent); }
 .section-inner { max-width:1100px; margin:0 auto; padding:52px 32px; }
 .section-inner-narrow { max-width:760px; margin:0 auto; padding:52px 32px; }
 .section-eyebrow { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin:0 0 22px; }
@@ -484,6 +490,19 @@ html, body {
 </section>
 
 <!-- Kust alustada · get-it-done action path -->
+<div class="page-jump-bar">
+  <nav class="page-jump" aria-label="Lehe sisukord">
+    <span class="page-jump-label">Sellel lehel</span>
+    <a href="#kuidas">Kust alustada</a>
+    <a href="#tooriistad">Tööriistad</a>
+    <a href="#muutunud">Muudatused</a>
+    <a href="#korduma">Korduma</a>
+    <a href="#juhised">Juhised</a>
+    <a href="#sektorid">Sektorid</a>
+    <a href="#linnad">Linnad</a>
+  </nav>
+</div>
+
 <section class="section" id="kuidas">
   <div class="section-inner">
     <p class="section-eyebrow">Kust alustada</p>
@@ -640,7 +659,7 @@ html, body {
 </section>
 
 <!-- FAQ preview -->
-<section class="section">
+<section class="section" id="korduma">
   <div class="section-inner">
     <p class="section-eyebrow">Korduma kippuvad küsimused</p>
     <h2 class="section-h">Kiired vastused</h2>
@@ -667,7 +686,7 @@ html, body {
 </section>
 
 <!-- Articles -->
-<section class="section">
+<section class="section" id="juhised">
   <div class="section-inner">
     <p class="section-eyebrow">Artiklid</p>
     <h2 class="section-h">Põhjalikud juhised</h2>
@@ -731,7 +750,7 @@ html, body {
 </section>
 
 <!-- Sectors -->
-<section class="section">
+<section class="section" id="sektorid">
   <div class="section-inner">
     <p class="section-eyebrow">Sektorid</p>
     <h2 class="section-h">Sektorispetsiifilised nõuded</h2>
@@ -807,7 +826,7 @@ html, body {
 </section>
 
 <!-- Regions -->
-<section class="section">
+<section class="section" id="linnad">
   <div class="section-inner">
     <p class="section-eyebrow">Piirkonnad</p>
     <h2 class="section-h">Töötervishoid Teie linnas</h2>
