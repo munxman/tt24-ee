@@ -77,5 +77,5 @@
 - [Korduma kippuvad küsimused](https://tt24.ee/korduma.html): Üle 30 selge vastuse töötervishoiu kohta — tervisekontroll, riskianalüüs, tööõnnetused, lepingud ja trahvid.
 - [Uus ettevõte — töötervishoiu kohustused](https://tt24.ee/uus-ettevote.html): Mida peab tegema esimese 30 päeva jooksul, millal sõlmida leping ja kuidas vältida trahve.
 - [Meist](https://tt24.ee/meist.html): TT24 on tasuta töötervishoiu portaal Eesti tööandjatele — kes me oleme ja kuidas saame aidata.
-- [Küsige pakkumist](https://tt24.ee/pakkumine.html): Küsige töötervishoiu teenuse pakkumist — täitke vorm ja võtame ühendust 24 tunni jooksul.
+- [Küsige pakkumist](https://tt24.ee/pakkumine.html): Küsige töötervishoiu teenuse pakkumist — täitke vorm ja võtame ühendust esimesel võimalusel.
 - [Privaatsuspoliitika](https://tt24.ee/privaatsus.html): TT24 privaatsuspoliitika — isikuandmete kogumine ja töötlemine vastavalt GDPR-ile.
