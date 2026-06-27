@@ -38,13 +38,13 @@ html, body {
 .hero {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 140px 32px 100px;
+  padding: 64px 32px 56px;
 }
 .hero-inner { max-width: 860px; }
 .dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 32px; }
 .dateline span { color:var(--accent); }
-.headline { font-family:var(--serif); font-size:clamp(46px, 6.5vw, 76px); line-height:1.04; letter-spacing:-0.025em; font-weight:500; color:var(--ink); margin:0 0 36px; }
-.standfirst { font-family:var(--serif); font-size:clamp(20px, 2vw, 26px); line-height:1.4; color:var(--ink-soft); font-weight:400; margin:0 0 48px; max-width:680px; }
+.headline { font-family:var(--serif); font-size:clamp(34px, 4.4vw, 50px); line-height:1.05; letter-spacing:-0.025em; font-weight:500; color:var(--ink); margin:0 0 22px; }
+.standfirst { font-family:var(--serif); font-size:clamp(18px, 1.6vw, 22px); line-height:1.45; color:var(--ink-soft); font-weight:400; margin:0 0 30px; max-width:680px; }
 .hero-cta-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 .btn-primary {
   display: inline-block;
@@ -73,11 +73,11 @@ html, body {
 
 /* Section */
 .section { border-top:1px solid var(--rule); }
-.section-inner { max-width:1100px; margin:0 auto; padding:96px 32px; }
-.section-inner-narrow { max-width:760px; margin:0 auto; padding:96px 32px; }
-.section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
-.section-h { font-family:var(--serif); font-size:clamp(28px, 3vw, 38px); line-height:1.16; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 18px; max-width:680px; }
-.section-sub { font-size:17px; line-height:1.55; color:var(--ink-soft); margin:0 0 36px; max-width:680px; }
+.section-inner { max-width:1100px; margin:0 auto; padding:52px 32px; }
+.section-inner-narrow { max-width:760px; margin:0 auto; padding:52px 32px; }
+.section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 12px; }
+.section-h { font-family:var(--serif); font-size:clamp(23px, 2.3vw, 30px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 12px; max-width:680px; }
+.section-sub { font-size:17px; line-height:1.55; color:var(--ink-soft); margin:0 0 24px; max-width:680px; }
 
 /* Tools catalog · three rows + extras */
 .catalog { margin-top: 0; }
@@ -326,8 +326,8 @@ html, body {
 @media (max-width:760px) {
   .topbar-inner { padding:18px 22px; flex-wrap:wrap; }
   .nav { gap:20px; font-size:14px; }
-  .hero { padding:80px 22px 64px; }
-  .section-inner, .section-inner-narrow { padding:64px 22px; }
+  .hero { padding:48px 22px 44px; }
+  .section-inner, .section-inner-narrow { padding:40px 22px; }
   .catalog-row { grid-template-columns: 80px 1fr; gap: 16px; padding: 28px 0; }
   .catalog-action { display: none; }
   .catalog-body { padding-right: 0; }
@@ -458,9 +458,9 @@ html, body {
 
 /* ===================== Subtle brand character (CSS-only, SEO/GEO-safe) ===================== */
 .topbar { border-top: 3px solid var(--accent); }
-.section-title::before { content: ""; display: block; width: 38px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 0 18px; }
+.section-title::before { content: ""; display: block; width: 38px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 0 10px; }
 .section-eyebrow { color: var(--accent); }
-.hero h1::after, .article-hero h1::after { content: ""; display: block; width: 56px; height: 3px; background: var(--accent); border-radius: 2px; margin: 22px 0 0; }
+.hero h1::after, .article-hero h1::after { content: ""; display: block; width: 56px; height: 3px; background: var(--accent); border-radius: 2px; margin: 12px 0 0; }
 
 /* ===================== Type unification =====================
    Forces the editorial type scale/family/colour over divergent per-page inline
@@ -468,7 +468,7 @@ html, body {
    content type (not layout). */
 .article-hero h1, .articles-hero h1, .page-hero h1,
 .hero--compact h1, .landing-hero h1 {
-  font-family: var(--serif) !important; font-size: clamp(34px, 5vw, 54px) !important;
+  font-family: var(--serif) !important; font-size: clamp(30px, 4.2vw, 46px) !important;
   font-weight: 500 !important; letter-spacing: -0.02em !important; line-height: 1.07 !important; color: var(--ink) !important;
 }
 /* Standalone (.hero--compact/.landing-hero) heroes: give the enlarged H1 a real
