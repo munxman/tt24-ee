@@ -76,7 +76,7 @@ html, body {
 .section-inner { max-width:1100px; margin:0 auto; padding:52px 32px; }
 .section-inner-narrow { max-width:760px; margin:0 auto; padding:52px 32px; }
 .section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 12px; }
-.section-h { font-family:var(--serif); font-size:clamp(23px, 2.3vw, 30px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 12px; max-width:680px; }
+.section-h { font-family:var(--serif); font-size:clamp(19px, 1.8vw, 24px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 12px; max-width:680px; }
 .section-sub { font-size:17px; line-height:1.55; color:var(--ink-soft); margin:0 0 24px; max-width:820px; }
 
 /* Tools catalog · three rows + extras */
@@ -484,7 +484,7 @@ html, body {
   text-transform: uppercase !important; color: var(--mute) !important;
 }
 .article-body h2, .articles-index-body h2 {
-  font-family: var(--serif) !important; font-size: clamp(24px, 3vw, 32px) !important;
+  font-family: var(--serif) !important; font-size: clamp(20px, 2.2vw, 25px) !important;
   font-weight: 500 !important; letter-spacing: -0.015em !important; line-height: 1.2 !important;
   color: var(--ink) !important; border-top: 0 !important; padding-top: 0 !important;
 }
