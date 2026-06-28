@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Töötervishoiu kulukalkulaator · TT24</title>
-<meta name="description" content="Arvutage töötervishoiu teenuse maksumus sekunditega. Valige töötajate arv ja valdkond. Näete kohest kulude jaotust kuus ja aastas ning trahviriski võrdlust. Tasuta kalkulaator Eesti tööandjatele.">
+<title>Occupational Health Cost Calculator · TT24</title>
+<meta name="description" content="Calculate your occupational health service costs in seconds. Select your number of employees and sector. See an instant breakdown of monthly and annual costs alongside the fine risk comparison. Free calculator for employers in Estonia.">
 <meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,68 +26,72 @@ function tt24LoadGA4() {
 if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4(); }
 </script>
 
-<link rel="canonical" href="https://tt24.ee/kalkulaator.html" />
+<link rel="canonical" href="https://tt24.ee/en/kalkulaator.html" />
 <link rel="alternate" hreflang="et" href="https://tt24.ee/kalkulaator.html" />
 <link rel="alternate" hreflang="en" href="https://tt24.ee/en/kalkulaator.html" />
 <link rel="alternate" hreflang="x-default" href="https://tt24.ee/kalkulaator.html" />
 
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://tt24.ee/kalkulaator.html" />
-<meta property="og:title" content="Töötervishoiu kulukalkulaator · TT24" />
-<meta property="og:description" content="Arvutage töötervishoiu teenuse maksumus sekunditega. Kohene kulude jaotus kuus ja aastas. Tasuta, ilma registreerimiseta." />
+<meta property="og:url" content="https://tt24.ee/en/kalkulaator.html" />
+<meta property="og:title" content="Occupational Health Cost Calculator · TT24" />
+<meta property="og:description" content="Calculate your occupational health service costs in seconds. Instant monthly and annual cost breakdown. Free, no registration required." />
 <meta property="og:image" content="https://tt24.ee/og-image.png" />
-<meta property="og:locale" content="et_EE" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="et_EE" />
 <meta property="og:site_name" content="TT24" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Töötervishoiu kulukalkulaator · TT24" />
-<meta name="twitter:description" content="Kui palju maksab töötervishoiuteenus Teie ettevõttele? Kohene vastus. Tasuta." />
+<meta name="twitter:title" content="Occupational Health Cost Calculator · TT24" />
+<meta name="twitter:description" content="How much does occupational health cost your company? Get an instant answer. Free." />
 
-<!-- Schema.org – BreadcrumbList -->
+<!-- Schema.org - BreadcrumbList -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "inLanguage": "en",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Avaleht", "item": "https://tt24.ee/" },
-    { "@type": "ListItem", "position": 2, "name": "Kulukalkulaator", "item": "https://tt24.ee/kalkulaator.html" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tt24.ee/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Cost Calculator", "item": "https://tt24.ee/en/kalkulaator.html" }
   ]
 }
 </script>
-<!-- Schema.org – SoftwareApplication -->
+<!-- Schema.org - SoftwareApplication -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Töötervishoiu kulukalkulaator",
+  "name": "Occupational Health Cost Calculator",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "url": "https://tt24.ee/kalkulaator.html",
-  "description": "Tasuta veebitööriist Eesti tööandjatele: sisestage töötajate arv ja valdkond ning saate kohe töötervishoiuteenuse kulude jaotuse kuus ja aastas ning trahviriski võrdluse.",
+  "url": "https://tt24.ee/en/kalkulaator.html",
+  "description": "Free web tool for employers in Estonia: enter your number of employees and sector and get an immediate breakdown of occupational health service costs per month and per year, together with a fine risk comparison.",
+  "inLanguage": "en",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "provider": { "@type": "Organization", "name": "TT24", "url": "https://tt24.ee" }
 }
 </script>
-<!-- Schema.org – FAQPage -->
+<!-- Schema.org - FAQPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Kui palju maksab töötervishoiuteenus töötaja kohta?",
+      "name": "How much does occupational health service cost per employee?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Töötervishoiuteenuse hind sõltub ettevõtte suurusest ja valdkonnast. Väikeettevõtetel kehtib enamasti miinimumpakett, kuna arsti töökulu on fikseeritud sõltumata töötajate arvust. Täpse hinna saamiseks küsige personaalset pakkumist."
+        "text": "The cost of occupational health service depends on the size and sector of your company. Small businesses are generally subject to a minimum package, because the occupational health physician's time is a fixed cost regardless of the number of employees. For an exact price, request a personalised quote."
       }
     },
     {
       "@type": "Question",
-      "name": "Kui suur on trahv töötervishoiu nõuete rikkumise eest?",
+      "name": "How large is the fine for breaching occupational health requirements?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Töötervishoiu ja tööohutuse nõuete rikkumise eest, kui sellega kaasnes oht töötaja tervisele või elule, on juriidilisele isikule maksimaalne rahatrahv kuni 32 000 eurot (TTOS § 27-1 kuni § 27-5 lõige 2); füüsilisele isikule, tööandjale või tema esindajale, kuni 300 trahviühikut. Iga rikkumine arvestatakse eraldi."
+        "text": "For breaching occupational health and safety requirements where this created a risk to an employee's health or life, the maximum fine for a legal person is up to €32,000 (TTOS § 27-1 to § 27-5 paragraph 2); for a natural person, employer, or their representative, up to 300 fine units. Each violation is counted separately."
       }
     }
   ]
@@ -359,24 +363,23 @@ html, body {
 </head>
 <body>
 
-<a href="#main" class="skip-link">Hüppa põhisisule</a>
+<a href="#main" class="skip-link">Skip to main content</a>
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="index.html" class="brand">
-      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" />
-      <span class="brand-text"><span class="brand-mark">TT24</span><span class="brand-tag">Töötervishoiu Teejuht</span></span>
-    </a>
-    <button class="nav-toggle" aria-label="Menüü" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav" aria-label="Peamenüü">
-      <a href="tooriistad.html">Tööriistad</a>
-      <a href="artiklid/index.html">Artiklid</a>
-      <a href="muudatused.html">Muudatused</a>
-      <a href="korduma.html">KKK</a>
-      <a href="meist.html">Meist</a>
-      <a href="/otsing.html">Otsi</a>
-      <span class="lang-switch" style="font-family:var(--mono);font-size:12px;letter-spacing:0.06em;display:inline-flex;gap:7px;align-items:baseline;"><span aria-current="true" style="color:var(--accent);font-weight:600;">ET</span><a href="en/kalkulaator.html" hreflang="en" style="color:var(--mute);text-decoration:none;">EN</a></span>
-      <a href="pakkumine.html" class="nav-cta">Küsi pakkumist</a>
+    <a href="index.html"
+      <span class="brand-text"><span class="brand-mark">TT24</span><span class="brand-tag">Occupational Health Guide</span></span>
+    > class="brand">
+      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" /</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="tooriistad.html">Tools</a>
+      <a href="artiklid/index.html">Articles</a>
+      <a href="muudatused.html">Updates</a>
+      <a href="korduma.html">FAQ</a>
+      <a href="meist.html">About</a>
+      <span class="lang-switch" style="font-family:var(--mono);font-size:12px;letter-spacing:0.06em;display:inline-flex;gap:7px;align-items:baseline;"><a href="../kalkulaator.html" hreflang="et" style="color:var(--mute);text-decoration:none;">ET</a><span aria-current="true" style="color:var(--accent);font-weight:600;">EN</span></span>
+      <a href="pakkumine.html" class="nav-cta">Request a quote</a>
     </nav>
   </div>
 </header>
@@ -385,60 +388,60 @@ html, body {
 
 <!-- Intro -->
 <section class="intro">
-  <p class="dateline">TT24 › Kalkulaator</p>
-  <h1 class="headline">Kui palju maksab töötervishoiuteenus?</h1>
-  <p class="standfirst">Valige töötajate arv ja tegevusvaldkond.<br>Näete kohe orienteeruvat hinda kuus ja aastas ning võrdlust trahviriskiga.</p>
+  <p class="dateline">TT24 › Calculator</p>
+  <h1 class="headline">How much does occupational health cost?</h1>
+  <p class="standfirst">Select your number of employees and sector.<br>You will immediately see an indicative monthly and annual cost alongside a comparison with the fine risk.</p>
 </section>
 
 <!-- Calculator -->
 <section class="section" id="kalkulaator">
   <div class="section-inner-wide">
-    <p class="section-eyebrow">Sisestage andmed</p>
-    <h2 class="section-h">Teie orienteeruv kulu</h2>
-    <p class="section-sub">Valige ettevõtte suurus ja valdkond. Tulemus uueneb kohe. Arvutus on orienteeruv ega kohusta millekski.</p>
+    <p class="section-eyebrow">Enter your details</p>
+    <h2 class="section-h">Your indicative cost</h2>
+    <p class="section-sub">Select your company size and sector. The result updates immediately. The calculation is indicative and does not commit you to anything.</p>
 
     <div class="calc-layout">
 
       <!-- Inputs -->
       <div>
         <div class="calc-field">
-          <label class="calc-flabel" for="empNumber">Mitu töötajat on Teie ettevõttes?</label>
+          <label class="calc-flabel" for="empNumber">How many employees does your company have?</label>
           <select id="empNumber" name="tootajad" class="calc-select" required>
-            <option value="5">1–10 töötajat</option>
-            <option value="18" selected>11–25 töötajat</option>
-            <option value="38">26–50 töötajat</option>
-            <option value="75">51–100 töötajat</option>
-            <option value="150">100+ töötajat</option>
+            <option value="5">1-10 employees</option>
+            <option value="18" selected>11-25 employees</option>
+            <option value="38">26-50 employees</option>
+            <option value="75">51-100 employees</option>
+            <option value="150">100+ employees</option>
           </select>
         </div>
 
         <div class="calc-field">
-          <label class="calc-flabel">Tegevusvaldkond</label>
-          <div class="sector-pills" role="radiogroup" aria-label="Tegevusvaldkond">
-            <label class="sector-pill active"><input type="radio" name="sector" value="kontor" checked>Kontor / IT</label>
-            <label class="sector-pill"><input type="radio" name="sector" value="kaubandus">Kaubandus / teenindus</label>
-            <label class="sector-pill"><input type="radio" name="sector" value="tootmine">Tootmine / ladu</label>
-            <label class="sector-pill"><input type="radio" name="sector" value="ehitus">Ehitus</label>
+          <label class="calc-flabel">Sector</label>
+          <div class="sector-pills" role="radiogroup" aria-label="Sector">
+            <label class="sector-pill active"><input type="radio" name="sector" value="kontor" checked>Office / IT</label>
+            <label class="sector-pill"><input type="radio" name="sector" value="kaubandus">Retail / services</label>
+            <label class="sector-pill"><input type="radio" name="sector" value="tootmine">Manufacturing / warehousing</label>
+            <label class="sector-pill"><input type="radio" name="sector" value="ehitus">Construction</label>
             <label class="sector-pill"><input type="radio" name="sector" value="transport">Transport</label>
-            <label class="sector-pill"><input type="radio" name="sector" value="tervishoid">Tervishoid</label>
-            <label class="sector-pill"><input type="radio" name="sector" value="toidu">Toitlustus</label>
-            <label class="sector-pill"><input type="radio" name="sector" value="muu">Muu</label>
+            <label class="sector-pill"><input type="radio" name="sector" value="tervishoid">Healthcare</label>
+            <label class="sector-pill"><input type="radio" name="sector" value="toidu">Food &amp; catering</label>
+            <label class="sector-pill"><input type="radio" name="sector" value="muu">Other</label>
           </div>
-          <p class="calc-hint">Mõjutab tervisekontrollide sagedust ja täpset hinda.</p>
+          <p class="calc-hint">Affects the frequency of health checks and the exact cost.</p>
         </div>
 
         <div class="calc-field">
-          <label class="calc-flabel">Kas Teil on alaealisi töötajaid?</label>
-          <div class="sector-pills" role="radiogroup" aria-label="Alaealised töötajad">
-            <label class="sector-pill" id="minors_no_label"><input type="radio" name="minors" value="no" checked>Ei</label>
-            <label class="sector-pill" id="minors_yes_label"><input type="radio" name="minors" value="yes">Jah, on alaealisi</label>
+          <label class="calc-flabel">Do you employ any minors?</label>
+          <div class="sector-pills" role="radiogroup" aria-label="Minor employees">
+            <label class="sector-pill" id="minors_no_label"><input type="radio" name="minors" value="no" checked>No</label>
+            <label class="sector-pill" id="minors_yes_label"><input type="radio" name="minors" value="yes">Yes, we have minors</label>
           </div>
-          <p class="calc-hint">Alla 18-aastased nõuavad iga-aastast kontrolli.</p>
+          <p class="calc-hint">Employees under 18 require an annual health check.</p>
         </div>
 
         <div class="urgency">
-          <strong>Tööinspektsioon teostab järelevalvet</strong>
-          Tööinspektsioon kontrollib töötervishoiu nõuete täitmist ettevõtetes. Rikkumise korral, kui sellega kaasnes oht töötaja tervisele või elule, on juriidilisele isikule maksimaalne rahatrahv kuni 32 000 eurot (TTOS § 27-1 kuni § 27-5 lõige 2); füüsilisele isikule kuni 300 trahviühikut.
+          <strong>The Labour Inspectorate carries out supervision</strong>
+          The Labour Inspectorate (Tööinspektsioon) monitors compliance with occupational health requirements. Where a breach has created a risk to an employee's health or life, the maximum fine for a legal person is up to €32,000 (TTOS § 27-1 to § 27-5 paragraph 2); for a natural person, up to 300 fine units.
         </div>
       </div>
 
@@ -447,61 +450,61 @@ html, body {
         <div id="resultCard">
           <div class="result-head">
             <div>
-              <p class="result-title">Teie investeering töötervishoidu</p>
-              <p class="result-sub" id="resultSubtitle">10 töötajat · Kontor / IT</p>
+              <p class="result-title">Your occupational health investment</p>
+              <p class="result-sub" id="resultSubtitle">10 employees · Office / IT</p>
             </div>
-            <span class="badge badge--success" id="riskBadge">Madal risk</span>
+            <span class="badge badge--success" id="riskBadge">Low risk</span>
           </div>
 
           <div class="kalk-metrics">
             <div class="kalk-metric kalk-metric--primary">
-              <p class="kalk-metric__lbl">Kuus</p>
+              <p class="kalk-metric__lbl">Per month</p>
               <p class="kalk-metric__val" id="metricMonthly">€120</p>
-              <p class="kalk-metric__sub" id="metricPerEmp">€12 / töötaja</p>
+              <p class="kalk-metric__sub" id="metricPerEmp">€12 / employee</p>
             </div>
             <div class="kalk-metric">
-              <p class="kalk-metric__lbl">Aastas</p>
+              <p class="kalk-metric__lbl">Per year</p>
               <p class="kalk-metric__val" id="metricAnnual">€1 440</p>
-              <p class="kalk-metric__sub">teenuse kulu kokku</p>
+              <p class="kalk-metric__sub">total service cost</p>
             </div>
             <div class="kalk-metric">
-              <p class="kalk-metric__lbl">Kontrollide sagedus</p>
-              <p class="kalk-metric__val" id="metricFreq">3 a</p>
-              <p class="kalk-metric__sub">perioodiline kontroll</p>
+              <p class="kalk-metric__lbl">Check frequency</p>
+              <p class="kalk-metric__val" id="metricFreq">3 yr</p>
+              <p class="kalk-metric__sub">periodic health check</p>
             </div>
             <div class="kalk-metric">
-              <p class="kalk-metric__lbl">Trahvirisk</p>
-              <p class="kalk-metric__val" id="metricFine">Kuni 32 000 €</p>
-              <p class="kalk-metric__sub">juriidilisele isikule (TTOS § 27-1 kuni § 27-5 lõige 2)</p>
+              <p class="kalk-metric__lbl">Fine risk</p>
+              <p class="kalk-metric__val" id="metricFine">Up to €32,000</p>
+              <p class="kalk-metric__sub">for a legal person (TTOS § 27-1 to § 27-5 paragraph 2)</p>
             </div>
           </div>
 
           <div class="ratio-wrap">
-            <p class="ratio-caption" id="ratioCaption">Teenuse aastakulu on enamasti tunduvalt väiksem kui rikkumisega kaasnev rahatrahv ja muu kahju.</p>
+            <p class="ratio-caption" id="ratioCaption">The annual cost of the service is generally far lower than the fines and other losses that follow a breach.</p>
           </div>
 
-          <p class="kalk-incl-head">Hinnas sisaldub</p>
+          <p class="kalk-incl-head">Included in the price</p>
           <div id="includesList"><!-- filled by JS --></div>
 
           <!-- Email gate (primary, low-friction capture) -->
           <div class="tt24-calc-gate" id="calcGate">
             <div class="tt24-calc-gate-form-wrap">
-              <h4>Saatke arvutus oma e-postile</h4>
-              <p>Jätke oma e-posti aadress ja võtame Teiega ühendust.</p>
+              <h4>Send the calculation to your e-mail</h4>
+              <p>Leave your e-mail address and we will be in touch.</p>
               <form class="tt24-calc-gate-form" id="calcGateForm" onsubmit="return tt24SubmitCalcGate(event)">
-                <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
-                <button type="submit">Saada</button>
+                <input type="email" name="email" required placeholder="you@yourcompany.com" autocomplete="email" aria-label="E-mail address">
+                <button type="submit">Send</button>
               </form>
-              <p class="tt24-calc-gate-privacy">Andmeid kasutame ainult Teile arvutuse edastamiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
+              <p class="tt24-calc-gate-privacy">We use your details solely to send you the calculation. We do not share them with third parties. <a href="privaatsus.html">Privacy policy</a></p>
             </div>
             <div class="tt24-calc-gate-success">
-              <p>Aitäh. Võtame Teiega esimesel võimalusel ühendust.</p>
+              <p>Thank you. We will be in touch as soon as possible.</p>
             </div>
           </div>
 
           <!-- Secondary: ready-to-buy path -->
-          <a href="pakkumine.html" class="kalk-cta" aria-label="Küsin pakkumist">Küsin pakkumist</a>
-          <p class="kalk-cta-meta">Olete valmis? Küsige personaalset pakkumist. Vastame esimesel võimalusel, ei kohusta millekski.</p>
+          <a href="pakkumine.html" class="kalk-cta" aria-label="Request a quote">Request a quote</a>
+          <p class="kalk-cta-meta">Ready to proceed? Request a personalised quote. We respond promptly and there is no obligation.</p>
 
         </div>
       </div>
@@ -513,40 +516,40 @@ html, body {
 <!-- Comparison -->
 <section class="section">
   <div class="section-inner-wide">
-    <p class="section-eyebrow">Riskianalüüs</p>
-    <h2 class="section-h">Teenus võrreldes trahviriskiga</h2>
-    <p class="section-sub">Kumb on kallim, seaduse täitmine või rikkumine?</p>
+    <p class="section-eyebrow">Risk analysis</p>
+    <h2 class="section-h">Service cost versus the fine risk</h2>
+    <p class="section-sub">Which is more expensive: compliance or non-compliance?</p>
 
     <div class="compare-grid">
       <div class="compare-col">
-        <p class="compare-tag">Teenusega kaetud</p>
-        <p class="compare-amount" id="compareServiceAnnual">€1 440 / aastas</p>
-        <p class="compare-note"><span id="compareEmpRange">11–25</span> töötajaga ettevõttele</p>
+        <p class="compare-tag">Covered by the service</p>
+        <p class="compare-amount" id="compareServiceAnnual">€1 440 / year</p>
+        <p class="compare-note">for a company with <span id="compareEmpRange">11-25</span> employees</p>
         <ul class="compare-list">
-          <li>Töötervishoiuarsti konsultatsioon</li>
-          <li>Kõik perioodilised tervisekontrollid</li>
-          <li>Riskianalüüsi koostamine</li>
-          <li>Töötajate teavitamine ja koolitus</li>
-          <li>Dokumentatsioon ja aruandlus</li>
-          <li>Iga-aastane ülevaatus</li>
+          <li>Occupational health physician consultation</li>
+          <li>All periodic health checks</li>
+          <li>Risk assessment preparation</li>
+          <li>Employee information and training</li>
+          <li>Documentation and reporting</li>
+          <li>Annual review</li>
         </ul>
       </div>
       <div class="compare-col">
-        <p class="compare-tag">Trahviriski korral</p>
-        <p class="compare-amount">Kuni 32 000 €</p>
-        <p class="compare-note">Töötervishoiu ja tööohutuse nõuete rikkumise eest, kui sellega kaasnes oht töötaja tervisele või elule, on juriidilisele isikule maksimaalne rahatrahv kuni 32 000 eurot (TTOS § 27-1 kuni § 27-5 lõige 2); füüsilisele isikule kuni 300 trahviühikut.
+        <p class="compare-tag">In the event of a fine</p>
+        <p class="compare-amount">Up to €32,000</p>
+        <p class="compare-note">For breaching occupational health and safety requirements where this created a risk to an employee's health or life, the maximum fine for a legal person is up to €32,000 (TTOS § 27-1 to § 27-5 paragraph 2); for a natural person, up to 300 fine units.</p>
         <ul class="compare-list">
-          <li>Iga rikkumine on eraldi trahv</li>
-          <li>Korduvrikkumised kumuleeruvad</li>
-          <li>Tegevuse peatamine võimalik</li>
-          <li>Maine kahjustus ja töötajate usalduse kadu</li>
-          <li>Tsiviilõiguslik vastutus vigastuste puhul</li>
+          <li>Each violation is a separate fine</li>
+          <li>Repeat violations accumulate</li>
+          <li>Business suspension is possible</li>
+          <li>Reputational damage and loss of employee trust</li>
+          <li>Civil liability in the event of injury</li>
         </ul>
       </div>
     </div>
 
     <div class="note-block">
-      <strong>Tulemus on orienteeruv.</strong> Täpne hind sõltub Teie ettevõtte spetsiifikast, riskianalüüsi tulemustest ja töötajate tervisekontrolli vajadustest. <a href="pakkumine.html">Küsige personaalset pakkumist</a> või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.
+      <strong>This result is indicative.</strong> The exact cost depends on the specifics of your company, the outcome of the risk assessment, and the health check needs of your employees. <a href="pakkumine.html">Request a personalised quote</a> or write to <a href="mailto:info@tt24.ee">info@tt24.ee</a>.
     </div>
   </div>
 </section>
@@ -554,42 +557,42 @@ html, body {
 <!-- What's included -->
 <section class="section">
   <div class="section-inner">
-    <p class="section-eyebrow">Teenuse sisu</p>
-    <h2 class="section-h">Mida töötervishoiuteenus sisaldab</h2>
-    <p class="section-sub">Täisteenuse pakett hõlmab peamisi seadusjärgseid kohustusi.</p>
+    <p class="section-eyebrow">Service contents</p>
+    <h2 class="section-h">What occupational health service includes</h2>
+    <p class="section-sub">A full-service package covers the main statutory obligations.</p>
 
     <div class="catalog">
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">01 / Esmane kontroll</span>Esmane tervisekontroll</h3>
-        <div class="catalog-body"><p>Enne tööle asumist. Hindab töötaja sobivust ametikohale.</p></div>
+        <h3 class="catalog-h"><span class="num">01 / Pre-employment</span>Pre-employment health check</h3>
+        <div class="catalog-body"><p>Before the employee starts work. Assesses the employee's suitability for the role.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">02 / Perioodiline</span>Perioodiline tervisekontroll</h3>
-        <div class="catalog-body"><p>Regulaarselt vastavalt riskitasemele, 1–3 aasta tagant.</p></div>
+        <h3 class="catalog-h"><span class="num">02 / Periodic</span>Periodic health check</h3>
+        <div class="catalog-body"><p>At regular intervals according to the risk level, every 1-3 years.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">03 / Riskianalüüs</span>Riskianalüüs</h3>
-        <div class="catalog-body"><p>Töökeskkonna riskide kaardistamine ja hindamine.</p></div>
+        <h3 class="catalog-h"><span class="num">03 / Risk assessment</span>Risk assessment</h3>
+        <div class="catalog-body"><p>Mapping and evaluation of workplace risks.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">04 / Dokumentatsioon</span>Tervisekontrolli toimikud</h3>
-        <div class="catalog-body"><p>Kõik dokumendid korras, Tööinspektsiooni kontrolliks valmis.</p></div>
+        <h3 class="catalog-h"><span class="num">04 / Documentation</span>Health check files</h3>
+        <div class="catalog-body"><p>All records in order and ready for a Labour Inspectorate audit.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">05 / Teavitamine</span>Töötajate teavitamine</h3>
-        <div class="catalog-body"><p>Infomaterjalid ja koolitusdokumentatsioon.</p></div>
+        <h3 class="catalog-h"><span class="num">05 / Information</span>Employee information</h3>
+        <div class="catalog-body"><p>Information materials and training documentation.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">06 / Konsultatsioon</span>Konsultatsioon tööandjale</h3>
-        <div class="catalog-body"><p>Küsimuste ja probleemide lahendamine operatiivselt.</p></div>
+        <h3 class="catalog-h"><span class="num">06 / Consultation</span>Employer consultation</h3>
+        <div class="catalog-body"><p>Prompt handling of questions and issues.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">07 / Alaealised</span>Alaealiste erirežiim</h3>
-        <div class="catalog-body"><p>Iga-aastane kohustuslik kontroll alla 18-aastastele.</p></div>
+        <h3 class="catalog-h"><span class="num">07 / Minors</span>Special rules for minors</h3>
+        <div class="catalog-body"><p>Mandatory annual check for employees under 18.</p></div>
       </div>
       <div class="catalog-row">
-        <h3 class="catalog-h"><span class="num">08 / Reageerimisaeg</span>Kiire reageerimisaeg</h3>
-        <div class="catalog-body"><p>Esmane tervisekontroll korraldatav ühe nädala jooksul.</p></div>
+        <h3 class="catalog-h"><span class="num">08 / Response time</span>Fast response time</h3>
+        <div class="catalog-body"><p>Pre-employment health check can be arranged within one week.</p></div>
       </div>
     </div>
   </div>
@@ -598,48 +601,48 @@ html, body {
 <!-- Provider context -->
 <section class="section">
   <div class="section-inner">
-    <p class="section-eyebrow">Teenusepakkujad</p>
-    <h2 class="section-h">Kes teenust osutab</h2>
-    <p class="section-sub">Eestis pakuvad töötervishoiuteenust mitmed ettevõtted, sealhulgas Medicum, Meliva, Confido, City Tervisekliinik, HeBa ja teised.</p>
+    <p class="section-eyebrow">Service providers</p>
+    <h2 class="section-h">Who provides the service</h2>
+    <p class="section-sub">Occupational health services in Estonia are provided by a number of companies, including Medicum, Meliva, Confido, City Tervisekliinik, HeBa, and others.</p>
 
     <div class="provider-card">
-      <p class="provider-eyebrow">TT24 koostööpartner</p>
+      <p class="provider-eyebrow">TT24 partner</p>
       <h3><a href="https://www.valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a></h3>
-      <p>Valvekliinik on TT24 koostööpartner ja Dr Ingmar Lindströmi kaasasutatud kliinik. Avatud kuus päeva nädalas, sealhulgas õhtuti ja pühade ajal. Vastuvõtud saadaval samal päeval.</p>
-      <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Küsin pakkumist</a>
+      <p>Valvekliinik is TT24's partner clinic and was co-founded by Dr Ingmar Lindström. Open six days a week, including evenings and public holidays. Same-day appointments available.</p>
+      <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Request a quote</a>
     </div>
 
-    <p class="provider-note">Nimekiri ei ole ammendav. Teenusepakkuja saate valida ise.</p>
+    <p class="provider-note">This list is not exhaustive. You are free to choose your own provider.</p>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="section">
   <div class="section-inner">
-    <p class="section-eyebrow">Korduma kippuvad küsimused</p>
-    <h2 class="section-h">Üksikasjad</h2>
+    <p class="section-eyebrow">Frequently asked questions</p>
+    <h2 class="section-h">Details</h2>
 
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Millest töötervishoiuteenuse hind koosneb?</summary>
-        <div class="answer">Hind katab töötervishoiuarsti konsultatsiooni, tervisekontrollide korraldamise, dokumentatsiooni ja tööandja nõustamise. Väikeettevõtetel kehtib enamasti minimaalne kuumäär, kuna arsti töökulu on fikseeritud sõltumata töötajate arvust. Täpse hinna saamiseks küsige personaalset pakkumist.</div>
+        <summary>What does the cost of occupational health service consist of?</summary>
+        <div class="answer">The cost covers the occupational health physician's consultation, the organisation of health checks, documentation, and employer advisory services. Small businesses are generally subject to a minimum monthly fee, because the physician's time is a fixed cost regardless of the number of employees. For an exact price, request a personalised quote.</div>
       </details>
       <details class="faq-item">
-        <summary>Kas pean tasuma iga töötaja tervisekontrolli eest eraldi?</summary>
-        <div class="answer">Paketihinnaga teenuses sisalduvad perioodilised kontrollid tavaliselt kindla arvu töötajate kohta aastas. Täpse sisu määrab leping. Kõik seadusjärgsed kontrollid on tööandja kohustus ja kulu. Töötaja ei maksa nende eest.</div>
+        <summary>Do I pay separately for each employee's health check?</summary>
+        <div class="answer">Under a package-price service, periodic health checks are typically included for a set number of employees per year. The precise scope is set out in the contract. All statutory checks are the employer's obligation and cost. Employees pay nothing.</div>
       </details>
       <details class="faq-item">
-        <summary>Kas 1–5 töötajaga ettevõte peab ka teenuse ostma?</summary>
-        <div class="answer">Jah. TTOS § 12 kohaselt on iga tööandja kohustatud korraldama töötervishoiuteenuste osutamist, sõltumata töötajate arvust. Praktikas toimub see töötervishoiuteenuse osutajaga lepingu sõlmimisega. Isegi ühe töötajaga ettevõte peab töötervishoiu teenuse korraldama.</div>
+        <summary>Does a company with 1-5 employees also need to purchase the service?</summary>
+        <div class="answer">Yes. Under TTOS § 12, every employer is obliged to arrange the provision of occupational health services, regardless of the number of employees. In practice, this means concluding a contract with an occupational health service provider. Even a company with a single employee must arrange occupational health services.</div>
       </details>
       <details class="faq-item">
-        <summary>Millal tuleb trahv ja kui suur see olla võib?</summary>
-        <div class="answer">Trahvi võib määrata, kui Tööinspektsiooni kontroll tuvastab rikkumise, näiteks puudub töötervishoiuteenuse leping, riskianalüüs pole tehtud või töötajad pole kontrollis käinud. Töötervishoiu ja tööohutuse nõuete rikkumise eest, kui sellega kaasnes oht töötaja tervisele või elule, on juriidilisele isikule maksimaalne rahatrahv kuni 32 000 eurot (TTOS § 27-1 kuni § 27-5 lõige 2); füüsilisele isikule, tööandjale või tema esindajale, kuni 300 trahviühikut. Iga rikkumine arvestatakse eraldi.</div>
+        <summary>When is a fine issued, and how large can it be?</summary>
+        <div class="answer">A fine may be imposed when a Labour Inspectorate inspection identifies a breach - for example, there is no occupational health service contract, no risk assessment has been carried out, or employees have not attended their health checks. For breaching occupational health and safety requirements where this created a risk to an employee's health or life, the maximum fine for a legal person is up to €32,000 (TTOS § 27-1 to § 27-5 paragraph 2); for a natural person, employer, or their representative, up to 300 fine units. Each violation is counted separately.</div>
       </details>
     </div>
 
     <div style="text-align:left; margin-top:32px;">
-      <a href="korduma.html" class="prose" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); font-size:15px;">Vaadake kõiki küsimusi</a>
+      <a href="korduma.html" class="prose" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); font-size:15px;">See all questions</a>
     </div>
   </div>
 </section>
@@ -647,36 +650,36 @@ html, body {
 <!-- Related -->
 <section class="section">
   <div class="section-inner">
-    <p class="section-eyebrow">Kasulikud artiklid</p>
-    <h2 class="section-h">Lisalugemist</h2>
+    <p class="section-eyebrow">Useful articles</p>
+    <h2 class="section-h">Further reading</h2>
 
     <div class="related-grid">
       <a class="related-row" href="artiklid/tootervishoid-hind.html">
-        <span class="related-tag">Artikkel</span>
+        <span class="related-tag">Article</span>
         <div>
-          <h3 class="related-title">Töötervishoiu teenuse hind</h3>
-          <p class="related-desc">Hinnavahemikud ja kulude selgitus.</p>
+          <h3 class="related-title">Occupational health service costs (in Estonian)</h3>
+          <p class="related-desc">Price ranges and a breakdown of costs.</p>
         </div>
       </a>
-      <a class="related-row" href="artiklid/teenusepakkujate-vordlus.html">
-        <span class="related-tag">Artikkel</span>
+      <a class="related-row" href="/artiklid/teenusepakkujate-vordlus.html">
+        <span class="related-tag">Article</span>
         <div>
-          <h3 class="related-title">Teenusepakkujate võrdlus 2026</h3>
-          <p class="related-desc">Hinnad ja tingimused eri pakkujatel.</p>
+          <h3 class="related-title">Provider comparison 2026 (in Estonian)</h3>
+          <p class="related-desc">Prices and terms across different providers.</p>
         </div>
       </a>
       <a class="related-row" href="tervisetoetus.html">
-        <span class="related-tag">Tööriist</span>
+        <span class="related-tag">Tool</span>
         <div>
-          <h3 class="related-title">400 € maksuvaba tervisetoetus</h3>
-          <p class="related-desc">Maksuvaba ruum hüvedele. See on kohustusliku TTH kulu väline.</p>
+          <h3 class="related-title">€400 tax-free health benefit</h3>
+          <p class="related-desc">Tax-free allowance for employee benefits. This is separate from mandatory occupational health costs.</p>
         </div>
       </a>
       <a class="related-row" href="artiklid/vaikeettevote-kohustused.html">
-        <span class="related-tag">Artikkel</span>
+        <span class="related-tag">Article</span>
         <div>
-          <h3 class="related-title">Kohustused väikeettevõttele</h3>
-          <p class="related-desc">Mis kehtib 1–9 töötajaga ettevõttele.</p>
+          <h3 class="related-title">Obligations for small businesses</h3>
+          <p class="related-desc">What applies to a company with 1-9 employees.</p>
         </div>
       </a>
     </div>
@@ -688,10 +691,10 @@ html, body {
 <!-- CTA -->
 <section class="cta-strip">
   <div class="cta-inner">
-    <p class="section-eyebrow">Edasi</p>
-    <h2>Vajate professionaalset töötervishoiuteenust?</h2>
-    <p>Küsige personaalset pakkumist. Vastame esimesel võimalusel, kõik dokumendid korras.</p>
-    <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Küsin pakkumist</a>
+    <p class="section-eyebrow">Next step</p>
+    <h2>Do you need a professional occupational health service?</h2>
+    <p>Request a personalised quote. We respond promptly and will have all your documentation in order.</p>
+    <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Request a quote</a>
   </div>
 </section>
 
@@ -700,34 +703,34 @@ html, body {
   <div class="foot-inner">
     <div>
       <a href="index.html" class="foot-brand">TT24</a>
-      <p class="foot-desc">Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
+      <p class="foot-desc">Estonia's occupational health portal. Free tools, guidance, and calculators for meeting TTOS requirements.</p>
     </div>
     <div class="foot-col">
-      <h4>Tööriistad</h4>
-      <a href="kontrollnimekiri.html">Kontrollnimekiri</a>
-      <a href="kalkulaator.html">Kalkulaator</a>
-      <a href="enesekontroll.html">Enesekontroll</a>
-      <a href="tervisetoetus.html">Tervisetoetus</a>
-      <a href="dokumendid.html">Dokumendid</a>
+      <h4>Tools</h4>
+      <a href="kontrollnimekiri.html">Checklist</a>
+      <a href="kalkulaator.html">Calculator</a>
+      <a href="enesekontroll.html">Self-assessment</a>
+      <a href="tervisetoetus.html">Health benefit</a>
+      <a href="dokumendid.html">Documents</a>
     </div>
     <div class="foot-col">
-      <h4>Sisu</h4>
-      <a href="artiklid/index.html">Artiklid</a>
-      <a href="korduma.html">KKK</a>
-      <a href="ajakava.html">Ajakava</a>
-      <a href="meist.html">Meist</a>
+      <h4>Content</h4>
+      <a href="artiklid/index.html">Articles</a>
+      <a href="korduma.html">FAQ</a>
+      <a href="ajakava.html">Timeline</a>
+      <a href="meist.html">About</a>
     </div>
     <div class="foot-col">
-      <h4>Kontakt</h4>
+      <h4>Contact</h4>
       <a href="mailto:info@tt24.ee">info@tt24.ee</a>
       <a href="tel:+37259110909">+372 5 911 0909</a>
-      <a href="pakkumine.html">Küsi pakkumist</a>
-      <a href="avatud-uks.html">Küsige meilt</a>
+      <a href="pakkumine.html">Request a quote</a>
+      <a href="avatud-uks.html">Ask us anything</a>
     </div>
   </div>
   <div class="foot-bottom">
     <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
-    <a href="privaatsus.html">Privaatsus</a>
+    <a href="privaatsus.html">Privacy</a>
   </div>
 </footer>
 
@@ -747,14 +750,14 @@ document.querySelectorAll('.sector-pill').forEach(function (pill) {
 
 // ─── Pricing model ───────────────────────────────────────
 var SECTOR_DATA = {
-  kontor:    { label: 'Kontor / IT',          risk: 'Madal',     riskClass: 'badge--success',  freq: '3 a',  multiplier: 1.0,  includes: ['Perioodiline tervisekontroll (iga 3 a)', 'Kuvariga töö kontroll', 'Riskianalüüs', 'Töötervishoiuarsti konsultatsioon'] },
-  kaubandus: { label: 'Kaubandus / teenindus', risk: 'Keskmine',  riskClass: 'badge--warning',  freq: '2–3 a', multiplier: 1.1, includes: ['Perioodiline tervisekontroll', 'Lihaste-skeleti hindamine', 'Riskianalüüs', 'Teavitamisdokumendid'] },
-  tootmine:  { label: 'Tootmine / ladu',       risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '2 a',  multiplier: 1.25, includes: ['Perioodiline tervisekontroll (iga 2 a)', 'Mürakontroll (audiogramm)', 'Vibratsioonirisk', 'Riskianalüüs ja mõõtmised'] },
-  ehitus:    { label: 'Ehitus',                risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '1–3 a', multiplier: 1.3, includes: ['Iga-aastane tervisekontroll', 'Tolmu- ja mürakontroll', 'Spiromeetria', 'Täielik riskianalüüs'] },
-  transport: { label: 'Transport',             risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '2 a',  multiplier: 1.25, includes: ['Perioodiline tervisekontroll (iga 2 a)', 'Nägemis- ja kuulmistest', 'Kardiovaskulaarne hindamine', 'Uneapnoe sõeluuring'] },
-  tervishoid:{ label: 'Tervishoid',            risk: 'Väga kõrge',riskClass: 'badge--danger',   freq: '1 a',  multiplier: 1.4,  includes: ['Iga-aastane tervisekontroll', 'Vaktsineerimisstaatus', 'Nakkushaiguste sõeluuring', 'Psühholoogilise stressi hindamine'] },
-  toidu:     { label: 'Toitlustus',            risk: 'Kõrge',     riskClass: 'badge--danger',   freq: '1 a',  multiplier: 1.35, includes: ['Iga-aastane tervisekontroll', 'Sooleinfektsioonide test', 'Nakkushaiguste kontroll', 'Toiduhügieenikoolitus'] },
-  muu:       { label: 'Muu valdkond',          risk: 'Sõltub',    riskClass: 'badge--primary',  freq: 'Sõltub', multiplier: 1.1, includes: ['Esmane tervisekontroll', 'Riskipõhine perioodiline kontroll', 'Riskianalüüs', 'Töötervishoiuarsti nõustamine'] }
+  kontor:    { label: 'Office / IT',               risk: 'Low',       riskClass: 'badge--success',  freq: '3 yr',  multiplier: 1.0,  includes: ['Periodic health check (every 3 yr)', 'Screen work check', 'Risk assessment', 'Occupational health physician consultation'] },
+  kaubandus: { label: 'Retail / services',          risk: 'Medium',    riskClass: 'badge--warning',  freq: '2-3 yr', multiplier: 1.1, includes: ['Periodic health check', 'Musculoskeletal assessment', 'Risk assessment', 'Information documents'] },
+  tootmine:  { label: 'Manufacturing / warehousing', risk: 'High',      riskClass: 'badge--danger',   freq: '2 yr',  multiplier: 1.25, includes: ['Periodic health check (every 2 yr)', 'Noise check (audiogram)', 'Vibration risk', 'Risk assessment and measurements'] },
+  ehitus:    { label: 'Construction',               risk: 'High',      riskClass: 'badge--danger',   freq: '1-3 yr', multiplier: 1.3, includes: ['Annual health check', 'Dust and noise check', 'Spirometry', 'Full risk assessment'] },
+  transport: { label: 'Transport',                  risk: 'High',      riskClass: 'badge--danger',   freq: '2 yr',  multiplier: 1.25, includes: ['Periodic health check (every 2 yr)', 'Vision and hearing test', 'Cardiovascular assessment', 'Sleep apnoea screening'] },
+  tervishoid:{ label: 'Healthcare',                 risk: 'Very high', riskClass: 'badge--danger',   freq: '1 yr',  multiplier: 1.4,  includes: ['Annual health check', 'Vaccination status', 'Infectious disease screening', 'Psychological stress assessment'] },
+  toidu:     { label: 'Food & catering',            risk: 'High',      riskClass: 'badge--danger',   freq: '1 yr',  multiplier: 1.35, includes: ['Annual health check', 'Intestinal infection test', 'Infectious disease check', 'Food hygiene training'] },
+  muu:       { label: 'Other sector',               risk: 'Depends',   riskClass: 'badge--primary',  freq: 'Varies', multiplier: 1.1, includes: ['Pre-employment health check', 'Risk-based periodic check', 'Risk assessment', 'Occupational health physician advisory'] }
 };
 
 function getBaseRate(empCount) {
@@ -792,28 +795,28 @@ function recalculate() {
   var perEmp  = monthly / empCount;
 
   document.getElementById('resultSubtitle').textContent =
-    empCount + ' töötajat · ' + sector.label + (hasMinors ? ' · Alaealisi on' : '');
+    empCount + ' employees · ' + sector.label + (hasMinors ? ' · Minors included' : '');
 
   document.getElementById('metricMonthly').textContent = formatEur(monthly);
   document.getElementById('metricAnnual').textContent  = formatEur(annual);
-  document.getElementById('metricPerEmp').textContent  = '~' + formatEur(perEmp) + ' / töötaja';
+  document.getElementById('metricPerEmp').textContent  = '~' + formatEur(perEmp) + ' / employee';
   document.getElementById('metricFreq').textContent    = sector.freq;
 
   var badge = document.getElementById('riskBadge');
   badge.textContent = sector.risk + ' risk';
   badge.className = 'badge ' + sector.riskClass;
 
-  document.getElementById('compareServiceAnnual').textContent = formatEur(annual) + ' / aastas';
+  document.getElementById('compareServiceAnnual').textContent = formatEur(annual) + ' / year';
   var selEl = document.getElementById('empNumber');
   document.getElementById('compareEmpRange').textContent =
-    selEl.options[selEl.selectedIndex].text.replace(' töötajat', '');
+    selEl.options[selEl.selectedIndex].text.replace(' employees', '');
 
   var html = '';
   sector.includes.forEach(function (item) {
     html += '<div class="kalk-incl-row">' + item + '</div>';
   });
   if (hasMinors) {
-    html += '<div class="kalk-incl-row"><strong>Alaealiste erirežiim:</strong> iga-aastane kontroll</div>';
+    html += '<div class="kalk-incl-row"><strong>Special rules for minors:</strong> annual health check</div>';
   }
   document.getElementById('includesList').innerHTML = html;
 }
@@ -870,7 +873,7 @@ function tt24SubmitCalcGate(e) {
   var s = tt24CurrentCalcState();
 
   btn.disabled = true;
-  btn.textContent = 'Saadan...';
+  btn.textContent = 'Sending...';
 
   var fd = new FormData();
   fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
@@ -922,10 +925,10 @@ function tt24SubmitCalcGate(e) {
 
 <!-- Cookie banner -->
 <div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A0A0A;color:#D4D4D4;padding:14px 20px;z-index:9999;font-family:var(--sans);font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #2A2A2A;">
-  <p style="margin:0;flex:1 1 260px;">See veebileht kasutab küpsiseid veebiliikluse analüüsimiseks. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privaatsuspoliitika</a></p>
+  <p style="margin:0;flex:1 1 260px;">This website uses cookies to analyse web traffic. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privacy policy</a></p>
   <div style="display:flex;gap:10px;flex-shrink:0;">
-    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Keeldun</button>
-    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">N&#245;ustun</button>
+    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Decline</button>
+    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">Accept</button>
   </div>
 </div>
 <script>

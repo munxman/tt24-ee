@@ -84,3 +84,16 @@
 - [Meist](https://tt24.ee/meist.html): TT24 on tasuta töötervishoiu portaal Eesti tööandjatele — kes me oleme ja kuidas saame aidata.
 - [Küsige pakkumist](https://tt24.ee/pakkumine.html): Küsige töötervishoiu teenuse pakkumist — täitke vorm ja võtame ühendust esimesel võimalusel.
 - [Privaatsuspoliitika](https://tt24.ee/privaatsus.html): TT24 privaatsuspoliitika — isikuandmete kogumine ja töötlemine vastavalt GDPR-ile.
+
+## English (EN)
+
+- [Occupational health in Estonia - guide for employers](https://tt24.ee/en/): English portal for employers operating in Estonia. Free checklists, calculators and guides for meeting Occupational Health and Safety Act (TTOS) requirements; every answer cites the law.
+- [Cost calculator](https://tt24.ee/en/kalkulaator.html): Estimate the cost of the occupational health service by headcount and compare it with the potential fine.
+- [Schedule of deadlines](https://tt24.ee/en/ajakava.html): Enter your founding date and headcount to get a personal timeline of statutory occupational-health deadlines, with calendar export.
+- [Compliance self-check](https://tt24.ee/en/enesekontroll.html): Ten questions, an instant result on whether your company meets Estonian occupational-health requirements.
+- [Checklist](https://tt24.ee/en/kontrollnimekiri.html): The core occupational-health duties in one interactive list.
+- [A new company and its occupational-health duties](https://tt24.ee/en/artiklid/uus-ettevote-tootervishoid.html): Step-by-step guide for a new employer in Estonia from day one.
+- [A risk-analysis guide for employers](https://tt24.ee/en/artiklid/riskianaluus-juhend.html): How to carry out an occupational-health risk analysis under TTOS.
+- [Occupational-health documentation](https://tt24.ee/en/artiklid/tootervishoid-dokumentatsioon.html): The full list of documents the Labour Inspectorate checks.
+- [FAQ](https://tt24.ee/en/korduma.html): Clear answers on health checks, risk analysis, contracts and fines.
+- [Request a quote](https://tt24.ee/en/pakkumine.html): Ask for an occupational-health service quote.

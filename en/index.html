@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT24 · Estonian Occupational Health Guide. Practical answers for employers.</title>
+<meta name="description" content="Estonia's occupational health portal for employers. Free checklists, calculators, documents and guides for meeting Occupational Health and Safety Act (TTOS) requirements. Every answer cites the section of the law.">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>
+function tt24LoadGA4() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NW9JSMQVE';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+  gtag('js', new Date());
+  gtag('config', 'G-5NW9JSMQVE');
+}
+if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4(); }
+</script>
+
+<link rel="canonical" href="https://tt24.ee/en/" />
+<link rel="alternate" hreflang="et" href="https://tt24.ee/" />
+<link rel="alternate" hreflang="en" href="https://tt24.ee/en/" />
+<link rel="alternate" hreflang="x-default" href="https://tt24.ee/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tt24.ee/en/" />
+<meta property="og:title" content="TT24 · Estonian Occupational Health Guide. Practical answers for employers." />
+<meta property="og:description" content="Estonia's occupational health portal. Free checklists, calculators and documents for meeting TTOS requirements." />
+<meta property="og:image" content="https://tt24.ee/og-image.png" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="et_EE" />
+<meta property="og:site_name" content="TT24" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TT24 · Estonian Occupational Health Guide" />
+<meta name="twitter:description" content="Estonia's occupational health portal for employers." />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Organization",
+  "name":"TT24","alternateName":"TT24 Occupational Health Guide",
+  "url":"https://tt24.ee/en/","logo":"https://tt24.ee/apple-touch-icon.png",
+  "description":"An occupational health portal for employers in Estonia. Free tools, guides and calculators for meeting Occupational Health and Safety Act (TTOS) requirements.",
+  "parentOrganization":{"@type":"Organization","name":"Sentifoli & Lindström OÜ","url":"https://tt24.ee/"},
+  "founder":{"@type":"Person","name":"Ingmar Lindström","jobTitle":"Physician, entrepreneur"},
+  "address":{"@type":"PostalAddress","streetAddress":"Sepapaja 12/1, Ülemiste Tervisemaja 2","addressLocality":"Tallinn","postalCode":"11415","addressCountry":"EE"},
+  "contactPoint":{"@type":"ContactPoint","email":"info@tt24.ee","telephone":"+372 5 911 0909","contactType":"customer support","areaServed":"EE","availableLanguage":["English","Estonian"]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebSite",
+  "name":"TT24","url":"https://tt24.ee/en/","inLanguage":"en",
+  "description":"Estonia's occupational health portal for employers."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[
+    {"@type":"Question","name":"Do I have to provide a health check for all employees?","acceptedAnswer":{"@type":"Answer","text":"Not for everyone, but for many. A health check is mandatory for employees who are exposed at work to health-damaging factors: noise, vibration, chemical agents, high physical load, display-screen work. Employees under 18, pregnant employees and those working in catering and healthcare are always included."}},
+    {"@type":"Question","name":"When must the first health check take place?","acceptedAnswer":{"@type":"Answer","text":"The employer arranges the first health check within four months of the employee starting work (TTOS § 13¹ lg 6). Exception: night workers and employees exposed to biological agents, carcinogens, mutagens, lead or asbestos dust must undergo the health check before starting work (or night work) or before exposure begins (TTOS § 13¹ lg 7). A minor is given a health check at least once a year (TTOS § 13¹ lg 8)."}},
+    {"@type":"Question","name":"Who covers the cost of the health check?","acceptedAnswer":{"@type":"Answer","text":"The employer covers all costs of the health check (TTOS § 13). The employee may not pay for the health check or arrange it themselves. The check must take place during working time."}}
+  ]
+}
+</script>
+
+<style>
+:root {
+  --serif: 'Source Serif 4', 'Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --ink:      #0A0A0A;
+  --ink-soft: #2A2A2A;
+  --mute:     #6B6B6B;
+  --mute-2: #767676;
+  --rule:     #E0E0E0;
+  --paper:    #FFFFFF;
+  --paper-2:  #FAFAF8;
+  --accent:   #0066CC;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  font-family: var(--sans); font-size: 17px; line-height: 1.6;
+}
+.skip-link { position:absolute; left:-10000px; top:0; background:var(--ink); color:var(--paper); padding:8px 14px; text-decoration:none; font-size:14px; }
+.skip-link:focus { left:16px; top:16px; z-index:100; }
+
+/* Top bar */
+.topbar { border-bottom:1px solid var(--rule); background:var(--paper); position:sticky; top:0; z-index:50; }
+.topbar-inner { max-width:1200px; margin:0 auto; padding:22px 32px; display:flex; align-items:baseline; justify-content:space-between; gap:32px; }
+.brand { text-decoration:none; color:var(--ink); display:flex; align-items:baseline; gap:12px; }
+.brand-mark { font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-0.01em; }
+.brand-tag { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--mute); }
+.nav { display:flex; gap:32px; align-items:baseline; font-size:15px; }
+.nav a { color:var(--ink-soft); text-decoration:none; font-weight:500; }
+.nav a:hover { color:var(--accent); }
+.nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
+.lang-switch { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; display:inline-flex; gap:7px; align-items:baseline; }
+.lang-switch a { color:var(--mute); text-decoration:none; }
+.lang-switch a:hover { color:var(--accent); }
+.lang-switch .on { color:var(--accent); font-weight:600; }
+
+/* Hero */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 32px 48px; position: relative; overflow: hidden; background-image: radial-gradient(ellipse 90% 62% at 50% 0%, rgba(0,102,204,.045), transparent 62%);
+}
+.hero-inner { max-width: 860px; position:relative; z-index:1; } .hero::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image:linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px); background-size:28px 28px; -webkit-mask-image:radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); mask-image:radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); }
+.dateline { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin:0 0 32px; }
+.dateline span { color:var(--accent); }
+.headline { font-family:var(--serif); font-size:clamp(24px, 2.5vw, 31px); line-height:1.06; letter-spacing:-0.025em; font-weight:500; color:var(--ink); margin:0 0 20px; }
+.standfirst { font-family:var(--serif); font-size:clamp(18px, 1.6vw, 21px); line-height:1.45; color:var(--ink-soft); font-weight:400; margin:0 0 28px; max-width:860px; }
+.hero-cta-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 16px 32px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--accent); }
+.btn-secondary {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-soft);
+  padding-bottom: 4px;
+}
+.btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Section */
+.section { border-top:1px solid var(--rule); scroll-margin-top:84px; }
+/* On-this-page jump menu */
+.page-jump-bar { border-top:1px solid var(--rule); }
+.page-jump { max-width:1100px; margin:0 auto; padding:13px 32px; display:flex; flex-wrap:wrap; align-items:center; gap:9px 22px; font-family:var(--mono); font-size:12px; }
+.page-jump-label { color:var(--mute); letter-spacing:0.1em; text-transform:uppercase; }
+.page-jump a { color:var(--ink-soft); text-decoration:none; letter-spacing:0.03em; }
+.page-jump a:hover { color:var(--accent); }
+.section-inner { max-width:1100px; margin:0 auto; padding:52px 32px; }
+.section-inner-narrow { max-width:760px; margin:0 auto; padding:52px 32px; }
+.section-eyebrow { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin:0 0 12px; }
+.section-h { font-family:var(--serif); font-size:clamp(23px, 2.1vw, 29px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 12px; max-width:720px; }
+.section-sub { font-size:17px; line-height:1.55; color:var(--ink-soft); margin:0 0 22px; max-width:720px; }
+
+/* Tools catalog · three rows + extras */
+.catalog { margin-top: 0; }
+.catalog-row {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 200px 1fr 160px;
+  gap: 36px;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.catalog-row:hover { background: var(--paper-2); }
+.catalog-row:hover .catalog-h { color: var(--accent); }
+.catalog-row:last-child { border-bottom: 1px solid var(--rule); }
+.catalog-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.catalog-body { padding-right: 24px; }
+.catalog-h {
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 7px;
+  transition: color 0.15s;
+}
+.catalog-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.catalog-action {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: right;
+}
+
+/* Process · 3 steps */
+.process { margin-top: 36px; }
+.process-step {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  align-items: start;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.process-step:last-child { border-bottom: 1px solid var(--rule); }
+.process-step:hover { background: var(--paper-2); }
+.process-step:hover .process-h { color: var(--accent); }
+.process-num {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  padding-top: 4px;
+}
+.process-h {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 10px;
+  transition: color 0.15s;
+}
+.process-body p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+.process-body .next {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* Urgency band */
+.urgency {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+  padding: 56px 32px;
+}
+.urgency-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.urgency-stat {
+  font-family: var(--serif);
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+.urgency-stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin: 0;
+}
+.urgency-body h2 {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.urgency-body p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+.urgency-body .cta {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* FAQ */
+.faq-list { margin-top: 28px; max-width: 760px; }
+.faq-item { border-top: 1px solid var(--rule); padding: 22px 0; }
+.faq-item:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq-item summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--serif); font-size: 19px; line-height: 1.4;
+  color: var(--ink); font-weight: 500; letter-spacing: -0.005em;
+  position: relative; padding-right: 32px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-55%);
+  font-family: var(--mono); font-size: 22px; color: var(--mute); font-weight: 400;
+}
+.faq-item[open] summary::after { content: 'x'; color: var(--accent); font-size: 17px; }
+.faq-item .answer { margin-top: 14px; font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
+.faq-item .answer strong { color: var(--ink); font-weight: 600; }
+.faq-more { margin-top: 32px; }
+.faq-more a {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+}
+
+/* Articles · hairline catalog rows */
+.articles { margin-top: 36px; }
+.article-row {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 120px 1fr 80px;
+  gap: 32px;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.article-row:last-child { border-bottom: 1px solid var(--rule); }
+.article-row:hover { background: var(--paper-2); }
+.article-row:hover .article-title { color: var(--accent); }
+.article-tag {
+  font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #555;
+}
+.article-title { font-family: var(--serif); font-size: 19px; font-weight: 500; line-height: 1.3; letter-spacing: -0.005em; color: var(--ink); margin: 0 0 6px; transition: color 0.15s; }
+.article-desc { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+.article-arrow { font-family: var(--mono); font-size: 14px; color: var(--mute-2); text-align: right; }
+
+/* Footer */
+.foot { margin-top: 0; border-top: 1px solid var(--rule); background: var(--paper); }
+.foot-inner { max-width:1200px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:56px; }
+.foot-brand { font-family:var(--serif); font-size:22px; font-weight:600; color:var(--ink); text-decoration:none; margin:0 0 12px; display:block; }
+.foot-desc { font-size:14px; line-height:1.6; color:var(--mute); margin:0; max-width:320px; }
+.foot-col h4 { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 16px; font-weight:600; }
+.foot-col a { display:block; font-size:14px; color:var(--ink-soft); text-decoration:none; padding:4px 0; }
+.foot-col a:hover { color:var(--accent); }
+.foot-bottom { max-width:1200px; margin:0 auto; padding:24px 32px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute); }
+.foot-bottom a { color:var(--mute); text-decoration:none; }
+.foot-bottom a:hover { color:var(--accent); }
+
+@media (max-width:760px) {
+  .topbar-inner { padding:18px 22px; flex-wrap:wrap; }
+  .nav { gap:20px; font-size:14px; }
+  .hero { padding:44px 22px 40px; }
+  .section-inner, .section-inner-narrow { padding:40px 22px; }
+  .catalog-row { grid-template-columns: 80px 1fr; gap: 16px; padding: 28px 0; }
+  .catalog-action { display: none; }
+  .catalog-body { padding-right: 0; }
+  .process-step { grid-template-columns: 60px 1fr; gap: 20px; padding: 28px 0; }
+  .urgency { padding: 48px 22px; }
+  .urgency-inner { grid-template-columns: 1fr; gap: 28px; }
+  .article-row { grid-template-columns: 80px 1fr; gap: 18px; }
+  .article-arrow { display: none; }
+  .foot-inner { grid-template-columns: 1fr; gap: 36px; padding: 48px 22px 32px; }
+  .foot-bottom { padding: 20px 22px; flex-direction: column; gap: 10px; align-items: flex-start; }
+}
+
+/* Mobile nav (hamburger) */
+.nav-toggle { display:none; background:none; border:0; cursor:pointer; padding:10px; margin:-10px -10px -10px 0; }
+.nav-toggle span { display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; transition:transform .2s, opacity .2s; }
+.topbar.nav-open .nav-toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.topbar.nav-open .nav-toggle span:nth-child(2){ opacity:0; }
+.topbar.nav-open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+@media (max-width:760px){
+  .topbar-inner { flex-wrap:nowrap; align-items:center; }
+  .nav-toggle { display:block; }
+  .nav { display:none; position:absolute; top:100%; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--rule); flex-direction:column; gap:0; padding:6px 0 10px; align-items:stretch; box-shadow:0 10px 24px rgba(0,0,0,0.06); }
+  .topbar.nav-open .nav { display:flex; }
+  .nav a { padding:13px 22px; font-size:16px; }
+  .nav-cta { border-bottom:0 !important; width:max-content; }
+  .lang-switch { padding:13px 22px; }
+}
+
+/* unify: subtle accent character (matches the rest of the site) */
+.topbar { border-top: 3px solid var(--accent); }
+.section-h::before, .section-title::before { content:""; display:block; width:38px; height:3px; background:var(--accent); border-radius:2px; margin:0 0 18px; }
+.headline::after { content:""; display:block; width:56px; height:3px; background:var(--accent); border-radius:2px; margin:22px 0 0; }
+.section-eyebrow { color:var(--accent); }
+
+/* Stacked brand lockup: TT24 over tagline */
+.brand { align-items: center; gap: 10px; }
+.brand-icon { width: 48px !important; height: 48px !important; }
+.brand-text { display: inline-flex; flex-direction: column; gap: 2px; align-items: flex-start; line-height: 1; }
+.brand-mark { font-size: 23px; line-height: 1; }
+.brand-tag { font-size: 11px; letter-spacing: 0.12em; line-height: 1.3; border-top: 1px solid var(--rule); padding-top: 3px; }
+</style>
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html"
+      <span class="brand-text"><span class="brand-mark">TT24</span><span class="brand-tag">Occupational Health Guide</span></span>
+    > class="brand">
+      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" /</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Main menu">
+      <a href="tooriistad.html">Tools</a>
+      <a href="artiklid/index.html">Articles</a>
+      <a href="muudatused.html">Updates</a>
+      <a href="korduma.html">FAQ</a>
+      <a href="meist.html">About</a>
+      <span class="lang-switch"><a href="../index.html" hreflang="et">ET</a><span class="on" aria-current="true">EN</span></span>
+      <a href="pakkumine.html" class="nav-cta">Request a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="dateline">TT24 · <span>Estonia's occupational health portal</span> · Free</p>
+    <h1 class="headline">Practical answers for employers.</h1>
+    <p class="standfirst">Checklists, calculators and guides for meeting Estonia's occupational-health requirements.<br>Every statement cites the relevant section of the law, so you can check it yourself.</p>
+    <div class="hero-cta-row">
+      <a href="enesekontroll.html" class="btn-primary">Start with the self-check</a>
+      <a href="kalkulaator.html" class="btn-secondary">or calculate the cost →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Where to start · get-it-done action path -->
+<div class="page-jump-bar">
+  <nav class="page-jump" aria-label="On this page">
+    <span class="page-jump-label">On this page</span>
+    <a href="#kuidas">Where to start</a>
+    <a href="tooriistad.html">Tools</a>
+    <a href="#muutunud">Updates</a>
+    <a href="#korduma">FAQ</a>
+    <a href="#juhised">Guides</a>
+  </nav>
+</div>
+
+<section class="section" id="kuidas">
+  <div class="section-inner">
+    <p class="section-eyebrow">Where to start</p>
+    <h2 class="section-h">The first four steps</h2>
+    <p class="section-sub">A practical action plan for organising occupational health. A TT24 tool or guide supports each step.</p>
+
+    <div class="process">
+      <a class="process-step" href="pakkumine.html">
+        <span class="process-num" aria-hidden="true">01</span>
+        <div class="process-body">
+          <h3 class="process-h">Sign an occupational health service contract.</h3>
+          <p>Mandatory from your very first employee. The service provider arranges health checks and advises on documentation.</p>
+        </div>
+      </a>
+      <a class="process-step" href="artiklid/riskianaluus-juhend.html">
+        <span class="process-num" aria-hidden="true">02</span>
+        <div class="process-body">
+          <h3 class="process-h">Carry out a workplace risk analysis.</h3>
+          <p>Map the hazards at the workplace and the measures to control them. The TT24 guide shows how to do it step by step.</p>
+        </div>
+      </a>
+      <a class="process-step" href="ajakava.html">
+        <span class="process-num" aria-hidden="true">03</span>
+        <div class="process-body">
+          <h3 class="process-h">Refer employees for a health check.</h3>
+          <p>The first health check falls within four months of starting work. The schedule tool shows when each deadline arrives.</p>
+        </div>
+      </a>
+      <a class="process-step" href="dokumendid.html">
+        <span class="process-num" aria-hidden="true">04</span>
+        <div class="process-body">
+          <h3 class="process-h">Inform employees of the risks in writing.</h3>
+          <p>Employees must be informed of workplace risks in writing. Ready-made forms are in the documents section.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="faq-more" style="margin-top:32px;">
+      <a href="kuidas-see-kaib.html">See in detail how it works →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Tools catalog -->
+<section class="section" id="tooriistad">
+  <div class="section-inner">
+    <p class="section-eyebrow">Tools</p>
+    <h2 class="section-h">Six practical tools</h2>
+    <p class="section-sub">Each one runs locally in your browser. No data is shared with third parties.</p>
+
+    <div class="catalog">
+      <a class="catalog-row" href="kontrollnimekiri.html">
+        <span class="catalog-num">01 / Compliance</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Checklist</h3>
+          <p class="catalog-desc">The core occupational-health duties in a single list. Tick off what is done and see at once what is missing.</p>
+        </div>
+        <span class="catalog-action">Open →</span>
+      </a>
+      <a class="catalog-row" href="kalkulaator.html">
+        <span class="catalog-num">02 / Budget</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Cost calculator</h3>
+          <p class="catalog-desc">Enter the number of employees to get an indicative price for the occupational health service. It compares the cost of the service with the potential fine (TTOS § 27-1 - § 27-5 lg 2).</p>
+        </div>
+        <span class="catalog-action">Open →</span>
+      </a>
+      <a class="catalog-row" href="enesekontroll.html">
+        <span class="catalog-num">03 / Assessment</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Self-check</h3>
+          <p class="catalog-desc">Ten questions, an instant result. We show where you are strong and what needs attention.</p>
+        </div>
+        <span class="catalog-action">Open →</span>
+      </a>
+      <a class="catalog-row" href="ajakava.html">
+        <span class="catalog-num">04 / Schedule</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Schedule</h3>
+          <p class="catalog-desc">When each duty must be met. Health-check deadlines, risk-analysis review, recurring tasks.</p>
+        </div>
+        <span class="catalog-action">Open →</span>
+      </a>
+      <a class="catalog-row" href="dokumendid.html">
+        <span class="catalog-num">05 / Documents</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Documents and forms</h3>
+          <p class="catalog-desc">Ten print-ready forms. Risk analysis, notification record, first-aid register, health-check referral.</p>
+        </div>
+        <span class="catalog-action">Open →</span>
+      </a>
+      <a class="catalog-row" href="tervisetoetus.html">
+        <span class="catalog-num">06 / Tax-free benefits</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Health allowance</h3>
+          <p class="catalog-desc">Under the Income Tax Act, an employer can reimburse part of an employee's health promotion tax-free. The calculator shows your unused allowance.</p>
+        </div>
+        <span class="catalog-action">Open →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Urgency -->
+<section class="urgency" aria-labelledby="urgency-heading">
+  <div class="urgency-inner">
+    <div class="urgency-body">
+      <h2 id="urgency-heading">The Labour Inspectorate carries out supervision.</h2>
+      <p>The Labour Inspectorate supervises compliance with occupational-health requirements. The most common gaps in companies are a missing risk analysis, an unsigned occupational-health service contract and uninformed employees.</p>
+      <a href="enesekontroll.html" class="cta">Test your compliance →</a>
+    </div>
+    <div>
+      <p class="urgency-stat">€32,000</p>
+      <p class="urgency-stat-label">Maximum fine for a legal person · TTOS § 27-1 - § 27-5 lg 2</p>
+    </div>
+  </div>
+</section>
+
+<!-- Updates · changelog freshness signal -->
+<section class="section" id="muutunud">
+  <div class="section-inner">
+    <p class="section-eyebrow">Updates</p>
+    <h2 class="section-h">Occupational-health rules change. We keep an eye on them.</h2>
+    <p class="section-sub">We follow the State Gazette (Riigi Teataja), the Labour Inspectorate and the Health Board. Each change gets a date, shows its scope and gives the employer concrete steps.</p>
+
+    <div class="catalog">
+      <a class="catalog-row" href="muudatused.html#ti-sihtkontroll-ikv-2026-07">
+        <span class="catalog-num">July 2026</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Labour Inspectorate targeted check on personal protective equipment</h3>
+          <p class="catalog-desc">An Estonia-wide targeted check of personal protective equipment begins in July 2026 on construction sites and hazardous workplaces, generally without prior notice. Employer: an up-to-date risk analysis, issued and working protective equipment, instruction.</p>
+          <span class="catalog-tag" style="display:inline-block; margin-top:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.04em; color:#0066CC;">Concerns: construction and hazardous workplaces</span>
+        </div>
+        <span class="catalog-action">Read →</span>
+      </a>
+      <a class="catalog-row" href="muudatused.html#ti-sihtkontroll-korgustes-2026-05">
+        <span class="catalog-num">May 2026</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Targeted check: "Working at height"</h3>
+          <p class="catalog-desc">A preventive targeted check on working at height and fall risk began in May 2026. Employer: a safety plan, guard rails, fall protection, instruction.</p>
+          <span class="catalog-tag" style="display:inline-block; margin-top:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.04em; color:#0066CC;">Concerns: construction and working at height</span>
+        </div>
+        <span class="catalog-action">Read →</span>
+      </a>
+      <a class="catalog-row" href="muudatused.html#ttos-deregulatsioon-eelnou">
+        <span class="catalog-num">In draft</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Coming: easing of occupational-health requirements</h3>
+          <p class="catalog-desc">A deregulation bill is before the Riigikogu (first health check 4→6 months, exemptions for small companies, and more). As of June 2026 it is not in force - the current requirements remain.</p>
+          <span class="catalog-tag" style="display:inline-block; margin-top:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.04em; color:#0066CC;">Concerns: employers</span>
+        </div>
+        <span class="catalog-action">Read →</span>
+      </a>
+      <a class="catalog-row" href="muudatused.html#msys-2026-07-01">
+        <span class="catalog-num">In force 1 July 2026</span>
+        <div class="catalog-body">
+          <h3 class="catalog-h">Registration of occupational-health service providers changes</h3>
+          <p class="catalog-desc">From 1 July 2026 providers submit an economic-activity notice instead of a registration application. The impact on employers is small: check that your provider has a valid registration or activity licence.</p>
+          <span class="catalog-tag" style="display:inline-block; margin-top:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.04em; color:#0066CC;">Concerns: occupational-health service providers</span>
+        </div>
+        <span class="catalog-action">Read →</span>
+      </a>
+    </div>
+
+    <div class="faq-more" style="margin-top:24px;">
+      <a href="muudatused.html">All updates →</a>
+    </div>
+    <p style="margin-top:18px; font-family:var(--mono); font-size:12px; letter-spacing:0.04em; color:#666;">Last reviewed 28 June 2026</p>
+  </div>
+</section>
+
+<!-- FAQ preview -->
+<section class="section" id="korduma">
+  <div class="section-inner">
+    <p class="section-eyebrow">Frequently asked questions</p>
+    <h2 class="section-h">Quick answers</h2>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do I have to provide a health check for all employees?</summary>
+        <div class="answer">Not for everyone, but for many. A health check is mandatory for employees who are exposed at work to health-damaging factors: noise, vibration, chemical agents, high physical load, display-screen work. Employees under 18, pregnant employees and those working in catering and healthcare are always included.</div>
+      </details>
+      <details class="faq-item">
+        <summary>When must the first health check take place?</summary>
+        <div class="answer">The employer arranges the first health check <strong>within four months</strong> of the employee starting work (TTOS § 13¹ lg 6). Exception: night workers and employees exposed to biological agents, carcinogens, mutagens, lead or asbestos dust must undergo the health check before starting work (or night work) or before exposure begins (TTOS § 13¹ lg 7). A minor is given a health check at least once a year (TTOS § 13¹ lg 8).</div>
+      </details>
+      <details class="faq-item">
+        <summary>Who covers the cost of the health check?</summary>
+        <div class="answer">The employer covers all costs of the health check (TTOS § 13). The employee may not pay for the health check or arrange it themselves. The check must take place during working time.</div>
+      </details>
+    </div>
+
+    <div class="faq-more">
+      <a href="korduma.html">See all questions →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Articles -->
+<section class="section" id="juhised">
+  <div class="section-inner">
+    <p class="section-eyebrow">Articles</p>
+    <h2 class="section-h">In-depth guides</h2>
+    <p class="section-sub">Every statement cites a TTOS section.</p>
+
+    <div class="articles">
+      <a class="article-row" href="artiklid/uus-ettevote-tootervishoid.html">
+        <span class="article-tag">Getting started</span>
+        <div>
+          <h3 class="article-title">A new company and its occupational-health duties</h3>
+          <p class="article-desc">A step-by-step guide for a new entrepreneur on organising occupational health from the very first days.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/tootervishoid-hind.html">
+        <span class="article-tag">Cost</span>
+        <div>
+          <h3 class="article-title">The price of the occupational health service</h3>
+          <p class="article-desc">An overview of what the service costs, what affects the price and how to plan for it.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/riskianaluus-juhend.html">
+        <span class="article-tag">Risk analysis</span>
+        <div>
+          <h3 class="article-title">A risk-analysis guide for employers</h3>
+          <p class="article-desc">How to carry out an occupational-health risk analysis in line with the requirements of the law.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/vaikeettevote-kohustused.html">
+        <span class="article-tag">Small company</span>
+        <div>
+          <h3 class="article-title">Occupational-health duties for a small company</h3>
+          <p class="article-desc">The minimum requirements and practical steps for a small employer.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/tootervishoid-maksud.html">
+        <span class="article-tag">Tax</span>
+        <div>
+          <h3 class="article-title">Occupational-health costs and fringe-benefit tax</h3>
+          <p class="article-desc">Tax treatment, fringe-benefit tax and practical accounting guidance.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+      <a class="article-row" href="artiklid/tootervishoid-dokumentatsioon.html">
+        <span class="article-tag">Documents</span>
+        <div>
+          <h3 class="article-title">Occupational-health documentation</h3>
+          <p class="article-desc">What the Labour Inspectorate checks. The full list of documents.</p>
+        </div>
+        <span class="article-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="faq-more" style="margin-top:36px;">
+      <a href="artiklid/index.html">See all articles →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Estonia's occupational health portal. Free tools, guides and calculators for meeting TTOS requirements.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Tools</h4>
+      <a href="kontrollnimekiri.html">Checklist</a>
+      <a href="kalkulaator.html">Calculator</a>
+      <a href="enesekontroll.html">Self-check</a>
+      <a href="tervisetoetus.html">Health allowance</a>
+      <a href="dokumendid.html">Documents</a>
+    </div>
+    <div class="foot-col">
+      <h4>Content</h4>
+      <a href="artiklid/index.html">Articles</a>
+      <a href="korduma.html">FAQ</a>
+      <a href="muudatused.html">Updates</a>
+      <a href="meist.html">About</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="tel:+37259110909">+372 5 911 0909</a>
+      <a href="pakkumine.html">Request a quote</a>
+      <a href="avatud-uks.html">Ask us</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="privaatsus.html">Privacy</a>
+  </div>
+</footer>
+
+<!-- Cookie banner -->
+<div id="tt24-cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0A0A0A;color:#D4D4D4;padding:14px 20px;z-index:9999;font-family:var(--sans);font-size:14px;line-height:1.5;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #2A2A2A;">
+  <p style="margin:0;flex:1 1 260px;">This website uses cookies to analyse web traffic. <a href="privaatsus.html" style="color:#5B9FE0;text-decoration:underline;">Privacy policy</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="tt24-consent-decline" style="background:transparent;border:1px solid #4A4A4A;color:#D4D4D4;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--sans);">Decline</button>
+    <button id="tt24-consent-accept" style="background:#0066CC;border:none;color:#fff;padding:7px 18px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--sans);">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('tt24_cookie_consent');
+  if (!consent) {
+    var banner = document.getElementById('tt24-cookie-banner');
+    if (banner) banner.style.display = 'flex';
+    document.getElementById('tt24-consent-accept').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','accepted');
+      banner.style.display='none';
+      if (typeof tt24LoadGA4 === 'function') tt24LoadGA4();
+    });
+    document.getElementById('tt24-consent-decline').addEventListener('click', function(){
+      localStorage.setItem('tt24_cookie_consent','declined');
+      banner.style.display='none';
+    });
+  }
+})();
+</script>
+
+<script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
+<script>
+/* active-nav: underline the current page's menu item */
+(function(){
+  var cur=location.pathname;if(cur.charAt(cur.length-1)==="/")cur+="index.html";
+  var art=/\/artiklid\//.test(cur);
+  document.querySelectorAll(".nav a").forEach(function(a){
+    if(a.classList.contains("nav-cta"))return;
+    var ap=a.pathname||"";if(ap.charAt(ap.length-1)==="/")ap+="index.html";
+    if(ap===cur||(art&&/\/artiklid\/index\.html$/.test(ap))){
+      a.setAttribute("aria-current","page");
+      a.style.textDecoration="underline";a.style.textDecorationColor="var(--accent,#0066CC)";
+      a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
+    }
+  });
+})();
+</script>
+</body>
+</html>
