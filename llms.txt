@@ -31,6 +31,8 @@
 
 ## Tööriistad
 
+- [Töötervishoiu tööriistad](https://tt24.ee/tooriistad.html): Kõik kuus tasuta tööriista ühel lehel - kontrollnimekiri, kalkulaator, enesekontroll, ajakava, dokumendid, tervisetoetus.
+
 - [Töötervishoiu kulukalkulaator](https://tt24.ee/kalkulaator.html): Arvutage töötervishoiu teenuse maksumus sekunditega — kulude jaotus kuus ja aastas ning trahviriski võrdlus.
 - [Töötervishoiu kontrollnimekiri](https://tt24.ee/kontrollnimekiri.html): Interaktiivne kontrollnimekiri ettevõtte suuruse järgi — märkige täidetud kohustused, progress salvestub automaatselt.
 - [Töötervishoiu enesekontrolli test](https://tt24.ee/enesekontroll.html): 10 küsimust, 2 minutit — testige, kas Teie ettevõte vastab töötervishoiu nõuetele, saate kohese tulemuse.
