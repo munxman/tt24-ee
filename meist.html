@@ -205,7 +205,13 @@ html, body {
   max-width: 760px;
   margin: 0 auto 0 max(0px, calc((100% - 1100px) / 2));
   padding: 80px 32px 48px;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(ellipse 90% 62% at 50% 0%, rgba(0,102,204,.045), transparent 62%);
 }
+.intro::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image: linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px); background-size:28px 28px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); }
+.intro > * { position: relative; z-index: 1; }
+
 .dateline {
   font-family: var(--mono);
   font-size: 11px;
@@ -306,7 +312,7 @@ html, body {
   text-transform: uppercase;
   color: var(--mute-2);
   text-align: center;
-  padding: 12px;
+  padding: 0;
   line-height: 1.6;
   overflow: hidden;
 }
@@ -332,6 +338,7 @@ html, body {
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 20px;
+  white-space: nowrap;
 }
 .founder-bio p {
   font-size: 16px;

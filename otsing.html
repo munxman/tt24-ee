@@ -294,6 +294,11 @@
 .sr-x { font-size:14px; color:var(--ink-soft); line-height:1.55; margin:0; }
 .sr-x mark { background:rgba(0,102,204,0.16); color:inherit; padding:0 1px; }
 </style>
+<style>
+  main > .section { position: relative; overflow: hidden; border-top: 0; background-image: radial-gradient(ellipse 90% 62% at 50% 0%, rgba(0,102,204,.045), transparent 62%); }
+  main > .section::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image: linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px); background-size:28px 28px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); }
+  main > .section > .section-inner { position: relative; z-index: 1; }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) - blocked pending consent -->
@@ -327,7 +332,7 @@
   <div class="section-inner" style="max-width:760px;">
     <p class="section-eyebrow">TT24 › Otsing</p>
     <h1 class="section-h" style="margin:0 0 8px;">Otsi saidilt</h1>
-    <p class="section-sub" style="margin:0 0 6px;">Sisestage markso&otilde;na &mdash; t&ouml;&ouml;riist, artikkel, sektor v&otilde;i linn.</p>
+    <p class="section-sub" style="margin:0 0 6px;">Sisestage m&auml;rks&otilde;na: t&ouml;&ouml;riist, artikkel, sektor v&otilde;i linn.</p>
     <input id="q" type="search" placeholder="Otsi..." autocomplete="off" aria-label="Otsi saidilt" autofocus>
     <p id="q-status" role="status" aria-live="polite"></p>
     <div id="results"></div>
