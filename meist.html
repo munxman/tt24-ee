@@ -203,7 +203,7 @@ html, body {
 /* ─── Page intro ────────────────────────────────────────── */
 .intro {
   max-width: 760px;
-  margin: 0 auto;
+  margin: 0 auto 0 max(0px, calc((100% - 1100px) / 2));
   padding: 120px 32px 80px;
 }
 .dateline {
@@ -240,7 +240,7 @@ html, body {
 }
 .section-inner {
   max-width: 760px;
-  margin: 0 auto;
+  margin: 0 auto 0 max(0px, calc((100% - 1100px) / 2));
   padding: 96px 32px;
 }
 .section-eyebrow {
@@ -279,12 +279,17 @@ html, body {
 .prose a:hover { border-color: var(--accent); }
 
 /* ─── Founder entries ───────────────────────────────────── */
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
 .founder {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 56px;
-  padding: 48px 0;
-  border-bottom: 1px solid var(--rule);
+  grid-template-columns: 1fr;
+  gap: 22px;
+  padding: 0;
 }
 .founder:last-of-type { border-bottom: 0; padding-bottom: 0; }
 .founder:first-of-type { padding-top: 0; }
@@ -608,7 +613,8 @@ html, body {
   .nav { gap: 20px; font-size: 14px; }
   .intro { padding: 72px 22px 56px; }
   .section-inner { padding: 64px 22px; }
-  .founder { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+  .founders-grid { grid-template-columns: 1fr; gap: 40px; }
+  
   .founder-photo { width: 100%; max-width: 220px; height: 260px; }
   .facts td.k { width: 140px; padding-right: 16px; }
   .contact { grid-template-columns: 1fr; }
@@ -687,6 +693,8 @@ html, body {
 <section class="section">
   <div class="section-inner">
     <p class="section-eyebrow">Asutajad</p>
+
+    <div class="founders-grid">
 
     <article class="founder">
       <div class="founder-photo"><img src="images/ingmar-lindstrom.jpg" alt="Dr Ingmar Lindström" width="440" height="616" loading="lazy"></div>
@@ -795,6 +803,7 @@ html, body {
 
       </div>
     </article>
+    </div>
   </div>
 </section>
 
