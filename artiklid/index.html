@@ -148,8 +148,13 @@
       font-size: var(--text-lg, 1.125rem);
       color: var(--color-text-muted, #64748B);
       margin: 0;
-      max-width: 640px;
+      max-width: 820px;
     }
+    .articles-category-title { scroll-margin-top: 88px; }
+    .articles-jump { display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 22px; padding:16px 0; border-top:1px solid var(--rule,#E0E0E0); border-bottom:1px solid var(--rule,#E0E0E0); margin-bottom:8px; font-family:var(--mono,monospace); font-size:13px; }
+    .articles-jump .lbl { color:var(--mute,#6B6B6B); text-transform:uppercase; letter-spacing:0.1em; }
+    .articles-jump a { color:var(--ink-soft,#2A2A2A); text-decoration:none; letter-spacing:0.02em; }
+    .articles-jump a:hover { color:var(--accent,#0066CC); }
     /* ── Index body ──────────────────────────────────────── */
     .articles-index-body {
       max-width: 860px;
@@ -329,25 +334,15 @@
   ═══════════════════════════════ -->
   <div class="articles-index-body">
 
-    <!-- Stats bar -->
-    <div class="articles-stats" role="region" aria-label="Artiklite statistika">
-      <div class="articles-stat">
-        <span class="articles-stat-num">29</span>
-        <span class="articles-stat-label">Artiklit</span>
-      </div>
-      <div class="articles-stat">
-        <span class="articles-stat-num">5</span>
-        <span class="articles-stat-label">Kategooriat</span>
-      </div>
-      <div class="articles-stat">
-        <span class="articles-stat-num">TTOS</span>
-        <span class="articles-stat-label">Viited seadusele</span>
-      </div>
-      <div class="articles-stat">
-        <span class="articles-stat-num">2026</span>
-        <span class="articles-stat-label">Ajakohane</span>
-      </div>
-    </div>
+    <!-- Category jump menu -->
+    <nav class="articles-jump" aria-label="Kategooriad">
+      <span class="lbl">Kategooriad:</span>
+      <a href="#cat-juhendid">Juhendid</a>
+      <a href="#cat-seadus">Seadusandlus</a>
+      <a href="#cat-teenus">Teenusepakkujad</a>
+      <a href="#cat-kulud">Kulud ja ROI</a>
+      <a href="#cat-praktikad">Parimad praktikad</a>
+    </nav>
 
     <!-- ── Kategooria 1: Juhendid ────────────────────────── -->
     <section class="articles-category" aria-labelledby="cat-juhendid">
