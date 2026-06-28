@@ -6,7 +6,7 @@
 
 - [Kõik artiklid](https://tt24.ee/artiklid/index.html): Kõik TT24 töötervishoiu artiklid ühes kohas — juhendid, seadusandlus, kulud, teenusepakkujad ja parimad praktikad.
 - [7 levinumat viga töötervishoiu korraldamisel](https://tt24.ee/artiklid/7-levinumat-viga.html): 7 viga, mis põhjustavad kõige sagedamini Tööinspektsiooni ettekirjutusi ja trahve — mida seadus nõuab ja kuidas parandada.
-- [Töötervishoiu korraldamine ehitussektoris](https://tt24.ee/artiklid/ehitussektor-tootervishoid.html): Ehitussektor on Tööinspektsiooni nr 1 kontrollsihtmärk 2026 — kohustuslikud tervisekontrollid, riskitegurid, alltöövõtjate korraldus ja trahvid.
+- [Töötervishoiu korraldamine ehitussektoris](https://tt24.ee/artiklid/ehitussektor-tootervishoid.html): Ehitusettevõtte töötervishoid samm-haaval - kohustuslikud tervisekontrollid, riskianalüüs, isikukaitsevahendid, kõrgustes töötamine ja alltöövõtjad.
 - [Kas mul on vaja töötervishoiu lepingut?](https://tt24.ee/artiklid/kas-vaja-lepingut.html): Kiire otsustuspuu, mis ütleb 2 minutiga, kas Teie ettevõte vajab töötervishoiu lepingut (TTOS § 12 lg 1).
 - [Kaugtöö ja töötervishoiu kohustused](https://tt24.ee/artiklid/kaugtoo-tootervishoid.html): Kaugtöö ei vabasta tööandjat töötervishoiu kohustustest — riskianalüüs, ergonoomika, psühhosotsiaalsed riskid ja dokumenteerimine.
 - [Kuidas öelda üles töötervishoiu leping?](https://tt24.ee/artiklid/lepingu-ulesuitlemine.html): Samm-sammult juhend: etteteatamistähtaeg, kirjalik teade, terviseandmete üleandmine ja uue teenusepakkuja leidmine.
@@ -55,15 +55,16 @@
 
 ## Sektori lehed
 
-- [Töötervishoiu nõuded ehituses](https://tt24.ee/sektorid/ehitus.html): Kohustuslikud tervisekontrollid, riskianalüüs ja Tööinspektsiooni nõuded ehitusettevõtetele.
+- [Töötervishoiu nõuded ehituses](https://tt24.ee/artiklid/ehitussektor-tootervishoid.html): Kohustuslikud tervisekontrollid, riskianalüüs ja Tööinspektsiooni nõuded ehitusettevõtetele.
 - [Töötervishoiu nõuded IT-sektoris](https://tt24.ee/sektorid/it.html): Kuvariga töö eeskirjad, ergonoomika, vaimne tervis ja kohustuslikud tervisekontrollid IT-ettevõtetele.
-- [Töötervishoiu nõuded tootmisettevõttes](https://tt24.ee/sektorid/tootmine.html): Masinaohutus, kemikaalid, müra, vibratsioon ja kohustuslikud tervisekontrollid tootmises 2026.
-- [Töötervishoiu nõuded transpordis](https://tt24.ee/sektorid/transport.html): Bussijuhi ja veoautojuhi tervisekontroll, töösõiduki juhiloa nõuded ja ületunnitöö piirangud.
+- [Töötervishoiu nõuded tootmisettevõttes](https://tt24.ee/artiklid/toostussektor-tootervishoid.html): Masinaohutus, kemikaalid, müra, vibratsioon ja kohustuslikud tervisekontrollid tootmises 2026.
+- [Töötervishoiu nõuded transpordis](https://tt24.ee/artiklid/transpordisektor-tootervishoid.html): Bussijuhi ja veoautojuhi tervisekontroll, töösõiduki juhiloa nõuded ja ületunnitöö piirangud.
 - [Töötervishoiu nõuded kaubanduses](https://tt24.ee/sektorid/kaubandus.html): Kassapidajate tervisekontroll, raskuste tõstmine, tööaeg ja kohustuslikud dokumendid kauplustes.
-- [Töötervishoiu nõuded tervishoius](https://tt24.ee/sektorid/tervishoid.html): Nakkushaiguste ennetamine, kiirguskaitse, psühhosotsiaalsed riskid ja kohustuslikud tervisekontrollid meditsiinitöötajatele.
-- [Töötervishoiu nõuded haridussektoris](https://tt24.ee/sektorid/haridus.html): Õpetajate psühhosotsiaalne tervis, häälekaitse, nakkusriskid ja tööandja kohustused koolides ning lasteaedades.
-- [Töötervishoiu nõuded hotellinduses ja toitlustuses](https://tt24.ee/sektorid/hotellindus.html): Toidukäitlejate tervisekontroll, öötöö, klienditeeninduse stress ja nõuetekohased dokumendid.
-- [Töötervishoiu nõuded laonduses](https://tt24.ee/sektorid/laondus.html): Tõstuki juhtimine, raskuste tõstmine, müra, vibratsioon ja kohustuslikud tervisekontrollid laonduses.
+- [Töötervishoiu nõuded tervishoius](https://tt24.ee/artiklid/tervishoiusektor-tootervishoid.html): Nakkushaiguste ennetamine, kiirguskaitse, psühhosotsiaalsed riskid ja kohustuslikud tervisekontrollid meditsiinitöötajatele.
+- [Töötervishoiu nõuded sotsiaalhoolekandes](https://tt24.ee/sektorid/sotsiaalhoolekanne.html): Bioloogilised ja psühhosotsiaalsed riskid, ergonoomika, vägivallaoht ja kohustuslikud tervisekontrollid hoolekandeasutustes.
+- [Töötervishoiu nõuded haridussektoris](https://tt24.ee/artiklid/haridussektor-tootervishoid.html): Õpetajate psühhosotsiaalne tervis, häälekaitse, nakkusriskid ja tööandja kohustused koolides ning lasteaedades.
+- [Töötervishoiu nõuded hotellinduses ja toitlustuses](https://tt24.ee/artiklid/horeca-sektor-tootervishoid.html): Toidukäitlejate tervisekontroll, öötöö, klienditeeninduse stress ja nõuetekohased dokumendid.
+- [Töötervishoiu nõuded laonduses](https://tt24.ee/artiklid/laondussektor-tootervishoid.html): Tõstuki juhtimine, raskuste tõstmine, müra, vibratsioon ja kohustuslikud tervisekontrollid laonduses.
 - [Töötervishoiu nõuded puhastusteenuste sektoris](https://tt24.ee/sektorid/puhastusteenused.html): Kemikaalikäitlus, lihas-skeleti riskid, öötöö ja kohustuslikud dokumendid koristusteenuste ettevõtetele.
 - [Töötervishoiu nõuded toiduainetööstuses](https://tt24.ee/sektorid/toiduaineteostus.html): Kohustuslikud tervisekontrollid, hügieenipassid, keemiline ja bioloogiline ohutus toiduainetootmises.
 - [Töötervishoiu nõuded energeetikas](https://tt24.ee/sektorid/energeetika.html): Elektrioht, kõrgustes töö, kiirgus ja kohustuslikud tervisekontrollid energeetika- ja elektriseadmete sektoris.
