@@ -509,3 +509,23 @@ html, body {
 }
 .articles-category-header { border-bottom: 1px solid var(--rule) !important; }
 .articles-category-icon { display: none !important; }
+
+/* ===== Article callouts -> editorial system =====
+   Neutralises the per-article inline <style> (tinted rounded boxes, off-brand blue,
+   gold accents). Loaded before each page's inline block but wins via !important.
+   Informational callouts: accent left-rule. Caution callouts: ink left-rule.
+   Both on --paper-2, hairline, zero radius. */
+.direct-answer, .info-box, .tip-box, .cta-box, .highlight-box, .success-box, .roi-box, .key-takeaway, .example-box {
+  background: var(--paper-2) !important; border: 0 !important;
+  border-left: 3px solid var(--accent) !important; border-radius: 0 !important; box-shadow: none !important;
+}
+.warning-box, .danger-box, .alert-box {
+  background: var(--paper-2) !important; border: 0 !important;
+  border-left: 3px solid var(--ink) !important; border-radius: 0 !important; box-shadow: none !important;
+}
+.warning-box strong, .danger-box strong, .alert-box strong { color: var(--ink) !important; }
+.cta-box { text-align: left !important; }
+.cta-row { justify-content: flex-start !important; }
+.step-item::before { background: var(--accent) !important; color: var(--paper) !important; border-radius: 0 !important; }
+.faq-item summary::after { color: var(--accent) !important; }
+.article-body .faq-item { border-color: var(--rule) !important; }
