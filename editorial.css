@@ -552,3 +552,15 @@ html, body {
 .brand-text { display: inline-flex; flex-direction: column; gap: 2px; align-items: flex-start; line-height: 1; }
 .brand-mark { font-size: 20px; line-height: 1; }
 .brand-tag { font-size: 10px; letter-spacing: 0.12em; line-height: 1.3; border-top: 1px solid var(--rule); padding-top: 3px; }
+
+/* ===== "Seotud teemad" / related cards -> roomier, editorial ===== */
+.seotud-link[style] { padding: 20px 22px !important; min-width: 300px !important; border-radius: 0 !important; box-shadow: none !important; border-color: var(--rule) !important; line-height: 1.45 !important; }
+.seotud-link[style]:hover { border-color: var(--accent) !important; }
+.seotud-link[style] strong { font-family: var(--serif) !important; font-size: 17px !important; font-weight: 600 !important; display: inline-block; margin-bottom: 5px; }
+.seotud-link[style] span { color: var(--mute) !important; line-height: 1.55 !important; }
+.related-grid { gap: 16px !important; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important; }
+.related-card { background: var(--paper-2) !important; border: 1px solid var(--rule) !important; border-radius: 0 !important; box-shadow: none !important; padding: 20px 22px !important; }
+.related-card:hover { border-color: var(--accent) !important; }
+.related-card-title { font-family: var(--serif) !important; font-size: 17px !important; color: var(--ink) !important; line-height: 1.3 !important; margin-bottom: 6px !important; }
+.related-card:hover .related-card-title { color: var(--accent) !important; }
+.related-card-desc { font-size: 14px !important; color: var(--mute) !important; line-height: 1.55 !important; }
