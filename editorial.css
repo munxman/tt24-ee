@@ -529,3 +529,18 @@ html, body {
 .step-item::before { background: var(--accent) !important; color: var(--paper) !important; border-radius: 0 !important; }
 .faq-item summary::after { color: var(--accent) !important; }
 .article-body .faq-item { border-color: var(--rule) !important; }
+
+/* ===== Rich checklist items (kontrollnimekiri) -> stack label over its explanation =====
+   The generic .checklist-item flex rule squeezed label + details into two cramped
+   columns. For items that carry a .check-details block, stack vertically instead. */
+.checklist-item:has(.check-details) { display: block; padding: 24px 0; }
+.check-row { display: flex; align-items: flex-start; gap: 12px; }
+.check-row input[type=checkbox] { margin: 3px 0 0; flex-shrink: 0; width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
+.check-label { font-weight: 500; color: var(--ink); cursor: pointer; line-height: 1.45; }
+.check-details { margin: 12px 0 0 30px; max-width: 720px; }
+.check-details > p { margin: 0 0 12px; color: var(--ink-soft); line-height: 1.6; }
+.check-consequence { margin: 12px 0; padding: 4px 0 4px 16px; border-left: 2px solid var(--rule); color: var(--mute); font-size: 15px; line-height: 1.55; }
+.check-law { font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; color: var(--mute); margin-top: 10px; }
+.check-law a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(0,102,204,.3); }
+.check-law a:hover { border-color: var(--accent); }
+@media (max-width:560px) { .check-details { margin-left: 0; } }
