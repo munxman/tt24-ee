@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="editorial.css?v=4">
+  <link rel="stylesheet" href="editorial.css?v=5">
 <!-- TT24 GA4 (G-5NW9JSMQVE), consent-gated -->
   <script>
     function tt24LoadGA4() {
@@ -610,7 +610,7 @@
               </div>
               <div class="legend-item">
                 <div class="legend-dot legend-dot--soon"></div>
-                <span>Tulemas 30 paeva jooksul</span>
+                <span>Tulemas 30 päeva jooksul</span>
               </div>
               <div class="legend-item">
                 <div class="legend-dot legend-dot--future"></div>
@@ -833,11 +833,11 @@ function statusLabel(status, deadline) {
 
   if (status === 'past') {
     var overdue = Math.abs(diff);
-    return overdue === 0 ? 'Tahtaeg tana' : 'Tahtaeg moodunud ' + overdue + ' p tagasi';
+    return overdue === 0 ? 'Tähtaeg täna' : 'Tähtaeg möödunud ' + overdue + ' p tagasi';
   }
   if (status === 'soon') {
-    if (diff === 0) return 'Tahtaeg tana';
-    return 'Tulemas ' + diff + ' paeva parast';
+    if (diff === 0) return 'Tähtaeg täna';
+    return 'Tulemas ' + diff + ' päeva pärast';
   }
   return 'Tulevikus';
 }
@@ -874,32 +874,32 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
     id: 'riskianalyys',
     icon: '',
     title: 'Riskianalüüs',
-    description: 'Tookeskkonna riskide kaardistamine ja hindamine',
+    description: 'Töökeskkonna riskide kaardistamine ja hindamine',
     deadline: firstEmployeeDate,
-    ref: 'TTOS § 13 lg 1 p 1',
-    note: 'Koostada enne toota ja uuendada tingimuste muutumisel'
+    ref: 'TTOS § 13⁴',
+    note: 'Koostada enne töö algust; uuendada töökeskkonna olulisel muutumisel'
   });
 
   // 2. Töötervishoiuteenuse leping - immediately
   items.push({
     id: 'tth-leping',
     icon: '',
-    title: 'Tootervishoiduteenuse leping',
-    description: 'Leping tootervishoiduteenuse osutajaga',
+    title: 'Töötervishoiuteenuse leping',
+    description: 'Leping töötervishoiuteenuse osutajaga',
     deadline: firstEmployeeDate,
     ref: 'TTOS § 13 lg 1 p 10',
-    note: 'Kohustuslik kõigile tooandajatele olenemata tootajate arvust'
+    note: 'Kohustuslik kõigile tööandjatele olenemata töötajate arvust'
   });
 
   // 3. Töötajate teavitamine - immediately
   items.push({
     id: 'teavitamine',
     icon: '',
-    title: 'Tootajate teavitamine',
-    description: 'Teavitage tootajaid tokeskkonna riskidest ja tervisekahjustuste valtimise abinõudest',
+    title: 'Töötajate teavitamine',
+    description: 'Teavitage töötajaid töökeskkonna riskidest ja tervisekahjustuste vältimise abinõudest',
     deadline: firstEmployeeDate,
-    ref: 'TTOS § 13 lg 1 p 3',
-    note: 'Enne tooalustamist ja iga kord tingimuste muutumisel'
+    ref: 'TTOS § 12 lg 4',
+    note: 'Enne tööle asumist ja iga kord tingimuste muutumisel'
   });
 
   // 4. Esimene tervisekontroll
@@ -910,10 +910,10 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
       id: 'esimene-tervisekontroll',
       icon: '',
       title: 'Esimene tervisekontroll',
-      description: 'Ootootajatele ja korgema riskiga toodele - enne tooalustamist',
+      description: 'Öötöötajatele ja kõrgema riskiga töödele - enne tööle asumist',
       deadline: healthCheckDeadline,
-      ref: 'TTOS § 13¹ lg 1',
-      note: nightwork ? 'Ootoo kohustab kontrolli enne tooalustamist' : 'Korgem riskitase kohustab kontrolli enne tooalustamist'
+      ref: 'TTOS § 13¹ lg 6',
+      note: nightwork ? 'Öötöö kohustab kontrolli enne tööle asumist' : 'Kõrgem riskitase kohustab kontrolli enne tööle asumist'
     });
   } else {
     healthCheckDeadline = addMonths(firstEmployeeDate, 4);
@@ -921,10 +921,10 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
       id: 'esimene-tervisekontroll',
       icon: '',
       title: 'Esimene tervisekontroll',
-      description: 'Tootaja esmane tervisekontroll tootervishoiduarsti juures',
+      description: 'Töötaja esmane tervisekontroll töötervishoiuarsti juures',
       deadline: healthCheckDeadline,
-      ref: 'TTOS § 13¹ lg 1',
-      note: '4 kuu jooksul tooalustamisest'
+      ref: 'TTOS § 13¹ lg 6',
+      note: '4 kuu jooksul tööle asumisest'
     });
   }
 
@@ -936,8 +936,8 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
     title: 'Perioodiline tervisekontroll (1. kord)',
     description: 'Regulaarne tervisekontroll vastavalt riskitasemele',
     deadline: periodicDeadline,
-    ref: 'TTOS § 13¹ lg 2',
-    note: 'Iga ' + (freq === 12 ? '12 kuu' : freq === 24 ? '2 aasta' : freq === 30 ? '2,5 aasta' : '3 aasta') + ' tagant'
+    ref: 'TTOS § 13¹ lg 8',
+    note: 'Tavaliselt iga ' + (freq === 12 ? '12 kuu' : freq === 24 ? '2 aasta' : freq === 30 ? '2,5 aasta' : '3 aasta') + ' järel; täpse sageduse määrab töötervishoiuarst (vähemalt iga 3 aasta järel)'
   });
 
   // 6. Perioodiline tervisekontroll - second occurrence
@@ -948,34 +948,8 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
     title: 'Perioodiline tervisekontroll (2. kord)',
     description: 'Regulaarne tervisekontroll vastavalt riskitasemele',
     deadline: periodic2Deadline,
-    ref: 'TTOS § 13¹ lg 2',
-    note: 'Iga ' + (freq === 12 ? '12 kuu' : freq === 24 ? '2 aasta' : freq === 30 ? '2,5 aasta' : '3 aasta') + ' tagant'
-  });
-
-  // 7. Ettevõtte töötervishoiu olukorra analüüs - every 3 years from Jan 2023
-  // Start from firstEmployeeDate or Jan 2023, whichever is later, then +3y
-  var analyysBase = new Date(Math.max(firstEmployeeDate.getTime(), new Date(2023, 0, 1).getTime()));
-  var analyysDeadline = addYears(analyysBase, 3);
-  items.push({
-    id: 'olukorra-analuus',
-    icon: '',
-    title: 'Ettevotte tootervishoiduolukorra analuus',
-    description: 'Kohustuslik alates jaanuar 2023. Ettevotte tootervishoiduolukorra igaaastane ulevaatus.',
-    deadline: analyysDeadline,
-    ref: 'TTOS § 13⁴',
-    note: 'Iga 3 aasta tagant, kohustuslik alates 2023. aastast'
-  });
-
-  // 8. Riskianalüüsi uuendamine - every 3 years
-  var riskUpdateDeadline = addYears(firstEmployeeDate, 3);
-  items.push({
-    id: 'riskianalyys-uuendamine',
-    icon: '',
-    title: 'Riskianaluusi uuendamine',
-    description: 'Riskianaluus tuleb ule vaadata ja vajadusel uuendada',
-    deadline: riskUpdateDeadline,
-    ref: 'TTOS § 13 lg 1 p 1',
-    note: 'Iga 3 aasta tagant või tingimuste muutumisel'
+    ref: 'TTOS § 13¹ lg 8',
+    note: 'Tavaliselt iga ' + (freq === 12 ? '12 kuu' : freq === 24 ? '2 aasta' : freq === 30 ? '2,5 aasta' : '3 aasta') + ' järel; täpse sageduse määrab töötervishoiuarst (vähemalt iga 3 aasta järel)'
   });
 
   // Sort by deadline
@@ -1023,7 +997,7 @@ function renderTimeline() {
     kontor: 'Kontor / IT', kaubandus: 'Kaubandus', tootmine: 'Tootmine',
     ehitus: 'Ehitus', transport: 'Transport', tervishoid: 'Tervishoid', muu: 'Muu'
   };
-  subtitleEl.textContent = empCount + ' töötajat - ' + (sectorNames[sectorKey] || 'Muu') + (nightwork ? ' - Ootoo' : '') + ' - Alates ' + formatDate(firstEmployeeDate);
+  subtitleEl.textContent = empCount + ' töötajat - ' + (sectorNames[sectorKey] || 'Muu') + (nightwork ? ' - Öötöö' : '') + ' - Alates ' + formatDate(firstEmployeeDate);
 
   // Render items
   var html = '<div class="timeline-list">';
@@ -1042,7 +1016,7 @@ function renderTimeline() {
     html += '<div class="timeline-dot ' + dotClass + '">' + item.icon + '</div>';
     html += '<div class="timeline-content">';
     html += '<div class="timeline-title">' + item.title + '</div>';
-    html += '<div class="timeline-date">Tahtaeg: ' + formatDate(item.deadline) + '</div>';
+    html += '<div class="timeline-date">Tähtaeg: ' + formatDate(item.deadline) + '</div>';
     html += '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">';
     html += '<span class="timeline-status ' + statusClass + '">' + statusIcon(status) + ' ' + statusLabel(status, item.deadline) + '</span>';
     html += '</div>';
@@ -1086,7 +1060,7 @@ function generateICS(items) {
   lines.push('PRODID:-//TT24//Tootervishoiu Ajakava//ET');
   lines.push('CALSCALE:GREGORIAN');
   lines.push('METHOD:PUBLISH');
-  lines.push('X-WR-CALNAME:Tootervishoiu ajakava');
+  lines.push('X-WR-CALNAME:Töötervishoiu ajakava');
   lines.push('X-WR-TIMEZONE:Europe/Tallinn');
 
   var now = new Date();
@@ -1108,13 +1082,13 @@ function generateICS(items) {
     lines.push('DTSTART;VALUE=DATE:' + toICSDate(item.deadline));
     lines.push('DTEND;VALUE=DATE:' + toICSDate(item.deadline));
     lines.push('SUMMARY:' + escapeICS('Töötervishoiu: ' + item.title));
-    lines.push('DESCRIPTION:' + escapeICS(item.description + '\\n\\nViide: ' + item.ref + '\\n' + item.note + '\\n\\nAllikas: TT24.ee - Tootervishoiu Teejuht'));
-    lines.push('CATEGORIES:Tootervishoiu');
+    lines.push('DESCRIPTION:' + escapeICS(item.description + '\\n\\nViide: ' + item.ref + '\\n' + item.note + '\\n\\nAllikas: TT24.ee - Töötervishoiu Teejuht'));
+    lines.push('CATEGORIES:Töötervishoiu');
     lines.push('URL:https://tt24.ee/ajakava.html');
     lines.push('BEGIN:VALARM');
     lines.push('TRIGGER:-P14D');
     lines.push('ACTION:DISPLAY');
-    lines.push('DESCRIPTION:' + escapeICS('Meeldetuletus: ' + item.title + ' - 14 paeva parast tahtaeg'));
+    lines.push('DESCRIPTION:' + escapeICS('Meeldetuletus: ' + item.title + ' - 14 päeva pärast tähtaeg'));
     lines.push('END:VALARM');
     lines.push('END:VEVENT');
   });
