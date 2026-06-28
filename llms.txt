@@ -27,6 +27,8 @@
 - [Töötervishoiu kohustused väikeettevõttele (1–9 töötajat)](https://tt24.ee/artiklid/vaikeettevote-kohustused.html): Ka ühe töötajaga ettevõttel on kõik töötervishoiu kohustused — minimaalsed nõuded ja kulud väikeettevõttele.
 - [Töötervishoiu korraldamine väikeettevõttes](https://tt24.ee/artiklid/vaikeettevote-tth-juhend.html): Samm-sammult juhend algajale: riskianalüüs, leping, tervisekontrollid, esmaabiandja ja dokumentatsioon (TTOS 2025–2026).
 
+- [Tööohutuse ja tööõnnetuste statistika Eestis 2025](https://tt24.ee/artiklid/tooohutuse-statistika.html): Tööõnnetuste, töösurmade ja kutsehaiguste arvud ja suundumused (registreeritud töösurmad 14 -> 7), Tööinspektsiooni aastaraamatute põhjal.
+
 ## Tööriistad
 
 - [Töötervishoiu kulukalkulaator](https://tt24.ee/kalkulaator.html): Arvutage töötervishoiu teenuse maksumus sekunditega — kulude jaotus kuus ja aastas ning trahviriski võrdlus.
