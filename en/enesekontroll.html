@@ -562,7 +562,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
             <img id="qrImg" src="" alt="QR code for the self-assessment">
             <div>
               <p class="result-qr-text">Scan to take the self-assessment:</p>
-              <p class="result-qr-url">tt24.ee/enesekontroll</p>
+              <p class="result-qr-url">tt24.ee/en/enesekontroll</p>
             </div>
           </div>
           <p class="result-disclaimer">This tool does not replace an official audit or oversight by the Labour Inspectorate (Tööinspektsioon).</p>
@@ -702,7 +702,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 
 <script>
 // ─── CONSTANTS ───────────────────────────────────────────
-var QUIZ_URL = 'https://tt24.ee/enesekontroll.html';
+var QUIZ_URL = 'https://tt24.ee/en/enesekontroll.html';
 
 var questions = [
   { id: 1,  text: 'Occupational health service contract',
@@ -1155,7 +1155,7 @@ function _generatePDF() {
   doc.text('This tool does not replace an official audit or oversight by the Labour Inspectorate.', 14, 283);
   doc.setTextColor(accent[0], accent[1], accent[2]);
   doc.setFont('helvetica', 'bold');
-  doc.text('tt24.ee/enesekontroll.html', 196, 283, { align: 'right' });
+  doc.text('tt24.ee/en/enesekontroll.html', 196, 283, { align: 'right' });
 
   var fname = company !== 'Company'
     ? 'Occupational-Health-Self-Assessment-' + company.replace(/\s+/g, '_') + '.pdf'
