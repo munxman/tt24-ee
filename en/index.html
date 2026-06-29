@@ -106,7 +106,7 @@ html, body {
 .nav a { color:var(--ink-soft); text-decoration:none; font-weight:500; }
 .nav a:hover { color:var(--accent); }
 .nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
-.lang-switch { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; display:inline-flex; gap:7px; align-items:baseline; }
+.lang-switch { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; display:inline-flex; gap:7px; align-items:baseline; margin-left:18px; padding-left:18px; border-left:1px solid var(--rule); }
 .lang-switch a { color:var(--mute); text-decoration:none; }
 .lang-switch a:hover { color:var(--accent); }
 .lang-switch .on { color:var(--accent); font-weight:600; }
@@ -437,10 +437,10 @@ html, body {
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="index.html"
+    <a href="index.html" class="brand">
+      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" />
       <span class="brand-text"><span class="brand-mark">TT24</span><span class="brand-tag">Occupational Health Guide</span></span>
-    > class="brand">
-      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" /</a>
+    </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav" aria-label="Main menu">
       <a href="tooriistad.html">Tools</a>
