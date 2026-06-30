@@ -975,7 +975,7 @@ function tt24BuildRecommendationEmail(company, score, level) {
     return header + '\n\nAll 10 points are in order. We recommend reviewing your documentation regularly and arranging health examinations on time.\n\nTT24: https://tt24.ee';
   }
   return header + '\n\nMain recommendations for addressing gaps:\n\n' + failed.map(function (q, idx) {
-    return (idx + 1) + '. ' + q.text + '\n' + q.failMsg + (q.resource ? '\nFurther information: https://tt24.ee/' + q.resource : '');
+    return (idx + 1) + '. ' + q.text + '\n' + q.failMsg + (q.resource ? '\nFurther information: https://tt24.ee/en/' + q.resource : '');
   }).join('\n\n') + '\n\nThis is not an official audit; it is a self-assessment summary. TT24: https://tt24.ee';
 }
 
