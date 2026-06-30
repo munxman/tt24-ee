@@ -1062,7 +1062,7 @@ function generateICS(items) {
   var lines = [];
   lines.push('BEGIN:VCALENDAR');
   lines.push('VERSION:2.0');
-  lines.push('PRODID:-//TT24//Tootervishoiu Ajakava//ET');
+  lines.push('PRODID:-//TT24//Occupational Health Schedule//EN');
   lines.push('CALSCALE:GREGORIAN');
   lines.push('METHOD:PUBLISH');
   lines.push('X-WR-CALNAME:Occupational Health Schedule');
@@ -1110,7 +1110,7 @@ document.getElementById('icsBtn').addEventListener('click', function () {
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
   a.href = url;
-  a.download = 'tootervishoiu-ajakava.ics';
+  a.download = 'occupational-health-schedule.ics';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
