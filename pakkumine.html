@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Küsi töötervishoiu teenuse pakkumist | TT24</title>
-<meta name="description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine. Vastame esimesel võimalusel.">
+<meta name="description" content="Saage oma ettevõttele personaalne töötervishoiu pakkumine. Vastame ühe tööpäeva jooksul.">
 <meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -271,7 +271,8 @@ textarea.form-input { resize:vertical; line-height:1.55; }
 <section class="intro">
   <p class="dateline">TT24 › Küsi pakkumist</p>
   <h1 id="hero-heading" class="headline">Küsige oma ettevõttele töötervishoiu pakkumist.</h1>
-  <p class="standfirst">Täitke palun allolev vorm ning töötervishoiu spetsialist võtab Teiega ühendust esimesel võimalusel.</p>
+  <p class="standfirst">Täitke palun allolev vorm. Töötervishoiu spetsialist vastab Teile ühe tööpäeva jooksul.</p>
+  <p style="font-size:0.9rem; color:var(--mute); margin-top:10px;">Orienteeruv hinnatase: 10 töötajaga kontoriettevõttele ligikaudu 120 € kuus. Täpsema arvutuse saate <a href="kalkulaator.html">kulukalkulaatorist</a>.</p>
 </section>
 
 <!-- Form -->
@@ -282,7 +283,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
     <div id="success-card" class="success-card" role="alert" aria-live="polite">
       <p class="eyebrow">Saadetud</p>
       <h2>Täname päringu eest.</h2>
-      <p>Oleme Teie päringu kätte saanud. Töötervishoiu spetsialist võtab Teiega ühendust esimesel võimalusel.</p>
+      <p>Oleme Teie päringu kätte saanud. Töötervishoiu spetsialist vastab Teile ühe tööpäeva jooksul.</p>
       <p>Küsimuste korral: <a href="mailto:info@tt24.ee">info@tt24.ee</a> · <a href="tel:+37259110909">+372 5 911 0909</a></p>
       <p><a href="index.html">Tagasi avalehele</a></p>
     </div>
@@ -383,7 +384,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         <p class="field-error" id="gdpr-err" role="alert"></p>
 
         <button type="submit" class="submit-btn">Saadan pakkumise päringu</button>
-        <p class="submit-note">Kohustuslikud väljad on tähistatud. Vastame esimesel võimalusel.</p>
+        <p class="submit-note">Kohustuslikud väljad on tähistatud. Vastame ühe tööpäeva jooksul.</p>
       </form>
     </div>
 
@@ -397,7 +398,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
     <div class="why-grid">
       <div class="why-row">
         <h3><span class="num">01</span>Kiire vastus</h3>
-        <p>Võtame Teiega ühendust esimesel võimalusel ja koostame personaalse pakkumise.</p>
+        <p>Vastame ühe tööpäeva jooksul ja koostame personaalse pakkumise.</p>
       </div>
       <div class="why-row">
         <h3><span class="num">02</span>Täisdokumentatsioon</h3>
@@ -609,6 +610,59 @@ textarea.form-input { resize:vertical; line-height:1.55; }
       a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
     }
   });
+})();
+</script>
+
+<!-- Prefill from calculator handoff: ?tootajad=<arv>&sektor=<võti> -->
+<script>
+(function(){
+  function prefill() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var emp = parseInt(params.get('tootajad'), 10);
+      var sektor = params.get('sektor');
+
+      var empSel = document.getElementById('tootajate_arv');
+      if (empSel && !isNaN(emp) && emp > 0) {
+        for (var i = 0; i < empSel.options.length; i++) {
+          var v = empSel.options[i].value;
+          if (!v) continue;
+          var range = v.match(/^(\d+)\D+(\d+)$/);
+          var plus = v.match(/^(\d+)\+$/);
+          if ((range && emp >= parseInt(range[1], 10) && emp <= parseInt(range[2], 10)) ||
+              (plus && emp >= parseInt(plus[1], 10))) {
+            empSel.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      var sectorMap = {
+        kontor: 'Kontor / IT',
+        kaubandus: 'Kaubandus / Jaemüük',
+        tootmine: 'Tootmine',
+        ehitus: 'Ehitus',
+        transport: 'Transport / Logistika',
+        tervishoid: 'Tervishoid / Sotsiaalhoolekanne',
+        toidu: 'Toitlustus / Hotellindus',
+        muu: 'Muu'
+      };
+      var secSel = document.getElementById('tegevusvaldkond');
+      if (secSel && sektor && Object.prototype.hasOwnProperty.call(sectorMap, sektor)) {
+        for (var j = 0; j < secSel.options.length; j++) {
+          if (secSel.options[j].value === sectorMap[sektor]) {
+            secSel.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    } catch (e) { /* prefill on parim pingutus, vorm töötab ka ilma */ }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', prefill);
+  } else {
+    prefill();
+  }
 })();
 </script>
 </body>

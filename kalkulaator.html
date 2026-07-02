@@ -817,6 +817,12 @@ function recalculate() {
     html += '<div class="kalk-incl-row"><strong>Alaealiste erirežiim:</strong> iga-aastane kontroll</div>';
   }
   document.getElementById('includesList').innerHTML = html;
+
+  // Carry calculator state into the quote form (prefill on pakkumine.html)
+  var quoteCta = document.querySelector('#resultCard .kalk-cta');
+  if (quoteCta) {
+    quoteCta.href = 'pakkumine.html?tootajad=' + encodeURIComponent(empCount) + '&sektor=' + encodeURIComponent(sectorKey);
+  }
 }
 
 // ─── Select change handler ───────────────────────────────

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Request an occupational health quote | TT24</title>
-<meta name="description" content="Get a personalised occupational health quote for your company. We respond as soon as possible.">
+<meta name="description" content="Get a personalised occupational health quote for your company. We reply within one working day.">
 <meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -272,7 +272,8 @@ textarea.form-input { resize:vertical; line-height:1.55; }
 <section class="intro">
   <p class="dateline">TT24 › Request a quote</p>
   <h1 id="hero-heading" class="headline">Request an occupational health quote for your company.</h1>
-  <p class="standfirst">Please complete the form below and an occupational health specialist will be in touch as soon as possible.</p>
+  <p class="standfirst">Please complete the form below. An occupational health specialist will reply within one working day.</p>
+  <p style="font-size:0.9rem; color:var(--mute); margin-top:10px;">Indicative price level: roughly €120 per month for an office company with 10 employees. For a closer estimate, use the <a href="kalkulaator.html">cost calculator</a>.</p>
 </section>
 
 <!-- Form -->
@@ -283,7 +284,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
     <div id="success-card" class="success-card" role="alert" aria-live="polite">
       <p class="eyebrow">Sent</p>
       <h2>Thank you for your enquiry.</h2>
-      <p>We have received your enquiry. An occupational health specialist will be in touch as soon as possible.</p>
+      <p>We have received your enquiry. An occupational health specialist will reply within one working day.</p>
       <p>Any questions: <a href="mailto:info@tt24.ee">info@tt24.ee</a> · <a href="tel:+37259110909">+372 5 911 0909</a></p>
       <p><a href="index.html">Back to home</a></p>
     </div>
@@ -384,7 +385,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         <p class="field-error" id="gdpr-err" role="alert"></p>
 
         <button type="submit" class="submit-btn">Send quote request</button>
-        <p class="submit-note">Required fields are marked. We will respond as soon as possible.</p>
+        <p class="submit-note">Required fields are marked. We reply within one working day.</p>
       </form>
     </div>
 
@@ -398,7 +399,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
     <div class="why-grid">
       <div class="why-row">
         <h3><span class="num">01</span>Prompt response</h3>
-        <p>We will be in touch as soon as possible and prepare a personalised quote.</p>
+        <p>We reply within one working day and prepare a personalised quote.</p>
       </div>
       <div class="why-row">
         <h3><span class="num">02</span>Full documentation</h3>
@@ -610,6 +611,59 @@ textarea.form-input { resize:vertical; line-height:1.55; }
       a.style.textDecorationThickness="2px";a.style.textUnderlineOffset="6px";
     }
   });
+})();
+</script>
+
+<!-- Prefill from calculator handoff: ?tootajad=<count>&sektor=<key> -->
+<script>
+(function(){
+  function prefill() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var emp = parseInt(params.get('tootajad'), 10);
+      var sektor = params.get('sektor');
+
+      var empSel = document.getElementById('tootajate_arv');
+      if (empSel && !isNaN(emp) && emp > 0) {
+        for (var i = 0; i < empSel.options.length; i++) {
+          var v = empSel.options[i].value;
+          if (!v) continue;
+          var range = v.match(/^(\d+)\D+(\d+)$/);
+          var plus = v.match(/^(\d+)\+$/);
+          if ((range && emp >= parseInt(range[1], 10) && emp <= parseInt(range[2], 10)) ||
+              (plus && emp >= parseInt(plus[1], 10))) {
+            empSel.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      var sectorMap = {
+        kontor: 'Kontor / IT',
+        kaubandus: 'Kaubandus / Jaemüük',
+        tootmine: 'Tootmine',
+        ehitus: 'Ehitus',
+        transport: 'Transport / Logistika',
+        tervishoid: 'Tervishoid / Sotsiaalhoolekanne',
+        toidu: 'Toitlustus / Hotellindus',
+        muu: 'Muu'
+      };
+      var secSel = document.getElementById('tegevusvaldkond');
+      if (secSel && sektor && Object.prototype.hasOwnProperty.call(sectorMap, sektor)) {
+        for (var j = 0; j < secSel.options.length; j++) {
+          if (secSel.options[j].value === sectorMap[sektor]) {
+            secSel.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    } catch (e) { /* prefill is best effort, the form works without it */ }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', prefill);
+  } else {
+    prefill();
+  }
 })();
 </script>
 </body>
