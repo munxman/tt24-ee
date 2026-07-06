@@ -645,7 +645,7 @@
           </div><!-- /timeline card -->
 
           <div style="margin-top: var(--space-4);">
-            <a href="pakkumine.html" class="btn btn-primary w-full" style="justify-content: center;" aria-label="Küsin pakkumist">
+            <a href="pakkumine.html?src=ajakava" class="btn btn-primary w-full" style="justify-content: center;" aria-label="Küsin pakkumist" onclick="if(window.gtag)gtag('event','cta_pakkumine_click',{source:'ajakava',source_page:window.location.pathname})">
               Vajate abi tähtaegade täitmisel? Küsin pakkumist →
             </a>
           </div>
@@ -688,7 +688,7 @@
   <div class="cta-banner-inner">
     <p>Vajate abi töötervishoiu korraldamisega? Küsige pakkumist töötervishoiu teenusele.</p>
     <p style="margin-top:8px; color:var(--mute);">Vastame ühe tööpäeva jooksul.</p>
-    <a href="pakkumine.html" class="btn-gold">Küsin pakkumist</a>
+    <a href="pakkumine.html?src=ajakava" class="btn-gold" onclick="if(window.gtag)gtag('event','cta_pakkumine_click',{source:'ajakava',source_page:window.location.pathname})">Küsin pakkumist</a>
     <p style="margin-top:14px; font-size:0.85rem; color:var(--mute);">Üks teenuseosutajatest on TT24 loojate kaasasutatud Valvekliinik.</p>
   </div>
 </section>

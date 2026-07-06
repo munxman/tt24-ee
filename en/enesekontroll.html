@@ -78,7 +78,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
   "mainEntity": [
     { "@type": "Question", "name": "What is the occupational health self-assessment?", "acceptedAnswer": { "@type": "Answer", "text": "It is a free 10-question tool that evaluates your company's readiness to meet occupational health requirements." } },
     { "@type": "Question", "name": "Does the self-assessment replace a Labour Inspectorate audit?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is a self-assessment tool only. It does not replace an official audit." } },
-    { "@type": "Question", "name": "Is my data stored anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. All calculations run in your browser. Nothing is saved to a server." } }
+    { "@type": "Question", "name": "Is my data stored anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "Your test answers and result are calculated in your browser. If you request the emailed report, we store your email address, company name and result to send it." } }
   ]
 }
 </script>
@@ -538,7 +538,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
           <form class="tt24-gate-form" id="quizGateForm" onsubmit="return tt24SubmitQuizGate(event)">
             <input type="email" name="email" required placeholder="you@yourcompany.com" autocomplete="email" aria-label="Email address">
             <button type="submit">Send full report</button>
-            <p class="tt24-gate-privacy">We use your data solely to send you the report and, if needed, to follow up. We do not share it with third parties. <a href="privaatsus.html">Privacy policy</a></p>
+            <p class="tt24-gate-privacy">Your answers stay in your browser; if you request the emailed report we store your email, company name and result to send it. <a href="privaatsus.html">Privacy policy</a></p>
           </form>
         </div>
         <div class="tt24-gate-success">
@@ -612,7 +612,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
       </details>
       <details class="faq-item">
         <summary>Is my data stored anywhere?</summary>
-        <div class="answer">No. All calculations run in your browser. Nothing is saved to a server.</div>
+        <div class="answer">Your test answers and result are calculated in your browser. If you request the emailed report, we store your email address, company name and result to send it.</div>
       </details>
     </div>
   </div>
