@@ -162,6 +162,9 @@ textarea.form-input { resize:vertical; line-height:1.55; }
 .consent input { margin-top:4px; flex-shrink:0; accent-color:var(--accent); width:18px; height:18px; }
 .consent a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
 
+.form-disclosure { font-size:13px; color:var(--mute); line-height:1.7; margin:20px 0 0; }
+.form-disclosure a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
+
 .submit-btn { background:var(--ink); color:var(--paper); border:0; width:100%; padding:18px 32px; font-family:var(--mono); font-size:13px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; margin-top:28px; }
 .submit-btn:hover:not(:disabled) { background:var(--accent); }
 .submit-btn:disabled { opacity:0.5; cursor:wait; }
@@ -296,7 +299,8 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         <input type="hidden" name="_subject" value="Uus TTH pakkumise päring, TT24 portaal" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="source" value="pakkumine" />
+        <input type="hidden" name="source" id="lead_source" value="pakkumine" />
+        <input type="hidden" name="score" id="lead_score" value="" />
 
         <div class="fg">
           <div class="fg-label">Kontaktisiku nimi <span class="req">·</span></div>
@@ -383,8 +387,10 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         </label>
         <p class="field-error" id="gdpr-err" role="alert"></p>
 
+        <p class="form-disclosure">Päringutele vastab TT24 koostööpartner <a href="https://valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a>, litsentseeritud töötervishoiuteenuse osutaja.<br>TT24 ei saa Valvekliinikust honorari ega vahendustasu.<br>Vastame ühe tööpäeva jooksul.</p>
+
         <button type="submit" class="submit-btn">Saadan pakkumise päringu</button>
-        <p class="submit-note">Kohustuslikud väljad on tähistatud. Vastame ühe tööpäeva jooksul.</p>
+        <p class="submit-note">Kohustuslikud väljad on tähistatud.</p>
       </form>
     </div>
 
@@ -613,48 +619,79 @@ textarea.form-input { resize:vertical; line-height:1.55; }
 })();
 </script>
 
-<!-- Prefill from calculator handoff: ?tootajad=<arv>&sektor=<võti> -->
+<!-- Attribution + prefill: ?src=<tool>&score=<n>&tootajad=<arv>&sektor=<võti>, fallback localStorage tt24_lead_ctx -->
 <script>
 (function(){
+  function selectEmpRange(emp) {
+    var empSel = document.getElementById('tootajate_arv');
+    if (!empSel || isNaN(emp) || emp <= 0) return;
+    for (var i = 0; i < empSel.options.length; i++) {
+      var v = empSel.options[i].value;
+      if (!v) continue;
+      var range = v.match(/^(\d+)\D+(\d+)$/);
+      var plus = v.match(/^(\d+)\+$/);
+      if ((range && emp >= parseInt(range[1], 10) && emp <= parseInt(range[2], 10)) ||
+          (plus && emp >= parseInt(plus[1], 10))) {
+        empSel.selectedIndex = i;
+        break;
+      }
+    }
+  }
+
+  var sectorMap = {
+    kontor: 'Kontor / IT',
+    kaubandus: 'Kaubandus / Jaemüük',
+    tootmine: 'Tootmine',
+    ehitus: 'Ehitus',
+    transport: 'Transport / Logistika',
+    tervishoid: 'Tervishoid / Sotsiaalhoolekanne',
+    toidu: 'Toitlustus / Hotellindus',
+    muu: 'Muu'
+  };
+
+  function selectSector(sektor) {
+    var secSel = document.getElementById('tegevusvaldkond');
+    if (!secSel || !sektor || !Object.prototype.hasOwnProperty.call(sectorMap, sektor)) return;
+    for (var j = 0; j < secSel.options.length; j++) {
+      if (secSel.options[j].value === sectorMap[sektor]) {
+        secSel.selectedIndex = j;
+        break;
+      }
+    }
+  }
+
   function prefill() {
     try {
       var params = new URLSearchParams(window.location.search);
-      var emp = parseInt(params.get('tootajad'), 10);
-      var sektor = params.get('sektor');
 
-      var empSel = document.getElementById('tootajate_arv');
-      if (empSel && !isNaN(emp) && emp > 0) {
-        for (var i = 0; i < empSel.options.length; i++) {
-          var v = empSel.options[i].value;
-          if (!v) continue;
-          var range = v.match(/^(\d+)\D+(\d+)$/);
-          var plus = v.match(/^(\d+)\+$/);
-          if ((range && emp >= parseInt(range[1], 10) && emp <= parseInt(range[2], 10)) ||
-              (plus && emp >= parseInt(plus[1], 10))) {
-            empSel.selectedIndex = i;
-            break;
-          }
-        }
+      // Attribution: which tool sent the visitor here (goes into the web3forms payload)
+      var src = (params.get('src') || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
+      var srcField = document.getElementById('lead_source');
+      if (srcField && src) srcField.value = src;
+
+      var score = (params.get('score') || '').replace(/[^0-9/]/g, '').slice(0, 5);
+      var scoreField = document.getElementById('lead_score');
+      if (scoreField && score) scoreField.value = score;
+
+      // Saved context from the tools (enesekontroll, kalkulaator)
+      var ctx = {};
+      try { ctx = JSON.parse(localStorage.getItem('tt24_lead_ctx') || '{}'); } catch (e2) { ctx = {}; }
+
+      // URL params win; localStorage context fills the gaps
+      var emp = parseInt(params.get('tootajad'), 10);
+      if (isNaN(emp) && ctx.empCount) emp = parseInt(ctx.empCount, 10);
+      selectEmpRange(emp);
+
+      var sektor = params.get('sektor') || ctx.sectorKey || '';
+      selectSector(sektor);
+
+      var companyInput = document.getElementById('ettevote');
+      if (companyInput && !companyInput.value && ctx.company) {
+        companyInput.value = String(ctx.company).slice(0, 80);
       }
 
-      var sectorMap = {
-        kontor: 'Kontor / IT',
-        kaubandus: 'Kaubandus / Jaemüük',
-        tootmine: 'Tootmine',
-        ehitus: 'Ehitus',
-        transport: 'Transport / Logistika',
-        tervishoid: 'Tervishoid / Sotsiaalhoolekanne',
-        toidu: 'Toitlustus / Hotellindus',
-        muu: 'Muu'
-      };
-      var secSel = document.getElementById('tegevusvaldkond');
-      if (secSel && sektor && Object.prototype.hasOwnProperty.call(sectorMap, sektor)) {
-        for (var j = 0; j < secSel.options.length; j++) {
-          if (secSel.options[j].value === sectorMap[sektor]) {
-            secSel.selectedIndex = j;
-            break;
-          }
-        }
+      if (scoreField && !scoreField.value && (ctx.score || ctx.score === 0)) {
+        scoreField.value = String(ctx.score).slice(0, 5);
       }
     } catch (e) { /* prefill on parim pingutus, vorm töötab ka ilma */ }
   }
