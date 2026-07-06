@@ -76,7 +76,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
   "mainEntity": [
     { "@type": "Question", "name": "Mis on töötervishoiu eneseanalüüs?", "acceptedAnswer": { "@type": "Answer", "text": "See on 10 küsimusest koosnev tasuta test, mis hindab Teie ettevõtte valmisolekut töötervishoiu nõuete täitmiseks." } },
     { "@type": "Question", "name": "Kas eneseanalüüs asendab Tööinspektsiooni auditit?", "acceptedAnswer": { "@type": "Answer", "text": "Ei. See on eneseanalüüsi vahend. See ei asenda ametlikku auditit." } },
-    { "@type": "Question", "name": "Kas minu andmeid salvestatakse?", "acceptedAnswer": { "@type": "Answer", "text": "Testi vastused ja arvutus jäävad Teie brauserisse. Kui tellite raporti e-postile, salvestame Teie e-posti aadressi ja ettevõtte nime raporti saatmiseks. Täpsemalt privaatsuspoliitikas." } }
+    { "@type": "Question", "name": "Kas minu andmeid salvestatakse?", "acceptedAnswer": { "@type": "Answer", "text": "Testi vastused ja arvutus jäävad Teie brauserisse. Kui tellite raporti e-postile, salvestame Teie e-posti aadressi, ettevõtte nime ja testi tulemuse raporti saatmiseks. Täpsemalt privaatsuspoliitikas." } }
   ]
 }
 </script>
@@ -184,6 +184,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .result-alert a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
 .result-alert.is-critical { border-left-color:var(--ink); }
 
+.print-report-header { display:none; }
 .result-block { margin-top:40px; }
 .result-block-title { font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); margin:0 0 4px; }
 
@@ -282,6 +283,10 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
   .result-share-card, .quiz-cta-banner, .foot, .btn-share, .quiz-restart,
   .tt24-gate-card, #pqlAlert, .section-inner, #tt24-cookie-banner { display:none !important; }
   .quiz-result-section { display:block !important; }
+  .print-report-header { display:block !important; margin:0 0 24px; }
+  .print-report-title { font-size:18px; font-weight:700; margin:0 0 4px; color:#000; }
+  .print-report-source { font-family:var(--mono); font-size:12px; letter-spacing:0.08em; margin:0 0 2px; color:#000; }
+  .print-report-date { font-size:12px; margin:0; color:#000; }
   body { background:#fff; }
 }
 
@@ -500,6 +505,12 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
     <!-- Results -->
     <div class="quiz-result-section" id="quizResult">
 
+      <div class="print-report-header" id="printReportHeader" aria-hidden="true">
+        <p class="print-report-title">Töötervishoiu enesekontrolli tulemus</p>
+        <p class="print-report-source">tt24.ee</p>
+        <p class="print-report-date" id="printReportDate"></p>
+      </div>
+
       <div class="result-score-banner" id="scoreBanner">
         <p class="result-company-name" id="resultCompanyName"></p>
         <div class="result-score-big" id="resultScoreBig">-</div>
@@ -545,14 +556,14 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
             <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
             <label class="tt24-gate-consent">
               <input type="checkbox" id="quizMarketingConsent" name="marketing_consent" value="jah">
-              <span>Võite minuga ühendust võtta töötervishoiu teemadel.</span>
+              <span>Nõustun, et TT24 koostööpartner Valvekliinik võib minuga töötervishoiu teemadel ühendust võtta.</span>
             </label>
             <button type="submit">Saada täielik raport minu e-postile</button>
-            <p class="tt24-gate-privacy">Kasutame Teie e-posti ja ettevõtte nime raporti saatmiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
+            <p class="tt24-gate-privacy">Kasutame Teie e-posti aadressi, ettevõtte nime ja testi tulemuse raporti saatmiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
           </form>
         </div>
         <div class="tt24-gate-success">
-          <h3>Aitäh! Päring on vastu võetud</h3>
+          <h3>Aitäh. Päring on vastu võetud.</h3>
           <p>Saadame raporti Teie e-postile ühe tööpäeva jooksul.</p>
         </div>
       </div>
@@ -601,7 +612,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
         <summary>Kas minu andmeid salvestatakse?</summary>
         <div class="answer">
           <p>Testi vastused ja arvutus jäävad Teie brauserisse.</p>
-          <p>Kui tellite raporti e-postile, salvestame Teie e-posti aadressi ja ettevõtte nime raporti saatmiseks.</p>
+          <p>Kui tellite raporti e-postile, salvestame Teie e-posti aadressi, ettevõtte nime ja testi tulemuse raporti saatmiseks.</p>
           <p>Täpsemalt <a href="privaatsus.html">privaatsuspoliitikas</a>.</p>
         </div>
       </details>
@@ -1040,8 +1051,18 @@ function shareEmail() {
 // Print / save-as-PDF via the browser: print CSS shows only the result section.
 // Chosen over jsPDF (removed) because the built-in Helvetica stripped õäöü;
 // the browser print view renders the page fonts with full diacritics.
+function setPrintReportDate() {
+  var el = document.getElementById('printReportDate');
+  if (el) { el.textContent = new Date().toLocaleDateString('et-EE'); }
+}
+
 function printReport() {
+  setPrintReportDate();
   window.print();
+}
+
+if (window.addEventListener) {
+  window.addEventListener('beforeprint', setPrintReportDate);
 }
 
 function copyLink() {
