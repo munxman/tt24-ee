@@ -481,6 +481,8 @@ html, body {
             <p class="ratio-caption" id="ratioCaption">Teenuse aastakulu on enamasti tunduvalt väiksem kui rikkumisega kaasnev rahatrahv ja muu kahju.</p>
           </div>
 
+          <p style="font-size:13px; line-height:1.55; color:var(--mute); margin:10px 0 0;">Hinnangud põhinevad avalikest hinnakirjadest (seisuga juuli 2026). Tegelik hind sõltub teenuseosutajast ja töötajate riskiprofiilist.</p>
+
           <p class="kalk-incl-head">Hinnas sisaldub</p>
           <div id="includesList"><!-- filled by JS --></div>
 
@@ -493,7 +495,7 @@ html, body {
                 <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
                 <button type="submit">Saada</button>
               </form>
-              <p class="tt24-calc-gate-privacy">Andmeid kasutame ainult Teile arvutuse edastamiseks. Ei jaga kolmandate osapooltega. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
+              <p class="tt24-calc-gate-privacy">Kasutame Teie e-posti arvutuse saatmiseks ja vastamiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
             </div>
             <div class="tt24-calc-gate-success">
               <p>Aitäh. Võtame Teiega esimesel võimalusel ühendust.</p>
@@ -501,7 +503,7 @@ html, body {
           </div>
 
           <!-- Secondary: ready-to-buy path -->
-          <a href="pakkumine.html" class="kalk-cta" aria-label="Küsin pakkumist">Küsin pakkumist</a>
+          <a href="pakkumine.html?src=kalkulaator" class="kalk-cta" aria-label="Küsin pakkumist" onclick="tt24TrackCtaClick('kalkulaator')">Küsin pakkumist</a>
           <p class="kalk-cta-meta">Olete valmis? Küsige personaalset pakkumist. Vastame esimesel võimalusel, ei kohusta millekski.</p>
 
         </div>
@@ -517,6 +519,10 @@ html, body {
     <p class="section-eyebrow">Riskianalüüs</p>
     <h2 class="section-h">Teenus võrreldes trahviriskiga</h2>
     <p class="section-sub">Kumb on kallim, seaduse täitmine või rikkumine?</p>
+
+    <div class="note-block">
+      <strong>Tulemus on orienteeruv.</strong> Täpne hind sõltub Teie ettevõtte spetsiifikast, riskianalüüsi tulemustest ja töötajate tervisekontrolli vajadustest. <a href="pakkumine.html?src=kalkulaator" onclick="tt24TrackCtaClick('kalkulaator')">Küsige personaalset pakkumist</a> või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.
+    </div>
 
     <div class="compare-grid">
       <div class="compare-col">
@@ -546,9 +552,6 @@ html, body {
       </div>
     </div>
 
-    <div class="note-block">
-      <strong>Tulemus on orienteeruv.</strong> Täpne hind sõltub Teie ettevõtte spetsiifikast, riskianalüüsi tulemustest ja töötajate tervisekontrolli vajadustest. <a href="pakkumine.html">Küsige personaalset pakkumist</a> või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.
-    </div>
   </div>
 </section>
 
@@ -607,7 +610,7 @@ html, body {
       <p class="provider-eyebrow">TT24 koostööpartner</p>
       <h3><a href="https://www.valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a></h3>
       <p>Valvekliinik on TT24 koostööpartner ja Dr Ingmar Lindströmi kaasasutatud kliinik. Avatud kuus päeva nädalas, sealhulgas õhtuti ja pühade ajal. Vastuvõtud saadaval samal päeval.</p>
-      <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Küsin pakkumist</a>
+      <a href="pakkumine.html?src=kalkulaator" class="kalk-cta" style="margin-top:0;" onclick="tt24TrackCtaClick('kalkulaator')">Küsin pakkumist</a>
     </div>
 
     <p class="provider-note">Nimekiri ei ole ammendav. Teenusepakkuja saate valida ise.</p>
@@ -692,7 +695,7 @@ html, body {
     <p class="section-eyebrow">Edasi</p>
     <h2>Vajate professionaalset töötervishoiuteenust?</h2>
     <p>Küsige personaalset pakkumist. Vastame esimesel võimalusel, kõik dokumendid korras.</p>
-    <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Küsin pakkumist</a>
+    <a href="pakkumine.html?src=kalkulaator" class="kalk-cta" style="margin-top:0;" onclick="tt24TrackCtaClick('kalkulaator')">Küsin pakkumist</a>
   </div>
 </section>
 
@@ -742,6 +745,7 @@ document.querySelectorAll('.sector-pill').forEach(function (pill) {
       group.querySelectorAll('.sector-pill').forEach(function (p) { p.classList.remove('active'); });
     }
     this.classList.add('active');
+    tt24CalcInteracted = true;
     recalculate();
   });
 });
@@ -766,12 +770,47 @@ function getBaseRate(empCount) {
   return 8;
 }
 
+// Employee ranges behind the select options (same ranges as the option labels).
+// The estimate is shown as a range across the whole bucket, not as one false-precision figure.
+var EMP_BUCKETS = {
+  '5':   { low: 1,   high: 10 },
+  '18':  { low: 11,  high: 25 },
+  '38':  { low: 26,  high: 50 },
+  '75':  { low: 51,  high: 100 },
+  '150': { low: 100, high: null }
+};
+
+function rateFor(empCount, multiplier, hasMinors) {
+  var r = getBaseRate(empCount) * multiplier;
+  if (hasMinors) r *= 1.05; // 5% premium for minors
+  return r;
+}
+
+function monthlyFor(empCount, multiplier, hasMinors) {
+  return Math.max(rateFor(empCount, multiplier, hasMinors) * empCount, 75); // minimum €75/month
+}
+
 function formatEur(val) {
   if (val >= 1000) {
     return '€' + Math.round(val).toLocaleString('et-EE');
   }
   return '€' + Math.round(val);
 }
+
+function tt24SaveLeadCtx(patch) {
+  try {
+    var ctx = JSON.parse(localStorage.getItem('tt24_lead_ctx') || '{}');
+    for (var k in patch) { if (Object.prototype.hasOwnProperty.call(patch, k)) ctx[k] = patch[k]; }
+    ctx.ts = new Date().toISOString();
+    localStorage.setItem('tt24_lead_ctx', JSON.stringify(ctx));
+  } catch (e) { /* localStorage võib olla keelatud, tööriist töötab ka ilma */ }
+}
+
+function tt24TrackCtaClick(source) {
+  if (window.gtag) gtag('event', 'cta_pakkumine_click', { source: source, source_page: window.location.pathname });
+}
+
+var tt24CalcInteracted = false;
 
 function recalculate() {
   var empCount = parseInt(document.getElementById('empNumber').value, 10) || 1;
@@ -784,28 +823,48 @@ function recalculate() {
   var minorsRadio = document.querySelector('input[name="minors"]:checked');
   var hasMinors = minorsRadio ? (minorsRadio.value === 'yes') : false;
 
-  var baseRate = getBaseRate(empCount);
-  var rate = baseRate * sector.multiplier;
-  if (hasMinors) rate *= 1.05; // 5% premium for minors
+  var selEl = document.getElementById('empNumber');
+  var bucket = EMP_BUCKETS[selEl.value] || { low: empCount, high: empCount };
+  var bucketLabel = selEl.options[selEl.selectedIndex].text;
 
-  var monthly = Math.max(rate * empCount, 75); // minimum €75/month
-  var annual  = monthly * 12;
-  var perEmp  = monthly / empCount;
+  var mLow = monthlyFor(bucket.low, sector.multiplier, hasMinors);
+  var monthlyText, annualText;
+  if (bucket.high) {
+    var mHigh = monthlyFor(bucket.high, sector.multiplier, hasMinors);
+    monthlyText = formatEur(mLow) + ' - ' + formatEur(mHigh);
+    annualText  = formatEur(mLow * 12) + ' - ' + formatEur(mHigh * 12);
+  } else {
+    // Open-ended bucket (100+): show a floor
+    monthlyText = 'alates ' + formatEur(mLow);
+    annualText  = 'alates ' + formatEur(mLow * 12);
+  }
+
+  // Per-employee range from the rate table across the bucket (not the floored monthly)
+  var rLow  = rateFor(bucket.high || 101, sector.multiplier, hasMinors);
+  var rHigh = rateFor(bucket.low, sector.multiplier, hasMinors);
+  var peMin = Math.round(Math.min(rLow, rHigh));
+  var peMax = Math.round(Math.max(rLow, rHigh));
+  var perEmpText = (peMin === peMax)
+    ? '~' + formatEur(peMin) + ' / töötaja'
+    : '~' + formatEur(peMin) + ' - ' + formatEur(peMax) + ' / töötaja';
+  // When the €75 monthly minimum dominates the low end, say that instead
+  if (rateFor(bucket.low, sector.multiplier, hasMinors) * bucket.low < 75) {
+    perEmpText = 'miinimum €75 / kuu';
+  }
 
   document.getElementById('resultSubtitle').textContent =
-    empCount + ' töötajat · ' + sector.label + (hasMinors ? ' · Alaealisi on' : '');
+    bucketLabel + ' · ' + sector.label + (hasMinors ? ' · Alaealisi on' : '');
 
-  document.getElementById('metricMonthly').textContent = formatEur(monthly);
-  document.getElementById('metricAnnual').textContent  = formatEur(annual);
-  document.getElementById('metricPerEmp').textContent  = '~' + formatEur(perEmp) + ' / töötaja';
+  document.getElementById('metricMonthly').textContent = monthlyText;
+  document.getElementById('metricAnnual').textContent  = annualText;
+  document.getElementById('metricPerEmp').textContent  = perEmpText;
   document.getElementById('metricFreq').textContent    = sector.freq;
 
   var badge = document.getElementById('riskBadge');
   badge.textContent = sector.risk + ' risk';
   badge.className = 'badge ' + sector.riskClass;
 
-  document.getElementById('compareServiceAnnual').textContent = formatEur(annual) + ' / aastas';
-  var selEl = document.getElementById('empNumber');
+  document.getElementById('compareServiceAnnual').textContent = annualText + ' / aastas';
   document.getElementById('compareEmpRange').textContent =
     selEl.options[selEl.selectedIndex].text.replace(' töötajat', '');
 
@@ -821,13 +880,19 @@ function recalculate() {
   // Carry calculator state into the quote form (prefill on pakkumine.html)
   var quoteCta = document.querySelector('#resultCard .kalk-cta');
   if (quoteCta) {
-    quoteCta.href = 'pakkumine.html?tootajad=' + encodeURIComponent(empCount) + '&sektor=' + encodeURIComponent(sectorKey);
+    quoteCta.href = 'pakkumine.html?src=kalkulaator&tootajad=' + encodeURIComponent(empCount) + '&sektor=' + encodeURIComponent(sectorKey);
+  }
+
+  // Save context for prefill on pakkumine.html (only after the user has interacted)
+  if (tt24CalcInteracted) {
+    tt24SaveLeadCtx({ empCount: empCount, sectorKey: sectorKey });
   }
 }
 
 // ─── Select change handler ───────────────────────────────
 var empSelect = document.getElementById('empNumber');
 empSelect.addEventListener('change', function () {
+  tt24CalcInteracted = true;
   recalculate();
   tt24FireCalcStart();
 });
