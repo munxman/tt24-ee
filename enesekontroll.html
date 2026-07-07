@@ -207,13 +207,13 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .rec-desc { font-size:15px; color:var(--ink-soft); line-height:1.55; margin:0; }
 .rec-link { display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--accent); margin-top:10px; text-decoration:none; border-bottom:1px solid var(--rule); }
 
-/* QR + disclaimer row */
+/* QR + disclaimer row (QR on ekraanil peidetud; kuvatakse ainult prindiraportis) */
 .result-qr-row { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-top:24px; margin-top:20px; border-top:1px solid var(--rule); }
-.result-qr-block { display:flex; align-items:center; gap:14px; }
+.result-qr-block { display:none; align-items:center; gap:14px; }
 .result-qr-block img { width:64px; height:64px; border:1px solid var(--rule); }
 .result-qr-text { font-size:12px; color:var(--mute); max-width:140px; line-height:1.4; }
 .result-qr-url { font-family:var(--mono); font-size:11px; color:var(--accent); margin-top:3px; }
-.result-disclaimer { font-size:12px; color:var(--mute); max-width:260px; text-align:right; line-height:1.4; }
+.result-disclaimer { font-size:12px; color:var(--mute); max-width:260px; text-align:left; line-height:1.4; }
 
 /* Share */
 .share-btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
@@ -288,6 +288,8 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
   .result-share-card, .quiz-cta-banner, .foot, .btn-share, .quiz-restart,
   .tt24-gate-card, #pqlAlert, .section-inner, #tt24-cookie-banner { display:none !important; }
   .quiz-result-section { display:block !important; }
+  .result-qr-block { display:flex !important; }
+  .result-disclaimer { text-align:right; }
   .print-report-header { display:block !important; margin:0 0 24px; }
   .print-report-title { font-size:18px; font-weight:700; margin:0 0 4px; color:#000; }
   .print-report-source { font-family:var(--mono); font-size:12px; letter-spacing:0.08em; margin:0 0 2px; color:#000; }
