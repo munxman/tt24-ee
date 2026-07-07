@@ -1,0 +1,4 @@
+# Local working files - never publish (this repo is PUBLIC)
+CLAUDE.md
+.claude/
+*.local.*
