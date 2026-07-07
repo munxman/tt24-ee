@@ -48,7 +48,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
   "name":"TT24","alternateName":"TT24 Töötervishoiu Teejuht",
   "url":"https://tt24.ee/","logo":"https://tt24.ee/apple-touch-icon.png",
   "description":"Eesti tööandjatele mõeldud töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.",
-  "parentOrganization":{"@type":"Organization","name":"Sentifoli & Lindström OÜ","url":"https://tt24.ee/"},
+  "parentOrganization":{"@type":"Organization","name":"Sentifoli-Lindström OÜ","url":"https://tt24.ee/"},
   "founder":{"@type":"Person","name":"Ingmar Lindström","jobTitle":"Arst, ettevõtja"},
   "address":{"@type":"PostalAddress","streetAddress":"Sepapaja 12/1, Ülemiste Tervisemaja 2","addressLocality":"Tallinn","postalCode":"11415","addressCountry":"EE"},
   "contactPoint":{"@type":"ContactPoint","email":"info@tt24.ee","telephone":"+372 5 911 0909","contactType":"customer support","areaServed":"EE","availableLanguage":"Estonian"}
@@ -885,6 +885,21 @@ html, body {
   </div>
 </section>
 
+<!-- Founder strip -->
+<section class="section" id="asutaja">
+  <div class="section-inner">
+    <p class="section-eyebrow">Kes selle taga on</p>
+    <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+      <img src="images/ingmar-lindstrom.jpg" alt="Dr Ingmar Lindström" width="88" height="110" loading="lazy" style="width:88px; height:110px; object-fit:cover; flex:none; border:1px solid var(--rule);">
+      <div style="min-width:260px; flex:1;">
+        <p style="font-family:var(--serif); font-size:19px; font-weight:500; color:var(--ink); margin:0 0 4px;">Dr Ingmar Lindström, arst - TT24 asutaja</p>
+        <p style="font-size:15px; line-height:1.6; color:var(--ink-soft); margin:0 0 8px;">Töötanud 20+ aastat arstina Eestis ja Soomes.</p>
+        <a href="meist.html" style="font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:2px;">Meist &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- Footer -->
@@ -918,7 +933,7 @@ html, body {
     </div>
   </div>
   <div class="foot-bottom">
-    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <span style="text-transform:none">Sentifoli-Lindström OÜ · registrikood 17292248 · Sepapaja tn 12/1, 11415 Tallinn · info@tt24.ee · © 2026</span>
     <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>

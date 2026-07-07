@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="editorial.css?v=5">
+  <link rel="stylesheet" href="editorial.css?v=6">
   <link rel="canonical" href="https://tt24.ee/muudatused.html" />
   <link rel="alternate" hreflang="et" href="https://tt24.ee/muudatused.html" />
 <link rel="alternate" hreflang="en" href="https://tt24.ee/en/muudatused.html" />
@@ -395,14 +395,26 @@
       padding: var(--space-10, 2.5rem) 0;
       color: var(--color-text-muted, #64748B);
     }
-    .muudatused-rss-note {
-      max-width: 900px;
-      margin: 0 auto var(--space-8, 2rem);
-      padding: 0 var(--space-5, 1.25rem);
-      font-size: var(--text-sm, 0.875rem);
-      color: #64748B;
-      text-align: center;
-    }
+    /* Subscribe block (web3forms) */
+    .muudatused-subscribe { max-width:900px; margin:0 auto 56px; padding:0 var(--space-5, 1.25rem); scroll-margin-top:20px; }
+    .muudatused-subscribe-inner { border:1px solid var(--rule); border-top:3px solid var(--accent); padding:28px 26px; }
+    .muudatused-subscribe h2 { font-family:var(--serif); font-size:22px; font-weight:500; letter-spacing:-0.01em; color:var(--ink); margin:0 0 8px; }
+    .subscribe-lead { font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0 0 18px; }
+    .subscribe-row { display:flex; gap:10px; flex-wrap:wrap; }
+    .subscribe-row input[type="email"] { flex:1 1 220px; padding:11px 0; border:0; border-bottom:1px solid var(--rule); font-family:var(--sans); font-size:16px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
+    .subscribe-row input[type="email"]:focus { border-bottom-color:var(--accent); }
+    .subscribe-row button { background:var(--ink); color:var(--paper); border:0; padding:12px 22px; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; white-space:nowrap; }
+    .subscribe-row button:hover:not(:disabled) { background:var(--accent); }
+    .subscribe-row button:disabled { opacity:0.5; cursor:wait; }
+    .subscribe-consent { display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--mute); line-height:1.5; margin-top:14px; }
+    .subscribe-consent input { margin-top:3px; accent-color:var(--accent); flex-shrink:0; }
+    .subscribe-error { display:none; margin:12px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+    .subscribe-error.show { display:block; }
+    .subscribe-error a { color:var(--accent); }
+    .subscribe-success { display:none; }
+    .subscribe-success p { margin:0; color:var(--ink); font-size:15px; }
+    .subscribe-privacy { font-size:11px; color:var(--mute); margin:14px 0 0; line-height:1.5; }
+    .subscribe-privacy a { color:var(--mute); }
     @media (max-width: 640px) {
       .muudatused-list { padding: var(--space-6, 1.5rem) var(--space-4, 1rem); }
       .muudatused-entry { padding: var(--space-4, 1rem); }
@@ -589,10 +601,70 @@
 
   </div>
 
-  <p class="muudatused-rss-note">
-    Lehekülg uueneb, kui jälgitavad ametkonnad avaldavad uue muudatuse.
-    Kui soovite saada teateid e-postile, kirjutage <a href="mailto:info@tt24.ee?subject=Soovin%20muudatuste%20uudiskirja" style="color:var(--color-primary, #0284C7);text-decoration:underline;">info@tt24.ee</a>.
-  </p>
+  <section class="muudatused-subscribe" id="telli" aria-label="Muudatuste teavituste tellimine">
+    <div class="muudatused-subscribe-inner">
+      <h2>Tellige muudatuste teavitus e-postile</h2>
+      <p class="subscribe-lead">TT24 saadab teate, kui jälgitavad ametkonnad avaldavad uue muudatuse.<br>Tasuta, ilma müügisisuta.</p>
+      <form id="subscribeForm" onsubmit="return tt24SubmitSubscribe(event)">
+        <div class="subscribe-row">
+          <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
+          <button type="submit">Telli teavitused</button>
+        </div>
+        <label class="subscribe-consent">
+          <input type="checkbox" id="subMarketingConsent" name="marketing_consent" value="jah">
+          <span>Nõustun, et TT24 koostööpartner Valvekliinik võib minuga töötervishoiu teemadel ühendust võtta.</span>
+        </label>
+      </form>
+      <p class="subscribe-error" id="subscribeError" role="alert">Saatmine ebaõnnestus. Palun proovige uuesti või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+      <div class="subscribe-success" id="subscribeSuccess" role="status">
+        <p>Aitäh. Lisame Teid teavituste nimekirja.</p>
+      </div>
+      <p class="subscribe-privacy">Kasutame Teie e-posti aadressi teavituste saatmiseks. Kui annate eraldi nõusoleku, võib Valvekliinik Teiega ühendust võtta. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a> · Teavitustest saate igal ajal loobuda, kirjutades <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+    </div>
+  </section>
+
+  <script>
+  function tt24SubmitSubscribe(e) {
+    e.preventDefault();
+    var form = e.target;
+    var email = (form.querySelector('input[name="email"]').value || '').trim();
+    var btn = form.querySelector('button[type="submit"]');
+    if (!email) return false;
+    btn.disabled = true;
+    btn.textContent = 'Saadan...';
+    var errEl = document.getElementById('subscribeError');
+    if (errEl) errEl.classList.remove('show');
+    var consentBox = document.getElementById('subMarketingConsent');
+    var fd = new FormData();
+    fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
+    fd.append('email', email);
+    fd.append('marketing_consent', (consentBox && consentBox.checked) ? 'jah' : 'ei');
+    fd.append('source', 'muudatused');
+    fd.append('subject', 'TT24 muudatuste teavituse tellimus');
+    function failSubscribe() {
+      if (errEl) errEl.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Telli teavitused';
+    }
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        var isOk = r.ok && r.status >= 200 && r.status < 300;
+        if (window.gtag) gtag('event', 'muudatused_subscribe', { outcome: isOk ? 'ok' : 'http_' + r.status, source_page: window.location.pathname });
+        if (isOk) {
+          form.style.display = 'none';
+          var s = document.getElementById('subscribeSuccess');
+          if (s) s.style.display = 'block';
+        } else {
+          failSubscribe();
+        }
+      })
+      .catch(function () {
+        if (window.gtag) gtag('event', 'muudatused_subscribe', { outcome: 'network_error', source_page: window.location.pathname });
+        failSubscribe();
+      });
+    return false;
+  }
+  </script>
 
 </main>
 
@@ -626,7 +698,7 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <span style="text-transform:none">Sentifoli-Lindström OÜ · registrikood 17292248 · Sepapaja tn 12/1, 11415 Tallinn · info@tt24.ee · © 2026</span>
     <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>

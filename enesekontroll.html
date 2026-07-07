@@ -106,7 +106,9 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
 
 /* Intro */
-.intro { max-width:760px; margin:0 auto; padding:80px 32px 48px; }
+.intro { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:52px 32px 44px; position:relative; overflow:hidden; background-image: radial-gradient(ellipse 90% 62% at 50% 0%, rgba(0,102,204,.045), transparent 62%); }
+.intro::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image: linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px); background-size:28px 28px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); }
+.intro > * { position:relative; z-index:1; }
 .dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
 .dateline span { color:var(--accent); }
 .headline { font-family:var(--serif); font-size:clamp(24px, 2.5vw, 31px); line-height:1.1; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 24px; }
@@ -114,11 +116,11 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 
 /* Section */
 .section { border-top:1px solid var(--rule); }
-.section-inner { max-width:760px; margin:0 auto; padding:64px 32px; }
+.section-inner { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:64px 32px; }
 .section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
 .section-h { font-family:var(--serif); font-size:clamp(27px, 3vw, 35px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 24px; }
 
-.quiz-wrap { max-width:760px; margin:0 auto; padding:48px 32px 80px; }
+.quiz-wrap { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:48px 32px 80px; }
 .quiz-disclaimer-top { border-left:2px solid var(--rule); padding:14px 20px; font-size:14px; line-height:1.6; color:var(--mute); margin-bottom:40px; }
 .quiz-disclaimer-top strong { color:var(--ink-soft); font-weight:600; }
 
@@ -205,13 +207,13 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .rec-desc { font-size:15px; color:var(--ink-soft); line-height:1.55; margin:0; }
 .rec-link { display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--accent); margin-top:10px; text-decoration:none; border-bottom:1px solid var(--rule); }
 
-/* QR + disclaimer row */
+/* QR + disclaimer row (QR on ekraanil peidetud; kuvatakse ainult prindiraportis) */
 .result-qr-row { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding-top:24px; margin-top:20px; border-top:1px solid var(--rule); }
-.result-qr-block { display:flex; align-items:center; gap:14px; }
+.result-qr-block { display:none; align-items:center; gap:14px; }
 .result-qr-block img { width:64px; height:64px; border:1px solid var(--rule); }
 .result-qr-text { font-size:12px; color:var(--mute); max-width:140px; line-height:1.4; }
 .result-qr-url { font-family:var(--mono); font-size:11px; color:var(--accent); margin-top:3px; }
-.result-disclaimer { font-size:12px; color:var(--mute); max-width:260px; text-align:right; line-height:1.4; }
+.result-disclaimer { font-size:12px; color:var(--mute); max-width:260px; text-align:left; line-height:1.4; }
 
 /* Share */
 .share-btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
@@ -246,6 +248,9 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .tt24-gate-card.is-unlocked .tt24-gate-success { display:block; }
 .tt24-gate-consent { display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--mute); line-height:1.5; }
 .tt24-gate-consent input { margin-top:3px; accent-color:var(--accent); flex-shrink:0; }
+.tt24-gate-error { display:none; margin:10px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+.tt24-gate-error.show { display:block; }
+.tt24-gate-error a { color:var(--accent); }
 
 /* FAQ */
 .faq-list { margin-top:24px; }
@@ -283,6 +288,8 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
   .result-share-card, .quiz-cta-banner, .foot, .btn-share, .quiz-restart,
   .tt24-gate-card, #pqlAlert, .section-inner, #tt24-cookie-banner { display:none !important; }
   .quiz-result-section { display:block !important; }
+  .result-qr-block { display:flex !important; }
+  .result-disclaimer { text-align:right; }
   .print-report-header { display:block !important; margin:0 0 24px; }
   .print-report-title { font-size:18px; font-weight:700; margin:0 0 4px; color:#000; }
   .print-report-source { font-family:var(--mono); font-size:12px; letter-spacing:0.08em; margin:0 0 2px; color:#000; }
@@ -559,12 +566,14 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
               <span>Nõustun, et TT24 koostööpartner Valvekliinik võib minuga töötervishoiu teemadel ühendust võtta.</span>
             </label>
             <button type="submit">Saada täielik raport minu e-postile</button>
+            <p class="tt24-gate-error" id="quizGateError" role="alert">Saatmine ebaõnnestus. Palun proovige uuesti või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
             <p class="tt24-gate-privacy">Kasutame Teie e-posti aadressi, ettevõtte nime ja testi tulemuse raporti saatmiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
           </form>
         </div>
         <div class="tt24-gate-success">
           <h3>Aitäh. Päring on vastu võetud.</h3>
           <p>Saadame raporti Teie e-postile ühe tööpäeva jooksul.</p>
+          <p style="margin:8px 0 0; font-size:13px; color:var(--ink-soft);">Soovite edaspidi teavitusi seadusemuudatustest? <a href="muudatused.html#telli" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule);">Tellige siit</a>.</p>
         </div>
       </div>
 
@@ -678,7 +687,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
     </div>
   </div>
   <div class="foot-bottom">
-    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <span style="text-transform:none">Sentifoli-Lindström OÜ · registrikood 17292248 · Sepapaja tn 12/1, 11415 Tallinn · info@tt24.ee · © 2026</span>
     <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>
@@ -1018,6 +1027,8 @@ function restartQuiz() {
     if (consentBox) consentBox.checked = false;
     var btn = gate.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = false; btn.textContent = 'Saada täielik raport minu e-postile'; }
+    var gateErr = document.getElementById('quizGateError');
+    if (gateErr) gateErr.classList.remove('show');
   }
   tt24QuizStartFired = false;
   document.getElementById('companyInputWrap').style.display = '';
@@ -1121,15 +1132,25 @@ function tt24SubmitQuizGate(e) {
   fd.append('source', 'enesekontroll-gate');
   fd.append('subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
 
-  function unlockGateAndRecord(outcomeLabel) {
+  var errEl = document.getElementById('quizGateError');
+  if (errEl) errEl.classList.remove('show');
+
+  function recordGateOutcome(outcomeLabel) {
+    if (window.gtag) gtag('event', 'quiz_email_capture', {
+      quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
+      source_page: window.location.pathname, value: 0, currency: 'EUR'
+    });
+  }
+
+  function unlockGate() {
     var gate = document.getElementById('quizGateCard');
     if (gate) { gate.classList.remove('is-locked'); gate.classList.add('is-unlocked'); }
-    if (window.dataLayer) {
-      if (window.gtag) gtag('event', 'quiz_email_capture', {
-        quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
-        source_page: window.location.pathname, value: 0, currency: 'EUR'
-      });
-    }
+  }
+
+  function failGate() {
+    if (errEl) errEl.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Saada täielik raport minu e-postile';
   }
 
   function persistFailedLead(reason) {
@@ -1144,13 +1165,19 @@ function tt24SubmitQuizGate(e) {
   fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
     .then(function (r) {
       var isOk = r.ok && r.status >= 200 && r.status < 300;
-      if (!isOk) persistFailedLead('http_' + r.status);
-      unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
+      recordGateOutcome(isOk ? 'ok' : 'http_' + r.status);
+      if (isOk) {
+        unlockGate();
+      } else {
+        persistFailedLead('http_' + r.status);
+        failGate();
+      }
     })
     .catch(function (err) {
       if (typeof console !== 'undefined' && console.error) console.error('quiz gate fetch failed:', err);
+      recordGateOutcome('network_error');
       persistFailedLead('network_error');
-      unlockGateAndRecord('network_error');
+      failGate();
     });
 
   return false;

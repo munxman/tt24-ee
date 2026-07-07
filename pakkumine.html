@@ -60,7 +60,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
     "@type": "Organization",
     "name": "TT24",
     "url": "https://tt24.ee",
-    "parentOrganization": { "@type": "Organization", "name": "Sentifoli & Lindström OÜ" }
+    "parentOrganization": { "@type": "Organization", "name": "Sentifoli-Lindström OÜ" }
   },
   "provider": {
     "@type": "MedicalOrganization",
@@ -121,7 +121,9 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .nav a:hover, .nav a.active { color:var(--accent); }
 .nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
 
-.intro { max-width:760px; margin:0 auto; padding:48px 32px 28px; }
+.intro { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:52px 32px 28px; position:relative; overflow:hidden; background-image: radial-gradient(ellipse 90% 62% at 50% 0%, rgba(0,102,204,.045), transparent 62%); }
+.intro::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image: linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px); background-size:28px 28px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); }
+.intro > * { position:relative; z-index:1; }
 .dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
 .dateline span { color:var(--accent); }
 .headline { font-family:var(--serif); font-size:clamp(24px, 2.5vw, 31px); line-height:1.1; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 24px; }
@@ -138,7 +140,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 @media (max-width:600px){ .trust-rows{ grid-template-columns:1fr; } .trust-row:nth-child(odd){ border-right:0; padding-right:0; } .trust-row:nth-child(even){ padding-left:0; } }
 
 .section { border-top:1px solid var(--rule); }
-.form-wrap { max-width:680px; margin:0 auto; padding:36px 32px 80px; }
+.form-wrap { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:36px 32px 80px; }
 .form-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 18px; }
 .form-h { font-family:var(--serif); font-size:clamp(26px,3vw,34px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 36px; }
 
@@ -150,15 +152,16 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .form-input { width:100%; border:0; border-bottom:1px solid var(--rule); padding:12px 0; font-family:var(--sans); font-size:17px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
 select.form-input { cursor:pointer; }
 .form-input:focus { border-bottom-color:var(--accent); }
-.form-input.invalid { border-bottom-color:var(--ink); }
+.form-input.invalid { border-bottom:2px solid var(--accent); }
 .form-input.valid { border-bottom-color:var(--rule); }
 textarea.form-input { resize:vertical; line-height:1.55; }
 .fg-hint { font-size:13px; color:var(--mute); margin:8px 0 0; }
-.field-error { color:var(--ink); font-size:13px; margin:6px 0 0; display:none; }
+.field-error { color:var(--accent); font-size:13px; margin:6px 0 0; display:none; }
 .field-error.show { display:block; }
 .field-error::before { content:''; display:inline-block; width:14px; border-top:2px solid var(--accent); vertical-align:middle; margin-right:6px; }
 
 .consent { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 0; margin-top:8px; display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--ink-soft); line-height:1.55; }
+.consent.consent-error { border-left:3px solid var(--accent); padding-left:16px; }
 .consent input { margin-top:4px; flex-shrink:0; accent-color:var(--accent); width:18px; height:18px; }
 .consent a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
 
@@ -275,7 +278,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
   <p class="dateline">TT24 › Küsi pakkumist</p>
   <h1 id="hero-heading" class="headline">Küsige oma ettevõttele töötervishoiu pakkumist.</h1>
   <p class="standfirst">Täitke palun allolev vorm. Töötervishoiu spetsialist vastab Teile ühe tööpäeva jooksul.</p>
-  <p style="font-size:0.9rem; color:var(--mute); margin-top:10px;">Orienteeruv hinnatase: 10 töötajaga kontoriettevõttele ligikaudu 120 € kuus. Täpsema arvutuse saate <a href="kalkulaator.html">kulukalkulaatorist</a>.</p>
+  <p style="font-size:0.9rem; color:var(--mute); margin-top:10px;">Orienteeruv hinnatase: kuni 10 töötajaga kontoriettevõttele ligikaudu 75 - 120 € kuus. Täpsema arvutuse saate <a href="kalkulaator.html">kulukalkulaatorist</a>.</p>
 </section>
 
 <!-- Form -->
@@ -303,7 +306,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         <input type="hidden" name="score" id="lead_score" value="" />
 
         <div class="fg">
-          <div class="fg-label">Kontaktisiku nimi <span class="req">·</span></div>
+          <div class="fg-label">Kontaktisiku nimi <span class="req">· kohustuslik</span></div>
           <div>
             <input type="text" id="nimi" name="nimi" class="form-input" placeholder="Eesnimi Perenimi" required autocomplete="name" aria-required="true">
             <p class="field-error" id="nimi-err" role="alert"></p>
@@ -311,7 +314,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         </div>
 
         <div class="fg">
-          <div class="fg-label">Tööalane e-post <span class="req">·</span></div>
+          <div class="fg-label">Tööalane e-post <span class="req">· kohustuslik</span></div>
           <div>
             <input type="email" id="epost" name="email" class="form-input" placeholder="teie@ettevote.ee" required autocomplete="email" aria-required="true">
             <p class="field-error" id="epost-err" role="alert"></p>
@@ -327,7 +330,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
         </div>
 
         <div class="fg">
-          <div class="fg-label">Ettevõtte nimi <span class="req">·</span></div>
+          <div class="fg-label">Ettevõtte nimi <span class="req">· kohustuslik</span></div>
           <div>
             <input type="text" id="ettevote" name="ettevote_nimi" class="form-input" placeholder="OÜ / AS Näidis" required autocomplete="organization" aria-required="true">
             <p class="field-error" id="ettevote-err" role="alert"></p>
@@ -389,6 +392,11 @@ textarea.form-input { resize:vertical; line-height:1.55; }
 
         <p class="form-disclosure">Päringutele vastab TT24 koostööpartner <a href="https://valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a>, tegevusloaga töötervishoiuteenuse osutaja.<br>TT24 ei saa Valvekliinikult vahendustasu ega muud tasu.<br>Vastus tuleb ühe tööpäeva jooksul.</p>
 
+        <div style="display:flex; gap:14px; align-items:center; margin:20px 0 0; padding-top:16px; border-top:1px solid var(--rule);">
+          <img src="images/ingmar-lindstrom.jpg" alt="Dr Ingmar Lindström" width="44" height="55" loading="lazy" style="width:44px; height:55px; object-fit:cover; flex:none; border:1px solid var(--rule);">
+          <p style="font-size:13px; color:var(--mute); line-height:1.6; margin:0;">Dr Ingmar Lindström, arst - TT24 asutaja. <a href="meist.html" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule);">Meist</a></p>
+        </div>
+
         <button type="submit" class="submit-btn">Saadan pakkumise päringu</button>
         <p class="submit-note">Kohustuslikud väljad on tähistatud.</p>
       </form>
@@ -420,7 +428,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
       </div>
     </div>
 
-    <p class="provider-note">Teenust osutab TT24 koostööpartner <a href="https://valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a>, tegevusloaga töötervishoiuteenuse osutaja. TT24 portaali omab Sentifoli &amp; Lindström OÜ.</p>
+    <p class="provider-note">Teenust osutab TT24 koostööpartner <a href="https://valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a>, tegevusloaga töötervishoiuteenuse osutaja. TT24 portaali omab Sentifoli-Lindström OÜ.</p>
   </div>
 </section>
 
@@ -457,7 +465,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
     </div>
   </div>
   <div class="foot-bottom">
-    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <span style="text-transform:none">Sentifoli-Lindström OÜ · registrikood 17292248 · Sepapaja tn 12/1, 11415 Tallinn · info@tt24.ee · © 2026</span>
     <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>
@@ -526,13 +534,16 @@ textarea.form-input { resize:vertical; line-height:1.55; }
       if (el && !validateField(el)) ok = false;
     });
     var gdpr = document.getElementById('gdpr');
+    var consentRow = document.querySelector('.consent');
     if (gdpr && !gdpr.checked) {
       var errEl = document.getElementById('gdpr-err');
       if (errEl) { errEl.textContent = 'Palun nõustuge andmetöötlusega enne saatmist'; errEl.classList.add('show'); }
+      if (consentRow) consentRow.classList.add('consent-error');
       ok = false;
     } else {
       var errEl2 = document.getElementById('gdpr-err');
       if (errEl2) errEl2.classList.remove('show');
+      if (consentRow) consentRow.classList.remove('consent-error');
     }
     if (!ok) {
       var firstInvalid = form.querySelector('.invalid, .field-error.show');

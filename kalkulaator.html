@@ -229,13 +229,18 @@ html, body {
 .tt24-calc-gate h4 { margin:0 0 6px; font-family:var(--serif); font-size:18px; font-weight:500; color:var(--ink); }
 .tt24-calc-gate p { margin:0 0 14px; font-size:14px; color:var(--ink-soft); line-height:1.5; }
 .tt24-calc-gate-form { display:flex; gap:10px; flex-wrap:wrap; }
-.tt24-calc-gate-form input[type="email"] { flex:1 1 200px; padding:11px 0; border:0; border-bottom:1px solid var(--rule); font-family:var(--sans); font-size:15px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
+.tt24-calc-gate-form input[type="email"] { flex:1 1 200px; padding:11px 0; border:0; border-bottom:1px solid var(--rule); font-family:var(--sans); font-size:16px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
 .tt24-calc-gate-form input[type="email"]:focus { border-bottom-color:var(--accent); }
 .tt24-calc-gate-form button { background:var(--ink); color:var(--paper); border:0; padding:11px 22px; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; white-space:nowrap; }
 .tt24-calc-gate-form button:hover:not(:disabled) { background:var(--accent); }
 .tt24-calc-gate-form button:disabled { opacity:0.5; cursor:wait; }
 .tt24-calc-gate-privacy { font-size:11px !important; color:var(--mute) !important; margin:10px 0 0 !important; line-height:1.4; }
 .tt24-calc-gate-privacy a { color:var(--mute); }
+.tt24-calc-gate-consent { display:flex; gap:10px; align-items:flex-start; flex-basis:100%; font-size:13px; color:var(--mute); line-height:1.5; margin-top:4px; }
+.tt24-calc-gate-consent input { margin-top:3px; accent-color:var(--accent); flex-shrink:0; }
+.tt24-calc-gate-error { display:none; margin:10px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+.tt24-calc-gate-error.show { display:block; }
+.tt24-calc-gate-error a { color:var(--accent); }
 .tt24-calc-gate-success { display:none; }
 .tt24-calc-gate-success p { margin:0; color:var(--ink); font-size:15px; }
 .tt24-calc-gate.is-unlocked .tt24-calc-gate-form-wrap { display:none; }
@@ -490,15 +495,21 @@ html, body {
           <div class="tt24-calc-gate" id="calcGate">
             <div class="tt24-calc-gate-form-wrap">
               <h4>Saatke arvutus oma e-postile</h4>
-              <p>Jätke oma e-posti aadress ja võtame Teiega ühendust.</p>
+              <p>Saadame arvutuse ja hinnavahemiku Teie e-postile ühe tööpäeva jooksul.</p>
               <form class="tt24-calc-gate-form" id="calcGateForm" onsubmit="return tt24SubmitCalcGate(event)">
                 <input type="email" name="email" required placeholder="teie@ettevote.ee" autocomplete="email" aria-label="E-posti aadress">
                 <button type="submit">Saada</button>
+                <label class="tt24-calc-gate-consent">
+                  <input type="checkbox" id="calcMarketingConsent" name="marketing_consent" value="jah">
+                  <span>Nõustun, et TT24 koostööpartner Valvekliinik võib minuga töötervishoiu teemadel ühendust võtta.</span>
+                </label>
               </form>
-              <p class="tt24-calc-gate-privacy">Kasutame Teie e-posti aadressi arvutuse saatmiseks ja Teile vastamiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
+              <p class="tt24-calc-gate-error" id="calcGateError" role="alert">Saatmine ebaõnnestus. Palun proovige uuesti või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+              <p class="tt24-calc-gate-privacy">Kasutame Teie e-posti aadressi arvutuse saatmiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
             </div>
             <div class="tt24-calc-gate-success">
-              <p>Aitäh. Võtame Teiega esimesel võimalusel ühendust.</p>
+              <p>Aitäh. Saadame arvutuse ja hinnavahemiku Teie e-postile ühe tööpäeva jooksul.</p>
+              <p style="margin:8px 0 0; font-size:13px; color:var(--ink-soft);">Soovite edaspidi teavitusi seadusemuudatustest? <a href="muudatused.html#telli" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule);">Tellige siit</a>.</p>
             </div>
           </div>
 
@@ -730,7 +741,7 @@ html, body {
     </div>
   </div>
   <div class="foot-bottom">
-    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <span style="text-transform:none">Sentifoli-Lindström OÜ · registrikood 17292248 · Sepapaja tn 12/1, 11415 Tallinn · info@tt24.ee · © 2026</span>
     <a href="privaatsus.html">Privaatsus</a>
   </div>
 </footer>
@@ -943,6 +954,11 @@ function tt24SubmitCalcGate(e) {
 
   btn.disabled = true;
   btn.textContent = 'Saadan...';
+  var errEl = document.getElementById('calcGateError');
+  if (errEl) errEl.classList.remove('show');
+
+  var consentBox = document.getElementById('calcMarketingConsent');
+  var marketingConsent = (consentBox && consentBox.checked) ? 'jah' : 'ei';
 
   var fd = new FormData();
   fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
@@ -953,18 +969,26 @@ function tt24SubmitCalcGate(e) {
   fd.append('monthly_cost', s.monthly);
   fd.append('annual_cost', s.annual);
   fd.append('check_frequency', s.freq);
+  fd.append('marketing_consent', marketingConsent);
   fd.append('source', 'kalkulaator-gate');
   fd.append('subject', 'TT24 kalkulaator: ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
 
-  function unlockCalcGate(outcomeLabel) {
+  function recordCalcGateOutcome(outcomeLabel) {
+    if (window.gtag) gtag('event', 'calculator_email_capture', {
+      emp_count: s.empCount, sector: s.sectorKey, annual_cost: s.annual,
+      outcome: outcomeLabel || 'ok', source_page: window.location.pathname, value: 0, currency: 'EUR'
+    });
+  }
+
+  function unlockCalcGate() {
     var gate = document.getElementById('calcGate');
     if (gate) gate.classList.add('is-unlocked');
-    if (window.dataLayer) {
-      if (window.gtag) gtag('event', 'calculator_email_capture', {
-        emp_count: s.empCount, sector: s.sectorKey, annual_cost: s.annual,
-        outcome: outcomeLabel || 'ok', source_page: window.location.pathname, value: 0, currency: 'EUR'
-      });
-    }
+  }
+
+  function failCalcGate() {
+    if (errEl) errEl.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Saada';
   }
 
   function persistFailedCalcLead(reason) {
@@ -979,13 +1003,19 @@ function tt24SubmitCalcGate(e) {
   fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
     .then(function (r) {
       var isOk = r.ok && r.status >= 200 && r.status < 300;
-      if (!isOk) persistFailedCalcLead('http_' + r.status);
-      unlockCalcGate(isOk ? 'ok' : 'http_' + r.status);
+      recordCalcGateOutcome(isOk ? 'ok' : 'http_' + r.status);
+      if (isOk) {
+        unlockCalcGate();
+      } else {
+        persistFailedCalcLead('http_' + r.status);
+        failCalcGate();
+      }
     })
     .catch(function (err) {
       if (typeof console !== 'undefined' && console.error) console.error('calc gate fetch failed:', err);
+      recordCalcGateOutcome('network_error');
       persistFailedCalcLead('network_error');
-      unlockCalcGate('network_error');
+      failCalcGate();
     });
 
   return false;

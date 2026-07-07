@@ -350,7 +350,6 @@ html, body {
 .topbar.nav-open .nav-toggle span:nth-child(2){ opacity:0; }
 .topbar.nav-open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 @media (max-width:760px) {
-  .topbar { position:relative; }
   .nav-toggle { display:block; }
   .nav { display:none; position:absolute; top:100%; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--rule); flex-direction:column; gap:0; padding:8px 22px 16px; }
   .topbar.nav-open .nav { display:flex; }
@@ -645,4 +644,16 @@ html, body {
 /* keep hero content above the texture */
 .hero-inner, .article-hero-inner, .articles-hero-inner, .muudatused-hero-inner {
   position: relative; z-index: 1;
+}
+
+/* ============================================================
+   Mobile enforcement (2026-07) - MUST stay at end of file so it
+   wins the cascade over the legacy-class base rules above.
+   Collapses card grids, lets tables scroll in place, wraps step
+   rows - fixes 385-714px forced layouts on city/sector pages.
+   ============================================================ */
+@media (max-width:760px) {
+  .card-grid, .price-grid, .stat-grid { grid-template-columns: 1fr; }
+  .article-body table, .container table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .step-item { flex-wrap: wrap; min-width: 0; }
 }
