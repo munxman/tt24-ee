@@ -245,6 +245,9 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .tt24-gate-success h3 { margin-top:0; }
 .tt24-gate-card.is-unlocked .tt24-gate-form-wrap { display:none; }
 .tt24-gate-card.is-unlocked .tt24-gate-success { display:block; }
+.tt24-gate-error { display:none; margin:10px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+.tt24-gate-error.show { display:block; }
+.tt24-gate-error a { color:var(--accent); }
 .quiz-result-section.tt24-locked .result-cats-card,
 .quiz-result-section.tt24-locked .result-recs-card,
 .quiz-result-section.tt24-locked .result-share-card,
@@ -539,6 +542,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
             <input type="email" name="email" required placeholder="you@yourcompany.com" autocomplete="email" aria-label="Email address">
             <button type="submit">Send full report</button>
             <p class="tt24-gate-privacy">Your answers stay in your browser; if you request the emailed report we store your email, company name and result to send it. <a href="privaatsus.html">Privacy policy</a></p>
+            <p class="tt24-gate-error" id="quizGateError" role="alert">Sending failed. Please try again or email <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
           </form>
         </div>
         <div class="tt24-gate-success">
@@ -1217,21 +1221,28 @@ function tt24SubmitQuizGate(e) {
   fd.append('source', 'enesekontroll-gate');
   fd.append('subject', 'TT24 self-assessment: ' + (company || 'new lead') + ' (' + score + '/10, ' + level + ')');
 
-  function unlockGateAndRecord(outcomeLabel) {
+  function recordGateOutcome(outcomeLabel) {
+    if (window.gtag) gtag('event', 'quiz_email_capture', {
+      quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
+      source_page: window.location.pathname, value: 0, currency: 'EUR'
+    });
+  }
+
+  function unlockGate() {
     var gate = document.getElementById('quizGateCard');
     if (gate) { gate.classList.remove('is-locked'); gate.classList.add('is-unlocked'); }
     var resultEl = document.getElementById('quizResult');
     if (resultEl) resultEl.classList.remove('tt24-locked');
-    if (window.dataLayer) {
-      if (window.gtag) gtag('event', 'quiz_email_capture', {
-        quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
-        source_page: window.location.pathname, value: 0, currency: 'EUR'
-      });
-    }
     setTimeout(function () {
       var catsCard = document.querySelector('.result-cats-card');
       if (catsCard) catsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 250);
+  }
+
+  function failGate() {
+    var errEl = document.getElementById('quizGateError');
+    if (errEl) errEl.classList.add('show');
+    if (btn) { btn.disabled = false; btn.textContent = 'Send full report'; }
   }
 
   function persistFailedLead(reason) {
@@ -1246,13 +1257,19 @@ function tt24SubmitQuizGate(e) {
   fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
     .then(function (r) {
       var isOk = r.ok && r.status >= 200 && r.status < 300;
-      if (!isOk) persistFailedLead('http_' + r.status);
-      unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
+      recordGateOutcome(isOk ? 'ok' : 'http_' + r.status);
+      if (isOk) {
+        unlockGate();
+      } else {
+        persistFailedLead('http_' + r.status);
+        failGate();
+      }
     })
     .catch(function (err) {
       if (typeof console !== 'undefined' && console.error) console.error('quiz gate fetch failed:', err);
+      recordGateOutcome('network_error');
       persistFailedLead('network_error');
-      unlockGateAndRecord('network_error');
+      failGate();
     });
 
   return false;
