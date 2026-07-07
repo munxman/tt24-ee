@@ -15,6 +15,15 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- NB: no analytics and no cookie banner on this page by design - keegi, kes soovib loobuda, jäetakse rahule. -->
+  <style>
+    .loobumine-box { border:1px solid var(--rule); border-top:3px solid var(--accent); padding:36px 28px; text-align:center; background:var(--paper); }
+    .loobumine-box.is-invalid { border-top-color:var(--ink); }
+    .loobumine-box h1 { font-family:var(--serif); font-size:clamp(23px, 2.4vw, 31px); font-weight:500; letter-spacing:-0.015em; line-height:1.15; color:var(--ink); margin:0 0 14px; }
+    .loobumine-box p { color:var(--ink-soft); line-height:1.7; margin:0; font-size:16px; }
+    .loobumine-box a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule); }
+    .loobumine-back { text-align:center; margin-top:20px; }
+    .loobumine-back a { color:var(--accent); text-decoration:none; font-size:14px; }
+  </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Hüppa põhisisule</a>
@@ -39,18 +48,18 @@
 </header>
 
 <main id="main-content">
-  <section class="section" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+  <section class="section" style="padding-top: 48px; padding-bottom: 48px;">
     <div class="container" style="max-width: 620px;">
-      <div id="loobumine-teade" class="card card--elevated" role="status" aria-live="polite" style="padding: var(--space-6); text-align: center;">
+      <div id="loobumine-teade" class="loobumine-box" role="status" aria-live="polite">
         <!-- No-JS / vaikimisi sisu; JavaScript asendab selle vastavalt olekule -->
-        <h1 class="card__title" style="margin-bottom: var(--space-3); font-size: var(--text-xl);">E-kirjade tellimusest loobumine</h1>
-        <p style="color: var(--color-text-muted); line-height: 1.7;">
-          Kui soovite meie e-kirjadest loobuda, kasutage e-kirja jaluses olevat loobumislinki.<br>
-          Küsimuste korral kirjutage <a href="mailto:tootervishoid@valvekliinik.ee" style="color: var(--color-primary); text-decoration: none;">tootervishoid@valvekliinik.ee</a>.
+        <h1>E-kirjade tellimusest loobumine</h1>
+        <p>
+          Loobumiseks saatke kiri teemaga &bdquo;Loobun&ldquo; aadressile <a href="mailto:tootervishoid@valvekliinik.ee?subject=Loobun">tootervishoid@valvekliinik.ee</a>.<br>
+          Eemaldame Teie aadressi nimekirjast käsitsi.
         </p>
       </div>
-      <p style="text-align:center; margin-top: var(--space-4);">
-        <a href="/index.html" style="color: var(--color-primary); text-decoration: none; font-size: var(--text-sm);">Tagasi TT24 avalehele</a>
+      <p class="loobumine-back">
+        <a href="/index.html">Tagasi TT24 avalehele</a>
       </p>
     </div>
   </section>
@@ -108,17 +117,16 @@
     },
     invalid: {
       title: 'Link on aegunud või vigane',
-      body: 'Kirjutage palun aadressile <a href="mailto:tootervishoid@valvekliinik.ee" style="color:var(--color-primary);text-decoration:none;">tootervishoid@valvekliinik.ee</a> ja eemaldame Teie aadressi käsitsi.',
+      body: 'Saatke kiri teemaga &bdquo;Loobun&ldquo; aadressile <a href="mailto:tootervishoid@valvekliinik.ee?subject=Loobun">tootervishoid@valvekliinik.ee</a> ja eemaldame Teie aadressi käsitsi.',
       tone: 'warn'
     }
   };
   var m = messages[status];
   if (!m) return; // tundmatu või puuduv parameeter - jätab vaikimisi sisu alles
-  var accent = m.tone === 'warn' ? 'var(--warn-500, #b45309)' : 'var(--ok-500, #15803d)';
-  el.style.borderTop = '3px solid ' + accent;
+  if (m.tone === 'warn') { el.classList.add('is-invalid'); } else { el.classList.remove('is-invalid'); }
   el.innerHTML =
-    '<h1 class="card__title" style="margin-bottom: var(--space-3); font-size: var(--text-xl);">' + m.title + '</h1>' +
-    '<p style="color: var(--color-text-muted); line-height: 1.7;">' + m.body + '</p>';
+    '<h1>' + m.title + '</h1>' +
+    '<p>' + m.body + '</p>';
 })();
 </script>
 </body>
