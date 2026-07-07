@@ -240,6 +240,11 @@ html, body {
 .tt24-calc-gate-form button:disabled { opacity:0.5; cursor:wait; }
 .tt24-calc-gate-privacy { font-size:11px !important; color:var(--mute) !important; margin:10px 0 0 !important; line-height:1.4; }
 .tt24-calc-gate-privacy a { color:var(--mute); }
+.tt24-calc-gate-consent { display:flex; gap:10px; align-items:flex-start; flex-basis:100%; font-size:13px; color:var(--mute); line-height:1.5; margin-top:4px; }
+.tt24-calc-gate-consent input { margin-top:3px; accent-color:var(--accent); flex-shrink:0; }
+.tt24-calc-gate-error { display:none; margin:10px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+.tt24-calc-gate-error.show { display:block; }
+.tt24-calc-gate-error a { color:var(--accent); }
 .tt24-calc-gate-success { display:none; }
 .tt24-calc-gate-success p { margin:0; color:var(--ink); font-size:15px; }
 .tt24-calc-gate.is-unlocked .tt24-calc-gate-form-wrap { display:none; }
@@ -491,15 +496,21 @@ html, body {
           <div class="tt24-calc-gate" id="calcGate">
             <div class="tt24-calc-gate-form-wrap">
               <h4>Send the calculation to your e-mail</h4>
-              <p>Leave your e-mail address and we will be in touch.</p>
+              <p>We will send the calculation and price range to your e-mail within one working day.</p>
               <form class="tt24-calc-gate-form" id="calcGateForm" onsubmit="return tt24SubmitCalcGate(event)">
                 <input type="email" name="email" required placeholder="you@yourcompany.com" autocomplete="email" aria-label="E-mail address">
                 <button type="submit">Send</button>
+                <label class="tt24-calc-gate-consent">
+                  <input type="checkbox" id="calcMarketingConsent" name="marketing_consent" value="jah">
+                  <span>I agree that TT24's partner clinic Valvekliinik may contact me about occupational health.</span>
+                </label>
               </form>
-              <p class="tt24-calc-gate-privacy">We use your details solely to send you the calculation. We do not share them with third parties. <a href="privaatsus.html">Privacy policy</a></p>
+              <p class="tt24-calc-gate-error" id="calcGateError" role="alert">Sending failed. Please try again or write to <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+              <p class="tt24-calc-gate-privacy">We use your e-mail address to send the calculation. The form is delivered by Web3Forms. <a href="privaatsus.html">Privacy policy</a></p>
             </div>
             <div class="tt24-calc-gate-success">
-              <p>Thank you. We will be in touch as soon as possible.</p>
+              <p>Thank you. We will send the calculation and price range to your e-mail within one working day.</p>
+              <p style="margin:8px 0 0; font-size:13px; color:var(--ink-soft);">Want alerts when the law changes? <a href="muudatused.html#telli" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule);">Subscribe here</a>.</p>
             </div>
           </div>
 
@@ -881,6 +892,11 @@ function tt24SubmitCalcGate(e) {
 
   btn.disabled = true;
   btn.textContent = 'Sending...';
+  var errEl = document.getElementById('calcGateError');
+  if (errEl) errEl.classList.remove('show');
+
+  var consentBox = document.getElementById('calcMarketingConsent');
+  var marketingConsent = (consentBox && consentBox.checked) ? 'jah' : 'ei';
 
   var fd = new FormData();
   fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
@@ -891,18 +907,26 @@ function tt24SubmitCalcGate(e) {
   fd.append('monthly_cost', s.monthly);
   fd.append('annual_cost', s.annual);
   fd.append('check_frequency', s.freq);
+  fd.append('marketing_consent', marketingConsent);
   fd.append('source', 'kalkulaator-gate');
-  fd.append('subject', 'TT24 kalkulaator: ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
+  fd.append('subject', 'TT24 kalkulaator (EN): ' + s.empCount + ' tt, ' + s.sectorLabel + ', ' + s.annual + '/a');
 
-  function unlockCalcGate(outcomeLabel) {
+  function recordCalcGateOutcome(outcomeLabel) {
+    if (window.gtag) gtag('event', 'calculator_email_capture', {
+      emp_count: s.empCount, sector: s.sectorKey, annual_cost: s.annual,
+      outcome: outcomeLabel || 'ok', source_page: window.location.pathname, value: 0, currency: 'EUR'
+    });
+  }
+
+  function unlockCalcGate() {
     var gate = document.getElementById('calcGate');
     if (gate) gate.classList.add('is-unlocked');
-    if (window.dataLayer) {
-      if (window.gtag) gtag('event', 'calculator_email_capture', {
-        emp_count: s.empCount, sector: s.sectorKey, annual_cost: s.annual,
-        outcome: outcomeLabel || 'ok', source_page: window.location.pathname, value: 0, currency: 'EUR'
-      });
-    }
+  }
+
+  function failCalcGate() {
+    if (errEl) errEl.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Send';
   }
 
   function persistFailedCalcLead(reason) {
@@ -917,13 +941,19 @@ function tt24SubmitCalcGate(e) {
   fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
     .then(function (r) {
       var isOk = r.ok && r.status >= 200 && r.status < 300;
-      if (!isOk) persistFailedCalcLead('http_' + r.status);
-      unlockCalcGate(isOk ? 'ok' : 'http_' + r.status);
+      recordCalcGateOutcome(isOk ? 'ok' : 'http_' + r.status);
+      if (isOk) {
+        unlockCalcGate();
+      } else {
+        persistFailedCalcLead('http_' + r.status);
+        failCalcGate();
+      }
     })
     .catch(function (err) {
       if (typeof console !== 'undefined' && console.error) console.error('calc gate fetch failed:', err);
+      recordCalcGateOutcome('network_error');
       persistFailedCalcLead('network_error');
-      unlockCalcGate('network_error');
+      failCalcGate();
     });
 
   return false;
