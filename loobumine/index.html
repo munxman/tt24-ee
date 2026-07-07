@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-kirjadest loobumine - TT24</title>
+  <meta name="description" content="E-kirjade tellimusest loobumise kinnitus.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/editorial.css?v=5">
+  <link rel="canonical" href="https://tt24.ee/loobumine/" />
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- NB: no analytics and no cookie banner on this page by design - keegi, kes soovib loobuda, jäetakse rahule. -->
+</head>
+<body>
+<a href="#main-content" class="skip-link">Hüppa põhisisule</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/index.html" class="brand">
+      <img class="brand-icon" src="/icon-72.png" alt="TT24" width="36" height="36" style="width:36px;height:36px;flex:none;align-self:center;" />
+      <span class="brand-text"><span class="brand-mark">TT24</span><span class="brand-tag">Töötervishoiu Teejuht</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüü" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Peamenüü">
+      <a href="/tooriistad.html">Tööriistad</a>
+      <a href="/artiklid/index.html">Artiklid</a>
+      <a href="/muudatused.html">Muudatused</a>
+      <a href="/korduma.html">KKK</a>
+      <a href="/meist.html">Meist</a>
+      <a href="/otsing.html">Otsi</a>
+      <a href="/pakkumine.html" class="nav-cta">Küsi pakkumist</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="section" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+    <div class="container" style="max-width: 620px;">
+      <div id="loobumine-teade" class="card card--elevated" role="status" aria-live="polite" style="padding: var(--space-6); text-align: center;">
+        <!-- No-JS / vaikimisi sisu; JavaScript asendab selle vastavalt olekule -->
+        <h1 class="card__title" style="margin-bottom: var(--space-3); font-size: var(--text-xl);">E-kirjade tellimusest loobumine</h1>
+        <p style="color: var(--color-text-muted); line-height: 1.7;">
+          Kui soovite meie e-kirjadest loobuda, kasutage e-kirja jaluses olevat loobumislinki.<br>
+          Küsimuste korral kirjutage <a href="mailto:info@valvekliinik.ee" style="color: var(--color-primary); text-decoration: none;">info@valvekliinik.ee</a>.
+        </p>
+      </div>
+      <p style="text-align:center; margin-top: var(--space-4);">
+        <a href="/index.html" style="color: var(--color-primary); text-decoration: none; font-size: var(--text-sm);">Tagasi TT24 avalehele</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <div>
+      <a href="/index.html" class="foot-brand">TT24</a>
+      <p class="foot-desc">Eesti töötervishoiu portaal. Tasuta tööriistad, juhised ja kalkulaatorid TTOS-nõuete täitmiseks.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Tööriistad</h4>
+      <a href="/kontrollnimekiri.html">Kontrollnimekiri</a>
+      <a href="/kalkulaator.html">Kalkulaator</a>
+      <a href="/enesekontroll.html">Enesekontroll</a>
+    </div>
+    <div class="foot-col">
+      <h4>Sisu</h4>
+      <a href="/artiklid/index.html">Artiklid</a>
+      <a href="/korduma.html">KKK</a>
+      <a href="/meist.html">Meist</a>
+    </div>
+    <div class="foot-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@tt24.ee">info@tt24.ee</a>
+      <a href="/pakkumine.html">Küsi pakkumist</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Sentifoli &amp; Lindström OÜ · © 2026</span>
+    <a href="/privaatsus.html">Privaatsus</a>
+  </div>
+</footer>
+
+<script>(function(){var t=document.querySelector(".nav-toggle"),b=document.querySelector(".topbar");if(t&&b){t.addEventListener("click",function(){var o=b.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
+
+<script>
+/* Loobumise oleku kuvamine. Loobumine on juba serveripoolselt töödeldud enne siia suunamist;
+   see leht ainult KINNITAB tulemuse. Ei kutsu ühtki API-t, ei kuva e-posti aadressi, ei jälgi. */
+(function () {
+  var el = document.getElementById('loobumine-teade');
+  if (!el) return;
+  var status = new URLSearchParams(location.search).get('loobumine');
+  var messages = {
+    success: {
+      title: 'Olete edukalt loobunud',
+      body: 'Rohkem e-kirju Teie aadressile ei saada.<br>Aitäh, et andsite teada.',
+      tone: 'ok'
+    },
+    already: {
+      title: 'Olete juba loobunud',
+      body: 'See e-posti aadress on juba varem nimekirjast eemaldatud.<br>Rohkem ei ole vaja midagi teha.',
+      tone: 'ok'
+    },
+    invalid: {
+      title: 'Link on aegunud või vigane',
+      body: 'Kirjutage palun aadressile <a href="mailto:info@valvekliinik.ee" style="color:var(--color-primary);text-decoration:none;">info@valvekliinik.ee</a> ja eemaldame Teie aadressi käsitsi.',
+      tone: 'warn'
+    }
+  };
+  var m = messages[status];
+  if (!m) return; // tundmatu või puuduv parameeter - jätab vaikimisi sisu alles
+  var accent = m.tone === 'warn' ? 'var(--warn-500, #b45309)' : 'var(--ok-500, #15803d)';
+  el.style.borderTop = '3px solid ' + accent;
+  el.innerHTML =
+    '<h1 class="card__title" style="margin-bottom: var(--space-3); font-size: var(--text-xl);">' + m.title + '</h1>' +
+    '<p style="color: var(--color-text-muted); line-height: 1.7;">' + m.body + '</p>';
+})();
+</script>
+</body>
+</html>
