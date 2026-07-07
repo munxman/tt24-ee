@@ -246,6 +246,9 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .tt24-gate-card.is-unlocked .tt24-gate-success { display:block; }
 .tt24-gate-consent { display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--mute); line-height:1.5; }
 .tt24-gate-consent input { margin-top:3px; accent-color:var(--accent); flex-shrink:0; }
+.tt24-gate-error { display:none; margin:10px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+.tt24-gate-error.show { display:block; }
+.tt24-gate-error a { color:var(--accent); }
 
 /* FAQ */
 .faq-list { margin-top:24px; }
@@ -559,6 +562,7 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
               <span>Nõustun, et TT24 koostööpartner Valvekliinik võib minuga töötervishoiu teemadel ühendust võtta.</span>
             </label>
             <button type="submit">Saada täielik raport minu e-postile</button>
+            <p class="tt24-gate-error" id="quizGateError" role="alert">Saatmine ebaõnnestus. Palun proovige uuesti või kirjutage <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
             <p class="tt24-gate-privacy">Kasutame Teie e-posti aadressi, ettevõtte nime ja testi tulemuse raporti saatmiseks. Vormi edastab Web3Forms. <a href="privaatsus.html">Privaatsuspoliitika</a></p>
           </form>
         </div>
@@ -1018,6 +1022,8 @@ function restartQuiz() {
     if (consentBox) consentBox.checked = false;
     var btn = gate.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = false; btn.textContent = 'Saada täielik raport minu e-postile'; }
+    var gateErr = document.getElementById('quizGateError');
+    if (gateErr) gateErr.classList.remove('show');
   }
   tt24QuizStartFired = false;
   document.getElementById('companyInputWrap').style.display = '';
@@ -1121,15 +1127,25 @@ function tt24SubmitQuizGate(e) {
   fd.append('source', 'enesekontroll-gate');
   fd.append('subject', 'TT24 enesekontroll: ' + (company || 'uus lead') + ' (' + score + '/10, ' + level + ')');
 
-  function unlockGateAndRecord(outcomeLabel) {
+  var errEl = document.getElementById('quizGateError');
+  if (errEl) errEl.classList.remove('show');
+
+  function recordGateOutcome(outcomeLabel) {
+    if (window.gtag) gtag('event', 'quiz_email_capture', {
+      quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
+      source_page: window.location.pathname, value: 0, currency: 'EUR'
+    });
+  }
+
+  function unlockGate() {
     var gate = document.getElementById('quizGateCard');
     if (gate) { gate.classList.remove('is-locked'); gate.classList.add('is-unlocked'); }
-    if (window.dataLayer) {
-      if (window.gtag) gtag('event', 'quiz_email_capture', {
-        quiz_score: score, quiz_level: level, outcome: outcomeLabel || 'ok',
-        source_page: window.location.pathname, value: 0, currency: 'EUR'
-      });
-    }
+  }
+
+  function failGate() {
+    if (errEl) errEl.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Saada täielik raport minu e-postile';
   }
 
   function persistFailedLead(reason) {
@@ -1144,13 +1160,19 @@ function tt24SubmitQuizGate(e) {
   fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
     .then(function (r) {
       var isOk = r.ok && r.status >= 200 && r.status < 300;
-      if (!isOk) persistFailedLead('http_' + r.status);
-      unlockGateAndRecord(isOk ? 'ok' : 'http_' + r.status);
+      recordGateOutcome(isOk ? 'ok' : 'http_' + r.status);
+      if (isOk) {
+        unlockGate();
+      } else {
+        persistFailedLead('http_' + r.status);
+        failGate();
+      }
     })
     .catch(function (err) {
       if (typeof console !== 'undefined' && console.error) console.error('quiz gate fetch failed:', err);
+      recordGateOutcome('network_error');
       persistFailedLead('network_error');
-      unlockGateAndRecord('network_error');
+      failGate();
     });
 
   return false;

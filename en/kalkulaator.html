@@ -504,7 +504,7 @@ html, body {
           </div>
 
           <!-- Secondary: ready-to-buy path -->
-          <a href="pakkumine.html" class="kalk-cta" aria-label="Request a quote">Request a quote</a>
+          <a href="pakkumine.html?src=kalkulaator" class="kalk-cta" aria-label="Request a quote">Request a quote</a>
           <p class="kalk-cta-meta">Ready to proceed? Request a personalised quote. We respond promptly and there is no obligation.</p>
 
         </div>
@@ -550,7 +550,7 @@ html, body {
     </div>
 
     <div class="note-block">
-      <strong>This result is indicative.</strong> The exact cost depends on the specifics of your company, the outcome of the risk assessment, and the health check needs of your employees. <a href="pakkumine.html">Request a personalised quote</a> or write to <a href="mailto:info@tt24.ee">info@tt24.ee</a>.
+      <strong>This result is indicative.</strong> The exact cost depends on the specifics of your company, the outcome of the risk assessment, and the health check needs of your employees. <a href="pakkumine.html?src=kalkulaator">Request a personalised quote</a> or write to <a href="mailto:info@tt24.ee">info@tt24.ee</a>.
     </div>
   </div>
 </section>
@@ -610,7 +610,7 @@ html, body {
       <p class="provider-eyebrow">TT24 partner</p>
       <h3><a href="https://www.valvekliinik.ee" target="_blank" rel="noopener">Valvekliinik</a></h3>
       <p>Valvekliinik is TT24's partner clinic and was co-founded by Dr Ingmar Lindström. Open six days a week, including evenings and public holidays. Same-day appointments available.</p>
-      <a href="pakkumine.html" class="kalk-cta" style="margin-top:0;">Request a quote</a>
+      <a href="pakkumine.html?src=kalkulaator" class="kalk-cta" style="margin-top:0;">Request a quote</a>
     </div>
 
     <p class="provider-note">This list is not exhaustive. You are free to choose your own provider.</p>
@@ -824,7 +824,7 @@ function recalculate() {
   // Carry calculator state into the quote form (prefill on pakkumine.html)
   var quoteCta = document.querySelector('#resultCard .kalk-cta');
   if (quoteCta) {
-    quoteCta.href = 'pakkumine.html?tootajad=' + encodeURIComponent(empCount) + '&sektor=' + encodeURIComponent(sectorKey);
+    quoteCta.href = 'pakkumine.html?src=kalkulaator&tootajad=' + encodeURIComponent(empCount) + '&sektor=' + encodeURIComponent(sectorKey);
   }
 }
 
