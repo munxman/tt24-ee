@@ -340,11 +340,6 @@ html, body {
   .sector-row { padding: 20px 0 !important; border-right: 0 !important; }
   .foot-inner { grid-template-columns: 1fr; gap: 36px; padding: 48px 22px 32px; }
   .foot-bottom { padding: 20px 22px; flex-direction: column; gap: 10px; align-items: flex-start; }
-  /* Mobile enforcement (2026-07): collapse card grids, let tables scroll in place,
-     wrap step rows - fixes 385-714px forced layouts on city/sector pages. */
-  .card-grid, .price-grid, .stat-grid { grid-template-columns: 1fr; }
-  .article-body table, .container table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .step-item { flex-wrap: wrap; min-width: 0; }
 }
 
 
@@ -649,4 +644,16 @@ html, body {
 /* keep hero content above the texture */
 .hero-inner, .article-hero-inner, .articles-hero-inner, .muudatused-hero-inner {
   position: relative; z-index: 1;
+}
+
+/* ============================================================
+   Mobile enforcement (2026-07) - MUST stay at end of file so it
+   wins the cascade over the legacy-class base rules above.
+   Collapses card grids, lets tables scroll in place, wraps step
+   rows - fixes 385-714px forced layouts on city/sector pages.
+   ============================================================ */
+@media (max-width:760px) {
+  .card-grid, .price-grid, .stat-grid { grid-template-columns: 1fr; }
+  .article-body table, .container table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .step-item { flex-wrap: wrap; min-width: 0; }
 }
