@@ -106,7 +106,9 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 .nav-cta { font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent) !important; border-bottom:1px solid var(--accent); padding-bottom:2px; }
 
 /* Intro */
-.intro { max-width:760px; margin:0 auto; padding:80px 32px 48px; }
+.intro { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:52px 32px 44px; position:relative; overflow:hidden; background-image: radial-gradient(ellipse 90% 62% at 50% 0%, rgba(0,102,204,.045), transparent 62%); }
+.intro::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background-image: linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px); background-size:28px 28px; -webkit-mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); mask-image: radial-gradient(ellipse 70% 80% at 42% 32%,#000 30%,transparent 76%); }
+.intro > * { position:relative; z-index:1; }
 .dateline { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
 .dateline span { color:var(--accent); }
 .headline { font-family:var(--serif); font-size:clamp(24px, 2.5vw, 31px); line-height:1.1; letter-spacing:-0.02em; font-weight:500; color:var(--ink); margin:0 0 24px; }
@@ -114,11 +116,11 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 
 /* Section */
 .section { border-top:1px solid var(--rule); }
-.section-inner { max-width:760px; margin:0 auto; padding:64px 32px; }
+.section-inner { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:64px 32px; }
 .section-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); margin:0 0 24px; }
 .section-h { font-family:var(--serif); font-size:clamp(27px, 3vw, 35px); line-height:1.18; letter-spacing:-0.015em; font-weight:500; color:var(--ink); margin:0 0 24px; }
 
-.quiz-wrap { max-width:760px; margin:0 auto; padding:48px 32px 80px; }
+.quiz-wrap { max-width:760px; margin:0 auto 0 max(0px, calc((100% - 1100px) / 2)); padding:48px 32px 80px; }
 .quiz-disclaimer-top { border-left:2px solid var(--rule); padding:14px 20px; font-size:14px; line-height:1.6; color:var(--mute); margin-bottom:40px; }
 .quiz-disclaimer-top strong { color:var(--ink-soft); font-weight:600; }
 
