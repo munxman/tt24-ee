@@ -396,14 +396,26 @@
       padding: var(--space-10, 2.5rem) 0;
       color: var(--color-text-muted, #64748B);
     }
-    .muudatused-rss-note {
-      max-width: 900px;
-      margin: 0 auto var(--space-8, 2rem);
-      padding: 0 var(--space-5, 1.25rem);
-      font-size: var(--text-sm, 0.875rem);
-      color: #64748B;
-      text-align: center;
-    }
+    /* Subscribe block (web3forms) */
+    .muudatused-subscribe { max-width:900px; margin:0 auto 56px; padding:0 var(--space-5, 1.25rem); scroll-margin-top:20px; }
+    .muudatused-subscribe-inner { border:1px solid var(--rule); border-top:3px solid var(--accent); padding:28px 26px; }
+    .muudatused-subscribe h2 { font-family:var(--serif); font-size:22px; font-weight:500; letter-spacing:-0.01em; color:var(--ink); margin:0 0 8px; }
+    .subscribe-lead { font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0 0 18px; }
+    .subscribe-row { display:flex; gap:10px; flex-wrap:wrap; }
+    .subscribe-row input[type="email"] { flex:1 1 220px; padding:11px 0; border:0; border-bottom:1px solid var(--rule); font-family:var(--sans); font-size:16px; background:transparent; color:var(--ink); outline:none; transition:border-color 0.15s; }
+    .subscribe-row input[type="email"]:focus { border-bottom-color:var(--accent); }
+    .subscribe-row button { background:var(--ink); color:var(--paper); border:0; padding:12px 22px; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.15s; white-space:nowrap; }
+    .subscribe-row button:hover:not(:disabled) { background:var(--accent); }
+    .subscribe-row button:disabled { opacity:0.5; cursor:wait; }
+    .subscribe-consent { display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--mute); line-height:1.5; margin-top:14px; }
+    .subscribe-consent input { margin-top:3px; accent-color:var(--accent); flex-shrink:0; }
+    .subscribe-error { display:none; margin:12px 0 0; font-size:13px; color:var(--accent); line-height:1.5; }
+    .subscribe-error.show { display:block; }
+    .subscribe-error a { color:var(--accent); }
+    .subscribe-success { display:none; }
+    .subscribe-success p { margin:0; color:var(--ink); font-size:15px; }
+    .subscribe-privacy { font-size:11px; color:var(--mute); margin:14px 0 0; line-height:1.5; }
+    .subscribe-privacy a { color:var(--mute); }
     @media (max-width: 640px) {
       .muudatused-list { padding: var(--space-6, 1.5rem) var(--space-4, 1rem); }
       .muudatused-entry { padding: var(--space-4, 1rem); }
@@ -589,10 +601,70 @@
 
   </div>
 
-  <p class="muudatused-rss-note">
-    This page is updated whenever the monitored authorities publish a new change.
-    If you would like to receive notifications by e-mail, write to <a href="mailto:info@tt24.ee?subject=Subscribe%20to%20the%20updates%20newsletter" style="color:var(--color-primary, #0284C7);text-decoration:underline;">info@tt24.ee</a>.
-  </p>
+  <section class="muudatused-subscribe" id="telli" aria-label="Subscribe to change alerts">
+    <div class="muudatused-subscribe-inner">
+      <h2>Get change alerts by e-mail</h2>
+      <p class="subscribe-lead">We send a notice when the monitored authorities publish a new change.<br>Free, no sales content.</p>
+      <form id="subscribeForm" onsubmit="return tt24SubmitSubscribe(event)">
+        <div class="subscribe-row">
+          <input type="email" name="email" required placeholder="you@yourcompany.com" autocomplete="email" aria-label="E-mail address">
+          <button type="submit">Subscribe</button>
+        </div>
+        <label class="subscribe-consent">
+          <input type="checkbox" id="subMarketingConsent" name="marketing_consent" value="jah">
+          <span>I agree that TT24's partner clinic Valvekliinik may contact me about occupational health.</span>
+        </label>
+      </form>
+      <p class="subscribe-error" id="subscribeError" role="alert">Sending failed. Please try again or write to <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
+      <div class="subscribe-success" id="subscribeSuccess" role="status">
+        <p>Thank you. We have added you to the notification list.</p>
+      </div>
+      <p class="subscribe-privacy">We use your e-mail address only to send these notifications. The form is delivered by Web3Forms. <a href="privaatsus.html">Privacy policy</a> · You can <a href="/loobumine/">unsubscribe</a> at any time.</p>
+    </div>
+  </section>
+
+  <script>
+  function tt24SubmitSubscribe(e) {
+    e.preventDefault();
+    var form = e.target;
+    var email = (form.querySelector('input[name="email"]').value || '').trim();
+    var btn = form.querySelector('button[type="submit"]');
+    if (!email) return false;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    var errEl = document.getElementById('subscribeError');
+    if (errEl) errEl.classList.remove('show');
+    var consentBox = document.getElementById('subMarketingConsent');
+    var fd = new FormData();
+    fd.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
+    fd.append('email', email);
+    fd.append('marketing_consent', (consentBox && consentBox.checked) ? 'jah' : 'ei');
+    fd.append('source', 'muudatused');
+    fd.append('subject', 'TT24 muudatuste teavituse tellimus (EN)');
+    function failSubscribe() {
+      if (errEl) errEl.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    }
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        var isOk = r.ok && r.status >= 200 && r.status < 300;
+        if (window.gtag) gtag('event', 'muudatused_subscribe', { outcome: isOk ? 'ok' : 'http_' + r.status, source_page: window.location.pathname });
+        if (isOk) {
+          form.style.display = 'none';
+          var s = document.getElementById('subscribeSuccess');
+          if (s) s.style.display = 'block';
+        } else {
+          failSubscribe();
+        }
+      })
+      .catch(function () {
+        if (window.gtag) gtag('event', 'muudatused_subscribe', { outcome: 'network_error', source_page: window.location.pathname });
+        failSubscribe();
+      });
+    return false;
+  }
+  </script>
 
 </main>
 
