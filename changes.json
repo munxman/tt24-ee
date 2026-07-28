@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_reviewed": "2026-06-28",
+    "last_reviewed": "2026-07-27",
     "note": "Single source of truth for muudatused.html. Edit here, then run: python build_muudatused.py. Never hand-edit the generated regions in muudatused.html / index.html.",
     "watched_sources": [
       { "name": "Riigi Teataja - TTOS (jälgi akti)", "url": "https://www.riigiteataja.ee/akt/TTOS" },
@@ -12,6 +12,45 @@
     ]
   },
   "entries": [
+    {
+      "id": "palgalabipaistvus-ttos-2026-07-13",
+      "status": "in_force",
+      "effective_date": "2026-07-13",
+      "published_date": "2026-07-03",
+      "modified_date": "2026-07-27",
+      "impact": "high",
+      "audience": "Puudutab: kõiki töötajaid värbavaid tööandjaid",
+      "meta_source": "Riigi Teataja",
+      "headline_list": "13. juulist 2026: uued palgaläbipaistvuse nõuded tööandjale",
+      "title": "Palgaläbipaistvuse nõuded jõustusid - tööandja peab värbamisprotsessi kohe muutma",
+      "lead": "Tööandja ei tohi enam küsida töölesoovija varasema või praeguse töötasu kohta ning peab enne töövestlust esitama pakutava töötasu või selle vahemiku kirjalikult. TTOS-is muutus selle seadusega ainult töökeskkonna andmekogu eesmärk ja andmeliigid - riskianalüüsi, tervisekontrolli ega töökeskkonnavoliniku nõudeid see muudatus ei leevendanud.",
+      "body": [
+        { "type": "h3", "text": "Mida tööandjal kohe teha" },
+        { "type": "ol", "items": [
+          "Lisage töökuulutusse või saatke kandidaadile enne töövestlust kirjalikult pakutav töötasu või selle vahemik.",
+          "Eemaldage avaldusest, intervjuukavast ja taustakontrollist küsimus kandidaadi varasema või praeguse töötasu kohta.",
+          "Ärge takistage töötajal oma töötasu suurust avaldamast ning kontrollige, et sama või võrdväärse töö eest makstakse naistele ja meestele võrdset tasu.",
+          "Uuendage värbajate, juhtide ja personalitöötajate juhiseid ning säilitage kandidaadile antud palgainfo kirjalikku taasesitamist võimaldavas vormis."
+        ] },
+        { "type": "h3", "text": "Oluline täpsustus TTOS-i kohta" },
+        { "type": "p", "html": "Riigi Teataja näitab TTOS-i uut tervikteksti jõustumiskuupäevaga 13.07.2026, sest töökeskkonna andmekogule lisati palgaläbipaistvuse eesmärk ja andmeliik. See ei tähenda, et valitsuse eraldi avalikustatud tööohutuse lihtsustamispakett oleks jõustunud. Kehtiva TTOS-i järgi on riskianalüüs, nelja kuu tervisekontrolli tähtaeg ja senine töökeskkonnavoliniku kord endiselt jõus." }
+      ],
+      "related_label": "Seotud TT24 sisu:",
+      "related": [
+        { "href": "artiklid/ttos-2026-muudatused.html", "label": "TTOS 2026 - mis kehtib ja mis on eelnõu" },
+        { "href": "artiklid/riskianaluus-juhend.html", "label": "Riskianalüüsi juhend" }
+      ],
+      "sources": [
+        { "name": "Riigi Teataja - töölepingu seaduse muutmise ja sellega seonduvalt teiste seaduste muutmise seadus", "url": "https://www.riigiteataja.ee/akt/103072026027" },
+        { "name": "Riigi Teataja - TTOS terviktekst alates 13.07.2026", "url": "https://www.riigiteataja.ee/akt/103072026046" }
+      ],
+      "teaser": {
+        "num": "Jõustus 13.07.2026",
+        "title": "Palgaläbipaistvus: tööandja värbamisreeglid muutusid",
+        "desc": "Enne töövestlust tuleb esitada töötasu või selle vahemik kirjalikult ning kandidaadi varasemat palka ei tohi küsida. TTOS-i riskianalüüsi ja tervisekontrolli nõuded ei muutunud.",
+        "audience": "Puudutab: kõiki värbavaid tööandjaid"
+      }
+    },
     {
       "id": "ti-sihtkontroll-ikv-2026-07",
       "status": "enforcement",
@@ -98,13 +137,13 @@
       "status_label": "Eelnõus · ei kehti veel",
       "effective_date": null,
       "published_date": "2026-04-16",
-      "modified_date": "2026-06-26",
+      "modified_date": "2026-07-27",
       "impact": null,
       "audience": "Puudutab: tööandjaid",
-      "meta_source": "Riigikogu, Vabariigi Valitsus",
+      "meta_source": "Vabariigi Valitsus, Riigi Teataja",
       "headline_list": "Tulekul: töötervishoiu nõuete ulatuslik leevendamine (deregulatsiooni eelnõu)",
       "title": "Tulekul: töötervishoiu nõuete ulatuslik leevendamine (deregulatsiooni eelnõu)",
-      "lead": "Riigikogus on menetluses eelnõu, mis leevendaks mitmeid töötervishoiu kohustusi. Vabariigi Valitsus kiitis selle heaks 16. aprillil 2026. Seisuga juuni 2026 ei ole eelnõu veel vastu võetud ega jõustunud - kuni see juhtub, kehtivad senised nõuded muutmata kujul.",
+      "lead": "Vabariigi Valitsus avalikustas eelnõu, mis leevendaks mitmeid töötervishoiu kohustusi. Seisuga 27. juuli 2026 ei sisalda kehtiv TTOS neid leevendusi. Riigi Teatajas 13.07.2026 jõustunud TTOS-i terviktekst muutis palgaläbipaistvusega seotud andmekogu sätteid, mitte riskianalüüsi, tervisekontrolli ega töökeskkonnavoliniku nõudeid.",
       "body": [
         { "type": "h3", "text": "Mida eelnõu kavandab" },
         { "type": "ul", "items": [
@@ -115,20 +154,20 @@
           "Töökeskkonnavolinik ja -nõukogu muutuksid vajaduspõhiseks."
         ] },
         { "type": "h3", "text": "Mida tööandjal praegu teha" },
-        { "type": "p", "html": "Praegu ei muutu midagi - senised nõuded kehtivad täies mahus. Ärge tühistage olemasolevaid kohustusi eelnõu põhjal. Me uuendame seda sissekannet, kui ja millal seadus vastu võetakse." }
+        { "type": "p", "html": "Järgige kehtivat TTOS-i: riskianalüüs tuleb endiselt Tööinspektsioonile edastada, esmane tervisekontroll korraldada nelja kuu jooksul ning 10 või enama töötajaga ettevõttes valida töökeskkonnavolinik. Ärge lõpetage neid tegevusi valitsuse eelnõu või uudisloo põhjal." }
       ],
       "related_label": "Põhjalik ülevaade:",
       "related": [
         { "href": "artiklid/ttos-2026-muudatused.html", "label": "Töötervishoiu ja tööohutuse seadus 2026 - jõustunud muudatused ja eelnõu" }
       ],
       "sources": [
-        { "name": "Riigikogu eelnõude leht", "url": "https://www.riigikogu.ee/tegevus/eelnoud/" },
-        { "name": "Riigi Teataja - TTOS kehtiv tekst", "url": "https://www.riigiteataja.ee/akt/TTOS" }
+        { "name": "Vabariigi Valitsus - tööohutuse reeglite lihtsustamise eelnõu", "url": "https://www.valitsus.ee/uudised/valitsus-lihtsustab-tooohutuse-reegleid-ja-vahendab-ettevotjate-burokraatiat" },
+        { "name": "Riigi Teataja - TTOS kehtiv terviktekst alates 13.07.2026", "url": "https://www.riigiteataja.ee/akt/103072026046" }
       ],
       "teaser": {
         "num": "Eelnõus",
         "title": "Tulekul: töötervishoiu nõuete leevendamine",
-        "desc": "Riigikogus on menetluses deregulatsiooni eelnõu (esmane tervisekontroll 4→6 kuud, väikeettevõtete erandid jm). Seisuga juuni 2026 see ei kehti - senised nõuded jäävad jõusse.",
+        "desc": "Valitsuse eelnõu kavandab tervisekontrolli tähtaja ja väikeettevõtete nõuete leevendamist. Seisuga 27.07.2026 ei sisalda kehtiv TTOS neid muudatusi - senised nõuded jäävad jõusse.",
         "audience": "Puudutab: tööandjaid"
       }
     },
@@ -141,7 +180,7 @@
       "impact": "medium",
       "audience": "Puudutab: töötervishoiuteenuse osutajaid",
       "meta_source": "Riigi Teataja, Terviseamet",
-      "headline_list": "Alates 1. juulist 2026: muudatus töötervishoiuteenuse osutajate registreerimisel",
+      "headline_list": "1. juulist 2026: muudatus töötervishoiuteenuse osutajate registreerimisel",
       "title": "Muudatus töötervishoiuteenuse osutajate registreerimisel - mida tööandja peab kontrollima",
       "lead": "Muudatus tuleneb Majandustegevuse seadustiku üldosa seaduse (MSÜS) rakendamisest ning puudutab töötervishoiu ja tööohutuse seadust (TTOS) ja tervishoiuteenuste korraldamise seadust (TTKS). Põhiline praktiline mõju puudutab töötervishoiuteenuse osutajate registreerimist ja sellega seoses ka tööandja kontrollkohustust.",
       "body": [
@@ -169,8 +208,8 @@
         { "name": "Riigi Teataja - MSÜS täistekst", "url": "https://www.riigiteataja.ee" }
       ],
       "teaser": {
-        "num": "Jõustub 1.07.2026",
-        "title": "Töötervishoiuteenuse osutajate registreerimine muutub",
+        "num": "Jõustus 1.07.2026",
+        "title": "Töötervishoiuteenuse osutajate registreerimine muutus",
         "desc": "Alates 1. juulist 2026 esitavad osutajad registreerimistaotluse asemel majandustegevusteate. Tööandjale on mõju väike: kontrollige, et teenuseosutajal on kehtiv registreering või tegevusluba.",
         "audience": "Puudutab: töötervishoiuteenuse osutajaid"
       }
