@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_reviewed": "2026-07-27",
+    "last_reviewed": "2026-08-07",
     "note": "Single source of truth for muudatused.html. Edit here, then run: python build_muudatused.py. Never hand-edit the generated regions in muudatused.html / index.html.",
     "watched_sources": [
       { "name": "Riigi Teataja - TTOS (jälgi akti)", "url": "https://www.riigiteataja.ee/akt/TTOS" },
