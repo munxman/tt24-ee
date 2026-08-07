@@ -1,0 +1,66 @@
+# IndexNow submission on push to main
+# Submits all URLs from sitemap.xml to IndexNow (Bing, DuckDuckGo, Naver, etc.)
+# The key is read from the committed key file (public by protocol design).
+# See: https://www.indexnow.org/documentation
+
+name: IndexNow Sitemap Submission
+
+on:
+  push:
+    branches:
+      - main
+    # Only trigger when content files change (not just tooling/scripts)
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+      - 'sitemap-seo-pages.xml'
+
+jobs:
+  submit-indexnow:
+    name: Submit URLs to IndexNow
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests lxml
+
+      - name: Read IndexNow key from committed key file
+        run: |
+          # The key file is named {key}.txt and contains just the key value
+          KEY_FILE=$(ls tt24ee*.txt 2>/dev/null | head -1)
+          if [ -z "$KEY_FILE" ]; then
+            echo "ERROR: No tt24ee*.txt key file found in repo root"
+            exit 1
+          fi
+          KEY=$(cat "$KEY_FILE")
+          echo "INDEXNOW_KEY=$KEY" >> $GITHUB_ENV
+          echo "Key file: $KEY_FILE (${#KEY} chars)"
+
+      - name: Wait for GitHub Pages deployment
+        # Give Pages ~30s to propagate before hitting the live sitemap
+        run: sleep 30
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          SITEMAP_URL: "https://tt24.ee/sitemap.xml"
+        run: python3 scripts/submit_indexnow.py
+
+      - name: Submit SEO pages sitemap (if exists)
+        env:
+          SITEMAP_URL: "https://tt24.ee/sitemap-seo-pages.xml"
+        run: |
+          if curl -sf --head "https://tt24.ee/sitemap-seo-pages.xml" > /dev/null; then
+            python3 scripts/submit_indexnow.py
+          else
+            echo "sitemap-seo-pages.xml not accessible — skipping"
+          fi
+        continue-on-error: true
