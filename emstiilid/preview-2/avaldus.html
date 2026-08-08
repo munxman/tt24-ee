@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Avaldus nimistusse registreerumiseks -- SL Tervisekeskus</title>
+  <meta name="description" content="Esitage avaldus SL Tervisekeskuse perearstinimistusse registreerumiseks. Sepapaja 12/1, Tallinn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #101010;
+      --white: #FFFFFF;
+      --sage: #9BAD96;
+      --sage-dark: #6E8A68;
+      --sage-light: #E8EEE7;
+      --gray-50: #FAFAFA;
+      --gray-100: #F4F4F4;
+      --gray-200: #E8E8E8;
+      --gray-300: #D4D4D4;
+      --gray-500: #808080;
+      --gray-700: #404040;
+      --error: #B91C1C;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+
+    /* Announcement bar */
+    .announce-bar {
+      background: var(--sage);
+      color: var(--black);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-align: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .announce-bar a { color: var(--black); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.5; }
+
+    /* Header */
+    header {
+      background: var(--black);
+      color: var(--white);
+      position: sticky;
+      top: 40px;
+      z-index: 99;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .logo-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--white);
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      color: var(--sage);
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    nav a {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--white); }
+    .lang-switcher {
+      display: flex;
+      gap: 2px;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .lang-switcher span {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 3px 6px;
+      color: rgba(255,255,255,0.35);
+    }
+    .lang-switcher span.active {
+      background: rgba(155,173,150,0.25);
+      color: var(--sage);
+    }
+
+    /* Page hero */
+    .page-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 56px 48px 64px;
+    }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 28px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.6); }
+    .page-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      max-width: 520px;
+    }
+
+    /* Form section */
+    .form-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 48px 72px;
+    }
+
+    /* Alt channels */
+    .alt-channels {
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage-dark);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .alt-channels strong { font-weight: 600; color: var(--black); }
+    .alt-channels a { color: var(--black); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Form intro */
+    .form-intro {
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 3px solid var(--gray-200);
+    }
+    .form-intro h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+      margin-bottom: 12px;
+    }
+    .form-intro p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-500);
+      margin-bottom: 6px;
+    }
+
+    /* Fields */
+    .field-group { margin-bottom: 22px; }
+    .field-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 7px;
+    }
+    .field-required::after {
+      content: ' *';
+      color: var(--sage-dark);
+    }
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--gray-200);
+      border-radius: 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--black);
+      background: var(--white);
+      transition: border-color 0.15s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field-group input:focus,
+    .field-group select:focus,
+    .field-group textarea:focus {
+      border-color: var(--black);
+    }
+    .field-group input.invalid,
+    .field-group select.invalid {
+      border-color: var(--error);
+    }
+    .field-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2.5' stroke-linecap='square'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 38px;
+    }
+    .field-group textarea {
+      min-height: 96px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .field-hint {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gray-500);
+      margin-top: 5px;
+    }
+    .field-error {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--error);
+      margin-top: 5px;
+      display: none;
+    }
+    .field-error.visible { display: block; }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-section-head {
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      padding-top: 28px;
+      padding-bottom: 14px;
+      border-top: 2px solid var(--gray-100);
+      margin-top: 8px;
+    }
+    .form-section-head:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    /* Minor toggle */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .toggle-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--sage-dark);
+      cursor: pointer;
+    }
+    .toggle-row .toggle-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--black);
+    }
+    .minor-fields {
+      background: var(--gray-50);
+      border: 2px solid var(--gray-200);
+      padding: 24px 20px;
+      margin-bottom: 8px;
+      display: none;
+    }
+    .minor-fields.visible { display: block; }
+    .minor-fields .field-group:last-child { margin-bottom: 0; }
+
+    /* GDPR */
+    .gdpr-box {
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage-dark);
+      padding: 20px 20px;
+      margin: 28px 0 24px;
+    }
+    .gdpr-note {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .gdpr-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .gdpr-check-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--sage-dark);
+      cursor: pointer;
+    }
+    .gdpr-check-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1.55;
+    }
+    .gdpr-check-label.invalid { color: var(--error); }
+
+    /* Buttons */
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-submit:hover { background: var(--gray-700); }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-500);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 20px;
+      letter-spacing: 0.04em;
+    }
+    .btn-back:hover { color: var(--black); }
+
+    /* Preview notice */
+    .preview-notice {
+      display: none;
+      background: var(--sage-light);
+      border-top: 4px solid var(--sage-dark);
+      padding: 36px 40px;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .preview-notice.visible { display: block; }
+    .preview-notice-icon { font-size: 32px; margin-bottom: 16px; }
+    .preview-notice h3 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+      margin-bottom: 10px;
+    }
+    .preview-notice p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 52px 48px 28px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 20px;
+    }
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      margin-bottom: 8px;
+    }
+    .footer-reg {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 4px;
+    }
+    .footer-addr {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+    }
+    .noindex-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .page-hero { padding: 40px 24px 48px; }
+      .form-section { padding: 36px 24px 56px; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      footer { padding: 40px 24px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-links { align-items: flex-start; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announce-bar">
+    Toovälisel ajal: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">&middot;</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-name">sl tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus &middot; Ülemiste</span>
+      </a>
+      <nav>
+        <a href="index.html">Avaleht</a>
+        <a href="index.html#teenused">Teenused</a>
+        <a href="index.html#arstid">Arstid</a>
+        <a href="index.html#nimistusse-registreerumine">Patsiendile</a>
+        <a href="materjalid.html">Materjalid</a>
+        <a href="index.html#kontakt">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span>
+          <span>EN</span>
+          <span>RU</span>
+          <span>FI</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">avaleht</a>
+        <span>/</span>
+        <a href="index.html#nimistusse-registreerumine">nimistusse registreerumine</a>
+        <span>/</span>
+        <span>avaldus</span>
+      </div>
+      <p class="page-label">Patsiendile</p>
+      <h1>avaldus nimistusse<br>registreerumiseks.</h1>
+      <p>Iga pereliikme kohta tuleb esitada eraldi avaldus. Alaealise eest esitab avalduse lapsevanem või seaduslik esindaja.</p>
+    </div>
+  </div>
+
+  <!-- Form section -->
+  <div class="form-section">
+
+    <div class="alt-channels">
+      <strong>Alternatiivkanalid:</strong> Avalduse saab esitada ka <a href="https://www.eesti.ee" target="_blank" rel="noopener">eesti.ee</a> portaali kaudu või Tervisekassa iseteeninduskeskkonnas <a href="https://www.tervisekassa.ee" target="_blank" rel="noopener">tervisekassa.ee</a>.
+    </div>
+
+    <div class="form-intro">
+      <h2>avaldus perearsti nimistusse registreerumiseks</h2>
+      <p>Täitke alljärgnev avaldus ja me võtame Teiega ühendust kinnituse saatmiseks. Avalduse kinnitab Tervisekassa.</p>
+      <p>Vastsündinud kantakse automaatselt ema perearstinimistusse. Avaldus tuleb täita, kui soovite lapsele teistsugust perearsti.</p>
+    </div>
+
+    <form id="avaldus-form" action="/avaldus-saada.php" method="post" novalidate>
+      <input type="text" name="website_check" id="website_check" style="display:none;" tabindex="-1" autocomplete="off">
+
+      <!-- Doctor select -->
+      <div class="form-section-head">Perearstinimistus</div>
+
+      <div class="field-group">
+        <label for="valitud_perearst" class="field-required">Valitud perearst</label>
+        <select id="valitud_perearst" name="valitud_perearst" required>
+          <option value="">-- Valige perearst --</option>
+          <option value="Dr. Ingmar Lindström">Dr. Ingmar Lindström</option>
+          <option value="Dr. Kristin Kolts">Dr. Kristin Kolts</option>
+          <option value="Anna Gretšenko">Anna Gretšenko</option>
+          <option value="Epp Vessel">Epp Vessel</option>
+        </select>
+        <span class="field-error" id="err-perearst">Palun valige perearst.</span>
+      </div>
+
+      <!-- Personal data -->
+      <div class="form-section-head">Isikuandmed</div>
+
+      <div class="field-group">
+        <label for="nimi" class="field-required">Ees- ja perekonnanimi</label>
+        <input type="text" id="nimi" name="nimi" required autocomplete="name" placeholder="Eesnimi Perekonnanimi">
+        <span class="field-error" id="err-nimi">Palun sisestage oma nimi.</span>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="field-group">
+          <label for="isikukood" class="field-required">Isikukood</label>
+          <input type="text" id="isikukood" name="isikukood" required autocomplete="off" placeholder="XXXXXXXXXXX" maxlength="11" inputmode="numeric">
+          <div class="field-hint">11-kohaline isikukood ilma tühikuteta</div>
+          <span class="field-error" id="err-isikukood">Isikukood peab olema täpselt 11 numbrit.</span>
+        </div>
+        <div class="field-group">
+          <label for="telefon" class="field-required">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" required autocomplete="tel" placeholder="+372 XXXXXXX">
+          <span class="field-error" id="err-telefon">Palun sisestage telefoninumber.</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="epost" class="field-required">E-post</label>
+        <input type="email" id="epost" name="epost" required autocomplete="email" placeholder="teie@email.ee">
+        <span class="field-error" id="err-epost">Palun sisestage kehtiv e-posti aadress.</span>
+      </div>
+
+      <!-- Address -->
+      <div class="form-section-head">Elukoht</div>
+
+      <div class="field-group">
+        <label for="aadress" class="field-required">Elukoha aadress</label>
+        <input type="text" id="aadress" name="aadress" required autocomplete="street-address" placeholder="Tänav, maja, korter, linn, postiindeks, riik">
+        <div class="field-hint">Sisestage täielik aadress</div>
+        <span class="field-error" id="err-aadress">Palun sisestage elukoha aadress.</span>
+      </div>
+
+      <!-- Minor toggle -->
+      <div class="form-section-head">Alaealine laps</div>
+
+      <label class="toggle-row">
+        <input type="checkbox" id="on-alaealine" name="on_alaealine">
+        <span class="toggle-label">Avaldus esitatakse alaealise lapse nimel (lapsevanem / seaduslik esindaja)</span>
+      </label>
+
+      <div class="minor-fields" id="esindaja-fields">
+        <div class="field-group">
+          <label for="esindaja_nimi" class="field-required">Esindaja ees- ja perekonnanimi</label>
+          <input type="text" id="esindaja_nimi" name="esindaja_nimi" autocomplete="name" placeholder="Eesnimi Perekonnanimi">
+          <span class="field-error" id="err-esindaja-nimi">Palun sisestage esindaja nimi.</span>
+        </div>
+        <div class="field-group">
+          <label for="esindaja_isikukood" class="field-required">Esindaja isikukood</label>
+          <input type="text" id="esindaja_isikukood" name="esindaja_isikukood" autocomplete="off" placeholder="XXXXXXXXXXX" maxlength="11" inputmode="numeric">
+          <span class="field-error" id="err-esindaja-isikukood">Esindaja isikukood peab olema täpselt 11 numbrit.</span>
+        </div>
+        <div class="field-group" style="margin-bottom:0;">
+          <label for="esindaja_telefon">Esindaja telefon</label>
+          <input type="tel" id="esindaja_telefon" name="esindaja_telefon" autocomplete="tel" placeholder="+372 XXXXXXX">
+        </div>
+      </div>
+
+      <!-- Optional note -->
+      <div class="form-section-head">Lisainfo</div>
+
+      <div class="field-group">
+        <label for="vabatekst">Vabatekst (valikuline)</label>
+        <textarea id="vabatekst" name="vabatekst" placeholder="Lisakommentaarid avalduse kohta..."></textarea>
+      </div>
+
+      <!-- GDPR -->
+      <div class="gdpr-box">
+        <p class="gdpr-note">
+          SL Tervisekeskus OÜ (registrikood 17473441) tootleb avalduses esitatud isikuandmeid ainult perearstinimistusse registreerumise avalduse menetlemiseks. Andmeid ei edastata kolmandatele isikutele väljaspool EL-i. Päringutel kirjutage meile registratuuri kaudu.
+        </p>
+        <div class="gdpr-check-row">
+          <input type="checkbox" id="gdpr_consent" name="gdpr_consent" required>
+          <label for="gdpr_consent" class="gdpr-check-label" id="gdpr-label">
+            Nõustun, et minu andmeid tootletletakse ainult selle avalduse menetlemiseks. Olen tutvunud andmekaitsetingimustega.
+          </label>
+        </div>
+        <span class="field-error" id="err-gdpr" style="margin-top:8px;">Jätkamiseks kinnitage nõusolek.</span>
+      </div>
+
+      <!-- Actions -->
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:8px;">
+        <a href="index.html#nimistusse-registreerumine" class="btn-back">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+          Tagasi
+        </a>
+        <button type="submit" class="btn-submit">
+          Saada avaldus
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- Preview notice -->
+    <div class="preview-notice" id="preview-notice">
+      <div class="preview-notice-icon">&#9432;</div>
+      <h3>eelvaade aktiivne.</h3>
+      <p><strong>Eelvaade: avalduse saatmine aktiveerub kodulehe avamisel.</strong><br>
+      Praegu on tegemist kujunduse eelvaatega. Tootmislehel suunatakse avaldus kliinikule.</p>
+    </div>
+
+    <p style="margin-top:28px;font-size:12px;font-weight:300;color:var(--gray-500);text-align:center;">
+      Küsimuste korral: <a href="tel:+3726138887" style="color:var(--sage-dark);font-weight:500;">+372 613 8887</a> (E-R 8:00-18:00)
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">sl tervisekeskus</div>
+          <div class="footer-reg">SL Tervisekeskus OÜ &middot; Registrikood 17473441</div>
+          <div class="footer-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="materjalid.html">Materjalid</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 &middot; +372 613 8887 &middot; <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.3);">e-Perearstikeskus</a></span>
+        <span class="noindex-tag">Eelvaade &middot; Noindex</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Minor toggle
+    const minorCb = document.getElementById('on-alaealine');
+    const esindajaFields = document.getElementById('esindaja-fields');
+    minorCb.addEventListener('change', function() {
+      esindajaFields.classList.toggle('visible', this.checked);
+      const req = ['esindaja_nimi', 'esindaja_isikukood'];
+      req.forEach(function(id) {
+        const el = document.getElementById(id);
+        if (el) el.required = minorCb.checked;
+      });
+    });
+
+    function showErr(id, show) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('visible', show);
+    }
+    function clearErrs() {
+      document.querySelectorAll('.field-error').forEach(function(e) { e.classList.remove('visible'); });
+      document.querySelectorAll('input.invalid, select.invalid').forEach(function(e) { e.classList.remove('invalid'); });
+      document.getElementById('gdpr-label').classList.remove('invalid');
+    }
+
+    document.getElementById('avaldus-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearErrs();
+      var valid = true;
+
+      function reqField(fieldId, errId) {
+        var el = document.getElementById(fieldId);
+        if (!el) return;
+        if (!el.value.trim()) {
+          el.classList.add('invalid');
+          showErr(errId, true);
+          valid = false;
+        }
+      }
+
+      reqField('valitud_perearst', 'err-perearst');
+      reqField('nimi', 'err-nimi');
+      reqField('telefon', 'err-telefon');
+      reqField('epost', 'err-epost');
+      reqField('aadress', 'err-aadress');
+
+      var ik = document.getElementById('isikukood');
+      if (!ik.value.trim()) {
+        ik.classList.add('invalid');
+        showErr('err-isikukood', true);
+        valid = false;
+      } else if (!/^\d{11}$/.test(ik.value.trim())) {
+        ik.classList.add('invalid');
+        showErr('err-isikukood', true);
+        valid = false;
+      }
+
+      var ep = document.getElementById('epost');
+      if (ep.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ep.value.trim())) {
+        ep.classList.add('invalid');
+        showErr('err-epost', true);
+        valid = false;
+      }
+
+      if (minorCb.checked) {
+        reqField('esindaja_nimi', 'err-esindaja-nimi');
+        var eik = document.getElementById('esindaja_isikukood');
+        if (eik.value.trim() && !/^\d{11}$/.test(eik.value.trim())) {
+          eik.classList.add('invalid');
+          showErr('err-esindaja-isikukood', true);
+          valid = false;
+        }
+      }
+
+      var gdpr = document.getElementById('gdpr_consent');
+      if (!gdpr.checked) {
+        showErr('err-gdpr', true);
+        document.getElementById('gdpr-label').classList.add('invalid');
+        valid = false;
+      }
+
+      if (!valid) {
+        var firstInvalid = document.querySelector('.field-error.visible');
+        if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Preview intercept
+      document.getElementById('preview-notice').classList.add('visible');
+      document.getElementById('avaldus-form').style.display = 'none';
+      document.getElementById('preview-notice').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+
+</body>
+</html>
