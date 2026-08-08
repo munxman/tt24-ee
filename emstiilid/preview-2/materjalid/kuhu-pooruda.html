@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Kuhu pöörduda tervisemurega -- SL Tervisekeskus</title>
+  <meta name="description" content="Selge juhend: 112, EMO, 1220, Valvekliinik või perearst. SL Tervisekeskus OÜ, Ülemiste Tallinn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #101010; --white: #FFFFFF; --sage: #9BAD96; --sage-dark: #6E8A68;
+      --sage-light: #E8EEE7; --gray-100: #F4F4F4; --gray-200: #E8E8E8;
+      --gray-500: #808080; --gray-700: #404040; --red: #B03A2E;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', system-ui, sans-serif; background: var(--white); color: var(--black); font-size: 16px; line-height: 1.6; }
+    a { color: inherit; }
+
+    .announce-bar { background: var(--sage); color: var(--black); font-size: 11.5px; font-weight: 600; letter-spacing: 0.07em; text-align: center; padding: 10px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: var(--black); text-decoration: underline; }
+    .announce-sep { margin: 0 12px; opacity: 0.5; }
+    header { background: var(--black); color: var(--white); position: sticky; top: 40px; z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
+    .logo-name { font-size: 20px; font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); line-height: 1; }
+    .logo-sub { font-size: 8.5px; font-weight: 600; letter-spacing: 0.26em; color: var(--sage); text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 24px; }
+    nav a { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+    nav a:hover { color: var(--white); border-bottom-color: var(--sage); }
+    nav a.active { color: var(--sage); }
+    .lang-switcher { display: flex; gap: 2px; margin-left: 20px; padding-left: 20px; border-left: 1px solid rgba(255,255,255,0.1); }
+    .lang-switcher span { font-size: 10px; font-weight: 700; padding: 4px 7px; cursor: default; color: rgba(255,255,255,0.35); }
+    .lang-switcher span.active { background: var(--sage); color: var(--black); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--white); cursor: pointer; padding: 8px; }
+
+    .page-hero { background: var(--black); color: var(--white); padding: 56px 48px 64px; border-bottom: 3px solid var(--sage); }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 32px; flex-wrap: wrap; }
+    .breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+    .breadcrumb-sep { color: rgba(255,255,255,0.15); }
+    .page-eyebrow { font-size: 9.5px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; border-bottom: 2px solid var(--sage); display: inline-block; padding-bottom: 5px; }
+    .page-hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); line-height: 1.0; margin-bottom: 20px; margin-top: 16px; }
+    .page-hero-sub { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.75; }
+
+    .content-section { padding: 72px 48px 96px; }
+    .content-inner { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-dark); text-decoration: none; margin-bottom: 48px; border-bottom: 2px solid var(--sage); padding-bottom: 3px; }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .article-body h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.03em; color: var(--black); margin: 48px 0 14px; padding-top: 8px; border-top: 3px solid var(--sage); }
+    .article-body h2:first-child { margin-top: 0; border-top: none; }
+    .article-body p { font-size: 14.5px; font-weight: 300; color: var(--gray-500); line-height: 1.8; margin-bottom: 16px; }
+    .article-body a { color: var(--sage-dark); text-decoration: underline; font-weight: 500; }
+    .article-body ul { margin: 12px 0 20px 20px; }
+    .article-body li { font-size: 14.5px; font-weight: 300; color: var(--gray-500); line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--black); font-weight: 700; }
+
+    .severity-stack { display: flex; flex-direction: column; gap: 3px; margin: 20px 0 36px; }
+    .sev-card { display: flex; gap: 0; }
+    .sev-badge { display: flex; align-items: center; justify-content: center; min-width: 64px; padding: 20px 16px; font-size: 13px; font-weight: 800; letter-spacing: 0.05em; color: var(--white); flex-shrink: 0; }
+    .sev-card.l1 .sev-badge { background: #B03A2E; }
+    .sev-card.l2 .sev-badge { background: #CA6F1E; }
+    .sev-card.l3 .sev-badge { background: var(--sage-dark); }
+    .sev-card.l4 .sev-badge { background: var(--black); }
+    .sev-card.l5 .sev-badge { background: var(--gray-700); }
+    .sev-body { background: var(--gray-100); padding: 20px 24px; flex: 1; border-bottom: 3px solid transparent; transition: border-color 0.15s; }
+    .sev-card:hover .sev-body { border-color: var(--sage); }
+    .sev-title { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+    .sev-contact { font-size: 13.5px; font-weight: 600; margin-bottom: 6px; color: var(--gray-700); }
+    .sev-contact a { color: inherit; text-decoration: none; }
+    .sev-contact a:hover { text-decoration: underline; }
+    .sev-desc { font-size: 13px; font-weight: 300; color: var(--gray-500); line-height: 1.65; }
+
+    .info-card { background: var(--sage-light); border-left: 4px solid var(--sage-dark); padding: 22px 26px; margin: 24px 0; }
+    .info-card .info-label { font-size: 9px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 10px; }
+    .info-card p { font-size: 14px; font-weight: 400; color: var(--gray-700); line-height: 1.7; margin-bottom: 8px; }
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card a { color: var(--sage-dark); font-weight: 600; }
+
+    footer { background: var(--black); color: rgba(255,255,255,0.35); padding: 52px 48px 44px; border-top: 3px solid var(--sage); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+    .footer-logo { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); margin-bottom: 6px; }
+    .footer-reg { font-size: 11px; color: rgba(255,255,255,0.3); }
+    .footer-addr { margin-top: 5px; font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { font-size: 11px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .noindex-tag { background: rgba(155,173,150,0.12); color: var(--sage); font-size: 8.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; }
+    .draft-notice { font-size: 10px; color: rgba(255,255,255,0.18); text-align: center; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 16px; margin-top: 12px; }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .page-hero { padding: 44px 24px 52px; }
+      .content-section { padding: 52px 24px 72px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announce-bar">
+    Erakorraline: <strong>112</strong><span class="announce-sep">&middot;</span>Nõuanne: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">&middot;</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-name">sl tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+      </a>
+      <nav>
+        <a href="../index.html">Avaleht</a>
+        <a href="#">Teenused</a>
+        <a href="#">Arstid ja pered</a>
+        <a href="#">Hinnakiri</a>
+        <a href="#">Patsiendile</a>
+        <a href="../materjalid.html" class="active">Materjalid</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span><span>EN</span><span>RU</span><span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb">
+        <a href="../index.html">Avaleht</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../materjalid.html">Materjalid</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Kuhu pöörduda</span>
+      </nav>
+      <div class="page-eyebrow">Patsiendile</div>
+      <h1>kuhu pöörduda tervisemurega.</h1>
+      <p class="page-hero-sub">112, EMO, 1220, Valvekliinik, perearst. Igal kanalil on oma roll. Siit leiate selge juhise.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+
+      <a href="../materjalid.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M9 2L4 7l5 5"/></svg>
+        Tagasi materjalide juurde
+      </a>
+
+      <div class="article-body">
+
+        <h2>Kiire valik olukorra järgi</h2>
+        <p>Eesti tervishoius on mitu kanalit vastavalt olukorrale, raskusastme järjekorras:</p>
+
+        <div class="severity-stack">
+          <div class="sev-card l1">
+            <div class="sev-badge">112</div>
+            <div class="sev-body">
+              <div class="sev-title">Kiirabi</div>
+              <div class="sev-contact"><a href="tel:112">112</a> · ööpäevaringselt</div>
+              <div class="sev-desc">Eluohtlik olukord: teadvusetus, hingamisraskus, tugev rinnavalu, insult, raske vigastus, mürgistus. Helistage kohe.</div>
+            </div>
+          </div>
+          <div class="sev-card l2">
+            <div class="sev-badge">EMO</div>
+            <div class="sev-body">
+              <div class="sev-title">Haigla erakorraline vastuvõtt</div>
+              <div class="sev-contact">Lähim EMO · ööpäevaringselt · tasuta kindlustatutele</div>
+              <div class="sev-desc">Kiiret arstiabi vajav, kuid mitte vahetult eluohtlik olukord, mis ei saa oodata järgmise tööpäevani.</div>
+            </div>
+          </div>
+          <div class="sev-card l3">
+            <div class="sev-badge">1220</div>
+            <div class="sev-body">
+              <div class="sev-title">Perearsti nõuandeliin</div>
+              <div class="sev-contact"><a href="tel:1220">1220</a> · iga päev 8:00-22:00 · eesti keeles · tasuta</div>
+              <div class="sev-desc">Riiklik telefoninõustamine. Aitab hinnata, kas ja kuhu peate pöörduma. Sobib ka nädalavahetusel haigestumisel haiguslehe alustamiseks.</div>
+            </div>
+          </div>
+          <div class="sev-card l4">
+            <div class="sev-badge">VK</div>
+            <div class="sev-body">
+              <div class="sev-title">Valvekliinik</div>
+              <div class="sev-contact"><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a> · tasuline · eesti, inglise, vene ja soome keeles</div>
+              <div class="sev-desc">Erakliiniku arstivastuvõtt ilma saatekirjata töövälisel ajal. Sobib, kui vajate arsti, kuid olukord ei nõua kiirabit ega EMO-t.</div>
+            </div>
+          </div>
+          <div class="sev-card l5">
+            <div class="sev-badge">SL</div>
+            <div class="sev-body">
+              <div class="sev-title">SL Tervisekeskus (perearst)</div>
+              <div class="sev-contact"><a href="tel:+3726138887">+372 613 8887</a> · E-R 8:00-18:00</div>
+              <div class="sev-desc">Plaanilised vastuvõtud, krooniliste seisundite jälgimine, retseptid, tõendid, saatekirjad. Broneering <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuse</a> kaudu.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-label">Nädalavahetuse haigestumine</div>
+          <p>Kui haigestusite nädalavahetusel ja vajate haiguslehte, helistage <strong>1220</strong> (iga päev kuni 22:00), külastage EMO-t või kutsuge kiirabi. Arstitõend tuleb esitada tööandjale kahe päeva jooksul.</p>
+        </div>
+
+        <h2>Välisriigis haigestumine</h2>
+        <p>Otsige ravi kohapeal. Naastes esitage tööandjale vajalikud dokumendid. Täpsem info: <a href="https://www.tervisekassa.ee" target="_blank" rel="noopener">tervisekassa.ee</a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">sl tervisekeskus</div>
+          <div class="footer-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div class="footer-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="../materjalid.html">Materjalid</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · +372 613 8887 · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.3);">e-Perearstikeskus</a></span>
+        <span class="noindex-tag">Eelvaade · Noindex</span>
+      </div>
+      <div class="draft-notice">Mustand, avaldamisel kinnitatakse · SL Tervisekeskus OÜ, reg 17473441</div>
+    </div>
+  </footer>
+
+</body>
+</html>

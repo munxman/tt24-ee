@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Tõendid ja retseptid -- SL Tervisekeskus</title>
+  <meta name="description" content="Kordusretseptide tellimine, tervisetõendid ja haigusleht. Praktilised juhised SL Tervisekeskuse patsientidele.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --petrol: #0B242A; --petrol-mid: #122F38; --teal: #2E7D74; --teal-light: #3A9A8F;
+      --gold: #C2A264; --gold-dim: rgba(194,162,100,0.35); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
+      --text: #1C1C1A; --text-muted: #5A6B65; --border: #DDD8CC; --border-light: #ECE8E0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; }
+
+    .announce-bar { background: var(--teal); color: rgba(255,252,247,0.92); font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: rgba(255,252,247,0.92); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.45; }
+
+    header { background: var(--petrol); color: var(--ivory); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(194,162,100,0.12); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { display: flex; flex-direction: column; text-decoration: none; gap: 3px; }
+    .logo-name { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 500; letter-spacing: 0.01em; color: var(--ivory); line-height: 1.1; }
+    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,247,241,0.6); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    nav a:hover { color: var(--ivory); border-bottom-color: var(--gold-dim); }
+    nav a.active { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 3px; margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(250,247,241,0.15); }
+    .lang-switcher span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; padding: 4px 7px; border-radius: 2px; cursor: default; color: rgba(250,247,241,0.45); }
+    .lang-switcher span.active { background: rgba(194,162,100,0.2); color: var(--gold); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--ivory); cursor: pointer; padding: 8px; }
+
+    .page-hero { background: var(--petrol); color: var(--ivory); padding: 56px 48px 64px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(194,162,100,0.3), transparent); }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,247,241,0.4); margin-bottom: 28px; flex-wrap: wrap; }
+    .breadcrumb a { color: rgba(250,247,241,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(250,247,241,0.75); }
+    .breadcrumb-sep { color: rgba(250,247,241,0.2); }
+    .page-eyebrow { font-size: 9.5px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 400; color: var(--ivory); line-height: 1.2; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 14px; font-weight: 300; color: rgba(250,247,241,0.55); max-width: 540px; line-height: 1.75; }
+
+    .content-section { padding: 72px 48px 96px; background: var(--ivory); }
+    .content-inner { max-width: 800px; margin: 0 auto; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); text-decoration: none; margin-bottom: 48px; padding-bottom: 3px; border-bottom: 1px solid rgba(46,125,116,0.25); }
+    .back-link:hover { border-bottom-color: var(--teal); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; color: var(--petrol); margin: 48px 0 16px; padding-top: 8px; border-top: 1px solid var(--border-light); }
+    .article-body h2:first-child { margin-top: 0; border-top: none; }
+    .article-body h3 { font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); margin: 24px 0 10px; }
+    .article-body p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+    .article-body a:hover { color: var(--teal-light); }
+    .article-body ul { margin: 12px 0 20px 22px; }
+    .article-body li { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+
+    .info-card { background: var(--ivory-dark); border: 1px solid var(--border-light); border-left: 3px solid var(--teal); padding: 24px 28px; margin: 28px 0; border-radius: 0 2px 2px 0; }
+    .info-card .info-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .info-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; margin-bottom: 10px; }
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+
+    .price-table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 14px; }
+    .price-table th { text-align: left; font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding: 8px 12px; border-bottom: 2px solid var(--border); }
+    .price-table td { padding: 12px 12px; border-bottom: 1px solid var(--border-light); color: var(--text-muted); vertical-align: top; line-height: 1.55; }
+    .price-table td:last-child { text-align: right; font-weight: 600; color: var(--petrol); white-space: nowrap; }
+    .price-table tr:hover td { background: var(--ivory-dark); }
+
+    .price-note { font-size: 11.5px; color: var(--text-muted); font-style: italic; margin-top: -12px; margin-bottom: 28px; line-height: 1.65; }
+
+    footer { background: var(--petrol); color: rgba(250,247,241,0.45); padding: 52px 48px 44px; border-top: 1px solid rgba(194,162,100,0.12); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(250,247,241,0.08); }
+    .footer-logo-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--ivory); margin-bottom: 5px; }
+    .footer-logo-reg { font-size: 11px; letter-spacing: 0.07em; color: rgba(250,247,241,0.35); }
+    .footer-logo-addr { margin-top: 6px; font-size: 12px; color: rgba(250,247,241,0.3); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: 11px; letter-spacing: 0.1em; color: rgba(250,247,241,0.38); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(250,247,241,0.75); }
+    .footer-bottom { font-size: 11px; letter-spacing: 0.05em; line-height: 1.7; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .noindex-notice { font-size: 9.5px; letter-spacing: 0.18em; color: rgba(194,162,100,0.4); text-transform: uppercase; }
+    .draft-notice { font-size: 10px; color: rgba(250,247,241,0.22); letter-spacing: 0.06em; margin-top: 12px; text-align: center; border-top: 1px solid rgba(250,247,241,0.06); padding-top: 16px; }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .page-hero { padding: 44px 24px 52px; }
+      .content-section { padding: 52px 24px 72px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .price-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announce-bar">
+    Toovälisel ajal: helista <strong>1220</strong> (iga päev kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-name">SL Tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+      </a>
+      <nav>
+        <a href="../index.html">Avaleht</a>
+        <a href="#">Teenused</a>
+        <a href="#">Arstid ja pered</a>
+        <a href="#">Hinnakiri</a>
+        <a href="#">Patsiendile</a>
+        <a href="../materjalid.html" class="active">Materjalid</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span><span>EN</span><span>RU</span><span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Asukoht">
+        <a href="../index.html">Avaleht</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../materjalid.html">Materjalid</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Tõendid ja retseptid</span>
+      </nav>
+      <p class="page-eyebrow">Patsiendile</p>
+      <h1>Tõendid ja retseptid</h1>
+      <p class="page-hero-sub">Kordusretseptide tellimine, tervisetõendite taotlemine ja haiguslehe avamine. Praktilised juhised kõigi teemade kohta.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+
+      <a href="../materjalid.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
+        Tagasi materjalide juurde
+      </a>
+
+      <div class="article-body">
+
+        <h2>Kordusretseptid</h2>
+        <p>Kroonilise ravimi kordusretsepti saab tellida kahel viisil: <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuse</a> kaudu või helistades <a href="tel:+3726138887">+372 613 8887</a> (E-R 8:00-18:00).</p>
+
+        <div class="info-card">
+          <div class="info-label">Tähtajad</div>
+          <p><strong>Tavaline kordusretsept:</strong> valmis 5 tööpäeva jooksul.</p>
+          <p><strong>Ägeda haiguse korral:</strong> retsept väljastatakse samal päeval.</p>
+          <p>Retsepti kehtivus: üks retsept kehtib 60 päeva, kolmikretsept 180 päeva.</p>
+        </div>
+
+        <p>Retseptide olekut saab jälgida <a href="https://www.digilugu.ee/" target="_blank" rel="noopener">terviseportaalis digilugu.ee</a>. Retsept ilmub automaatselt Teie digitaalsesse tervisekaarti ning apteek näeb seda otse.</p>
+
+        <h2>Haigusleht ja hooldusleht</h2>
+        <p>Haiguslehe avamine nõuab, et teatate haigestumisest kohe, samal päeval. Tagantjärele avamine ei ole seaduslikult võimalik.</p>
+        <ul>
+          <li>Haigestumisest teatatakse <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuse</a> kaudu või telefonil.</li>
+          <li>Haiguslehe jätkamine: järgige arsti poolt kokkulepitud kuupäevi.</li>
+          <li>Nädalavahetusel haigestumisel: helistage <a href="tel:1220">1220</a> (kuni 22:00), külastage EMO-t või kutsuge kiirabi. Tõend esitada kahe päeva jooksul.</li>
+        </ul>
+
+        <h2>Tervisetõendid</h2>
+        <p>Mitmed tervisetõendid on tasulised teenused, mida ravikindlustus ei kata. Tasumine toimub kaardiga kohapeal (kabinet 104, Sepapaja 12/1, III korrus).</p>
+
+        <h3>Tõendi liigid ja orienteeruvad hinnad</h3>
+        <p>Allpool toodud hinnad on lähtekaardist. SL Tervisekeskuse ametlik hinnakiri avaldatakse 1. septembril 2026.</p>
+
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Tõend</th>
+              <th style="text-align:right">Orienteeruv hind</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Üldtõend (kool, kindlustus, välismaa)</td><td>25&euro; + uuringud</td></tr>
+            <tr><td>Juhiloa tõend, kat. A/B</td><td>45&euro;</td></tr>
+            <tr><td>Juhiloa tõend, kat. C/D/E</td><td>65&euro;</td></tr>
+            <tr><td>Tõend röntgeni ja uuringutega</td><td>45&euro;</td></tr>
+            <tr><td>Tõend koos BAK (soolestiku bakter.)</td><td>80&euro; (kuni 18 a.: 70&euro;)</td></tr>
+            <tr><td>Tõend BAK + röntgen</td><td>95&euro; (kuni 18 a.: 85&euro;)</td></tr>
+            <tr><td>Relvaloa tõend</td><td>50&euro;</td></tr>
+            <tr><td>Kaitseliidu tõend</td><td>30&euro;</td></tr>
+            <tr><td>Duplikaat</td><td>10&euro;</td></tr>
+          </tbody>
+        </table>
+        <p class="price-note">Hinnad on orienteeruvad. Ametlik hinnakiri avaldatakse 1. septembril 2026. Tõenditeenuste kohta täpsem teave: <a href="https://www.terviseamet.ee" target="_blank" rel="noopener">terviseamet.ee</a>.</p>
+
+        <div class="info-card">
+          <div class="info-label">Juhiloa tõend</div>
+          <p>Enne vastuvõttu täitke <a href="https://www.digilugu.ee/" target="_blank" rel="noopener">terviseportaalis</a> elektrooniline tervisedeklaratsioon. Vastuvõtule tulles olge 2 tundi söömata (vesi on lubatud).</p>
+        </div>
+
+        <h2>Saatekiri eriarstile</h2>
+        <p>Saatekiri väljastatakse arsti meditsiinilisel näidustusel. Eriarst korraldab ise järgmised vastuvõtud. Saatekirja olemasolu ei tähenda automaatselt järjekorraväliselt eriarstile pääsemist.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo-name">SL Tervisekeskus</div>
+          <div class="footer-logo-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div class="footer-logo-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="../materjalid.html">Materjalid</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · Tel: <a href="tel:+3726138887" style="color:rgba(250,247,241,0.4);">+372 613 8887</a> · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(250,247,241,0.4);">e-Perearstikeskus</a></span>
+        <span class="noindex-notice">Eelvaade · Noindex · Kinnitamata</span>
+      </div>
+      <div class="draft-notice">Mustand, avaldamisel kinnitatakse · SL Tervisekeskus OÜ, reg 17473441</div>
+    </div>
+  </footer>
+
+</body>
+</html>
