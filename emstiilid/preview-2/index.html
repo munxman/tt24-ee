@@ -76,7 +76,7 @@
       gap: 4px;
     }
     .logo-name {
-      font-size: 20px;
+      font-size: clamp(14px, 3.5vw, 20px);
       font-weight: 800;
       letter-spacing: -0.04em;
       text-transform: lowercase;
@@ -492,10 +492,11 @@
       margin-bottom: 24px;
     }
     .footer-logo {
-      font-size: 22px;
+      font-size: clamp(14px, 3.5vw, 22px);
       font-weight: 800;
       letter-spacing: -0.04em;
       text-transform: lowercase;
+      white-space: nowrap;
       color: var(--white);
       margin-bottom: 6px;
     }

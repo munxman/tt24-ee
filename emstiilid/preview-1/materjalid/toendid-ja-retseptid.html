@@ -8,30 +8,31 @@
   <meta name="description" content="Kordusretseptide tellimine, tervisetõendid ja haigusleht. Praktilised juhised SL Tervisekeskuse patsientidele.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --petrol: #0B242A; --petrol-mid: #122F38; --teal: #2E7D74; --teal-light: #3A9A8F;
-      --gold: #C2A264; --gold-dim: rgba(194,162,100,0.35); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
-      --text: #1C1C1A; --text-muted: #5A6B65; --border: #DDD8CC; --border-light: #ECE8E0;
+      --petrol: #9BAD95; --petrol-mid: #7A9174; --teal: #6E8A68; --teal-light: #7A9B74;
+      --gold: #546654; --gold-dim: rgba(155,173,149,0.25); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
+      --text: #1C1C1A; --text-muted: #4E5E4E; --border: #CDD5CC; --border-light: #DFE6DE;
+      --dark-bg: #1A1C1A;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.65; }
     a { color: inherit; }
 
-    .announce-bar { background: var(--teal); color: rgba(255,252,247,0.92); font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
-    .announce-bar a { color: rgba(255,252,247,0.92); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-bar { background: var(--teal); color: var(--text); font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
     .announce-sep { margin: 0 12px; opacity: 0.45; }
 
-    header { background: var(--petrol); color: var(--ivory); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(194,162,100,0.12); }
+    header { background: var(--petrol); color: var(--text); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(26,28,26,0.12); }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
     .logo { display: flex; flex-direction: column; text-decoration: none; gap: 3px; }
-    .logo-name { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 500; letter-spacing: 0.01em; color: var(--ivory); line-height: 1.1; }
-    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; }
+    .logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(14px, 3.5vw, 20px); font-weight: 700; letter-spacing: -0.02em; text-transform: lowercase; color: var(--text); white-space: nowrap; line-height: 1.1; }
+    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: rgba(26,28,26,0.6); text-transform: uppercase; }
     nav { display: flex; align-items: center; gap: 28px; }
-    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,247,241,0.6); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
-    nav a:hover { color: var(--ivory); border-bottom-color: var(--gold-dim); }
+    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.65); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    nav a:hover { color: var(--text); border-bottom-color: rgba(26,28,26,0.35); }
     nav a.active { color: var(--gold); }
     .lang-switcher { display: flex; gap: 3px; margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(250,247,241,0.15); }
     .lang-switcher span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; padding: 4px 7px; border-radius: 2px; cursor: default; color: rgba(250,247,241,0.45); }
@@ -46,7 +47,7 @@
     .breadcrumb a:hover { color: rgba(250,247,241,0.75); }
     .breadcrumb-sep { color: rgba(250,247,241,0.2); }
     .page-eyebrow { font-size: 9.5px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .page-hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 400; color: var(--ivory); line-height: 1.2; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 400; color: var(--ivory); line-height: 1.2; margin-bottom: 16px; }
     .page-hero-sub { font-size: 14px; font-weight: 300; color: rgba(250,247,241,0.55); max-width: 540px; line-height: 1.75; }
 
     .content-section { padding: 72px 48px 96px; background: var(--ivory); }
@@ -96,7 +97,7 @@
     @media (max-width: 960px) {
       .header-inner { padding: 0 24px; }
       nav { display: none; }
-      .mobile-menu-btn { display: flex; }
+      .mobile-menu-btn { display: flex; color: var(--text); }
       .page-hero { padding: 44px 24px 52px; }
       .content-section { padding: 52px 24px 72px; }
       footer { padding: 44px 24px; }

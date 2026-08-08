@@ -76,11 +76,12 @@
       gap: 4px;
     }
     .logo-name {
-      font-size: 20px;
+      font-size: clamp(14px, 3.5vw, 20px);
       font-weight: 800;
       letter-spacing: -0.04em;
       text-transform: lowercase;
       color: var(--white);
+      white-space: nowrap;
       line-height: 1;
     }
     .logo-sub {
@@ -440,6 +441,7 @@
       font-weight: 800;
       letter-spacing: -0.04em;
       text-transform: lowercase;
+      white-space: nowrap;
       margin-bottom: 8px;
     }
     .footer-reg {

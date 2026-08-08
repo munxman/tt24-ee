@@ -26,7 +26,8 @@
     header { background: var(--black); color: var(--white); position: sticky; top: 40px; z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo { text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
-    .logo-name { font-size: 20px; font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); line-height: 1; }
+    .logo-name { font-size: clamp(14px, 3.5vw, 20px); font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white);
+      white-space: nowrap; line-height: 1; }
     .logo-sub { font-size: 8.5px; font-weight: 600; letter-spacing: 0.26em; color: var(--sage); text-transform: uppercase; }
     nav { display: flex; align-items: center; gap: 24px; }
     nav a { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; padding-bottom: 2px; border-bottom: 2px solid transparent; }
@@ -85,7 +86,8 @@
     footer { background: var(--black); color: rgba(255,255,255,0.35); padding: 52px 48px 44px; border-top: 3px solid var(--sage); }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
     .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
-    .footer-logo { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); margin-bottom: 6px; }
+    .footer-logo { font-size: clamp(14px, 3.5vw, 22px); font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase;
+      white-space: nowrap; color: var(--white); margin-bottom: 6px; }
     .footer-reg { font-size: 11px; color: rgba(255,255,255,0.3); }
     .footer-addr { margin-top: 5px; font-size: 12px; color: rgba(255,255,255,0.25); }
     .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
