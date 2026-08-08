@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Nohu: mida teha ja millal arsti poole pöörduda -- SL Tervisekeskus</title>
+  <meta name="description" content="10 praktilist sammu nohuga toimetulekuks. Millal piisab kodusest ravist, millal pöörduda arsti poole. SL Tervisekeskus, Ülemiste Tallinn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --petrol: #9BAD95; --petrol-mid: #7A9174; --teal: #6E8A68; --teal-light: #7A9B74;
+      --gold: #546654; --gold-dim: rgba(155,173,149,0.25); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
+      --text: #1C1C1A; --text-muted: #4E5E4E; --border: #CDD5CC; --border-light: #DFE6DE;
+      --dark-bg: #1A1C1A; --red: #B03A2E; --red-bg: #FDF1F0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; }
+
+    .announce-bar { background: var(--teal); color: var(--text); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.45; }
+
+    header { background: var(--petrol); color: var(--text); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(26,28,26,0.12); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { display: flex; flex-direction: column; text-decoration: none; gap: 3px; }
+    .logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(14px, 3.5vw, 20px); font-weight: 700; letter-spacing: -0.02em; text-transform: lowercase; color: var(--text); white-space: nowrap; line-height: 1.1; }
+    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: rgba(26,28,26,0.6); text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.65); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    nav a:hover { color: var(--text); border-bottom-color: rgba(26,28,26,0.35); }
+    nav a.active { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 3px; margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(250,247,241,0.15); }
+    .lang-switcher span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; padding: 12px 10px; min-width: 36px; text-align: center; cursor: default; color: rgba(250,247,241,0.45); border-radius: 2px; }
+    .lang-switcher span.active { background: rgba(194,162,100,0.2); color: var(--gold); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 8px; }
+
+    .page-hero { background: var(--petrol); color: var(--text); padding: 56px 48px 64px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(194,162,100,0.3), transparent); }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.6); margin-bottom: 28px; flex-wrap: wrap; }
+    .breadcrumb a { color: rgba(26,28,26,0.6); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(26,28,26,0.85); }
+    .breadcrumb-sep { color: rgba(26,28,26,0.3); }
+    .page-eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 17px; font-weight: 300; color: rgba(26,28,26,0.72); max-width: 540px; line-height: 1.75; }
+
+    .content-section { padding: 72px 48px 96px; background: var(--ivory); }
+    .content-inner { max-width: 800px; margin: 0 auto; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); text-decoration: none; margin-bottom: 48px; padding-bottom: 3px; border-bottom: 1px solid rgba(110,138,104,0.25); }
+    .back-link:hover { border-bottom-color: var(--teal); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .article-body h2 { font-family: 'Poppins', system-ui, sans-serif; font-size: 22px; font-weight: 500; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 1px solid var(--border-light); }
+    .article-body h2:first-child { margin-top: 0; border-top: none; }
+    .article-body p { font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+    .article-body a:hover { color: var(--teal-light); }
+    .article-body ul { margin: 12px 0 20px 22px; }
+    .article-body li { font-size: 16px; color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+
+    .steps-list { list-style: none; margin: 8px 0 28px; padding: 0; counter-reset: step; }
+    .steps-list li { counter-increment: step; display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border-light); font-size: 16px; color: var(--text-muted); line-height: 1.75; }
+    .steps-list li:last-child { border-bottom: none; }
+    .steps-list li::before { content: counter(step); display: flex; align-items: center; justify-content: center; min-width: 28px; width: 28px; height: 28px; background: var(--teal); color: white; font-size: 11px; font-weight: 600; flex-shrink: 0; margin-top: 3px; border-radius: 2px; }
+    .steps-list li a { color: var(--teal); }
+
+    .alert-box { padding: 18px 22px; margin: 12px 0 20px; border-left: 4px solid; border-radius: 0 2px 2px 0; }
+    .alert-box.red { background: #FDF1F0; border-color: #B03A2E; }
+    .alert-box.amber { background: #FFF8F0; border-color: #CA6F1E; }
+    .alert-box.green { background: #F0F8F5; border-color: var(--teal); }
+    .alert-box .alert-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px; }
+    .alert-box.red .alert-label { color: #B03A2E; }
+    .alert-box.amber .alert-label { color: #CA6F1E; }
+    .alert-box.green .alert-label { color: var(--teal); }
+    .alert-box ul { margin: 0 0 0 20px; }
+    .alert-box li { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 6px; }
+    .alert-box p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .alert-box a { color: var(--teal); text-decoration: underline; }
+
+    .draft-badge { background: #FFF8F0; border: 1px solid #E8C99A; border-left: 4px solid #CA6F1E; padding: 14px 18px; margin-bottom: 40px; border-radius: 0 2px 2px 0; }
+    .draft-badge .db-label { font-size: 9px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #CA6F1E; margin-bottom: 6px; }
+    .draft-badge p { font-size: 13px; color: #5D4123; line-height: 1.6; margin: 0; }
+
+    .sources-block { margin: 8px 0 0; padding: 20px 24px; background: var(--ivory-dark); border: 1px solid var(--border-light); border-left: 3px solid var(--border); font-size: 13px; color: var(--text-muted); line-height: 1.75; border-radius: 0 2px 2px 0; }
+    .sources-block a { color: var(--teal); }
+    .sources-block .source-ogl { font-size: 12px; color: rgba(26,28,26,0.45); margin-top: 10px; font-style: italic; }
+
+    .info-card { background: var(--ivory-dark); border: 1px solid var(--border-light); border-left: 3px solid var(--teal); padding: 24px 28px; margin: 28px 0; border-radius: 0 2px 2px 0; }
+    .info-card .info-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 10px; }
+    .info-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; margin-bottom: 10px; }
+    .info-card p:last-child { margin-bottom: 0; }
+
+    footer { background: var(--petrol); color: rgba(250,247,241,0.45); padding: 52px 48px 44px; border-top: 1px solid rgba(194,162,100,0.12); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(250,247,241,0.08); }
+    .footer-logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: 18px; font-weight: 400; color: var(--ivory); margin-bottom: 5px; }
+    .footer-logo-reg { font-size: 13px; letter-spacing: 0.07em; color: rgba(250,247,241,0.35); }
+    .footer-logo-addr { margin-top: 6px; font-size: 14px; color: rgba(250,247,241,0.3); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: 14px; letter-spacing: 0.06em; color: rgba(250,247,241,0.65); text-decoration: none; }
+    .footer-links a:hover { color: rgba(250,247,241,0.75); }
+    .footer-bottom { font-size: 11px; letter-spacing: 0.05em; line-height: 1.7; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .noindex-notice { font-size: 9.5px; letter-spacing: 0.18em; color: rgba(194,162,100,0.4); text-transform: uppercase; }
+    .draft-notice { font-size: 10px; color: rgba(250,247,241,0.22); letter-spacing: 0.06em; margin-top: 12px; text-align: center; border-top: 1px solid rgba(250,247,241,0.06); padding-top: 16px; }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .page-hero { padding: 44px 24px 52px; }
+      .content-section { padding: 52px 24px 72px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announce-bar">
+    Erakorraline: <strong>112</strong><span class="announce-sep">·</span>Nõuanne: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-name">SL Tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+      </a>
+      <nav>
+        <a href="#">Teenused</a>
+        <a href="../index.html#personal">Personal</a>
+        <a href="#">Hinnakiri</a>
+        <a href="../index.html#nimistusse-registreerumine">Registreeru nimistusse</a>
+        <a href="../materjalid.html" class="active">Materjalid</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span><span>EN</span><span>RU</span><span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Asukoht">
+        <span class="breadcrumb-sep">/</span>
+        <a href="../materjalid.html">Materjalid</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Nohu</span>
+      </nav>
+      <p class="page-eyebrow">Praktiline juhend</p>
+      <h1>Nohu: mida teha ja millal arsti poole pöörduda</h1>
+      <p class="page-hero-sub">Enamik nohujuhtumeid möödub 1-2 nädalaga. Siin on, mida saate ise ette võtta.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+
+      <a href="../materjalid.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
+        Tagasi materjalide juurde
+      </a>
+
+      <div class="article-body">
+
+        <div class="draft-badge">
+          <div class="db-label">Mustand</div>
+          <p>See juhend on mustand. Kliiniline ülevaatus enne avaldamist.</p>
+        </div>
+
+        <h2>Mis on nohu ja kui kaua kestab</h2>
+        <p>Nohu on viirusnakkus, mis mõjutab peamiselt nina ja kurku. Sümptomid tekivad järk-järgult 2-3 päeva jooksul: ummistunud või jooksev nina, aevastamine, kurguvalu, köha, üldine väsimus. Mõnikord kaasneb kerge palavik.</p>
+        <p>Enamik täiskasvanuid paraneb 1-2 nädalaga. Nohu ja gripi sümptomid on sarnased, kuid gripp tekib kiiresti (tundide jooksul) ja on tugevam, mõjutades rohkem kui ainult nina ja kurku.</p>
+
+        <h2>Mida teha</h2>
+        <ol class="steps-list">
+          <li>Puhake piisavalt. Kui tunnete end liiga halvasti igapäevaseks tegevuseks, jääge koju.</li>
+          <li>Jooge palju vedelikku (vesi, taimeteed) dehüdratsiooni vältimiseks.</li>
+          <li>Gargereerige sooja soolaveega kurguvalu leevendamiseks: lahustage pool tl soola soojas vees, gargereerige ja sülitage välja. Lastele ei soovitata.</li>
+          <li>Valmistage sidrunimett jooki: pool sidrunit pressitud kuuma vette + 1-2 tl mett, jooge soojalt. Alla 12-kuustele lastele ei anta mett; kuumi jooke ei anta väikelastele.</li>
+          <li>Hingake auru sisse ummistunud nina leevendamiseks: istuge vannitoas, kus töötab kuum dušš. Ärge laske lastel kuumast veenõust auru sisse hingata -- põletusrisk.</li>
+          <li>Palaviku ja valu korral sobib <strong>paratsetamool</strong> või <strong>ibuprofeen</strong>. Järgige pakendi infolehte. Ärge kombineerige neid samade toimeainetega sisaldavate köha- ja nohuravidega.</li>
+          <li>Ummistunud nina korral on apteegist saadaval dekongestionantsed ninaspreid (alla 6-aastastele lastele ei soovitata). Kasutage mitte kauem kui 1 nädal, muidu sümptomid halvenevad.</li>
+        </ol>
+
+        <div class="info-card">
+          <div class="info-label">Nohule ei aita</div>
+          <p>Antibiootikumid ei ole nohul näidustatud -- nohu põhjustab viirus, mitte bakter. Tõenduspõhiselt ei ole vitamiin C, ehhiinatsea ega küüslauk näidanud nohu ärahoidmist ega kiirendanud paranemist.</p>
+        </div>
+
+        <h2>Mida vältida</h2>
+        <ul>
+          <li>Ärge andke aspiriini alla 16-aastastele lastele.</li>
+          <li>Ärge suitsetage -- see halvendab sümptomeid.</li>
+          <li>Ärge kasutage ninaspreid kauem kui üks nädal.</li>
+          <li>Ärge kasutage samaaegselt mitut köha- ja nohurohtu, mis sisaldavad paratsetamooli või ibuprofeeni -- see võib põhjustada üleannustamist.</li>
+        </ul>
+
+        <h2>Leviku piiramine</h2>
+        <ul>
+          <li>Peske käsi sageli sooja vee ja seebiga.</li>
+          <li>Kasutage taskurätikut aevastades ja köhides; visake see kohe prügikasti.</li>
+          <li>Ärge jagage rätikuid ega majapidamistarbeid (tassid, mänguasjad).</li>
+        </ul>
+
+        <h2>Millal pöörduda perearsti poole</h2>
+        <p>Broneeri vastuvõtt <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuses</a> või helista <a href="tel:+3726138887">+372 613 8887</a>, kui:</p>
+        <div class="alert-box green">
+          <div class="alert-label">Perearst -- planeeri vastuvõtt</div>
+          <ul>
+            <li>Palavik kestab üle 3 päeva.</li>
+            <li>Sümptomid halvenevad või ei parane 10 päeva jooksul.</li>
+            <li>Köha kestab üle 3 nädala.</li>
+            <li>Teil on krooniline haigus (nt diabeet, südame-, kopsu- või neeruhaigus).</li>
+            <li>Teie immuunsüsteem on nõrgenenud (nt keemiaravi ajal).</li>
+            <li>Olete lapse tervise pärast mures.</li>
+          </ul>
+        </div>
+
+        <h2>Millal helistada 1220 või 112</h2>
+        <p>Vt ka: <a href="kuhu-pooruda.html">Kuhu pöörduda tervisemurega</a> -- täielik juhis eri kanalite kasutamiseks.</p>
+        <div class="alert-box amber">
+          <div class="alert-label">1220 -- perearsti nõuandeliin (iga päev kuni 22:00)</div>
+          <ul>
+            <li>Tunnete end tõsiselt halvasti, kuid olukord ei tundu eluohtlik.</li>
+            <li>Vajate nõuannet, kas ja kuhu pöörduda.</li>
+          </ul>
+        </div>
+        <div class="alert-box red">
+          <div class="alert-label">112 -- helistage kohe</div>
+          <ul>
+            <li>Hingamisraskus.</li>
+            <li>Tugev rinnavalu.</li>
+            <li>Teadvuse kadu.</li>
+          </ul>
+        </div>
+
+        <h2>Allikad</h2>
+        <div class="sources-block">
+          <p><a href="https://www.nhs.uk/conditions/common-cold/" target="_blank" rel="noopener">NHS.uk -- Common cold</a>. Page last reviewed: 22 March 2024.</p>
+          <p class="source-ogl">Sisaldab NHS.uk materjali kohandust, Open Government Licence v3.0 alusel. Originaalmaterjal: &copy; Crown copyright.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo-name">SL Tervisekeskus</div>
+          <div class="footer-logo-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div class="footer-logo-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="../materjalid.html">Materjalid</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · Tel: <a href="tel:+3726138887" style="color:rgba(250,247,241,0.4);">+372 613 8887</a> · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(250,247,241,0.4);">e-Perearstikeskus</a></span>
+        <span class="noindex-notice">Eelvaade · Noindex · Kinnitamata</span>
+      </div>
+      <div class="draft-notice">Mustand, kliiniline ülevaatus enne avaldamist · SL Tervisekeskus OÜ, reg 17473441</div>
+    </div>
+  </footer>
+
+</body>
+</html>
