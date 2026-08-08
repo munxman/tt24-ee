@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Korduma kippuvad küsimused -- SL Tervisekeskus</title>
+  <meta name="description" content="Vastused kõige sagedamini esitatavatele küsimustele nimistusse registreerumise, vastuvõtu broneerimise, retseptide ja tõendite kohta. SL Tervisekeskus, Ülemiste Tallinn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --petrol: #9BAD95; --petrol-mid: #7A9174; --teal: #6E8A68; --teal-light: #7A9B74;
+      --gold: #546654; --gold-dim: rgba(155,173,149,0.25); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
+      --text: #1C1C1A; --text-muted: #4E5E4E; --border: #CDD5CC; --border-light: #DFE6DE;
+      --dark-bg: #1A1C1A; --red: #B03A2E;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; }
+
+    .announce-bar { background: var(--teal); color: var(--text); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.45; }
+    header { background: var(--petrol); color: var(--text); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(26,28,26,0.12); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { display: flex; flex-direction: column; text-decoration: none; gap: 3px; }
+    .logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(14px, 3.5vw, 20px); font-weight: 700; letter-spacing: -0.02em; text-transform: lowercase; color: var(--text); white-space: nowrap; line-height: 1.1; }
+    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: rgba(26,28,26,0.6); text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.65); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    nav a:hover { color: var(--text); border-bottom-color: rgba(26,28,26,0.35); }
+    nav a.active { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 3px; margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(250,247,241,0.15); }
+    .lang-switcher span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; padding: 12px 10px; min-width: 36px; text-align: center; cursor: default; color: rgba(250,247,241,0.45); border-radius: 2px; }
+    .lang-switcher span.active { background: rgba(194,162,100,0.2); color: var(--gold); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 8px; }
+
+    .page-hero { background: var(--petrol); color: var(--text); padding: 56px 48px 64px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(194,162,100,0.3), transparent); }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.6); margin-bottom: 28px; flex-wrap: wrap; }
+    .breadcrumb a { color: rgba(26,28,26,0.6); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(26,28,26,0.85); }
+    .breadcrumb-sep { color: rgba(26,28,26,0.3); }
+    .page-eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 17px; font-weight: 300; color: rgba(26,28,26,0.72); max-width: 540px; line-height: 1.75; }
+
+    .content-section { padding: 72px 48px 96px; background: var(--ivory); }
+    .content-inner { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); text-decoration: none; margin-bottom: 48px; padding-bottom: 3px; border-bottom: 1px solid rgba(110,138,104,0.25); }
+    .back-link:hover { border-bottom-color: var(--teal); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .faq-list { margin: 0; }
+    .faq-item { border-bottom: 1px solid var(--border-light); }
+    .faq-item:first-child { border-top: 1px solid var(--border-light); }
+    .faq-item summary { font-family: 'Poppins', system-ui, sans-serif; font-size: 18px; font-weight: 500; color: var(--text); padding: 22px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 300; color: var(--teal); flex-shrink: 0; margin-top: 2px; line-height: 1; }
+    .faq-item[open] summary::after { content: '\2212'; }
+    .faq-item summary:hover { color: var(--teal); }
+    .faq-answer { padding: 0 24px 24px 0; font-size: 16px; color: var(--text-muted); line-height: 1.8; }
+    .faq-answer p { margin-bottom: 10px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+    .faq-answer a:hover { color: var(--teal-light); }
+    .faq-answer strong { color: var(--text); font-weight: 600; }
+
+    .draft-badge { background: #FFF8F0; border: 1px solid #E8C99A; border-left: 4px solid #CA6F1E; padding: 14px 18px; margin-bottom: 40px; border-radius: 0 2px 2px 0; }
+    .draft-badge .db-label { font-size: 9px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #CA6F1E; margin-bottom: 6px; }
+    .draft-badge p { font-size: 13px; color: #5D4123; line-height: 1.6; margin: 0; }
+
+    footer { background: var(--petrol); color: rgba(250,247,241,0.45); padding: 52px 48px 44px; border-top: 1px solid rgba(194,162,100,0.12); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(250,247,241,0.08); }
+    .footer-logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: 18px; font-weight: 400; color: var(--ivory); margin-bottom: 5px; }
+    .footer-logo-reg { font-size: 13px; letter-spacing: 0.07em; color: rgba(250,247,241,0.35); }
+    .footer-logo-addr { margin-top: 6px; font-size: 14px; color: rgba(250,247,241,0.3); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: 14px; letter-spacing: 0.06em; color: rgba(250,247,241,0.65); text-decoration: none; }
+    .footer-links a:hover { color: rgba(250,247,241,0.75); }
+    .footer-bottom { font-size: 11px; letter-spacing: 0.05em; line-height: 1.7; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .noindex-notice { font-size: 9.5px; letter-spacing: 0.18em; color: rgba(194,162,100,0.4); text-transform: uppercase; }
+    .draft-notice { font-size: 10px; color: rgba(250,247,241,0.22); letter-spacing: 0.06em; margin-top: 12px; text-align: center; border-top: 1px solid rgba(250,247,241,0.06); padding-top: 16px; }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .page-hero { padding: 44px 24px 52px; }
+      .content-section { padding: 52px 24px 72px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .faq-item summary { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announce-bar">
+    Erakorraline: <strong>112</strong><span class="announce-sep">·</span>Nõuanne: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-name">SL Tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+      </a>
+      <nav>
+        <a href="#">Teenused</a>
+        <a href="../index.html#personal">Personal</a>
+        <a href="#">Hinnakiri</a>
+        <a href="../index.html#nimistusse-registreerumine">Registreeru nimistusse</a>
+        <a href="../materjalid.html" class="active">Materjalid</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span><span>EN</span><span>RU</span><span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Asukoht">
+        <span class="breadcrumb-sep">/</span>
+        <a href="../materjalid.html">Materjalid</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>KKK</span>
+      </nav>
+      <p class="page-eyebrow">Patsiendile</p>
+      <h1>Korduma kippuvad küsimused</h1>
+      <p class="page-hero-sub">Vastused kõige sagedamini esitatavatele korralduslikele küsimustele. Kliiniliste küsimustega pöörduge palun <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="text-decoration:underline;">e-Perearstikeskuse</a> kaudu.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+
+      <a href="../materjalid.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
+        Tagasi materjalide juurde
+      </a>
+
+      <div class="draft-badge">
+        <div class="db-label">Mustand</div>
+        <p>See leht on mustand. Kliiniline ülevaatus enne avaldamist.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Kuidas saan teie nimistusse?</summary>
+          <div class="faq-answer">
+            <p>Esitage avaldus otse meie veebivormil, eesti.ee portaali kaudu või Tervisekassa iseteeninduses. Avaldust saab esitada ka kohapeal aadressil Sepapaja 12/1, III korrus.</p>
+            <p>Täpsed sammud ja veebivorm: <a href="nimistusse.html">Nimistusse registreerumine samm-sammult</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kuidas broneerin vastuvõtuaja?</summary>
+          <div class="faq-answer">
+            <p>Vastuvõtuaja broneerimiseks kasutage <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskust</a> või helistage <a href="tel:+3726138887">+372 613 8887</a>. Vastuvõtuajad: E-R 8:00-18:00.</p>
+            <p>Juhend portaali kasutamiseks: <a href="eperearstikeskus.html">e-Perearstikeskuse juhend</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kas vastuvõtule saab ilma broneeringuta?</summary>
+          <div class="faq-answer">
+            <p>Ei. Meie meeskond ei teosta vastuvõttu elavas järjekorras. Eelnev registreerimine on vajalik kõikidele vastuvõttudele.</p>
+            <p>Broneerige aeg <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuses</a> või helistades <a href="tel:+3726138887">+372 613 8887</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Mida teha, kui vajan abi väljaspool tööaega?</summary>
+          <div class="faq-answer">
+            <p>Meie vastuvõtud toimuvad E-R 8:00-18:00. Töövälisel ajal sõltub valik olukorra tõsidusest:</p>
+            <p><strong>Eluohtlik:</strong> helistage 112. <strong>Nõuanne:</strong> helistage <a href="tel:1220">1220</a> (iga päev kuni 22:00, eesti keeles, tasuta). <strong>Arstivastuvõtt:</strong> <a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a> (tasuline).</p>
+            <p>Täpsem juhis kõigi kanalite kohta: <a href="kuhu-pooruda.html">Kuhu pöörduda tervisemurega</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Mida teha, kui haigestun nädalavahetusel ja vajan haiguslehte?</summary>
+          <div class="faq-answer">
+            <p>Nädalavahetusel haiguslehte avada saab mitmel viisil: helistage <a href="tel:1220">1220</a> (iga päev kuni 22:00), külastage haigla erakorralist vastuvõttu (EMO) või kutsuge kiirabi.</p>
+            <p>Arstitõend tuleb esitada tööandjale kahe päeva jooksul. Täpsem juhis: <a href="kuhu-pooruda.html">Kuhu pöörduda tervisemurega</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kuidas tellen kordusretsepti?</summary>
+          <div class="faq-answer">
+            <p>Kordusretsepti saab tellida <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuses</a> või telefoni teel (<a href="tel:+3726138887">+372 613 8887</a>). Standardtähtaeg on 5 tööpäeva; ägedal haigestumisel samal päeval.</p>
+            <p>Retsepti kehtivust ja uuendamise staatust saab kontrollida <a href="https://www.terviseportaal.ee" target="_blank" rel="noopener">Terviseportaalis</a>. Lisainfo: <a href="toendid-ja-retseptid.html">Tõendid ja retseptid</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kuidas saan tervisetõendi ja kas see on tasuline?</summary>
+          <div class="faq-answer">
+            <p>Tervisetõendi saamiseks broneerige vastuvõtuaeg <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuses</a> või helistades <a href="tel:+3726138887">+372 613 8887</a>.</p>
+            <p>Tervisetõend on tasuline teenus. Hinnad sõltuvad tõendi tüübist. Hinnad ja tõenditüübid: <a href="toendid-ja-retseptid.html">Tõendid ja retseptid</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Millal nimistusse registreerimine jõustub? Kust saan kontrollida?</summary>
+          <div class="faq-answer">
+            <p>Pärast avalduse esitamist kinnitab Tervisekassa nimistusse vastuvõtu. Oma nimistusse kuulumist ja perearsti andmeid saab kontrollida <a href="https://www.terviseportaal.ee" target="_blank" rel="noopener">Terviseportaalist (terviseportaal.ee)</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kus te asute?</summary>
+          <div class="faq-answer">
+            <p>Aadress: <strong>Sepapaja 12/1, III korrus, 11415 Tallinn.</strong></p>
+            <p>Hoone on tuntud ka nimede Ülemiste Tervisemaja 2 ja von Baeri maja all. See asub Ülemiste linnaosas, Ülemiste Citys, Tallinna lennujaama lähedal.</p>
+            <p>Vastuvõtuajad: E-R 8:00-18:00. Tel: <a href="tel:+3726138887">+372 613 8887</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Mis on e-Perearstikeskus?</summary>
+          <div class="faq-answer">
+            <p><a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskus</a> on riiklik iseteenindusportaal, kus saab broneerida vastuvõtuaegu, saata sõnumeid meditsiinipersonalile, tellida kordusretsepte ja lugeda vastuseid. Sisselogimine toimub ID-kaardi, mobiil-ID või Smart-ID abil.</p>
+            <p>Kasutamisjuhend: <a href="eperearstikeskus.html">e-Perearstikeskuse juhend</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kas terviseandmeid saab saata e-postiga?</summary>
+          <div class="faq-answer">
+            <p>Ei. Terviseandmete turvalisuse eesmärgil ei käsitleta tervisealaseid pöördumisi e-posti teel. Palume kasutada <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskust</a> või helistada <a href="tel:+3726138887">+372 613 8887</a>.</p>
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo-name">SL Tervisekeskus</div>
+          <div class="footer-logo-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div class="footer-logo-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="../materjalid.html">Materjalid</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · Tel: <a href="tel:+3726138887" style="color:rgba(250,247,241,0.4);">+372 613 8887</a> · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(250,247,241,0.4);">e-Perearstikeskus</a></span>
+        <span class="noindex-notice">Eelvaade · Noindex · Kinnitamata</span>
+      </div>
+      <div class="draft-notice">Mustand, kliiniline ülevaatus enne avaldamist · SL Tervisekeskus OÜ, reg 17473441</div>
+    </div>
+  </footer>
+
+</body>
+</html>
