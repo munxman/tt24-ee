@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Materjalid -- SL Tervisekeskus</title>
+  <meta name="description" content="Patsiendile mõeldud materjalid, juhendid ja blanketid. SL Tervisekeskus OÜ, Ülemiste Tervisemaja.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #101010;
+      --white: #FFFFFF;
+      --sage: #9BAD96;
+      --sage-dark: #6E8A68;
+      --sage-light: #E8EEE7;
+      --gray-100: #F4F4F4;
+      --gray-200: #E8E8E8;
+      --gray-300: #D4D4D4;
+      --gray-500: #808080;
+      --gray-700: #404040;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+
+    /* ---- Announcement bar ---- */
+    .announce-bar {
+      background: var(--sage);
+      color: var(--black);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-align: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .announce-bar a { color: var(--black); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.5; }
+
+    /* ---- Header ---- */
+    header {
+      background: var(--black);
+      color: var(--white);
+      position: sticky;
+      top: 40px;
+      z-index: 99;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .logo-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--white);
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      color: var(--sage);
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    nav a {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.15s;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover { color: var(--white); border-bottom-color: var(--sage); }
+    nav a.active { color: var(--sage); }
+    .lang-switcher {
+      display: flex;
+      gap: 2px;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .lang-switcher span {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 7px;
+      cursor: default;
+      color: rgba(255,255,255,0.35);
+    }
+    .lang-switcher span.active {
+      background: var(--sage);
+      color: var(--black);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ---- Page Hero ---- */
+    .page-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 72px 48px 80px;
+      border-bottom: 3px solid var(--sage);
+    }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 32px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+    .breadcrumb-sep { color: rgba(255,255,255,0.15); }
+    .page-eyebrow {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--sage);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      text-transform: lowercase;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 24px;
+      margin-top: 16px;
+    }
+    .page-hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ---- Content ---- */
+    .content-section {
+      padding: 88px 48px;
+      background: var(--white);
+    }
+    .content-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 16px;
+    }
+    .heavy-rule {
+      width: 44px;
+      height: 3px;
+      background: var(--sage);
+      margin: 20px 0 44px;
+    }
+    .intro-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 680px;
+      line-height: 1.8;
+      margin-bottom: 56px;
+    }
+
+    /* ---- Categories grid ---- */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 3px;
+    }
+    .category-card {
+      background: var(--gray-100);
+      padding: 40px 28px;
+      border-bottom: 4px solid transparent;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .category-card:hover {
+      border-color: var(--sage);
+      background: var(--sage-light);
+    }
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(155,173,150,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .category-icon svg { width: 22px; height: 22px; }
+    .category-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 8px;
+    }
+    .category-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .category-desc {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--gray-500);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .category-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      background: rgba(155,173,150,0.2);
+      padding: 5px 12px;
+    }
+
+    /* ---- Notice ---- */
+    .notice-block {
+      margin-top: 56px;
+      padding: 28px 32px;
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage-dark);
+    }
+    .notice-block p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.35);
+      padding: 52px 48px 44px;
+      border-top: 3px solid var(--sage);
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-logo { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); margin-bottom: 6px; }
+    .footer-reg { font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.3); }
+    .footer-addr { margin-top: 5px; font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      font-size: 11px;
+      line-height: 1.7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .noindex-tag {
+      background: rgba(155,173,150,0.12);
+      color: var(--sage);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .page-hero { padding: 56px 24px 64px; }
+      .content-section { padding: 64px 24px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .categories-grid { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announce-bar">
+    Toovälisel ajal: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">&middot;</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-name">sl tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+      </a>
+      <nav>
+        <a href="index.html">Avaleht</a>
+        <a href="#">Teenused</a>
+        <a href="#">Arstid ja pered</a>
+        <a href="#">Hinnakiri</a>
+        <a href="#">Patsiendile</a>
+        <a href="materjalid.html" class="active">Materjalid</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span>
+          <span>EN</span>
+          <span>RU</span>
+          <span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Asukoht">
+        <a href="index.html">Avaleht</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Materjalid</span>
+      </nav>
+      <div class="page-eyebrow">Patsiendile</div>
+      <h1>materjalid.</h1>
+      <p class="page-hero-sub">Siit leiate patsiendile mõeldud juhendid, blanketid ja muud kasulikud materjalid. Sisu lisandub alates 1. septembrist 2026.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content-section">
+    <div class="content-inner">
+
+      <p class="section-label">Materjalide kogu</p>
+      <div class="heavy-rule"></div>
+      <p class="intro-text">SL Tervisekeskuse materjalide rubriiki koondame juhendid, patsiendivormid ja muud abimaterjalid. Kõik kategooriad on alles ettevalmistamisel -- täiendame sisu enne avamist.</p>
+
+      <div class="categories-grid">
+
+        <div class="category-card">
+          <div class="category-icon">
+            <svg viewBox="0 0 22 22" fill="none" stroke="#6E8A68" stroke-width="1.5" stroke-linecap="round">
+              <path d="M5 3h12a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/>
+              <path d="M8 8h6M8 11.5h6M8 15h4"/>
+            </svg>
+          </div>
+          <div class="category-label">Juhendid</div>
+          <div class="category-title">Patsiendijuhendid</div>
+          <div class="category-desc">Terviseseisundite, ravimite ja ennetuse teemad selgelt ja arusaadavalt kirjutatuna.</div>
+          <span class="category-badge">Sisu lisandub</span>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">
+            <svg viewBox="0 0 22 22" fill="none" stroke="#6E8A68" stroke-width="1.5" stroke-linecap="round">
+              <path d="M5 3h12a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/>
+              <path d="M8 8h6M8 11.5h3"/>
+              <path d="M15 15l2 2" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="category-label">Dokumendid</div>
+          <div class="category-title">Blanketid ja tõendid</div>
+          <div class="category-desc">Tõendi- ja blankettaotluste juhised ning vormid nimistusse registreerumiseks.</div>
+          <span class="category-badge">Sisu lisandub</span>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">
+            <svg viewBox="0 0 22 22" fill="none" stroke="#6E8A68" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M11 10v1.5M11 15v.5"/>
+              <path d="M9 8.5C9 7.4 9.9 6.5 11 6.5s2 .9 2 2c0 1.2-1.5 2-2 2.5"/>
+            </svg>
+          </div>
+          <div class="category-label">Küsimused</div>
+          <div class="category-title">KKK</div>
+          <div class="category-desc">Vastused levinumatele küsimustele vastuvõtu, retseptide, tõendite ja muude teemade kohta.</div>
+          <span class="category-badge">Sisu lisandub</span>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">
+            <svg viewBox="0 0 22 22" fill="none" stroke="#6E8A68" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M7 11h8M11 7v8"/>
+            </svg>
+          </div>
+          <div class="category-label">Lingid</div>
+          <div class="category-title">Kasulikud lingid</div>
+          <div class="category-desc">Viited usaldusväärsele terviseteabele, riiklikele portaalidele ja patsiendikeskkondadele.</div>
+          <span class="category-badge">Sisu lisandub</span>
+        </div>
+
+      </div>
+
+      <div class="notice-block">
+        <p>Terviseteemades palume pöörduda <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:var(--black);font-weight:600;">e-Perearstikeskuse</a> kaudu või helistades <a href="tel:+3726138887" style="color:var(--black);font-weight:600;">+372 613 8887</a>. Meie meeskond vastab vastuvõtuaegadel E-R 8:00-18:00.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">sl tervisekeskus</div>
+          <div class="footer-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div class="footer-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="materjalid.html">Materjalid</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · +372 613 8887 · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.3);">e-Perearstikeskus</a></span>
+        <span class="noindex-tag">Eelvaade · Noindex</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
