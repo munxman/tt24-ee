@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>SL Tervisekeskus — Perearstikeskus Ülemistes</title>
+  <meta name="description" content="SL Tervisekeskus OÜ alustab perearsti- ja muude tervishoiuteenuste osutamist Ülemiste Tervisemajas alates 1. septembrist 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ---- Reset & Base ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --lagoon: #2E7D74;
+      --lagoon-dark: #1F5C55;
+      --lagoon-light: #4BA89E;
+      --lagoon-pale: #E6F2F1;
+      --apricot: #E08A4F;
+      --apricot-light: #FBE9D9;
+      --sun: #E5B54B;
+      --sun-light: #FDF3D9;
+      --ivory: #FFFCF7;
+      --ivory-warm: #F5F0E6;
+      --text: #1D2B28;
+      --text-muted: #5A6F6B;
+      --border: #D8E8E6;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+
+    /* ---- Announcement bar ---- */
+    .announce-bar {
+      background: var(--lagoon-pale);
+      color: var(--lagoon-dark);
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .announce-bar a { color: var(--lagoon-dark); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 10px; color: var(--lagoon-light); }
+
+    /* ---- Header ---- */
+    header {
+      background: var(--lagoon);
+      position: sticky;
+      top: 41px;
+      z-index: 99;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-name {
+      font-family: 'Nunito', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ivory);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+    .logo-sub {
+      font-family: 'Nunito', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: rgba(255,252,247,0.65);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,252,247,0.78);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--ivory); }
+    .lang-switcher {
+      display: flex;
+      gap: 2px;
+      margin-left: 16px;
+      padding-left: 16px;
+      border-left: 1px solid rgba(255,252,247,0.2);
+    }
+    .lang-switcher span {
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 5px 8px;
+      border-radius: 20px;
+      cursor: default;
+      color: rgba(255,252,247,0.5);
+    }
+    .lang-switcher span.active {
+      background: rgba(255,252,247,0.2);
+      color: var(--ivory);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--ivory);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      background: var(--ivory);
+      padding: 80px 40px 88px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--lagoon), var(--apricot), var(--sun));
+    }
+    .hero-arc {
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: center;
+    }
+    .hero h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(34px, 5.5vw, 58px);
+      font-weight: 800;
+      color: var(--lagoon-dark);
+      line-height: 1.1;
+      max-width: 720px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.01em;
+    }
+    .hero-date {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--lagoon);
+      color: var(--ivory);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--lagoon-dark); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--lagoon);
+      color: var(--lagoon);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--lagoon); color: var(--ivory); }
+    .btn-apricot {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--apricot-light);
+      color: var(--apricot);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-apricot:hover { background: var(--apricot); color: white; }
+
+    /* ---- Sections ---- */
+    .section { padding: 72px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--lagoon-light);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--lagoon-dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+    .wave-rule {
+      width: 52px;
+      height: 4px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--lagoon), var(--apricot));
+      margin: 18px 0 32px;
+    }
+
+    /* ---- Context section ---- */
+    .context-section {
+      background: var(--lagoon-pale);
+    }
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .context-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--ivory);
+      padding: 14px 16px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(46,125,116,0.06);
+    }
+    .check-dot {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      background: var(--lagoon);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .check-dot svg { width: 11px; height: 11px; }
+    .nb-card {
+      background: var(--lagoon-dark);
+      color: var(--ivory);
+      padding: 32px;
+      border-radius: 16px;
+    }
+    .nb-card .nb-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,252,247,0.6);
+      margin-bottom: 12px;
+    }
+    .nb-card p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .info-card {
+      margin-top: 16px;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .info-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .info-card p + p { margin-top: 10px; }
+
+    /* ---- Doctors ---- */
+    .doctors-section { background: var(--ivory); }
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .doctor-card {
+      background: var(--ivory-warm);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 22px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .doctor-card:hover {
+      box-shadow: 0 8px 24px rgba(46,125,116,0.12);
+      transform: translateY(-2px);
+    }
+    .doctor-avatar {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--lagoon), var(--lagoon-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .doctor-initials {
+      font-family: 'Nunito', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--ivory);
+    }
+    .doctor-name {
+      font-family: 'Nunito', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--lagoon-dark);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .doctor-role {
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lagoon-light);
+      margin-bottom: 14px;
+    }
+    .doctor-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--lagoon-pale);
+      color: var(--lagoon-dark);
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .doctors-note {
+      margin-top: 28px;
+      background: var(--lagoon-pale);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--lagoon);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .doctors-note a { color: var(--lagoon-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ---- Info section ---- */
+    .info-section {
+      background: var(--lagoon-dark);
+      color: var(--ivory);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .info-eyebrow { color: rgba(255,252,247,0.55); }
+    .info-title { color: var(--ivory); }
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: rgba(255,252,247,0.07);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background: rgba(255,252,247,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-icon svg { width: 18px; height: 18px; }
+    .contact-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lagoon-light);
+      margin-bottom: 3px;
+    }
+    .contact-value {
+      font-size: 15px;
+      color: rgba(255,252,247,0.88);
+      line-height: 1.5;
+    }
+    .contact-value a { color: rgba(255,252,247,0.88); text-decoration: none; }
+    .portal-btn {
+      margin-top: 28px;
+    }
+    .portal-btn a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--apricot);
+      color: var(--ivory);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .portal-btn a:hover { background: #c97840; }
+    .ooh-box {
+      background: rgba(255,252,247,0.06);
+      border: 1px solid rgba(255,252,247,0.12);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .ooh-box-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lagoon-light);
+      margin-bottom: 24px;
+    }
+    .ooh-row {
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255,252,247,0.1);
+    }
+    .ooh-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .ooh-number {
+      font-family: 'Nunito', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--sun);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .ooh-desc {
+      font-size: 13px;
+      color: rgba(255,252,247,0.5);
+      line-height: 1.65;
+    }
+    .ooh-desc a { color: rgba(255,252,247,0.5); text-decoration: underline; }
+
+    /* ---- Same-floor ---- */
+    .samefloor-section {
+      background: var(--ivory-warm);
+      padding: 44px 40px;
+      border-top: 1px solid var(--border);
+    }
+    .samefloor-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .samefloor-icon-wrap {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      background: var(--lagoon-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border);
+    }
+    .samefloor-text strong {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      color: var(--lagoon-dark);
+    }
+    .samefloor-text p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      background: var(--lagoon-dark);
+      color: rgba(255,252,247,0.5);
+      padding: 44px 40px 40px;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,252,247,0.1);
+      margin-bottom: 20px;
+    }
+    .footer-logo-name {
+      font-family: 'Nunito', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ivory);
+      margin-bottom: 4px;
+    }
+    .footer-logo-reg {
+      font-size: 11px;
+      color: rgba(255,252,247,0.35);
+    }
+    .footer-logo-addr {
+      margin-top: 4px;
+      font-size: 12px;
+      color: rgba(255,252,247,0.3);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-links a {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,252,247,0.45);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--ivory); }
+    .footer-bottom {
+      font-size: 12px;
+      line-height: 1.7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .noindex-pill {
+      background: rgba(229,181,75,0.15);
+      color: var(--sun);
+      font-family: 'Nunito', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .hero, .section { padding-left: 24px; padding-right: 24px; }
+      .context-grid, .info-grid { grid-template-columns: 1fr; gap: 36px; }
+      .samefloor-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .samefloor-section { padding: 40px 24px; }
+      footer { padding: 40px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .doctors-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announce-bar">
+    Töövälisel ajal: helista <strong>1220</strong> (iga paev kuni 22:00)<span class="announce-sep">&middot;</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">
+          <svg width="36" height="20" viewBox="0 0 36 20" fill="none">
+            <path d="M2 18 A16 16 0 0 1 34 18" stroke="rgba(255,252,247,0.9)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M7 18 A11 11 0 0 1 29 18" stroke="#E08A4F" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M12 18 A6 6 0 0 1 24 18" stroke="#E5B54B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-name">SL Tervisekeskus</span>
+          <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#">Avaleht</a>
+        <a href="#">Teenused</a>
+        <a href="#">Arstid ja pered</a>
+        <a href="#">Hinnakiri</a>
+        <a href="#">Patsiendile</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span>
+          <span>EN</span>
+          <span>RU</span>
+          <span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-arc">
+      <svg width="80" height="48" viewBox="0 0 80 48" fill="none">
+        <path d="M4 44 A36 36 0 0 1 76 44" stroke="#2E7D74" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M14 44 A26 26 0 0 1 66 44" stroke="#E08A4F" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+        <path d="M24 44 A16 16 0 0 1 56 44" stroke="#E5B54B" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <h1>Perearstikeskus Ülemistes</h1>
+    <p class="hero-date">SL Tervisekeskus OÜ alustab tervishoiuteenuste osutamist 1. septembrist 2026.<br>Meeskond ja kontaktandmed jäävad samaks.</p>
+    <div class="hero-ctas">
+      <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" class="btn-primary">
+        e-Perearstikeskus
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:+3726138887" class="btn-outline">+372 613 8887</a>
+      <a href="#" class="btn-apricot">Registreeru nimistusse</a>
+    </div>
+  </section>
+
+  <!-- Context -->
+  <section class="section context-section">
+    <div class="section-inner">
+      <div class="context-grid">
+        <div>
+          <p class="section-eyebrow">Muudatuse kohta</p>
+          <h2 class="section-title">Teenus jätkub, nimi muutub</h2>
+          <div class="wave-rule"></div>
+          <p class="section-text">Alates 1. septembrist 2026 osutab Sepapaja 12/1 asuvas Ülemiste Tervisemajas perearsti- ja muid tervishoiuteenuseid SL Tervisekeskus OÜ (registrikood 17473441). Muudatus tuleneb ettevõtte jagunemisest.</p>
+          <div class="context-checks">
+            <div class="check-item">
+              <div class="check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Patsiendid ei pea midagi tegema
+            </div>
+            <div class="check-item">
+              <div class="check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Meeskond, vastuvõtuajad ja kontaktandmed jäävad samaks
+            </div>
+            <div class="check-item">
+              <div class="check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Kehtivad saatekirjad, retseptid ja broneeritud ajad jäävad jõusse
+            </div>
+            <div class="check-item">
+              <div class="check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Terviseandmed kanduvad automaatselt üle
+            </div>
+            <div class="check-item">
+              <div class="check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              e-Perearstikeskuse sisselogimine jääb muutmata
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="nb-card">
+            <div class="nb-label">NB! Vastuvõtu korraldus</div>
+            <p>Perearsti ja pereõe vastuvõtule palume kindlasti ette registreerida e-Perearstikeskuse iseteeninduskeskkonnas või telefoni teel. Vastuvõttu elavas järjekorras ei toimu.</p>
+          </div>
+          <div class="info-card">
+            <p>Terviseteemalisi pöördumisi käsitleme e-Perearstikeskuse kaudu ja telefoni teel. E-maili teel terviseteemalisi küsimusi turvalisuse eesmärgil ei lahenda.</p>
+            <p>Retseptide väljastamine: 5 tööpaeva jooksul. Tasuliste teenuste eest tasumine kaardiga kohapeal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors -->
+  <section class="section doctors-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Meie meeskond</p>
+      <h2 class="section-title">Arstid ja nimistud</h2>
+      <div class="wave-rule"></div>
+      <p class="section-text">SL Tervisekeskus OÜ juures tegutsevad perearsti nimistud:</p>
+
+      <div class="doctors-grid">
+        <div class="doctor-card">
+          <div class="doctor-avatar"><span class="doctor-initials">IL</span></div>
+          <div class="doctor-name">Dr. Ingmar Lindström</div>
+          <div class="doctor-role">Perearst</div>
+          <div class="doctor-badge">Nimistu N0805</div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar"><span class="doctor-initials">KK</span></div>
+          <div class="doctor-name">Dr. Kristin Kolts</div>
+          <div class="doctor-role">Perearst</div>
+          <div class="doctor-badge">Nimistu N0858</div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar"><span class="doctor-initials">AG</span></div>
+          <div class="doctor-name">Anna Gretšenko</div>
+          <div class="doctor-role">Perearst</div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-avatar"><span class="doctor-initials">EV</span></div>
+          <div class="doctor-name">Epp Vessel</div>
+          <div class="doctor-role">Perearst</div>
+        </div>
+      </div>
+
+      <div class="doctors-note">
+        Vastuvõtule registreerimine toimub <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuse</a> kaudu või telefonil <a href="tel:+3726138887">+372 613 8887</a>.
+        Nimistusse registreerumise juhised leiate "Patsiendile" rubriigist.
+      </div>
+    </div>
+  </section>
+
+  <!-- Info -->
+  <section class="section info-section">
+    <div class="section-inner">
+      <div class="info-grid">
+        <div>
+          <p class="section-eyebrow info-eyebrow">Kontakt ja asukoht</p>
+          <h2 class="section-title info-title">Praktilised andmed</h2>
+          <div class="wave-rule" style="background:linear-gradient(90deg,var(--apricot),var(--sun));"></div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="rgba(255,252,247,0.7)" stroke-width="1.4" stroke-linecap="round">
+                  <path d="M9 1.5C6 1.5 3.5 4 3.5 7c0 4 5.5 9.5 5.5 9.5S14.5 11 14.5 7c0-3-2.5-5.5-5.5-5.5z"/><circle cx="9" cy="7" r="1.8"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Asukoht</div>
+                <div class="contact-value">Sepapaja 12/1, III korrus<br>11415 Tallinn<br><span style="font-size:12px;color:rgba(255,252,247,0.4);">Ülemiste Tervisemaja</span></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="rgba(255,252,247,0.7)" stroke-width="1.4" stroke-linecap="round">
+                  <path d="M5 3c.2 1.4.9 2.7 2 3.8L5.6 8.2c1.2 2.4 3.2 4.4 5.6 5.6l1.4-1.4c1 1.1 2.4 1.8 3.8 2v3.5C11 18.3 1.7 9 2.5 3L5 3z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Telefon</div>
+                <div class="contact-value"><a href="tel:+3726138887">+372 613 8887</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="rgba(255,252,247,0.7)" stroke-width="1.4" stroke-linecap="round">
+                  <circle cx="9" cy="9" r="7.5"/><path d="M9 5v4l2.5 2.5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Vastuvõtuaeg</div>
+                <div class="contact-value">Esmaspäev - Reede<br>8:00 - 18:00</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="rgba(255,252,247,0.7)" stroke-width="1.4" stroke-linecap="round">
+                  <rect x="2.5" y="4" width="13" height="10" rx="1.5"/><path d="M2.5 7l6.5 4.5L15.5 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Patsiendiportaal</div>
+                <div class="contact-value"><a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:var(--sun);">e-Perearstikeskus ↗</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="portal-btn">
+            <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">
+              Ava e-Perearstikeskus
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="ooh-box">
+            <div class="ooh-box-label">Töövälisel ajal</div>
+            <div class="ooh-row">
+              <div class="ooh-number">1220</div>
+              <div class="ooh-desc">Perearsti nõuandeliin<br>Iga paev 8:00-22:00 · Tasuta · Eestikeelne<br><a href="https://www.1220.ee" target="_blank" rel="noopener">1220.ee</a></div>
+            </div>
+            <div class="ooh-row">
+              <div class="ooh-number" style="font-size:22px;letter-spacing:-0.01em;color:var(--ivory);">valvekliinik.ee</div>
+              <div class="ooh-desc">Valvekliinik<br><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a> · ET / EN / RU / FI</div>
+            </div>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,252,247,0.08);">
+              <p style="font-size:12px;color:rgba(255,252,247,0.35);line-height:1.65;">Eluohtliku seisundi korral helista 112.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Same-floor -->
+  <div class="samefloor-section">
+    <div class="samefloor-inner">
+      <div class="samefloor-icon-wrap">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D74" stroke-width="1.5" stroke-linecap="round">
+          <path d="M3 21h18M5 21V7l7-4 7 4v14"/>
+          <rect x="9" y="13" width="6" height="8"/>
+        </svg>
+      </div>
+      <div class="samefloor-text">
+        <p><strong>Samas hoones (Sepapaja 12/1)</strong> asuvad ka Valvekliinik (kiirabi- ja valveteenused) ning töötervishoiu teenused. Tegemist on eraldi teenuseosutajatega.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo-name">SL Tervisekeskus</div>
+          <div class="footer-logo-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div class="footer-logo-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · +372 613 8887 · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(255,252,247,0.35);">e-Perearstikeskus</a></span>
+        <span class="noindex-pill">Eelvaade · Noindex</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

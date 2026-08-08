@@ -18,3 +18,5 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://tt24.ee/sitemap.xml
+
+Disallow: /sk-preview-b5797237/

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>SL Tervisekeskus — Perearstikeskus Ülemistes</title>
+  <meta name="description" content="SL Tervisekeskus OÜ alustab perearsti- ja muude tervishoiuteenuste osutamist Ülemiste Tervisemajas alates 1. septembrist 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ---- Reset & Base ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #101010;
+      --white: #FFFFFF;
+      --sage: #9BAD96;
+      --sage-dark: #7A9474;
+      --sage-light: #E8EEE7;
+      --gray-100: #F5F5F5;
+      --gray-200: #EBEBEB;
+      --gray-500: #888888;
+      --gray-700: #444444;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+
+    /* ---- Announcement bar ---- */
+    .announce-bar {
+      background: var(--sage);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .announce-bar a { color: var(--black); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 10px; }
+
+    /* ---- Header ---- */
+    header {
+      background: var(--black);
+      color: var(--white);
+      position: sticky;
+      top: 40px;
+      z-index: 99;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--white);
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--sage);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--white); }
+    .lang-switcher {
+      display: flex;
+      gap: 2px;
+      margin-left: 18px;
+      padding-left: 18px;
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+    .lang-switcher span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 4px 7px;
+      cursor: default;
+      color: rgba(255,255,255,0.4);
+    }
+    .lang-switcher span.active {
+      background: var(--sage);
+      color: var(--black);
+      border-radius: 1px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      background: var(--white);
+      padding: 80px 40px 88px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--sage);
+      padding-bottom: 4px;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--black);
+      line-height: 1.0;
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--gray-700); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--black);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 30px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+    .btn-sage {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--sage-light);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-sage:hover { background: var(--sage); }
+
+    /* ---- Sections ---- */
+    .section { padding: 72px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+      color: var(--black);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .section-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 640px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+    .heavy-rule {
+      width: 48px;
+      height: 4px;
+      background: var(--sage);
+      margin: 20px 0 32px;
+    }
+
+    /* ---- Context section ---- */
+    .context-section {
+      background: var(--gray-100);
+      border-top: 5px solid var(--sage);
+    }
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .context-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .check-num {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      background: var(--sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .nb-block {
+      background: var(--black);
+      color: var(--white);
+      padding: 32px;
+    }
+    .nb-block .nb-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 12px;
+    }
+    .nb-block p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .info-box {
+      margin-top: 16px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-left: 4px solid var(--sage);
+      padding: 24px;
+    }
+    .info-box p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+    .info-box p + p { margin-top: 10px; }
+
+    /* ---- Doctors ---- */
+    .doctors-section { background: var(--white); }
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2px;
+    }
+    .doctor-card {
+      background: var(--gray-100);
+      padding: 32px 24px;
+      border-bottom: 4px solid transparent;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .doctor-card:hover {
+      border-color: var(--sage);
+      background: var(--sage-light);
+    }
+    .doctor-initials {
+      width: 56px;
+      height: 56px;
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .doctor-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .doctor-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 12px;
+    }
+    .doctor-badge {
+      display: inline-block;
+      background: var(--sage-light);
+      color: var(--black);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+    }
+    .doctors-note {
+      margin-top: 28px;
+      padding: 24px;
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage-dark);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .doctors-note a { color: var(--black); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ---- Info section ---- */
+    .info-section {
+      background: var(--black);
+      color: var(--white);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .info-label { color: var(--sage); }
+    .info-title { color: var(--white); }
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-row {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      align-items: flex-start;
+    }
+    .contact-row-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      min-width: 100px;
+      padding-top: 3px;
+    }
+    .contact-row-value {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .contact-row-value a { color: var(--white); text-decoration: none; }
+    .portal-btn {
+      margin-top: 32px;
+    }
+    .portal-btn a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--sage);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .portal-btn a:hover { background: var(--sage-dark); color: var(--white); }
+    .ooh-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 32px;
+    }
+    .ooh-block-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 24px;
+    }
+    .ooh-row {
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .ooh-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .ooh-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+    .ooh-desc {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+    .ooh-desc a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+
+    /* ---- Same-floor ---- */
+    .samefloor-section {
+      background: var(--gray-100);
+      padding: 44px 40px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .samefloor-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .samefloor-badge {
+      background: var(--sage-light);
+      border: 1px solid var(--sage);
+      padding: 6px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      white-space: nowrap;
+    }
+    .samefloor-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+    .samefloor-text strong { font-weight: 600; color: var(--black); }
+
+    /* ---- Footer ---- */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.4);
+      padding: 48px 40px 40px;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .footer-reg {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      font-size: 11px;
+      line-height: 1.7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: gap;
+      gap: 12px;
+    }
+    .noindex-tag {
+      background: rgba(155,173,150,0.15);
+      color: var(--sage);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .hero, .section { padding-left: 24px; padding-right: 24px; }
+      .context-grid, .info-grid { grid-template-columns: 1fr; gap: 36px; }
+      .samefloor-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .samefloor-section { padding: 40px 24px; }
+      footer { padding: 40px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .doctors-grid { grid-template-columns: 1fr; gap: 0; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announce-bar">
+    Töövälisel ajal: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">&middot;</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-name">sl tervisekeskus</span>
+        <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+      </a>
+      <nav>
+        <a href="#">Avaleht</a>
+        <a href="#">Teenused</a>
+        <a href="#">Arstid ja pered</a>
+        <a href="#">Hinnakiri</a>
+        <a href="#">Patsiendile</a>
+        <a href="#">Kontakt</a>
+        <div class="lang-switcher">
+          <span class="active">ET</span>
+          <span>EN</span>
+          <span>RU</span>
+          <span>FI</span>
+        </div>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menüü">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Ülemiste Tervisemaja · Sepapaja 12/1</div>
+      <h1>perearsti&shy;keskus ülemistes.</h1>
+      <p class="hero-sub">SL Tervisekeskus OÜ alustab tervishoiuteenuste osutamist Ülemistes 1. septembrist 2026. Patsiendid ei pea midagi tegema.</p>
+      <div class="hero-ctas">
+        <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" class="btn-primary">
+          e-Perearstikeskus
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+        </a>
+        <a href="tel:+3726138887" class="btn-outline">
+          +372 613 8887
+        </a>
+        <a href="#" class="btn-sage">Registreeru nimistusse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Context -->
+  <section class="section context-section">
+    <div class="section-inner">
+      <div class="context-grid">
+        <div>
+          <p class="section-label">Muudatuse kohta</p>
+          <h2 class="section-title">teenus jätkub, nimi muutub.</h2>
+          <div class="heavy-rule"></div>
+          <p class="section-text">Alates 1. septembrist 2026 osutab Sepapaja 12/1 asuvas Ülemiste Tervisemajas perearsti- ja muid tervishoiuteenuseid SL Tervisekeskus OÜ (registrikood 17473441). Muudatus tuleneb ettevõtte jagunemisest.</p>
+          <div class="context-checks">
+            <div class="check-item"><div class="check-num">1</div>Patsiendid ei pea midagi tegema</div>
+            <div class="check-item"><div class="check-num">2</div>Meeskond, vastuvõtuajad ja kontaktandmed jäävad samaks</div>
+            <div class="check-item"><div class="check-num">3</div>Kehtivad saatekirjad, retseptid ja broneeritud ajad jäävad jõusse</div>
+            <div class="check-item"><div class="check-num">4</div>Terviseandmed kanduvad automaatselt üle</div>
+            <div class="check-item"><div class="check-num">5</div>e-Perearstikeskuse sisselogimine jääb muutmata</div>
+          </div>
+        </div>
+        <div>
+          <div class="nb-block">
+            <div class="nb-label">NB! Vastuvõtu korraldus</div>
+            <p>Perearsti ja pereõe vastuvõtule palume kindlasti ette registreerida e-Perearstikeskuse iseteeninduskeskkonnas või telefoni teel. Vastuvõttu elavas järjekorras ei toimu.</p>
+          </div>
+          <div class="info-box">
+            <p>Terviseteemalisi pöördumisi käsitleme e-Perearstikeskuse kaudu ja telefoni teel. E-maili teel terviseteemalisi küsimusi turvalisuse eesmärgil ei lahenda.</p>
+            <p>Retseptide väljastamine: 5 tööpaeva jooksul. Tasuliste teenuste eest tasumine kaardiga kohapeal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors -->
+  <section class="section doctors-section">
+    <div class="section-inner">
+      <p class="section-label">Meie meeskond</p>
+      <h2 class="section-title">arstid ja nimistud.</h2>
+      <div class="heavy-rule"></div>
+      <p class="section-text">SL Tervisekeskus OÜ juures tegutsevad perearsti nimistud:</p>
+
+      <div class="doctors-grid">
+        <div class="doctor-card">
+          <div class="doctor-initials">IL</div>
+          <div class="doctor-name">Dr. Ingmar Lindström</div>
+          <div class="doctor-role">Perearst</div>
+          <div class="doctor-badge">Nimistu N0805</div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-initials">KK</div>
+          <div class="doctor-name">Dr. Kristin Kolts</div>
+          <div class="doctor-role">Perearst</div>
+          <div class="doctor-badge">Nimistu N0858</div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-initials">AG</div>
+          <div class="doctor-name">Anna Gretšenko</div>
+          <div class="doctor-role">Perearst</div>
+        </div>
+        <div class="doctor-card">
+          <div class="doctor-initials">EV</div>
+          <div class="doctor-name">Epp Vessel</div>
+          <div class="doctor-role">Perearst</div>
+        </div>
+      </div>
+
+      <div class="doctors-note">
+        Vastuvõtule registreerimine toimub <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuse</a> kaudu või telefonil <a href="tel:+3726138887">+372 613 8887</a>.
+        Nimistusse registreerumise juhised leiate "Patsiendile" rubriigist.
+      </div>
+    </div>
+  </section>
+
+  <!-- Info -->
+  <section class="section info-section">
+    <div class="section-inner">
+      <div class="info-grid">
+        <div>
+          <p class="section-label info-label">Kontakt ja asukoht</p>
+          <h2 class="section-title info-title" style="text-transform:none;">Praktilised andmed</h2>
+          <div class="heavy-rule"></div>
+          <div class="contact-list">
+            <div class="contact-row">
+              <div class="contact-row-label">Asukoht</div>
+              <div class="contact-row-value">Sepapaja 12/1, III korrus<br>11415 Tallinn<br><span style="font-size:12px;color:rgba(255,255,255,0.35);">Ülemiste Tervisemaja</span></div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-label">Telefon</div>
+              <div class="contact-row-value"><a href="tel:+3726138887">+372 613 8887</a></div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-label">Vastuvõtt</div>
+              <div class="contact-row-value">E-R 8:00-18:00</div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-label">Portaal</div>
+              <div class="contact-row-value"><a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:var(--sage);">e-Perearstikeskus ↗</a></div>
+            </div>
+          </div>
+          <div class="portal-btn">
+            <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">
+              Ava e-Perearstikeskus
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M8 2.5l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="ooh-block">
+            <div class="ooh-block-label">Töövälisel ajal</div>
+            <div class="ooh-row">
+              <div class="ooh-number">1220</div>
+              <div class="ooh-desc">Perearsti nõuandeliin<br>Iga paev 8:00-22:00 · Tasuta · Eestikeelne<br><a href="https://www.1220.ee" target="_blank" rel="noopener">1220.ee</a></div>
+            </div>
+            <div class="ooh-row">
+              <div class="ooh-number" style="font-size:22px;letter-spacing:-0.02em;">valvekliinik.ee</div>
+              <div class="ooh-desc">Valvekliinik<br><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a> · ET / EN / RU / FI</div>
+            </div>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);">
+              <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);line-height:1.65;">Eluohtliku seisundi korral helista 112.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Same-floor -->
+  <div class="samefloor-section">
+    <div class="samefloor-inner">
+      <div class="samefloor-badge">Samas hoones</div>
+      <div class="samefloor-text"><strong>Sepapaja 12/1</strong> majas asuvad ka Valvekliinik (kiirabi- ja valveteenused) ning töötervishoiu teenused. Tegemist on eraldi teenuseosutajatega.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">sl tervisekeskus</div>
+          <div class="footer-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+          <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,0.3);">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privaatsuspoliitika</a>
+          <a href="#">Kodukord</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Hinnakiri</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>E-R 8:00-18:00 · +372 613 8887 · <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.35);">e-Perearstikeskus</a></span>
+        <span class="noindex-tag">Eelvaade · Noindex</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
