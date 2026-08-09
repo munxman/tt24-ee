@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SL Tervisekeskus sitemap.xml
+  DRAFT — robots.txt currently blocks all crawlers (noindex,nofollow on all pages).
+  Activate by setting robots.txt to Allow: / and removing noindex meta tags
+  after Ingmar's final approval. Target: 01.09.2026.
+  Generated: 2026-08-09 (merged build)
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Estonian (primary) ──────────────────────────── -->
+  <url>
+    <loc>https://www.sltervisekeskus.ee/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="et"        href="https://www.sltervisekeskus.ee/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.sltervisekeskus.ee/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sltervisekeskus.ee/"/>
+  </url>
+
+  <!-- Action pages (high priority patient tasks) -->
+  <url>
+    <loc>https://www.sltervisekeskus.ee/broneerimine.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/registreerumine.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/retseptid.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/toovoimetusleht.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/analyysid.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/toendid.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/personal.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/hinnakiri.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/toovaline-aeg.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/kontakt.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/valistootajale.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="et" href="https://www.sltervisekeskus.ee/valistootajale.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sltervisekeskus.ee/en/for-foreign-workers.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/privaatsuspoliitika.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/vilepuhuja.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ── Materjalid (articles — from Build A) ────────── -->
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/kkk.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/kuhu-pooruda.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/nohu.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/kurguvalu.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/palavik-taiskasvanul.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/seljavalu.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/poiepoletik.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/kohulahtisus.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/nimistusse.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/vastuvottule-registreerimine.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/toendid-ja-retseptid.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/eperearstikeskus.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sltervisekeskus.ee/materjalid/teabeallikad.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- ── English ──────────────────────────────────────── -->
+  <url>
+    <loc>https://www.sltervisekeskus.ee/en/for-foreign-workers.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sltervisekeskus.ee/en/for-foreign-workers.html"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://www.sltervisekeskus.ee/valistootajale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sltervisekeskus.ee/"/>
+  </url>
+
+  <!-- ── Planned language versions (RU / FI) ───────────
+       Uncomment when pages are built:
+  <url>
+    <loc>https://www.sltervisekeskus.ee/ru/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sltervisekeskus.ee/fi/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  ── -->
+
+</urlset>

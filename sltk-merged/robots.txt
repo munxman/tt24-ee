@@ -1,0 +1,19 @@
+# robots.txt — SL Tervisekeskus (sltervisekeskus.ee)
+# STATUS: DRAFT — site not yet approved for public indexing
+#
+# INSTRUCTIONS FOR LAUNCH:
+#   1. Ingmar approves final site content
+#   2. Change "Disallow: /" below to "Allow: /"
+#   3. Remove noindex meta tags from all HTML pages (or set to "index,follow")
+#   4. Activate sitemap by uncommenting the Sitemap line below
+#   5. Submit sitemap to Google Search Console
+#
+# Current setting: block all crawlers (draft protection)
+# The <meta name="robots" content="noindex,nofollow"> tags in HTML are the
+# primary noindex signal; this robots.txt provides an additional layer.
+
+User-agent: *
+Disallow: /
+
+# Sitemap (activate at launch by uncommenting):
+# Sitemap: https://www.sltervisekeskus.ee/sitemap.xml
