@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Kusepõiepõletik naistel -- SL Tervisekeskus</title>
+  <meta name="description" content="Mida teha kusepõiepõletiku (tsüstiidi) korral. Praktilised sammud, millal apteekrilt abi saada ja millal on vaja arsti. SL Tervisekeskus, Ülemiste Tallinn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --petrol: #9BAD95; --petrol-mid: #7A9174; --teal: #6E8A68; --teal-light: #7A9B74;
+      --gold: #546654; --gold-dim: rgba(155,173,149,0.25); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
+      --text: #1C1C1A; --text-muted: #4E5E4E; --border: #CDD5CC; --border-light: #DFE6DE;
+      --dark-bg: #1A1C1A; --red: #B03A2E; --red-bg: #FDF1F0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; }
+    .announce-bar { background: var(--teal); color: var(--text); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.45; }
+    header { background: var(--petrol); color: var(--text); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(26,28,26,0.12); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { display: flex; flex-direction: column; text-decoration: none; gap: 3px; }
+    .logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(14px, 3.5vw, 20px); font-weight: 700; letter-spacing: -0.02em; text-transform: lowercase; color: var(--text); white-space: nowrap; line-height: 1.1; }
+    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: rgba(26,28,26,0.6); text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.65); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    nav a:hover { color: var(--text); border-bottom-color: rgba(26,28,26,0.35); }
+    nav a.active { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 3px; margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(250,247,241,0.15); }
+    .lang-switcher span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; padding: 12px 10px; min-width: 36px; text-align: center; cursor: default; color: rgba(250,247,241,0.45); border-radius: 2px; }
+    .lang-switcher span.active { background: rgba(194,162,100,0.2); color: var(--gold); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 8px; }
+    .page-hero { background: var(--petrol); color: var(--text); padding: 56px 48px 64px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(194,162,100,0.3), transparent); }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.6); margin-bottom: 28px; flex-wrap: wrap; }
+    .breadcrumb a { color: rgba(26,28,26,0.6); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(26,28,26,0.85); }
+    .breadcrumb-sep { color: rgba(26,28,26,0.3); }
+    .page-eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 17px; font-weight: 300; color: rgba(26,28,26,0.72); max-width: 540px; line-height: 1.75; }
+    .content-section { padding: 72px 48px 96px; background: var(--ivory); }
+    .content-inner { max-width: 800px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); text-decoration: none; margin-bottom: 48px; padding-bottom: 3px; border-bottom: 1px solid rgba(110,138,104,0.25); }
+    .back-link:hover { border-bottom-color: var(--teal); }
+    .back-link svg { width: 14px; height: 14px; }
+    .article-body h2 { font-family: 'Poppins', system-ui, sans-serif; font-size: 22px; font-weight: 500; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 1px solid var(--border-light); }
+    .article-body h2:first-child { margin-top: 0; border-top: none; }
+    .article-body p { font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+    .article-body a:hover { color: var(--teal-light); }
+    .article-body ul { margin: 12px 0 20px 22px; }
+    .article-body li { font-size: 16px; color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+    .steps-list { list-style: none; margin: 8px 0 28px; padding: 0; counter-reset: step; }
+    .steps-list li { counter-increment: step; display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border-light); font-size: 16px; color: var(--text-muted); line-height: 1.75; }
+    .steps-list li:last-child { border-bottom: none; }
+    .steps-list li::before { content: counter(step); display: flex; align-items: center; justify-content: center; min-width: 28px; width: 28px; height: 28px; background: var(--teal); color: white; font-size: 11px; font-weight: 600; flex-shrink: 0; margin-top: 3px; border-radius: 2px; }
+    .steps-list li a { color: var(--teal); }
+    .alert-box { padding: 18px 22px; margin: 12px 0 20px; border-left: 4px solid; border-radius: 0 2px 2px 0; }
+    .alert-box.red { background: #FDF1F0; border-color: #B03A2E; }
+    .alert-box.amber { background: #FFF8F0; border-color: #CA6F1E; }
+    .alert-box.green { background: #F0F8F5; border-color: var(--teal); }
+    .alert-box .alert-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px; }
+    .alert-box.red .alert-label { color: #B03A2E; }
+    .alert-box.amber .alert-label { color: #CA6F1E; }
+    .alert-box.green .alert-label { color: var(--teal); }
+    .alert-box ul { margin: 0 0 0 20px; }
+    .alert-box li { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 6px; }
+    .alert-box p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .alert-box a { color: var(--teal); text-decoration: underline; }
+    .draft-badge { background: #FFF8F0; border: 1px solid #E8C99A; border-left: 4px solid #CA6F1E; padding: 14px 18px; margin-bottom: 40px; border-radius: 0 2px 2px 0; }
+    .draft-badge .db-label { font-size: 9px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #CA6F1E; margin-bottom: 6px; }
+    .draft-badge p { font-size: 13px; color: #5D4123; line-height: 1.6; margin: 0; }
+    .info-card { background: var(--ivory-dark); border: 1px solid var(--border-light); border-left: 3px solid var(--teal); padding: 24px 28px; margin: 28px 0; border-radius: 0 2px 2px 0; }
+    .info-card .info-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 10px; }
+    .info-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; margin-bottom: 10px; }
+    .info-card p:last-child { margin-bottom: 0; }
+    .sources-block { margin: 8px 0 0; padding: 20px 24px; background: var(--ivory-dark); border: 1px solid var(--border-light); border-left: 3px solid var(--border); font-size: 13px; color: var(--text-muted); line-height: 1.75; border-radius: 0 2px 2px 0; }
+    .sources-block a { color: var(--teal); }
+    .sources-block .source-ogl { font-size: 12px; color: rgba(26,28,26,0.45); margin-top: 10px; font-style: italic; }
+    footer { background: var(--petrol); color: rgba(250,247,241,0.45); padding: 52px 48px 44px; border-top: 1px solid rgba(194,162,100,0.12); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(250,247,241,0.08); }
+    .footer-logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: 18px; font-weight: 400; color: var(--ivory); margin-bottom: 5px; }
+    .footer-logo-reg { font-size: 13px; letter-spacing: 0.07em; color: rgba(250,247,241,0.35); }
+    .footer-logo-addr { margin-top: 6px; font-size: 14px; color: rgba(250,247,241,0.3); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: 14px; letter-spacing: 0.06em; color: rgba(250,247,241,0.65); text-decoration: none; }
+    .footer-links a:hover { color: rgba(250,247,241,0.75); }
+    .footer-bottom { font-size: 11px; letter-spacing: 0.05em; line-height: 1.7; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .noindex-notice { font-size: 9.5px; letter-spacing: 0.18em; color: rgba(194,162,100,0.4); text-transform: uppercase; }
+    .draft-notice { font-size: 10px; color: rgba(250,247,241,0.22); letter-spacing: 0.06em; margin-top: 12px; text-align: center; border-top: 1px solid rgba(250,247,241,0.06); padding-top: 16px; }
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .page-hero { padding: 44px 24px 52px; }
+      .content-section { padding: 52px 24px 72px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Liigu põhisisu juurde</a>
+
+<div class="announce-bar">
+  Töövälisel ajal: <strong>1220</strong> (iga päev kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-name">SL Tervisekeskus</span>
+      <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+    </a>
+    <nav class="main-nav" aria-label="Põhinavigatsioon">
+      <div class="nav-group">
+        <a href="../index.html#teenused">Teenused</a>
+        <div class="nav-dropdown">
+          <a href="../broneerimine.html">Broneeri vastuvõtule</a>
+          <a href="../retseptid.html">Kordusretsept</a>
+          <a href="../toovoimetusleht.html">Töövõimetusleht</a>
+          <a href="../analyysid.html">Analüüside tulemused</a>
+          <a href="../toendid.html">Tervisetõendid</a>
+          <a href="../toovaline-aeg.html">Töövälisel ajal</a>
+        </div>
+      </div>
+      <a href="../personal.html">Personal</a>
+      <a href="../hinnakiri.html">Hinnakiri</a>
+      <a href="../materjalid.html" aria-current="page">Materjalid</a>
+      <a href="../kontakt.html">Kontakt</a>
+      <a href="../registreerumine.html" class="btn-nav">Registreeru nimistusse</a>
+      <div class="lang-switcher">
+        <a href="#" class="active" hreflang="et">ET</a>
+        <a href="../en/for-foreign-workers.html" hreflang="en">EN</a>
+        <a href="#" hreflang="ru">RU</a>
+        <a href="#" hreflang="fi">FI</a>
+      </div>
+    </nav>
+    <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ava menüü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav">
+  <a href="../broneerimine.html">Broneeri vastuvõtule</a>
+  <a href="../retseptid.html">Kordusretsept</a>
+  <a href="../toovoimetusleht.html">Töövõimetusleht</a>
+  <a href="../toendid.html">Tervisetõendid</a>
+  <a href="../personal.html">Personal</a>
+  <a href="../registreerumine.html">Registreeru nimistusse</a>
+  <a href="../hinnakiri.html">Hinnakiri</a>
+  <a href="../materjalid.html">Materjalid</a>
+  <a href="../toovaline-aeg.html">Töövälisel ajal</a>
+  <a href="../kontakt.html">Kontakt</a>
+  <div class="mobile-lang">
+    <a href="#" class="active">ET</a>
+    <a href="../en/for-foreign-workers.html">EN</a>
+    <a href="#">RU</a>
+    <a href="#">FI</a>
+  </div>
+</nav>
+
+<div class="announce-bar">
+    Erakorraline: <strong>112</strong><span class="announce-sep">·</span>Nõuanne: <strong>1220</strong> (kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Asukoht">
+        <span class="breadcrumb-sep">/</span>
+        <a href="../materjalid.html">Materjalid</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Kusepõiepõletik</span>
+      </nav>
+      <p class="page-eyebrow">Praktiline juhend</p>
+      <h1>Kusepõiepõletik (tsüstiit) naistel</h1>
+      <p class="page-hero-sub">Kusepõiepõletik on sage ja ebamugav. Paljud juhud mööduvad iseenesest või apteekriabi toel.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+
+      <a href="../materjalid.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
+        Tagasi materjalide juurde
+      </a>
+
+      <div class="article-body">
+
+        <div class="draft-badge">
+          <div class="db-label">Mustand</div>
+          <p>See juhend on mustand. Kliiniline ülevaatus enne avaldamist.</p>
+        </div>
+
+        <h2>Mis on kusepõiepõletik</h2>
+        <p>Kusepõiepõletik on kuseteede nakkus, mille põhjustavad enamasti bakterid. Naiste anatoomia (lühem kusiti) muudab nakkuse sagedasemaks. Sümptomid võivad hõlmata:</p>
+        <ul>
+          <li>Põletustunne või valu urineerimise ajal.</li>
+          <li>Sage urineerimisvajadus, sh öösel.</li>
+          <li>Äkiline ja tugev tung urineerida.</li>
+          <li>Hägune, võimalik tumedate triipudega uriin.</li>
+          <li>Valu alakõhus.</li>
+          <li>Palavik, külmavärinad.</li>
+        </ul>
+
+        <h2>Mida teha</h2>
+        <ol class="steps-list">
+          <li>Jooge ohtralt vedelikku. Uriin peaks olema hele. See aitab bakterid välja loputada.</li>
+          <li>Vältige kohvi, alkoholi ja puuviljamahlu -- need ärritavad põit.</li>
+          <li><strong>Paratsetamool</strong> leevendab valu ja alandab palavikku. Järgige pakendi infolehte.</li>
+          <li>Puhake.</li>
+          <li><strong>Apteeker saab aidata:</strong> 16-64-aastased naised, kes ei ole rasedad, saavad apteekrist antibiootikumi välja kirjutada samal viisil nagu perearst -- minge apteekrile esmalt, kui soovite kiiret abi.</li>
+        </ol>
+
+        <div class="info-card">
+          <div class="info-label">Jõhvikajookide kohta</div>
+          <p>Mõned inimesed tarvitavad jõhvikajooksid ennetavalt. Tõenduspõhiselt ei ole jõhvikasaadused näidanud, et need ravivad juba alanud kuseteede nakkust. Jookide tarvitamine ennetavalt on eraldi teema -- arutage oma perearstiga, kui nakkused korduvad.</p>
+        </div>
+
+        <h2>Ennetamine</h2>
+        <ul>
+          <li>Pühkige tualetti kasutades eest taha (mitte tagant ette).</li>
+          <li>Hoidke suguelundite piirkond puhas ja kuiv.</li>
+          <li>Jooge piisavalt vedelikku.</li>
+        </ul>
+
+        <h2>Mida vältida</h2>
+        <ul>
+          <li>Vältige kohvi, alkoholi ja gaseeritud jooke -- need ärritavad põit.</li>
+          <li>Ärge oodake üle 48 tunni, kui sümptomid ei parane pärast iseabi algust.</li>
+        </ul>
+
+        <h2>Millal pöörduda meie poole</h2>
+        <p>Broneeri vastuvõtt <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">e-Perearstikeskuses</a> või helista <a href="tel:+3726138887">+372 613 8887</a>, kui:</p>
+        <div class="alert-box green">
+          <div class="alert-label">SL Tervisekeskus -- planeeri vastuvõtt</div>
+          <ul>
+            <li>Sümptomid ei parane 48 tunni jooksul.</li>
+            <li>Olete rase.</li>
+            <li>Kusepõiepõletikud korduvad (2 korda 6 kuuga või 3 korda 12 kuuga).</li>
+            <li>Veri uriinis.</li>
+            <li>Valu alaseljas, vahetult ribide all (neerude piirkond).</li>
+            <li>Olete 65-aastane või vanem.</li>
+            <li>Immuunsüsteem on nõrgenenud (nt diabeet).</li>
+          </ul>
+        </div>
+
+        <h2>Millal helistada 1220 või 112</h2>
+        <p>Vt ka: <a href="kuhu-pooruda.html">Kuhu pöörduda tervisemurega</a>.</p>
+        <div class="alert-box amber">
+          <div class="alert-label">1220 -- perearsti nõuandeliin (iga päev kuni 22:00)</div>
+          <ul>
+            <li>Palavik on kõrge, tunnete tugeva külmavärina- ja higistamishooge.</li>
+            <li>Sümptomid halvenevad kiiresti.</li>
+          </ul>
+        </div>
+        <div class="alert-box red">
+          <div class="alert-label">112 -- helistage kohe</div>
+          <ul>
+            <li>Segasus, uimasus, raskused kõnelemisega -- need on vereussütuse (sepsise) võimalikud märgid. Helistage viivitamatult.</li>
+          </ul>
+        </div>
+
+        <h2>Allikad</h2>
+        <div class="sources-block">
+          <p><a href="https://www.nhs.uk/conditions/urinary-tract-infections-utis/" target="_blank" rel="noopener">NHS.uk -- Urinary tract infections (UTIs)</a>. Page last reviewed: current.</p>
+          <p class="source-ogl">Sisaldab NHS.uk materjali kohandust, Open Government Licence v3.0 alusel. Originaalmaterjal: &copy; Crown copyright.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">SL Tervisekeskus</div>
+        <div class="footer-logo-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+        <div class="footer-logo-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+      </div>
+      <div class="footer-links">
+        <a href="../privaatsuspoliitika.html">Privaatsuspoliitika</a>
+        <a href="../materjalid.html">Materjalid</a>
+        <a href="../kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>E-R 8:00–18:00 · Tel: <a href="tel:+3726138887">+372 613 8887</a></span>
+      <span class="noindex-notice">Eelvaade · Noindex · Kinnitamata</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

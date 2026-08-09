@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# DRAFT: noindex on all pages, full crawl blocked until Ingmar approves for production
+# Sitemap: https://www.sltervisekeskus.ee/sitemap.xml

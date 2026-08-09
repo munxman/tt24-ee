@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DRAFT: noindex active. Update lastmod and remove noindex before production. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://www.sltervisekeskus.ee/</loc>
+    <lastmod>2026-08-09</lastmod>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="et" href="https://www.sltervisekeskus.ee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sltervisekeskus.ee/en/"/>
+  </url>
+
+  <!-- Service pages -->
+  <url><loc>https://www.sltervisekeskus.ee/broneerimine.html</loc><lastmod>2026-08-09</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/retseptid.html</loc><lastmod>2026-08-09</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/toovoimetusleht.html</loc><lastmod>2026-08-09</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/analyysid.html</loc><lastmod>2026-08-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/toendid.html</loc><lastmod>2026-08-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/toovaline-aeg.html</loc><lastmod>2026-08-09</lastmod><priority>0.8</priority></url>
+
+  <!-- Patient pages -->
+  <url><loc>https://www.sltervisekeskus.ee/registreerumine.html</loc><lastmod>2026-08-09</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/avaldus.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/personal.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/hinnakiri.html</loc><lastmod>2026-08-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/kontakt.html</loc><lastmod>2026-08-09</lastmod><priority>0.8</priority></url>
+
+  <!-- Foreign workers -->
+  <url><loc>https://www.sltervisekeskus.ee/valistootajale.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url>
+    <loc>https://www.sltervisekeskus.ee/en/for-foreign-workers.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sltervisekeskus.ee/en/for-foreign-workers.html"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://www.sltervisekeskus.ee/valistootajale.html"/>
+  </url>
+
+  <!-- Materjalid index + articles -->
+  <url><loc>https://www.sltervisekeskus.ee/materjalid.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/kkk.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/nohu.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/kurguvalu.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/kohulahtisus.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/palavik-taiskasvanul.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/poiepoletik.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/seljavalu.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/kuhu-pooruda.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/eperearstikeskus.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/nimistusse.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/vastuvottule-registreerimine.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/toendid-ja-retseptid.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/materjalid/teabeallikad.html</loc><lastmod>2026-08-09</lastmod><priority>0.5</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://www.sltervisekeskus.ee/privaatsuspoliitika.html</loc><lastmod>2026-08-09</lastmod><priority>0.3</priority></url>
+  <url><loc>https://www.sltervisekeskus.ee/vilepuhuja.html</loc><lastmod>2026-08-09</lastmod><priority>0.2</priority></url>
+
+</urlset>

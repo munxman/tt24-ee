@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>E-Perearstikeskuse portaali juhend -- SL Tervisekeskus</title>
+  <meta name="description" content="E-Perearstikeskuse iseteeninduskeskkonna kasutusjuhend. Vastuvõtuajad, retseptid, sõnumid arstile. SL Tervisekeskus OÜ, Ülemiste.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --petrol: #9BAD95; --petrol-mid: #7A9174; --teal: #6E8A68; --teal-light: #7A9B74;
+      --gold: #546654; --gold-dim: rgba(155,173,149,0.25); --ivory: #FAF7F1; --ivory-dark: #F3EEE5;
+      --text: #1C1C1A; --text-muted: #4E5E4E; --border: #CDD5CC; --border-light: #DFE6DE;
+      --dark-bg: #1A1C1A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--ivory); color: var(--text); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; }
+
+    .announce-bar { background: var(--teal); color: var(--text); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-align: center; padding: 9px 20px; position: sticky; top: 0; z-index: 100; }
+    .announce-bar a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+    .announce-sep { margin: 0 12px; opacity: 0.45; }
+
+    header { background: var(--petrol); color: var(--text); position: sticky; top: 37px; z-index: 99; border-bottom: 1px solid rgba(26,28,26,0.12); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { display: flex; flex-direction: column; text-decoration: none; gap: 3px; }
+    .logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(14px, 3.5vw, 20px); font-weight: 700; letter-spacing: -0.02em; text-transform: lowercase; color: var(--text); white-space: nowrap; line-height: 1.1; }
+    .logo-sub { font-size: 8.5px; font-weight: 400; letter-spacing: 0.28em; color: rgba(26,28,26,0.6); text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.65); text-decoration: none; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    nav a:hover { color: var(--text); border-bottom-color: rgba(26,28,26,0.35); }
+    nav a.active { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 3px; margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(250,247,241,0.15); }
+    .lang-switcher span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em; padding: 12px 10px; min-width: 36px; text-align: center; cursor: pointer; border-radius: 2px; cursor: default; color: rgba(250,247,241,0.45); }
+    .lang-switcher span.active { background: rgba(194,162,100,0.2); color: var(--gold); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--ivory); cursor: pointer; padding: 8px; }
+
+    .page-hero { background: var(--petrol); color: var(--text); padding: 56px 48px 64px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(194,162,100,0.3), transparent); }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,28,26,0.6); margin-bottom: 28px; flex-wrap: wrap; }
+    .breadcrumb a { color: rgba(26,28,26,0.6); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(26,28,26,0.85); }
+    .breadcrumb-sep { color: rgba(26,28,26,0.3); }
+    .page-eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Poppins', system-ui, sans-serif; font-size: clamp(30px, 4.5vw, 46px); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 17px; font-weight: 300; color: rgba(26,28,26,0.72); max-width: 540px; line-height: 1.75; }
+
+    .content-section { padding: 72px 48px 96px; background: var(--ivory); }
+    .content-inner { max-width: 800px; margin: 0 auto; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); text-decoration: none; margin-bottom: 48px; padding-bottom: 3px; border-bottom: 1px solid rgba(46,125,116,0.25); }
+    .back-link:hover { border-bottom-color: var(--teal); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .article-body h2 { font-family: 'Poppins', system-ui, sans-serif; font-size: 22px; font-weight: 500; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 1px solid var(--border-light); }
+    .article-body h2:first-child { margin-top: 0; border-top: none; }
+    .article-body p { font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+    .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+    .article-body a:hover { color: var(--teal-light); }
+    .article-body ul, .article-body ol { margin: 12px 0 20px 22px; }
+    .article-body li { font-size: 17px; color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+
+    .info-card { background: var(--ivory-dark); border: 1px solid var(--border-light); border-left: 3px solid var(--teal); padding: 24px 28px; margin: 28px 0; border-radius: 0 2px 2px 0; }
+    .info-card .info-label { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(26,28,26,0.7); margin-bottom: 10px; }
+    .info-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; margin-bottom: 10px; }
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+
+    .portal-cta { display: flex; align-items: center; gap: 20px; background: var(--petrol); padding: 28px 32px; margin: 32px 0; }
+    .portal-cta .cta-text { flex: 1; }
+    .portal-cta .cta-text .cta-label { font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .portal-cta .cta-text .cta-main { font-family: 'Poppins', system-ui, sans-serif; font-size: 18px; color: var(--ivory); margin-bottom: 4px; }
+    .portal-cta .cta-text .cta-sub { font-size: 12.5px; color: rgba(250,247,241,0.5); }
+    .portal-cta .cta-btn { display: inline-block; background: var(--gold); color: var(--text); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 12px 22px; white-space: nowrap; }
+    .portal-cta .cta-btn:hover { background: #d4b47a; }
+
+    .capability-list { list-style: none; margin: 0 0 24px; padding: 0; }
+    .capability-list li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border-light); font-size: 14.5px; color: var(--text-muted); line-height: 1.65; }
+    .capability-list li:last-child { border-bottom: none; }
+    .capability-list li .cap-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+    .capability-list li strong { color: var(--text); display: block; font-size: 14px; margin-bottom: 2px; }
+
+    footer { background: var(--petrol); color: rgba(250,247,241,0.45); padding: 52px 48px 44px; border-top: 1px solid rgba(194,162,100,0.12); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(250,247,241,0.08); }
+    .footer-logo-name { font-family: 'Poppins', system-ui, sans-serif; font-size: 18px; font-weight: 400; color: var(--ivory); margin-bottom: 5px; }
+    .footer-logo-reg { font-size: 13px; letter-spacing: 0.07em; color: rgba(250,247,241,0.35); }
+    .footer-logo-addr { margin-top: 6px; font-size: 14px; color: rgba(250,247,241,0.3); }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .footer-links a { font-size: 14px; letter-spacing: 0.06em; color: rgba(250,247,241,0.65); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(250,247,241,0.75); }
+    .footer-bottom { font-size: 11px; letter-spacing: 0.05em; line-height: 1.7; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .noindex-notice { font-size: 9.5px; letter-spacing: 0.18em; color: rgba(194,162,100,0.4); text-transform: uppercase; }
+    .draft-notice { font-size: 10px; color: rgba(250,247,241,0.22); letter-spacing: 0.06em; margin-top: 12px; text-align: center; border-top: 1px solid rgba(250,247,241,0.06); padding-top: 16px; }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; color: var(--text); }
+      .page-hero { padding: 44px 24px 52px; }
+      .content-section { padding: 52px 24px 72px; }
+      footer { padding: 44px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .portal-cta { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Liigu põhisisu juurde</a>
+
+<div class="announce-bar">
+  Töövälisel ajal: <strong>1220</strong> (iga päev kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-name">SL Tervisekeskus</span>
+      <span class="logo-sub">Perearstikeskus · Ülemiste</span>
+    </a>
+    <nav class="main-nav" aria-label="Põhinavigatsioon">
+      <div class="nav-group">
+        <a href="../index.html#teenused">Teenused</a>
+        <div class="nav-dropdown">
+          <a href="../broneerimine.html">Broneeri vastuvõtule</a>
+          <a href="../retseptid.html">Kordusretsept</a>
+          <a href="../toovoimetusleht.html">Töövõimetusleht</a>
+          <a href="../analyysid.html">Analüüside tulemused</a>
+          <a href="../toendid.html">Tervisetõendid</a>
+          <a href="../toovaline-aeg.html">Töövälisel ajal</a>
+        </div>
+      </div>
+      <a href="../personal.html">Personal</a>
+      <a href="../hinnakiri.html">Hinnakiri</a>
+      <a href="../materjalid.html" aria-current="page">Materjalid</a>
+      <a href="../kontakt.html">Kontakt</a>
+      <a href="../registreerumine.html" class="btn-nav">Registreeru nimistusse</a>
+      <div class="lang-switcher">
+        <a href="#" class="active" hreflang="et">ET</a>
+        <a href="../en/for-foreign-workers.html" hreflang="en">EN</a>
+        <a href="#" hreflang="ru">RU</a>
+        <a href="#" hreflang="fi">FI</a>
+      </div>
+    </nav>
+    <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ava menüü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav">
+  <a href="../broneerimine.html">Broneeri vastuvõtule</a>
+  <a href="../retseptid.html">Kordusretsept</a>
+  <a href="../toovoimetusleht.html">Töövõimetusleht</a>
+  <a href="../toendid.html">Tervisetõendid</a>
+  <a href="../personal.html">Personal</a>
+  <a href="../registreerumine.html">Registreeru nimistusse</a>
+  <a href="../hinnakiri.html">Hinnakiri</a>
+  <a href="../materjalid.html">Materjalid</a>
+  <a href="../toovaline-aeg.html">Töövälisel ajal</a>
+  <a href="../kontakt.html">Kontakt</a>
+  <div class="mobile-lang">
+    <a href="#" class="active">ET</a>
+    <a href="../en/for-foreign-workers.html">EN</a>
+    <a href="#">RU</a>
+    <a href="#">FI</a>
+  </div>
+</nav>
+
+<div class="announce-bar">
+    Toovälisel ajal: helista <strong>1220</strong> (iga päev kuni 22:00)<span class="announce-sep">·</span><a href="https://valvekliinik.ee" target="_blank" rel="noopener">valvekliinik.ee</a>
+  </div>
+
+  
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Asukoht">
+        <span class="breadcrumb-sep">/</span>
+        <a href="../materjalid.html">Materjalid</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>e-Perearstikeskus</span>
+      </nav>
+      <p class="page-eyebrow">Patsiendile</p>
+      <h1>e-Perearstikeskuse portaali juhend</h1>
+      <p class="page-hero-sub">Riiklik iseteeninduskeskkond vastuvõtuaegade broneerimiseks, retseptide tellimiseks ja arstile kirjutamiseks.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+
+      <a href="../materjalid.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg>
+        Tagasi materjalide juurde
+      </a>
+
+      <div class="article-body">
+
+        <h2>Mis on e-Perearstikeskus?</h2>
+        <p>e-Perearstikeskus on riiklik veebipõhine iseteeninduskeskkond, mille kaudu saavad kõik SL Tervisekeskuse registreeritud patsiendid hallata oma perearsti vastuvõtuaegu, tellida retsepte ja saata küsimusi arstile või pereõele.</p>
+        <p>Keskkond on kättesaadav aadressil <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener">eperearstikeskus.ee</a>.</p>
+
+        <div class="portal-cta">
+          <div class="cta-text">
+            <div class="cta-label">Iseteenindus</div>
+            <div class="cta-main">e-Perearstikeskus</div>
+            <div class="cta-sub">eperearstikeskus.ee · ööpäevaringselt avatud</div>
+          </div>
+          <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener" class="cta-btn">Ava portaal</a>
+        </div>
+
+        <h2>Sisselogimine</h2>
+        <p>Portaali sisenemiseks kasutatakse Eesti riiklikku autentimist. Sisselogimiseks saab kasutada:</p>
+        <ul>
+          <li><strong>ID-kaarti</strong> koos kaardilugejaga;</li>
+          <li><strong>Mobiil-ID-d</strong> (telefoninumber ja PIN);</li>
+          <li><strong>Smart-ID rakendust.</strong></li>
+        </ul>
+        <p>Sisselogimiseks pole vaja eraldi konto luua. Piisab Eesti isikukoodi ja ülaltoodud vahendi olemasolust.</p>
+
+        <h2>Mida saab portaalis teha?</h2>
+
+        <ul class="capability-list">
+          <li>
+            <svg class="cap-icon" viewBox="0 0 20 20" fill="none" stroke="#2E7D74" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="4" width="14" height="13" rx="1"/><path d="M7 2v4M13 2v4M3 9h14"/></svg>
+            <div><strong>Vastuvõtuaja broneerimine</strong>Valige sobiv aeg, arst või pereõde, kinnitage broneering. Aegade tühistamine samuti portaali kaudu.</div>
+          </li>
+          <li>
+            <svg class="cap-icon" viewBox="0 0 20 20" fill="none" stroke="#2E7D74" stroke-width="1.4" stroke-linecap="round"><path d="M5 3h10a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M7 8h6M7 11h4"/></svg>
+            <div><strong>Kordusretsepti tellimine</strong>Kroonilise ravimi retsepti pikendamine portaali kaudu. Valmis tavaliselt 5 tööpäeva jooksul.</div>
+          </li>
+          <li>
+            <svg class="cap-icon" viewBox="0 0 20 20" fill="none" stroke="#2E7D74" stroke-width="1.4" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg>
+            <div><strong>Sõnumid arstile ja pereõele</strong>Mittekiireloomulised küsimused, lisainfo edastamine, konsultatsioonitaotlused.</div>
+          </li>
+        </ul>
+
+        <div class="info-card">
+          <div class="info-label">Retseptide jälgimine</div>
+          <p>Väljastatud retseptide olekut ja e-terviseandmeid saab jälgida ka <a href="https://www.digilugu.ee/" target="_blank" rel="noopener">terviseportaalis digilugu.ee</a>.</p>
+        </div>
+
+        <h2>Millal helistada 1220 selle asemel?</h2>
+        <p>Perearsti nõuandeliin 1220 on mõeldud olukordadeks, kus vajate kiiret nõuannet ja meie vastuvõtt on suletud. Nõuandeliin töötab iga päev kuni 22:00, on eesti keeles ja tasuta.</p>
+        <ul>
+          <li>Vastuvõtt suletud (tööaeg E-R 8:00-18:00) ja vajate kiiret nõuannet.</li>
+          <li>Soovite teada, kas olukord nõuab kiiret arstiabi.</li>
+          <li>Nädalavahetuse haigestumise korral haiguslehe avamiseks (kuni 22:00).</li>
+        </ul>
+        <p>Eluohtliku olukorra korral helistage alati <strong>112</strong>. Täpsema juhise leiab lehelt <a href="kuhu-pooruda.html">Kuhu pöörduda tervisemurega</a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">SL Tervisekeskus</div>
+        <div class="footer-logo-reg">SL Tervisekeskus OÜ · Registrikood 17473441</div>
+        <div class="footer-logo-addr">Sepapaja 12/1, III korrus, 11415 Tallinn</div>
+      </div>
+      <div class="footer-links">
+        <a href="../privaatsuspoliitika.html">Privaatsuspoliitika</a>
+        <a href="../materjalid.html">Materjalid</a>
+        <a href="../kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>E-R 8:00–18:00 · Tel: <a href="tel:+3726138887">+372 613 8887</a></span>
+      <span class="noindex-notice">Eelvaade · Noindex · Kinnitamata</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
