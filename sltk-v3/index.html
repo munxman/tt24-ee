@@ -91,8 +91,8 @@
       --gray-300:    #D0CEC8;
       --gray-500:    #7A7870;
       --gray-700:    #3E3C38;
-      --dark-warm:   #141410;   /* very dark warm-black */
-      --section-dark:#0E0E0C;   /* slightly warm dark for alternating dark sections */
+      --dark-warm:   #141414;   /* neutral near-black (video hero fallback) */
+      --section-dark:#262626;   /* neutral dark for alternating dark sections */
     }
 
     html { scroll-behavior: smooth; }
@@ -149,7 +149,7 @@
 
     /* ── Header ────────────────────────────────────────── */
     .site-header {
-      background: var(--black);
+      background: #262626;
       color: var(--white);
       position: sticky;
       top: 38px;
@@ -277,7 +277,7 @@
     /* Mobile nav panel */
     .mobile-nav {
       display: none;
-      background: var(--black);
+      background: #262626;
       border-top: 1px solid rgba(255,255,255,0.08);
       position: sticky;
       top: 106px;
@@ -333,9 +333,9 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(20,20,16,0.28) 0%,
-        rgba(20,20,16,0.50) 60%,
-        rgba(20,20,16,0.68) 100%
+        rgba(20,20,16,0.42) 0%,
+        rgba(20,20,16,0.68) 60%,
+        rgba(20,20,16,0.84) 100%
       );
       pointer-events: none;
     }
@@ -570,7 +570,7 @@
 
     /* ── SECTION 2: How to reach us (DARK) ────────────── */
     .reach-section {
-      background: #23231F;
+      background: #2E2E2E;
       color: var(--white);
       padding: 88px 0;
     }
@@ -625,9 +625,9 @@
       text-underline-offset: 2px;
     }
 
-    /* ── SECTION 3: After hours (DARK warm) ────────────── */
+    /* ── SECTION 3: After hours (DARK neutral) ────────────── */
     .afterhours-section {
-      background: #2B2E26;
+      background: #333333;
       color: var(--white);
       padding: 88px 0;
       border-top: 1px solid rgba(155,173,149,0.2);
@@ -858,7 +858,7 @@
 
     /* ── Footer ────────────────────────────────────────── */
     .site-footer {
-      background: var(--black);
+      background: #262626;
       color: rgba(255,255,255,0.35);
       padding: 56px 0 44px;
       border-top: 3px solid var(--sage);
@@ -948,7 +948,7 @@
       left: 0;
       right: 0;
       z-index: 300;
-      background: var(--black);
+      background: #262626;
       border-top: 2px solid var(--sage);
     }
     .mobile-cta a {
