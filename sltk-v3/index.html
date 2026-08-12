@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex,nofollow">
 
   <title>SL Tervisekeskus — Perearstikeskus Tallinnas, Ülemistes</title>
-  <meta name="description" content="SL Tervisekeskus on perearstikeskus Ülemiste linnaosas Tallinnas. Broneerimine, retseptid ja küsimused — e-Perearstikeskuse kaudu. Tel +372 613 8887.">
+  <meta name="description" content="SL Tervisekeskus on perearstikeskus Ülemiste linnaosas Tallinnas. Broneerimine, retseptid ja küsimused — e-Perearstikeskuse kaudu.">
 
   <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://www.sltervisekeskus.ee/">
@@ -21,14 +21,14 @@
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="SL Tervisekeskus">
   <meta property="og:title"       content="SL Tervisekeskus — Perearstikeskus Tallinnas">
-  <meta property="og:description" content="Perearstikeskus Ülemiste linnaosas. Broneerimine, retseptid ja küsimused e-Perearstikeskuse kaudu. Tel +372 613 8887.">
+  <meta property="og:description" content="Perearstikeskus Ülemiste linnaosas. Broneerimine, retseptid ja küsimused e-Perearstikeskuse kaudu.">
   <meta property="og:url"         content="https://www.sltervisekeskus.ee/">
   <meta property="og:image"       content="https://www.sltervisekeskus.ee/assets/og-default.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="SL Tervisekeskus — Perearstikeskus Tallinnas">
-  <meta name="twitter:description" content="Perearstikeskus Ülemiste linnaosas. Tel +372 613 8887.">
+  <meta name="twitter:description" content="Perearstikeskus Ülemiste linnaosas. Broneeri aeg e-Perearstikeskuse kaudu.">
 
   <!-- Fonts: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,6 @@
     "name": "SL Tervisekeskus",
     "legalName": "SL Tervisekeskus OÜ",
     "url": "https://www.sltervisekeskus.ee",
-    "telephone": "+3726138887",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Sepapaja 12/1, III korrus",
@@ -383,16 +382,7 @@
       flex-wrap: wrap;
       align-items: center;
     }
-    .hero-phone {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-      padding: 0 8px 0 0;
-      margin-right: 4px;
-      border-right: 1px solid rgba(255,255,255,0.2);
-    }
+
 
     /* ── Buttons ───────────────────────────────────────── */
     .btn {
@@ -528,7 +518,7 @@
       display: flex;
       flex-direction: column;
       background: var(--white);
-      padding: 32px 28px;
+      padding: 18px 20px;
       text-decoration: none;
       color: var(--black);
       border-bottom: 3px solid transparent;
@@ -547,35 +537,20 @@
       background: var(--sage-bg);
       border-bottom-color: var(--sage-dark);
     }
-    .tile-icon {
-      font-size: 28px;
-      margin-bottom: 18px;
-      line-height: 1;
-    }
+
     .tile-label {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: -0.01em;
       color: var(--black);
-      margin-bottom: 8px;
+      margin-bottom: 3px;
       line-height: 1.3;
     }
     .tile-sub {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 400;
       color: var(--gray-500);
-      line-height: 1.55;
-      flex: 1;
-    }
-    .tile-arrow {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--sage-dark);
-      margin-top: 24px;
-      transition: transform 0.15s;
-    }
-    .action-tile:hover .tile-arrow {
-      transform: translateX(4px);
+      line-height: 1.4;
     }
 
     /* ── SECTION 2: How to reach us (DARK) ────────────── */
@@ -673,10 +648,7 @@
     .severity-item.s-urgent   { border-left-color: #C87E3A; }
     .severity-item.s-standard { border-left-color: var(--sage); }
     .severity-item.s-digital  { border-left-color: var(--sage-mid); }
-    .severity-icon {
-      font-size: 28px;
-      flex-shrink: 0;
-    }
+
     .severity-body h4 {
       font-size: 15px;
       font-weight: 700;
@@ -723,10 +695,7 @@
       background: var(--sage-light);
       border-bottom-color: var(--sage-dark);
     }
-    .resource-tile-icon {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+
     .resource-tile-title {
       font-size: 16px;
       font-weight: 700;
@@ -986,7 +955,7 @@
     }
     .mobile-cta a:last-child { border-right: none; }
     .mobile-cta a:hover { color: var(--white); background: rgba(255,255,255,0.04); }
-    .mobile-cta .cta-icon { font-size: 18px; }
+
 
     /* ── Utility ───────────────────────────────────────── */
     .mt-lg { margin-top: 40px; }
@@ -1000,7 +969,7 @@
 
     /* ── Responsive ────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .action-grid { grid-template-columns: repeat(2, 1fr); }
+      .action-grid { grid-template-columns: repeat(4, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
     }
 
@@ -1018,7 +987,7 @@
     }
 
     @media (max-width: 680px) {
-      .action-grid { grid-template-columns: 1fr; }
+      .action-grid { grid-template-columns: repeat(2, 1fr); }
       .emergency-bar { font-size: 12px; padding: 8px 16px; }
       .hero h1 { font-size: clamp(30px, 9vw, 48px); }
       .hero-ctas { flex-direction: column; align-items: flex-start; }
@@ -1038,7 +1007,6 @@
   <strong>Töövälisel ajal:</strong>
   <span>1220 — perearsti nõuandeliin (iga päev 8–22, eesti keeles, tasuta)</span>
   <span class="sep">·</span>
-  <a href="tel:+37259110909">5 911 0909</a>
   <a href="https://valvekliinik.ee" target="_blank" rel="noopener noreferrer">Valvekliinik</a>
   <span>— samas majas, E–L (ET/EN/RU/FI)</span>
 </div>
@@ -1110,10 +1078,10 @@
         Broneeri aeg, esita küsimus ja telli retsept e-Perearstikeskuse kaudu — ööpäev läbi, ilma järjekorrata.
       </p>
       <div class="hero-ctas">
-        <a href="tel:+3726138887" class="hero-phone">+372 613 8887</a>
         <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer"
            class="btn btn-sage btn-arrow">e-Perearstikeskus</a>
         <a href="../sltk-merged/registreerumine.html" class="btn btn-outline-white">Registreeru nimistusse</a>
+        <a href="../sltk-merged/kontakt.html" class="btn btn-outline-white">Kontakt</a>
       </div>
     </div>
   </section>
@@ -1131,59 +1099,43 @@
            target="_blank" rel="noopener noreferrer"
            class="action-tile highlight" role="listitem"
            aria-label="Broneeri aeg e-Perearstikeskuses">
-          <div class="tile-icon">📅</div>
           <div class="tile-label">Broneeri aeg vastuvõtule</div>
-          <div class="tile-sub">e-Perearstikeskus (eelistatud) · telefon +372 613 8887</div>
-          <div class="tile-arrow">→</div>
+          <div class="tile-sub">e-Perearstikeskus (eelistatud)</div>
         </a>
 
         <a href="../sltk-merged/retseptid.html" class="action-tile" role="listitem">
-          <div class="tile-icon">💊</div>
           <div class="tile-label">Telli kordusretsept</div>
           <div class="tile-sub">5 tööpäeva · e-Perearstikeskus</div>
-          <div class="tile-arrow">→</div>
         </a>
 
         <a href="../sltk-merged/toovoimetusleht.html" class="action-tile" role="listitem">
-          <div class="tile-icon">📋</div>
           <div class="tile-label">Töövõimetusleht</div>
           <div class="tile-sub">Teata haigestumisest samal päeval</div>
-          <div class="tile-arrow">→</div>
         </a>
 
         <a href="../sltk-merged/analyysid.html" class="action-tile" role="listitem">
-          <div class="tile-icon">🔬</div>
           <div class="tile-label">Analüüside tulemused</div>
           <div class="tile-sub">terviseportaal.ee · e-Perearstikeskus</div>
-          <div class="tile-arrow">→</div>
         </a>
 
         <a href="../sltk-merged/registreerumine.html" class="action-tile" role="listitem">
-          <div class="tile-icon">📝</div>
           <div class="tile-label">Registreeru nimistusse</div>
           <div class="tile-sub">Liitu meie perearstide nimistuga</div>
-          <div class="tile-arrow">→</div>
         </a>
 
         <a href="../sltk-merged/materjalid.html" class="action-tile" role="listitem">
-          <div class="tile-icon">📚</div>
           <div class="tile-label">Teabeallikad ja juhendid</div>
           <div class="tile-sub">KKK, sümptomijuhendid, praktilised materjalid</div>
-          <div class="tile-arrow">→</div>
         </a>
 
         <a href="../sltk-merged/toendid.html" class="action-tile" role="listitem">
-          <div class="tile-icon">📄</div>
           <div class="tile-label">Tervisetõendid</div>
           <div class="tile-sub">Juhiluba, töötervishoid, relvaluba…</div>
-          <div class="tile-arrow">→</div>
         </a>
 
         <a href="../sltk-merged/en/valistootajale.html" class="action-tile" role="listitem">
-          <div class="tile-icon">🌍</div>
           <div class="tile-label">For foreign workers</div>
           <div class="tile-sub">How to register · what's covered · EN/RU/FI</div>
-          <div class="tile-arrow">→</div>
         </a>
 
       </div>
@@ -1210,7 +1162,7 @@
           <div class="step-num">2</div>
           <div class="step-body">
             <h4>Soovite helistada</h4>
-            <p>Vastuvõtt: <a href="tel:+3726138887">+372 613 8887</a> (E–R 8:00–18:00).
+            <p>Helistamiseks leiate numbri <a href="../sltk-merged/kontakt.html">kontaktlehelt</a> (E–R 8:00–18:00).
                Terviseandmeid e-maili teel ei edasta — andmekaitselistel põhjustel.</p>
           </div>
         </div>
@@ -1241,30 +1193,25 @@
       <div class="heavy-rule"></div>
       <div class="severity-grid">
         <div class="severity-item s-critical">
-          <div class="severity-icon">🚨</div>
           <div class="severity-body">
             <h4>Eluohtlik olukord</h4>
             <p>Helista <strong>112</strong>. Kiirabi tuleb kohale. Südameinfarkt, insult, tõsine trauma, teadvusetus.</p>
           </div>
         </div>
         <div class="severity-item s-urgent">
-          <div class="severity-icon">🏥</div>
           <div class="severity-body">
             <h4>Tõsine, kuid mitte eluohtlik</h4>
             <p><strong>EMO</strong> — haigla erakorralise meditsiini osakond. Pöörduge lähimasse haiglasse. Töötab ööpäev läbi.</p>
           </div>
         </div>
         <div class="severity-item s-standard">
-          <div class="severity-icon">🏢</div>
           <div class="severity-body">
             <h4>Vajate samal päeval arsti — töövälisel ajal</h4>
             <p><a href="https://valvekliinik.ee" target="_blank" rel="noopener noreferrer">Valvekliinik</a>
-               — <a href="tel:+37259110909">5 911 0909</a>.
-               Arstivastuvõtt ilma saatekirjata samas hoones (von Baeri maja), E–L. Tasuline. Teenindus ET/EN/RU/FI.</p>
+               — arstivastuvõtt ilma saatekirjata samas hoones (von Baeri maja), E–L. Tasuline. Teenindus ET/EN/RU/FI.</p>
           </div>
         </div>
         <div class="severity-item s-digital">
-          <div class="severity-icon">📞</div>
           <div class="severity-body">
             <h4>Vajate nõu, ei ole hädaolukord</h4>
             <p><strong>1220</strong> — perearsti nõuandeliin. Iga päev 8:00–22:00, eesti keeles, tasuta. <a href="https://www.1220.ee" target="_blank" rel="noopener noreferrer">1220.ee</a></p>
@@ -1287,19 +1234,16 @@
 
       <div class="resource-grid">
         <a href="../sltk-merged/materjalid/kkk.html" class="resource-tile">
-          <div class="resource-tile-icon">❓</div>
           <div class="resource-tile-title">Korduma kippuvad küsimused</div>
           <div class="resource-tile-desc">Kuidas broneerida, mis maksab, kuidas nimistusse registreeruda — kõige sagedamini küsitavad.</div>
           <div class="resource-tile-cta">Loe →</div>
         </a>
         <a href="../sltk-merged/materjalid/nohu.html" class="resource-tile">
-          <div class="resource-tile-icon">🤧</div>
           <div class="resource-tile-title">Nohu ja palavik</div>
           <div class="resource-tile-desc">Mida teha ja millal meie poole pöörduda. Kodused nõuanded esimesteks päevadeks.</div>
           <div class="resource-tile-cta">Loe →</div>
         </a>
         <a href="../sltk-merged/materjalid/kuhu-pooruda.html" class="resource-tile">
-          <div class="resource-tile-icon">🗺️</div>
           <div class="resource-tile-title">Kuhu pöörduda tervisemurega</div>
           <div class="resource-tile-desc">112, EMO, 1220, SL Tervisekeskus, Valvekliinik — täielik juhis õige koha leidmiseks.</div>
           <div class="resource-tile-cta">Loe →</div>
@@ -1346,9 +1290,9 @@
               </div>
             </div>
             <div class="contact-row">
-              <div class="contact-label">Telefon</div>
+              <div class="contact-label">Kontakt</div>
               <div class="contact-value">
-                <a href="tel:+3726138887" style="font-size:20px;font-weight:700;letter-spacing:-0.02em;">+372 613 8887</a>
+                <a href="../sltk-merged/kontakt.html">Vaata kontaktlehte →</a>
               </div>
             </div>
             <div class="contact-row">
@@ -1362,7 +1306,7 @@
               <div class="contact-label">Broneerimine</div>
               <div class="contact-value">
                 <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">e-Perearstikeskus</a>
-                · telefon
+                · <a href="../sltk-merged/kontakt.html">telefon</a>
                 <span class="note">Eelnev registreerimine nõutav — elavas järjekorras vastuvõttu ei toimu</span>
               </div>
             </div>
@@ -1405,7 +1349,7 @@
         </a>
         <p class="footer-tagline">
           Sepapaja 12/1, III korrus · 11415 Tallinn<br>
-          +372 613 8887 · E–R 8:00–18:00
+          E–R 8:00–18:00
         </p>
         <div class="footer-lang">
           <a href="/" class="active">ET</a>
@@ -1457,15 +1401,9 @@
 
 <!-- Mobile floating CTA bar -->
 <div class="mobile-cta" role="complementary" aria-label="Kiirtoimingud">
-  <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">
-    <span class="cta-icon">📅</span>Broneeri
-  </a>
-  <a href="tel:+3726138887">
-    <span class="cta-icon">📞</span>Helista
-  </a>
-  <a href="../sltk-merged/registreerumine.html">
-    <span class="cta-icon">📝</span>Registreeru
-  </a>
+  <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">Broneeri</a>
+  <a href="../sltk-merged/kontakt.html">Kontakt</a>
+  <a href="../sltk-merged/registreerumine.html">Registreeru</a>
 </div>
 
 <script>
