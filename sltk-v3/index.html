@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- DRAFT: noindex until Ingmar gives final approval before September launch -->
+  <meta name="robots" content="noindex,nofollow">
+
+  <title>SL Tervisekeskus — Perearstikeskus Tallinnas, Ülemistes</title>
+  <meta name="description" content="SL Tervisekeskus on perearstikeskus Ülemiste linnaosas Tallinnas. Broneerimine, retseptid ja küsimused — e-Perearstikeskuse kaudu. Tel +372 613 8887.">
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://www.sltervisekeskus.ee/">
+  <link rel="alternate" hreflang="et"        href="https://www.sltervisekeskus.ee/">
+  <link rel="alternate" hreflang="en"        href="https://www.sltervisekeskus.ee/en/">
+  <link rel="alternate" hreflang="ru"        href="https://www.sltervisekeskus.ee/ru/">
+  <link rel="alternate" hreflang="fi"        href="https://www.sltervisekeskus.ee/fi/">
+  <link rel="alternate" hreflang="x-default" href="https://www.sltervisekeskus.ee/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="SL Tervisekeskus">
+  <meta property="og:title"       content="SL Tervisekeskus — Perearstikeskus Tallinnas">
+  <meta property="og:description" content="Perearstikeskus Ülemiste linnaosas. Broneerimine, retseptid ja küsimused e-Perearstikeskuse kaudu. Tel +372 613 8887.">
+  <meta property="og:url"         content="https://www.sltervisekeskus.ee/">
+  <meta property="og:image"       content="https://www.sltervisekeskus.ee/assets/og-default.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="SL Tervisekeskus — Perearstikeskus Tallinnas">
+  <meta name="twitter:description" content="Perearstikeskus Ülemiste linnaosas. Tel +372 613 8887.">
+
+  <!-- Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Schema.org: MedicalClinic -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "@id": "https://www.sltervisekeskus.ee/#clinic",
+    "name": "SL Tervisekeskus",
+    "legalName": "SL Tervisekeskus OÜ",
+    "url": "https://www.sltervisekeskus.ee",
+    "telephone": "+3726138887",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sepapaja 12/1, III korrus",
+      "addressLocality": "Tallinn",
+      "postalCode": "11415",
+      "addressCountry": "EE"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "medicalSpecialty": "General Practice",
+    "hasMap": "https://maps.google.com/?q=Sepapaja+12%2F1+Tallinn"
+  }
+  </script>
+
+  <!-- GA4 — [INGMAR TO CONFIRM: Replace G-XXXXXXXXXX with actual Measurement ID] -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    /* ── Reset & Base ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:       #101010;
+      --white:       #FFFFFF;
+      --ivory:       #FAF7F1;   /* warm ivory — main light-section bg */
+      --ivory-deep:  #F3EFE7;   /* slightly deeper ivory for alternating */
+      --sage:        #9BAD95;   /* main sage/olive accent */
+      --sage-dark:   #6B8A63;   /* deep olive — for buttons on light, text on dark */
+      --sage-mid:    #7A9272;   /* medium olive */
+      --sage-light:  #E4EDDF;   /* barely-there sage for tile hovers */
+      --sage-bg:     #EEF3EC;   /* section accent bg */
+      --olive-btn:   #5A7252;   /* rich olive CTA button */
+      --gray-100:    #F4F4F2;
+      --gray-200:    #E8E6E0;
+      --gray-300:    #D0CEC8;
+      --gray-500:    #7A7870;
+      --gray-700:    #3E3C38;
+      --dark-warm:   #141410;   /* very dark warm-black */
+      --section-dark:#0E0E0C;   /* slightly warm dark for alternating dark sections */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: var(--ivory);
+      color: var(--black);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    /* ── Skip link ─────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--sage-dark);
+      color: var(--white);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      z-index: 999;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* ── Emergency bar ─────────────────────────────────── */
+    .emergency-bar {
+      background: var(--sage);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 9px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0 10px;
+    }
+    .emergency-bar a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 700;
+    }
+    .emergency-bar .sep { opacity: 0.4; margin: 0 4px; }
+
+    /* ── Header ────────────────────────────────────────── */
+    .site-header {
+      background: var(--black);
+      color: var(--white);
+      position: sticky;
+      top: 38px;
+      z-index: 199;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    /* Logo — always one line, never stacked */
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+    .logo-name {
+      font-size: clamp(14px, 2.8vw, 20px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--white);
+      white-space: nowrap; /* logo ALWAYS one line — never wraps */
+      line-height: 1;
+    }
+    .logo-sub {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage);
+      white-space: nowrap;
+    }
+
+    /* Desktop nav */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .main-nav a {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.15s;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .main-nav a:hover {
+      color: var(--white);
+      border-bottom-color: var(--sage);
+    }
+    .main-nav .nav-cta {
+      background: var(--sage-dark);
+      color: var(--white) !important;
+      border-bottom: none !important;
+      padding: 8px 16px;
+      font-size: 10.5px;
+      transition: background 0.15s;
+    }
+    .main-nav .nav-cta:hover {
+      background: var(--sage-mid);
+    }
+    .lang-switcher {
+      display: flex;
+      gap: 1px;
+      margin-left: 16px;
+      padding-left: 16px;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .lang-switcher a {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 10px 8px;
+      min-width: 30px;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.15s, background 0.15s;
+      border-bottom: none !important;
+    }
+    .lang-switcher a.active {
+      background: var(--sage);
+      color: var(--black);
+    }
+    .lang-switcher a:hover:not(.active) {
+      color: var(--white);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--white);
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav panel */
+    .mobile-nav {
+      display: none;
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 106px;
+      z-index: 198;
+      padding: 16px 24px 24px;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-nav a:hover { color: var(--white); }
+    .mobile-lang {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .mobile-lang a {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+      color: rgba(255,255,255,0.5) !important;
+      text-decoration: none;
+    }
+    .mobile-lang a.active {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: var(--black) !important;
+    }
+
+    /* ── Hero ──────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+      background: var(--dark-warm) url('assets/von-baeri-maja-exterior-marek-metslaid.jpg') center 60% / cover no-repeat;
+      border-bottom: 3px solid var(--sage);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(14,14,12,0.55) 0%,
+        rgba(14,14,12,0.78) 60%,
+        rgba(14,14,12,0.90) 100%
+      );
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 48px 72px;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--sage-mid);
+      padding-bottom: 5px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6.5vw, 76px);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      text-transform: lowercase;
+      color: var(--white);
+      line-height: 1.0;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-phone {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      padding: 0 8px 0 0;
+      margin-right: 4px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* ── Buttons ───────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      cursor: pointer;
+    }
+    .btn-black {
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 30px;
+    }
+    .btn-black:hover { background: var(--gray-700); }
+    .btn-sage {
+      background: var(--sage);
+      color: var(--black);
+      padding: 15px 30px;
+    }
+    .btn-sage:hover { background: var(--sage-mid); }
+    .btn-olive {
+      background: var(--olive-btn);
+      color: var(--white);
+      padding: 15px 30px;
+    }
+    .btn-olive:hover { background: var(--sage-dark); }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: var(--white);
+      padding: 13px 28px;
+    }
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+    .btn-outline-dark {
+      border: 2px solid var(--black);
+      color: var(--black);
+      padding: 13px 28px;
+    }
+    .btn-outline-dark:hover { background: var(--black); color: var(--white); }
+    .btn-outline-sage {
+      border: 2px solid var(--sage-dark);
+      color: var(--sage-dark);
+      padding: 13px 28px;
+    }
+    .btn-outline-sage:hover { background: var(--sage-dark); color: var(--white); }
+    .btn-sm { padding: 10px 20px; font-size: 10px; }
+
+    /* Arrow icon for buttons */
+    .btn-arrow::after {
+      content: '→';
+      font-size: 14px;
+      letter-spacing: 0;
+      font-style: normal;
+    }
+
+    /* ── Container ─────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* ── Section base ──────────────────────────────────── */
+    .section {
+      padding: 88px 0;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--black);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .section-text {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+    .heavy-rule {
+      width: 40px;
+      height: 3px;
+      background: var(--sage);
+      margin: 18px 0 36px;
+    }
+
+    /* ── SECTION 1: Action tiles (IVORY) ───────────────── */
+    .tiles-section {
+      background: var(--ivory);
+      padding: 80px 0 96px;
+    }
+    .tiles-section .section-title {
+      text-align: center;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    .tiles-section .section-label {
+      text-align: center;
+    }
+    .tiles-section .heavy-rule {
+      margin: 18px auto 48px;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--gray-200);
+    }
+
+    .action-tile {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      padding: 32px 28px;
+      text-decoration: none;
+      color: var(--black);
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.18s, background 0.18s;
+      position: relative;
+    }
+    .action-tile:hover {
+      background: var(--sage-light);
+      border-bottom-color: var(--sage-dark);
+    }
+    .action-tile.highlight {
+      background: var(--sage-light);
+      border-bottom-color: var(--sage);
+    }
+    .action-tile.highlight:hover {
+      background: var(--sage-bg);
+      border-bottom-color: var(--sage-dark);
+    }
+    .tile-icon {
+      font-size: 28px;
+      margin-bottom: 18px;
+      line-height: 1;
+    }
+    .tile-label {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .tile-sub {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--gray-500);
+      line-height: 1.55;
+      flex: 1;
+    }
+    .tile-arrow {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--sage-dark);
+      margin-top: 24px;
+      transition: transform 0.15s;
+    }
+    .action-tile:hover .tile-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ── SECTION 2: How to reach us (DARK) ────────────── */
+    .reach-section {
+      background: var(--section-dark);
+      color: var(--white);
+      padding: 88px 0;
+    }
+    .reach-section .section-label { color: var(--sage); }
+    .reach-section .section-title { color: var(--white); }
+    .reach-section .heavy-rule { background: var(--sage-mid); }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 680px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .step {
+      display: flex;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: flex-start;
+    }
+    .step-num {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      background: var(--sage);
+      color: var(--black);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .step-body h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .step-body p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.7;
+    }
+    .step-body a {
+      color: var(--sage);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── SECTION 3: After hours (DARK warm) ────────────── */
+    .afterhours-section {
+      background: #141410;
+      color: var(--white);
+      padding: 88px 0;
+      border-top: 1px solid rgba(155,173,149,0.2);
+    }
+    .afterhours-section .section-label { color: var(--sage); }
+    .afterhours-section .section-title { color: var(--white); }
+    .afterhours-section .heavy-rule { background: var(--sage); }
+    .afterhours-section .btn-outline-sage {
+      border-color: rgba(155,173,149,0.5);
+      color: var(--sage);
+    }
+    .afterhours-section .btn-outline-sage:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: var(--black);
+    }
+
+    .severity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3px;
+      background: rgba(255,255,255,0.04);
+    }
+    .severity-item {
+      background: rgba(255,255,255,0.03);
+      padding: 32px 28px;
+      border-left: 4px solid transparent;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .severity-item.s-critical { border-left-color: #C0392B; }
+    .severity-item.s-urgent   { border-left-color: #C87E3A; }
+    .severity-item.s-standard { border-left-color: var(--sage); }
+    .severity-item.s-digital  { border-left-color: var(--sage-mid); }
+    .severity-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .severity-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .severity-body p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+    .severity-body a {
+      color: var(--sage);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .severity-body strong { color: rgba(255,255,255,0.85); font-weight: 700; }
+
+    /* ── SECTION 4: Resources (IVORY) ─────────────────── */
+    .resources-section {
+      background: var(--ivory);
+      padding: 88px 0;
+      border-top: 1px solid var(--gray-200);
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      background: var(--gray-200);
+      margin-top: 48px;
+    }
+    .resource-tile {
+      background: var(--white);
+      padding: 32px 28px;
+      text-decoration: none;
+      color: var(--black);
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.18s, background 0.18s;
+      display: flex;
+      flex-direction: column;
+    }
+    .resource-tile:hover {
+      background: var(--sage-light);
+      border-bottom-color: var(--sage-dark);
+    }
+    .resource-tile-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .resource-tile-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .resource-tile-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray-500);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .resource-tile-cta {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-top: 24px;
+    }
+
+    /* ── SECTION 5: EPAK CTA (deep dark with sage) ─────── */
+    .epak-section {
+      background: var(--olive-btn);
+      padding: 64px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .epak-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .epak-text h3 {
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .epak-text p {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      max-width: 440px;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--olive-btn);
+      padding: 16px 36px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .btn-white:hover { background: var(--ivory); }
+
+    /* ── SECTION 6: Location (IVORY DEEP) ─────────────── */
+    .location-section {
+      background: var(--ivory-deep);
+      padding: 88px 0;
+      border-top: 1px solid var(--gray-200);
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--gray-200);
+    }
+    .contact-row {
+      display: flex;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--gray-200);
+      align-items: flex-start;
+    }
+    .contact-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      min-width: 110px;
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
+    .contact-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .contact-value a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .contact-value .note {
+      display: block;
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 3px;
+    }
+
+    .info-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-left: 4px solid var(--sage);
+      padding: 20px 24px;
+    }
+    .info-box p {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gray-700);
+      line-height: 1.65;
+    }
+    .info-box a {
+      color: var(--sage-dark);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .info-box strong { color: var(--black); font-weight: 700; }
+
+    /* ── Footer ────────────────────────────────────────── */
+    .site-footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.35);
+      padding: 56px 0 44px;
+      border-top: 3px solid var(--sage);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 28px;
+    }
+    .footer-brand .logo-name { color: var(--white); font-size: 20px; }
+    .footer-brand .logo-sub { font-size: 8.5px; }
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+    .footer-col h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 11.5px;
+    }
+    .footer-legal a {
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+    .footer-lang {
+      display: flex;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    .footer-lang a {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      padding: 5px 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    .footer-lang a.active {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: var(--black);
+    }
+    .noindex-tag {
+      background: rgba(155,173,149,0.1);
+      color: var(--sage);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid rgba(155,173,149,0.25);
+    }
+
+    /* ── Mobile floating CTA ───────────────────────────── */
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: var(--black);
+      border-top: 2px solid var(--sage);
+    }
+    .mobile-cta a {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 12px 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.15s, background 0.15s;
+    }
+    .mobile-cta a:last-child { border-right: none; }
+    .mobile-cta a:hover { color: var(--white); background: rgba(255,255,255,0.04); }
+    .mobile-cta .cta-icon { font-size: 18px; }
+
+    /* ── Utility ───────────────────────────────────────── */
+    .mt-lg { margin-top: 40px; }
+    .inline-link {
+      color: var(--sage-dark);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .section-dark .inline-link { color: var(--sage); }
+
+    /* ── Responsive ────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .action-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 960px) {
+      .header-inner { padding: 0 24px; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { padding: 64px 24px 64px; }
+      .container { padding: 0 24px; }
+      .severity-grid { grid-template-columns: 1fr; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: 1fr; gap: 44px; }
+      .epak-inner { flex-direction: column; align-items: flex-start; }
+      .section { padding: 64px 0; }
+    }
+
+    @media (max-width: 680px) {
+      .action-grid { grid-template-columns: 1fr; }
+      .emergency-bar { font-size: 12px; padding: 8px 16px; }
+      .hero h1 { font-size: clamp(30px, 9vw, 48px); }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .hero-phone { border-right: none; padding-right: 0; margin-right: 0; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .mobile-cta { display: flex; }
+      body { padding-bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Liigu põhisisu juurde</a>
+
+<!-- ── Emergency bar ─────────────────────────────────── -->
+<div class="emergency-bar" role="complementary" aria-label="Abi töövälisel ajal">
+  <strong>Töövälisel ajal:</strong>
+  <span>1220 — perearsti nõuandeliin (iga päev 8–22, eesti keeles, tasuta)</span>
+  <span class="sep">·</span>
+  <a href="tel:+37259110909">5 911 0909</a>
+  <a href="https://valvekliinik.ee" target="_blank" rel="noopener noreferrer">Valvekliinik</a>
+  <span>— samas majas, E–L (ET/EN/RU/FI)</span>
+</div>
+
+<!-- ── Header ────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <!-- Logo: always one line — white-space:nowrap enforced in CSS -->
+    <a href="/" class="logo" aria-label="SL Tervisekeskus — avaleht">
+      <span class="logo-name">sl tervisekeskus</span>
+      <span class="logo-sub">Perearstikeskus · Ülemiste · Tallinn</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="main-nav" aria-label="Põhinavigatsioon">
+      <a href="../sltk-merged/broneerimine.html">Teenused</a>
+      <a href="../sltk-merged/personal.html">Personal</a>
+      <a href="../sltk-merged/registreerumine.html" class="nav-cta">Registreeru nimistusse</a>
+      <a href="../sltk-merged/hinnakiri.html">Hinnakiri</a>
+      <a href="../sltk-merged/materjalid.html">Materjalid</a>
+      <a href="../sltk-merged/kontakt.html">Kontakt</a>
+      <div class="lang-switcher" aria-label="Keelevalik">
+        <a href="/"        class="active" hreflang="et" lang="et" aria-current="page">ET</a>
+        <a href="/en/"     hreflang="en"  lang="en">EN</a>
+        <a href="/ru/"     hreflang="ru"  lang="ru">RU</a>
+        <a href="/fi/"     hreflang="fi"  lang="fi">FI</a>
+      </div>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ava menüü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav panel -->
+<nav id="mobile-nav" class="mobile-nav" aria-label="Mobiilinavigatsioon">
+  <a href="../sltk-merged/broneerimine.html">Broneeri vastuvõtule</a>
+  <a href="../sltk-merged/retseptid.html">Kordusretsept</a>
+  <a href="../sltk-merged/toovoimetusleht.html">Töövõimetusleht</a>
+  <a href="../sltk-merged/analyysid.html">Analüüside tulemused</a>
+  <a href="../sltk-merged/toendid.html">Tervisetõendid</a>
+  <a href="../sltk-merged/personal.html">Personal</a>
+  <a href="../sltk-merged/registreerumine.html">Registreeru nimistusse</a>
+  <a href="../sltk-merged/hinnakiri.html">Hinnakiri</a>
+  <a href="../sltk-merged/materjalid.html">Materjalid</a>
+  <a href="../sltk-merged/toovaline-aeg.html">Töövälisel ajal</a>
+  <a href="../sltk-merged/kontakt.html">Kontakt</a>
+  <div class="mobile-lang">
+    <a href="/" class="active">ET</a>
+    <a href="/en/">EN</a>
+    <a href="/ru/">RU</a>
+    <a href="/fi/">FI</a>
+  </div>
+</nav>
+
+<!-- ── Main ──────────────────────────────────────────── -->
+<main id="main-content">
+
+  <!-- ── Hero ──────────────────────────────────────────── -->
+  <!-- PHOTO: von Baeri maja — LICENSING TBC before public launch; preview use only -->
+  <section class="hero" aria-label="Tervisekeskuse tutvustus">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Ülemiste Tervisemaja 2 · Sepapaja 12/1 · Tallinn</div>
+      <h1>sl tervisekeskus —<br>perearstikeskus<br>ülemistes.</h1>
+      <p class="hero-sub">
+        Broneeri aeg, esita küsimus ja telli retsept e-Perearstikeskuse kaudu — ööpäev läbi, ilma järjekorrata.
+      </p>
+      <div class="hero-ctas">
+        <a href="tel:+3726138887" class="hero-phone">+372 613 8887</a>
+        <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer"
+           class="btn btn-sage btn-arrow">e-Perearstikeskus</a>
+        <a href="../sltk-merged/registreerumine.html" class="btn btn-outline-white">Registreeru nimistusse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Action tiles: "Mida soovite teha?" (IVORY) ─────── -->
+  <section class="tiles-section" id="teenused" aria-labelledby="tiles-heading">
+    <div class="container">
+      <div class="section-label">Teile</div>
+      <h2 id="tiles-heading" class="section-title">Mida soovite teha?</h2>
+      <div class="heavy-rule"></div>
+
+      <div class="action-grid" role="list">
+
+        <a href="https://eperearstikeskus.ee/patient/welcome"
+           target="_blank" rel="noopener noreferrer"
+           class="action-tile highlight" role="listitem"
+           aria-label="Broneeri aeg e-Perearstikeskuses">
+          <div class="tile-icon">📅</div>
+          <div class="tile-label">Broneeri aeg vastuvõtule</div>
+          <div class="tile-sub">e-Perearstikeskus (eelistatud) · telefon +372 613 8887</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/retseptid.html" class="action-tile" role="listitem">
+          <div class="tile-icon">💊</div>
+          <div class="tile-label">Telli kordusretsept</div>
+          <div class="tile-sub">5 tööpäeva · e-Perearstikeskus</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/toovoimetusleht.html" class="action-tile" role="listitem">
+          <div class="tile-icon">📋</div>
+          <div class="tile-label">Töövõimetusleht</div>
+          <div class="tile-sub">Teata haigestumisest samal päeval</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/analyysid.html" class="action-tile" role="listitem">
+          <div class="tile-icon">🔬</div>
+          <div class="tile-label">Analüüside tulemused</div>
+          <div class="tile-sub">terviseportaal.ee · e-Perearstikeskus</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/registreerumine.html" class="action-tile" role="listitem">
+          <div class="tile-icon">📝</div>
+          <div class="tile-label">Registreeru nimistusse</div>
+          <div class="tile-sub">Liitu meie perearstide nimistuga</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/materjalid.html" class="action-tile" role="listitem">
+          <div class="tile-icon">📚</div>
+          <div class="tile-label">Teabeallikad ja juhendid</div>
+          <div class="tile-sub">KKK, sümptomijuhendid, praktilised materjalid</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/toendid.html" class="action-tile" role="listitem">
+          <div class="tile-icon">📄</div>
+          <div class="tile-label">Tervisetõendid</div>
+          <div class="tile-sub">Juhiluba, töötervishoid, relvaluba…</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+        <a href="../sltk-merged/en/valistootajale.html" class="action-tile" role="listitem">
+          <div class="tile-icon">🌍</div>
+          <div class="tile-label">For foreign workers</div>
+          <div class="tile-sub">How to register · what's covered · EN/RU/FI</div>
+          <div class="tile-arrow">→</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How to reach us (DARK) ─────────────────────────── -->
+  <section class="reach-section" aria-labelledby="reach-heading">
+    <div class="container">
+      <div class="section-label">Kontakt</div>
+      <h2 id="reach-heading" class="section-title">Kuidas meie poole pöörduda</h2>
+      <div class="heavy-rule"></div>
+      <div class="step-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Mitteurgentne küsimus, retsept või konsultatsioon</h4>
+            <p>Pöörduge meie poole
+              <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">e-Perearstikeskuse</a>
+              kaudu. See on kõige kiirem viis — saate sõnumi saata ja aja broneerida igal ajal, ootejärjekorra ja telefonikõnuta.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Soovite helistada</h4>
+            <p>Vastuvõtt: <a href="tel:+3726138887">+372 613 8887</a> (E–R 8:00–18:00).
+               Terviseandmeid e-maili teel ei edasta — andmekaitselistel põhjustel.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Vastuvõtule tullakse eelregistreerimisega</h4>
+            <p>Broneeri <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">e-Perearstikeskuses</a>
+               või telefoni teel. Elavas järjekorras vastuvõttu ei toimu. Iga pereliige vajab eraldi broneeringut.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Töövälisel ajal</h4>
+            <p>Kiireloomuliste küsimustega — <a href="../sltk-merged/toovaline-aeg.html">vaata juhendit, kuhu pöörduda</a>. Eluohtlikul juhul helista kohe <strong style="color:rgba(255,255,255,0.85);">112</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── After hours (DARK warm) ────────────────────────── -->
+  <section class="afterhours-section" aria-labelledby="afterhours-heading">
+    <div class="container">
+      <div class="section-label">Hädaolukordade juhend</div>
+      <h2 id="afterhours-heading" class="section-title">Töövälisel ajal — kuhu pöörduda?</h2>
+      <div class="heavy-rule"></div>
+      <div class="severity-grid">
+        <div class="severity-item s-critical">
+          <div class="severity-icon">🚨</div>
+          <div class="severity-body">
+            <h4>Eluohtlik olukord</h4>
+            <p>Helista <strong>112</strong>. Kiirabi tuleb kohale. Südameinfarkt, insult, tõsine trauma, teadvusetus.</p>
+          </div>
+        </div>
+        <div class="severity-item s-urgent">
+          <div class="severity-icon">🏥</div>
+          <div class="severity-body">
+            <h4>Tõsine, kuid mitte eluohtlik</h4>
+            <p><strong>EMO</strong> — haigla erakorralise meditsiini osakond. Pöörduge lähimasse haiglasse. Töötab ööpäev läbi.</p>
+          </div>
+        </div>
+        <div class="severity-item s-standard">
+          <div class="severity-icon">🏢</div>
+          <div class="severity-body">
+            <h4>Vajate samal päeval arsti — töövälisel ajal</h4>
+            <p><a href="https://valvekliinik.ee" target="_blank" rel="noopener noreferrer">Valvekliinik</a>
+               — <a href="tel:+37259110909">5 911 0909</a>.
+               Arstivastuvõtt ilma saatekirjata samas hoones (von Baeri maja), E–L. Tasuline. Teenindus ET/EN/RU/FI.</p>
+          </div>
+        </div>
+        <div class="severity-item s-digital">
+          <div class="severity-icon">📞</div>
+          <div class="severity-body">
+            <h4>Vajate nõu, ei ole hädaolukord</h4>
+            <p><strong>1220</strong> — perearsti nõuandeliin. Iga päev 8:00–22:00, eesti keeles, tasuta. <a href="https://www.1220.ee" target="_blank" rel="noopener noreferrer">1220.ee</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-lg">
+        <a href="../sltk-merged/toovaline-aeg.html" class="btn btn-outline-sage btn-sm btn-arrow">Vaata täpsemat juhendit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Resources teaser (IVORY) ───────────────────────── -->
+  <section class="resources-section" aria-labelledby="resources-heading">
+    <div class="container">
+      <div class="section-label">Patsiendile</div>
+      <h2 id="resources-heading" class="section-title">Teabeallikad ja sümptomijuhendid</h2>
+      <div class="heavy-rule"></div>
+      <p class="section-text">Praktilised juhendid levinumate tervisemuredega toimetulekuks — millal pöörduda meie poole, millal EMO-sse.</p>
+
+      <div class="resource-grid">
+        <a href="../sltk-merged/materjalid/kkk.html" class="resource-tile">
+          <div class="resource-tile-icon">❓</div>
+          <div class="resource-tile-title">Korduma kippuvad küsimused</div>
+          <div class="resource-tile-desc">Kuidas broneerida, mis maksab, kuidas nimistusse registreeruda — kõige sagedamini küsitavad.</div>
+          <div class="resource-tile-cta">Loe →</div>
+        </a>
+        <a href="../sltk-merged/materjalid/nohu.html" class="resource-tile">
+          <div class="resource-tile-icon">🤧</div>
+          <div class="resource-tile-title">Nohu ja palavik</div>
+          <div class="resource-tile-desc">Mida teha ja millal meie poole pöörduda. Kodused nõuanded esimesteks päevadeks.</div>
+          <div class="resource-tile-cta">Loe →</div>
+        </a>
+        <a href="../sltk-merged/materjalid/kuhu-pooruda.html" class="resource-tile">
+          <div class="resource-tile-icon">🗺️</div>
+          <div class="resource-tile-title">Kuhu pöörduda tervisemurega</div>
+          <div class="resource-tile-desc">112, EMO, 1220, SL Tervisekeskus, Valvekliinik — täielik juhis õige koha leidmiseks.</div>
+          <div class="resource-tile-cta">Loe →</div>
+        </a>
+      </div>
+
+      <div class="mt-lg">
+        <a href="../sltk-merged/materjalid.html" class="btn btn-outline-dark btn-sm btn-arrow">Kõik materjalid</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── e-Perearstikeskus CTA (olive/green) ─────────────── -->
+  <section class="epak-section" aria-label="e-Perearstikeskus CTA">
+    <div class="container">
+      <div class="epak-inner">
+        <div class="epak-text">
+          <h3>e-Perearstikeskus</h3>
+          <p>Broneeri aeg, telli retsept, saada sõnum meeskonnale — ööpäev läbi, ilma järjekorrata.</p>
+        </div>
+        <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer"
+           class="btn-white btn-arrow">Ava e-Perearstikeskus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Location summary (IVORY DEEP) ─────────────────── -->
+  <section class="location-section" aria-labelledby="location-heading">
+    <div class="container">
+      <div class="section-label">Asukoht ja vastuvõtt</div>
+      <h2 id="location-heading" class="section-title">Praktilised andmed</h2>
+      <div class="heavy-rule"></div>
+      <div class="location-grid">
+        <div>
+          <div class="contact-block">
+            <div class="contact-row">
+              <div class="contact-label">Aadress</div>
+              <div class="contact-value">
+                Sepapaja 12/1, III korrus<br>
+                11415 Tallinn
+                <span class="note">Ülemiste Tervisemaja 2 (von Baeri maja)</span>
+                <a href="https://maps.google.com/?q=Sepapaja+12%2F1+Tallinn" target="_blank" rel="noopener noreferrer"
+                   style="font-size:12px;color:var(--sage-dark);display:block;margin-top:8px;">Kaart ja suunad →</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Telefon</div>
+              <div class="contact-value">
+                <a href="tel:+3726138887" style="font-size:20px;font-weight:700;letter-spacing:-0.02em;">+372 613 8887</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Vastuvõtt</div>
+              <div class="contact-value">
+                Esmaspäev–reede 8:00–18:00
+                <span class="note">Lasteaeg: kolmapäeviti ja reedeti</span>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Broneerimine</div>
+              <div class="contact-value">
+                <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">e-Perearstikeskus</a>
+                · telefon
+                <span class="note">Eelnev registreerimine nõutav — elavas järjekorras vastuvõttu ei toimu</span>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Tasumine</div>
+              <div class="contact-value">
+                Kaardiga kohapeal (kabinet 104)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="info-boxes">
+            <div class="info-box">
+              <p><strong>E-post terviseasjades:</strong> Terviseandmeid ei lahendata e-maili teel — andmekaitselistel põhjustel. Kasutage <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">e-Perearstikeskust</a>.</p>
+            </div>
+            <div class="info-box">
+              <p><strong>Samas hoones</strong> asub ka <a href="https://valvekliinik.ee" target="_blank" rel="noopener noreferrer">Valvekliinik</a> — eraldi teenuseosutaja, arstivastuvõtt õhtuti ja nädalavahetuseti.</p>
+            </div>
+            <div class="info-box">
+              <p><strong>Nimistusse registreerimine:</strong> Uued patsiendid on oodatud.
+                 <a href="../sltk-merged/registreerumine.html">Vaata juhiseid →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="site-footer" aria-label="Jalus">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="SL Tervisekeskus — avaleht">
+          <span class="logo-name">sl tervisekeskus</span>
+          <span class="logo-sub">Perearstikeskus · Ülemiste · Tallinn</span>
+        </a>
+        <p class="footer-tagline">
+          Sepapaja 12/1, III korrus · 11415 Tallinn<br>
+          +372 613 8887 · E–R 8:00–18:00
+        </p>
+        <div class="footer-lang">
+          <a href="/" class="active">ET</a>
+          <a href="/en/">EN</a>
+          <a href="/ru/">RU</a>
+          <a href="/fi/">FI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Teenused</h4>
+        <ul>
+          <li><a href="../sltk-merged/broneerimine.html">Broneeri aeg</a></li>
+          <li><a href="../sltk-merged/retseptid.html">Kordusretsept</a></li>
+          <li><a href="../sltk-merged/toovoimetusleht.html">Töövõimetusleht</a></li>
+          <li><a href="../sltk-merged/analyysid.html">Analüüside tulemused</a></li>
+          <li><a href="../sltk-merged/toendid.html">Tervisetõendid</a></li>
+          <li><a href="../sltk-merged/toovaline-aeg.html">Töövälisel ajal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Patsiendile</h4>
+        <ul>
+          <li><a href="../sltk-merged/registreerumine.html">Registreeru nimistusse</a></li>
+          <li><a href="../sltk-merged/hinnakiri.html">Hinnakiri</a></li>
+          <li><a href="../sltk-merged/materjalid.html">Materjalid</a></li>
+          <li><a href="../sltk-merged/personal.html">Personal</a></li>
+          <li><a href="../sltk-merged/kontakt.html">Kontakt</a></li>
+          <li><a href="../sltk-merged/en/valistootajale.html">For foreign workers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Juriidiline</h4>
+        <ul>
+          <li><a href="../sltk-merged/privaatsuspoliitika.html">Privaatsuspoliitika</a></li>
+          <li><a href="../sltk-merged/vilepuhuja.html">Vilepuhuja kaitse</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 SL Tervisekeskus OÜ · reg 17473441 · Sepapaja 12/1, 11415 Tallinn</span>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <a href="../sltk-merged/privaatsuspoliitika.html">Privaatsuspoliitika</a>
+        <a href="../sltk-merged/vilepuhuja.html">Vilepuhuja kaitse</a>
+        <span class="noindex-tag">Eelvaade · Noindex</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile floating CTA bar -->
+<div class="mobile-cta" role="complementary" aria-label="Kiirtoimingud">
+  <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">
+    <span class="cta-icon">📅</span>Broneeri
+  </a>
+  <a href="tel:+3726138887">
+    <span class="cta-icon">📞</span>Helista
+  </a>
+  <a href="../sltk-merged/registreerumine.html">
+    <span class="cta-icon">📝</span>Registreeru
+  </a>
+</div>
+
+<script>
+  // Hamburger toggle
+  (function() {
+    var btn = document.getElementById('hamburger');
+    var nav = document.getElementById('mobile-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function() {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  })();
+</script>
+</body>
+</html>
