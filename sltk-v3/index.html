@@ -325,7 +325,7 @@
       min-height: 520px;
       display: flex;
       align-items: flex-end;
-      background: var(--dark-warm) url('assets/von-baeri-maja-exterior-marek-metslaid.jpg') center 60% / cover no-repeat;
+      background: var(--dark-warm) url('assets/hero-poster.jpg') center center / cover no-repeat;
       border-bottom: 3px solid var(--sage);
     }
     .hero-overlay {
@@ -339,6 +339,21 @@
       );
       pointer-events: none;
     }
+    /* ── Hero background video ──────────────────────────── */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @media (max-width: 640px) {
+      .hero-video { display: none; }
+    }
+
     .hero-inner {
       position: relative;
       z-index: 1;
@@ -1069,6 +1084,9 @@
   <!-- ── Hero ──────────────────────────────────────────── -->
   <!-- PHOTO: von Baeri maja — LICENSING TBC before public launch; preview use only -->
   <section class="hero" aria-label="Tervisekeskuse tutvustus">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">Ülemiste Tervisemaja 2 · Sepapaja 12/1 · Tallinn</div>
