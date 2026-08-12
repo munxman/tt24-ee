@@ -101,7 +101,7 @@
       font-family: 'Poppins', system-ui, -apple-system, sans-serif;
       background: var(--ivory);
       color: var(--black);
-      font-size: 17px;
+      font-size: 19px;
       line-height: 1.7;
     }
 
@@ -482,7 +482,7 @@
       margin-bottom: 14px;
     }
     .section-title {
-      font-size: clamp(28px, 4.5vw, 52px);
+      font-size: clamp(24px, 3.9vw, 45px);
       font-weight: 800;
       letter-spacing: -0.04em;
       text-transform: lowercase;
@@ -491,7 +491,7 @@
       margin-bottom: 16px;
     }
     .section-text {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 300;
       color: var(--gray-500);
       max-width: 600px;
@@ -533,7 +533,8 @@
       display: flex;
       flex-direction: column;
       background: var(--white);
-      padding: 18px 20px;
+      padding: 28px 24px;
+      min-height: 120px;
       text-decoration: none;
       color: var(--black);
       border-bottom: 3px solid transparent;
@@ -554,7 +555,7 @@
     }
 
     .tile-label {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: -0.01em;
       color: var(--black);
@@ -562,7 +563,7 @@
       line-height: 1.3;
     }
     .tile-sub {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 400;
       color: var(--gray-500);
       line-height: 1.4;
@@ -607,14 +608,14 @@
       margin-top: 3px;
     }
     .step-body h4 {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 8px;
       letter-spacing: -0.01em;
     }
     .step-body p {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 300;
       color: rgba(255,255,255,0.62);
       line-height: 1.7;
@@ -665,13 +666,13 @@
     .severity-item.s-digital  { border-left-color: var(--sage-mid); }
 
     .severity-body h4 {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 8px;
     }
     .severity-body p {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 300;
       color: rgba(255,255,255,0.6);
       line-height: 1.65;
@@ -712,14 +713,14 @@
     }
 
     .resource-tile-title {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--black);
       margin-bottom: 10px;
       letter-spacing: -0.01em;
     }
     .resource-tile-desc {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 300;
       color: var(--gray-500);
       line-height: 1.65;
@@ -1106,7 +1107,6 @@
   <!-- ── Action tiles: "Mida soovite teha?" (IVORY) ─────── -->
   <section class="tiles-section" id="teenused" aria-labelledby="tiles-heading">
     <div class="container">
-      <div class="section-label">Teile</div>
       <h2 id="tiles-heading" class="section-title">Mida soovite teha?</h2>
       <div class="heavy-rule"></div>
 
@@ -1162,7 +1162,6 @@
   <!-- ── How to reach us (DARK) ─────────────────────────── -->
   <section class="reach-section" aria-labelledby="reach-heading">
     <div class="container">
-      <div class="section-label">Kontakt</div>
       <h2 id="reach-heading" class="section-title">Kuidas meie poole pöörduda</h2>
       <div class="heavy-rule"></div>
       <div class="step-list">
@@ -1205,7 +1204,6 @@
   <!-- ── After hours (DARK warm) ────────────────────────── -->
   <section class="afterhours-section" aria-labelledby="afterhours-heading">
     <div class="container">
-      <div class="section-label">Hädaolukordade juhend</div>
       <h2 id="afterhours-heading" class="section-title">Töövälisel ajal — kuhu pöörduda?</h2>
       <div class="heavy-rule"></div>
       <div class="severity-grid">
@@ -1244,8 +1242,7 @@
   <!-- ── Resources teaser (IVORY) ───────────────────────── -->
   <section class="resources-section" aria-labelledby="resources-heading">
     <div class="container">
-      <div class="section-label">Patsiendile</div>
-      <h2 id="resources-heading" class="section-title">Teabeallikad ja sümptomijuhendid</h2>
+      <h2 id="resources-heading" class="section-title">Patsiendile</h2>
       <div class="heavy-rule"></div>
       <p class="section-text">Praktilised juhendid levinumate tervisemuredega toimetulekuks — millal pöörduda meie poole, millal EMO-sse.</p>
 
@@ -1290,8 +1287,7 @@
   <!-- ── Location summary (IVORY DEEP) ─────────────────── -->
   <section class="location-section" aria-labelledby="location-heading">
     <div class="container">
-      <div class="section-label">Asukoht ja vastuvõtt</div>
-      <h2 id="location-heading" class="section-title">Praktilised andmed</h2>
+      <h2 id="location-heading" class="section-title">Asukoht ja vastuvõtt</h2>
       <div class="heavy-rule"></div>
       <div class="location-grid">
         <div>
