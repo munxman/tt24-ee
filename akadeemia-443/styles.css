@@ -317,6 +317,7 @@ h1 {
 .women-media img { min-width: 0; object-position: center 18%; }
 .women-media img + img { border-left: 2px solid var(--paper); }
 .business-card img { object-position: center 42%; }
+.personal-card > img { object-position: center 24%; }
 .program-card[id] { scroll-margin-top: 120px; }
 .program-audience {
   position: absolute;
