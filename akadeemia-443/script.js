@@ -16,6 +16,38 @@
     });
   }
 
+  const heroMedia = document.querySelector('.hero-media');
+  const heroVideo = document.querySelector('.hero-video');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const desktopVideo = window.matchMedia('(min-width: 641px)');
+
+  const updateHeroVideo = () => {
+    if (!heroMedia || !heroVideo) return;
+
+    if (reducedMotion.matches || !desktopVideo.matches) {
+      heroMedia.classList.remove('video-playing');
+      heroVideo.pause();
+      return;
+    }
+
+    if (!heroVideo.src) {
+      heroVideo.src = heroVideo.dataset.src;
+      heroVideo.load();
+    }
+
+    const playAttempt = heroVideo.play();
+    if (playAttempt) {
+      playAttempt.then(() => heroMedia.classList.add('video-playing')).catch(() => {
+        heroMedia.classList.remove('video-playing');
+      });
+    }
+  };
+
+  heroVideo?.addEventListener('error', () => heroMedia?.classList.remove('video-playing'));
+  reducedMotion.addEventListener('change', updateHeroVideo);
+  desktopVideo.addEventListener('change', updateHeroVideo);
+  updateHeroVideo();
+
   document.querySelectorAll('.faq-question').forEach((button) => {
     button.addEventListener('click', () => {
       const answer = document.getElementById(button.getAttribute('aria-controls'));
