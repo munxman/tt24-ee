@@ -191,7 +191,7 @@
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5.5h16M2 10h16M2 14.5h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
       </button>
       <nav class="nav" id="main-nav" aria-label="Põhinavigatsioon">
-        <a href="#baaskursus">Baaskursus</a>
+        <a href="#personaaltreening">Personaaltreening</a>
         <a href="#naistele">Naistele</a>
         <a href="#lastele">Lastele ja koolidele</a>
         <a href="#ettevotetele">Ettevõtetele</a>
@@ -210,7 +210,7 @@
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="container hero-content">
         <div class="hero-copy">
-          <p class="eyebrow">Praktiline enesekaitse Tallinnas</p>
+          <p class="eyebrow">Praktiline enesekaitse</p>
           <h1>Märka varem.<br>Väldi targalt.<br>Tegutse, kui vaja.</h1>
           <p class="hero-lead">Enamik olukordi laheneb kõige paremini enne füüsilist kontakti. Kui vältida ei ole enam võimalik, aitab treening säilitada tegutsemisvõime ja liikuda selge eesmärgiga turvalisuse poole.</p>
           <div class="hero-actions">
@@ -386,33 +386,117 @@
         </div>
         <div class="team-grid">
           <figure class="person">
-            <img class="person-photo" src="assets/janek.webp" alt="Juhtiv instruktor Janek" loading="lazy" width="1000" height="1000">
-            <figcaption><strong>Janek</strong><span>Juhtiv instruktor</span></figcaption>
+            <button class="person-open" type="button" data-instructor="janek" aria-haspopup="dialog" aria-label="Loe Janek Junja tausta kohta">
+              <img class="person-photo" src="assets/janek.webp" alt="Juhtiv instruktor Janek" loading="lazy" width="1000" height="1000">
+              <figcaption><strong>Janek</strong><span>Juhtiv instruktor</span><span class="person-more">Vaata tausta →</span></figcaption>
+            </button>
           </figure>
           <figure class="person">
-            <img class="person-photo" src="assets/fred.webp" alt="Vaneminstruktor Fred" loading="lazy" width="1000" height="1000">
-            <figcaption><strong>Fred</strong><span>Vaneminstruktor</span></figcaption>
+            <button class="person-open" type="button" data-instructor="fred" aria-haspopup="dialog" aria-label="Loe Fred Vetevooli tausta kohta">
+              <img class="person-photo" src="assets/fred.webp" alt="Vaneminstruktor Fred" loading="lazy" width="1000" height="1000">
+              <figcaption><strong>Fred</strong><span>Vaneminstruktor</span><span class="person-more">Vaata tausta →</span></figcaption>
+            </button>
           </figure>
           <figure class="person">
-            <div class="person-photo person-placeholder" role="img" aria-label="Vaneminstruktor Mart, portree lisamisel"><span>M</span></div>
-            <figcaption><strong>Mart</strong><span>Vaneminstruktor</span></figcaption>
+            <button class="person-open" type="button" data-instructor="mart" aria-haspopup="dialog" aria-label="Loe Mart Klamase tausta kohta">
+              <div class="person-photo person-placeholder" role="img" aria-label="Vaneminstruktor Mart, portree lisamisel"><span>M</span></div>
+              <figcaption><strong>Mart</strong><span>Vaneminstruktor</span><span class="person-more">Vaata tausta →</span></figcaption>
+            </button>
           </figure>
           <figure class="person">
-            <div class="person-photo person-placeholder" role="img" aria-label="Vaneminstruktor Kaspar, portree lisamisel"><span>K</span></div>
-            <figcaption><strong>Kaspar</strong><span>Vaneminstruktor</span></figcaption>
+            <button class="person-open" type="button" data-instructor="kaspar" aria-haspopup="dialog" aria-label="Loe Kaspar Haaveli tausta kohta">
+              <div class="person-photo person-placeholder" role="img" aria-label="Vaneminstruktor Kaspar, portree lisamisel"><span>K</span></div>
+              <figcaption><strong>Kaspar</strong><span>Vaneminstruktor</span><span class="person-more">Vaata tausta →</span></figcaption>
+            </button>
           </figure>
           <figure class="person">
-            <img class="person-photo" src="assets/sandra.webp" alt="Instruktor Sandra" loading="lazy" width="300" height="300">
-            <figcaption><strong>Sandra</strong><span>Instruktor</span></figcaption>
+            <button class="person-open" type="button" data-instructor="sandra" aria-haspopup="dialog" aria-label="Loe instruktor Sandra kohta">
+              <img class="person-photo" src="assets/sandra.webp" alt="Instruktor Sandra" loading="lazy" width="300" height="300">
+              <figcaption><strong>Sandra</strong><span>Instruktor</span><span class="person-more">Vaata lähemalt →</span></figcaption>
+            </button>
           </figure>
           <figure class="person">
-            <img class="person-photo" src="assets/eike.webp" alt="Instruktor Eike" loading="lazy" width="300" height="300">
-            <figcaption><strong>Eike</strong><span>Instruktor</span></figcaption>
+            <button class="person-open" type="button" data-instructor="eike" aria-haspopup="dialog" aria-label="Loe instruktor Eike kohta">
+              <img class="person-photo" src="assets/eike.webp" alt="Instruktor Eike" loading="lazy" width="300" height="300">
+              <figcaption><strong>Eike</strong><span>Instruktor</span><span class="person-more">Vaata lähemalt →</span></figcaption>
+            </button>
           </figure>
         </div>
         <p class="team-note">Akadeemia instruktorid õpetavad praktilist enesekaitset selge, turvalise ja järk-järgult realistlikuma metoodikaga.</p>
+
+        <template id="instructor-janek">
+          <p class="dialog-kicker">Juhtiv instruktor</p>
+          <h2 id="instructor-dialog-title">Janek Junja</h2>
+          <p class="dialog-level">Krav Maga tase G5</p>
+          <p>Janek on KMG Eesti direktor ja peainstruktor. Ta on õppinud võitluskunste alates 1992. aastast, sealhulgas sõjaväe ja politsei käsivõitlust, hapkidot ning eskrimat.</p>
+          <p>Krav Maga väljaõppe on ta läbinud Soomes, Iisraelis, Hollandis ja Slovakkias.</p>
+          <h3>Valik läbitud instruktorikoolitusi</h3>
+          <ul>
+            <li>Military ja Special Unit kursused</li>
+            <li>VIP &amp; 3rd Party Protection Instructor Course</li>
+            <li>Law Enforcement Instructor Course</li>
+            <li>Krav Maga for SWAT &amp; SF Instructor Course</li>
+            <li>Kids ja Women Instructor Course</li>
+            <li>Ground Fighting, Combat &amp; Fighting ning Military Instructor Course</li>
+          </ul>
+        </template>
+
+        <template id="instructor-fred">
+          <p class="dialog-kicker">Vaneminstruktor</p>
+          <h2 id="instructor-dialog-title">Fred Vetevool</h2>
+          <p class="dialog-level">Krav Maga tase G2</p>
+          <p>Fred läbis 2018. aastal KMG Eesti esimese rahvusvaheliselt litsentseeritud Krav Maga instruktorite baaskursuse. Koolituse maht oli 180 tundi.</p>
+          <h3>Valik läbitud koolitusi</h3>
+          <ul>
+            <li>Eksperttaseme seminarid Soomes 2018–2019</li>
+            <li>PGE Camp Iisraelis 2019</li>
+            <li>Ground Fighting Course 2019 ja 2021</li>
+            <li>Combat &amp; Fighting Instructor Course 2019</li>
+            <li>Military Instructor Course 2019</li>
+          </ul>
+        </template>
+
+        <template id="instructor-mart">
+          <p class="dialog-kicker">Vaneminstruktor</p>
+          <h2 id="instructor-dialog-title">Mart Klamas</h2>
+          <p class="dialog-level">Krav Maga tase P4</p>
+          <p>Mart kuulub Eesti Krav Maga Akadeemia vaneminstruktorite hulka.</p>
+        </template>
+
+        <template id="instructor-kaspar">
+          <p class="dialog-kicker">Vaneminstruktor</p>
+          <h2 id="instructor-dialog-title">Kaspar Haavel</h2>
+          <p class="dialog-level">Krav Maga tase P5</p>
+          <p>Kaspari varasem kogemus hõlmab Wadō-ryū karated ja Hokutoryu Ju-Jutsut.</p>
+          <h3>Valik läbitud koolitusi ja kogemusi</h3>
+          <ul>
+            <li>Eesti Kaitseväe käsivõitluse instruktori kursus, 110 tundi</li>
+            <li>Military Instructor Course 2019</li>
+            <li>Ground Fighting Course 2021</li>
+            <li>Kaitseliidu liige alates 2008. aastast</li>
+          </ul>
+        </template>
+
+        <template id="instructor-sandra">
+          <p class="dialog-kicker">Instruktor</p>
+          <h2 id="instructor-dialog-title">Sandra</h2>
+          <p>Sandra kuulub Eesti Krav Maga Akadeemia instruktorite hulka.</p>
+        </template>
+
+        <template id="instructor-eike">
+          <p class="dialog-kicker">Instruktor</p>
+          <h2 id="instructor-dialog-title">Eike</h2>
+          <p>Eike kuulub Eesti Krav Maga Akadeemia instruktorite hulka.</p>
+        </template>
       </div>
     </section>
+
+    <dialog class="instructor-dialog" id="instructor-dialog" aria-labelledby="instructor-dialog-title">
+      <div class="instructor-dialog-panel">
+        <button class="instructor-dialog-close" type="button" data-dialog-close aria-label="Sulge instruktori tutvustus">×</button>
+        <div class="instructor-dialog-content" data-instructor-content></div>
+      </div>
+    </dialog>
 
     <section class="section section-sand" id="kkk" aria-labelledby="faq-title">
       <div class="container faq-layout">

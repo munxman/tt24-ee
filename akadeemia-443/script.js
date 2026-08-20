@@ -64,4 +64,37 @@
       if (answer) answer.style.maxHeight = expanded ? '0px' : `${answer.scrollHeight}px`;
     });
   });
+
+  const instructorDialog = document.getElementById('instructor-dialog');
+  const instructorContent = instructorDialog?.querySelector('[data-instructor-content]');
+  const dialogClose = instructorDialog?.querySelector('[data-dialog-close]');
+
+  document.querySelectorAll('[data-instructor]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const template = document.getElementById(`instructor-${button.dataset.instructor}`);
+      if (!instructorDialog || !instructorContent || !template) return;
+
+      instructorContent.replaceChildren(template.content.cloneNode(true));
+      document.body.classList.add('dialog-open');
+
+      if (typeof instructorDialog.showModal === 'function') {
+        instructorDialog.showModal();
+      } else {
+        instructorDialog.setAttribute('open', '');
+      }
+    });
+  });
+
+  const closeInstructorDialog = () => {
+    if (!instructorDialog) return;
+    if (typeof instructorDialog.close === 'function') instructorDialog.close();
+    else instructorDialog.removeAttribute('open');
+    document.body.classList.remove('dialog-open');
+  };
+
+  dialogClose?.addEventListener('click', closeInstructorDialog);
+  instructorDialog?.addEventListener('click', (event) => {
+    if (event.target === instructorDialog) closeInstructorDialog();
+  });
+  instructorDialog?.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 })();

@@ -415,13 +415,65 @@ h1 {
 
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px 18px; }
 .person { margin: 0; }
-.person-photo { aspect-ratio: 1 / 1.08; width: 100%; height: auto; object-fit: cover; object-position: center top; filter: saturate(.72); background: #ddd7cf; }
+.person-open { width: 100%; padding: 0; border: 0; background: transparent; color: var(--ink); text-align: left; cursor: pointer; }
+.person-open:focus-visible { outline: 3px solid rgba(207,111,75,.42); outline-offset: 5px; }
+.person-photo { aspect-ratio: 1 / 1.08; width: 100%; height: auto; object-fit: cover; object-position: center top; filter: saturate(.72); background: #ddd7cf; transition: filter .2s ease, transform .2s ease; }
+.person-open:hover .person-photo { filter: saturate(.9); transform: translateY(-2px); }
 .person-placeholder { display: grid; place-items: center; color: rgba(255,255,255,.82); background: linear-gradient(145deg, #35483f, #14261f); filter: none; }
 .person figcaption { padding: 18px 2px 0; }
 .person strong { display: block; font-family: var(--display); font-size: 20px; }
 .person span { display: block; margin-top: 3px; color: var(--moss); font-size: 13px; }
+.person span.person-more { margin-top: 11px; color: var(--clay-dark); font-size: 12px; font-weight: 800; }
 .person-placeholder > span { margin: 0; color: rgba(255,255,255,.82); font-family: "Manrope", sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 300; letter-spacing: .04em; }
 .team-note { max-width: 760px; margin: 38px 0 0; color: var(--ink-2); }
+
+body.dialog-open { overflow: hidden; }
+.instructor-dialog {
+  width: min(580px, 100%);
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+}
+.instructor-dialog::backdrop { background: rgba(8,18,14,.68); backdrop-filter: blur(3px); }
+.instructor-dialog-panel {
+  position: relative;
+  min-height: 100%;
+  padding: 72px 56px 54px;
+  overflow-y: auto;
+  background: var(--paper);
+  box-shadow: -18px 0 54px rgba(0,0,0,.22);
+}
+.instructor-dialog-close {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+}
+.instructor-dialog-close:hover { border-color: var(--clay-dark); color: var(--clay-dark); }
+.instructor-dialog-close:focus-visible { outline: 3px solid rgba(207,111,75,.42); outline-offset: 3px; }
+.instructor-dialog-content { max-width: 460px; }
+.instructor-dialog-content .dialog-kicker { margin: 0 0 12px; color: var(--clay-dark); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.instructor-dialog-content h2 { margin: 0; font-size: clamp(36px, 6vw, 54px); line-height: 1.02; letter-spacing: -.04em; }
+.instructor-dialog-content .dialog-level { margin: 10px 0 30px; color: var(--moss); font-size: 14px; font-weight: 800; }
+.instructor-dialog-content h3 { margin: 30px 0 12px; font-size: 18px; }
+.instructor-dialog-content p { margin: 0 0 16px; color: var(--ink-2); }
+.instructor-dialog-content ul { margin: 0; padding-left: 20px; color: var(--ink-2); }
+.instructor-dialog-content li + li { margin-top: 9px; }
 
 .faq-layout { display: grid; grid-template-columns: .63fr 1.37fr; gap: 88px; align-items: start; }
 .faq-intro { position: sticky; top: 118px; }
@@ -530,6 +582,9 @@ h1 {
   .course-reassurance { grid-template-columns: 1fr; gap: 10px; padding: 22px; }
   .team-grid { grid-template-columns: 1fr 1fr; }
   .person strong { font-size: 17px; }
+  .instructor-dialog { width: 100%; }
+  .instructor-dialog-panel { padding: 72px 26px 42px; }
+  .instructor-dialog-close { top: 18px; right: 18px; }
   .faq-question { font-size: 17px; }
   .faq-answer-inner { padding-right: 10px; }
   .final-cta { padding: 76px 0; }
