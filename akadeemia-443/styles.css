@@ -302,10 +302,12 @@ h1 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(12,22,17,.88), rgba(12,22,17,.08) 72%);
+  background: linear-gradient(to top, rgba(12,22,17,.96) 0%, rgba(12,22,17,.82) 46%, rgba(12,22,17,.18) 100%);
 }
 .program-card:hover img { transform: scale(1.035); }
 .women-card img { object-position: center 22%; }
+.business-card img { object-position: center 42%; }
+.program-card[id] { scroll-margin-top: 120px; }
 .program-audience {
   position: absolute;
   z-index: 3;
@@ -326,12 +328,41 @@ h1 {
   inset: auto 0 0;
   padding: 28px;
 }
+.has-photo .program-content { text-shadow: 0 2px 16px rgba(0,0,0,.72); }
 .program-card:not(.has-photo) .program-content { inset: 0; display: flex; flex-direction: column; }
 .program-label { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; opacity: .72; }
 .program-content h3 { margin: 9px 0 8px; font-size: 26px; letter-spacing: -.03em; }
 .program-content p { margin: 0; max-width: 480px; font-size: 14px; line-height: 1.55; opacity: .83; }
 .program-link { margin-top: auto; padding-top: 24px; color: var(--clay-dark); font-size: 13px; font-weight: 700; }
 .has-photo .program-link { color: #fff; }
+.program-card.has-photo.children-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  color: var(--ink);
+}
+.children-card::after { display: none; }
+.children-card img {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 434 / 159;
+  object-fit: cover;
+  filter: saturate(.84) contrast(1.03);
+}
+.children-card .program-content {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 24px;
+  text-shadow: none;
+}
+.children-card .program-label { color: var(--moss); opacity: 1; }
+.children-card .program-link { color: var(--clay-dark); }
 
 .course-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 86px; align-items: start; }
 .course-meta {
