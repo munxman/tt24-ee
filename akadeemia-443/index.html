@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Krav Maga Tallinnas | Eesti Krav Maga Akadeemia</title>
   <meta name="description" content="Praktiline enesekaitse ja olukorrateadlikkus algajatele, naistele, lastele, koolidele ning ettevõtetele Tallinnas. Leia endale sobiv treening.">
-  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="theme-color" content="#13251e">
@@ -63,6 +63,7 @@
         "email": "info@krav-maga.ee",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Kaera 21",
           "addressLocality": "Tallinn",
           "addressCountry": "EE"
         },
@@ -90,6 +91,36 @@
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Krav Maga personaaltreening", "description": "Individuaalne või kahele osalejale kohandatud praktiline enesekaitsetreening."}}
           ]
         }
+      },
+      {
+        "@type": "Event",
+        "@id": "https://www.tt24.ee/akadeemia-443/#baaskursus-2026-09-07",
+        "name": "Krav Maga baaskursus algajatele",
+        "description": "Kolmekuuline praktilise enesekaitse baaskursus algajatele Tallinnas. Eelnev kogemus ei ole vajalik.",
+        "startDate": "2026-09-07T17:30:00+03:00",
+        "duration": "P3M",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventSchedule": {
+          "@type": "Schedule",
+          "startDate": "2026-09-07",
+          "startTime": "17:30:00",
+          "endTime": "19:00:00",
+          "repeatFrequency": "P1W",
+          "byDay": ["https://schema.org/Monday", "https://schema.org/Wednesday"],
+          "scheduleTimezone": "Europe/Tallinn"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Eesti Krav Maga Akadeemia",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kaera 21",
+            "addressLocality": "Tallinn",
+            "addressCountry": "EE"
+          }
+        },
+        "organizer": {"@id": "https://www.tt24.ee/akadeemia-443/#academy"}
       }
     ]
   }
@@ -133,6 +164,11 @@
         "@type": "Question",
         "name": "Mille poolest erineb Krav Maga poksist, MMA-st või traditsioonilistest võitluskunstidest?",
         "acceptedAnswer": {"@type": "Answer", "text": "Krav Maga põhirõhk on tsiviilolukordadel, kus eesmärk ei ole võita matši, vaid märgata ohtu, vältida eskalatsiooni, kaitsta ennast või teist inimest ning jõuda turvaliselt eemale."}
+      },
+      {
+        "@type": "Question",
+        "name": "Kas kollase vöö eksam on pärast baaskursust kohustuslik?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ei. Kollase vöö eksam on vabatahtlik. Baaskursuse saab läbida ilma eksamile minemata. Eksami valinud osalejatele toimub enne eksamit seminar, kus vaadatakse üle eksamiks vajalik materjal."}
       }
     ]
   }
@@ -160,7 +196,7 @@
         <a href="#lastele">Lastele ja koolidele</a>
         <a href="#ettevotetele">Ettevõtetele</a>
         <a href="#kkk">KKK</a>
-        <a class="header-cta" href="#kontakt">Vaata baaskursust</a>
+        <a class="header-cta" href="#baaskursus">Vaata baaskursust</a>
       </nav>
     </div>
   </header>
@@ -287,28 +323,57 @@
     </section>
 
     <section class="section section-dark" id="baaskursus" aria-labelledby="course-title">
-      <div class="container course-grid">
-        <div>
-          <p class="section-kicker">Alusta siit</p>
-          <h2 class="section-title" id="course-title">Baaskursus annab kindla alguse.</h2>
-          <p class="section-intro">Kui sul puudub varasem võitlusspordi või enesekaitse kogemus, on see õige koht alustamiseks. Treening ei eelda head füüsilist vormi ega varasemaid oskusi.</p>
-          <div class="course-actions">
-            <a class="btn btn-primary" href="mailto:info@krav-maga.ee?subject=Huvi%20baaskursuse%20vastu">Anna oma huvist märku</a>
+      <div class="container">
+        <div class="course-grid">
+          <div>
+            <p class="section-kicker">Alusta siit</p>
+            <h2 class="section-title" id="course-title">Baaskursus annab kindla alguse.</h2>
+            <p class="section-intro">Baaskursus on mõeldud inimestele, kes alustavad nullist. Eelnevat kogemust ega erilist füüsilist ettevalmistust ei nõuta.</p>
+            <p class="section-intro course-intro-secondary">Kolme kuu jooksul õpid praktilisi enesekaitseoskusi rahulikult ja süsteemselt. Baaskursust viivad läbi instruktorid vaneminstruktorite juhendamisel.</p>
+            <div class="course-actions">
+              <a class="btn btn-primary" href="mailto:info@krav-maga.ee?subject=Soovin%20liituda%20Krav%20Maga%20baaskursusega%20-%20algus%207.%20september">Liitu 7. septembri baaskursusega</a>
+            </div>
+          </div>
+          <div>
+            <div class="course-meta" aria-label="Baaskursuse andmed">
+              <div class="meta-row"><span class="meta-label">Algus</span><span class="meta-value">7. september 2026</span></div>
+              <div class="meta-row"><span class="meta-label">Koht</span><span class="meta-value">Kaera 21, Tallinn</span></div>
+              <div class="meta-row"><span class="meta-label">Aeg</span><span class="meta-value">Esmaspäev ja kolmapäev, <span class="nowrap">17.30–19.00</span></span></div>
+              <div class="meta-row"><span class="meta-label">Kestus</span><span class="meta-value">3 kuud</span></div>
+            </div>
+            <div class="course-list" aria-label="Baaskursuse sisu">
+              <div class="course-item"><strong>Olukorrateadlikkus</strong>Riskide varasem märkamine ja paremad valikud.</div>
+              <div class="course-item"><strong>Põhioskused</strong>Lihtsad kaitse põhimõtted ja praktilised alused.</div>
+              <div class="course-item"><strong>Distants ja eemaldumine</strong>Liikumine, ruumi loomine ja turvalisem lahkumine.</div>
+              <div class="course-item"><strong>Järk-järguline surve</strong>Kontrollitud harjutamine kasvava realistlikkusega.</div>
+            </div>
           </div>
         </div>
-        <div>
-          <div class="course-meta">
-            <div class="meta-row"><span class="meta-label">Asukoht</span><span class="meta-value">Tallinn</span></div>
-            <div class="meta-row"><span class="meta-label">Treeningud</span><span class="meta-value">Kaks korda nädalas</span></div>
-            <div class="meta-row"><span class="meta-label">Järgmine</span><span class="meta-value">Kuupäev kinnitamisel</span></div>
-          </div>
-          <div class="course-list" aria-label="Baaskursuse sisu">
-            <div class="course-item"><strong>Olukorrateadlikkus</strong>Riskide varasem märkamine ja paremad valikud.</div>
-            <div class="course-item"><strong>Põhioskused</strong>Lihtsad kaitse põhimõtted ja praktilised alused.</div>
-            <div class="course-item"><strong>Distants ja eemaldumine</strong>Liikumine, ruumi loomine ja turvalisem lahkumine.</div>
-            <div class="course-item"><strong>Järk-järguline surve</strong>Kontrollitud harjutamine kasvava realistlikkusega.</div>
-          </div>
+
+        <div class="course-journey" aria-label="Baaskursuse proovipäevad ja jätkutee">
+          <article class="course-step course-step-featured">
+            <p class="course-step-label">Kolm tasuta proovipäeva</p>
+            <h3>Tule kõigepealt vaatama.</h3>
+            <p>Enne septembris algavat kursust toimub kolm eraldi tasuta proovipäeva. Proovipäeval saad näha, kuidas treening toimub ja milline on õhkkond, enne kui teed otsuse.</p>
+            <p>Täpsed kuupäevad teatame peagi. Huvi saad kirja panna juba praegu ja anname sulle teada, kui ajad on selged.</p>
+            <a class="text-link" href="mailto:info@krav-maga.ee?subject=Huvi%20tasuta%20proovip%C3%A4evade%20vastu">Pane oma huvi kirja →</a>
+          </article>
+          <article class="course-step">
+            <p class="course-step-label">Kursuse ajal</p>
+            <h3>Oskused arenevad samm-sammult.</h3>
+            <p>Treeningud toimuvad esmaspäeviti ja kolmapäeviti. Praktilised harjutused liiguvad lihtsamatest alustest järk-järgult realistlikumate olukordadeni.</p>
+          </article>
+          <article class="course-step">
+            <p class="course-step-label">Pärast kursust</p>
+            <h3>Eksam on võimalus, mitte kohustus.</h3>
+            <p>Kursuse järel võid soovi korral teha kollase vöö eksami. Enne eksamit toimub seminar, kus vaadatakse üle eksamiks vajalik materjal.</p>
+          </article>
         </div>
+
+        <aside class="course-reassurance" aria-label="Esimese sammu kindlustunne">
+          <strong>Pisut ärevust enne midagi uut on normaalne.</strong>
+          <p>Proovipäev aitab ebakindlust vähendada: saad enne liitumisotsust ise näha, kuidas treening toimub ja kas see sobib sulle.</p>
+        </aside>
       </div>
     </section>
 
@@ -321,8 +386,8 @@
         </div>
         <div class="team-grid">
           <figure class="person">
-            <img class="person-photo" src="assets/janek.webp" alt="Instruktor Janek" loading="lazy" width="1000" height="1000">
-            <figcaption><strong>Janek</strong><span>Instruktor</span></figcaption>
+            <img class="person-photo" src="assets/janek.webp" alt="Juhtiv instruktor Janek" loading="lazy" width="1000" height="1000">
+            <figcaption><strong>Janek</strong><span>Juhtiv instruktor</span></figcaption>
           </figure>
           <figure class="person">
             <img class="person-photo" src="assets/fred.webp" alt="Instruktor Fred" loading="lazy" width="1000" height="1000">
@@ -337,12 +402,12 @@
             <figcaption><strong>Eike</strong><span>Instruktor</span></figcaption>
           </figure>
           <figure class="person">
-            <div class="person-photo person-placeholder" role="img" aria-label="Instruktor Mart, portree lisamisel"><span>M</span></div>
-            <figcaption><strong>Mart</strong><span>Instruktor</span></figcaption>
+            <div class="person-photo person-placeholder" role="img" aria-label="Vaneminstruktor Mart, portree lisamisel"><span>M</span></div>
+            <figcaption><strong>Mart</strong><span>Vaneminstruktor</span></figcaption>
           </figure>
           <figure class="person">
-            <div class="person-photo person-placeholder" role="img" aria-label="Instruktor Kaspar, portree lisamisel"><span>K</span></div>
-            <figcaption><strong>Kaspar</strong><span>Instruktor</span></figcaption>
+            <div class="person-photo person-placeholder" role="img" aria-label="Vaneminstruktor Kaspar, portree lisamisel"><span>K</span></div>
+            <figcaption><strong>Kaspar</strong><span>Vaneminstruktor</span></figcaption>
           </figure>
         </div>
         <p class="team-note">Akadeemia instruktorid õpetavad praktilist enesekaitset selge, turvalise ja järk-järgult realistlikuma metoodikaga.</p>
@@ -391,6 +456,10 @@
             <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-6"><span>Mille poolest erineb Krav Maga poksist, MMA-st või traditsioonilistest võitluskunstidest?</span><span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-answer" id="faq-6"><div class="faq-answer-inner"><p>Poks, kickboxing, maadlus, BJJ, MMA ja traditsioonilised võitluskunstid võivad anda väga tugevaid oskusi. Eriti oluline on oskus harjutada elava vastupanuga ja taluda kontrollitud kontakti.</p><p>Krav Maga põhirõhk on tsiviilolukordadel, kus eesmärk ei ole võita matši, vaid märgata ohtu, vältida eskalatsiooni, kaitsta ennast või teist inimest, teha õiguslikult mõistlik otsus ja jõuda turvaliselt eemale.</p></div></div>
           </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-7"><span>Kas kollase vöö eksam on pärast baaskursust kohustuslik?</span><span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-answer" id="faq-7"><div class="faq-answer-inner"><p>Ei. Kollase vöö eksam on vabatahtlik. Baaskursuse saab läbida ilma eksamile minemata. Kui valid eksami, toimub enne seda seminar, kus vaadatakse üle eksamiks vajalik materjal.</p></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -403,7 +472,7 @@
           <p class="final-copy">Kui sa ei ole kindel, milline treening sulle sobib, alusta baaskursusest või küsi nõu. Hea enesekaitse algab rahulikust otsusest õppida.</p>
         </div>
         <div class="final-actions">
-          <a class="btn btn-primary" href="mailto:info@krav-maga.ee?subject=Huvi%20baaskursuse%20vastu">Vaata järgmist baaskursust</a>
+          <a class="btn btn-primary" href="mailto:info@krav-maga.ee?subject=Soovin%20liituda%20Krav%20Maga%20baaskursusega%20-%20algus%207.%20september">Liitu 7. septembri baaskursusega</a>
           <a class="btn btn-secondary" href="mailto:info@krav-maga.ee?subject=Milline%20treening%20mulle%20sobib">Küsi nõu sobiva treeningu kohta</a>
         </div>
       </div>
