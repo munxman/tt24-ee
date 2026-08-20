@@ -395,6 +395,7 @@ h1 {
   text-transform: uppercase;
 }
 .course-step h3 { margin: 0 0 14px; color: white; font-size: 23px; line-height: 1.2; }
+.course-step h3.course-step-conclusion { margin: 20px 0 0; }
 .course-step p:not(.course-step-label) { margin: 0 0 12px; color: rgba(255,255,255,.76); font-size: 14px; }
 .course-step p:last-of-type { margin-bottom: 0; }
 .course-step .text-link { display: inline-block; margin-top: 22px; color: #f0a783; font-size: 13px; font-weight: 800; text-decoration: none; }
