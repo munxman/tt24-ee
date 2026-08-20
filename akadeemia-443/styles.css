@@ -192,8 +192,8 @@ h1 {
   transition: transform .2s ease, background .2s ease, border-color .2s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--clay); color: #fff; }
-.btn-primary:hover { background: var(--clay-dark); }
+.btn-primary { background: var(--clay-dark); color: #fff; }
+.btn-primary:hover { background: #8d3f29; }
 .btn-secondary { border-color: var(--line); background: rgba(255,255,255,.55); }
 .btn-secondary:hover { border-color: var(--ink); }
 .hero .btn-secondary { color: white; border-color: rgba(255,255,255,.48); background: rgba(17,38,29,.32); backdrop-filter: blur(8px); }
@@ -313,7 +313,7 @@ h1 {
   left: 22px;
   padding: 9px 14px;
   border-radius: 999px;
-  background: var(--clay);
+  background: var(--clay-dark);
   color: white;
   font-size: 13px;
   font-weight: 800;
@@ -390,7 +390,7 @@ h1 {
 .faq-answer-inner p { margin: 0 0 12px; }
 .faq-answer-inner p:last-child { margin-bottom: 0; }
 
-.final-cta { padding: 100px 0; background: var(--clay); color: white; }
+.final-cta { padding: 100px 0; background: var(--clay-dark); color: white; }
 .final-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: end; }
 .final-cta .section-title { max-width: 720px; }
 .final-copy { max-width: 500px; margin: 20px 0 0; color: rgba(255,255,255,.82); }
