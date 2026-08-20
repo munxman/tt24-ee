@@ -104,7 +104,12 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="container hero-grid">
+      <div class="hero-media hero-background" aria-hidden="true">
+        <video class="hero-visual hero-video" muted loop playsinline preload="none" poster="assets/hero-video-poster.jpg" data-src="assets/hero-loop.mp4?v=2"></video>
+        <img class="hero-visual hero-poster" src="assets/hero-video-poster.jpg" alt="" width="1280" height="720">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-content">
         <div class="hero-copy">
           <p class="eyebrow">Praktiline enesekaitse Tallinnas</p>
           <h1>Märka varem.<br>Väldi targalt.<br>Tegutse, kui vaja.</h1>
@@ -118,14 +123,6 @@
             <li>Kogenud instruktorid</li>
             <li>Treeningud eesti keeles</li>
           </ul>
-        </div>
-        <div class="hero-media">
-          <video class="hero-visual hero-video" muted loop playsinline preload="none" poster="assets/hero-video-poster.jpg" data-src="assets/hero-loop.mp4" aria-hidden="true"></video>
-          <img class="hero-visual hero-poster" src="assets/hero-video-poster.jpg" alt="Eesti Krav Maga Akadeemia treening" width="1280" height="720">
-          <div class="hero-note">
-            <strong>Sa ei pea olema valmis.</strong>
-            <span>Baaskursus ongi selleks, et õppida samm-sammult.</span>
-          </div>
         </div>
       </div>
     </section>
@@ -182,11 +179,12 @@
               <span class="program-link">Tutvu baaskursusega →</span>
             </span>
           </a>
-          <a class="program-card has-photo" href="#kontakt">
-            <img src="assets/action-2.webp" alt="Paarilisega tehtav praktiline harjutus" loading="lazy" width="1000" height="875">
+          <a class="program-card has-photo women-card" href="#kontakt">
+            <img src="assets/sandra.webp" alt="Krav Maga instruktor Sandra" loading="lazy" width="300" height="300">
+            <span class="program-audience">Naistele</span>
             <span class="program-content">
-              <span class="program-label">Naistele</span>
-              <h3>Toetav keskkond. Praktiline sisu.</h3>
+              <span class="program-label">Toetav keskkond. Praktiline sisu.</span>
+              <h3>Naiste enesekaitse</h3>
               <p>Teadlikkus, piiride seadmine, eemaldumine ja kontrollitud harjutused ilma macho-hoiakuta.</p>
               <span class="program-link">Enesekaitse naistele →</span>
             </span>
