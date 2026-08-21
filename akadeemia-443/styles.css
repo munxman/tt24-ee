@@ -362,6 +362,15 @@ h1 {
 .meta-row { display: grid; grid-template-columns: 110px 1fr; gap: 18px; }
 .meta-label { color: rgba(255,255,255,.5); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .meta-value { font-weight: 600; }
+.map-address {
+  color: white;
+  text-decoration-color: rgba(255,255,255,.38);
+  text-underline-offset: 3px;
+}
+.map-address:hover { text-decoration-color: currentColor; }
+.map-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 5px; }
+.map-links a { color: #f0a783; font-size: 12px; font-weight: 700; text-decoration: none; }
+.map-links a:hover { color: white; }
 .course-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--soft-line); }
 .course-item { padding: 22px 28px 22px 0; border-bottom: 1px solid var(--soft-line); color: rgba(255,255,255,.78); font-size: 15px; }
 .course-item:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--soft-line); }
