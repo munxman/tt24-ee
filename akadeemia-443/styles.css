@@ -386,6 +386,7 @@ h1 {
   border-color: rgba(191,105,68,.58);
   background: linear-gradient(145deg, rgba(191,105,68,.17), rgba(255,255,255,.045));
 }
+.course-step-featured[id] { scroll-margin-top: 120px; }
 .course-step-label {
   margin: 0 0 14px;
   color: rgba(255,255,255,.58);
