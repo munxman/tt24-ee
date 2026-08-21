@@ -573,6 +573,17 @@ body.dialog-open { overflow: hidden; }
   .programs { grid-template-columns: 1fr; }
   .program-card:nth-child(n) { grid-column: auto; min-height: 300px; }
   .program-card:not(.has-photo) { min-height: 260px; }
+  .women-card .program-audience {
+    position: static;
+    align-self: flex-start;
+    margin: 18px 28px 0;
+    padding: 0;
+    background: transparent;
+    color: var(--clay-dark);
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+  .women-card .program-content { padding-top: 10px; }
   .course-list { grid-template-columns: 1fr; }
   .course-item:nth-child(n) { padding: 18px 0; border-left: 0; }
   .meta-row { grid-template-columns: 92px 1fr; }
