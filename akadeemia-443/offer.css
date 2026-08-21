@@ -183,6 +183,7 @@
 @media (max-width: 640px) {
   .offer-hero { padding: 54px 0 48px; }
   .offer-hero h1 { font-size: clamp(44px,14vw,62px); }
+  .personaaltreening-page .offer-hero h1 { font-size: clamp(32px,8.5vw,44px); letter-spacing: -.045em; }
   .offer-hero-grid { gap: 34px; }
   .offer-hero-media, .offer-hero-media img { min-height: 370px; }
   .offer-status-inner { grid-template-columns: 1fr; gap: 12px; }
