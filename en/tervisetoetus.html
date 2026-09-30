@@ -813,7 +813,7 @@ function tt24SubmitTervise(e) {
   var btn = form.querySelector('button[type="submit"]');
   var status = document.getElementById('terv-status');
   var data = new FormData(form);
-  data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497'); data.append('ccemail', 'tootervishoid@valvekliinik.ee');
+  data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
   data.append('autoresponse', 'The 400 euro tax-free health benefit (Income Tax Act section 48). An employer may spend up to 400 euros per employee per year on health-promoting activities with no fringe-benefit tax. The limit applies to each employee individually and is in addition to the mandatory occupational health cost.\n\nWhat can be covered: sport and physical activity; additional health check-ups, rehabilitation and massage; mental health; eyewear and ergonomic work equipment; dentistry (partially); health insurance.\n\nWhat CANNOT be covered: cash transfers to the employee; alcohol and tobacco; mass-market food supplements; cosmetic procedures without medical indication; expenses for family members.\n\nHow to do it correctly: a written health-promotion policy, original invoices addressed to the company, a per-employee expenditure register, a separate accounting code.\n\nFull calculation: https://tt24.ee/en/tervisetoetus.html\nQuestions: info@tt24.ee\n\nTT24 - Occupational Health Guide');
   btn.disabled = true; btn.textContent = 'Sending...'; status.textContent = '';
   fetch('https://api.web3forms.com/submit', { method:'POST', body:data, headers:{'Accept':'application/json'} })

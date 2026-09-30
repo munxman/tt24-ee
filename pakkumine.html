@@ -556,7 +556,7 @@ textarea.form-input { resize:vertical; line-height:1.55; }
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: (function() { var d = new FormData(form); d.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497'); d.append('ccemail', 'tootervishoid@valvekliinik.ee'); return d; })(),
+      body: (function() { var d = new FormData(form); d.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497'); return d; })(),
       headers: { 'Accept': 'application/json' }
     })
     .then(function(r){ return r.json(); })
