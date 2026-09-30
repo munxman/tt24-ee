@@ -813,7 +813,7 @@ function tt24SubmitTervise(e) {
   var btn = form.querySelector('button[type="submit"]');
   var status = document.getElementById('terv-status');
   var data = new FormData(form);
-  data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
+  data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497'); data.append('ccemail', 'tootervishoid@valvekliinik.ee');
   data.append('autoresponse', '400 euro maksuvaba tervisetoetus (Tulumaksuseaduse paragrahv 48). Tooandja voib kulutada kuni 400 eurot aastas tootaja kohta tervist edendavatele tegevustele ilma erisoodustusmaksuta. Limiit kehtib iga tootaja kohta eraldi ja lisaks kohustuslikule tootervishoiu kulule.\n\nMida saab katta: sport ja liikumine; lisatervisekontrollid, taastusravi ja massaaz; vaimne tervis; prillid ja ergonoomilised toovahendid; hambaravi osaliselt; tervisekindlustus.\n\nMida EI saa katta: sularahaulekanded tootajale; alkohol ja tubakas; toidulisandid massmuugis; esteetilised protseduurid ilma meditsiinilise naidustuseta; perekonnaliikmete kulud.\n\nKuidas oigesti teha: kirjalik tervise edendamise kord, originaalarved ettevotte nimele, ulevaade tootajate kaupa, eraldi raamatupidamiskonto.\n\nTapsema arvutuse leiate: https://tt24.ee/tervisetoetus.html\nKusimused: info@tt24.ee\n\nTT24 - Tootervishoiu Teejuht');
   btn.disabled = true; btn.textContent = 'Saadan...'; status.textContent = '';
   fetch('https://api.web3forms.com/submit', { method:'POST', body:data, headers:{'Accept':'application/json'} })

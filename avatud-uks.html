@@ -581,7 +581,7 @@ function tt24SubmitConsult(e) {
   var btn = form.querySelector('button[type="submit"]');
   var status = document.getElementById('consult-status');
   var data = new FormData(form);
-  data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497');
+  data.append('access_key', 'eff4879e-ddfb-4d95-b5c8-422f94ea5497'); data.append('ccemail', 'tootervishoid@valvekliinik.ee');
   btn.disabled = true; btn.textContent = 'Saadan...'; status.textContent = '';
   fetch('https://api.web3forms.com/submit', { method:'POST', body:data, headers:{'Accept':'application/json'} })
     .then(function(r){return r.json();})
