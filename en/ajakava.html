@@ -919,7 +919,7 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
       note: nightwork ? 'Night work requires a health check before starting' : 'Higher risk level requires a health check before starting'
     });
   } else {
-    healthCheckDeadline = addMonths(firstEmployeeDate, 4);
+    healthCheckDeadline = addMonths(firstEmployeeDate, firstEmployeeDate >= new Date(2026, 9, 26) ? 6 : 4);
     items.push({
       id: 'esimene-tervisekontroll',
       icon: '',
@@ -927,7 +927,7 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
       description: "Employee's initial health check with an occupational health physician",
       deadline: healthCheckDeadline,
       ref: 'TTOS § 13¹ lg 6',
-      note: 'Within 4 months of starting work'
+      note: 'Within 6 months of starting work (from 26 October 2026, earlier 4 months)'
     });
   }
 

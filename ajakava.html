@@ -917,7 +917,7 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
       note: nightwork ? 'Öötöö kohustab kontrolli enne tööle asumist' : 'Kõrgem riskitase kohustab kontrolli enne tööle asumist'
     });
   } else {
-    healthCheckDeadline = addMonths(firstEmployeeDate, 4);
+    healthCheckDeadline = addMonths(firstEmployeeDate, firstEmployeeDate >= new Date(2026, 9, 26) ? 6 : 4);
     items.push({
       id: 'esimene-tervisekontroll',
       icon: '',
@@ -925,7 +925,7 @@ function buildItems(firstEmployeeDate, nightwork, sectorKey) {
       description: 'Töötaja esmane tervisekontroll töötervishoiuarsti juures',
       deadline: healthCheckDeadline,
       ref: 'TTOS § 13¹ lg 6',
-      note: '4 kuu jooksul tööle asumisest'
+      note: '6 kuu jooksul tööle asumisest (alates 26.10.2026, varem 4 kuud)'
     });
   }
 
