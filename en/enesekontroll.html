@@ -76,7 +76,7 @@ if (localStorage.getItem('tt24_cookie_consent') === 'accepted') { tt24LoadGA4();
   "mainEntity": [
     { "@type": "Question", "name": "What is the occupational health self-assessment?", "acceptedAnswer": { "@type": "Answer", "text": "It is a free 10-question tool that evaluates your company's readiness to meet occupational health requirements." } },
     { "@type": "Question", "name": "Does the self-assessment replace a Labour Inspectorate audit?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is a self-assessment tool only. It does not replace an official audit." } },
-    { "@type": "Question", "name": "Is my data stored anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "Your test answers and result are calculated in your browser. If you request the emailed report, we store your email address, company name and result to send it." } }
+    { "@type": "Question", "name": "Is my data stored anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "Your test answers and result are calculated in your browser. You can print or save the result as a PDF immediately." } }
   ]
 }
 </script>
@@ -531,22 +531,11 @@ html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); -we
 
       <div id="pqlAlert"></div>
 
-      <!-- Email gate -->
-      <div class="tt24-gate-card is-locked" id="quizGateCard">
-        <div class="tt24-gate-form-wrap">
-          <h3>Send your full result to your email</h3>
-          <p>The report includes a category overview and prioritised recommendations based on your score.</p>
-          <form class="tt24-gate-form" id="quizGateForm" onsubmit="return tt24SubmitQuizGate(event)">
-            <input type="email" name="email" required placeholder="you@yourcompany.com" autocomplete="email" aria-label="Email address">
-            <button type="submit">Send full report</button>
-            <p class="tt24-gate-privacy">Your answers stay in your browser; if you request the emailed report we store your email, company name and result to send it. <a href="privaatsus.html">Privacy policy</a></p>
-            <p class="tt24-gate-error" id="quizGateError" role="alert">Sending failed. Please try again or email <a href="mailto:info@tt24.ee">info@tt24.ee</a>.</p>
-          </form>
-        </div>
-        <div class="tt24-gate-success">
-          <h3>Thank you - request received</h3>
-          <p>We will send the full report to your email as soon as possible. In the meantime, view your result below.</p>
-        </div>
+      <div class="tt24-gate-card" id="quizGateCard">
+        <h3>Your result is ready now</h3>
+        <p>The category overview and prioritised recommendations are shown on this page. Print or save the result as a PDF immediately.</p>
+        <button type="button" class="btn-share" onclick="printReport()">Print / save PDF</button>
+        <p style="margin:18px 0 0; font-size:14px; color:var(--ink-soft);">Need advice about your company's situation? <a href="avatud-uks.html?src=enesekontroll" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--rule);">Request a €99 consultation</a>.</p>
       </div>
 
       <!-- Category overview -->
@@ -938,8 +927,8 @@ function showResult() {
     if (score <= 4) {
       pqlEl.innerHTML = '<div class="result-alert is-critical" style="margin-bottom:24px;">'
         + '<strong>Your result points to significant gaps.</strong> '
-        + 'We recommend a free compliance review with a specialist. '
-        + '<a href="pakkumine.html">Request a free review</a>.</div>';
+        + 'We recommend requesting an occupational health service quote. '
+        + '<a href="pakkumine.html">Request a quote</a>.</div>';
     } else {
       pqlEl.innerHTML = '';
     }
